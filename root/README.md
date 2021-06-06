@@ -1,1 +1,0 @@
-# Ghost-Miner.github.io
