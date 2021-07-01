@@ -84,13 +84,39 @@ wiki versions
 	}
 	#Snapshots-1{
 		width: 50%;
+		padding-right: 1%;
 	}
 	#Snapshots-2{
 		width: 50%;
+		padding-left: 1%;
 	}
 	#footer{
 		width: 100%;
 		margin-top: 5%; }
+
+	
+	.collapsible {
+	background-color: #ccc;
+	color: black;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	}
+
+	.active, .collapsible:hover {
+	background-color: #555;
+	}
+
+	.content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+	}
 </style>
 
 <div class="left"><p></p></div>
@@ -174,59 +200,192 @@ wiki versions
 	<div id="Snapshots-1">
 			<h4 style="text-align: center;"><b>1.3</B></h4>
 
-			<p><strong>Snapshot 1</strong></p>
-			<p>Added medium difficulty levels,</p>
-			<p><strong>Snapshot 2</strong></p>
-			<p>* fixed bug causing game to crash in second tutorial level<br />* Continue option and level select works again<br />* changes to some medium levels<br />* fixed attempts counter displaying score instead of number of attempts<br />* respawn time is now 0,5 sec instead of 1 sec .<br />+ Added score counter<br />+ Added FPS meter<br />+ Added option to convert old save files to new format</p>
-			<p><strong>Snapshot 3</strong></p>
-			<p>&ndash; Added 4 new hard levels<br />&ndash; fixed some minor bugs</p>
-			<p><strong>Snapshot </strong> <strong>3 Update 1:</strong><br />&ndash; fixed duplicated timer in hard level 4<br />&ndash; removed spike at the start in hard level 3<br />&ndash; changed &ldquo;press f11 to exit full screen&rdquo; to &hellip;toggle fullscreen</p>
-			<p><strong>Snapshot&nbsp; 4<br /></strong>&ndash; New tutorial (I might have forgotten to change all stuff to refer to new tutorial. Be aware of game crash. If you get crash report, copy it or screenshot it!)<br />&ndash; Added credits after you finish the game<br />&ndash; Reduced the game size by 2MB<br />&ndash; Added more names to credits</p>
-			<p><strong>Snapshoz 4, Update 1</strong><br />&ndash; Fixed blurry creduts<br />&ndash; Fixed bug where Pressing PLAY button takes you to the old tutorial <br />&ndash; fixed some other minor bugs</p>
-			<p><strong>Snapshot 5</strong><br />&ndash; Fixed bug in medium level selection screen where you couldnt acces first medium level<br />&ndash; added speedrun timer<br />&ndash; font size of score, attempts, fps etc. was made smaller</p>
-			<p><strong>Snapshot</strong> <strong>6</strong><br />&ndash; added option to hide fps meter<br />&ndash; fully implemented speedrun timer <br />&ndash; minor graphics changes<br />&ndash; minor bugfixes</p>
-			<p><strong>Release Candidate 2</strong><br />&ndash; fixed incorrect calculation of speedrun time<br />&ndash; fixed score counter <br />&ndash; made HUD smaller and less distracting</p>
-			<p><strong> Final <em>(snapshot)</em> version</strong> (hopefully)<br />&ndash; (finally) fixed all issues with speedrun timer<br />&ndash; credits music doesnt play if music is disabled<br />&ndash; minor graphics changes</p>
-			
-			<h2 style="text-align: center;">1.5</h2>
-
-			<p><strong>Snapshot 1</strong></p>
-			<p>* Fixed links on working in chromium browsers<br />* Open folder buttons now open corresponding folder in system&rsquo;s file explroer</p>
-			<p>+ Confirmation dialog to reset progress button<br />+ Reset settings button (also with confirmation dialog box)<br />+ Added Open speedrun record folder button<br />+ Added Open custom levels folder button</p>
+				<button type="button" class="collapsible"> Snapshot 1 </button>
+				<div class="content">
+					<br>
+				  <p>
+				Added medium difficulty levels,
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible"> Snapshot 2 </button>
+				<div class="content">
+				  <p>
+				<p>* fixed bug causing game to crash in second tutorial level<br />* Continue option and level select works again<br />* changes to some medium levels<br />* fixed attempts counter displaying score instead of number of attempts<br />* respawn time is now 0,5 sec instead of 1 sec .<br />+ Added score counter<br />+ Added FPS meter<br />+ Added option to convert old save files to new format</p>
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible"> Snapshot 3</button>
+				<div class="content">
+				  <p>
+				– Added 4 new hard levels<br>
+				– fixed some minor bugs
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible"> Snapshot 3 Update 1</button>
+				<div class="content">
+				  <p>
+				– fixed duplicated timer in hard level 4<br>
+				– removed spike at the start in hard level 3<br>
+				– changed “press f11 to exit full screen” to …toggle fullscreen
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible"> Snapshot 4</button>
+				<div class="content">
+				  <p>
+				– New tutorial (I might have forgotten to change all stuff to refer to new tutorial. Be aware of game crash. If you get crash report, copy it or screenshot it!)<br>
+				– Added credits after you finish the game<br>
+				– Reduced the game size by 2MB<br>
+				– Added more names to credits
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible"> Snapshot 4 update 1</button>
+				<div class="content">
+				  <p>
+				– Fixed blurry creduts<br>
+				– Fixed bug where Pressing PLAY button takes you to the old tutorial<br>
+				– fixed some other minor bugs<br>
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible"> Snapshot 5</button>
+				<div class="content">
+				  <p>
+				– Fixed bug in medium level selection screen where you couldnt acces first medium level<br>
+				– added speedrun timer<br>
+				– font size of score, attempts, fps etc. was made smaller<br>
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible"> Snapshot 6</button>
+				<div class="content">
+				  <p>
+				– added option to hide fps meter<br>
+				– fully implemented speedrun timer<br>
+				– minor graphics changes<br>
+				– minor bugfixes<br>
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible">Release Candidate 1</button>
+				<div class="content">
+				  <p>
+				- fixed bugs with speedrun timer<br>
+				- minor graphics changes<br>
+				- other bugfixes
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible">Release Candidate 2</button>
+				<div class="content">
+				  <p>
+				– fixed incorrect calculation of speedrun time<br>
+				– fixed score counter<br>
+				– made HUD smaller and less distracting<br>
+				  </p>
+				</div>
+				
+				<button type="button" class="collapsible">Final <i>(snapshot)</i> version</button>
+				<div class="content">
+				  <p>
+				– (finally) fixed all issues with speedrun timer<br>
+				– credits music doesnt play if music is disabled <br>
+				– minor graphics changes
+				  </p>
+				</div>
 	</div>
 	<div id="Snapshots-2">
 			<h4 style="text-align: center;"><B>1.4</B></h4>
 
-			<p><strong>Snapshot 1</strong></p>
-			<p>&ndash; Added icons to main menu buttons <br />&ndash; Report button moved below Quit button<br />&ndash; Code optimizations<br />&ndash; Fixed level numbers &ndash; Level: 1.01 ➡ Level 1</p>
+			<button type="button" class="collapsible"> Snapshot 1 </button>
+			<div class="content">
+			<p>
+			<p>&ndash; Added icons to main menu buttons<br />&ndash; Report button moved below Quit button<br />&ndash; Code optimizations<br />&ndash; Fixed level numbers &ndash; Level: 1.01 ➡ Level 1</p>
 			<p>&ndash; Cheats/Debug mode update<br />&ndash; Level don&rsquo;t save while cheats are enabled<br />&ndash; Notice in middle bottom when cheats are enabled</p>
 			<p>&ndash; Full keyboard control and navigation (not fully implemented yet)<br />*Work in progress. may be changed<br />&ndash; Press Alt to show keyboard shortcuts</p>
-			<p><strong>Snapshot 2</strong></p>
+			</p>
+			</div>
+
+			<button type="button" class="collapsible"> Snapshot 2</button>
+			<div class="content">
+			<p>
 			<p>&ndash; Options update<br />&ndash; Settings divided into categories<br />&ndash; Added more options:<br />&ndash; Toggle between game&rsquo;s or Windows&rsquo; mouse pointer<br />&ndash; Enable keyboard/no mouse navigation<br />&ndash; All game settings are now saved in a file, so the settings don&rsquo;t get reset every time the game is run</p>
-			<p>&ndash; Level saving update <br />&ndash; Level information (attempts, current level etc.) is also now saved into a file<br />&ndash; (working on) Game progress is now saved in single file instead of 29 individual empty files</p>
+			<p>&ndash; Level saving update<br />&ndash; Level information (attempts, current level etc.) is also now saved into a file<br />&ndash; (working on) Game progress is now saved in single file instead of 29 individual empty files</p>
 			<p>&ndash; File system update<br />&ndash; All files are now saved in appropriate directories instead of in the game&rsquo;s root folder</p>
-			<p><strong>Snapshot 3a</strong></p>
+			</div>
+
+			<button type="button" class="collapsible"> Snapshot 3a</button>
+			<div class="content">
+			<p>
 			<p>* Fixed game crashing after finishing a speedrun.<br />* Fixed game crashing when pressing Level 10 in easy level select.</p>
 			<p>* Level countdown turns yellow when there&rsquo;s less than 5 seconds left<br />* Fixed speedrun timer overlapping with attempts counter.<br />* Fixed level difficulty displaying &ldquo;NotALevel&rdquo;.<br />* Fixed not being able to unlock 1st medium and hard level in level select.<br />* Fixed level numbers overlapping with locked level icon in level selection<br />* Fixed issue where player kept moving after finishing a level which lead to few nerly instant deaths.</p>
 			<p>* Unlocked levels are now stored in a sinlg file instead of creating an empty file for each level.<br />* Changed layout of settings screen.</p>
 			<p>+ Added 5th hard level button to level seelct.<br />+ Added @FJB to playtesters page.</p>
 			<p>&ndash; Removed score. (May be repurposed in the future)<br />&ndash; Deleted some old useless files.</p>
-			<p><strong>snapshot 3b</strong></p>
+			</div>
+
+			<button type="button" class="collapsible"> Snapshot 3b</button>
+			<div class="content">
 			<p>* Fixed speedrun mode<br />* Report button should now open the correct adress<br />* slightly reduced size of spike hitbox</p>
-			<p><strong>snapshot 4</strong></p>
+			</div>
+
+			<button type="button" class="collapsible"> Snapshot 4</button>
+			<div class="content">
 			<p>* Presing R now counts as an attempt.<br />* Fixed credits music using old settings to check if sound is enabled.<br />* Updated keyboard navigation scripts.</p>
 			<p>* Renamed tutorial levels from roomTUT&lt;number&gt;_N to roomTUT&lt;number&gt;. (This naming is leftover from 1.3 snapshot 4 where old tutorial was replaced with newer, better version.)<br />* Renamed key sprite from spr_star to spr_key (Another very old leftover)</p>
 			<p>+ Re-added keyboard navigation to options<br />+ Added button for 5th hard level in level selection</p>
-			<p>&nbsp;</p>
-			<p><strong>snapshot 5</strong></p>
-			<p>* Fixed ground block in medium 6 being slightly higher which avoided player from moving to the right withiut having to jump. <br />* Fixed getting stuck in-between platforms in tutorial.</p>
-			<p>+ Every speedrun statistics is now saved in Black_Box_Jumper\Speedrun records. <br />* Speedrun statistics can be opened from the game&rsquo;s speedrun finished screen. <br />+ Every level statistics are now stored in Black_Box_Jumper\Game data\Level statisctics. (Work in progress)<br />*Resetting progress replaces all levels status with &ldquo;false&rdquo; instead of deleting the file (it basically changes nothing, but it looks better)</p>
+			</div>
+
+			<button type="button" class="collapsible"> Snapshot 4</button>
+			<div class="content">
+			<p>* Fixed ground block in medium 6 being slightly higher which avoided player from moving to the right withiut having to jump.<br />* Fixed getting stuck in-between platforms in tutorial.</p>
+			<p>+ Every speedrun statistics is now saved in Black_Box_Jumper\Speedrun records.<br />* Speedrun statistics can be opened from the game&rsquo;s speedrun finished screen.<br />+ Every level statistics are now stored in Black_Box_Jumper\Game data\Level statisctics. (Work in progress)<br />*Resetting progress replaces all levels status with &ldquo;false&rdquo; instead of deleting the file (it basically changes nothing, but it looks better)</p>
 			<p>It looks like there&rsquo;s not much new stuff, but imagine in how many ways the saved data can be used.<br />(I may have also forgotten to list some stuff)</p>
-			<p>&nbsp;</p>
-			<p><strong>Releace candidate 1</strong></p>
+			</div>
+
+			<button type="button" class="collapsible"> Release candidate 1</button>
+			<div class="content">
 			<p>+ Added visual feedback to screenshot</p>
 			<p>* Fixed F2 (screenashot) and F11 (fullscreen) not working in some cases<br />* Changed_updated what!s shown on tutorial complete screen<br />* other bugfixes</p>
+			</div>
+
+			<hr>
+			<br><br>
+			<h4 style="text-align: center;"><b>1.5</b></h4>
+
+			<button type="button" class="collapsible">Snapshot 1</button>
+				<div class="content">
+				  <p>
+					* Fixed links on working in chromium browsers<br>
+					* Open folder buttons now open corresponding folder in system’s file explroer<br><br>
+					
+					+ Confirmation dialog to reset progress button<br>
+					+ Reset settings button (also with confirmation dialog box)<br>
+					+ Added Open speedrun record folder button<br>
+					+ Added Open custom levels folder button<br>
+				  </p>
+				</div>
 	</div>
+
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+		
+		for (i = 0; i < coll.length; i++) {
+		  coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.display === "block") {
+			  content.style.display = "none";
+			} else {
+			  content.style.display = "block";
+			}
+		  });
+		}
+		</script>
 
 	<div id="footer">
 		<footer>
