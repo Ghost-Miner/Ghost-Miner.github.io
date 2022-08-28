@@ -53,18 +53,20 @@ a:visited {
 </style>
 	
 	
+<script>
+//http://ghostminer.maweb.eu/files/wowie%20jam%204%20game%20ra%20tf.mp4
 
+		location.replace("https://ghost-miner.itch.io/overcharge");
+	</script>
 <!--GH HOME-->
 <center>
 <p>&nbsp;</p>
 <hr/>
-	<h3><a href="http://ghostminer.maweb.eu/files/wowie%20jam%204%20game%20ra%20tf.mp4">CLICK HERE IF NOTHING HAPPENS</a></h3>
+	<h3><a href="https://ghost-miner.itch.io/overcharge">CLICK HERE IF NOTHING HAPPENS</a></h3>
 <hr/>
 </center>
 
-<script>
-		location.replace("http://ghostminer.maweb.eu/files/wowie%20jam%204%20game%20ra%20tf.mp4");
-	</script>
+
 
 	</body>
 </html>
