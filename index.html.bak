@@ -1,9 +1,34 @@
 <!DOCTYPE html>
-<html lang="cs">
+<!--
+
+		W H A T   A R E    Y O U   D O I N G   I N   M Y   C O D E ? ! 
+
+
+					⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+					⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+					⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ 
+					⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ 
+					⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ 
+					⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ 
+					⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ 
+					⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+					⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+					⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+					⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ 
+					⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ 
+					⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ 
+					⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+					⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉
+
+
+
+home normal
+-->
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 			<title>= GhostMiner =</title>
-			 <link rel="icon" type="image" href="./images/2023-01-ghostminer-v3-1-B-150x150.png">
+			 <link rel="icon" type="image" href="./images/icon.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="max-image-preview:large">
 <title>GhostMiner</title>
@@ -41,7 +66,7 @@ img.emoji {
             /* <![CDATA[ */
             var rcewpp = {
                 "ajax_url":"http://gm-page.local/wp-admin/admin-ajax.php",
-                "nonce": "a8cee35672",
+                "nonce": "55b0a032bf",
                 "home_url": "http://gm-page.local/",
                 "settings_icon": 'http://gm-page.local/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
                 "settings_hover_icon": 'http://gm-page.local/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
@@ -68,7 +93,7 @@ img.emoji {
 
 		if (width < height) 
 		{
-			location.replace("./vert/index.html");
+			location.replace("./v/index.html");
 		}
 	</script>
 	
@@ -623,7 +648,7 @@ img.emoji {
 		// Inject the skip link.
 		sibling.parentElement.insertBefore( skipLink, sibling );
 	}() );</script>
-	<script id="eael-general-js-extra">var localize = {"ajaxurl":".\/\/wp-admin\/admin-ajax.php","nonce":"a85b6b61e9","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"page_permalink":".\/\/","cart_redirectition":"","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobil","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobil Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Notebook","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Širokoúhlý","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};</script>
+	<script id="eael-general-js-extra">var localize = {"ajaxurl":".\/\/wp-admin\/admin-ajax.php","nonce":"ef3476f6e6","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"page_permalink":".\/\/","cart_redirectition":"","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobil","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobil Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Notebook","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Širokoúhlý","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};</script>
 <script src="./wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=5.3.2" id="eael-general-js"></script>
 <script src="./wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.7.8" id="elementor-webpack-runtime-js"></script>
 <script src="./wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.7.8" id="elementor-frontend-modules-js"></script>
