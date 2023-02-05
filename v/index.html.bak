@@ -232,8 +232,14 @@ img.emoji {
 								<div class="elementor-element elementor-element-d88254b elementor-aspect-ratio-169 elementor-widget elementor-widget-video" data-id="d88254b" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/www.youtube.com\/watch?v=RAD6xM9YqLE&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;,&quot;aspect_ratio&quot;:&quot;169&quot;}" data-widget_type="video.default">
 				<div class="elementor-widget-container">
 			<style>/*! elementor - v3.7.8 - 02-10-2022 */
-.elementor-widget-video .elementor-widget-container{overflow:hidden;-webkit-transform:translateZ(0);transform:translateZ(0)}.elementor-widget-video .elementor-open-inline .elementor-custom-embed-image-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:50%}.elementor-widget-video .elementor-custom-embed-image-overlay{cursor:pointer;text-align:center}.elementor-widget-video .elementor-custom-embed-image-overlay:hover .elementor-custom-embed-play i{opacity:1}.elementor-widget-video .elementor-custom-embed-image-overlay img{display:block;width:100%}.elementor-widget-video .e-hosted-video .elementor-video{-o-object-fit:cover;object-fit:cover}.e-container>.elementor-widget-video{width:var(--container-widget-width,100%)}</style>		<div class="elementor-wrapper elementor-fit-aspect-ratio elementor-open-inline">
-			<div class="elementor-video"></div>		</div>
+.elementor-widget-video .elementor-widget-container{overflow:hidden;-webkit-transform:translateZ(0);transform:translateZ(0)}.elementor-widget-video .elementor-open-inline .elementor-custom-embed-image-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:50%}.elementor-widget-video .elementor-custom-embed-image-overlay{cursor:pointer;text-align:center}.elementor-widget-video .elementor-custom-embed-image-overlay:hover .elementor-custom-embed-play i{opacity:1}.elementor-widget-video .elementor-custom-embed-image-overlay img{display:block;width:100%}.elementor-widget-video .e-hosted-video .elementor-video{-o-object-fit:cover;object-fit:cover}.e-container>.elementor-widget-video{width:var(--container-widget-width,100%)}</style>		
+			<div class="elementor-wrapper elementor-fit-aspect-ratio elementor-open-inline">
+				<div class="elementor-video">
+				<!-- YOUTUBE VIDEO -->
+				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RAD6xM9YqLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<!-- YOUTUBE VIDEO END-->
+				</div>
+			</div>
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-f45add1 elementor-widget elementor-widget-heading" data-id="f45add1" data-element_type="widget" data-widget_type="heading.default">
