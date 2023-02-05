@@ -27,7 +27,8 @@ home vert
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-			<title>Homepage vertical &#8211; GhostMiner</title>
+			<title>= GhostMiner =</title>
+			 <link rel="icon" type="image" href="../images/icon.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="max-image-preview:large">
 <title>Homepage vertical &#8211; GhostMiner</title>
