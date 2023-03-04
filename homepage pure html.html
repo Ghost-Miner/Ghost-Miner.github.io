@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home page</title>
+	</head>
+	<body>
+		<!-- 
+			CSS 
+		-->
+		<style>
+			:root 
+			{
+				--backgroundColour: #ffffff;
+				--foregroundColour: #00ff00;
+			}
+			
+			body 
+            {
+                background-image: url("./img/bgr.jpg");
+				background-size: cover;
+            }
+
+			.masterPageContainer {
+				width: 1000px; 
+				margin: 0 auto; 
+				padding: 1px;
+
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			}
+
+			.BgrBox {
+				padding: 10px;
+				background-color: var(--backgroundColour);
+			}
+			.FgrBox {
+				padding: 10px;
+				background-color: var(--foregroundColour);
+				border-radius: 10px;
+			}
+
+			/* Settings for individual containers */
+			#titleImage  
+			{				
+				width:20%;
+    			border:1px solid blue;
+			}
+			#titleText  
+			{				
+				width:75%;
+    			border:1px solid green;
+			}
+			#featVideo
+			{
+				margin-right: 15px;
+			}
+			#aboutMaster
+			{
+				margin-top: 15px;
+				margin-bottom: 15px;
+				border-radius: 10px;
+			}
+
+			#Name 
+			{
+				margin-bottom: 25px;
+				margin-right: 15px;
+			}
+			#Profile 
+			{
+				margin-right: 15px;
+			}
+			#About 
+			{
+				margin-bottom: 15px;
+			}
+
+			/* Overrides */
+			#pageTitle 
+			{
+				border-radius: 10px 10px 0px 0px;
+			}
+			#menu 
+			{
+				border-radius: 0px;
+			}
+			#featuredAndRecommended 
+			{				
+				border-radius: 0px 0px 10px 10px;
+			}
+        </style>
+		<!-- 
+			HTML
+		-->		
+		<div class="masterPageContainer">
+			<!-- 
+				Page title box
+			-->
+				<div class="BgrBox" id="pageTitle">
+					<div class="FgrBox">
+						<table style="border-collapse: collapse; width: 100%; border:1;">
+							<tbody>
+								<tr>
+									<td style="width: 10%;">
+										<img src="./img/2023-01-ghostminer-v3-1-B-150x150.png" width="75px" height="75px" />
+									</td>
+									<td style="width: 90%;">
+										<h1>GhostMiner</h1>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div> <!-- Title fgr div end -->
+				</div> <!-- Title bgr div end -->
+
+				<!-- 
+					Menu
+				-->
+				<div class="BgrBox" id="menu">
+					<table style="border-collapse: collapse; width: 100%; height: 18px; border:1;">
+						<tbody>
+						   <tr style="height: 20px;">
+							  <td style="width: 9%; height: 18px;">
+								  <h2>Games</h2>
+							  </td>
+							  <td style="width: 10%; height: 18px;">
+								  <h2>Discord</h2>
+							  </td>
+							  <td style="width: 10%; height: 18px;">
+								  <h2>Youtube</h2>
+							  </td>
+							  <td style="width: 71%; height: 18px;">&nbsp;</td>
+						   </tr>
+						</tbody>
+					 </table>
+				</div><!-- Menu Bgr div end -->
+
+				<!-- 
+					Featured games
+				-->
+				<div class="BgrBox" id="featuredGamesBgr">
+					<div class="FgrBox">
+						<h1>Featured games</h1>
+						
+						<table style="border-collapse: collapse; width: 100%; height: 158px;">
+							<tbody>
+							   <tr style="height: 140px;">
+								  <td style="width: 33.3333%; text-align: center; height: 140px;"><a href="https://ghost-miner.itch.io/black-box-jumper"><img src="./img/bbj.png" alt="" width="175" height="135" /></a></td>
+								  <td style="width: 33.3333%; text-align: center; height: 140px;"><a href="http://ghost-miner.itch.io/overcharge"><img src="./img/overcharge.gif" alt="" width="175" height="135" /></a></td>
+								  <td style="width: 33.3333%; text-align: center; height: 140px;"><a href="https://ghost-miner.itch.io/midnight-motorist"><img src="./img/modnight motoris.png" alt="" width="175" height="135" /></a></td>
+							   </tr>
+							   <tr style="height: 18px;">
+								  <td style="width: 33.3333%; text-align: center; height: 18px;">
+									 <h2><strong>Black Box Jumper</strong></h2>
+								  </td>
+								  <td style="width: 33.3333%; text-align: center; height: 18px;">
+									 <h2><strong>Overcharge</strong></h2>
+								  </td>
+								  <td style="width: 33.3333%; text-align: center; height: 18px;">
+									 <h2><strong>Midnight Motorist</strong></h2>
+								  </td>
+							   </tr>
+							</tbody>
+						 </table>
+					</div>	<!-- Featueed games Fgr div end -->
+				</div>	<!-- Featured games Bgr div end -->
+
+				<!-- 
+					Featured video  & Recommended videos
+				-->
+				<div class="BgrBox" id="featuredAndRecommended">					
+					<table style="border-collapse: collapse; width: 100%;">
+						<tbody>
+						   <tr>
+							  <td style="width: 64%;">
+								 <div class="FgrBox" id="featVideo">
+									<h1>Featured video 	</h1>
+									<iframe src="https://www.youtube.com/embed/RAD6xM9YqLE" width="100%" height="340px"></iframe>
+									<h2><a href="https://www.youtube.com/v/RAD6xM9YqLE">Hermitcraft Recap - Season 6 - 15 months in 12 minutes or less</a></h2>
+									<h3>Uploaded on 1/3/2020 | 1,7K views</h3>
+									<p>Recap of all important events that happened this season on hermitcraft server in season 6 (2018 -2020)</p>
+								 </div> <!-- Feat and rec video div end -->
+							  </td>
+
+							  <td style="width: 36%;" id="recomVideo">
+								<div class="FgrBox">
+									<h1>Recommended videos</h1>
+
+									<table style="border-collapse: collapse; width: 100%; height: 79px;">
+										<tbody>
+										<tr style="height: 100;">
+											<td style="width: 20%;"> <img src="https://i.ytimg.com/vi/5XU9u6ZZnXs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLBtwQghUv3mt5Yn1o_4wNJ2N8tN0w" alt="" width="116" height="75" /></td>
+											<td style="width: 80%;"> <strong><a href="https://www.youtube.com/watch?v=5XU9u6ZZnXs" target="_blank">The Last Goodbye - In Space with Markiplier (Un)Official Music...</a> </strong></td>
+										</tr>
+										<tr style="height: 100;">
+											<td style="width: 20%;"> <img src="https://i.ytimg.com/vi/j64oZLF443g/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCyPQynRTlnbP0SHu79KynO1Crjdw" alt="" width="116" height="75PX" /></td>
+											<td style="width: 80%;"> <strong><a href="https://www.youtube.com/watch?v=j64oZLF443g" target="_blank">In Space with Markiplier: Part 1</a> </strong></td>
+										</tr>
+										<tr style="height: 100;">
+											<td style="width: 20%;"> <img src="https://i.ytimg.com/vi/I4izeivV9B8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLAbQ_U08z3Dk4rwZ6qJGNKJ01_FhA" alt="" width="116" height="75px" /></td>
+											<td style="width: 80%;"> <strong><a href="https://www.youtube.com/watch?v=I4izeivV9B8" target="_blank">Hermitcraft Recap Season 7 16 months in 13 minutes or less</a> </strong></td>
+										</tr>
+										<tr style="height: 100;">
+											<td style="width: 20%;"> <img src="https://ghost-miner.github.io/images/2022-06-f3-keys.jpg" alt="" width="116" height="75px" /></td>
+											<td style="width: 80%;"> <strong><a href="https://www.youtube.com/watch?v=aMIYz5PFVlA" target="_blank">Useful Minecraft F3 key shortcuts</a> </strong></td>
+										</tr>
+										<tr style="height: 100;">
+											<td style="width: 20%;"> <img src="https://img.youtube.com/vi/JI4CP5vrpVk/maxresdefault.jpg" alt="" width="116" height="75px" /></td>
+											<td style="width: 80%;"> <br /><strong><a href="https://www.youtube.com/watch?v=JI4CP5vrpVk" target="_blank">5 Reasons To Learn Coding | Interesting Coding Projects</a></strong></td>
+										</tr>
+										<tr style="height: 100;">
+											<td style="width: 20%;"> <img src="https://ghost-miner.github.io/wp-content/uploads/2023/02/grain-hc6-playlist.png" alt="" width="116" height="75px" /></td>
+											<td style="width: 80%;"> <strong><a href="https://www.youtube.com/playlist?list=PLU2851hDb3SEesCjVCmseu60aJht1DQwh" target="_blank">Grian: Hermitcraft Season 6</a> </strong></td>
+										</tr>
+										</tbody>
+									</table>
+								</div> <!-- Feat and rec video div end -->
+							  </td>
+						   </tr>
+						</tbody>
+					 </table>
+				</div> <!-- Feat and rec video bgr div end -->
+
+				<!-- 
+					About section
+				-->
+				<div class="BgrBox" id="aboutMaster">
+					
+					<table style="border-collapse: collapse; width: 100%;">
+						<tbody>
+						   <tr>
+							  <td style="width: 25%;">
+								 <div class="FgrBox" id="Name">
+									<table style="border-collapse: collapse; width: 100%;">
+									   <tbody>
+										  <tr>
+											 <td style="width: 8%;"><img src="https://ghost-miner.github.io/wp-content/uploads/2023/01/ghostminer-v3-1-B.png" alt="" width="64" height="64" /></td>
+											 <td style="width: 92%;">
+												<h2>GhostMiner</h2>
+											 </td>
+										  </tr>
+									   </tbody>
+									</table>
+								 </div>
+								 <!-- Name Bgr div end -->
+								 <div class="FgrBox" id="Profile">
+									<h2><strong>Profile</strong></h2>
+									<p><strong>Name</strong>: GhostMiner<br />
+									   <strong>Joined YouTube:</strong> 15/8/2012<br />
+									   <strong>Subscribers:</strong> 5,5K<br />
+									   <strong>Views:</strong> 3,3M
+									</p>
+								 </div>
+								 <!-- profile Bgr div end -->
+							  </td>
+
+							  <td style="width: 75%;">
+								 <div class="FgrBox" id="About">
+									<h1>About Ghostimer</h1>
+									<p>I make games.</p>
+								 </div>
+								 <!-- About Bgr div end -->
+								 <div class="FgrBox" id="Socials">
+									<h1>Social platforms links</h1>
+									<table style="border-collapse: collapse; width: 100%; height: 71px;">
+									   <tbody>
+										  <tr style="height: 53px;">
+											 <td style="width: 25%; height: 53px; text-align: center;"><strong><img src="https://ghost-miner.github.io/wp-content/uploads/2022/06/discord-logov-50px.png" alt="" /></strong></td>
+											 <td style="width: 25%; height: 53px; text-align: center;"><strong><img src="https://ghost-miner.github.io/wp-content/uploads/2023/02/YouTube_logo-50px.png" alt="" /></strong></td>
+											 <td style="width: 25%; height: 53px; text-align: center;"><strong><img src="https://ghost-miner.github.io/wp-content/uploads/2022/06/itchio-logo-50px.png" alt="" /></strong></td>
+											 <td style="width: 25%; height: 53px; text-align: center;"><strong><img src="https://ghost-miner.github.io/wp-content/uploads/2022/06/twotter-logog-50px.png" alt="" /></strong></td>
+										  </tr>
+										  <tr style="height: 18px;">
+											 <td style="width: 25%; height: 18px; text-align: center;"><strong>Discord</strong></td>
+											 <td style="width: 25%; height: 18px; text-align: center;"><strong>YouTube</strong></td>
+											 <td style="width: 25%; height: 18px; text-align: center;"><strong>Itch.io</strong></td>
+											 <td style="width: 25%; height: 18px; text-align: center;"><strong>Twitter</strong></td>
+										  </tr>
+									   </tbody>
+									</table>
+								 </div>
+								 <!-- socials Bgr div end -->
+							  </td>
+						   </tr>
+						</tbody>
+					 </table>
+					 
+
+				</div><!-- About ,aster Bgr div end -->
+
+		</div> <!-- MASTER DIV END -->
+	</body>
+</html>
