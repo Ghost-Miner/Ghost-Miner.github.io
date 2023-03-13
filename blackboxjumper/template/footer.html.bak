@@ -32,6 +32,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 		
+		<script>
+        location.replace("http://ghost-miner.github.io/");
+    </script>
 </head>
 
 <body>
@@ -40,9 +43,6 @@
 		/*color: black;*/
 	}
 </style>
-		<script>
-        location.replace("http://ghost-miner.github.io/");
-		</script>
 		<hr />
 			<center>
 				<p>Black Box Jumper website Beta | <a href="https://ghost-miner.github.io/blackboxjumper/sitemap.html" " target="_blank">site map</a><br/>
