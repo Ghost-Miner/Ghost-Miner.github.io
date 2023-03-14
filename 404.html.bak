@@ -102,9 +102,9 @@ home
 
 	<!--GH 404-->
 	<script>
-		location.replace("https://ghost-miner.github.io/404/index.html");
+		location.replace("./404/index.html");
 	</script>
-	<center><h1><b><a href="https://ghost-miner.github.io/404/index.html">CLICK HERE</a></B></h1></center>
+	<center><h1><b><a href="./404/index.html">CLICK HERE</a></B></h1></center>
 
 </body>
 </html>
