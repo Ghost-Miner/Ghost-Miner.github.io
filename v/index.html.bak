@@ -2,10 +2,11 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8">
-			<title>-=- GhostMiner -=-</title>
+      <title>-=- GhostMiner -=-</title>
+      <link rel="shortcut icon" type="image/jpg" href="https://ghost-miner.github.io/img/2023-01-ghostminer-v3-1-B-150x150.png">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="max-image-preview:large">
-			<title>-=- GhostMiner -=-</title>
+      <title>Homepage vertical &#8211; GhostMiner</title>
       <link rel="alternate" type="application/rss+xml" title="GhostMiner &raquo; RSS zdroj" href="./../feed/index.html">
       <link rel="alternate" type="application/rss+xml" title="GhostMiner &raquo; RSS komentářů" href="./../comments/feed/index.html">
       <script>
@@ -34,14 +35,14 @@
       <link rel="stylesheet" id="elementor-frontend-css" href="./../wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.7.8" media="all">
       <link rel="stylesheet" id="elementor-post-5-css" href="./../wp-content/uploads/elementor/css/post-5.css?ver=1678210066" media="all">
       <link rel="stylesheet" id="elementor-global-css" href="./../wp-content/uploads/elementor/css/global.css?ver=1678210069" media="all">
-      <link rel="stylesheet" id="elementor-post-2755-css" href="./../wp-content/uploads/elementor/css/post-2755.css?ver=1678371136" media="all">
+      <link rel="stylesheet" id="elementor-post-2755-css" href="./../wp-content/uploads/elementor/css/post-2755.css?ver=1680455904" media="all">
       <link rel="stylesheet" id="eael-general-css" href="./../wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css?ver=5.3.2" media="all">
       <link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Ubuntu%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CUbuntu+Condensed%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;subset=latin-ext&#038;ver=6.1.1" media="all">
       <script>
          /* <![CDATA[ */
          var rcewpp = {
              "ajax_url":"http://gm-page.local/wp-admin/admin-ajax.php",
-             "nonce": "d89a58c0f3",
+             "nonce": "0925a5398b",
              "home_url": "http://gm-page.local/",
              "settings_icon": 'http://gm-page.local/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
              "settings_hover_icon": 'http://gm-page.local/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
@@ -57,8 +58,8 @@
       <meta name="generator" content="WordPress 6.1.1">
       <link rel="canonical" href="./index.html">
       <link rel="shortlink" href="./../index.html?p=2755">
-      <link rel="alternate" type="application/json+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=http%3A%2F%2F%2Fhome-ver%2F">
-      <link rel="alternate" type="text/xml+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=http%3A%2F%2F%2Fhome-ver%2F#038;format=xml">
+      <link rel="alternate" type="application/json+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=http%3A%2F%2F%2Fhome-vert%2F">
+      <link rel="alternate" type="text/xml+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=http%3A%2F%2F%2Fhome-vert%2F#038;format=xml">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
    </head>
    <body class="page-template page-template-elementor_canvas page page-id-2755 wp-embed-responsive elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-2755">
@@ -399,7 +400,7 @@
                      </div>
                      <section class="elementor-section elementor-inner-section elementor-element elementor-element-be44b7f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="be44b7f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                         <div class="elementor-container elementor-column-gap-default">
-                           <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-84a9c94" data-id="84a9c94" data-element_type="column">
+                           <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-84a9c94" data-id="84a9c94" data-element_type="column">
                               <div class="elementor-widget-wrap elementor-element-populated">
                                  <div class="elementor-element elementor-element-c5c33a0 elementor-widget elementor-widget-image" data-id="c5c33a0" data-element_type="widget" data-widget_type="image.default">
                                     <div class="elementor-widget-container">
@@ -414,7 +415,7 @@
                                  </div>
                               </div>
                            </div>
-                           <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-e4049ed" data-id="e4049ed" data-element_type="column">
+                           <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-e4049ed" data-id="e4049ed" data-element_type="column">
                               <div class="elementor-widget-wrap elementor-element-populated">
                                  <div class="elementor-element elementor-element-ff59c4e elementor-widget elementor-widget-image" data-id="ff59c4e" data-element_type="widget" data-widget_type="image.default">
                                     <div class="elementor-widget-container">
@@ -425,6 +426,21 @@
                                  <div class="elementor-element elementor-element-b24368c elementor-widget elementor-widget-heading" data-id="b24368c" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
                                        <h2 class="elementor-heading-title elementor-size-default"><a href="https://ghost-miner.itch.io/the-navigator">The navigator</a></h2>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-4bb7367" data-id="4bb7367" data-element_type="column">
+                              <div class="elementor-widget-wrap elementor-element-populated">
+                                 <div class="elementor-element elementor-element-35aa2f7 elementor-widget elementor-widget-image" data-id="35aa2f7" data-element_type="widget" data-widget_type="image.default">
+                                    <div class="elementor-widget-container">
+                                       <a href="https://ghost-miner.itch.io/roll-the-dice">
+                                       <img decoding="async" src="https://img.itch.zone/aW1nLzExNzUxODk1LnBuZw==/315x250%23c/vqj99B.png" title="" alt="">								</a>
+                                    </div>
+                                 </div>
+                                 <div class="elementor-element elementor-element-3c8eba6 elementor-widget elementor-widget-heading" data-id="3c8eba6" data-element_type="widget" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                       <h2 class="elementor-heading-title elementor-size-default"><a href="https://ghost-miner.itch.io/roll-the-dice">Roll the dice</a></h2>
                                     </div>
                                  </div>
                               </div>
@@ -448,26 +464,24 @@
                         <div class="elementor-container elementor-column-gap-default">
                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-7e17332" data-id="7e17332" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                               <div class="elementor-widget-wrap elementor-element-populated">
-                                 <div class="elementor-element elementor-element-d88254b elementor-aspect-ratio-169 elementor-widget elementor-widget-video" data-id="d88254b" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/www.youtube.com\/watch?v=RAD6xM9YqLE&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;,&quot;aspect_ratio&quot;:&quot;169&quot;}" data-widget_type="video.default">
+                                 <div class="elementor-element elementor-element-d88254b elementor-aspect-ratio-169 elementor-widget elementor-widget-video" data-id="d88254b" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/www.youtube.com\/watch?v=j64oZLF443g&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;,&quot;aspect_ratio&quot;:&quot;169&quot;}" data-widget_type="video.default">
                                     <div class="elementor-widget-container">
                                        <style>/*! elementor - v3.7.8 - 02-10-2022 */
                                           .elementor-widget-video .elementor-widget-container{overflow:hidden;-webkit-transform:translateZ(0);transform:translateZ(0)}.elementor-widget-video .elementor-open-inline .elementor-custom-embed-image-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:50%}.elementor-widget-video .elementor-custom-embed-image-overlay{cursor:pointer;text-align:center}.elementor-widget-video .elementor-custom-embed-image-overlay:hover .elementor-custom-embed-play i{opacity:1}.elementor-widget-video .elementor-custom-embed-image-overlay img{display:block;width:100%}.elementor-widget-video .e-hosted-video .elementor-video{-o-object-fit:cover;object-fit:cover}.e-container>.elementor-widget-video{width:var(--container-widget-width,100%)}
                                        </style>
                                        <div class="elementor-wrapper elementor-fit-aspect-ratio elementor-open-inline">
-                                          <div class="elementor-video">
-											<iframe src="https://www.youtube.com/embed/RAD6xM9YqLE" width="100%" height="340px" style="border: 0; background-color: black;"></iframe>
-										  </div>
+                                          <div class="elementor-video"></div>
                                        </div>
                                     </div>
                                  </div>
                                  <div class="elementor-element elementor-element-f45add1 elementor-widget elementor-widget-heading" data-id="f45add1" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                       <h2 class="elementor-heading-title elementor-size-default"><a href="https://youtu.be/RAD6xM9YqLE">Hermitcraft Recap - Season 6  - 15 months in 12 minutes or less</a></h2>
+                                       <h2 class="elementor-heading-title elementor-size-default"><a href="https://youtu.be/RAD6xM9YqLE">In Space with Markiplier: Part 1</a></h2>
                                     </div>
                                  </div>
                                  <div class="elementor-element elementor-element-add0b27 elementor-widget elementor-widget-heading" data-id="add0b27" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                       <h2 class="elementor-heading-title elementor-size-default">Uploaded on 1/3/2020 | 1,7K views</h2>
+                                       <h2 class="elementor-heading-title elementor-size-default">Uploaded on 4/4/2022 | 20,1M views</h2>
                                     </div>
                                  </div>
                                  <div class="elementor-element elementor-element-9fd24d4 elementor-widget elementor-widget-text-editor" data-id="9fd24d4" data-element_type="widget" data-widget_type="text-editor.default">
@@ -475,7 +489,7 @@
                                        <style>/*! elementor - v3.7.8 - 02-10-2022 */
                                           .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}
                                        </style>
-                                       <p><span class="style-scope yt-formatted-string" dir="auto">Recap of all important events that happened this season on hermitcraft server in season 6 (2018 &#8211; 2020).</span></p>
+                                       <p><span class="style-scope yt-formatted-string" dir="auto"><span class="yt-core-attributed-string yt-core-attributed-string--white-space-pre-wrap"><span class="sc-6cc92269-2 jWocDE" role="presentation" data-testid="plot-xl">In this interactive story, the fate of the crew of a spaceship is in your hands. Who will you save, more precisely, who can you save from the dangers of the endless universe?</span></span></span></p>
                                     </div>
                                  </div>
                               </div>
@@ -501,8 +515,8 @@
                               <div class="elementor-widget-wrap elementor-element-populated">
                                  <div class="elementor-element elementor-element-c77823e elementor-widget elementor-widget-image" data-id="c77823e" data-element_type="widget" data-widget_type="image.default">
                                     <div class="elementor-widget-container">
-                                       <a href="https://www.youtube.com/watch?v=j64oZLF443g">
-                                       <img decoding="async" src="https://i.ytimg.com/vi/j64oZLF443g/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCyPQynRTlnbP0SHu79KynO1Crjdw" title="" alt="">								</a>
+                                       <a href="https://www.youtube.com/watch?v=RAD6xM9YqLE&#038;t=7s">
+                                       <img decoding="async" src="https://i.ytimg.com/vi/RAD6xM9YqLE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDfT7VLN-XoWLjb62-qMWgIW8U1dw" title="" alt="">								</a>
                                     </div>
                                  </div>
                               </div>
@@ -511,30 +525,7 @@
                               <div class="elementor-widget-wrap elementor-element-populated">
                                  <div class="elementor-element elementor-element-e57d4cd elementor-widget elementor-widget-heading" data-id="e57d4cd" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                       <h2 class="elementor-heading-title elementor-size-default"><a href="https://www.youtube.com/watch?v=j64oZLF443g">In Space with Markiplier: Part 1</a></h2>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </section>
-                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-ba3c93c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ba3c93c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                        <div class="elementor-container elementor-column-gap-default">
-                           <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1c3939f" data-id="1c3939f" data-element_type="column">
-                              <div class="elementor-widget-wrap elementor-element-populated">
-                                 <div class="elementor-element elementor-element-8486503 elementor-widget elementor-widget-image" data-id="8486503" data-element_type="widget" data-widget_type="image.default">
-                                    <div class="elementor-widget-container">
-                                       <a href="https://www.youtube.com/watch?v=5XU9u6ZZnXs">
-                                       <img decoding="async" src="https://i.ytimg.com/vi/5XU9u6ZZnXs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLBtwQghUv3mt5Yn1o_4wNJ2N8tN0w" title="" alt="">								</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7386e70" data-id="7386e70" data-element_type="column">
-                              <div class="elementor-widget-wrap elementor-element-populated">
-                                 <div class="elementor-element elementor-element-cfe79ba elementor-widget elementor-widget-heading" data-id="cfe79ba" data-element_type="widget" data-widget_type="heading.default">
-                                    <div class="elementor-widget-container">
-                                       <h2 class="elementor-heading-title elementor-size-default"><a href="https://www.youtube.com/watch?v=5XU9u6ZZnXs">The Last Goodbye - In Space with Markiplier (Un)Official Music...</a></h2>
+                                       <h2 class="elementor-heading-title elementor-size-default"><a href="https://www.youtube.com/watch?v=RAD6xM9YqLE&#038;t=7s">Hermitcraft Recap - Season 6  - 15 months in 12 minutes or less</a></h2>
                                     </div>
                                  </div>
                               </div>
@@ -558,6 +549,29 @@
                                  <div class="elementor-element elementor-element-28f09c3 elementor-widget elementor-widget-heading" data-id="28f09c3" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
                                        <h2 class="elementor-heading-title elementor-size-default"><a href="https://www.youtube.com/watch?v=aMIYz5PFVlA">Useful Minecraft F3 key shortcuts</a></h2>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </section>
+                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-ba3c93c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ba3c93c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                        <div class="elementor-container elementor-column-gap-default">
+                           <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1c3939f" data-id="1c3939f" data-element_type="column">
+                              <div class="elementor-widget-wrap elementor-element-populated">
+                                 <div class="elementor-element elementor-element-8486503 elementor-widget elementor-widget-image" data-id="8486503" data-element_type="widget" data-widget_type="image.default">
+                                    <div class="elementor-widget-container">
+                                       <a href="https://www.youtube.com/watch?v=5XU9u6ZZnXs">
+                                       <img decoding="async" src="https://i.ytimg.com/vi/5XU9u6ZZnXs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLBtwQghUv3mt5Yn1o_4wNJ2N8tN0w" title="" alt="">								</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7386e70" data-id="7386e70" data-element_type="column">
+                              <div class="elementor-widget-wrap elementor-element-populated">
+                                 <div class="elementor-element elementor-element-cfe79ba elementor-widget elementor-widget-heading" data-id="cfe79ba" data-element_type="widget" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                       <h2 class="elementor-heading-title elementor-size-default"><a href="https://www.youtube.com/watch?v=5XU9u6ZZnXs">The Last Goodbye - In Space with Markiplier (Un)Official Music...</a></h2>
                                     </div>
                                  </div>
                               </div>
@@ -803,7 +817,7 @@
                   <div class="elementor-widget-wrap elementor-element-populated">
                      <div class="elementor-element elementor-element-289d6ab elementor-widget elementor-widget-text-editor" data-id="289d6ab" data-element_type="widget" data-widget_type="text-editor.default">
                         <div class="elementor-widget-container">
-                           <p>Last update: 10/3/2023</p>
+                           <p>Last update: 16/3/2023</p>
                         </div>
                      </div>
                   </div>
@@ -877,7 +891,7 @@
          sibling.parentElement.insertBefore( skipLink, sibling );
          }() );
       </script>
-      <script id="eael-general-js-extra">var localize = {"ajaxurl":".\/\/wp-admin\/admin-ajax.php","nonce":"72f76cff3b","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"page_permalink":".\/\/home-ver\/","cart_redirectition":"","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobil","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobil Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Notebook","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Širokoúhlý","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};</script>
+      <script id="eael-general-js-extra">var localize = {"ajaxurl":".\/\/wp-admin\/admin-ajax.php","nonce":"3a37fe46d1","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"page_permalink":".\/\/home-vert\/","cart_redirectition":"","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobil","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobil Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Notebook","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Širokoúhlý","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};</script>
       <script src="./../wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=5.3.2" id="eael-general-js"></script>
       <script src="./../wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.7.8" id="elementor-webpack-runtime-js"></script>
       <script src="./../wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.7.8" id="elementor-frontend-modules-js"></script>
