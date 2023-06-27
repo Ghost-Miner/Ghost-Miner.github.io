@@ -27,6 +27,7 @@
 	<head>
 		<title>Thronefall leaderbaord</title>
 		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -68,8 +69,12 @@
 			.BgrBox 
 			{
 				border-radius: 5px 5px;
-				padding: 10px;
+				padding: 15px;
 				background-color: var(--backgroundColour);
+				
+				margin-top: 40px; 
+				margin-bottom: 25px; 
+				padding-top:25px;
 			}
 			
 			#tableToggleButton
@@ -77,10 +82,26 @@
 				margin-top: 2.5px;
 				margin-bottom: 2.5px;
 			}
-			
-			@media screen and (max-resolution: 116dpi)
+			.ButtonText
 			{
-
+				/*font-family: Ubuntu, Sans-serif, Arial;*/
+			}
+			#gameLinksBtn
+			{
+				
+			}
+			@media screen and (max-width: 1050px)
+			{
+				.BgrBox 
+				{
+					padding: 10px;					
+					margin: 2vw; 
+					padding-top:25px;
+				}				
+				.ButtonText
+				{
+					font-family: 'Times New Roman', Times, serif;
+				}
 			}
 		</style>
 		<script>
@@ -110,7 +131,7 @@
  		</script>
 		
 		<div class="masterPageContainer">
-			<div class="BgrBox" style="margin-top: 50px; margin-bottom: 25px; padding-top:25px;">
+			<div class="BgrBox" style="">
 
 				<!-- Page head stuff -->
 				<section id ="Page header"> 
@@ -120,11 +141,19 @@
 							<h1><strong><em>Thronefall leaderboard</em></strong></h1>
 						</section>
 						<hr/>
-						<section id="*Llinks">
-							<h4 id="GameLinks">
-								<a href="https://discord.gg/gVYctptyg8" id="discord Link">Discord server</a> | 
-								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam page">Get the game</a>
-							</h4>
+						<section id="Game links">
+							<font class="ButtonText">
+								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam page">
+									<button type="button" class="btn btn-warning" id="gameLinksBtn;"  style="background-color: var(--backgroundColour); padding:15px; padding-top:10px;  padding-bottom:10px;">
+										<b>Get the game</b>
+									</button>
+								</a>
+								<a href="https://discord.gg/gVYctptyg8" id="discord Link">
+									<button type="button" class="btn btn-warning" id="gameLinksBtn" style="background-color: var(--backgroundColour); padding: 15px; padding-top:10px;  padding-bottom:10px;">
+										<b>Discord server</b>
+									</button>
+								</a>
+							</font>
 						</section>
 						<noscript>
 							<h3><strong><em>This website requires JavaScript to function correctly.<h3></strong></em>
@@ -138,7 +167,7 @@
 					<center>
 						<!-- Table toggle buttons -->
 							<section id="Table toggle buttons vert">
-								<font style="font-family: Ubuntu;">
+								<font class="ButtonText">
 									<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels score lb')">
 										<b>Nordfels scores</b>
 									</button>
@@ -163,19 +192,19 @@
 							<td style="width: 75%; padding: 5px;" id="header btns cell">
 								<!-- Table toggle buttons -->
 								<section id="Table toggle buttons">
-									<font style="font-family: Ubuntu;">
-									<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels score lb')">
-									<b>Nordfels scores</b>
-									</button>
-									<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland score lb')">
-									<b>Neuland scores</b>
-									</button>
-									<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels gold lb')">
-									<b>Nordfels gold</b>
-									</button>
-									<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland gold lb')">
-									<b>Neuland gold</b>
-									</button>
+									<font class="ButtonText">
+										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels score lb')">
+											<b>Nordfels scores</b>
+										</button>
+										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland score lb')">
+											<b>Neuland scores</b>
+										</button>
+										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels gold lb')">
+											<b>Nordfels gold</b>
+										</button>
+										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland gold lb')">
+											<b>Neuland gold</b>
+										</button>
 									</font>
 								</section> <!-- toggle buttons -->
 							</td>
@@ -295,7 +324,7 @@
 										background-color: #FFA500;
 										border: 1px solid #FFA500;
 										color: #FFFFFF;
-										font-family: Ubuntu;
+										font-family: Ubuntu, Sans-serif, Arial;
 										">
 									<strong>Submit score</strong>
 									</a>
@@ -333,8 +362,7 @@
 					submitScoreButton.style.width = "25%";
 					headerBtnsCell.style.width = "75%";
 				}
-			</script>
-				
+			</script>				
 				<hr/>
 				
 				<section class="scoreTable" id="Nordfels score lb">  <!-- Nordfels score lb -->
