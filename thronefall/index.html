@@ -85,10 +85,12 @@
 			}
 			.ScoreProffLink
 			{
-				color: black;
-				text-decoration:dotted;
+				cursor: pointer;
 			}
-
+			.btn
+			{
+				box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			}
 			/*.ButtonText
 			{
 				font-family: Ubuntu, Sans-serif, Arial;
@@ -238,134 +240,16 @@
 								<!-- Submit score button -->
 								<section id="Submit score">
 									<!-- Submit score overlay button  -->
-									<button type="button" class="btn btn-warning" id="submitScoreOverlay" onclick="on()"><strong>SUBMIT SCORE</strong></button>
-									<!--
-									<script src ="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script>
-									<script type="text/javascript">
-										var JFL_231755087536059 = new JotformFeedback({
-										formId: '231755087536059',
-										base: 'https://form.jotform.com/',
-										windowTitle: 'Submit score',
-										backgroundColor: '#FFA500',
-										fontColor: '#FFFFFF',
-										type: '0',
-										height: 500,
-										width: 640,
-										openOnLoad: false
-										});
-									</script>
-									<script type="text/javascript">
-										var ifr = document.getElementById("lightbox-231755087536059");
-										if (ifr) {
-										var src = ifr.src;
-										var iframeParams = [];
-										if (window.location.href && window.location.href.indexOf("?") > -1) {
-											iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-										}
-										if (src && src.indexOf("?") > -1) {
-											iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-											src = src.substr(0, src.indexOf("?"))
-										}
-										iframeParams.push("isIframeEmbed=1");
-										ifr.src = src + "?" + iframeParams.join('&');
-										}
-										window.handleIFrameMessage = function(e) {
-										if (typeof e.data === 'object') { return; }
-										var args = e.data.split(":");
-										if (args.length > 2) { iframe = document.getElementById("lightbox-" + args[(args.length - 1)]); } else { iframe = document.getElementById("lightbox"); }
-										if (!iframe) { return; }
-										switch (args[0]) {
-											case "scrollIntoView":
-											iframe.scrollIntoView();
-											break;
-											case "setHeight":
-											iframe.style.height = args[1] + "px";
-											if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
-												iframe.style.minHeight = args[1] + "px";
-											}
-											break;
-											case "collapseErrorPage":
-											if (iframe.clientHeight > window.innerHeight) {
-												iframe.style.height = window.innerHeight + "px";
-											}
-											break;
-											case "reloadPage":
-											window.location.reload();
-											break;
-											case "loadScript":
-											if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
-											var src = args[1];
-											if (args.length > 3) {
-												src = args[1] + ':' + args[2];
-											}
-											var script = document.createElement('script');
-											script.src = src;
-											script.type = 'text/javascript';
-											document.body.appendChild(script);
-											break;
-											case "exitFullscreen":
-											if      (window.document.exitFullscreen)        window.document.exitFullscreen();
-											else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
-											else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
-											else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
-											else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
-											break;
-										}
-										var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-										if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-											var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
-											iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
-										}
-										};
-										window.isPermitted = function(originUrl, whitelisted_domains) {
-										var url = document.createElement('a');
-										url.href = originUrl;
-										var hostname = url.hostname;
-										var result = false;
-										if( typeof hostname !== 'undefined' ) {
-											whitelisted_domains.forEach(function(element) {
-												if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
-													result = true;
-												}
-											});
-											return result;
-										}
-										};
-										if (window.addEventListener) {
-										window.addEventListener("message", handleIFrameMessage, false);
-										} else if (window.attachEvent) {
-										window.attachEvent("onmessage", handleIFrameMessage);
-										}
-									</script>
-									<a class="btn lightbox-231755087536059" 
-										style="
-										margin-top: 16px;
-										text-transform: uppercase;
-										font-size: 14px;
-										text-decoration: none;
-										cursor: pointer;
-										display: inline-block;
-										padding: 10px;
-										font-family: inherit;
-										text-shadow: none;
-										user-select: none;
-										transition: all,.1s,ease-in;
-										background-color: #FFA500;
-										border: 1px solid #FFA500;
-										color: #FFFFFF;
-										font-family: Ubuntu, Sans-serif, Arial;
-										">
-									<strong>Submit score</strong>
-									</a>
-									<br>
-									<em>Requires JavaScript.</em> -->
+									<button type="button" class="btn btn-warning" id="submitScoreOverlay" onclick="ShowFormWindow()"><strong>SUBMIT SCORE</strong></button>
 								</section> <!-- Submit score -->
 							</td>
 						</tr>
 					</table>
 				</section> <!-- Header buttons horizontal -->
 
-				<script>					
+				<script>
+					var titl = document.getElementById("title");
+				
 					var horizButtons 		= document.getElementById("TableToggleButtons");
 					var vertButtons  		= document.getElementById("HeaderButtonsVertical");
 					var submitScoreButton 	= document.getElementById("SubmitButtonCell");
@@ -417,7 +301,7 @@
 										<h5><strong> Date </strong></h5>
 									</th>
 									<th>
-										<h5><strong> Screenshot/Video </strong></h5>
+										<h5><strong> Picture/Video </strong></h5>
 									</th>
 								</tr>
 							</thead>
@@ -463,7 +347,12 @@
 								<td>esteban8nn</td>
 								<td>13 152</td>
 								<td>27/6/2023</td>
-								<td><a class="ScoreProffLink" title="Picture of the highscore" href="https://cdn.discordapp.com/attachments/1117853463045476382/1121874081948651691/13k_pointss.PNG" target="_blank">Screenshot</a></td>
+								<td>
+									<a class="ScoreProffLink" title="Picture of the highscore" 
+										onclick="ShowPictureWindow('http:/\/\cdn.discordapp.com/attachments/1117853463045476382/1121874081948651691/13k_pointss.PNG')"> 
+											Screenshot
+									</a>
+								</td>
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>7</strong></td>
@@ -541,7 +430,7 @@
 										<h5><strong> Date </strong></h5>
 									</th>
 									<th>
-										<h5><strong> Screenshot/Video </strong></h5>
+										<h5><strong> Picture/Video </strong></h5>
 									</th>
 								</tr>
 							</thead>
@@ -609,7 +498,7 @@
 										<h5><strong> Date </strong></h5>
 									</th>
 									<th>
-										<h5><strong> Screenshot/Video </strong></h5>
+										<h5><strong> Picture/Video </strong></h5>
 									</th>
 								</tr>
 							</thead>
@@ -719,7 +608,7 @@
 										<h5><strong> Date </strong></h5>
 									</th>
 									<th>
-										<h5><strong> Screenshot/Video </strong></h5>
+										<h5><strong> Picture/Video </strong></h5>
 									</th>
 								</tr>
 							</thead>
@@ -742,7 +631,7 @@
 				<section id="Footer"> <!-- Footer -->
 					<center>
 						<h5>
-							<i><font style="color:black;">Leaderbaord page made by GhostMiner. Ver. 1.3.1 <b>|</b> </i>
+							<i><font style="color:black;">Leaderbaord page made by GhostMiner. Ver. 1.4 <b>|</b> </i>
 							<a href="https://ghost-miner.github.io/">Website</a>, 
 							<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 							<a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -760,9 +649,108 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script>ChangeShownTable("Nordfels score lb");</script>
 		
-		<section id="SubmitScoreOverlay">
+		<!-- Submit score overlay -->
+		<section class="overlays" id="SubmitScoreOverlay">
 			<style>
-				#overlay 
+				#submitBakcground 
+				{
+				  position: fixed;
+				  display: none;
+				  width: 100%;
+				  height: 100%;
+				  margin: 0 auto;
+				  padding: 5%;
+				  padding-top: 2.5%;
+				  top: 0;
+				  left: 0;
+				  right: 0;
+				  bottom: 0;
+				  background-color: rgba(0,0,0,0.5);
+				  z-index: 2;
+				  cursor: default;
+				  backdrop-filter: blur(16px);
+				}
+				
+				#SubmitWinContent
+				{
+					border-radius: 5px;
+					margin: auto;
+					max-width: 800px;
+					max-height: 800px;
+					padding: 0.5%;
+					width: 100%;
+					height:100%;
+					font-size: 30px;
+					color: white;
+				  	background-color: #c27301;
+				  	z-index: 3;
+					
+					box-shadow: 4px 4px 16px rgba(0,0,0,0.75);
+				}
+				#submitOvrlCancel 
+				{
+					display: block;
+					padding-top: 2%;
+				}
+				
+				@media screen and (max-width: 1050px)
+				{					
+					#SubmitWinContent
+					{
+						padding: 1%;
+						height:95%;
+					}
+					#submitOvrlCancel 
+					{
+						display:block;
+						padding-top: 0%;
+					}
+					#submitBakcground 
+					{
+						padding: 2.5%;
+					}
+				}
+				@media screen and (max-width: 600px)
+				{					
+					#SubmitWinContent
+					{
+						padding: 1.5%;
+						height: 85%;
+					}
+					#submitBakcground 
+					{
+						padding: 2%;
+					}
+				}
+			</style>
+			
+				<center>
+					<div id="submitBakcground">
+						<div id="SubmitWinContent">
+							<iframe src="./submit.html" style="width:100%; height:100%; border:0px; background-color: #fff;"></iframe>
+							<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
+								Cancel
+							</button>
+						</div>
+					</div>
+				</center>
+
+			<script>
+				function ShowFormWindow() 
+				{
+					document.getElementById("submitBakcground").style.display = "block";
+			  	}				  
+			  	function HideFormWindow() 
+				{
+					document.getElementById("submitBakcground").style.display = "none";
+			  	}
+			 </script>
+		</section>
+
+		<!-- Pictue windiw overlay -->
+		<section class="overlays" id="scoreProofWindooOverlay">
+			<style>
+				.proofOverlay
 				{
 				  position: fixed;
 				  display: none;
@@ -774,17 +762,19 @@
 				  left: 0;
 				  right: 0;
 				  bottom: 0;
-				  background-color: rgba(0,0,0,0.5);
+				  background-color: rgba(0,0,0,0.75);
 				  z-index: 2;
-				  cursor: pointer;
 				  backdrop-filter: blur(16px);
 				}
 				
-				#content
+				#PicWinContent
 				{
 					border-radius: 5px;
 					margin: auto;
-					max-width: 800px;
+
+					max-width: 900px;
+					max-height: 600px;
+
 					padding: 0.5%;
 					width: 100%;
 					height:100%;
@@ -792,38 +782,47 @@
 					color: white;
 				  	background-color: #c27301;
 				  	z-index: 3;
+					
+					box-shadow: 4px 4px 16px rgba(0,0,0,1);
 				}
 				#submitOvrlCancel 
 				{
 					display: block;
 					padding-top: 2%;
-				}
-				
+				}		
+				#WindowButtons
+				{
+					margin-top: 1%;
+				}		
 				@media screen and (max-width: 1050px)
 				{					
-					#content
+					#PicWinContent
 					{
 						padding: 1%;
 						height:95%;
+						
+						max-height: 500px;
 					}
 					#submitOvrlCancel 
 					{
 						display:block;
 						padding-top: 0%;
 					}
-					#overlay 
+					.proofOverlay
 					{
 						padding: 2.5%;
 					}
 				}
 				@media screen and (max-width: 600px)
 				{					
-					#content
+					#PicWinContent
 					{
 						padding: 1.5%;
 						height: 85%;
+						
+						max-height: 300px;
 					}
-					#overlay 
+					.proofOverlay
 					{
 						padding: 2%;
 					}
@@ -831,24 +830,139 @@
 			</style>
 			
 				<center>
-					<div id="overlay" onclick="off()">
-						<div id="content">
-							<iframe src="./submit.html" style="width:100%; height:100%; border:0px;"></iframe>
-							<p id="submitOvrlCancel">Cancel</p>
+					<!-- Image window  -->
+					<section id="Image window">
+						<div id="picWindow" class="proofOverlay">
+							<div id="PicWinContent">
+								<img id="scorePic" src="./img/loading.gif" style="object-fit: contain; width: 100%; height:100%; background-color: black;">
+							</div>
+							<div id="WindowButtons">
+								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HudePictureWindow()">
+									Close window
+								</button>							
+								<a id="ScorePicOriginalFile" href="#" target="_blank"> 
+									<button type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
+										Open in new tab
+									</button>
+								</a>
+							</div>
 						</div>
-					</div>
+					</section>
+					
+					<!-- video window -->
+					<section id="video window">
+						<div id="videoWindow" class="proofOverlay">
+							<div id="PicWinContent">
+								<video id="scoreVideo" width="100%" height="100%" controls  style="background-color: black;">
+									<source src="">
+									Your browser does not support the video tag.
+								</video>
+							</div>
+							<div id="WindowButtons">
+								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HudeVideoWindow()">
+									Close window
+								</button>							
+								<a id="ScoreVideoOriginalFile" href="#" target="_blank"> 
+									<button type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
+										Open in new tab
+									</button>
+								</a>
+							</div>
+						</div>
+					</section> 
+					
+					<!-- embed window -->
+					<section id="Embed window">
+						<div id="embedWindow" class="proofOverlay">
+							<div id="PicWinContent">
+								<iframe id="scoreEbed" src="" style="width: 100%; height: 100%; background-color: black;"></iframe>
+							</div>
+							<div id="WindowButtons">
+								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HudeEmedWindow()">
+									Close window
+								</button>							
+								<a id="ScoreEmbedOriginalFile" href="#" target="_blank"> 
+									<button type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
+										Open in new tab
+									</button>
+								</a>
+							</div>
+						</div>
+					</section> 
 				</center>
 
 			<script>
-				function on() 
+				// Picture box 
+				function ShowPictureWindow(picLink) 
 				{
-					document.getElementById("overlay").style.display = "block";
+					document.getElementById("picWindow").style.display = "block";
+
+					var imgLink = document.getElementById("scorePic");
+					var buttonLink = document.getElementById("ScorePicOriginalFile");
+
+					imgLink.src = picLink;
+					buttonLink.href = picLink ;
 			  	}				  
-			  	function off() 
+			  	function HudePictureWindow() 
 				{
-					document.getElementById("overlay").style.display = "none";
+					document.getElementById("picWindow").style.display = "none";
+					
+					var imgLink = document.getElementById("scorePic");
+					var buttonLink = document.getElementById("ScorePicOriginalFile");
+
+					imgLink.src = "./img/loading.gif";
+					buttonLink.href = "#";
+			  	}
+			</script>
+
+			<script>
+				// Video box 
+				function ShowVideoWindow(picLink) 
+				{
+					document.getElementById("videoWindow").style.display = "block";
+
+					var imgLink = document.getElementById("scoreVideo");
+					var buttonLink = document.getElementById("ScoreVideoOriginalFile");
+
+					imgLink.src = picLink;
+					buttonLink.href = picLink ;
+			  	}				  
+			  	function HudeVideoWindow() 
+				{
+					document.getElementById("videoWindow").style.display = "none";
+					
+					var imgLink    = document.getElementById("scoreVideo");
+					var buttonLink = document.getElementById("ScoreVideoOriginalFile");
+
+					imgLink.src = "";
+					buttonLink.href = "#";
+			  	}
+			</script>
+
+			<script>
+				// Embed box 
+				function ShowEmbedWindow(picLink) 
+				{
+					document.getElementById("embedWindow").style.display = "block";
+
+					var imgLink = document.getElementById("scoreEbed");
+					var buttonLink = document.getElementById("ScoreEmbedOriginalFile");
+
+					imgLink.src = picLink;
+					buttonLink.href = picLink ;
+			  	}				  
+			  	function HudeEmedWindow() 
+				{
+					document.getElementById("embedWindow").style.display = "none";
+					
+					var imgLink = document.getElementById("scoreEbed");
+					var buttonLink = document.getElementById("ScoreEmbedOriginalFile");
+
+					imgLink.src = "";
+					buttonLink.href = "#";
 			  	}
 			 </script>
-		</section>
+		</section> <!-- scoreProofWindooOverlay -->
+
 	</body>
 </html>
