@@ -76,6 +76,9 @@
 				margin-top: 40px; 
 				margin-bottom: 25px; 
 				padding-top:25px;
+									
+				box-shadow: 0px 0px 16px rgba(0,0,0,0.75);
+
 			}
 			
 			#tableToggleButton
@@ -247,6 +250,7 @@
 					</table>
 				</section> <!-- Header buttons horizontal -->
 
+				<!-- change what set of buttons is used when screen is veritcal or horizontal -->
 				<script>
 					var titl = document.getElementById("title");
 				
@@ -280,8 +284,9 @@
 				</script>	
 				<hr/>
 				
-				<section class="scoreTable" id="Nordfels score lb">  <!-- Nordfels score lb -->
-					<h3><strong>Nordfels high-scores (10k+)</strong></h3>
+				<!-- Nordfels score lb -->
+				<section class="scoreTable" id="Nordfels score lb">  
+					<h3><strong>Nordfels high-scores</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
 						<table id="Nordfels scores" class="table table-striped">
@@ -343,10 +348,10 @@
 								<td>---</td>
 								</tr>
 								<tr>
-								<td style="text-align: center;"><strong>6<br /></strong></td>
+								<td style="text-align: center;"><strong>6</strong></td>
 								<td>esteban8nn</td>
 								<td>13 152</td>
-								<td>27/6/2023</td>
+								<td>27/06/2023</td>
 								<td>
 									<a class="ScoreProffLink" title="Picture of the highscore" 
 										onclick="ShowPictureWindow('http:/\/\cdn.discordapp.com/attachments/1117853463045476382/1121874081948651691/13k_pointss.PNG')"> 
@@ -409,8 +414,9 @@
 					<hr id="under table line"/>
 				</section> <!-- Nordfels score lb -->
 				
-				<section class="scoreTable" id="Neuland score lb">	<!-- Neuland score lb -->
-					<h3><strong>Neuland high-scores (5k+)</strong></h3>
+				<!-- Neuland score lb -->
+				<section class="scoreTable" id="Neuland score lb">	
+					<h3><strong>Neuland high-scores</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
 						<table id="Neuland scores" class="table table-striped">
@@ -471,13 +477,30 @@
 									<td>---</td>
 									<td>---</td>
 								</tr>
+								<tr>
+									<td style="text-align: center;"><strong>6</strong></td>
+									<td>GhostMiner_</td>
+									<td>4 872</td>
+									<td>30/06/2023</td>
+									<td>
+										<a class="ScoreProffLink" title="Picture of the highscore" 
+											onclick="ShowPictureWindow('https:/\/cdn.discordapp.com/attachments/697094989716521021/1124358589440598086/2420130_20230630170800_1.png')"> 
+												Screenshot
+										</a>
+										|
+										<a class="ScoreProffLink" title="Picture of the highscore" 
+											onclick="ShowEmbedWindow('https:/\/youtube.com/embed/cUSS-lajX0U')"> 
+												Video
+										</a>
+								</td>
 							</tbody>
 						</table>
 					</div>
 					<hr id="under table line"/>
 				</section> <!-- Neuland score lb -->
 				
-				<section class="scoreTable" id="Nordfels gold lb"> <!-- Nordfels score lb -->
+				<!-- Nordfels score lb -->
+				<section class="scoreTable" id="Nordfels gold lb"> 
 					<h3><strong>Nordfels most coins</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
@@ -599,7 +622,8 @@
 					<hr id="under table line"/>
 				</section> <!-- Nordfels coins lb -->
 				
-				<section class="scoreTable" id="Neuland gold lb"> <!-- Neuland score lb -->
+				<!-- Neuland score lb -->
+				<section class="scoreTable" id="Neuland gold lb"> 
 					<h3><strong>Neuland most coins</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
@@ -740,9 +764,14 @@
 					<div id="submitBakcground">
 						<div id="SubmitWinContent">
 							<iframe src="./submit.html" style="width:100%; height:100%; border:0px; background-color: #fff;"></iframe>
-							<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
+							<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
 								Cancel
 							</button>
+							<a id="submitScoreFullscreen" href="./submit.html" target="_blank"> 
+									<button type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
+										Open in new tab
+									</button>
+								</a>
 						</div>
 					</div>
 				</center>
@@ -887,7 +916,7 @@
 					<section id="Embed window">
 						<div id="embedWindow" class="proofOverlay">
 							<div id="PicWinContent">
-								<iframe id="scoreEbed" src="" style="width: 100%; height: 100%; background-color: black;"></iframe>
+								<iframe id="scoreEbed" src="" style="width: 100%; height: 100%; background-color: black; border:0px"></iframe>
 							</div>
 							<div id="WindowButtons">
 								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HudeEmedWindow()">
