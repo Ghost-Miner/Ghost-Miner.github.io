@@ -99,6 +99,15 @@
 			{
 				box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 			}
+			#HeaderButtonsVertical
+			{
+				display: none;
+			}
+			#HeaderButtonsHorizontal
+			{
+				display: block;
+			}
+
 			/*.ButtonText
 			{
 				font-family: Ubuntu, Sans-serif, Arial;
@@ -117,9 +126,17 @@
 					font-family: 'Times New Roman', Times, serif;
 				}
 			}
-			/*@media screen and (max-width: 600px)
-			{
-				#TableToggleButtons
+			@media screen and (max-width: 750px)
+			{				
+				#HeaderButtonsVertical
+				{
+					display: block;
+				}
+				#HeaderButtonsHorizontal
+				{
+					display: none;
+				}
+				/*#TableToggleButtons
 				{
 					display: none;
 				}	
@@ -136,8 +153,8 @@
 				#HeaderButtonsCell
 				{
 					width: 0%;
-				}	
-			}*/
+				}*/	
+			}
 		</style>
 		<script>
 			var w = window.innerWidth;
@@ -158,10 +175,6 @@
 				NLcoinsTable.style.display = "none";
 				
 				showTable.style.display = "block";
-			}
-			function test ()
-			{
-			alert("size");
 			}
  		</script>
 		
@@ -216,13 +229,18 @@
 								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland gold lb')">
 									<b>Neuland gold</b>
 								</button>
+								
+								<section id="Submit score" style="margin-top: 2%;">
+									<!-- Submit score overlay button  -->
+									<button type="button" class="btn btn-warning" id="submitScoreOverlay" onclick="ShowFormWindow()"><strong>SUBMIT SCORE</strong></button>
+								</section> <!-- Submit score -->
 							</font>
 						</section> <!-- toggle buttons -->	
 					</center>
 				</section> <!-- HeaderButtonsVertical -->
 
 				<!-- Header buttons horizontal -->
-				<section id="Header buttons horizontal">
+				<section id="HeaderButtonsHorizontal">
 					<table id="HeaerButtonContainer" style="width: 100%;">
 						<tr>
 							<td style="width: 75%; padding: 5px;" id="HeaderButtonsCell">
@@ -264,7 +282,7 @@
 					var submitScoreButton 	= document.getElementById("SubmitButtonCell");
 					var headerBtnsCell 		= document.getElementById("HeaderButtonsCell");
 
-					if (h > w)  // If window is portait
+					/*if (h > w)  // If window is portait
 					{
 						//alert("This page is not yet optimized for small/vertical screens. Zoom out if page content doesn't fit on the screen");
 
@@ -285,7 +303,7 @@
 						submitScoreButton.style.textAlign = "right";
 						submitScoreButton.style.width = "25%";
 						headerBtnsCell.style.width = "75%";
-					}
+					}*/
 
 					document.getElementById("submitFormFrame").src = "./submit.html";
 				</script>	
