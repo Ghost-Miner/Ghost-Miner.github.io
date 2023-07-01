@@ -37,10 +37,10 @@
 	<body>
 		<style>
 			:root 
-			{
-				--backgroundColour: rgba(255, 255, 255, 0.95);
+			{ 
+				--backgroundColour: rgba(255, 255, 255, 0.95); 
 				--backgroundColour2: rgba(255, 255, 255, 0.9);
-				--foregroundColour: rgba(0, 255, 0, 0.5);
+				--outlineColour: rgba(0, 255, 0, 0.75);
 			}
 			a:link 
 			{
@@ -69,16 +69,21 @@
 			}
 			.BgrBox 
 			{
-				border-radius: 5px 5px;
-				padding: 15px;
+				border-radius: 5px;
+				padding: 10px;
 				background-color: var(--backgroundColour);
 				
 				margin-top: 40px; 
 				margin-bottom: 25px; 
-				padding-top:25px;
 									
 				box-shadow: 0px 0px 16px rgba(0,0,0,0.75);
-
+				/*outline: 5px solid var(--outlineColour); */
+			}			
+			.FrgBox {
+				padding: 10px;
+				background-color: var(--backgroundColour);
+				border-radius: 5px;
+				padding-top:20px;
 			}
 			
 			#tableToggleButton
@@ -661,16 +666,15 @@
 				
 				<section id="Footer"> <!-- Footer -->
 					<center>
-						<h5>
-							<i><font style="color:black;">Leaderbaord page made by GhostMiner. Ver. 1.4 <b>|</b> </i>
+						<h6>
+							<i><font style="color:black;">Leaderbaord page made by GhostMiner. v.1.4 <b>|</b> </i>
 							<a href="https://ghost-miner.github.io/">Website</a>, 
 							<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 							<a href="https://discord.gg/DjUBY9h">Discord</a>
 							</font>
-						</h5>
+						</h6>
 					</center>
 				</section> <!-- Footer -->
-				
 			</div>
 		</div>
 		<!-- Optional JavaScript -->
