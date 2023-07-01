@@ -38,7 +38,7 @@
         <style>            
 			:root 
 			{ 
-				--backgroundColour: #f8e8b1; 
+				--backgroundColour: #ffffff; 
 				--foregroundColour: #f1f1f1;
 			}
 			a:link 
@@ -62,12 +62,14 @@
 			}
 			.masterPageContainer 
 			{
-				max-width: 1000px;
+				max-width: 800px;
 				min-width: 300px;
                 max-height: 400px;
 
 				margin: 0 auto; 
 				font-family: 'Times New Roman', Times, serif;
+                
+                transform: translate(0%, 50%);
 			}
 			.BgrBox 
 			{
@@ -75,14 +77,15 @@
 				border-radius: 5px;
 				background-color: var(--foregroundColour);
 				
-				padding: 12.5%;
-                padding-top: 10%;
-                padding-bottom: 10%;
+				padding: 5%;
+                padding-top: 7.5%;
+                padding-bottom: 7.5%;
 
 				margin-top: 40px; 
-				margin-bottom: 25px; 
-									
-				box-shadow: 0px 0px 4px rgba(0,0,0,0.75);
+				margin-bottom: 25px; 									
+
+
+				box-shadow: 0px 0px 8px rgba(0,0,0,0.75);
 				/*outline: 5px solid var(--outlineColour); */
 			}
 			.btn
@@ -104,6 +107,11 @@
                 font-size:22.5px;
             }
 
+			#tableToggleButton
+			{
+				margin-top: 1%;
+                max-width: 64%;
+			}
 			@media screen and (max-width: 1050px)
 			{
 				.BgrBox 
@@ -139,36 +147,154 @@
                     font-weight:normal;
                     font-size:medium;
                 }
-			}
+                
+                #tableToggleButton
+                {
+                    font-weight: bold;
+                    margin-top: 0px;
+                }
+            }
+
+            
+			@media screen and (max-width: 1050px)
+			{
+                #tableToggleButton
+                {
+                    font-weight: bold;
+                    max-width: 100%;
+                    margin-top: 5%;
+                }
+                
+            }
         </style>
 
-        <div class="masterPageContainer" id="masterPageContainer">
-			<div class="BgrBox">
+		<iframe src="./index.html" style="border:0px; background-color: white; width: 100%; height: 100vh;" scrolling="no"></iframe>
+
+        <!-- Submit score overlay -->
+		<section class="overlays" id="SubmitScoreOverlay">
+			<style>
+				#submitBakcground 
+				{
+				  position: fixed;
+				  display: none;
+				  width: 100%;
+				  height: 100%;
+				  margin: 0 auto;
+				  padding: 5%;
+				  padding-top: 2.5%;
+				  top: 0;
+				  left: 0;
+				  right: 0;
+				  bottom: 0;
+				  background-color: rgba(0,0,0,0.5);
+				  z-index: 2;
+				  cursor: default;
+				  backdrop-filter: blur(32px);
+				}
+				
+				#SubmitWinContent
+				{
+					border-radius: 5px;
+					margin: auto;
+					max-width: 800px;
+					max-height: 800px;
+					padding: 0.5%;
+					width: 100%;
+					height:100%;
+					font-size: 30px;
+					color: white;
+				  	background-color: #c27301;
+				  	z-index: 3;
+
+					
+					box-shadow: 4px 4px 16px rgba(0,0,0,0.75);
+				}
+				#submitOvrlCancel 
+				{
+					display: block;
+					padding-top: 2%;
+				}
+				
+				@media screen and (max-width: 1050px)
+				{					
+					#SubmitWinContent
+					{
+						padding: 1%;
+						height:95%;
+					}
+					#submitOvrlCancel 
+					{
+						display:block;
+						padding-top: 0%;
+					}
+					#submitBakcground 
+					{
+						padding: 2.5%;
+					}
+				}
+				@media screen and (max-width: 600px)
+				{					
+					#SubmitWinContent
+					{
+						padding: 1.5%;
+						height: 85%;
+					}
+					#submitBakcground 
+					{
+						padding: 2%;
+					}
+				}
+			</style>
 			
-                <section id="SubmitMessageBoxHorizontal">
-					<table border="0px" style="text-align: center;">
-						<tr>
-							<td style="width: 15%" id="submittedImg">
-								<img src="./img/checkmark.png" style="max-width: 80px; max-height: 80px;"/>
-							</td>
-							<td style="width: 75%" id="submittedTitle">
-								<h2><strong>Your submission has been recieved and is now pending a review.</strong></h2>
-							</td>
-						</tr>
-					</table>
-				</section>
-				<section id="SubmitMessageBoxVeritcal">
-					<center>
-						<img src="./img/checkmark.png" style="max-width: 80px; max-height: 80px; margin-bottom: 2%"/>
-						<h2><strong>Your submission has been recieved and is now pending a review.</strong></h2>
-					</center>
-				</section>
+				<center>
+                    <section id="submitBakcground">
+                        <div class="masterPageContainer" id="masterPageContainer">
+                            <div class="BgrBox">
+                            
+                                <section id="SubmitMessageBoxHorizontal">
+                                    <table border="0px" style="text-align: center;">
+                                        <tr>
+                                            <td style="width: 15%" id="submittedImg">
+                                                <img src="./img/checkmark.png" style="max-width: 80px; max-height: 80px;"/>
+                                            </td>
+                                            <td style="width: 75%" id="submittedTitle">
+                                                <h2><strong>Your submission has been recieved and is now pending a review.</strong></h2>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </section>
+                                
+                                <section id="SubmitMessageBoxVeritcal">
+                                    <center>
+                                        <img src="./img/checkmark.png" style="max-width: 80px; max-height: 80px; margin-bottom: 2%"/>
+                                        <h4><strong>Your submission has been recieved and is now pending a review.</strong></h4>
+                                    </center>
+                                </section>
+                
+                                <center>
+                                    <a href="./index.html">
+                                        <button type="button" class="btn btn-warning btn-block" id="tableToggleButton">
+                                            Return to homepage
+                                        </button>
+                                    </a>
+                                </center>
+                            </div>
+                        </div>
+                    </section>
+				</center>
 
-                <center>
-                    <p  id="BottmTitle" style="margin-top: 5%;"> You can <a href="./submit.html">submit another</a> one or close this page.</p>
-                </center>
-            </div>
-        </div>
+			<script>
+				function ShowFormWindow() 
+				{
+					document.getElementById("submitBakcground").style.display = "block";
+			  	}				  
+			  	function HideFormWindow() 
+				{
+					document.getElementById("submitBakcground").style.display = "none";
+			  	}
 
+                  ShowFormWindow();
+			 </script>
+		</section>
     </body>
 </html>
