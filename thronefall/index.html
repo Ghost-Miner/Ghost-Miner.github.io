@@ -306,8 +306,6 @@
 						submitScoreButton.style.width = "25%";
 						headerBtnsCell.style.width = "75%";
 					}*/
-
-					document.getElementById("submitFormFrame").src = "./submit.html";
 				</script>	
 				<hr>
 				
@@ -629,7 +627,7 @@
 					<h3><strong>Nordfels most coins</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
-						<table id="Nordfels coins" class="table table-striped">
+						<table id="Nordfels_coins" class="table table-striped">
 							<!-- Table header. Do not change or the styling might break! -->
 							<thead class="thead-dark">
 								<tr>
@@ -781,8 +779,7 @@
 									<td id="score">---</td>
 									<td>---</td>
 									<td>---</td>
-								</tr>
-								
+								</tr>								
 							</tbody>
 						</table>
 					</div>
@@ -792,11 +789,13 @@
 				<section id="Footer"> <!-- Footer -->
 					<center>
 						<h6>
-							<i><font style="color:black;">Leaderbaord page made by GhostMiner. v.1.4.2 <b>|</b> </i>
-							<a href="https://ghost-miner.github.io/">Website</a>, 
-							<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
-							<a href="https://discord.gg/DjUBY9h">Discord</a>
-							</font>
+							<i>
+								<font style="color:black;">Leaderbaord page made by GhostMiner. v.1.4.2 <b>|</b> </i>
+									<a href="https://ghost-miner.github.io/">Website</a>, 
+									<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
+									<a href="https://discord.gg/DjUBY9h">Discord</a>
+								</font>
+							</i>							
 						</h6>
 					</center>
 				</section> <!-- Footer -->
@@ -807,7 +806,9 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script>ChangeShownTable("Nordfels_score_lb");</script>
+		<script>ChangeShownTable("Nordfels_score_lb");
+			document.getElementById("submitFormFrame").src = "./submit.html";
+		</script>
 		
 		
 		
