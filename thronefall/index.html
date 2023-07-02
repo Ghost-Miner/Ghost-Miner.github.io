@@ -26,13 +26,14 @@
 <html lang="en">
 	<head>
 		<title>Thronefall leaderbaord</title>
-		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
-		 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
 	</head>
 	<body>
 		<style>
@@ -183,21 +184,21 @@
 			<div class="BgrBox">
 
 				<!-- Page head stuff -->
-				<section id ="Page header"> 
+				<section id ="Page_header"> 
 					<center>
 						<section id="Title">
-							<img src="./img/crown.png" alt="Crown icon" id="crown Icon">
+							<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
 							<h1><strong><em>Thronefall leaderboard</em></strong></h1>
 						</section>
-						<hr/>
-						<section id="Game links">
+						<hr>
+						<section id="Game_links">
 							<font class="ButtonText">
-								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam page" target="_blank">
+								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
 									<button type="button" class="btn btn-warning" id="gameLinksBtn;"  style="background-color: var(--backgroundColour); padding:15px; padding-top:10px;  padding-bottom:10px;">
 										<b>Get the game</b>
 									</button>
 								</a>
-								<a href="https://discord.gg/gVYctptyg8" id="discord Link" target="_blank">
+								<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
 									<button type="button" class="btn btn-warning" id="gameLinksBtn" style="background-color: var(--backgroundColour); padding: 15px; padding-top:10px;  padding-bottom:10px;">
 										<b>Discord server</b>
 									</button>
@@ -205,12 +206,12 @@
 							</font>
 						</section>
 						<noscript>
-							<h3><strong><em>This website requires JavaScript to function correctly.<h3></strong></em>
+							<h3><strong><em>This website requires JavaScript to function correctly.</em></strong></h3>
 						</noscript>
 					</center>
 
 				</section> <!-- Page head stuff -->
-				<hr/>
+				<hr>
 				
 				 <!-- HeaderButtonsVertical -->
 				<section id="HeaderButtonsVertical">
@@ -308,7 +309,7 @@
 
 					document.getElementById("submitFormFrame").src = "./submit.html";
 				</script>	
-				<hr/>
+				<hr>
 				
 				<!-- Nordfels score lb -->
 				<section class="scoreTable" id="Nordfels score lb">  
@@ -1006,7 +1007,7 @@
 								<img id="scorePic" src="./img/loading.gif" style="object-fit: contain; width: 100%; height:100%; background-color: black;">
 							</div>
 							<div id="WindowButtons">
-								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HudePictureWindow()">
+								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HidePictureWindow()">
 									Close window
 								</button>							
 								<a id="ScorePicOriginalFile" href="#" target="_blank"> 
@@ -1028,7 +1029,7 @@
 								</video>
 							</div>
 							<div id="WindowButtons">
-								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HudeVideoWindow()">
+								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideVideoWindow()">
 									Close window
 								</button>							
 								<a id="ScoreVideoOriginalFile" href="#" target="_blank"> 
@@ -1047,7 +1048,7 @@
 								<iframe id="scoreEbed" src="" style="width: 100%; height: 100%; background-color: black; border:0px"></iframe>
 							</div>
 							<div id="WindowButtons">
-								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HudeEmedWindow()">
+								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideEmedWindow()">
 									Close window
 								</button>							
 								<a id="ScoreEmbedOriginalFile" href="#" target="_blank"> 
@@ -1072,7 +1073,7 @@
 					imgLink.src = picLink;
 					buttonLink.href = picLink ;
 			  	}				  
-			  	function HudePictureWindow() 
+			  	function HidePictureWindow() 
 				{
 					document.getElementById("picWindow").style.display = "none";
 					
@@ -1096,7 +1097,7 @@
 					imgLink.src = picLink;
 					buttonLink.href = picLink ;
 			  	}				  
-			  	function HudeVideoWindow() 
+			  	function HideVideoWindow() 
 				{
 					document.getElementById("videoWindow").style.display = "none";
 					
@@ -1120,7 +1121,7 @@
 					imgLink.src = picLink;
 					buttonLink.href = picLink ;
 			  	}				  
-			  	function HudeEmedWindow() 
+			  	function HideEmedWindow() 
 				{
 					document.getElementById("embedWindow").style.display = "none";
 					
