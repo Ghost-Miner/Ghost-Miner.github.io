@@ -164,10 +164,10 @@
 			
 			function ChangeShownTable (tableToShow)
 			{ 
-				var NFscoreTable = document.getElementById("Nordfels score lb");
-				var NLscoreTable = document.getElementById("Neuland score lb");
-				var NFcoinsTable = document.getElementById("Nordfels gold lb");
-				var NLcoinsTable = document.getElementById("Neuland gold lb");
+				var NFscoreTable = document.getElementById("Nordfels_score_lb");
+				var NLscoreTable = document.getElementById("Neuland_score_lb");
+				var NFcoinsTable = document.getElementById("Nordfels_gold_lb");
+				var NLcoinsTable = document.getElementById("Neuland_gold_lb");
 				
 				var showTable = document.getElementById(tableToShow);
 				
@@ -217,25 +217,25 @@
 				<section id="HeaderButtonsVertical">
 					<center>
 						<!-- TableToggleButtons -->
-						<section id="TableToggleButtons vert">
+						<section id="TableToggleButtons_vert">
 							<font class="ButtonText">
-								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels score lb')">
-									<b>Nordfels scores</b>
+								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
+									<b>Nordfels_scores</b>
 								</button>
-								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland score lb')">
-									<b>Neuland scores</b>
+								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
+									<b>Neuland_scores</b>
 								</button>
-								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels gold lb')">
+								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
 									<b>Nordfels gold</b>
 								</button>
-								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland gold lb')">
+								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
 									<b>Neuland gold</b>
 								</button>
 								
-								<section id="Submit score" style="margin-top: 2%;">
-									<!-- Submit score overlay button  -->
-									<button type="button" class="btn btn-warning" id="submitScoreOverlay" onclick="ShowFormWindow()"><strong>SUBMIT SCORE</strong></button>
-								</section> <!-- Submit score -->
+								<section id="Submit_score" style="margin-top: 2%;">
+									<!-- Submit_score overlay button  -->
+									<button type="button" class="btn btn-warning" id="submitScoreOverlay" onclick="ShowFormWindow()"><strong>Submit_score</strong></button>
+								</section> <!-- Submit_score -->
 							</font>
 						</section> <!-- toggle buttons -->	
 					</center>
@@ -249,27 +249,27 @@
 								<!-- TableToggleButtons -->
 								<section id="TableToggleButtons">
 									<font class="ButtonText">
-										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels score lb')">
-											<b>Nordfels scores</b>
+										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
+											<b>Nordfels_scores</b>
 										</button>
-										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland score lb')">
-											<b>Neuland scores</b>
+										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
+											<b>Neuland_scores</b>
 										</button>
-										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels gold lb')">
+										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
 											<b>Nordfels gold</b>
 										</button>
-										<button disabled type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland gold lb')">
+										<button disabled type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
 											<b>Neuland gold</b>
 										</button>
 									</font>
 								</section> <!-- toggle buttons -->
 							</td>
 							<td style="width: 25%; text-align: right;" id="SubmitButtonCell">
-								<!-- Submit score button -->
-								<section id="Submit score">
-									<!-- Submit score overlay button  -->
-									<button type="button" class="btn btn-warning" id="submitScoreOverlay" onclick="ShowFormWindow()"><strong>SUBMIT SCORE</strong></button>
-								</section> <!-- Submit score -->
+								<!-- Submit_score button -->
+								<section id="Submit_score">
+									<!-- Submit_score overlay button  -->
+									<button type="button" class="btn btn-warning" id="submitScoreOverlay" onclick="ShowFormWindow()"><strong>Submit_score</strong></button>
+								</section> <!-- Submit_score -->
 							</td>
 						</tr>
 					</table>
@@ -311,12 +311,12 @@
 				</script>	
 				<hr>
 				
-				<!-- Nordfels score lb -->
-				<section class="scoreTable" id="Nordfels score lb">  
+				<!-- Nordfels_score_lb -->
+				<section class="scoreTable" id="Nordfels_score_lb">  
 					<h3><strong>Nordfels high-scores</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
-						<table id="Nordfels scores" class="table table-striped">
+						<table id="Nordfels_scores" class="table table-striped">
 							<!-- Table header. Do not change or the styling might break! -->
 							<thead class="thead-dark">
 								<tr>
@@ -344,7 +344,7 @@
 							<tbody>
 								<tr>
 								<td style="text-align: center;"><strong>1</strong></td>
-								<td id="player name">mrllama_</td>
+								<td id="player_name">mrllama_</td>
 								<td id="score">14 792</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -352,7 +352,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>2</strong></td>
-								<td id="player name">deltatee</td>
+								<td id="player_name">deltatee</td>
 								<td id="score">14 546</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -360,7 +360,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>3</strong></td>
-								<td id="player name">FRAZZ/Kenobi</td>
+								<td id="player_name">FRAZZ/Kenobi</td>
 								<td id="score">14 457</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -368,7 +368,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>4</strong></td>
-								<td id="player name">777aker</td>
+								<td id="player_name">777aker</td>
 								<td id="score">14 526</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -376,7 +376,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>5</strong></td>
-								<td id="player name">quazar2.1017wbns</td>
+								<td id="player_name">quazar2.1017wbns</td>
 								<td id="score">13 992</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -384,7 +384,7 @@
 								</tr>
 								<tr>
 								<td style="text-align: center;"><strong>6</strong></td>
-								<td id="player name">esteban8nn</td>
+								<td id="player_name">esteban8nn</td>
 								<td id="score">13 152</td>
 								<td id="coins">259</td>
 								<td id="date">27/06/2023</td>
@@ -397,7 +397,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>7</strong></td>
-								<td id="player name">bluesaphirxiv</td>
+								<td id="player_name">bluesaphirxiv</td>
 								<td id="score">13 097</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -405,7 +405,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>8</strong></td>
-								<td id="player name">babykrokodile</td>
+								<td id="player_name">babykrokodile</td>
 								<td id="score">13 048</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -413,7 +413,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>9</strong></td>
-								<td id="player name">neonitedragon</td>
+								<td id="player_name">neonitedragon</td>
 								<td id="score">12 716</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -421,7 +421,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>10</strong></td>
-								<td id="player name">giraffasaur</td>
+								<td id="player_name">giraffasaur</td>
 								<td id="score">12 539</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -429,7 +429,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>11</strong></td>
-								<td id="player name">zsalab_</td>
+								<td id="player_name">zsalab_</td>
 								<td id="score">12 503</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -449,7 +449,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>13</strong></td>
-								<td id="player name">domedin#0478</td>
+								<td id="player_name">domedin#0478</td>
 								<td id="score">11 486</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -457,7 +457,7 @@
 								</tr>
 								<tr >
 								<td style="text-align: center;"><strong>14</strong></td>
-								<td id="player name">barigamb</td>
+								<td id="player_name">barigamb</td>
 								<td id="score">11 326</td>
 								<td id="coins">---</td>
 								<td id="date">---</td>
@@ -466,15 +466,15 @@
 							</tbody>
 						</table>
 					</div>
-					<hr id="under table line"/>
-				</section> <!-- Nordfels score lb -->
+					<hr id="under_table_line">
+				</section> <!-- Nordfels_score_lb -->
 				
-				<!-- Neuland score lb -->
-				<section class="scoreTable" id="Neuland score lb">	
+				<!-- Neuland_score_lb -->
+				<section class="scoreTable" id="Neuland_score_lb">	
 					<h3><strong>Neuland high-scores</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
-						<table id="Neuland scores" class="table table-striped">
+						<table id="Neuland_scores" class="table table-striped">
 							<!-- Table header. Do not change or the styling might break! -->
 							<thead class="thead-dark">
 								<tr>
@@ -502,7 +502,7 @@
 							<tbody>
 								<tr >
 									<td style="text-align: center;"><strong>1</strong></td>
-									<td id="player name">quazar2.1017wbns</td>
+									<td id="player_name">quazar2.1017wbns</td>
 									<td id="score">5 292</td>
 									<td id="coins">71</td>
 									<td id="date">18/06/2023</td>
@@ -515,7 +515,7 @@
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>2</strong></td>
-									<td id="player name"> giraffasaur </td>
+									<td id="player_name"> giraffasaur </td>
 									<td id="score">5 214</td>
 									<td id="coins">65</td>
 									<td id="date">16/06/2023</td>
@@ -528,7 +528,7 @@
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>3</strong></td>
-									<td id="player name"> arkqa </td>
+									<td id="player_name"> arkqa </td>
 									<td id="score">5 201</td>
 									<td id="coins">61</td>
 									<td id="date">02/07/2023</td>
@@ -541,7 +541,7 @@
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>4</strong></td>
-									<td id="player name">babykrokodile</td>
+									<td id="player_name">babykrokodile</td>
 									<td id="score">5 173</td>
 									<td id="coins">65</td>
 									<td id="date">16/06/2023</td>
@@ -554,7 +554,7 @@
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>5</strong></td>
-									<td id="player name">ToGreedy</td>
+									<td id="player_name">ToGreedy</td>
 									<td id="score">5 178</td>
 									<td id="coins">61*</td>
 									<td id="date">02/07/2023</td>
@@ -567,7 +567,7 @@
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>6</strong></td>
-									<td id="player name">mrllama_</td>
+									<td id="player_name">mrllama_</td>
 									<td id="score">5 150</td>
 									<td id="coins">59</td>
 									<td id="date">18/06/2023</td>
@@ -580,7 +580,7 @@
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>7</strong></td>
-									<td id="player name">bluesaphirxiv</td>
+									<td id="player_name">bluesaphirxiv</td>
 									<td id="score">5 117</td>
 									<td id="coins">62</td>
 									<td id="date">16/06/2023</td>
@@ -593,7 +593,7 @@
 								</tr>
 								<tr>
 									<td style="text-align: center;"><strong>8</strong></td>
-									<td id="player name">neoarandil</td>
+									<td id="player_name">neoarandil</td>
 									<td id="score">5 002</td>
 									<td id="coins">70</td>
 									<td id="date">30/06/2023</td>
@@ -605,7 +605,7 @@
 								</td>
 								<tr>
 									<td style="text-align: center;"><strong>9</strong></td>
-									<td id="player name">GhostMiner_</td>
+									<td id="player_name">GhostMiner_</td>
 									<td id="score">4 958</td>
 									<td id="coins">50</td>
 									<td id="date">30/06/2023</td>
@@ -621,11 +621,11 @@
 						<em>* Lacks evidence.</em>
 						</font>
 					</div>
-					<hr id="under table line"/>
-				</section> <!-- Neuland score lb -->
+					<hr id="under_table_line">
+				</section> <!-- Neuland_score_lb -->
 				
-				<!-- Nordfels score lb -->
-				<section class="scoreTable" id="Nordfels gold lb"> 
+				<!-- Nordfels_score_lb -->
+				<section class="scoreTable" id="Nordfels_gold_lb"> 
 					<h3><strong>Nordfels most coins</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
@@ -654,42 +654,42 @@
 							<!-- You can only change content in "tbody" -->
 								<tr>
 									<td style="text-align: center;"><strong>1</strong></td>
-									<td id="player name">babykrokodile</td>
+									<td id="player_name">babykrokodile</td>
 									<td id="score">472</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>2</strong></td>
-									<td id="player name">777aker</td>
+									<td id="player_name">777aker</td>
 									<td id="score">436</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>3</strong></td>
-									<td id="player name">quazar2.1017wbns</td>
+									<td id="player_name">quazar2.1017wbns</td>
 									<td id="score">404</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>4</strong></td>
-									<td id="player name">giraffasaur</td>
+									<td id="player_name">giraffasaur</td>
 									<td id="score">398</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>5</strong></td>
-									<td id="player name">mrllama_</td>
+									<td id="player_name">mrllama_</td>
 									<td id="score">361</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>6</strong></td>
-									<td id="player name">esteban8nn</td>
+									<td id="player_name">esteban8nn</td>
 									<td id="score">259</td>
 									<td>27/6/2023</td>
 									<td>
@@ -701,42 +701,42 @@
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>7</strong></td>
-									<td id="player name">bluesaphirxiv</td>
+									<td id="player_name">bluesaphirxiv</td>
 									<td id="score">245</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>8</strong></td>
-									<td id="player name">bluesaphirxiv</td>
+									<td id="player_name">bluesaphirxiv</td>
 									<td id="score">227</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>9</strong></td>
-									<td id="player name">zsalab_</td>
+									<td id="player_name">zsalab_</td>
 									<td id="score">214</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>10</strong></td>
-									<td id="player name">GhostMiner</td>
+									<td id="player_name">GhostMiner</td>
 									<td id="score">209</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>11</strong></td>
-									<td id="player name">neonitedragon</td>
+									<td id="player_name">neonitedragon</td>
 									<td id="score">206</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
 									<td style="text-align: center;"><strong>12</strong></td>
-									<td id="player name">neonitedragon</td>
+									<td id="player_name">neonitedragon</td>
 									<td id="score">142</td>
 									<td>---</td>
 									<td>---</td>
@@ -744,15 +744,15 @@
 							</tbody>
 						</table>
 					</div>
-					<hr id="under table line"/>
+					<hr id="under_table_line">
 				</section> <!-- Nordfels coins lb -->
 				
-				<!-- Neuland score lb -->
-				<section class="scoreTable" id="Neuland gold lb"> 
+				<!-- Neuland_score_lb -->
+				<section class="scoreTable" id="Neuland_gold_lb"> 
 					<h3><strong>Neuland most coins</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
-						<table id="Neuland coins" class="table table-striped">
+						<table id="Neuland_coins" class="table table-striped">
 							<!-- Table header. Do not change or the styling might break! -->
 							<thead class="thead-dark">
 								<tr>
@@ -777,7 +777,7 @@
 							<!-- You can only change content in "tbody" -->
 								<tr>
 									<td style="text-align: center;"><strong>0</strong></td>
-									<td id="player name"><i>No entries</i></td>
+									<td id="player_name"><i>No entries</i></td>
 									<td id="score">---</td>
 									<td>---</td>
 									<td>---</td>
@@ -786,7 +786,7 @@
 							</tbody>
 						</table>
 					</div>
-					<hr id="under table line"/>
+					<hr id="under_table_line">
 				</section> <!-- Neulands coins lb -->
 				
 				<section id="Footer"> <!-- Footer -->
@@ -807,13 +807,13 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script>ChangeShownTable("Nordfels score lb");</script>
+		<script>ChangeShownTable("Nordfels_score_lb");</script>
 		
 		
 		
 		
 		
-		<!-- Submit score overlay -->
+		<!-- Submit_score overlay -->
 		<section class="overlays" id="SubmitScoreOverlay">
 			<style>
 				#submitBakcground 
@@ -1000,8 +1000,8 @@
 			</style>
 			
 				<center>
-					<!-- Image window  -->
-					<section id="Image window">
+					<!-- Image_window  -->
+					<section id="Image_window">
 						<div id="picWindow" class="proofOverlay">
 							<div id="PicWinContent">
 								<img id="scorePic" src="./img/loading.gif" style="object-fit: contain; width: 100%; height:100%; background-color: black;">
@@ -1019,8 +1019,8 @@
 						</div>
 					</section>
 					
-					<!-- video window -->
-					<section id="video window">
+					<!-- video_window -->
+					<section id="video_window">
 						<div id="videoWindow" class="proofOverlay">
 							<div id="PicWinContent">
 								<video id="scoreVideo" width="100%" height="100%" controls  style="background-color: black;">
@@ -1041,8 +1041,8 @@
 						</div>
 					</section> 
 					
-					<!-- embed window -->
-					<section id="Embed window">
+					<!-- Embed_window -->
+					<section id="Embed_window">
 						<div id="embedWindow" class="proofOverlay">
 							<div id="PicWinContent">
 								<iframe id="scoreEbed" src="" style="width: 100%; height: 100%; background-color: black; border:0px"></iframe>
