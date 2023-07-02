@@ -220,15 +220,15 @@
 						<section id="TableToggleButtons_vert">
 							<font class="ButtonText">
 								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
-									<b>Nordfels_scores</b>
+									<b>Nordfels scores</b>
 								</button>
 								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
-									<b>Neuland_scores</b>
+									<b>Neuland scores</b>
 								</button>
 								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
 									<b>Nordfels gold</b>
 								</button>
-								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
+								<button type="button" disabled class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
 									<b>Neuland gold</b>
 								</button>
 								
@@ -250,15 +250,15 @@
 								<section id="TableToggleButtons">
 									<font class="ButtonText">
 										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
-											<b>Nordfels_scores</b>
+											<b>Nordfels scores</b>
 										</button>
 										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
-											<b>Neuland_scores</b>
+											<b>Neuland scores</b>
 										</button>
 										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
 											<b>Nordfels gold</b>
 										</button>
-										<button disabled type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
+										<button type="button" disabled class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
 											<b>Neuland gold</b>
 										</button>
 									</font>
@@ -612,7 +612,8 @@
 											onclick="ShowPictureWindow('./img/scores/screenshot (8656).png')"> 
 												Screenshot
 										</a>
-								</td>
+									</td>
+								</tr>
 							</tbody>
 						</table>
 						<font style="font-family: Arial, Sand-serif">
@@ -622,11 +623,17 @@
 					<hr id="under_table_line">
 				</section> <!-- Neuland_score_lb -->
 				
-				<!-- Nordfels_score_lb -->
+				<!-- Nordfels gold lb -->
 				<section class="scoreTable" id="Nordfels_gold_lb"> 
 					<h3><strong>Nordfels most coins</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
+						<h5>
+							<strong> 
+								Separate gold leaderboard is deprecated. <br>
+								It is not going to be updated and may be removed in the future.
+							</strong>
+						</h5>
 						<table id="Nordfels_coins" class="table table-striped">
 							<!-- Table header. Do not change or the styling might break! -->
 							<thead class="thead-dark">
@@ -750,38 +757,7 @@
 					<h3><strong>Neuland most coins</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
-						<table id="Neuland_coins" class="table table-striped">
-							<!-- Table header. Do not change or the styling might break! -->
-							<thead class="thead-dark">
-								<tr>
-									<th style="text-align:center;">
-										<h5><strong>#</strong></h5>
-									</th>
-									<th>
-										<h5><strong> Name </strong></h5>
-									</th>
-									<th>
-										<h5><strong>Coins</strong></h5>
-									</th>
-									<th>
-										<h5><strong> Date </strong></h5>
-									</th>
-									<th>
-										<h5><strong> Picture/Video </strong></h5>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-							<!-- You can only change content in "tbody" -->
-								<tr>
-									<td style="text-align: center;"><strong>0</strong></td>
-									<td id="player_name"><i>No entries</i></td>
-									<td id="score">---</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>								
-							</tbody>
-						</table>
+						<h2> Separate gold leaderboard is deprecated. </h2>
 					</div>
 					<hr id="under_table_line">
 				</section> <!-- Neulands coins lb -->
