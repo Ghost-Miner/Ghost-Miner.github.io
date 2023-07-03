@@ -38,11 +38,12 @@
 	<body>
 		<style>
 			:root 
-			{ 
+			{
 				--backgroundColour: rgba(255, 255, 255, 0.95); 
 				--backgroundColour2: rgba(255, 255, 255, 0.9);
 				--outlineColour: rgba(0, 255, 0, 0.75);
 			}
+
 			a:link 
 			{
 				color: orange;
@@ -61,6 +62,8 @@
 				-o-background-size: cover;
 				background-size: cover;
 			}
+
+			/* C L A S S E S */
 			.masterPageContainer 
 			{
 				max-width: 1000px;
@@ -81,14 +84,7 @@
 				box-shadow: 0px 0px 16px rgba(0,0,0,0.75);
 				/*outline: 5px solid var(--outlineColour); */
 			}			
-			.FrgBox {
-				padding: 10px;
-				background-color: var(--backgroundColour);
-				border-radius: 5px;
-				padding-top:20px;
-			}
-			
-			#tableToggleButton
+			.tableToggleButton
 			{
 				margin-top: 2.5px;
 				margin-bottom: 2.5px;
@@ -101,6 +97,13 @@
 			{
 				box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 			}
+			.Table_header
+			{
+				font-weight: bold;
+				font-size: large;
+			}
+
+			/* I D S */
 			#HeaderButtonsVertical
 			{
 				display: none;
@@ -110,10 +113,7 @@
 				display: block;
 			}
 
-			/*.ButtonText
-			{
-				font-family: Ubuntu, Sans-serif, Arial;
-			}*/
+			/* RESPONSIVE STUFF */
 			@media screen and (max-width: 1050px)
 			{
 				.BgrBox 
@@ -122,10 +122,6 @@
 					padding: 10px;					
 					margin: 2vw; 
 					padding-top:25px;
-				}				
-				.ButtonText
-				{
-					font-family: 'Times New Roman', Times, serif;
 				}
 			}
 			@media screen and (max-width: 750px)
@@ -138,24 +134,6 @@
 				{
 					display: none;
 				}
-				/*#TableToggleButtons
-				{
-					display: none;
-				}	
-				#HeaderButtonsVertical
-				{
-					display: block;
-				}		
-				#SubmitButtonCell
-				{					
-					text-align: center;
-					width: 100%;
-					padding-top: 5%;
-				}
-				#HeaderButtonsCell
-				{
-					width: 0%;
-				}*/	
 			}
 		</style>
 		<script>
@@ -182,13 +160,12 @@
 		
 		<div class="masterPageContainer" id="masterPageContainer">
 			<div class="BgrBox">
-
 				<!-- Page head stuff -->
 				<section id ="Page_header"> 
 					<center>
 						<section id="Title">
 							<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
-							<h1><strong><em>Thronefall leaderboard</em></strong></h1>
+							<h1> <strong> <em> Thronefall leaderboard </em> </strong> </h1>
 						</section>
 						<hr>
 						<section id="Game_links">
@@ -212,30 +189,29 @@
 
 				</section> <!-- Page head stuff -->
 				<hr>
-				
 				 <!-- HeaderButtonsVertical -->
 				<section id="HeaderButtonsVertical">
 					<center>
 						<!-- TableToggleButtons -->
 						<section id="TableToggleButtons_vert">
 							<font class="ButtonText">
-								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
+								<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
 									<b>Nordfels scores</b>
 								</button>
-								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
+								<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
 									<b>Neuland scores</b>
 								</button>
-								<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
+								<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
 									<b>Nordfels gold</b>
 								</button>
-								<button type="button" disabled class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
+								<button type="button" disabled class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
 									<b>Neuland gold</b>
 								</button>
 								
-								<section id="Submit_score" style="margin-top: 2%;">
-									<!-- Submit_score overlay button  -->
-									<button type="button" class="btn btn-warning" id="submitScoreOverlay" onclick="ShowFormWindow()"><strong>Submit score</strong></button>
-								</section> <!-- Submit_score -->
+								<section id="Submit_score_vert" style="margin-top: 2%;">
+									<!-- submit score overlay button  -->
+									<button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()"><strong>Submit score</strong></button>
+								</section> <!-- submit score -->
 							</font>
 						</section> <!-- toggle buttons -->	
 					</center>
@@ -249,27 +225,27 @@
 								<!-- TableToggleButtons -->
 								<section id="TableToggleButtons">
 									<font class="ButtonText">
-										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
+										<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
 											<b>Nordfels scores</b>
 										</button>
-										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
+										<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
 											<b>Neuland scores</b>
 										</button>
-										<button type="button" class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
+										<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
 											<b>Nordfels gold</b>
 										</button>
-										<button type="button" disabled class="btn btn-warning" id="tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
+										<button type="button" disabled class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
 											<b>Neuland gold</b>
 										</button>
 									</font>
 								</section> <!-- toggle buttons -->
 							</td>
 							<td style="width: 25%; text-align: right;" id="SubmitButtonCell">
-								<!-- Submit_score button -->
-								<section id="Submit_score">
-									<!-- Submit_score overlay button  -->
-									<button type="button" class="btn btn-warning" id="submitScoreOverlay" onclick="ShowFormWindow()"><strong>Submit_score</strong></button>
-								</section> <!-- Submit_score -->
+								<!-- submit score button -->
+								<section id="Submit_score_hor">
+									<!-- submit score overlay button  -->
+									<button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()"><strong>Submit score</strong></button>
+								</section> <!-- submit score -->
 							</td>
 						</tr>
 					</table>
@@ -277,14 +253,14 @@
 
 				<!-- change what set of buttons is used when screen is veritcal or horizontal -->
 				<script>
-					var titl = document.getElementById("title");
+					/*var titl = document.getElementById("title");
 				
 					var horizButtons 		= document.getElementById("TableToggleButtons");
 					var vertButtons  		= document.getElementById("HeaderButtonsVertical");
 					var submitScoreButton 	= document.getElementById("SubmitButtonCell");
 					var headerBtnsCell 		= document.getElementById("HeaderButtonsCell");
 
-					/*if (h > w)  // If window is portait
+					if (h > w)  // If window is portait
 					{
 						//alert("This page is not yet optimized for small/vertical screens. Zoom out if page content doesn't fit on the screen");
 
@@ -307,8 +283,7 @@
 						headerBtnsCell.style.width = "75%";
 					}*/
 				</script>	
-				<hr>
-				
+				<hr>				
 				<!-- Nordfels_score_lb -->
 				<section class="scoreTable" id="Nordfels_score_lb">  
 					<h3><strong>Nordfels high-scores</strong></h3>
@@ -319,152 +294,153 @@
 							<thead class="thead-dark">
 								<tr>
 									<th style="text-align: center;">
-										<h5><strong> # </strong></h5>
+										<font class="Table_header"> # </font>
 									</th>
 									<th>
-										<h5><strong> Name </strong></h5>
+										<font class="Table_header"> Name </font>
 									</th>
 									<th>
-										<h5><strong> Score </strong></h5>
+										<font class="Table_header"> Score </font>
 									</th>
 									<th>
-										<h5><strong> Coins </strong></h5>
+										<font class="Table_header"> Coins </font>
 									</th>
 									<th>
-										<h5><strong> Date </strong></h5>
+										<font class="Table_header"> Date </font>
 									</th>
 									<th>
-										<h5><strong> Picture/Video </strong></h5>
+										<font class="Table_header"> Picture/Video </font>
 									</th>
 								</tr>
 							</thead>
 							<!-- You can only change content in "tbody" -->
 							<tbody>
 								<tr>
-								<td style="text-align: center;"><strong>1</strong></td>
-								<td id="player_name">mrllama_</td>
-								<td id="score">14 792</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
-								</tr>
-								<tr >
-								<td style="text-align: center;"><strong>2</strong></td>
-								<td id="player_name">deltatee</td>
-								<td id="score">14 546</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
-								</tr>
-								<tr >
-								<td style="text-align: center;"><strong>3</strong></td>
-								<td id="player_name">FRAZZ/Kenobi</td>
-								<td id="score">14 457</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
-								</tr>
-								<tr >
-								<td style="text-align: center;"><strong>4</strong></td>
-								<td id="player_name">777aker</td>
-								<td id="score">14 526</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
-								</tr>
-								<tr >
-								<td style="text-align: center;"><strong>5</strong></td>
-								<td id="player_name">quazar2.1017wbns</td>
-								<td id="score">13 992</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
+									<td class="position" style="text-align: center;"><strong>1</strong></td>
+									<td class="player_name">mrllama_</td>
+									<td class="score">14 792</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
 								</tr>
 								<tr>
-								<td style="text-align: center;"><strong>6</strong></td>
-								<td id="player_name">esteban8nn</td>
-								<td id="score">13 152</td>
-								<td id="coins">259</td>
-								<td id="date">27/06/2023</td>
-								<td id="proof">
-									<a class="ScoreProffLink" title="Picture of the highscore" 
-										onclick="ShowPictureWindow('http:/\/\cdn.discordapp.com/attachments/1117853463045476382/1121874081948651691/13k_pointss.PNG')"> 
-											Screenshot
-									</a>
-								</td>
+									<td class="position" style="text-align: center;"><strong>2</strong></td>
+									<td class="player_name">deltatee</td>
+									<td class="score">14 546</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
 								</tr>
 								<tr >
-								<td style="text-align: center;"><strong>7</strong></td>
-								<td id="player_name">bluesaphirxiv</td>
-								<td id="score">13 097</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
+									<td class="position" style="text-align: center;"><strong>3</strong></td>
+									<td class="player_name">FRAZZ/Kenobi</td>
+									<td class="score">14 457</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
 								</tr>
 								<tr >
-								<td style="text-align: center;"><strong>8</strong></td>
-								<td id="player_name">babykrokodile</td>
-								<td id="score">13 048</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
+									<td class="position" style="text-align: center;"><strong>4</strong></td>
+									<td class="player_name">777aker</td>
+									<td class="score">14 526</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
 								</tr>
 								<tr >
-								<td style="text-align: center;"><strong>9</strong></td>
-								<td id="player_name">neonitedragon</td>
-								<td id="score">12 716</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
+									<td class="position" style="text-align: center;"><strong>5</strong></td>
+									<td class="player_name">quazar2.1017wbns</td>
+									<td class="score">13 992</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
 								</tr>
-								<tr >
-								<td style="text-align: center;"><strong>10</strong></td>
-								<td id="player_name">giraffasaur</td>
-								<td id="score">12 539</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>6</strong></td>
+									<td class="player_name">esteban8nn</td>
+									<td class="score">13 152</td>
+									<td class="coins">259</td>
+									<td class="date">27/06/2023</td>
+									<td class="proof">
+										<a class="ScoreProffLink" title="Picture of the highscore" 
+											onclick="ShowPictureWindow('http:/\/\cdn.discordapp.com/attachments/1117853463045476382/1121874081948651691/13k_pointss.PNG')"> 
+												Screenshot
+										</a>
+									</td>
 								</tr>
-								<tr >
-								<td style="text-align: center;"><strong>11</strong></td>
-								<td id="player_name">zsalab_</td>
-								<td id="score">12 503</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>7</strong></td>
+									<td class="player_name">bluesaphirxiv</td>
+									<td class="score">13 097</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
 								</tr>
-								<td style="text-align: center;"><strong>12</strong></td>
-								<td id="name">deltatee</td>
-								<td id="score">12 432</td>
-								<td id="coins">529</td>
-								<td id="date">22/06/2023</td>
-								<td id="proof">
-									<a class="ScoreProffLink" title="Picture of the highscore" 
-										onclick="ShowPictureWindow('https://media.discordapp.net/attachments/1117853463045476382/1121339065107763230/image.png?width=1074&height=604')"> 
-											Screenshot
-									</a>
-								</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>8</strong></td>
+									<td class="player_name">babykrokodile</td>
+									<td class="score">13 048</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
 								</tr>
-								<tr >
-								<td style="text-align: center;"><strong>13</strong></td>
-								<td id="player_name">domedin#0478</td>
-								<td id="score">11 486</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>9</strong></td>
+									<td class="player_name">neonitedragon</td>
+									<td class="score">12 716</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
 								</tr>
-								<tr >
-								<td style="text-align: center;"><strong>14</strong></td>
-								<td id="player_name">barigamb</td>
-								<td id="score">11 326</td>
-								<td id="coins">---</td>
-								<td id="date">---</td>
-								<td id="proof">---</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>10</strong></td>
+									<td class="player_name">giraffasaur</td>
+									<td class="score">12 539</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
+								</tr>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>11</strong></td>
+									<td class="player_name">zsalab_</td>
+									<td class="score">12 503</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
+								</tr>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>12</strong></td>
+									<td class="player_name">deltatee</td>
+									<td class="score">12 432</td>
+									<td class="coins">529</td>
+									<td class="date">22/06/2023</td>
+									<td class="proof">
+										<a class="ScoreProffLink" title="Picture of the highscore" 
+											onclick="ShowPictureWindow('https://media.discordapp.net/attachments/1117853463045476382/1121339065107763230/image.png?width=1074&height=604')"> 
+												Screenshot
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>13</strong></td>
+									<td class="player_name">domedin#0478</td>
+									<td class="score">11 486</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
+								</tr>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>14</strong></td>
+									<td class="player_name">barigamb</td>
+									<td class="score">11 326</td>
+									<td class="coins">---</td>
+									<td class="date">---</td>
+									<td class="proof">---</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-					<hr id="under_table_line">
+					<hr class="under_table_line">
 				</section> <!-- Nordfels_score_lb -->
 				
 				<!-- Neuland_score_lb -->
@@ -477,112 +453,112 @@
 							<thead class="thead-dark">
 								<tr>
 									<th style="text-align: center;">
-										<h5><strong> # </strong></h5>
+										<font class="Table_header"> # </font>
 									</th>
 									<th>
-										<h5><strong> Name </strong></h5>
+										<font class="Table_header"> Name </font>
 									</th>
 									<th>
-										<h5><strong> Score </strong></h5>
+										<font class="Table_header"> Score </font>
 									</th>
 									<th>
-										<h5><strong> Coins </strong></h5>
+										<font class="Table_header"> Coins </font>
 									</th>
 									<th>
-										<h5><strong> Date </strong></h5>
+										<font class="Table_header"> Date </font>
 									</th>
 									<th>
-										<h5><strong> Picture/Video </strong></h5>
+										<font class="Table_header"> Picture/Video </font>
 									</th>
 								</tr>
 							</thead>
 							<!-- You can only change content in "tbody" -->
 							<tbody>
-								<tr >
-									<td style="text-align: center;"><strong>1</strong></td>
-									<td id="player_name">quazar2.1017wbns</td>
-									<td id="score">5 292</td>
-									<td id="coins">71</td>
-									<td id="date">18/06/2023</td>
-									<td id="proof">
+								<tr>
+									<td class="position" style="text-align: center;"><strong>1</strong></td>
+									<td class="player_name">quazar2.1017wbns</td>
+									<td class="score">5 292</td>
+									<td class="coins">71</td>
+									<td class="date">18/06/2023</td>
+									<td class="proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('https://cdn.discordapp.com/attachments/1117853463045476382/1120056393462992916/image.png')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>2</strong></td>
-									<td id="player_name"> giraffasaur </td>
-									<td id="score">5 214</td>
-									<td id="coins">65</td>
-									<td id="date">16/06/2023</td>
-									<td id="proof">
+								<tr>
+									<td class="position" style="text-align: center;"><strong>2</strong></td>
+									<td class="player_name"> giraffasaur </td>
+									<td class="score">5 214</td>
+									<td class="coins">65</td>
+									<td class="date">16/06/2023</td>
+									<td class="proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('https://cdn.discordapp.com/attachments/1117853463045476382/1119258731302092871/image.png')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>3</strong></td>
-									<td id="player_name"> arkqa </td>
-									<td id="score">5 201</td>
-									<td id="coins">61</td>
-									<td id="date">02/07/2023</td>
-									<td id="proof">
+								<tr>
+									<td class="position" style="text-align: center;"><strong>3</strong></td>
+									<td class="player_name"> arkqa </td>
+									<td class="score">5 201</td>
+									<td class="coins">61</td>
+									<td class="date">02/07/2023</td>
+									<td class="proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow(' https://cdn.discordapp.com/attachments/1117853463045476382/1125023335554760745/image.png')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>4</strong></td>
-									<td id="player_name">babykrokodile</td>
-									<td id="score">5 173</td>
-									<td id="coins">65</td>
-									<td id="date">16/06/2023</td>
-									<td id="proof">
+								<tr>
+									<td class="position" style="text-align: center;"><strong>4</strong></td>
+									<td class="player_name">babykrokodile</td>
+									<td class="score">5 173</td>
+									<td class="coins">65</td>
+									<td class="date">16/06/2023</td>
+									<td class="proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('https://cdn.discordapp.com/attachments/1117853463045476382/1119227838294392842/Screenshot_38.png')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>5</strong></td>
-									<td id="player_name">ToGreedy</td>
-									<td id="score">5 178</td>
-									<td id="coins">61*</td>
-									<td id="date">02/07/2023</td>
-									<td id="proof">
+								<tr>
+									<td class="position" style="text-align: center;"><strong>5</strong></td>
+									<td class="player_name">ToGreedy</td>
+									<td class="score">5 178</td>
+									<td class="coins">61*</td>
+									<td class="date">02/07/2023</td>
+									<td class="proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('https://cdn.discordapp.com/attachments/1032264855815725126/1125087109284384838/image.png')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>6</strong></td>
-									<td id="player_name">mrllama_</td>
-									<td id="score">5 150</td>
-									<td id="coins">59</td>
-									<td id="date">18/06/2023</td>
-									<td id="proof">
+								<tr>
+									<td class="position" style="text-align: center;"><strong>6</strong></td>
+									<td class="player_name">mrllama_</td>
+									<td class="score">5 150</td>
+									<td class="coins">59</td>
+									<td class="date">18/06/2023</td>
+									<td class="proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('https://cdn.discordapp.com/attachments/1117853463045476382/1120036296967082096/image.png')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>7</strong></td>
-									<td id="player_name">bluesaphirxiv</td>
-									<td id="score">5 117</td>
-									<td id="coins">62</td>
-									<td id="date">16/06/2023</td>
-									<td id="proof">
+								<tr>
+									<td class="position" style="text-align: center;"><strong>7</strong></td>
+									<td class="player_name">bluesaphirxiv</td>
+									<td class="score">5 117</td>
+									<td class="coins">62</td>
+									<td class="date">16/06/2023</td>
+									<td class="proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('https://cdn.discordapp.com/attachments/1117853463045476382/1119219749927260240/image.png')"> 
 												Screenshot
@@ -590,24 +566,25 @@
 									</td>
 								</tr>
 								<tr>
-									<td style="text-align: center;"><strong>8</strong></td>
-									<td id="player_name">neoarandil</td>
-									<td id="score">5 002</td>
-									<td id="coins">70</td>
-									<td id="date">30/06/2023</td>
-									<td id="proof">
+									<td class="position" style="text-align: center;"><strong>8</strong></td>
+									<td class="player_name">neoarandil</td>
+									<td class="score">5 002</td>
+									<td class="coins">70</td>
+									<td class="date">30/06/2023</td>
+									<td class="proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('https://media.discordapp.net/attachments/1117853463045476382/1124441173075959990/image.png?width=1074&height=604')"> 
 												Screenshot
 										</a>
-								</td>
+									</td>
+								</tr>
 								<tr>
-									<td style="text-align: center;"><strong>9</strong></td>
-									<td id="player_name">GhostMiner_</td>
-									<td id="score">4 958</td>
-									<td id="coins">50</td>
-									<td id="date">30/06/2023</td>
-									<td id="proof">
+									<td class="position" style="text-align: center;"><strong>9</strong></td>
+									<td class="player_name">GhostMiner_</td>
+									<td class="score">4 958</td>
+									<td class="coins">50</td>
+									<td class="date">30/06/2023</td>
+									<td class="proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/screenshot (8656).png')"> 
 												Screenshot
@@ -620,7 +597,7 @@
 						<em>* Lacks evidence.</em>
 						</font>
 					</div>
-					<hr id="under_table_line">
+					<hr class="under_table_line">
 				</section> <!-- Neuland_score_lb -->
 				
 				<!-- Nordfels gold lb -->
@@ -639,63 +616,63 @@
 							<thead class="thead-dark">
 								<tr>
 									<th style="text-align:center;">
-										<h5><strong>#</strong></h5>
+										<font class="Table_header">#</font>
 									</th>
 									<th>
-										<h5><strong> Name </strong></h5>
+										<font class="Table_header"> Name </font>
 									</th>
 									<th>
-										<h5><strong>Coins</strong></h5>
+										<font class="Table_header">Coins</font>
 									</th>
 									<th>
-										<h5><strong> Date </strong></h5>
+										<font class="Table_header"> Date </font>
 									</th>
 									<th>
-										<h5><strong> Picture/Video </strong></h5>
+										<font class="Table_header"> Picture/Video </font>
 									</th>
 								</tr>
 							</thead>
 							<tbody>
 							<!-- You can only change content in "tbody" -->
 								<tr>
-									<td style="text-align: center;"><strong>1</strong></td>
-									<td id="player_name">babykrokodile</td>
-									<td id="score">472</td>
+									<td class="position" style="text-align: center;"><strong>1</strong></td>
+									<td class="player_name">babykrokodile</td>
+									<td class="score">472</td>
+									<td>---</td>
+									<td>---</td>
+								</tr>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>2</strong></td>
+									<td class="player_name">777aker</td>
+									<td class="score">436</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 								<tr >
-									<td style="text-align: center;"><strong>2</strong></td>
-									<td id="player_name">777aker</td>
-									<td id="score">436</td>
+									<td class="position" style="text-align: center;"><strong>3</strong></td>
+									<td class="player_name">quazar2.1017wbns</td>
+									<td class="score">404</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>3</strong></td>
-									<td id="player_name">quazar2.1017wbns</td>
-									<td id="score">404</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>4</strong></td>
+									<td class="player_name">giraffasaur</td>
+									<td class="score">398</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>4</strong></td>
-									<td id="player_name">giraffasaur</td>
-									<td id="score">398</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>5</strong></td>
+									<td class="player_name">mrllama_</td>
+									<td class="score">361</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>5</strong></td>
-									<td id="player_name">mrllama_</td>
-									<td id="score">361</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>6</strong></td>
-									<td id="player_name">esteban8nn</td>
-									<td id="score">259</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>6</strong></td>
+									<td class="player_name">esteban8nn</td>
+									<td class="score">259</td>
 									<td>27/6/2023</td>
 									<td>
 										<a class="ScoreProffLink" title="Picture of the highscore" 
@@ -704,52 +681,52 @@
 										</a>
 									</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>7</strong></td>
-									<td id="player_name">bluesaphirxiv</td>
-									<td id="score">245</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>7</strong></td>
+									<td class="player_name">bluesaphirxiv</td>
+									<td class="score">245</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>8</strong></td>
-									<td id="player_name">bluesaphirxiv</td>
-									<td id="score">227</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>8</strong></td>
+									<td class="player_name">bluesaphirxiv</td>
+									<td class="score">227</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>9</strong></td>
-									<td id="player_name">zsalab_</td>
-									<td id="score">214</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>9</strong></td>
+									<td class="player_name">zsalab_</td>
+									<td class="score">214</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>10</strong></td>
-									<td id="player_name">GhostMiner</td>
-									<td id="score">209</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>10</strong></td>
+									<td class="player_name">GhostMiner</td>
+									<td class="score">209</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>11</strong></td>
-									<td id="player_name">neonitedragon</td>
-									<td id="score">206</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>11</strong></td>
+									<td class="player_name">neonitedragon</td>
+									<td class="score">206</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
-								<tr >
-									<td style="text-align: center;"><strong>12</strong></td>
-									<td id="player_name">neonitedragon</td>
-									<td id="score">142</td>
+								<tr>
+									<td class="position" style="text-align: center;"><strong>12</strong></td>
+									<td class="player_name">neonitedragon</td>
+									<td class="score">142</td>
 									<td>---</td>
 									<td>---</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-					<hr id="under_table_line">
+					<hr class="under_table_line">
 				</section> <!-- Nordfels coins lb -->
 				
 				<!-- Neuland_score_lb -->
@@ -759,19 +736,17 @@
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
 						<h2> Separate gold leaderboard is deprecated. </h2>
 					</div>
-					<hr id="under_table_line">
+					<hr class="under_table_line">
 				</section> <!-- Neulands coins lb -->
 				
 				<section id="Footer"> <!-- Footer -->
 					<center>
 						<h6>
-							<i>
-								<font style="color:black;">Leaderbaord page made by GhostMiner. v.1.4.2 <b>|</b> </i>
-									<a href="https://ghost-miner.github.io/">Website</a>, 
-									<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
-									<a href="https://discord.gg/DjUBY9h">Discord</a>
-								</font>
-							</i>							
+							<font style="color:black;"><i>Leaderbaord page made by GhostMiner. v.1.4.2</i> |
+								<a href="https://ghost-miner.github.io/">Website</a>, 
+								<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
+								<a href="https://discord.gg/DjUBY9h">Discord</a>
+							</font>							
 						</h6>
 					</center>
 				</section> <!-- Footer -->
@@ -782,15 +757,14 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script>ChangeShownTable("Nordfels_score_lb");
+		<script>
+			ChangeShownTable("Nordfels_score_lb");
 			document.getElementById("submitFormFrame").src = "./submit.html";
 		</script>
 		
 		
 		
-		
-		
-		<!-- Submit_score overlay -->
+		<!-- submit score overlay -->
 		<section class="overlays" id="SubmitScoreOverlay">
 			<style>
 				#submitBakcground 
@@ -869,14 +843,15 @@
 					<div id="submitBakcground">
 						<div id="SubmitWinContent">
 							<iframe id="submitFormFrame" src="./submit.html" style="width:100%; height:100%; border:0px; background-color: #fff;"></iframe>
-							<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
+							
+							<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
 								Cancel
 							</button>
 							<a id="submitScoreFullscreen" href="./submit.html" target="_blank"> 
-									<button type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
-										Open in new tab
-									</button>
-								</a>
+								<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
+									Open in new tab
+								</button>
+							</a>
 						</div>
 					</div>
 				</center>
@@ -891,7 +866,7 @@
 					document.getElementById("submitBakcground").style.display = "none";
 					document.getElementById("submitFormFrame").src = "./submit.html";
 			  	}
-			 </script>
+			</script>
 		</section>
 
 		<!-- Pictue windiw overlay -->
@@ -914,7 +889,7 @@
 				  backdrop-filter: blur(16px);
 				}
 				
-				#PicWinContent
+				.PicWinContent
 				{
 					border-radius: 5px;
 					margin: auto;
@@ -937,13 +912,13 @@
 					display: block;
 					padding-top: 2%;
 				}		
-				#WindowButtons
+				.WindowButtons
 				{
 					margin-top: 1%;
 				}		
 				@media screen and (max-width: 1050px)
 				{					
-					#PicWinContent
+					.PicWinContent
 					{
 						padding: 1%;
 						height:95%;
@@ -962,7 +937,7 @@
 				}
 				@media screen and (max-width: 600px)
 				{					
-					#PicWinContent
+					.PicWinContent
 					{
 						padding: 1.5%;
 						height: 85%;
@@ -980,15 +955,15 @@
 					<!-- Image_window  -->
 					<section id="Image_window">
 						<div id="picWindow" class="proofOverlay">
-							<div id="PicWinContent">
-								<img id="scorePic" src="./img/loading.gif" style="object-fit: contain; width: 100%; height:100%; background-color: black;">
+							<div class="PicWinContent">
+								<img id="scorePic" alt="Picture of the score" src="./img/loading.gif" style="object-fit: contain; width: 100%; height:100%; background-color: black;">
 							</div>
-							<div id="WindowButtons">
-								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HidePictureWindow()">
+							<div class="WindowButtons">
+								<button type="button" class="btn btn-warning btn-lg ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HidePictureWindow()">
 									Close window
 								</button>							
 								<a id="ScorePicOriginalFile" href="#" target="_blank"> 
-									<button type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
+									<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
 										Open in new tab
 									</button>
 								</a>
@@ -999,18 +974,18 @@
 					<!-- video_window -->
 					<section id="video_window">
 						<div id="videoWindow" class="proofOverlay">
-							<div id="PicWinContent">
+							<div class="PicWinContent">
 								<video id="scoreVideo" width="100%" height="100%" controls  style="background-color: black;">
 									<source src="">
 									Your browser does not support the video tag.
 								</video>
 							</div>
-							<div id="WindowButtons">
-								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideVideoWindow()">
+							<div class="WindowButtons">
+								<button type="button" class="btn btn-warning btn-lg ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideVideoWindow()">
 									Close window
 								</button>							
 								<a id="ScoreVideoOriginalFile" href="#" target="_blank"> 
-									<button type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
+									<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
 										Open in new tab
 									</button>
 								</a>
@@ -1021,15 +996,15 @@
 					<!-- Embed_window -->
 					<section id="Embed_window">
 						<div id="embedWindow" class="proofOverlay">
-							<div id="PicWinContent">
+							<div class="PicWinContent">
 								<iframe id="scoreEbed" src="" style="width: 100%; height: 100%; background-color: black; border:0px"></iframe>
 							</div>
-							<div id="WindowButtons">
-								<button type="button" class="btn btn-warning btn-lg" id="ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideEmedWindow()">
+							<div class="WindowButtons">
+								<button type="button" class="btn btn-warning btn-lg ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideEmedWindow()">
 									Close window
 								</button>							
 								<a id="ScoreEmbedOriginalFile" href="#" target="_blank"> 
-									<button type="button" class="btn btn-warning btn-lg" id="OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
+									<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
 										Open in new tab
 									</button>
 								</a>
