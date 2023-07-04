@@ -84,11 +84,10 @@
 									
 				box-shadow: 0px 0px 16px rgba(0,0,0,0.75);
 				/*outline: 5px solid var(--outlineColour); */
-			}			
+			}
 			.tableToggleButton
 			{
-				margin-top: 2.5px;
-				margin-bottom: 2.5px;
+				margin: 0px;
 			}
 			.ScoreProffLink
 			{
@@ -109,6 +108,10 @@
 				text-align: center;	
 				font-weight: bold;
 			}
+			.gameLinksBtn
+			{
+				padding: 15px; padding-top:10px;  padding-bottom:10px
+			}
 
 			/* I D S */
 			#HeaderButtonsVertical
@@ -117,7 +120,28 @@
 			}
 			#HeaderButtonsHorizontal
 			{
-				display: block;
+				display: none;
+			}
+
+			#Category_buttons_main_div
+			{
+				padding-left: 5px;
+				display: flex;
+  				width: 100%;
+			}
+			#Categories_buttons
+			{
+				border: 0px green solid;
+				width: 80%;
+
+				text-align: left;
+			}
+			#Submit_score_button
+			{
+				border: 0px red solid;
+				width: 20%;
+
+				text-align: right;
 			}
 
 			/* RESPONSIVE STUFF */
@@ -125,21 +149,37 @@
 			{
 				.BgrBox 
 				{
-				background-color: var(--backgroundColour2);
+					background-color: var(--backgroundColour2);
 					padding: 10px;					
 					margin: 2vw; 
 					padding-top:25px;
 				}
 			}
 			@media screen and (max-width: 750px)
-			{				
-				#HeaderButtonsVertical
+			{
+				.tableToggleButton
+				{
+					margin: 2.5px;
+					margin-bottom: 5px;
+				}			
+				
+				#Category_buttons_main_div
 				{
 					display: block;
+					width: 100%;
 				}
-				#HeaderButtonsHorizontal
+				#Categories_buttons
 				{
-					display: none;
+					width: 100%;
+
+					text-align: center;
+				}
+				#Submit_score_button
+				{
+					margin-top: 10px;
+					width: 100%;
+
+					text-align: center;
 				}
 			}
 
@@ -195,12 +235,12 @@
 						<section id="Game_links">
 							<font class="ButtonText">
 								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
-									<button type="button" class="btn btn-warning" id="gameLinksBtn;"  style="background-color: var(--backgroundColour); padding:15px; padding-top:10px;  padding-bottom:10px;">
+									<button type="button" class="btn btn-warning gameLinksBtn;" style="background-color: var(--backgroundColour); padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
 										<b>Get the game</b>
 									</button>
 								</a>
 								<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
-									<button type="button" class="btn btn-warning" id="gameLinksBtn" style="background-color: var(--backgroundColour); padding: 15px; padding-top:10px;  padding-bottom:10px;">
+									<button type="button" class="btn btn-warning gameLinksBtn" style="background-color: var(--backgroundColour); padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
 										<b>Discord server</b>
 									</button>
 								</a>
@@ -214,67 +254,32 @@
 				</section> <!-- Page head stuff -->
 				<hr>
 				
-				<!-- HeaderButtonsVertical -->
-				<section id="HeaderButtonsVertical">
-					<center>
-						<!-- TableToggleButtons -->
-						<section id="TableToggleButtons_vert">
-							<font class="ButtonText">
-								<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
-									<b>Nordfels scores</b>
-								</button>
-								<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
-									<b>Neuland scores</b>
-								</button>
-								<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
-									<b>Nordfels gold</b>
-								</button>
-								<button type="button" disabled class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
-									<b>Neuland gold</b>
-								</button>
-								
-								<section id="Submit_score_vert" style="margin-top: 2%;">
-									<!-- submit score overlay button  -->
-									<button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()"><strong>Submit score</strong></button>
-								</section> <!-- submit score -->
-							</font>
-						</section> <!-- toggle buttons -->	
-					</center>
-				</section> <!-- HeaderButtonsVertical -->
-
-				<!-- Header buttons horizontal -->
-				<section id="HeaderButtonsHorizontal">
-					<table id="HeaerButtonContainer" style="width: 100%;">
-						<tr>
-							<td style="width: 75%; padding: 5px;" id="HeaderButtonsCell">
-								<!-- TableToggleButtons -->
-								<section id="TableToggleButtons">
-									<font class="ButtonText">
-										<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Nordfels_score_lb')">
-											<b>Nordfels scores</b>
-										</button>
-										<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_score_lb')">
-											<b>Neuland scores</b>
-										</button>
-										<button type="button" class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Nordfels_gold_lb')">
-											<b>Nordfels gold</b>
-										</button>
-										<button type="button" disabled class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
-											<b>Neuland gold</b>
-										</button>
-									</font>
-								</section> <!-- toggle buttons -->
-							</td>
-							<td style="width: 25%; text-align: right;" id="SubmitButtonCell">
-								<!-- submit score button -->
-								<section id="Submit_score_hor">
-									<!-- submit score overlay button  -->
-									<button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()"><strong>Submit score</strong></button>
-								</section> <!-- submit score -->
-							</td>
-						</tr>
-					</table>
-				</section> <!-- Header buttons horizontal -->
+				<!-- Category buttons -->
+				<section id="Category_buttons_section">
+					<div id="Category_buttons_main_div">
+						<div id="Categories_buttons">
+							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_scores_button" onclick="ChangeShownTable('Nordfels_score_lb')">
+								<b>Nordfels scores</b>
+							</button>
+							<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_scores_button" onclick="ChangeShownTable('Neuland_score_lb')">
+								<b>Neuland scores</b>
+							</button>
+							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_gold_button" onclick="ChangeShownTable('Nordfels_gold_lb')">
+								<b>Nordfels gold</b>
+							</button>
+							<button type="button" disabled class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
+								<b>Neuland gold</b>
+							</button>
+						</div>
+						
+						<div id="Submit_score_button">							
+							<!-- submit score overlay button  -->
+							<button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()">
+								<strong> Submit score </strong>
+							</button>
+						</div>
+					</div>
+				</section>				
 				<hr>
 			
 				<!-- Nordfels_score_lb -->
@@ -623,12 +628,9 @@
 						</table>
 					</div>
 					<hr class="under_table_line">
-				</section> <!-- Neuland_score_lb -->
-				
-				<!--
-				
-					 D E P R E C A T E D
-				
+				</section> <!-- Neuland_score_lb -->				
+				<!--				
+					 D E P R E C A T E D				
 				-->
 				<!-- Nordfels gold lb -->
 				<section class="scoreTable" id="Nordfels_gold_lb"> 
@@ -772,7 +774,7 @@
 				<section id="Footer"> <!-- Footer -->
 					<center>
 						<h6>
-							<font style="color:black;"><i>Leaderbaord page made by GhostMiner. v.1.4.2</i> |
+							<font style="color:black; font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.4.3</i> |
 								<a href="https://ghost-miner.github.io/">Website</a>, 
 								<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 								<a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -927,7 +929,7 @@
 					padding: 0.5%;
 
 					max-width: 900px;
-					max-height: 600px;
+					max-height: 570px;
 
 					width: 100%;
 					height:100%;
@@ -953,9 +955,9 @@
 					.PicWinContent
 					{
 						padding: 1%;
-						height:95%;
+						height:100%;
 						
-						max-height: 500px;
+						max-height: 550px;
 					}
 					#submitOvrlCancel 
 					{
@@ -972,7 +974,7 @@
 					.PicWinContent
 					{
 						padding: 1.5%;
-						height: 85%;
+						height: 100%;
 						
 						max-height: 300px;
 					}
