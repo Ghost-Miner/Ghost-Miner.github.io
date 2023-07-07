@@ -220,6 +220,59 @@
 				
 				showTable.style.display = "block"; 
 			}
+
+			function ResetPositionNumbers (tableName)
+			{
+				switch(tableName)
+				{
+					case "Nordfels":
+						
+						const NFcollection = document.getElementsByClassName("SB_NF_Position");
+					
+						for (let i = 0; i < NFcollection.length; i++) 
+						{
+							NFcollection[i].textContent = "#";
+							NFcollection[i].style.textAlign = "center";
+						}
+					break;					
+
+					case "Neuland":
+						const NLcollection = document.getElementsByClassName("SB_NL_Position");
+				
+						for (let i = 0; i < NLcollection.length; i++) 
+						{
+							NLcollection[i].textContent = "#";
+							NLcollection[i].style.textAlign = "center";
+						}
+					break;
+				}
+			}
+
+			function AssignNumbers (tableName)
+			{
+				switch(tableName)
+				{
+					case "Nordfels":
+						const NFcollection = document.getElementsByClassName("SB_NF_Position");
+				
+						for (let i = 0; i < NFcollection.length; i++) 
+						{
+							NFcollection[i].textContent = (i + 1);
+							NFcollection[i].style.textAlign = "center";
+						}
+					break;
+
+					case "Neuland":
+						const NLcollection = document.getElementsByClassName("SB_NL_Position");
+				
+						for (let i = 0; i < NLcollection.length; i++) 
+						{
+							NLcollection[i].textContent = (i + 1);
+							NLcollection[i].style.textAlign = "center";
+						}
+					break;
+				}
+			}
  		</script>
 		
 		<div class="masterPageContainer" id="masterPageContainer">
@@ -247,8 +300,10 @@
 							</font>
 						</section>
 						
-						<noscript>
+						<noscript>		
+							<hr>						
 							<h3><strong><em>This website requires JavaScript to function correctly.</em></strong></h3>
+							<hr>
 						</noscript>
 					</center>
 				</section> <!-- Page head stuff -->
@@ -280,22 +335,7 @@
 						</div>
 					</div>
 				</section>				
-				<hr>			
-				<!-- 
-					Table row template
-					
-					<td class="SB_Position">*pos*</td>
-					<td class="SB_player_name">*name*</td>
-					<td class="SB_score">*score*</td>
-					<td class="SB_coins">*gold*</td>
-					<td class="SB_date">dd/mm/2023</td>
-					<td class="SB_proof">
-						<a class="ScoreProffLink" title="Picture of the highscore" 
-							onclick="ShowPictureWindow('./img/placeholder.jpg')"> 
-								Screenshot
-						</a>
-					</td>
-				-->			
+				<hr>		
 				<!-- Nordfels_score_lb -->
 				<section class="scoreTable" id="Nordfels_score_lb">  
 					<h3><strong>Nordfels high-scores</strong></h3>
@@ -327,234 +367,234 @@
 							</thead>
 							<!-- You can only change content in "tbody" -->
 							<tbody>
-								<tr>
-									<td class="SB_Position">1</td>
-									<td class="SB_player_name">Anael</td>
-									<td class="SB_score">17&nbsp;312</td>
-									<td class="SB_coins">320</td>
-									<td class="SB_date">03/07/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">1</td>
+									<td class="SB_NF_player_name">Anael</td>
+									<td class="SB_NF_score">17&nbsp;312</td>
+									<td class="SB_NF_coins">320</td>
+									<td class="SB_NF_date">03/07/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowEmbedWindow('https://www.youtube.com/embed/WAIV-AjWRa8')"> 
 												Video
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">2</td>
-									<td class="SB_player_name">mrllama_</td>
-									<td class="SB_score">14 792</td>
-									<td class="SB_coins">359</td>
-									<td class="SB_date">03/07/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">2</td>
+									<td class="SB_NF_player_name">mrllama_</td>
+									<td class="SB_NF_score">14 792</td>
+									<td class="SB_NF_coins">359</td>
+									<td class="SB_NF_date">03/07/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/mrllama_1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">3</td>
-									<td class="SB_player_name">deltatee</td>
-									<td class="SB_score">14&nbsp;678</td>
-									<td class="SB_coins">476</td>
-									<td class="SB_date">19/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">3</td>
+									<td class="SB_NF_player_name">deltatee</td>
+									<td class="SB_NF_score">14&nbsp;678</td>
+									<td class="SB_NF_coins">476</td>
+									<td class="SB_NF_date">19/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/deltatee1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">4</td>
-									<td class="SB_player_name">777aker</td>
-									<td class="SB_score">14 526</td>
-									<td class="SB_coins">288</td>
-									<td class="SB_date">17/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">4</td>
+									<td class="SB_NF_player_name">777aker</td>
+									<td class="SB_NF_score">14 526</td>
+									<td class="SB_NF_coins">288</td>
+									<td class="SB_NF_date">17/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/777aker1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr >
-									<td class="SB_Position">5</td>
-									<td class="SB_player_name">FRAZZ</td>
-									<td class="SB_score">14 457</td>
-									<td class="SB_coins">275</td>
-									<td class="SB_date">19/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">5</td>
+									<td class="SB_NF_player_name">FRAZZ</td>
+									<td class="SB_NF_score">14 457</td>
+									<td class="SB_NF_coins">275</td>
+									<td class="SB_NF_date">19/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/FRAZZ1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">6</td>
-									<td class="SB_player_name">The Gentleman</td>
-									<td class="SB_score">14 110</td>
-									<td class="SB_coins">258</td>
-									<td class="SB_date">07/07/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">6</td>
+									<td class="SB_NF_player_name">The Gentleman</td>
+									<td class="SB_NF_score">14 110</td>
+									<td class="SB_NF_coins">258</td>
+									<td class="SB_NF_date">07/07/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/The Gentleman.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">7</td>
-									<td class="SB_player_name">quazar2.1017wbns</td>
-									<td class="SB_score">13 992</td>
-									<td class="SB_coins">245</td>
-									<td class="SB_date">18/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">7</td>
+									<td class="SB_NF_player_name">quazar2.1017wbns</td>
+									<td class="SB_NF_score">13 992</td>
+									<td class="SB_NF_coins">245</td>
+									<td class="SB_NF_date">18/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/quazar2.1017wbns1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr >
-									<td class="SB_Position">8</td>
-									<td class="SB_player_name">Isaac</td>
-									<td class="SB_score">13&nbsp;558</td>
-									<td class="SB_coins">392</td>
-									<td class="SB_date">06/07/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">8</td>
+									<td class="SB_NF_player_name">Isaac</td>
+									<td class="SB_NF_score">13&nbsp;558</td>
+									<td class="SB_NF_coins">392</td>
+									<td class="SB_NF_date">06/07/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/Isaac1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">9</td>
-									<td class="SB_player_name">esteban8nn</td>
-									<td class="SB_score">13 152</td>
-									<td class="SB_coins">259</td>
-									<td class="SB_date">27/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">9</td>
+									<td class="SB_NF_player_name">esteban8nn</td>
+									<td class="SB_NF_score">13 152</td>
+									<td class="SB_NF_coins">259</td>
+									<td class="SB_NF_date">27/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/esteban8nn1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">10</td>
-									<td class="SB_player_name">bluesaphirxiv</td>
-									<td class="SB_score">13 097</td>
-									<td class="SB_coins">241</td>
-									<td class="SB_date">16/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">10</td>
+									<td class="SB_NF_player_name">bluesaphirxiv</td>
+									<td class="SB_NF_score">13 097</td>
+									<td class="SB_NF_coins">241</td>
+									<td class="SB_NF_date">16/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/bluesaphirxiv1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">11</td>
-									<td class="SB_player_name">BabyKrokodile</td>
-									<td class="SB_score">13&nbsp;048</td>
-									<td class="SB_coins">228</td>
-									<td class="SB_date">16/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">11</td>
+									<td class="SB_NF_player_name">BabyKrokodile</td>
+									<td class="SB_NF_score">13&nbsp;048</td>
+									<td class="SB_NF_coins">228</td>
+									<td class="SB_NF_date">16/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/babykrokodile1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">12</td>
-									<td class="SB_player_name">ToGreedy</td>
-									<td class="SB_score">12&nbsp;811</td>
-									<td class="SB_coins">152</td>
-									<td class="SB_date">04/07/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">12</td>
+									<td class="SB_NF_player_name">ToGreedy</td>
+									<td class="SB_NF_score">12&nbsp;811</td>
+									<td class="SB_NF_coins">152</td>
+									<td class="SB_NF_date">04/07/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/ToGreedy1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">13</td>
-									<td class="SB_player_name">neonitedragon</td>
-									<td class="SB_score">12 716</td>
-									<td class="SB_coins">206</td>
-									<td class="SB_date">16/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">13</td>
+									<td class="SB_NF_player_name">neonitedragon</td>
+									<td class="SB_NF_score">12 716</td>
+									<td class="SB_NF_coins">206</td>
+									<td class="SB_NF_date">16/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/neonitedragon1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">14</td>
-									<td class="SB_player_name">zsalab_</td>
-									<td class="SB_score">12 503</td>
-									<td class="SB_coins">214</td>
-									<td class="SB_date">16/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">14</td>
+									<td class="SB_NF_player_name">zsalab_</td>
+									<td class="SB_NF_score">12 503</td>
+									<td class="SB_NF_coins">214</td>
+									<td class="SB_NF_date">16/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/zsalab_1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">15</td>
-									<td class="SB_player_name">deltatee</td>
-									<td class="SB_score">12 432</td>
-									<td class="SB_coins">529</td>
-									<td class="SB_date">22/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">15</td>
+									<td class="SB_NF_player_name">deltatee</td>
+									<td class="SB_NF_score">12 432</td>
+									<td class="SB_NF_coins">529</td>
+									<td class="SB_NF_date">22/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/deltatee1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">16</td>
-									<td class="SB_player_name">domedin#0478</td>
-									<td class="SB_score">11 486</td>
-									<td class="SB_coins">137</td>
-									<td class="SB_date">14/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">16</td>
+									<td class="SB_NF_player_name">domedin#0478</td>
+									<td class="SB_NF_score">11 486</td>
+									<td class="SB_NF_coins">137</td>
+									<td class="SB_NF_date">14/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/domedin1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">17</td>
-									<td class="SB_player_name">barigamb</td>
-									<td class="SB_score">11 326</td>
-									<td class="SB_coins">207</td>
-									<td class="SB_date">17/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">17</td>
+									<td class="SB_NF_player_name">barigamb</td>
+									<td class="SB_NF_score">11 326</td>
+									<td class="SB_NF_coins">207</td>
+									<td class="SB_NF_date">17/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/barigamb1.JPG')">
 												Screenshot
 										</a>
 									</td>
 								</tr>
-								<tr>
-									<td class="SB_Position">18</td>
-									<td class="SB_player_name">giraffasaur</td>
-									<td class="SB_score">10 796</td>
-									<td class="SB_coins">395</td>
-									<td class="SB_date">16/06/2023</td>
-									<td class="SB_proof">
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">18</td>
+									<td class="SB_NF_player_name">giraffasaur</td>
+									<td class="SB_NF_score">10 796</td>
+									<td class="SB_NF_coins">395</td>
+									<td class="SB_NF_date">16/06/2023</td>
+									<td class="SB_NF_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nf/giraffasaur1.jpg')"> 
 												Screenshot
@@ -603,12 +643,12 @@
 							<!-- You can only change content in "tbody" -->
 							<tbody>
 								<tr>
-									<td class="SB_Position">1</td>
-									<td class="SB_player_name">quazar2.1017wbns</td>
-									<td class="SB_score">5&nbsp;292</td>
-									<td class="SB_coins">71</td>
-									<td class="SB_date">18/06/2023</td>
-									<td class="SB_proof">
+									<td class="SB_NL_Position">1</td>
+									<td class="SB_NL_player_name">quazar2.1017wbns</td>
+									<td class="SB_NL_score">5&nbsp;292</td>
+									<td class="SB_NL_coins">71</td>
+									<td class="SB_NL_date">18/06/2023</td>
+									<td class="SB_NL_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nl/quazar2.1017wbns1.jpg')"> 
 												Screenshot
@@ -616,12 +656,12 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="SB_Position">2</td>
-									<td class="SB_player_name"> giraffasaur </td>
-									<td class="SB_score">5 214</td>
-									<td class="SB_coins">65</td>
-									<td class="SB_date">16/06/2023</td>
-									<td class="SB_proof">
+									<td class="SB_NL_Position">2</td>
+									<td class="SB_NL_player_name"> giraffasaur </td>
+									<td class="SB_NL_score">5 214</td>
+									<td class="SB_NL_coins">65</td>
+									<td class="SB_NL_date">16/06/2023</td>
+									<td class="SB_NL_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nl/giraffasaur1.jpg')"> 
 												Screenshot
@@ -629,12 +669,12 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="SB_Position">3</td>
-									<td class="SB_player_name"> arkqa </td>
-									<td class="SB_score">5 201</td>
-									<td class="SB_coins">61</td>
-									<td class="SB_date">02/07/2023</td>
-									<td class="SB_proof">
+									<td class="SB_NL_Position">3</td>
+									<td class="SB_NL_player_name"> arkqa </td>
+									<td class="SB_NL_score">5 201</td>
+									<td class="SB_NL_coins">61</td>
+									<td class="SB_NL_date">02/07/2023</td>
+									<td class="SB_NL_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nl/arkqa1.jpg')"> 
 												Screenshot
@@ -642,12 +682,12 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="SB_Position">4</td>
-									<td class="SB_player_name">ToGreedy</td>
-									<td class="SB_score">5 187</td>
-									<td class="SB_coins">61</td>
-									<td class="SB_date">04/07/2023</td>
-									<td class="SB_proof">
+									<td class="SB_NL_Position">4</td>
+									<td class="SB_NL_player_name">ToGreedy</td>
+									<td class="SB_NL_score">5 187</td>
+									<td class="SB_NL_coins">61</td>
+									<td class="SB_NL_date">04/07/2023</td>
+									<td class="SB_NL_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nl/ToGreedy1.jpg')"> 
 												Screenshot
@@ -655,12 +695,12 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="SB_Position">5</td>
-									<td class="SB_player_name">babykrokodile</td>
-									<td class="SB_score">5 173</td>
-									<td class="SB_coins">65</td>
-									<td class="SB_date">16/06/2023</td>
-									<td class="SB_proof">
+									<td class="SB_NL_Position">5</td>
+									<td class="SB_NL_player_name">babykrokodile</td>
+									<td class="SB_NL_score">5 173</td>
+									<td class="SB_NL_coins">65</td>
+									<td class="SB_NL_date">16/06/2023</td>
+									<td class="SB_NL_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nl/babykrokodile1.jpg')"> 
 												Screenshot
@@ -668,12 +708,12 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="SB_Position">6</td>
-									<td class="SB_player_name">mrllama_</td>
-									<td class="SB_score">5 150</td>
-									<td class="SB_coins">59</td>
-									<td class="SB_date">18/06/2023</td>
-									<td class="SB_proof">
+									<td class="SB_NL_Position">6</td>
+									<td class="SB_NL_player_name">mrllama_</td>
+									<td class="SB_NL_score">5 150</td>
+									<td class="SB_NL_coins">59</td>
+									<td class="SB_NL_date">18/06/2023</td>
+									<td class="SB_NL_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nl/mrllama_1.jpg')"> 
 												Screenshot
@@ -681,12 +721,12 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="SB_Position">7</td>
-									<td class="SB_player_name">bluesaphirxiv</td>
-									<td class="SB_score">5 117</td>
-									<td class="SB_coins">62</td>
-									<td class="SB_date">16/06/2023</td>
-									<td class="SB_proof">
+									<td class="SB_NL_Position">7</td>
+									<td class="SB_NL_player_name">bluesaphirxiv</td>
+									<td class="SB_NL_score">5 117</td>
+									<td class="SB_NL_coins">62</td>
+									<td class="SB_NL_date">16/06/2023</td>
+									<td class="SB_NL_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nl/bluesaphirxiv1.jpg')"> 
 												Screenshot
@@ -694,12 +734,12 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="SB_Position">8</td>
-									<td class="SB_player_name">neoarandil</td>
-									<td class="SB_score">5 002</td>
-									<td class="SB_coins">70</td>
-									<td class="SB_date">30/06/2023</td>
-									<td class="SB_proof">
+									<td class="SB_NL_Position">9</td>
+									<td class="SB_NL_player_name">neoarandil</td>
+									<td class="SB_NL_score">5 002</td>
+									<td class="SB_NL_coins">70</td>
+									<td class="SB_NL_date">30/06/2023</td>
+									<td class="SB_NL_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nl/neoarandil1.jpg')"> 
 												Screenshot
@@ -707,12 +747,12 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="SB_Position">9</td>
-									<td class="SB_player_name">GhostMiner_</td>
-									<td class="SB_score">4 958</td>
-									<td class="SB_coins">50</td>
-									<td class="SB_date">30/06/2023</td>
-									<td class="SB_proof">
+									<td class="SB_NL_Position">9</td>
+									<td class="SB_NL_player_name">GhostMiner_</td>
+									<td class="SB_NL_score">4 958</td>
+									<td class="SB_NL_coins">50</td>
+									<td class="SB_NL_date">30/06/2023</td>
+									<td class="SB_NL_proof">
 										<a class="ScoreProffLink" title="Picture of the highscore" 
 											onclick="ShowPictureWindow('./img/scores/nl/ghostminer1.jpg')"> 
 												Screenshot
@@ -875,6 +915,10 @@
 		<script>
 			ChangeShownTable("Nordfels_score_lb");
 			//document.getElementById("submitFormFrame").src = "./submit.html";
+			ResetPositionNumbers("Nordfels");
+			ResetPositionNumbers("Neuland");
+			AssignNumbers("Nordfels");
+			AssignNumbers("Neuland");
 		</script>
 		
 		
