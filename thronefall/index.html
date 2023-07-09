@@ -42,7 +42,7 @@
 			{
 				--backgroundColour: rgba(255, 255, 255, 0.95); 
 				--backgroundColour2: rgba(255, 255, 255, 0.9);
-				--outlineColour: rgba(0, 255, 0, 0.75);
+				--outlineColour: rgba(255, 180, 0, 0.8);
 			}
 
 			a:link 
@@ -82,8 +82,8 @@
 				margin-top: 40px; 
 				margin-bottom: 25px; 
 									
-				box-shadow: 0px 0px 16px rgba(0,0,0,0.75);
-				/*outline: 5px solid var(--outlineColour); */
+				box-shadow: 2px 2px 16px rgba(0,0,0,1);
+				/*outline: 8px solid var(--outlineColour); */
 			}
 			.tableToggleButton
 			{
@@ -184,26 +184,15 @@
 			}
 
 			#Nordfels_score_lb
-			{
-				display: block;
-			}
+				{	display: block;	}
 			#Neuland_score_lb
-			{
-				display: none;
-			}
+				{	display: none;	}
 			#Nordfels_gold_lb
-			{
-				display: none;
-			}
+				{	display: none;	}
 			#Neuland_gold_lb
-			{
-				display: none;
-			}
+				{	display: none;	}
 		</style>
 		<script>
-			var w = window.innerWidth;
-			var h = window.innerHeight;
-			
 			function ChangeShownTable (tableToShow)
 			{ 
 				var NFscoreTable = document.getElementById("Nordfels_score_lb");
@@ -247,7 +236,6 @@
 					break;
 				}
 			}
-
 			function AssignNumbers (tableName)
 			{
 				switch(tableName)
@@ -277,6 +265,7 @@
 		
 		<div class="masterPageContainer" id="masterPageContainer">
 			<div class="BgrBox">
+				<div class="FrgBox">
 				<!-- Page head stuff -->
 				<section id ="Page_header"> 
 					<center>
@@ -340,7 +329,7 @@
 				<section class="scoreTable" id="Nordfels_score_lb">  
 					<h3><strong>Nordfels high-scores</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
-					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
+					<div class="tableContainer" style="overflow-x:auto; outline: 0px solid #212529; "> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
 						<table id="Nordfels_scores" class="table table-striped">
 							<!-- Table header. Do not change or the styling might break! -->
 							<thead class="thead-dark">
@@ -382,6 +371,19 @@
 								</tr>
 								<tr class="Nordfels_scores_row">
 									<td class="SB_NF_Position">2</td>
+									<td class="SB_NF_player_name">The Gentleman</td>
+									<td class="SB_NF_score">14 795</td>
+									<td class="SB_NF_coins">293</td>
+									<td class="SB_NF_date">08/07/2023</td>
+									<td class="SB_NF_proof">
+										<a class="ScoreProffLink" title="Picture of the highscore" 
+											onclick="ShowPictureWindow('./img/scores/nf/the gentleman2.jpg')"> 
+												Screenshot
+										</a>
+									</td>
+								</tr>
+								<tr class="Nordfels_scores_row">
+									<td class="SB_NF_Position">2</td>
 									<td class="SB_NF_player_name">mrllama_</td>
 									<td class="SB_NF_score">14 792</td>
 									<td class="SB_NF_coins">359</td>
@@ -396,7 +398,7 @@
 								<tr class="Nordfels_scores_row">
 									<td class="SB_NF_Position">3</td>
 									<td class="SB_NF_player_name">deltatee</td>
-									<td class="SB_NF_score">14&nbsp;678</td>
+									<td class="SB_NF_score">14 678</td>
 									<td class="SB_NF_coins">476</td>
 									<td class="SB_NF_date">19/06/2023</td>
 									<td class="SB_NF_proof">
@@ -905,6 +907,7 @@
 						</h6>
 					</center>
 				</section> <!-- Footer -->
+			</div>
 			</div>
 		</div>
 		<!-- Optional JavaScript -->
