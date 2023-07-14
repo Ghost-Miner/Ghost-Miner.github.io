@@ -40,8 +40,10 @@
 			/* BASIC STUFF */
 			:root 
 			{
-				--backgroundColour: rgba(255, 255, 255, 0.95); 
+				--backgroundColour:  rgba(255, 255, 255, 0.9); 
 				--backgroundColour2: rgba(255, 255, 255, 0.9);
+				
+
 				--outlineColour: rgba(255, 180, 0, 0.8);
 			}
 
@@ -112,6 +114,12 @@
 			{
 				padding: 15px; padding-top:10px;  padding-bottom:10px
 			}
+			.options-toggles
+			{
+				width: 49.5%;
+				height: 75%;
+				margin-bottom: 2%;
+			}
 
 			/* I D S */
 			#HeaderButtonsVertical
@@ -132,20 +140,24 @@
 			#Categories_buttons
 			{
 				border: 0px green solid;
-				width: 80%;
+				width: 70%;
 
 				text-align: left;
 			}
 			#Submit_score_button
 			{
 				border: 0px red solid;
-				width: 20%;
+				width: 30%;
 
 				text-align: right;
 			}
+			#pageOptionsTogglesGroup
+			{
+				margin-top: 2.5%;
+			}
 
 			/* RESPONSIVE STUFF */
-			@media screen and (max-width: 1050px)
+			@media screen and (max-width: 10500px)
 			{
 				.BgrBox 
 				{
@@ -155,13 +167,19 @@
 					padding-top:25px;
 				}
 			}
-			@media screen and (max-width: 750px)
+			@media screen and (max-width: 850px)
 			{
 				.tableToggleButton
 				{
 					margin: 2.5px;
 					margin-bottom: 5px;
-				}			
+				}	
+				.options-toggles
+				{
+					width: 100%;
+					height: auto;
+					margin-bottom: 2%;
+				}		
 				
 				#Category_buttons_main_div
 				{
@@ -261,11 +279,156 @@
 					break;
 				}
 			}
- 		</script>
+			
+			function ChangeFontToCleaner ()
+			{
+				document.getElementById("masterPageContainer").style.fontFamily = "Roboto,sans-serif,Arial";
+				document.getElementById("Clean_font_toggle").disabled = true;
+				document.getElementById("Default_font_toggle").disabled = false;
+
+				SetCookie("FontStyle","Clean");
+			}
+			function ChangeFontToDefault ()
+			{
+				document.getElementById("masterPageContainer").style.fontFamily = "'Times New Roman',Times,serif"; 
+				document.getElementById("Clean_font_toggle").disabled = false;
+				document.getElementById("Default_font_toggle").disabled = true;
+
+				SetCookie("FontStyle","Default");
+			}
+			function SetFontStyle () 
+			{
+				let savedFont = GetCookie("FontStyle");
+
+				switch (savedFont)
+				{
+					default:
+						console.log("SetFontStyle | Bisciut not found or is invalid value.");
+						ChangeFontToDefault();
+					break;
+					
+					case "Default":
+						ChangeFontToDefault();
+					break;
+					
+					case "Clean":
+						ChangeFontToCleaner();
+					break;
+				}
+			}
+
+
+			function ColourChangeDark() 
+			{
+				document.body.style.color="white";
+				document.getElementById("BgrBox").style.backgroundColor="rgba(0, 0, 0, 0.9)";
+				document.getElementById("footerText").style.color="white";
+				
+				document.getElementById("Nordfels_scores").classList.add("table-dark");
+				document.getElementById("Nordfels_scores_header").classList.remove("thead-dark"); 
+				document.getElementById("Nordfels_scores_header").classList.add("thead-light"); 
+				
+				document.getElementById("Neuland_scores").classList.add("table-dark");
+				document.getElementById("Neuland_scores_header").classList.remove("thead-dark"); 
+				document.getElementById("Neuland_scores_header").classList.add("thead-light"); 
+				
+				document.getElementById("Nordfels_coins").classList.add("table-dark");		
+				
+				document.getElementById("pageOptionsTogglesGroupCotentBox").style.backgroundColor = "#2c3034";
+				document.getElementById("Dark_theme_toggle").disabled = true;
+				document.getElementById("Light_theme_toggle").disabled = false;
+
+				let topButtons = document.getElementsByClassName("btn");
+				for (let i = 0; i < topButtons.length; i++)
+				{
+					topButtons[i].style.boxShadow = "2px 2px 8px rgba(255,255,255,0.5)";
+				}
+				SetCookie("PageTheme","dark");
+			}
+			function ColourChangeLight() 
+			{
+				document.body.style.color="black";
+				document.getElementById("BgrBox").style.backgroundColor="rgba(255, 255, 255, 0.9)";
+				document.getElementById("footerText").style.color="black";
+				
+				document.getElementById("Nordfels_scores").classList.remove("table-dark");
+				document.getElementById("Nordfels_scores_header").classList.remove("thead-light"); 
+				document.getElementById("Nordfels_scores_header").classList.add("thead-dark"); 
+				
+				document.getElementById("Neuland_scores").classList.remove("table-dark");
+				document.getElementById("Neuland_scores_header").classList.remove("thead-light"); 
+				document.getElementById("Neuland_scores_header").classList.add("thead-dark"); 
+				
+				document.getElementById("Nordfels_coins").classList.add("table-dark");	
+				
+				document.getElementById("pageOptionsTogglesGroupCotentBox").style.backgroundColor = "#ffffff";
+				document.getElementById("Dark_theme_toggle").disabled = false;
+				document.getElementById("Light_theme_toggle").disabled = true;
+
+				let topButtons = document.getElementsByClassName("btn");
+				for (let i = 0; i < topButtons.length; i++)
+				{
+					topButtons[i].style.boxShadow = "2px 2px 4px rgba(0,0,0,0.5)"; 
+				}
+				SetCookie("PageTheme","light");
+			}
+
+			function SetTheme () 
+			{
+				let savedTheme = GetCookie("PageTheme");
+
+				switch (savedTheme)
+				{
+					default:
+						console.log("SetTheme | Bisciut not found or is invalid value.");
+					break;
+					
+					case "dark":
+						ColourChangeDark();
+						//document.getElementById("submitFormFrame").src="./submitDark.html";
+					break;
+					
+					case "light":
+						ColourChangeLight();
+						//document.getElementById("submitFormFrame").src="./submit.html";
+					break;
+				}
+			}
+
+			// --------
+			// COOKIES
+			//---------
+			function SetCookie(cname, cvalue) 
+			{
+				document.cookie = cname + "=" + cvalue + ";" + ";path=/";
+			}
+			function GetCookie(cname) 
+			{
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				let ca = decodedCookie.split(';');
+				for(let i = 0; i <ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+			function CheckCookie(cname)
+			{
+				let cookieValue = GetCookie(cname);
+
+				return cookieValue; 
+			}
+		</script>
 		
 		<div class="masterPageContainer" id="masterPageContainer">
-			<div class="BgrBox">
-				<div class="FrgBox">
+			<div class="BgrBox" id="BgrBox">
+				<div class="FrgBox" id ="FrgBox">
 				<!-- Page head stuff -->
 				<section id ="Page_header"> 
 					<center>
@@ -273,7 +436,7 @@
 							<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
 							<h1> <strong> <em> Thronefall leaderboard </em> </strong> </h1>
 						</section>
-						<hr>
+						<hr class="horizontalSeparator">
 						<section id="Game_links">
 							<font class="ButtonText">
 								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
@@ -288,15 +451,14 @@
 								</a>
 							</font>
 						</section>
-						
 						<noscript>		
-							<hr>						
+							<hr class="horizontalSeparator">						
 							<h3><strong><em>This website requires JavaScript to function correctly.</em></strong></h3>
-							<hr>
+							<hr class="horizontalSeparator">
 						</noscript>
 					</center>
 				</section> <!-- Page head stuff -->
-				<hr>
+				<hr class="horizontalSeparator">
 				
 				<!-- Category buttons -->
 				<section id="Category_buttons_section">
@@ -316,15 +478,35 @@
 							</button>
 						</div>
 						
-						<div id="Submit_score_button">							
+						<div id="Submit_score_button">					
 							<!-- submit score overlay button  -->
 							<button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()">
-								<strong> Submit score </strong>
+								<strong>SUBMIT SCORE</strong>
+							</button>
+							<button type="button" class="btn btn-warning submitScoreOverlayBtn" data-toggle="collapse" data-target="#pageOptionsTogglesGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
+								<img src="./img/gear.png" style="width: 20px; height:20px"/>
 							</button>
 						</div>
 					</div>
-				</section>				
-				<hr>		
+				</section>		
+				<section id="Options_buttons">
+					<div class="collapse" id="pageOptionsTogglesGroup">
+						<div class="card card-body" id="pageOptionsTogglesGroupCotentBox">
+
+							<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Options</h4>
+							<div id="Thmeme toggles" style="display: inline-flexbox;">
+								<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles" type="button" onclick="ColourChangeDark()">Dark theme</button>
+								<button id="Light_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeLight()">Light theme</button>
+							</div>
+							<div id="Font toggles" style="display: inline-flexbox;">
+								<button id="Clean_font_toggle"   class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToCleaner()">Cleaner font</button>
+								<button id="Default_font_toggle" class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToDefault()">Fancier font</button>
+							</div>
+
+						</div>
+					</div>
+				</section>		
+				<hr class="horizontalSeparator">		
 				<!-- Nordfels_score_lb -->
 				<section class="scoreTable" id="Nordfels_score_lb">  
 					<h3><strong>Nordfels high-scores</strong></h3>
@@ -332,7 +514,7 @@
 					<div class="tableContainer" style="overflow-x:auto; outline: 0px solid #212529; "> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
 						<table id="Nordfels_scores" class="table table-striped">
 							<!-- Table header. Do not change or the styling might break! -->
-							<thead class="thead-dark">
+							<thead id="Nordfels_scores_header" class="thead-dark">
 								<tr>
 									<th style="text-align: center;">
 										<font class="Table_header"> # </font>
@@ -606,7 +788,7 @@
 							</tbody>
 						</table>
 					</div>
-					<hr class="under_table_line">
+					 <hr class="horizontalSeparator">
 				</section> <!-- Nordfels_score_lb -->
 				
 				<!-- Neuland_score_lb -->
@@ -620,7 +802,7 @@
 					<div class="tableContainer" style="overflow-x:auto;"> 
 						<table id="Neuland_scores" class="table table-striped">
 							<!-- Table header. Do not change or the styling might break! -->
-							<thead class="thead-dark">
+							<thead id="Neuland_scores_header" class="thead-dark">
 								<tr>
 									<th style="text-align: center;">
 										<font class="Table_header"> # </font>
@@ -764,7 +946,7 @@
 							</tbody>
 						</table>
 					</div>
-					<hr class="under_table_line">
+					 <hr class="horizontalSeparator">
 				</section> <!-- Neuland_score_lb -->				
 				<!--				
 					 D E P R E C A T E D				
@@ -883,7 +1065,7 @@
 							</tbody>
 						</table>
 					</div>
-					<hr class="under_table_line">
+					 <hr class="horizontalSeparator">
 				</section> <!-- Nordfels coins lb -->
 				
 				<!-- Neuland_score_lb -->
@@ -893,13 +1075,13 @@
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
 						<h2> Separate gold leaderboard is deprecated. </h2>
 					</div>
-					<hr class="under_table_line">
+					 <hr class="horizontalSeparator">
 				</section> <!-- Neulands coins lb -->
 				
 				<section id="Footer"> <!-- Footer -->
 					<center>
 						<h6>
-							<font style="color:black; font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.4.5</i> |
+							<font id="footerText" style=" font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.5 (14/7/2023)</i> |
 								<a href="https://ghost-miner.github.io/">Website</a>, 
 								<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 								<a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -916,6 +1098,9 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script>
+			SetTheme();
+			SetFontStyle();
+
 			ChangeShownTable("Nordfels_score_lb");
 			//document.getElementById("submitFormFrame").src = "./submit.html";
 			ResetPositionNumbers("Nordfels");
@@ -999,12 +1184,11 @@
 						padding: 2%;
 					}
 				}
-			</style>
-			
+			</style>			
 				<center>
 					<div id="submitBakcground">
 						<div id="SubmitWinContent">
-							<iframe id="submitFormFrame" src="./submit.html" style="width:100%; height:100%; border:0px; background-color: #fff;"></iframe>
+							<iframe id="submitFormFrame" src="./submitDark.html" style="width:100%; height:100%; border:0px; background-color: #000;"></iframe>
 							
 							<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
 								Cancel
@@ -1017,10 +1201,33 @@
 						</div>
 					</div>
 				</center>
-
 			<script>
+				let currPageTheme = GetCookie("PageTheme")
+				if (currPageTheme == "dark")
+				{
+					document.getElementById("submitFormFrame").src="./submitDark.html";
+					console.log("Changing to dark form");
+				}
+				else 
+				{
+					document.getElementById("submitFormFrame").src="./submit.html";
+					console.log("Using default form");
+				}
+
 				function ShowFormWindow() 
 				{
+					let currPageTheme = GetCookie("PageTheme")
+					if (currPageTheme == "dark")
+					{
+						document.getElementById("submitFormFrame").src="./submitDark.html";
+						console.log("Changing to dark form");
+					}
+					else 
+					{
+						document.getElementById("submitFormFrame").src="./submit.html";
+						console.log("Using default form");
+					}
+
 					document.getElementById("submitBakcground").style.display = "block";
 			  	}				  
 			  	function HideFormWindow() 
