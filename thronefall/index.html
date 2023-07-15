@@ -220,15 +220,71 @@
 				{	display: block;	}
 			#Neuland_score_lb
 				{	display: none;	}
-			#Nordfels_gold_lb
-				{	display: none;	}
-			#Neuland_gold_lb
+			#Neuland_time_lb
 				{	display: none;	}
 			#Nordfels_time_lb
 				{ display: none; }
 		</style>
 		<script>
-			function ChangeShownTable (tableToShow)
+
+console.log(' href => ' + window.location.href);
+console.log(' host => ' + window.location.host);
+console.log(' hostname => ' + window.location.hostname);
+console.log(' port => ' + window.location.port);
+console.log(' protocol => ' + window.location.protocol);
+console.log(' pathname => ' + window.location.pathname);
+console.log(' hashpathname => ' + window.location.hash);
+console.log(' search=> ' + window.location.search);
+console.log("-----------------------------------------------------------");
+
+			function CheckAdressHref () 
+			{
+				let hash = window.location.hash;
+
+				switch(hash)
+				{
+					default:
+						console.log("CheckAdressHref | invalid hash. ignoring");
+					break;
+
+					case "#nordfels_score":
+						ChangeShownTable("Nordfels_score_lb", "nordfels_score");
+					break;
+
+					case "#neuland_score":
+						ChangeShownTable("Neuland_score_lb", "neuland_score");
+					break;
+
+					case "#nordfels_time":
+						ChangeShownTable("Nordfels_time_lb", "nordfels_time");
+					break;
+
+					case "#neuland_time":
+						ChangeShownTable("Neuland_time_lb", "neuland_time");
+					break;
+				}
+			}
+			function CheckAdressSearch ()
+			{
+				let addrSearch = window.location.search;
+
+				switch(addrSearch)
+				{
+					default:
+						console.log("CheckAdressSearch | invalid value: " + addrSearch + " ignoring");
+					break;
+
+					case "?dark":
+						ColourChangeDark();
+					break;
+					
+					case "?light":
+						ColourChangeLight();
+					break;
+				}
+			}
+
+			function ChangeShownTable (tableToShow, sectionName)
 			{ 
 				const LBsections = document.getElementsByClassName("LeaderBoard_section");
 				
@@ -239,6 +295,8 @@
 				
 				let showTable = document.getElementById(tableToShow);				
 				showTable.style.display = "block"; 
+
+				window.location.hash = sectionName;
 			}
 
 			function ResetPositionNumbers (tableName)
@@ -445,7 +503,8 @@
 				switch (savedTheme)
 				{
 					default:
-						console.log("SetTheme | Bisciut not found or is invalid value.");
+						console.log("SetTheme | Bisciut not found or is invalid value. Value: " + savedTheme);
+						CheckAdressSearch();
 					break;
 					
 					case "dark":
@@ -529,16 +588,16 @@
 				<section id="Category_buttons_section">
 					<div id="Category_buttons_main_div">
 						<div id="Categories_buttons">
-							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_scores_button" onclick="ChangeShownTable('Nordfels_score_lb')">
+							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_scores_button" onclick="ChangeShownTable('Nordfels_score_lb', 'nordfels_score')">
 								<b>Nordfels scores</b>
 							</button>
-							<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_scores_button" onclick="ChangeShownTable('Neuland_score_lb')">
+							<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_scores_button" onclick="ChangeShownTable('Neuland_score_lb', 'neuland_score')">
 								<b>Neuland scores</b>
 							</button>
-							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_time_button" onclick="ChangeShownTable('Nordfels_time_lb')">
+							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_time_button" onclick="ChangeShownTable('Nordfels_time_lb', 'nordfels_time')">
 								<b>Nordfels time</b>
 							</button>
-							<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_time_button" onclick="ChangeShownTable('Neuland_time_lb')">
+							<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_time_button" onclick="ChangeShownTable('Neuland_time_lb', 'neuland_time')">
 								<b>Neuland time</b>
 							</button>
 						</div>
@@ -1187,131 +1246,11 @@
 					</div>
 					<hr class="horizontalSeparator">
 				</section> <!-- Neuland time lb -->
-
-				<!--				
-					 D E P R E C A T E D				
-				-->
-				<!-- Nordfels gold lb -->
-				<section class="LeaderBoard_section" id="Nordfels_gold_lb"> 
-					<h3><strong>Nordfels most coins</strong></h3>
-					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
-					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
-						<div class="alert alert-warning" role="alert">
-						<h5>
-								Separate gold leaderboard is currently deprecated. <br>
-								It is not being updated, and may be removed in the future.
-						</h5>
-						</div>
-						<table id="Nordfels_coins" class="table table-striped">
-							<!-- Table header. Do not change or the styling might break! -->
-							<thead class="thead-dark">
-								<tr>
-									<th style="text-align:center;">
-										<font class="Table_header">#</font>
-									</th>
-									<th>
-										<font class="Table_header"> Name </font>
-									</th>
-									<th>
-										<font class="Table_header">Coins</font>
-									</th>
-									<th>
-										<font class="Table_header"> Date </font>
-									</th>
-									<th>
-										<font class="Table_header"> Picture/Video </font>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-							<!-- You can only change content in "tbody" -->
-								<tr>
-									<td class="SB_Position">1</td>
-									<td class="SB_player_name">babykrokodile</td>
-									<td class="SB_score">472</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr>
-									<td class="SB_Position">2</td>
-									<td class="SB_player_name">777aker</td>
-									<td class="SB_score">436</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr >
-									<td class="SB_Position">3</td>
-									<td class="SB_player_name">quazar2.1017wbns</td>
-									<td class="SB_score">404</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr>
-									<td class="SB_Position">4</td>
-									<td class="SB_player_name">giraffasaur</td>
-									<td class="SB_score">398</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr>
-									<td class="SB_Position">5</td>
-									<td class="SB_player_name">mrllama_</td>
-									<td class="SB_score">361</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr>
-									<td class="SB_Position">6</td>
-									<td class="SB_player_name">bluesaphirxiv</td>
-									<td class="SB_score">245</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr>
-									<td class="SB_Position">7</td>
-									<td class="SB_player_name">bluesaphirxiv</td>
-									<td class="SB_score">227</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr>
-									<td class="SB_Position">8</td>
-									<td class="SB_player_name">zsalab_</td>
-									<td class="SB_score">214</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr>
-									<td class="SB_Position">9</td>
-									<td class="SB_player_name">GhostMiner</td>
-									<td class="SB_score">209</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr>
-									<td class="SB_Position">10</td>
-									<td class="SB_player_name">neonitedragon</td>
-									<td class="SB_score">206</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-								<tr>
-									<td class="SB_Position">11</td>
-									<td class="SB_player_name">neonitedragon</td>
-									<td class="SB_score">142</td>
-									<td>---</td>
-									<td>---</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					 <hr class="horizontalSeparator">
-				</section> <!-- Nordfels coins lb -->
 								
 				<section id="Footer"> <!-- Footer -->
 					<center>
 						<h6>
-							<font id="footerText" style=" font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.6 (15/7/2023)</i> |
+							<font id="footerText" style=" font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.6.1 (15/7/2023)</i> |
 								<a href="https://ghost-miner.github.io/">Website</a>, 
 								<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 								<a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -1331,7 +1270,11 @@
 			SetTheme();
 			SetFontStyle();
 
-			ChangeShownTable("Nordfels_score_lb");
+			//ChangeShownTable("Nordfels_score_lb","nordfels_score");
+			
+			CheckAdressHref();
+			//CheckAdressSearch();
+			
 			//document.getElementById("submitFormFrame").src = "./submit.html";
 			ResetPositionNumbers("Nordfels");
 			ResetPositionNumbers("Neuland");
