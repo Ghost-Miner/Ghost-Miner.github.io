@@ -120,6 +120,11 @@
 				height: 75%;
 				margin-bottom: 2%;
 			}
+			.submitScoreCollapeBtn
+			{
+				width: 49.5%;
+				height: auto;
+			}			
 
 			/* I D S */
 			#HeaderButtonsVertical
@@ -153,6 +158,10 @@
 			}
 			#pageOptionsTogglesGroup
 			{
+				margin-top: 2%;
+			}
+			#submissionTypeGroup
+			{
 				margin-top: 2.5%;
 			}
 
@@ -179,8 +188,14 @@
 					width: 100%;
 					height: auto;
 					margin-bottom: 2%;
-				}		
-				
+				}				
+				.submitScoreCollapeBtn
+				{
+					width: 100%;
+					height: auto;
+					margin-bottom: 2%;
+				}			
+					
 				#Category_buttons_main_div
 				{
 					display: block;
@@ -209,22 +224,20 @@
 				{	display: none;	}
 			#Neuland_gold_lb
 				{	display: none;	}
+			#Nordfels_time_lb
+				{ display: none; }
 		</style>
 		<script>
 			function ChangeShownTable (tableToShow)
 			{ 
-				var NFscoreTable = document.getElementById("Nordfels_score_lb");
-				var NLscoreTable = document.getElementById("Neuland_score_lb");
-				var NFcoinsTable = document.getElementById("Nordfels_gold_lb");
-				var NLcoinsTable = document.getElementById("Neuland_gold_lb");
+				const LBsections = document.getElementsByClassName("LeaderBoard_section");
 				
-				var showTable = document.getElementById(tableToShow);
+				for (let i = 0; i < LBsections.length; i++)
+				{
+					LBsections[i].style.display = "none";
+				}
 				
-				NFscoreTable.style.display = "none";
-				NLscoreTable.style.display = "none";
-				NFcoinsTable.style.display = "none";
-				NLcoinsTable.style.display = "none";
-				
+				let showTable = document.getElementById(tableToShow);				
 				showTable.style.display = "block"; 
 			}
 
@@ -252,6 +265,26 @@
 							NLcollection[i].style.textAlign = "center";
 						}
 					break;
+
+					case "Nordfels time":
+						const NFTimeCollection = document.getElementsByClassName("TIME_NF_Position");
+				
+						for (let i = 0; i < NFTimeCollection.length; i++) 
+						{
+							NFTimeCollection[i].textContent = "#";
+							NFTimeCollection[i].style.textAlign = "center";
+						}
+					break;
+
+					case "Neuland time": 
+						const NLTimeCollection = document.getElementsByClassName("TIME_NL_Position");
+				
+						for (let i = 0; i < NLTimeCollection.length; i++) 
+						{
+							NLTimeCollection[i].textContent = "#";
+							NLTimeCollection[i].style.textAlign = "center";
+						}
+					break;
 				}
 			}
 			function AssignNumbers (tableName)
@@ -275,6 +308,26 @@
 						{
 							NLcollection[i].textContent = (i + 1);
 							NLcollection[i].style.textAlign = "center";
+						}
+					break;
+
+					case "Nordfels time":
+						const NFTimeCollection = document.getElementsByClassName("TIME_NF_Position");
+
+						for (let i = 0; i < NFTimeCollection.length; i++) 
+						{
+							NFTimeCollection[i].textContent = (i + 1);
+							NFTimeCollection[i].style.textAlign = "center";
+						}
+					break;
+
+					case "Neuland time": 
+						const NLTimeCollection = document.getElementsByClassName("TIME_NL_Position");
+
+						for (let i = 0; i < NLTimeCollection.length; i++) 
+						{
+							NLTimeCollection[i].textContent =(i + 1);
+							NLTimeCollection[i].style.textAlign = "center";
 						}
 					break;
 				}
@@ -317,24 +370,30 @@
 				}
 			}
 
-
 			function ColourChangeDark() 
 			{
 				document.body.style.color="white";
 				document.getElementById("BgrBox").style.backgroundColor="rgba(0, 0, 0, 0.95)";
 				document.getElementById("footerText").style.color="white";
 				
-				document.getElementById("Nordfels_scores").classList.add("table-dark");
-				document.getElementById("Nordfels_scores_header").classList.remove("thead-dark"); 
-				document.getElementById("Nordfels_scores_header").classList.add("thead-light"); 
+				// Add dark teme to all tables with "LeaderBoard_table" class
+				const LBtable = document.getElementsByClassName("LeaderBoard_table");
+				for (let i = 0; i < LBtable.length; i++)
+				{
+					LBtable[i].classList.add("table-dark");
+				} 
 				
-				document.getElementById("Neuland_scores").classList.add("table-dark");
-				document.getElementById("Neuland_scores_header").classList.remove("thead-dark"); 
-				document.getElementById("Neuland_scores_header").classList.add("thead-light"); 
-				
-				document.getElementById("Nordfels_coins").classList.add("table-dark");		
+				// Add dark teme to all tables with "LeaderBoard_table_header" class
+				const LBtableHeader = document.getElementsByClassName("LeaderBoard_table_header");
+				for (let i = 0; i < LBtableHeader.length; i++)
+				{
+					LBtableHeader[i].classList.remove("thead-dark"); 
+					LBtableHeader[i].classList.add("thead-light");  
+				} 
 				
 				document.getElementById("pageOptionsTogglesGroupCotentBox").style.backgroundColor = "#2c3034";
+				document.getElementById("submissionTypeGroupCotentBox").style.backgroundColor = "#2c3034";
+
 				document.getElementById("Dark_theme_toggle").disabled = true;
 				document.getElementById("Light_theme_toggle").disabled = false;
 
@@ -351,17 +410,24 @@
 				document.getElementById("BgrBox").style.backgroundColor="rgba(255, 255, 255, 0.95)";
 				document.getElementById("footerText").style.color="black";
 				
-				document.getElementById("Nordfels_scores").classList.remove("table-dark");
-				document.getElementById("Nordfels_scores_header").classList.remove("thead-light"); 
-				document.getElementById("Nordfels_scores_header").classList.add("thead-dark"); 
+				// Add dark teme to all tables with "LeaderBoard_table" class
+				const LBtable = document.getElementsByClassName("LeaderBoard_table");
+				for (let i = 0; i < LBtable.length; i++)
+				{
+					LBtable[i].classList.remove("table-dark");
+				} 
 				
-				document.getElementById("Neuland_scores").classList.remove("table-dark");
-				document.getElementById("Neuland_scores_header").classList.remove("thead-light"); 
-				document.getElementById("Neuland_scores_header").classList.add("thead-dark"); 
-				
-				document.getElementById("Nordfels_coins").classList.add("table-dark");	
+				// Add dark teme to all tables with "LeaderBoard_table_header" class
+				const LBtableHeader = document.getElementsByClassName("LeaderBoard_table_header");
+				for (let i = 0; i < LBtableHeader.length; i++)
+				{
+					LBtableHeader[i].classList.add("thead-dark"); 
+					LBtableHeader[i].classList.remove("thead-light");  
+				} 
 				
 				document.getElementById("pageOptionsTogglesGroupCotentBox").style.backgroundColor = "#ffffff";
+				document.getElementById("submissionTypeGroupCotentBox").style.backgroundColor = "#ffffff";
+
 				document.getElementById("Dark_theme_toggle").disabled = false;
 				document.getElementById("Light_theme_toggle").disabled = true;
 
@@ -372,7 +438,6 @@
 				}
 				SetCookie("PageTheme","light");
 			}
-
 			function SetTheme () 
 			{
 				let savedTheme = GetCookie("PageTheme");
@@ -470,51 +535,82 @@
 							<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_scores_button" onclick="ChangeShownTable('Neuland_score_lb')">
 								<b>Neuland scores</b>
 							</button>
-							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_gold_button" onclick="ChangeShownTable('Nordfels_gold_lb')">
-								<b>Nordfels gold</b>
+							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_time_button" onclick="ChangeShownTable('Nordfels_time_lb')">
+								<b>Nordfels time</b>
 							</button>
-							<button type="button" disabled class="btn btn-warning tableToggleButton" onclick="ChangeShownTable('Neuland_gold_lb')">
-								<b>Neuland gold</b>
+							<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_time_button" onclick="ChangeShownTable('Neuland_time_lb')">
+								<b>Neuland time</b>
 							</button>
 						</div>
 						
 						<div id="Submit_score_button">					
 							<!-- submit score overlay button  -->
-							<button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()">
-								<strong>SUBMIT SCORE</strong>
+							<button type="button" class="btn btn-warning submitScoreOverlayBtn" data-toggle="collapse" data-target="#submissionTypeGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
+								<strong>SUBMIT</strong>
 							</button>
-							<button type="button" class="btn btn-warning submitScoreOverlayBtn" data-toggle="collapse" data-target="#pageOptionsTogglesGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
+							<!-- <button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()">
+								<strong>SUBMIT SCORE</strong>
+							</button> -->
+							<button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#pageOptionsTogglesGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
 								<img src="./img/gear.png" style="width: 20px; height:20px"/>
 							</button>
 						</div>
 					</div>
 				</section>		
-				<section id="Options_buttons">
+
+				<section id="Options_buttons_section">
 					<div class="collapse" id="pageOptionsTogglesGroup">
 						<div class="card card-body" id="pageOptionsTogglesGroupCotentBox">
 
 							<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Options</h4>
-							<div id="Thmeme toggles" style="display: inline-flexbox;">
-								<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles" type="button" onclick="ColourChangeDark()">Dark theme</button>
-								<button id="Light_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeLight()">Light theme</button>
+							<div id="Thmeme_toggles" style="display: inline-flexbox;">
+								<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles" type="button" onclick="ColourChangeDark()">
+									Dark theme
+								</button>
+								<button id="Light_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeLight()">
+									Light theme
+								</button>
 							</div>
-							<div id="Font toggles" style="display: inline-flexbox;">
-								<button id="Clean_font_toggle"   class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToCleaner()">Cleaner text</button>
-								<button id="Default_font_toggle" class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToDefault()">Fancier text</button>
+							<div id="Font_toggles" style="display: inline-flexbox;">
+								<button id="Clean_font_toggle"   class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToCleaner()">
+									<font style="font-family: Roboto,sans-serif,Arial;">Cleaner text</font>
+								</button>
+								<button id="Default_font_toggle" class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToDefault()">
+									Fancier text
+								</button>
 							</div>
 
 						</div>
 					</div>
-				</section>		
-				<hr class="horizontalSeparator">		
+				</section>
+
+				<section id="Options_buttons_section">
+					<div class="collapse" id="submissionTypeGroup">
+						<div class="card card-body" id="submissionTypeGroupCotentBox">
+
+							<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Submit high-score or a speedrun time</h4>
+							<div id="Submit_score_group" style="display: inline-flexbox;">
+								<button id="submit_score" type="button" class="btn btn-warning submitScoreCollapeBtn" onclick="ShowFormWindow()">
+									<b>Submit high-score</b>
+								</button>
+								<button id="submit_speedrun" type="button" class="btn btn-warning submitScoreCollapeBtn" onclick="ShowFormWindowTime()">
+									<b>Submit speedrun</b>
+								</button>
+							</div>
+
+						</div>
+					</div>
+				</section>	
+				<hr class="horizontalSeparator">
+					
 				<!-- Nordfels_score_lb -->
-				<section class="scoreTable" id="Nordfels_score_lb">  
+				<section class="LeaderBoard_section" id="Nordfels_score_lb">  
 					<h3><strong>Nordfels high-scores</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto; outline: 0px solid #212529; "> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
-						<table id="Nordfels_scores" class="table table-striped">
+						<table id="Nordfels_scores" class="table table-striped LeaderBoard_table">
 							<!-- Table header. Do not change or the styling might break! -->
-							<thead id="Nordfels_scores_header" class="thead-dark">
+							<thead id="Nordfels_scores_header" class="thead-dark  LeaderBoard_table_header">
 								<tr>
 									<th style="text-align: center;">
 										<font class="Table_header"> # </font>
@@ -792,7 +888,7 @@
 				</section> <!-- Nordfels_score_lb -->
 				
 				<!-- Neuland_score_lb -->
-				<section class="scoreTable" id="Neuland_score_lb">	
+				<section class="LeaderBoard_section" id="Neuland_score_lb">	
 					<h3><strong>Neuland high-scores</strong></h3>					
 					<!-- 
 						Bootstrap styled table.
@@ -800,9 +896,9 @@
 					-->
 					<!-- Div required to fit the table in the window without making it render off-screen -->
 					<div class="tableContainer" style="overflow-x:auto;"> 
-						<table id="Neuland_scores" class="table table-striped">
+						<table id="Neuland_scores" class="table table-striped LeaderBoard_table">
 							<!-- Table header. Do not change or the styling might break! -->
-							<thead id="Neuland_scores_header" class="thead-dark">
+							<thead id="Neuland_scores_header" class="thead-dark LeaderBoard_table_header">
 								<tr>
 									<th style="text-align: center;">
 										<font class="Table_header"> # </font>
@@ -943,16 +1039,147 @@
 										</a>
 									</td>
 								</tr>
+								<tr>
+									<td class="SB_NL_Position">9</td>
+									<td class="SB_NL_player_name">LukasRainbow</td>
+									<td class="SB_NL_score">4 831</td>
+									<td class="SB_NL_coins">43</td>
+									<td class="SB_NL_date">15/07/2023</td>
+									<td class="SB_NL_proof">
+										<a class="ScoreProffLink" title="Picture of the highscore" 
+											onclick="ShowPictureWindow('./img/scores/nl/LukasRainbow1.png')"> 
+												Screenshot
+										</a>
+									</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
 					 <hr class="horizontalSeparator">
-				</section> <!-- Neuland_score_lb -->				
+				</section> <!-- Neuland_score_lb -->
+				
+				<!-- Nordfels time lb -->
+				<section class="LeaderBoard_section" id="Nordfels_time_lb">	
+					<h3><strong>Nordfels Speedrun times</strong></h3>
+					<!-- Div required to fit the table in the window without making it render off-screen -->
+					<div class="tableContainer" style="overflow-x:auto;"> 
+						<table id="Nordfels_time" class="table table-striped LeaderBoard_table">
+							<!-- Table header. Do not change or the styling might break! -->
+							<thead id="Nordfels_time_header" class="thead-dark LeaderBoard_table_header">
+								<tr>
+									<th style="text-align: center;">
+										<font class="Table_header"> # </font>
+									</th>
+									<th>
+										<font class="Table_header"> Name </font>
+									</th>
+									<th>
+										<font class="Table_header"> Time </font>
+									</th>
+									<th>
+										<font class="Table_header"> Date </font>
+									</th>
+									<th>
+										<font class="Table_header"> Used weapon </font>
+									</th>
+									<th>
+										<font class="Table_header"> Proof </font>
+									</th>
+								</tr>
+							</thead>
+							<!-- You can only change content in "tbody" -->
+							<tbody>
+								<tr>
+									<td class="TIME_NF_Position">1</td>
+									<td class="TIME_NF_player_name">Rasmos05</td>
+									<td class="TIME_NF_time">11m 42s</td>
+									<td class="TIME_NF_date">09/07:2023</td>
+									<td class="TIME_NF_weapon">Bow</td>
+									<td class="TIME_NF_proof">
+										<a class="ScoreProffLink" title="Picture of the highscore" 
+											onclick="ShowEmbedWindow('https://www.youtube.com/embed/G4a7Tk1iRlQ')">
+												Video
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<hr class="horizontalSeparator">
+				</section> <!-- Nordfels time lb -->
+
+				<!-- Neuland time lb -->
+				<section class="LeaderBoard_section" id="Neuland_time_lb">	
+					<h3><strong>Neuland Speedrun times</strong></h3>					
+					<!-- 
+						Bootstrap styled table.
+						DO NOT CHANGE TABLE CLASSSES! 
+					-->
+					<!-- Div required to fit the table in the window without making it render off-screen -->
+					<div class="tableContainer" style="overflow-x:auto;"> 
+						<table id="Neuland_time" class="table table-striped LeaderBoard_table">
+							<!-- Table header. Do not change or the styling might break! -->
+							<thead id="Neuland_time_header" class="thead-dark LeaderBoard_table_header">
+								<tr>
+									<th style="text-align: center;">
+										<font class="Table_header"> # </font>
+									</th>
+									<th>
+										<font class="Table_header"> Name </font>
+									</th>
+									<th>
+										<font class="Table_header"> Time </font>
+									</th>
+									<th>
+										<font class="Table_header"> Date </font>
+									</th>
+									<th>
+										<font class="Table_header"> Used weapon </font>
+									</th>
+									<th>
+										<font class="Table_header"> Proof </font>
+									</th>
+								</tr>
+							</thead>
+							<!-- You can only change content in "tbody" -->
+							<tbody>
+								<tr>
+									<td class="TIME_NL_Position">1</td>
+									<td class="TIME_NL_player_name">FlediX2</td>
+									<td class="TIME_NL_time">3m 58s</td>
+									<td class="TIME_NL_date">12/07:2023</td>
+									<td class="TIME_NL_weapon">Bow</td>
+									<td class="TIME_NL_proof">
+										<a class="ScoreProffLink" title="Picture of the highscore" 
+											onclick="ShowEmbedWindow('https://www.youtube.com/embed/CuIlANEdh8U')"> 
+												Video
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="TIME_NL_Position">1</td>
+									<td class="TIME_NL_player_name">Rasmos05</td>
+									<td class="TIME_NL_time">4m 03s</td>
+									<td class="TIME_NL_date">10/07:2023</td>
+									<td class="TIME_NL_weapon">Bow</td>
+									<td class="TIME_NL_proof">
+										<a class="ScoreProffLink" title="Picture of the highscore" 
+											onclick="ShowEmbedWindow('https://www.youtube.com/embed/c3eYfEku6Tg')"> 
+												Video
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<hr class="horizontalSeparator">
+				</section> <!-- Neuland time lb -->
+
 				<!--				
 					 D E P R E C A T E D				
 				-->
 				<!-- Nordfels gold lb -->
-				<section class="scoreTable" id="Nordfels_gold_lb"> 
+				<section class="LeaderBoard_section" id="Nordfels_gold_lb"> 
 					<h3><strong>Nordfels most coins</strong></h3>
 					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
 					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
@@ -1067,21 +1294,11 @@
 					</div>
 					 <hr class="horizontalSeparator">
 				</section> <!-- Nordfels coins lb -->
-				
-				<!-- Neuland_score_lb -->
-				<section class="scoreTable" id="Neuland_gold_lb"> 
-					<h3><strong>Neuland most coins</strong></h3>
-					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
-					<div class="tableContainer" style="overflow-x:auto;"> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
-						<h2> Separate gold leaderboard is deprecated. </h2>
-					</div>
-					 <hr class="horizontalSeparator">
-				</section> <!-- Neulands coins lb -->
-				
+								
 				<section id="Footer"> <!-- Footer -->
 					<center>
 						<h6>
-							<font id="footerText" style=" font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.5 (14/7/2023)</i> |
+							<font id="footerText" style=" font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.6 (15/7/2023)</i> |
 								<a href="https://ghost-miner.github.io/">Website</a>, 
 								<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 								<a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -1105,8 +1322,13 @@
 			//document.getElementById("submitFormFrame").src = "./submit.html";
 			ResetPositionNumbers("Nordfels");
 			ResetPositionNumbers("Neuland");
+			ResetPositionNumbers("Nordfels time");
+			ResetPositionNumbers("Neuland time");
+
 			AssignNumbers("Nordfels");
 			AssignNumbers("Neuland");
+			AssignNumbers("Nordfels time");
+			AssignNumbers("Neuland time");
 		</script>
 		
 		
@@ -1114,7 +1336,7 @@
 		<!-- submit score overlay -->
 		<section class="overlays" id="SubmitScoreOverlay">
 			<style>
-				#submitBakcground 
+				.submitBakcground 
 				{
 				  position: fixed;
 				  display: none;
@@ -1167,7 +1389,7 @@
 						display:block;
 						padding-top: 0%;
 					}
-					#submitBakcground 
+					.submitBakcground 
 					{
 						padding: 2.5%;
 					}
@@ -1179,21 +1401,34 @@
 						padding: 1.5%;
 						height: 85%;
 					}
-					#submitBakcground 
+					.submitBakcground 
 					{
 						padding: 2%;
 					}
 				}
-			</style>			
+			</style>
 				<center>
-					<div id="submitBakcground">
+					<div class="submitBakcground" id="submitBakcgroundScore">
 						<div id="SubmitWinContent">
-							<iframe id="submitFormFrame" src="./submitDark.html" style="width:100%; height:100%; border:0px; background-color: #000;"></iframe>
-							
+							<iframe id="submitFormFrame" src="./submitDark.html" style="width:100%; height:100%; border:0px; background-color: #000;"></iframe>							
 							<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
 								Cancel
 							</button>
 							<a id="submitScoreFullscreen" href="./submit.html" target="_blank"> 
+								<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
+									Open in new tab
+								</button>
+							</a>
+						</div>
+					</div>
+					
+					<div class="submitBakcground" id="submitBakcgroundTime">
+						<div id="SubmitWinContent">
+							<iframe id="submitFormFrame" src="./submitSpeed.html" style="width:100%; height:100%; border:0px; background-color: #000;"></iframe>							
+							<button onclick="HideFormWindowTime()" type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
+								Cancel
+							</button>
+							<a id="submitScoreFullscreen" href="./submitSpeed.html" target="_blank"> 
 								<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
 									Open in new tab
 								</button>
@@ -1228,12 +1463,34 @@
 						console.log("Using default form");
 					}
 
-					document.getElementById("submitBakcground").style.display = "block";
+					document.getElementById("submitBakcgroundScore").style.display = "block";
 			  	}				  
 			  	function HideFormWindow() 
 				{
-					document.getElementById("submitBakcground").style.display = "none";
+					document.getElementById("submitBakcgroundScore").style.display = "none";
 					document.getElementById("submitFormFrame").src = "./submit.html";
+			  	}
+				
+				function ShowFormWindowTime() 
+				{
+					/*let currPageTheme = GetCookie("PageTheme")
+					if (currPageTheme == "dark")
+					{
+						document.getElementById("submitFormFrame").src="./submitDark.html";
+						console.log("Changing to dark form");
+					}
+					else 
+					{
+						document.getElementById("submitFormFrame").src="./submit.html";
+						console.log("Using default form");
+					}*/
+
+					document.getElementById("submitBakcgroundTime").style.display = "block";
+			  	}				  
+			  	function HideFormWindowTime() 
+				{
+					document.getElementById("submitBakcgroundTime").style.display = "none";
+					//document.getElementById("submitFormFrame").src = "./submitSpeed.html";
 			  	}
 			</script>
 		</section>
