@@ -1,0 +1,129 @@
+
+			/* C L A S S E S */
+			.tableToggleButton
+			{
+				margin: 0px;
+			}
+			.ScoreProffLink
+			{
+				cursor: pointer;
+			}
+			.btn
+			{
+				box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			}
+			.Table_header
+			{
+				font-weight: bold;
+				font-size: large;
+			}
+
+			.SB_Position /* scoreboard position cell text */
+			{
+				text-align: center;	
+				font-weight: bold;
+			}
+			.gameLinksBtn
+			{
+				padding: 15px; padding-top:10px;  padding-bottom:10px
+			}
+			.options-toggles
+			{
+				width: 49.5%;
+				height: 75%;
+				margin-bottom: 2%;
+			}
+			.submitScoreCollapeBtn
+			{
+				width: 49.5%;
+				height: auto;
+			}			
+
+			/* I D S */
+			#HeaderButtonsVertical
+			{
+				display: none;
+			}
+			#HeaderButtonsHorizontal
+			{
+				display: none;
+			}
+
+			#Category_buttons_main_div
+			{
+				padding-left: 5px;
+				display: flex;
+  				width: 100%;
+			}
+			#Categories_buttons
+			{
+				border: 0px green solid;
+				width: 70%;
+
+				text-align: left;
+			}
+			#Submit_score_button
+			{
+				border: 0px red solid;
+				width: 30%;
+
+				text-align: right;
+			}
+			#pageOptionsTogglesGroup
+			{
+				margin-top: 2%;
+			}
+			#submissionTypeGroup
+			{
+				margin-top: 2.5%;
+			}
+
+			/* RESPONSIVE STUFF */
+			@media screen and (max-width: 850px)
+			{
+				.tableToggleButton
+				{
+					margin: 2.5px;
+					margin-bottom: 5px;
+				}	
+				.options-toggles
+				{
+					width: 100%;
+					height: auto;
+					margin-bottom: 2%;
+				}				
+				.submitScoreCollapeBtn
+				{
+					width: 100%;
+					height: auto;
+					margin-bottom: 2%;
+				}			
+					
+				#Category_buttons_main_div
+				{
+					display: block;
+					width: 100%;
+				}
+				#Categories_buttons
+				{
+					width: 100%;
+
+					text-align: center;
+				}
+				#Submit_score_button
+				{
+					margin-top: 10px;
+					width: 100%;
+
+					text-align: center;
+				}
+			}
+
+			#Nordfels_score_lb
+				{	display: block;	}
+			#Neuland_score_lb
+				{	display: none;	}
+			#Neuland_time_lb
+				{	display: none;	}
+			#Nordfels_time_lb
+				{ display: none; }
