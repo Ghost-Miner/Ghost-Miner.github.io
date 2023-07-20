@@ -1,58 +1,64 @@
-  /* BASIC STUFF */
-  :root 
-  {
-      --backgroundColour:  rgba(255, 255, 255, 0.95); 
-      --backgroundColour2:  rgba(225, 225, 225, 0.95); 
-      --orange1: #ba8303;
-  }
-  a:link 
-  {
-      color: var(--orange1);
-      text-decoration: none;
-  }
-  a:visited 
-  {
-      color: var(--orange1);
-      text-decoration: none;
-  }
-  body 
-  { 
-      background: url(../../img/bgr.jpg) no-repeat center center fixed; 
-      background-size: cover;
-  }
+/* BASIC STUFF */
+:root 
+{
+    --foregroundColour:  rgba(255, 255, 255, 0.5); 
+    --baackgroundColour:  rgba(245, 245, 245, 0.95);
+    --orange1: #ba8303;
+}
+a:link 
+{
+    color: var(--orange1);
+    text-decoration: none;
+}
+a:visited 
+{
+    color: var(--orange1);
+    text-decoration: none;
+}
+body 
+{ 
+    background: url(../../img/bgr.jpg) no-repeat center center fixed ; 
+    background-size: cover;
+}
 
-  /* C L A S S E S */
-  .mainPageContainer 
-  {
-      max-width: 1850px;
-      min-width: 1800px;
-      margin: 20px auto; 
-      /*font-family: 'Times New Roman', Times, Serif;*/
+/* C L A S S E S */
+.mainPageContainer 
+{
+    max-width: 1850px;
+    min-width: 1800px;
+    margin: 20px auto; 
+    font-family: 'Times New Roman', Times, Serif;
+     
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--foregroundColour);
       
-      border-radius: 5px;
-      padding: 10px;
-      background-color: var(--backgroundColour);
-      
-      /*margin-top: 20px; 
-      margin-bottom: 25px;*/ 
-                          
-      box-shadow: 2px 2px 16px rgba(0,0,0,1);  
+    /*margin-top: 20px; 
+    margin-bottom: 25px;*/ 
+                        
+    box-shadow: 2px 2px 16px rgba(0,0,0,1);  
 
-  }
-  .innerContainer
-  {
-      display: flex;
-      width: auto;
-  }
+    backdrop-filter: blur(8px);
+}
 
-  .pageContentBox
-  {
-      border: 0px blue solid;
-      width: 85%;
-      float: left;
-      padding: 10px;
-      padding-top: 15px;
-  }
+.innerContainer
+{
+    display: flex;
+    width: auto;
+}
+
+.pageContentBox
+{
+    background-color: var(--baackgroundColour);
+    border: 0px blue solid;
+    width: 85%;
+    float: left;
+    padding: 10px;
+    padding-top: 15px;
+    border-radius: 5px;
+    
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.32);
+}
   
 .footerText 
 {
@@ -60,7 +66,7 @@
 }
 #footerDiv
 {
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
 .mainSeparator
