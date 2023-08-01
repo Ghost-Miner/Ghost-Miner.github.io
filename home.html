@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>= GhostMiner =</title>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<!-- Bootstrap and other CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="./styles/global.css">
+
+		<link rel="shortcut icon" type="image/jpg" href="./picture/favicon.png">
+    </head>
+    <body>
+        <style>
+            #titleImage
+            {
+                width: 70px;
+                height: auto;
+            }
+            #pageTitleDiv
+            {
+                width: 100%;
+                grid-template-columns: 10% auto;
+            }
+            .menuLinks
+            {
+                font-weight: bold;
+                font-size: 1.32em;
+            }
+            #featGamesWraper
+            {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+
+                grid-column-gap: 50px;
+                justify-content: center;
+                text-align: center;
+            }
+            .gameGridText
+            {
+                font-weight: bold;
+                font-size: 1.5em;
+            }
+            .gameGridImg
+            {
+                max-width: 175px;
+                height: auto;
+            }
+            #videosDiv
+            {
+                border: 1px green solid;
+
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+            }
+
+            .recomVideoBox
+            {
+                border: 1px blue solid;
+                width: 100%;
+                height: auto;
+
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                align-items: center;
+            }
+            
+            .recomVideoImageDiv
+            {
+                border: 1px black solid;
+            }
+            .recomVideoTitle
+            {
+                border: 1px purple solid; 
+            }
+
+            .recomVideoImage
+            {
+                max-width: 120px;
+            }
+            .recomVideoTitleText
+            {
+                font-size: 1.1em;
+                font-weight: 650;
+            }
+
+            #ProfileTitle
+            {
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                align-items: center;
+            }
+
+            #profilePictureDiv
+            {
+                border: 1px blue solid;
+            }
+            #ProfileNameDiv
+            {
+                border: 1px blue solid;
+            }
+            #profilePicture
+            {
+                width: 100%;
+            }
+            #ProfileNameText
+            {
+                font-weight: 650;
+                font-size: 1.55em;
+            }
+            
+            #aboutAndSocialsDiv
+            {
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                grid-column-gap: 10px;
+                grid-row-gap: 10px;
+            }
+            #ProfileInfoTitle
+            {
+                font-weight: 610;
+                font-size: 1.32em;
+            }
+
+            #socilLinksGrid
+            {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+
+                align-items: center;
+                text-align: center;
+            }
+        </style>
+
+        <div class="mainPageContainer">
+            <div id="innerContainer">
+                <div id="pageTitleDiv" class="contentBox">
+                    <div id="titleImage">
+                        <img src="./picture/favicon.png" id="titleImage" alt="title image">
+                    </div>
+                    <div id="titleText">
+                        <span class="pageTitleText">GhostMiner</span>
+                    </div>
+                </div> <!-- pageTitleDiv -->
+
+                <div id="menuBar">
+                    <a href="http://ghost-miner.itch.io/" class="menuLinks">
+                        Games
+                    </a>
+                    <a href="https://discord.gg/DjUBY9h" class="menuLinks">
+                        Discord server
+                    </a>
+                    <a href="https://www.youtube.com/c/GhostMinerMC" class="menuLinks">
+                        YouTube channel
+                    </a>
+                </div> <!-- menuBar -->
+
+                <div id="featuredGamesDiv" class="contentBox">
+                    <span class="pageSubtitle">Featured games</span>
+                    <div id="featGamesWraper">
+                        <div id="featGame1Column">
+                            <div id="featugame1content">
+                                <a href="gameGridLink">
+                                    <img src="./picture/overcharge.gif" class="gameGridImg"> 
+                                    <br><span class="gameGridText">Overcharge</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="featGame2Column">
+                            <div id="featugame1content">
+                                <a href="gameGridLink">
+                                    <img src="https://img.itch.zone/aW1nLzEyODAxNTk4LnBuZw==/315x250%23c/ZDnOV6.png" class="gameGridImg">
+                                    <br> <span class="gameGridText">Tower Offense</span>
+                                </a>
+                            </div>                            
+                        </div>
+                        <div id="featGame3Column">
+                            <div id="featugame1content">
+                                <a href="gameGridLink">
+                                    <img src="https://img.itch.zone/aW1nLzEyMDYxOTYzLnBuZw==/315x250%23c/G3fZwL.png" class="gameGridImg">
+                                    <br> <span class="gameGridText">Black Box Jumper</span>
+                                </a>
+                            </div>                             
+                        </div>
+                    </div> <!-- featGamesWraper -->
+                </div> <!-- featuredGamesDiv -->
+                
+                <div id="videosDiv">
+                    <div id="featuredVideoDiv" class="contentBox">
+                        <span class="pageSubtitle">Featured video</span>
+
+                        <iframe width="606" height="341" src="https://www.youtube-nocookie.com/embed/j64oZLF443g" title="In Space with Markiplier: Part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <span id="featVidTitle">In Space with Markiplier: Part 1</span>
+                        <strong>Uploaded on 4/4/2020 | 21M views</strong>
+                        <p>In this interactive story, the fate of the crew of a spaceship is in your hands. Who will you save, more precisely, who can you save from the dangers of the endless universe?</p>
+                    </div>
+
+                    <div id="RecommendedVideoDiv" class="contentBox">
+                        <span class="pageSubtitle">Recommended videos</span>
+                        
+                        <!-- Video #1 -->
+                        <div class="recomVideoBox">
+                            <div class="recomVideoImageDiv">
+                                <a href="https://www.youtube.com/watch?v=RAD6xM9YqLE&t=7s">
+                                    <img class="recomVideoImage" src="https://i.ytimg.com/vi/RAD6xM9YqLE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDfT7VLN-XoWLjb62-qMWgIW8U1dw">
+                                </a>
+                            </div> <!-- recomVideoImageDiv -->
+                            <div class="recomVideoTitle">
+                                <span class="recomVideoTitleText">	
+                                    <a href="https://www.youtube.com/watch?v=RAD6xM9YqLE&t=7s">
+                                        Hermitcraft Recap Season 6 - 15 
+                                        <br> months in 12 ...
+                                    </a>
+                                </span>
+                            </div> <!-- recomVideoTitle -->
+                        </div> <!-- recomVideoBox -->
+
+                        <!-- Video #2 -->
+                        <div class="recomVideoBox">
+                            <div class="recomVideoImageDiv">
+                                <a href="https://www.youtube.com/watch?v=aMIYz5PFVlA">
+                                    <img class="recomVideoImage" src="./picture/2022-06-f3-keys-300x169.jpg">
+                                </a>
+                            </div> <!-- recomVideoImageDiv -->
+                            <div class="recomVideoTitle">
+                                <span class="recomVideoTitleText">	
+                                    <a href="https://www.youtube.com/watch?v=aMIYz5PFVlA">
+                                        Useful Minecraft F3 key shortcuts
+                                    </a>
+                                </span>
+                            </div> <!-- recomVideoTitle -->
+                        <!-- recomVideoBox -->
+                        </div> 
+
+                        <!-- Video #3 -->
+                        <div class="recomVideoBox">
+                            <div class="recomVideoImageDiv">
+                                <a href="https://www.youtube.com/watch?v=5XU9u6ZZnXs">
+                                    <img class="recomVideoImage" src="https://i.ytimg.com/vi/5XU9u6ZZnXs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBtwQghUv3mt5Yn1o_4wNJ2N8tN0w">
+                                </a>
+                            </div> <!-- recomVideoImageDiv -->
+                            <div class="recomVideoTitle">
+                                <span class="recomVideoTitleText">	
+                                    <a href="https://www.youtube.com/watch?v=5XU9u6ZZnXs">
+                                        The Last Goodbye - In Space with Markiplier (Un)Official Music...
+                                    </a>
+                                </span>
+                            </div> <!-- recomVideoTitle -->
+                        <!-- recomVideoBox -->
+                        </div> 
+
+                        <!-- Video #4 -->
+                        <div class="recomVideoBox">
+                            <div class="recomVideoImageDiv">
+                                <a href="https://www.youtube.com/watch?v=rFr6Ltlr7kI&t=114s">
+                                    <img class="recomVideoImage" src="https://i.ytimg.com/vi/rFr6Ltlr7kI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAR1AtpOwPgxKxXISL3MWIr4KJ5Zg">
+                                </a>
+                            </div> <!-- recomVideoImageDiv -->
+                            <div class="recomVideoTitle">
+                                <span class="recomVideoTitleText">	
+                                    <a href="https://www.youtube.com/watch?v=rFr6Ltlr7kI&t=114s">	
+                                        The Cr[AI]tive Revolution - The Future of Art                                        
+                                    </a>
+                                </span>
+                            </div> <!-- recomVideoTitle -->
+                        <!-- recomVideoBox -->
+                        </div> 
+
+                        <!-- Video #5 -->
+                        <div class="recomVideoBox">
+                            <div class="recomVideoImageDiv">
+                                <a href="https://www.youtube.com/watch?v=JI4CP5vrpVk ">
+                                    <img class="recomVideoImage" src="https://img.youtube.com/vi/JI4CP5vrpVk/maxresdefault.jpg">
+                                </a>
+                            </div> <!-- recomVideoImageDiv -->
+                            <div class="recomVideoTitle">
+                                <span class="recomVideoTitleText">	
+                                    <a href="https://www.youtube.com/watch?v=JI4CP5vrpVk">	
+                                        5 Reasons To Learn Coding | Interesting Coding Projects                                        
+                                    </a>
+                                </span>
+                            </div> <!-- recomVideoTitle -->
+                        <!-- recomVideoBox -->
+                        </div> 
+
+                        <!-- Video #6 -->
+                        <div class="recomVideoBox">
+                            <div class="recomVideoImageDiv">
+                                <a href="https://www.youtube.com/playlist?list=PLU2851hDb3SEesCjVCmseu60aJht1DQwh">
+                                    <img class="recomVideoImage" src="./picture/2023-02-grain-hc6-playlist.png">
+                                </a>
+                            </div> <!-- recomVideoImageDiv -->
+                            <div class="recomVideoTitle">
+                                <span class="recomVideoTitleText">	
+                                    <a href="https://www.youtube.com/playlist?list=PLU2851hDb3SEesCjVCmseu60aJht1DQwh">	
+                                        Grian: Hermitcraft Season 6                                        
+                                    </a>
+                                </span>
+                            </div> <!-- recomVideoTitle -->
+                        <!-- recomVideoBox -->
+                        </div> 
+
+                    </div> <!-- RecommendedVideoDiv -->
+                </div> <!-- videosDiv -->
+            </div> <!-- innerContainer -->
+        </div> <!-- mainPageContainer -->
+        
+        <div class="mainPageContainer">
+            <div id="innerContainer">
+                <div id="aboutAndSocialsDiv">
+                    <div id="ProfileMain">
+                        <div id="ProfileTitle" class="contentBox">
+                            <div id="profilePictureDiv">
+                                <img src="./picture/favicon.png" id="profilePicture">
+                            </div>
+                            <div id="ProfileNameDiv">
+                                <span id="ProfileNameText"> GhostMiner </span>
+                            </div>
+                        </div>
+
+                        <div id="ProfileInfo" class="contentBox"    >
+                            <span id="ProfileInfoTitle"> YouTube profile </span> 
+                            <br>
+                            <span id="ProfileInfoText"> <strong> Name: </strong> GhostMiner <br>
+                                                        <strong> Joined: </strong>  March 2012 <br>
+                                                        <strong> Subscribers: </strong>  5,6K <br>
+                                                        <strong> Views: </strong>  3,4M</span>
+                        </div>
+                    </div> <!-- ProfileMain -->
+                    
+                    <div id="AboutMain">
+                        <div id="aboutDesc" class="contentBox">
+                            <span class="pageSubtitle"> About Ghostimer </span> <br>
+                            <span id="aboutText"> I make games. </span>
+                        </div>
+                        <div id="socialPages" class="contentBox">
+                            <span class="pageSubtitle"> Social platforms links </span>
+
+                            <div id="socilLinksGrid">
+                                <div class="soclLinksCell">
+                                    <a href="https://discord.com/invite/DjUBY9h">
+                                        <img src="./picture/discord.png">
+                                    </a>
+                                    <br>
+                                    <a href="https://discord.com/invite/DjUBY9h">
+                                        <span class="soclLinksText">Discord</span>
+                                    </a>
+                                </div>
+
+                                <div class="soclLinksCell">
+                                    <a href="http://youtube.com/ghostminermc">
+                                        <img src="./picture/youtube.png">
+                                    </a>
+                                    <br>
+                                    <a href="http://youtube.com/ghostminermc">
+                                        <span class="soclLinksText">YouTube</span>
+                                    </a>
+                                </div>
+
+                                <div class="soclLinksCell">
+                                    <a href="https://ghost-miner.itch.io/">
+                                        <img src="./picture/itch.png">
+                                    </a>
+                                    <br>
+                                    <a href="https://ghost-miner.itch.io/">
+                                        <span class="soclLinksText">Itch.io</span>
+                                    </a>
+                                </div>
+
+                                <div class="soclLinksCell">
+                                    <a href="https://twitter.com/_GhostMiner">
+                                        <img src="./picture/twitter.png">
+                                    </a>
+                                    <br>
+                                    <a href="https://twitter.com/_GhostMiner">
+                                        <span class="soclLinksText">Twitter</span>
+                                    </a>
+                                </div>
+                            </div> <!-- socilLinksGrid -->
+                        </div> <!-- socialPages -->
+                    </div> <!-- AboutMain -->
+                </div> <!-- aboutAndSocialsDiv -->
+            </div> <!-- innerContainer -->
+        </div> <!-- mainPageContainer -->
+    </body>
+</html>
