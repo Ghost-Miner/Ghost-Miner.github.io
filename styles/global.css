@@ -3,19 +3,23 @@
 {
     --baackgroundColour:  rgba(245, 245, 245, 0.65);
     --foregroundColour:  rgba(111, 255, 75, 0.75); 
-    --orange1: #072f0a;
+    --darkGreen: #072f0a;
 
     --containerSpacing: 20px;
 }
 a:link 
 {
-    color: var(--orange1);
+    color: var(--darkGreen);
     text-decoration: none;
 }
 a:visited 
 {
-    color: var(--orange1);
+    color: var(--darkGreen);
     text-decoration: none;
+}
+a:hover
+{
+    text-decoration:underline;
 }
 body
 {
@@ -40,6 +44,7 @@ body
 }
 #innerContainer
 {
+    min-width: 900px;
     display: grid;
     width: auto;
 }
@@ -52,21 +57,6 @@ body
     display: grid;
 }
 
-/*
-    I M P O R T E D
-*/
-#pageContentBox
-{
-    background-color: var(--baackgroundColour);
-    width: 85%;
-    float: left;
-    padding: 10px;
-    padding-top: 15px;
-    border-radius: 5px;
-    
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.32);
-}
-  
 .pageTitleText
 {
     font-weight:600;
@@ -79,40 +69,174 @@ body
     font-size: 1.64em;
     text-decoration: overline;
 }
-.articlePictureDescription
-{
-    font-weight: bold;
-}
 
 .footerText 
 {
     font-weight: bold;
 }
-#footerDiv
+
+
+
+
+#titleImage
 {
-    padding: 10px;
+    width: 70px;
+    height: auto;
+}
+#pageTitleDiv
+{
+    width: 100%;
+    grid-template-columns: 10% auto;
+}
+.menuLinks
+{
+    font-weight: bold;
+    font-size: 1.32em;
+}
+#menuBar
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#featuredGamesDiv
+{
+    margin-top: var(--containerSpacing) - 5px;
+}
+#socialPages
+{
+    margin-top: var(--containerSpacing);
+}
+#ProfileInfo
+{
+    margin-top: var(--containerSpacing);
+}
+#featuredVideoDiv
+{
+    margin-right: var(--containerSpacing);
+}
+#ProfileMain
+{
+    margin-right: var(--containerSpacing);
+}
+
+#featGamesWraper
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-column-gap: 50px;
+    justify-content: center;
     text-align: center;
 }
-#pageLogoAndTitle
+.gameGridText
 {
-    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
 }
-
-.mainSeparator
+.gameGridImg
 {
-    border-width: 3px; 
-}
-
-.articlePicture
-{
-    width: 100%; 
-    height: auto; 
-    padding-bottom: 10px
-}
-
-.codeBlock
-{
-    background-color: lightgray;
     border-radius: 5px;
-    padding: 5px;
+    max-width: 175px;
+    height: auto;
+}
+.gameGridLink:link
+{
+    color: #1c2d0c;
+    text-decoration: none;
+}
+.gameGridLink:visited
+{
+    color: #1c2d0c;
+    text-decoration: none;
+}
+.gameGridLink:hover
+{
+    text-decoration:underline;
+}
+
+#videosDiv
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    margin-top: var(--containerSpacing);
+}
+
+#featVidTitle
+{
+    font-weight: 650;
+    font-size: 1.64em;
+}
+.recomVideoImageDiv
+{
+    margin-right: 10px;
+}
+.recomVideoBox
+{
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+#featuYTvide
+{
+    border-radius: 5px;
+}
+.recomVideoImage
+{
+    max-width: 120px;
+    border-radius: 5px;
+}
+.recomVideoTitleText
+{
+    font-size: 1em;
+    font-weight: 650;
+
+    line-height: 1rem;
+}
+
+#ProfileTitle
+{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+#profilePicture
+{
+    width: 100%;
+}
+#ProfileNameText
+{
+    font-weight: 650;
+    font-size: 1.55em;
+}
+
+#aboutAndSocialsDiv
+{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+#ProfileInfoTitle
+{
+    font-weight: 610;
+    font-size: 1.32em;
+}
+
+#socilLinksGrid
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    align-items: center;
+    text-align: center;
+}
+.soclLinksText
+{
+    font-weight: bold;
+    font-size: 1.25em;
 }

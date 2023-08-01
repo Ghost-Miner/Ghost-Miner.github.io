@@ -14,130 +14,6 @@
     </head>
     <body>
         <style>
-            #titleImage
-            {
-                width: 70px;
-                height: auto;
-            }
-            #pageTitleDiv
-            {
-                width: 100%;
-                grid-template-columns: 10% auto;
-            }
-            .menuLinks
-            {
-                font-weight: bold;
-                font-size: 1.32em;
-            }
-            #menuBar
-            {
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-            #featuredGamesDiv
-            {
-                margin-top: var(--containerSpacing) - 5px;
-            }
-            #socialPages
-            {
-                margin-top: var(--containerSpacing);
-            }
-            #ProfileInfo
-            {
-                margin-top: var(--containerSpacing);
-            }
-            #featuredVideoDiv
-            {
-                margin-right: var(--containerSpacing);
-            }
-            #ProfileMain
-            {
-                margin-right: var(--containerSpacing);
-            }
-
-            #featGamesWraper
-            {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-
-                grid-column-gap: 50px;
-                justify-content: center;
-                text-align: center;
-            }
-            .gameGridText
-            {
-                font-weight: bold;
-                font-size: 1.5em;
-            }
-            .gameGridImg
-            {
-                max-width: 175px;
-                height: auto;
-            }
-            #videosDiv
-            {
-                display: grid;
-                grid-template-columns: 2fr 1fr;
-
-                margin-top: var(--containerSpacing);
-            }
-
-            .recomVideoBox
-            {
-                width: 100%;
-                height: auto;
-
-                display: grid;
-                grid-template-columns: 1fr 2fr;
-                align-items: center;
-            }
-            
-            .recomVideoImage
-            {
-                max-width: 120px;
-            }
-            .recomVideoTitleText
-            {
-                font-size: 1.1em;
-                font-weight: 650;
-            }
-
-            #ProfileTitle
-            {
-                display: grid;
-                grid-template-columns: 1fr 3fr;
-                align-items: center;
-            }
-
-            #profilePicture
-            {
-                width: 100%;
-            }
-            #ProfileNameText
-            {
-                font-weight: 650;
-                font-size: 1.55em;
-            }
-            
-            #aboutAndSocialsDiv
-            {
-                display: grid;
-                grid-template-columns: 1fr 3fr;
-            }
-            #ProfileInfoTitle
-            {
-                font-weight: 610;
-                font-size: 1.32em;
-            }
-
-            #socilLinksGrid
-            {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-
-                align-items: center;
-                text-align: center;
-            }
         </style>
 
         <div class="alert alert-success" role="alert">
@@ -170,6 +46,9 @@
                     <a href="https://www.youtube.com/c/GhostMinerMC" class="menuLinks">
                         YouTube channel
                     </a>
+                    <a href="https://ghost-miner.github.io/" class="menuLinks">
+                        Old page version
+                    </a>
                 </div> <!-- menuBar -->
 
                 <div id="featuredGamesDiv" class="contentBox">
@@ -177,7 +56,7 @@
                     <div id="featGamesWraper">
                         <div id="featGame1Column">
                             <div id="featugame1content">
-                                <a href="gameGridLink">
+                                <a class="gameGridLink" href="https://ghost-miner.itch.io/overcharge">
                                     <img src="./picture/overcharge.gif" class="gameGridImg"> 
                                     <br><span class="gameGridText">Overcharge</span>
                                 </a>
@@ -185,7 +64,7 @@
                         </div>
                         <div id="featGame2Column">
                             <div id="featugame1content">
-                                <a href="gameGridLink">
+                                <a class="gameGridLink" href="https://ghost-miner.itch.io/tower-offense">
                                     <img src="https://img.itch.zone/aW1nLzEyODAxNTk4LnBuZw==/315x250%23c/ZDnOV6.png" class="gameGridImg">
                                     <br> <span class="gameGridText">Tower Offense</span>
                                 </a>
@@ -193,7 +72,7 @@
                         </div>
                         <div id="featGame3Column">
                             <div id="featugame1content">
-                                <a href="gameGridLink">
+                                <a class="gameGridLink" href="https://ghost-miner.itch.io/black-box-jumper">
                                     <img src="https://img.itch.zone/aW1nLzEyMDYxOTYzLnBuZw==/315x250%23c/G3fZwL.png" class="gameGridImg">
                                     <br> <span class="gameGridText">Black Box Jumper</span>
                                 </a>
@@ -206,7 +85,7 @@
                     <div id="featuredVideoDiv" class="contentBox">
                         <span class="pageSubtitle">Featured video</span>
 
-                        <iframe width="606" height="341" src="https://www.youtube-nocookie.com/embed/j64oZLF443g" title="In Space with Markiplier: Part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe id="featuYTvide" width="606" height="341" src="https://www.youtube-nocookie.com/embed/j64oZLF443g" title="In Space with Markiplier: Part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <span id="featVidTitle">In Space with Markiplier: Part 1</span>
                         <strong>Uploaded on 4/4/2020 | 21M views</strong>
                         <p>In this interactive story, the fate of the crew of a spaceship is in your hands. Who will you save, more precisely, who can you save from the dangers of the endless universe?</p>
