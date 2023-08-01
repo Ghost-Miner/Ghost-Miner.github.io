@@ -29,6 +29,32 @@
                 font-weight: bold;
                 font-size: 1.32em;
             }
+            #menuBar
+            {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            #featuredGamesDiv
+            {
+                margin-top: var(--containerSpacing) - 5px;
+            }
+            #socialPages
+            {
+                margin-top: var(--containerSpacing);
+            }
+            #ProfileInfo
+            {
+                margin-top: var(--containerSpacing);
+            }
+            #featuredVideoDiv
+            {
+                margin-right: var(--containerSpacing);
+            }
+            #ProfileMain
+            {
+                margin-right: var(--containerSpacing);
+            }
+
             #featGamesWraper
             {
                 display: grid;
@@ -50,15 +76,14 @@
             }
             #videosDiv
             {
-                border: 1px green solid;
-
                 display: grid;
                 grid-template-columns: 2fr 1fr;
+
+                margin-top: var(--containerSpacing);
             }
 
             .recomVideoBox
             {
-                border: 1px blue solid;
                 width: 100%;
                 height: auto;
 
@@ -67,15 +92,6 @@
                 align-items: center;
             }
             
-            .recomVideoImageDiv
-            {
-                border: 1px black solid;
-            }
-            .recomVideoTitle
-            {
-                border: 1px purple solid; 
-            }
-
             .recomVideoImage
             {
                 max-width: 120px;
@@ -93,14 +109,6 @@
                 align-items: center;
             }
 
-            #profilePictureDiv
-            {
-                border: 1px blue solid;
-            }
-            #ProfileNameDiv
-            {
-                border: 1px blue solid;
-            }
             #profilePicture
             {
                 width: 100%;
@@ -115,8 +123,6 @@
             {
                 display: grid;
                 grid-template-columns: 1fr 3fr;
-                grid-column-gap: 10px;
-                grid-row-gap: 10px;
             }
             #ProfileInfoTitle
             {
@@ -329,7 +335,7 @@
                                                         <strong> Views: </strong>  3,4M</span>
                         </div>
                     </div> <!-- ProfileMain -->
-                    
+
                     <div id="AboutMain">
                         <div id="aboutDesc" class="contentBox">
                             <span class="pageSubtitle"> About Ghostimer </span> <br>
