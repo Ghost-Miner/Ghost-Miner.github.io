@@ -2,7 +2,10 @@
 			/* C L A S S E S */
 			.tableToggleButton
 			{
-				margin: 0px;
+				margin: 2.5px;
+				
+				margin-top: 5px;
+				margin-bottom: 5px;
 			}
 			.ScoreProffLink
 			{
@@ -64,7 +67,7 @@
 			}
 			#Submit_score_button
 			{
-				border: 0px red solid;
+				border: 0px green solid;
 				width: 30%;
 
 				text-align: right;
@@ -78,14 +81,22 @@
 				margin-top: 2.5%;
 			}
 
+			.btn-whiteFill
+			{
+				background-color: var(--backgroundColour);
+			}
+			#mainCatButtonsDiv
+			{
+				border: 0px red dotted;
+			}
+			#subCatButtonsDiv
+			{
+				border: 0px blue dotted;
+			}
+
 			/* RESPONSIVE STUFF */
 			@media screen and (max-width: 850px)
 			{
-				.tableToggleButton
-				{
-					margin: 2.5px;
-					margin-bottom: 5px;
-				}	
 				.options-toggles
 				{
 					width: 100%;

@@ -2,7 +2,7 @@ let doneLoading = false;
 //
 // LOAD TAVBLE
 //
-( async function LoadTable () 
+/*( async function LoadTable () 
 	{
 		let boardTMLRequest;
 		let boardHTML;
@@ -51,7 +51,7 @@ let doneLoading = false;
 		SetTheme();
 		SetFontStyle();
 	}
-	) ();
+	) ();*/
 	
 			function ChangeShownTable (tableToShow, sectionName)
 			{ 

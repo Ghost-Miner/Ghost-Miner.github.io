@@ -40,6 +40,8 @@
 		<script src="./scripts/boardOptions.js"></script>
 		<script src="./scripts/pageOptions.js"></script>
 		<script src="./scripts/theming.js"></script>
+
+		<script src="https://unpkg.com/htmx.org@1.9.4"></script>
 	</head>
 	<body>		
 		<style>			
@@ -52,7 +54,52 @@
 				margin-left: 35%;
 				margin-right: 35%;
 			}
+			#demoSection
+			{
+				display: none;
+			}
+			#timesSection
+			{
+				display: none;
+			}
 		</style>
+
+		<script>
+			function ChangeCategory(name)
+			{
+				document.getElementById("scoresSection").style.display = "none"; 
+				document.getElementById("timesSection") .style.display = "none";
+				document.getElementById("demoSection")  .style.display = "none";
+				
+				document.getElementById("hs_cat_btn").classList.remove("active");
+				document.getElementById("sr_cat_btn").classList.remove("active");
+				document.getElementById("demo_cat_btn").classList.remove("active");
+				
+				switch(name)
+				{
+					default:
+						console.log("[ ERROR ] In ChangeCategory(): " + name + " is not a valid category name!");
+					break;
+
+					case "score":
+						document.getElementById("scoresSection").style.display = "block"; 
+						document.getElementById("hs_cat_btn").classList.add("active");
+									
+					break;
+
+					case "time":
+						document.getElementById("timesSection").style.display = "block";
+						document.getElementById("sr_cat_btn").classList.add("active");
+					break;
+
+					case "demo":
+						document.getElementById("demoSection").style.display = "block";	
+						document.getElementById("demo_cat_btn").classList.add("active");
+					break;
+				}
+			}
+		</script>
+
 		<div class="mainPageContainer" id="mainPageContainer">
 			<div class="BgrBox" id="BgrBox">
 				<div class="FrgBox" id ="FrgBox">
@@ -65,18 +112,18 @@
 							</section>
 							<hr class="horizontalSeparator">
 							<section id="Game_links">
-								<font class="ButtonText">
+								<span class="ButtonText">
 									<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
-										<button type="button" class="btn btn-warning gameLinksBtn;" style="background-color: var(--backgroundColour); padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
+										<button type="button" class="btn btn-warning gameLinksBtn btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
 											<b>Get the game</b>
 										</button>
 									</a>
 									<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
-										<button type="button" class="btn btn-warning gameLinksBtn" style="background-color: var(--backgroundColour); padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
+										<button type="button" class="btn btn-warning gameLinksBtn btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
 											<b>Discord server</b>
 										</button>
 									</a>
-								</font>
+								</span>
 							</section>
 
 							<noscript>		
@@ -99,18 +146,64 @@
 					<section id="Category_buttons_section">
 						<div id="Category_buttons_main_div">
 							<div id="Categories_buttons">
-								<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_scores_button" onclick="ChangeShownTable('nl-score', 'neuland_score')">
-									<b>Neuland scores</b>
-								</button>
-								<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_scores_button" onclick="ChangeShownTable('nf-score', 'nordfels_score')">
-									<b>Nordfels scores</b>
-								</button>
-								<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_time_button" onclick="ChangeShownTable('nl-time', 'neuland_time')">
-									<b>Neuland time</b>
-								</button>
-								<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_time_button" onclick="ChangeShownTable('nf-time', 'nordfels_time')">
-									<b>Nordfels time</b>
-								</button>
+								<div id="mainCatButtonsDiv">
+								<!-- Main category -->
+									<button type="button" onclick="ChangeCategory('score')" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="hs_cat_btn">
+										<b>High-scores</b>
+									</button>
+									<button type="button" onclick="ChangeCategory('time')" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="sr_cat_btn">
+										<b>Speed-runs</b>
+									</button>	
+									<button type="button" onclick="ChangeCategory('demo')" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="demo_cat_btn">
+										<b>Demo scores & time</b>
+									</button>
+								</div>
+								<div id="subCatButtonsDiv">
+									<section id="scoresSection">
+										<button type="button" hx-get="./leaderboards/score/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nl_score_btn">
+											<b>Neuland</b>
+										</button>
+										<button type="button" hx-get="./leaderboards/score/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nf_score_btn">
+											<b>Nordfels</b>
+										</button>
+										<button type="button" hx-get="./leaderboards/score/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="ds_score_btn">
+											<b>Durststein</b>
+										</button>								
+										<button type="button" hx-get="./leaderboards/score/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="fs_score_btn">
+											<b>Frostsee</b>
+										</button>	
+									</section>
+
+									<section id="timesSection">
+										<button type="button" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nl_time_btn">
+											<b>Neuland</b>
+										</button>
+										<button type="button" hx-get="./leaderboards/time/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nf_time_btn">
+											<b>Nordfels</b>
+										</button>
+										<button type="button" hx-get="./leaderboards/time/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="ds_time_btn">
+											<b>Durststein</b>
+										</button>								
+										<button type="button" hx-get="./leaderboards/time/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="fs_time_btn">
+											<b>Frostsee</b>
+										</button>	
+									</section>
+
+									<section id="demoSection">
+										<button type="button" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nl_score_demo_btn">
+											<b>Neuland scores</b>
+										</button>
+										<button type="button" hx-get="./leaderboards/demo/nf-score.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton" id="nf_score_demo_btn">
+											<b>Nordfels scores</b>
+										</button>
+										<button type="button" hx-get="./leaderboards/demo/nl-time.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton" id="nl_time_demo_btn">
+											<b>Neuland time</b>
+										</button>								
+										<button type="button" hx-get="./leaderboards/demo/nf-time.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton" id="nf_time_demo_btn">
+											<b>Nordfels time</b>
+										</button>	
+									</section>
+								</div>
 							</div>
 							
 							<div id="Submit_score_button">					
@@ -134,16 +227,16 @@
 
 								<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Options</h4>
 								<div id="Thmeme_toggles" style="display: inline-flexbox;">
-									<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles" type="button" onclick="ColourChangeDark()">
+									<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles disabled" type="button" onclick="aColourChangeDark()">
 										Dark theme
 									</button>
-									<button id="Light_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeLight()">
+									<button id="Light_theme_toggle" class="btn btn-warning options-toggles disabled" type="button" onclick="ColourChangeLight()">
 										Light theme
 									</button>
 								</div>
 								<div id="Font_toggles" style="display: inline-flexbox;">
 									<button id="Clean_font_toggle"   class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToCleaner()">
-										<font style="font-family: Roboto,sans-serif,Arial;">Cleaner text</font>
+										<span style="font-family: Roboto,sans-serif,Arial;">Cleaner text</span>
 									</button>
 									<button id="Default_font_toggle" class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToDefault()">
 										Fancier text
@@ -172,32 +265,20 @@
 						</div>
 					</section>	
 					<hr class="horizontalSeparator">
-					
-					<section id="leaderBoard">
+										
+					<section id="leaderBoard" hx-get="./leaderboards/demo/nf-score.html" hx-swap="innerHTML" hx-trigger="load">
 						<!-- lb goes here -->
-						<section id="nf-score" class="LeaderBoard_section">
-							<img src="./img/loading edit.gif" id="loadingMobiMenuGif">
-							<!-- NF score lb goes here -->
-						</section>
-						<section id="nl-score" class="LeaderBoard_section">
-							<!-- NL score lb goes here -->
-						</section>
-						<section id="nf-time" class="LeaderBoard_section">
-							<!-- NF time lb goes here -->
-						</section>
-						<section id="nl-time" class="LeaderBoard_section">
-							<!-- NL time lb goes here -->
-						</section>
+						<img src="./img/loading edit.gif" id="loadingMobiMenuGif">
 					</section>
 									
 					<section id="Footer"> <!-- Footer -->
 						<center>
 							<h6>
-								<font id="footerText" style=" font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.6.1 (15/7/2023)</i> |
+								<span id="footerText" style=" font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.6.1 (15/7/2023)</i> |
 									<a href="https://ghost-miner.github.io/">Website</a>, 
 									<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 									<a href="https://discord.gg/DjUBY9h">Discord</a>
-								</font>							
+								</span>							
 							</h6>
 						</center>
 					</section> <!-- Footer -->
@@ -209,9 +290,12 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-			
-		
-		
+
+		<script>
+			ChangeCategory("demo");
+		</script>
+
+
 		<!-- submit score overlay -->
 		<section class="overlays" id="SubmitScoreOverlay">
 			<style>
