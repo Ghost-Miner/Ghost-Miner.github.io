@@ -36,1187 +36,160 @@
 		<link rel="stylesheet" href="./styles/leaderboard.css">
 
 		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
+
+		<script src="./scripts/boardOptions.js"></script>
+		<script src="./scripts/pageOptions.js"></script>
+		<script src="./scripts/theming.js"></script>
 	</head>
-	<body>
-		<script>
-			console.log(' href => ' + window.location.href);
-			console.log(' host => ' + window.location.host);
-			console.log(' hostname => ' + window.location.hostname);
-			console.log(' port => ' + window.location.port);
-			console.log(' protocol => ' + window.location.protocol);
-			console.log(' pathname => ' + window.location.pathname);
-			console.log(' hashpathname => ' + window.location.hash);
-			console.log(' search=> ' + window.location.search);
-			console.log("-----------------------------------------------------------");
-
-			function CheckAdressHref () 
-			{
-				let hash = window.location.hash;
-				switch(hash)
-				{
-					default:
-						console.log("CheckAdressHref | invalid hash. ignoring");
-					break;
-
-					case "#nordfels_score":
-						ChangeShownTable("Nordfels_score_lb", "nordfels_score");
-					break;
-
-					case "#neuland_score":
-						ChangeShownTable("Neuland_score_lb", "neuland_score");
-					break;
-
-					case "#nordfels_time":
-						ChangeShownTable("Nordfels_time_lb", "nordfels_time");
-					break;
-
-					case "#neuland_time":
-						ChangeShownTable("Neuland_time_lb", "neuland_time");
-					break;
-				}
-			}
-			function CheckAdressSearch ()
-			{
-				let addrSearch = window.location.search;
-				switch(addrSearch)
-				{
-					default:
-						console.log("CheckAdressSearch | invalid value: " + addrSearch + " ignoring");
-					break;
-
-					case "?dark":
-						ColourChangeDark();
-					break;
-					
-					case "?light":
-						ColourChangeLight();
-					break;
-				}
-			}
-
-			function ChangeShownTable (tableToShow, sectionName)
-			{ 
-				const LBsections = document.getElementsByClassName("LeaderBoard_section");
-				
-				for (let i = 0; i < LBsections.length; i++)
-				{
-					LBsections[i].style.display = "none";
-				}
-				
-				let showTable = document.getElementById(tableToShow);				
-				showTable.style.display = "block"; 
-
-				window.location.hash = sectionName;
-			}
-
-			function ResetPositionNumbers (tableName)
-			{
-				switch(tableName)
-				{
-					case "Nordfels":
-						
-						const NFcollection = document.getElementsByClassName("SB_NF_Position");
-					
-						for (let i = 0; i < NFcollection.length; i++) 
-						{
-							NFcollection[i].textContent = "#";
-							NFcollection[i].style.textAlign = "center";
-						}
-					break;					
-
-					case "Neuland":
-						const NLcollection = document.getElementsByClassName("SB_NL_Position");
-				
-						for (let i = 0; i < NLcollection.length; i++) 
-						{
-							NLcollection[i].textContent = "#";
-							NLcollection[i].style.textAlign = "center";
-						}
-					break;
-
-					case "Nordfels time":
-						const NFTimeCollection = document.getElementsByClassName("TIME_NF_Position");
-				
-						for (let i = 0; i < NFTimeCollection.length; i++) 
-						{
-							NFTimeCollection[i].textContent = "#";
-							NFTimeCollection[i].style.textAlign = "center";
-						}
-					break;
-
-					case "Neuland time": 
-						const NLTimeCollection = document.getElementsByClassName("TIME_NL_Position");
-				
-						for (let i = 0; i < NLTimeCollection.length; i++) 
-						{
-							NLTimeCollection[i].textContent = "#";
-							NLTimeCollection[i].style.textAlign = "center";
-						}
-					break;
-				}
-			}
-			function AssignNumbers (tableName)
-			{
-				switch(tableName)
-				{
-					case "Nordfels":
-						const NFcollection = document.getElementsByClassName("SB_NF_Position");
-				
-						for (let i = 0; i < NFcollection.length; i++) 
-						{
-							NFcollection[i].textContent = (i + 1);
-							NFcollection[i].style.textAlign = "center";
-						}
-					break;
-
-					case "Neuland":
-						const NLcollection = document.getElementsByClassName("SB_NL_Position");
-				
-						for (let i = 0; i < NLcollection.length; i++) 
-						{
-							NLcollection[i].textContent = (i + 1);
-							NLcollection[i].style.textAlign = "center";
-						}
-					break;
-
-					case "Nordfels time":
-						const NFTimeCollection = document.getElementsByClassName("TIME_NF_Position");
-
-						for (let i = 0; i < NFTimeCollection.length; i++) 
-						{
-							NFTimeCollection[i].textContent = (i + 1);
-							NFTimeCollection[i].style.textAlign = "center";
-						}
-					break;
-
-					case "Neuland time": 
-						const NLTimeCollection = document.getElementsByClassName("TIME_NL_Position");
-
-						for (let i = 0; i < NLTimeCollection.length; i++) 
-						{
-							NLTimeCollection[i].textContent =(i + 1);
-							NLTimeCollection[i].style.textAlign = "center";
-						}
-					break;
-				}
-			}
-			
-			function ChangeFontToCleaner ()
-			{
-				document.getElementById("mainPageContainer").style.fontFamily = "Roboto,sans-serif,Arial";
-				document.getElementById("Clean_font_toggle").disabled = true;
-				document.getElementById("Default_font_toggle").disabled = false;
-
-				SetCookie("FontStyle","Clean");
-			}
-			function ChangeFontToDefault ()
-			{
-				document.getElementById("mainPageContainer").style.fontFamily = "'Times New Roman',Times,serif"; 
-				document.getElementById("Clean_font_toggle").disabled = false;
-				document.getElementById("Default_font_toggle").disabled = true;
-
-				SetCookie("FontStyle","Default");
-			}
-			function SetFontStyle () 
-			{
-				let savedFont = GetCookie("FontStyle");
-
-				switch (savedFont)
-				{
-					default:
-						console.log("SetFontStyle | Bisciut not found or is invalid value.");
-						ChangeFontToDefault();
-					break;
-					
-					case "Default":
-						ChangeFontToDefault();
-					break;
-					
-					case "Clean":
-						ChangeFontToCleaner();
-					break;
-				}
-			}
-
-			function ColourChangeDark() 
-			{
-				document.body.style.color="white";
-				document.getElementById("BgrBox").style.backgroundColor="rgba(0, 0, 0, 0.95)";
-				document.getElementById("footerText").style.color="white";
-				
-				// Add dark teme to all tables with "LeaderBoard_table" class
-				const LBtable = document.getElementsByClassName("LeaderBoard_table");
-				for (let i = 0; i < LBtable.length; i++)
-				{
-					LBtable[i].classList.add("table-dark");
-				} 
-				
-				// Add dark teme to all tables with "LeaderBoard_table_header" class
-				const LBtableHeader = document.getElementsByClassName("LeaderBoard_table_header");
-				for (let i = 0; i < LBtableHeader.length; i++)
-				{
-					LBtableHeader[i].classList.remove("thead-dark"); 
-					LBtableHeader[i].classList.add("thead-light");  
-				} 
-				
-				document.getElementById("pageOptionsTogglesGroupCotentBox").style.backgroundColor = "#2c3034";
-				document.getElementById("submissionTypeGroupCotentBox").style.backgroundColor = "#2c3034";
-
-				document.getElementById("Dark_theme_toggle").disabled = true;
-				document.getElementById("Light_theme_toggle").disabled = false;
-
-				let topButtons = document.getElementsByClassName("btn");
-				for (let i = 0; i < topButtons.length; i++)
-				{
-					topButtons[i].style.boxShadow = "2px 2px 8px rgba(255,255,255,0.5)";
-				}
-				SetCookie("PageTheme","dark");
-			}
-			function ColourChangeLight() 
-			{
-				document.body.style.color="black";
-				document.getElementById("BgrBox").style.backgroundColor="rgba(255, 255, 255, 0.95)";
-				document.getElementById("footerText").style.color="black";
-				
-				// Add dark teme to all tables with "LeaderBoard_table" class
-				const LBtable = document.getElementsByClassName("LeaderBoard_table");
-				for (let i = 0; i < LBtable.length; i++)
-				{
-					LBtable[i].classList.remove("table-dark");
-				} 
-				
-				// Add dark teme to all tables with "LeaderBoard_table_header" class
-				const LBtableHeader = document.getElementsByClassName("LeaderBoard_table_header");
-				for (let i = 0; i < LBtableHeader.length; i++)
-				{
-					LBtableHeader[i].classList.add("thead-dark"); 
-					LBtableHeader[i].classList.remove("thead-light");  
-				} 
-				
-				document.getElementById("pageOptionsTogglesGroupCotentBox").style.backgroundColor = "#ffffff";
-				document.getElementById("submissionTypeGroupCotentBox").style.backgroundColor = "#ffffff";
-
-				document.getElementById("Dark_theme_toggle").disabled = false;
-				document.getElementById("Light_theme_toggle").disabled = true;
-
-				let topButtons = document.getElementsByClassName("btn");
-				for (let i = 0; i < topButtons.length; i++)
-				{
-					topButtons[i].style.boxShadow = "2px 2px 4px rgba(0,0,0,0.5)"; 
-				}
-				SetCookie("PageTheme","light");
-			}
-			function SetTheme () 
-			{
-				let savedTheme = GetCookie("PageTheme");
-
-				switch (savedTheme)
-				{
-					default:
-						console.log("SetTheme | Bisciut not found or is invalid value. Value: " + savedTheme);
-						CheckAdressSearch();
-					break;
-					
-					case "dark":
-						ColourChangeDark();
-						//document.getElementById("submitFormFrame").src="./submit.html";
-					break;
-					
-					case "light":
-						ColourChangeLight();
-						//document.getElementById("submitFormFrame").src="./submit.html";
-					break;
-				}
-			}
-
-			// --------
-			// COOKIES
-			//---------
-			function SetCookie(cname, cvalue) 
-			{
-				document.cookie = cname + "=" + cvalue + ";" + ";path=/";
-			}
-			function GetCookie(cname) 
-			{
-				let name = cname + "=";
-				let decodedCookie = decodeURIComponent(document.cookie);
-				let ca = decodedCookie.split(';');
-				for(let i = 0; i <ca.length; i++) {
-					let c = ca[i];
-					while (c.charAt(0) == ' ') {
-					c = c.substring(1);
-					}
-					if (c.indexOf(name) == 0) {
-					return c.substring(name.length, c.length);
-					}
-				}
-				return "";
-			}
-			function CheckCookie(cname)
-			{
-				let cookieValue = GetCookie(cname);
-
-				return cookieValue; 
-			}
-		</script>
-		
+	<body>		
 		<div class="mainPageContainer" id="mainPageContainer">
 			<div class="BgrBox" id="BgrBox">
 				<div class="FrgBox" id ="FrgBox">
-				<!-- Page head stuff -->
-				<section id ="Page_header"> 
-					<center>
-						<section id="Title">
-							<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
-							<h1> <strong> <em> Thronefall leaderboard </em> </strong> </h1>
-						</section>
-						<hr class="horizontalSeparator">
-						<section id="Game_links">
-							<font class="ButtonText">
-								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
-									<button type="button" class="btn btn-warning gameLinksBtn;" style="background-color: var(--backgroundColour); padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
-										<b>Get the game</b>
-									</button>
-								</a>
-								<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
-									<button type="button" class="btn btn-warning gameLinksBtn" style="background-color: var(--backgroundColour); padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
-										<b>Discord server</b>
-									</button>
-								</a>
-							</font>
-						</section>
-
-						<noscript>		
-							<hr class="horizontalSeparator">						
-							<h3><strong><em>This website requires JavaScript to function correctly.</em></strong></h3>
+					<!-- Page head stuff -->
+					<section id ="Page_header"> 
+						<center>
+							<section id="Title">
+								<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
+								<h1> <strong> <em> Thronefall leaderboard </em> </strong> </h1>
+							</section>
 							<hr class="horizontalSeparator">
-						</noscript>
-					</center>
+							<section id="Game_links">
+								<font class="ButtonText">
+									<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
+										<button type="button" class="btn btn-warning gameLinksBtn;" style="background-color: var(--backgroundColour); padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
+											<b>Get the game</b>
+										</button>
+									</a>
+									<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
+										<button type="button" class="btn btn-warning gameLinksBtn" style="background-color: var(--backgroundColour); padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
+											<b>Discord server</b>
+										</button>
+									</a>
+								</font>
+							</section>
+
+							<noscript>		
+								<hr class="horizontalSeparator">						
+								<h3><strong><em>This website requires JavaScript to function correctly.</em></strong></h3>
+								<hr class="horizontalSeparator">
+							</noscript>
+						</center>
 					</section> <!-- Page head stuff -->
 					<hr class="horizontalSeparator">
-					<div class="alert alert-warning" role="alert">
-						<center>This leaderbaord is for the demo version. A leaderboard for the full game is coming soon.
-							<br><strong>BUT</strong> you you can submit your score or time. The form has been updated.</center>	
-					</div>
-				
-				<!-- Category buttons -->
-				<section id="Category_buttons_section">
-					<div id="Category_buttons_main_div">
-						<div id="Categories_buttons">
-							<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_scores_button" onclick="ChangeShownTable('Neuland_score_lb', 'neuland_score')">
-								<b>Neuland scores</b>
-							</button>
-							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_scores_button" onclick="ChangeShownTable('Nordfels_score_lb', 'nordfels_score')">
-								<b>Nordfels scores</b>
-							</button>
-							<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_time_button" onclick="ChangeShownTable('Neuland_time_lb', 'neuland_time')">
-								<b>Neuland time</b>
-							</button>
-							<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_time_button" onclick="ChangeShownTable('Nordfels_time_lb', 'nordfels_time')">
-								<b>Nordfels time</b>
-							</button>
-						</div>
-						
-						<div id="Submit_score_button">					
-							<!-- submit score overlay button  -->
-							<button type="button" class="btn btn-warning submitScoreOverlayBtn" data-toggle="collapse" data-target="#submissionTypeGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
-								<strong>SUBMIT</strong>
-							</button>
-							<!-- <button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()">
-								<strong>SUBMIT SCORE</strong>
-							</button> -->
-							<button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#pageOptionsTogglesGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
-								<img src="./img/gear.png" style="width: 20px; height:20px"/>
-							</button>
-						</div>
-					</div>
-				</section>		
-
-				<section id="Options_buttons_section">
-					<div class="collapse" id="pageOptionsTogglesGroup">
-						<div class="card card-body" id="pageOptionsTogglesGroupCotentBox">
-
-							<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Options</h4>
-							<div id="Thmeme_toggles" style="display: inline-flexbox;">
-								<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles" type="button" onclick="ColourChangeDark()">
-									Dark theme
-								</button>
-								<button id="Light_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeLight()">
-									Light theme
-								</button>
-							</div>
-							<div id="Font_toggles" style="display: inline-flexbox;">
-								<button id="Clean_font_toggle"   class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToCleaner()">
-									<font style="font-family: Roboto,sans-serif,Arial;">Cleaner text</font>
-								</button>
-								<button id="Default_font_toggle" class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToDefault()">
-									Fancier text
-								</button>
-							</div>
-
-						</div>
-					</div>
-				</section>
-
-				<section id="Options_buttons_section">
-					<div class="collapse" id="submissionTypeGroup">
-						<div class="card card-body" id="submissionTypeGroupCotentBox">
-
-							<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Submit high-score or a speedrun time</h4>
-							<div id="Submit_score_group" style="display: inline-flexbox;">
-								<button id="submit_score" type="button" class="btn btn-warning submitScoreCollapeBtn" onclick="ShowFormWindow()">
-									<b>Submit high-score</b>
-								</button>
-								<button id="submit_speedrun" type="button" class="btn btn-warning submitScoreCollapeBtn" onclick="ShowFormWindowTime()">
-									<b>Submit speedrun</b>
-								</button>
-							</div>
-
-						</div>
-					</div>
-				</section>	
-				<hr class="horizontalSeparator">
 					
-				<!-- Nordfels_score_lb -->
-				<section class="LeaderBoard_section" id="Nordfels_score_lb">  
-					<h3><strong>Nordfels high-scores</strong></h3>
-					<!-- Bootstrap styled table. DO NOT CHANGE TABLE CLASSSES! -->
-					<div class="tableContainer" style="overflow-x:auto; outline: 0px solid #212529; "> <!-- Div required to fit the table in the window without makinjg it render off-screen -->
-						<table id="Nordfels_scores" class="table table-striped LeaderBoard_table">
-							<!-- Table header. Do not change or the styling might break! -->
-							<thead id="Nordfels_scores_header" class="thead-dark  LeaderBoard_table_header">
-								<tr>
-									<th style="text-align: center;">
-										<font class="Table_header"> # </font>
-									</th>
-									<th>
-										<font class="Table_header"> Name </font>
-									</th>
-									<th>
-										<font class="Table_header"> Score </font>
-									</th>
-									<th>
-										<font class="Table_header"> Coins </font>
-									</th>
-									<th>
-										<font class="Table_header"> Date </font>
-									</th>
-									<th>
-										<font class="Table_header"> Picture/Video </font>
-									</th>
-								</tr>
-							</thead>
-							<!-- You can only change content in "tbody" -->
-							<tbody>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">1</td>
-									<td class="SB_NF_player_name">Anael</td>
-									<td class="SB_NF_score">17&nbsp;339</td>
-									<td class="SB_NF_coins">321</td>
-									<td class="SB_NF_date">12/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/OtlpDNgL-K0')"> 
-												Video
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">2</td>
-									<td class="SB_NF_player_name">ItsMeRaven</td>
-									<td class="SB_NF_score">16 938</td>
-									<td class="SB_NF_coins">287</td>
-									<td class="SB_NF_date">16/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/sr6zlDb_s1M')"> 
-												Video
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">2</td>
-									<td class="SB_NF_player_name">LTU Adas</td>
-									<td class="SB_NF_score">15 319</td>
-									<td class="SB_NF_coins">327</td>
-									<td class="SB_NF_date">26/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/LTU Adas2.png')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">2</td>
-									<td class="SB_NF_player_name">The Gentleman</td>
-									<td class="SB_NF_score">14 795</td>
-									<td class="SB_NF_coins">293</td>
-									<td class="SB_NF_date">08/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/The Gentleman2.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">2</td>
-									<td class="SB_NF_player_name">mrllama_</td>
-									<td class="SB_NF_score">14 792</td>
-									<td class="SB_NF_coins">359</td>
-									<td class="SB_NF_date">03/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/mrllama_1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">3</td>
-									<td class="SB_NF_player_name">deltatee</td>
-									<td class="SB_NF_score">14 678</td>
-									<td class="SB_NF_coins">476</td>
-									<td class="SB_NF_date">19/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/deltatee1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">4</td>
-									<td class="SB_NF_player_name">Isaac</td>
-									<td class="SB_NF_score">14 595</td>
-									<td class="SB_NF_coins">468</td>
-									<td class="SB_NF_date">17/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/Isaac2.png')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">4</td>
-									<td class="SB_NF_player_name">777aker</td>
-									<td class="SB_NF_score">14 526</td>
-									<td class="SB_NF_coins">288</td>
-									<td class="SB_NF_date">17/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/777aker1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">5</td>
-									<td class="SB_NF_player_name">FRAZZ</td>
-									<td class="SB_NF_score">14 457</td>
-									<td class="SB_NF_coins">275</td>
-									<td class="SB_NF_date">19/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/FRAZZ1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">6</td>
-									<td class="SB_NF_player_name">Elkku&nbsp;The&nbsp;Variety&nbsp;Gamer</td>
-									<td class="SB_NF_score">14 293</td>
-									<td class="SB_NF_coins">280</td>
-									<td class="SB_NF_date">19/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/Elkku The Variety Gamer1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">6</td>
-									<td class="SB_NF_player_name">The Gentleman</td>
-									<td class="SB_NF_score">14 110</td>
-									<td class="SB_NF_coins">258</td>
-									<td class="SB_NF_date">07/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/The Gentleman.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">7</td>
-									<td class="SB_NF_player_name">quazar2.1017wbns</td>
-									<td class="SB_NF_score">13 992</td>
-									<td class="SB_NF_coins">245</td>
-									<td class="SB_NF_date">18/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/quazar2.1017wbns1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-							<!--	<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">8</td>
-									<td class="SB_NF_player_name">Isaac</td>
-									<td class="SB_NF_score">13&nbsp;558</td>
-									<td class="SB_NF_coins">392</td>
-									<td class="SB_NF_date">06/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/Isaac1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>	-->
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">9</td>
-									<td class="SB_NF_player_name">esteban8nn</td>
-									<td class="SB_NF_score">13 152</td>
-									<td class="SB_NF_coins">259</td>
-									<td class="SB_NF_date">27/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/esteban8nn1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">10</td>
-									<td class="SB_NF_player_name">bluesaphirxiv</td>
-									<td class="SB_NF_score">13 097</td>
-									<td class="SB_NF_coins">241</td>
-									<td class="SB_NF_date">16/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/bluesaphirxiv1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">11</td>
-									<td class="SB_NF_player_name">BabyKrokodile</td>
-									<td class="SB_NF_score">13&nbsp;048</td>
-									<td class="SB_NF_coins">228</td>
-									<td class="SB_NF_date">16/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/babykrokodile1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">12</td>
-									<td class="SB_NF_player_name">ToGreedy</td>
-									<td class="SB_NF_score">12&nbsp;811</td>
-									<td class="SB_NF_coins">152</td>
-									<td class="SB_NF_date">04/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/ToGreedy1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">13</td>
-									<td class="SB_NF_player_name">neonitedragon</td>
-									<td class="SB_NF_score">12 716</td>
-									<td class="SB_NF_coins">206</td>
-									<td class="SB_NF_date">16/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/neonitedragon1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">14</td>
-									<td class="SB_NF_player_name">zsalab_</td>
-									<td class="SB_NF_score">12 503</td>
-									<td class="SB_NF_coins">214</td>
-									<td class="SB_NF_date">16/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/zsalab_1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">15</td>
-									<td class="SB_NF_player_name">deltatee</td>
-									<td class="SB_NF_score">12 432</td>
-									<td class="SB_NF_coins">529</td>
-									<td class="SB_NF_date">22/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/deltatee1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">16</td>
-									<td class="SB_NF_player_name">domedin#0478</td>
-									<td class="SB_NF_score">11 486</td>
-									<td class="SB_NF_coins">137</td>
-									<td class="SB_NF_date">14/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/domedin1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">17</td>
-									<td class="SB_NF_player_name">barigamb</td>
-									<td class="SB_NF_score">11 326</td>
-									<td class="SB_NF_coins">207</td>
-									<td class="SB_NF_date">17/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/barigamb1.jpg')">
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">18</td>
-									<td class="SB_NF_player_name">boboo32</td>
-									<td class="SB_NF_score">10 973</td>
-									<td class="SB_NF_coins">375</td>
-									<td class="SB_NF_date">21/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/boboo321.png')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">18</td>
-									<td class="SB_NF_player_name">Olivenstein</td>
-									<td class="SB_NF_score">10 920</td>
-									<td class="SB_NF_coins">N/A</td>
-									<td class="SB_NF_date">17/07/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/Olivenstein1.png')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr class="Nordfels_scores_row">
-									<td class="SB_NF_Position">18</td>
-									<td class="SB_NF_player_name">giraffasaur</td>
-									<td class="SB_NF_score">10 796</td>
-									<td class="SB_NF_coins">395</td>
-									<td class="SB_NF_date">16/06/2023</td>
-									<td class="SB_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nf/giraffasaur1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+					<div class="alert alert-warning" role="alert">
+						<center>
+							This leaderbaord is for the demo version. A leaderboard for the full game is coming soon.
+							<br><strong>BUT</strong> you can already submit your score or time.
+						</center>	
 					</div>
-					 <hr class="horizontalSeparator">
-				</section> <!-- Nordfels_score_lb -->
-				
-				<!-- Neuland_score_lb -->
-				<section class="LeaderBoard_section" id="Neuland_score_lb">	
-					<h3><strong>Neuland high-scores</strong></h3>					
-					<!-- 
-						Bootstrap styled table.
-						DO NOT CHANGE TABLE CLASSSES! 
-					-->
-					<!-- Div required to fit the table in the window without making it render off-screen -->
-					<div class="tableContainer" style="overflow-x:auto;"> 
-						<table id="Neuland_scores" class="table table-striped LeaderBoard_table">
-							<!-- Table header. Do not change or the styling might break! -->
-							<thead id="Neuland_scores_header" class="thead-dark LeaderBoard_table_header">
-								<tr>
-									<th style="text-align: center;">
-										<font class="Table_header"> # </font>
-									</th>
-									<th>
-										<font class="Table_header"> Name </font>
-									</th>
-									<th>
-										<font class="Table_header"> Score </font>
-									</th>
-									<th>
-										<font class="Table_header"> Coins </font>
-									</th>
-									<th>
-										<font class="Table_header"> Date </font>
-									</th>
-									<th>
-										<font class="Table_header"> Picture/Video </font>
-									</th>
-								</tr>
-							</thead>
-							<!-- You can only change content in "tbody" -->
-							<tbody>
-								<tr>
-									<td class="SB_NL_Position">1</td>
-									<td class="SB_NL_player_name">quazar2.1017wbns</td>
-									<td class="SB_NL_score">5&nbsp;292</td>
-									<td class="SB_NL_coins">71</td>
-									<td class="SB_NL_date">18/06/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/quazar2.1017wbns1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">2</td>
-									<td class="SB_NL_player_name"> ItsMeRaven </td>
-									<td class="SB_NL_score">5 240</td>
-									<td class="SB_NL_coins">65</td>
-									<td class="SB_NL_date">15/07/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/AH2ums3NzvI')"> 
-												Video
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">2</td>
-									<td class="SB_NL_player_name"> giraffasaur </td>
-									<td class="SB_NL_score">5 214</td>
-									<td class="SB_NL_coins">65</td>
-									<td class="SB_NL_date">16/06/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/giraffasaur1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">3</td>
-									<td class="SB_NL_player_name"> arkqa </td>
-									<td class="SB_NL_score">5 201</td>
-									<td class="SB_NL_coins">61</td>
-									<td class="SB_NL_date">02/07/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/arkqa1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">4</td>
-									<td class="SB_NL_player_name">ToGreedy</td>
-									<td class="SB_NL_score">5 187</td>
-									<td class="SB_NL_coins">61</td>
-									<td class="SB_NL_date">04/07/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/ToGreedy1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">5</td>
-									<td class="SB_NL_player_name">babykrokodile</td>
-									<td class="SB_NL_score">5 173</td>
-									<td class="SB_NL_coins">65</td>
-									<td class="SB_NL_date">16/06/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/babykrokodile1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">6</td>
-									<td class="SB_NL_player_name">mrllama_</td>
-									<td class="SB_NL_score">5 150</td>
-									<td class="SB_NL_coins">59</td>
-									<td class="SB_NL_date">18/06/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/mrllama_1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">7</td>
-									<td class="SB_NL_player_name">bluesaphirxiv</td>
-									<td class="SB_NL_score">5 117</td>
-									<td class="SB_NL_coins">62</td>
-									<td class="SB_NL_date">16/06/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/bluesaphirxiv1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">9</td>
-									<td class="SB_NL_player_name">digestives</td>
-									<td class="SB_NL_score">5 017</td>
-									<td class="SB_NL_coins">65</td>
-									<td class="SB_NL_date">24/07/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/digestives1.png')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">9</td>
-									<td class="SB_NL_player_name">neoarandil</td>
-									<td class="SB_NL_score">5 002</td>
-									<td class="SB_NL_coins">70</td>
-									<td class="SB_NL_date">30/06/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/neoarandil1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">9</td>
-									<td class="SB_NL_player_name">GhostMiner_</td>
-									<td class="SB_NL_score">4 958</td>
-									<td class="SB_NL_coins">50</td>
-									<td class="SB_NL_date">30/06/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/ghostminer1.jpg')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="SB_NL_Position">9</td>
-									<td class="SB_NL_player_name">LukasRainbow</td>
-									<td class="SB_NL_score">4 831</td>
-									<td class="SB_NL_coins">43</td>
-									<td class="SB_NL_date">15/07/2023</td>
-									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowPictureWindow('./img/scores/nl/LukasRainbow1.png')"> 
-												Screenshot
-										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					 <hr class="horizontalSeparator">
-				</section> <!-- Neuland_score_lb -->
-				
-				<!-- Nordfels time lb -->
-				<section class="LeaderBoard_section" id="Nordfels_time_lb">	
-					<h3><strong>Nordfels Speedrun times</strong></h3>
-					<!-- Div required to fit the table in the window without making it render off-screen -->
-					<div class="tableContainer" style="overflow-x:auto;"> 
-						<table id="Nordfels_time" class="table table-striped LeaderBoard_table">
-							<!-- Table header. Do not change or the styling might break! -->
-							<thead id="Nordfels_time_header" class="thead-dark LeaderBoard_table_header">
-								<tr>
-									<th style="text-align: center;">
-										<font class="Table_header"> # </font>
-									</th>
-									<th>
-										<font class="Table_header"> Name </font>
-									</th>
-									<th>
-										<font class="Table_header"> Time </font>
-									</th>
-									<th>
-										<font class="Table_header"> Date </font>
-									</th>
-									<th>
-										<font class="Table_header"> Used weapon </font>
-									</th>
-									<th>
-										<font class="Table_header"> Proof </font>
-									</th>
-								</tr>
-							</thead>
-							<!-- You can only change content in "tbody" -->
-							<tbody>
-								<tr>
-									<td class="TIME_NF_Position">1</td>
-									<td class="TIME_NF_player_name">ItsMeRaven</td>
-									<td class="TIME_NF_time">9m 26s 600ms</td>
-									<td class="TIME_NF_date">20/07/2023</td>
-									<td class="TIME_NF_weapon">Spear</td>
-									<td class="TIME_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/hwdgmVxfBJs')"> 
-												Video
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="TIME_NF_Position">1</td>
-									<td class="TIME_NF_player_name">Haidabo</td>
-									<td class="TIME_NF_time">11m 26s 760ms</td>
-									<td class="TIME_NF_date">18/07/2023</td>
-									<td class="TIME_NF_weapon">Bow</td>
-									<td class="TIME_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/XIwv1se6il8')">
-												Video
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="TIME_NF_Position">1</td>
-									<td class="TIME_NF_player_name">Rasmos05</td>
-									<td class="TIME_NF_time">11m 42s</td>
-									<td class="TIME_NF_date">09/07:2023</td>
-									<td class="TIME_NF_weapon">Bow</td>
-									<td class="TIME_NF_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/G4a7Tk1iRlQ')">
-												Video
-										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<hr class="horizontalSeparator">
-				</section> <!-- Nordfels time lb -->
 
-				<!-- Neuland time lb -->
-				<section class="LeaderBoard_section" id="Neuland_time_lb">	
-					<h3><strong>Neuland Speedrun times</strong></h3>					
-					<!-- 
-						Bootstrap styled table.
-						DO NOT CHANGE TABLE CLASSSES! 
-					-->
-					<!-- Div required to fit the table in the window without making it render off-screen -->
-					<div class="tableContainer" style="overflow-x:auto;"> 
-						<table id="Neuland_time" class="table table-striped LeaderBoard_table">
-							<!-- Table header. Do not change or the styling might break! -->
-							<thead id="Neuland_time_header" class="thead-dark LeaderBoard_table_header">
-								<tr>
-									<th style="text-align: center;">
-										<font class="Table_header"> # </font>
-									</th>
-									<th>
-										<font class="Table_header"> Name </font>
-									</th>
-									<th>
-										<font class="Table_header"> Time </font>
-									</th>
-									<th>
-										<font class="Table_header"> Date </font>
-									</th>
-									<th>
-										<font class="Table_header"> Used weapon </font>
-									</th>
-									<th>
-										<font class="Table_header"> Proof </font>
-									</th>
-								</tr>
-							</thead>
-							<!-- You can only change content in "tbody" -->
-							<tbody>
-								<tr>
-									<td class="TIME_NL_Position">1</td>
-									<td class="TIME_NL_player_name">ItsMeRaven</td>
-									<td class="TIME_NL_time">3m 29s 840ms</td>
-									<td class="TIME_NL_date">16/07/2023</td>
-									<td class="TIME_NL_weapon">Bow</td>
-									<td class="TIME_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/OV8PhzOIKMw')"> 
-												Video
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="TIME_NL_Position">1</td>
-									<td class="TIME_NL_player_name">Haidabo</td>
-									<td class="TIME_NL_time">3m 33s 880ms</td>
-									<td class="TIME_NL_date">18/07/2023</td>
-									<td class="TIME_NL_weapon">Bow</td>
-									<td class="TIME_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/l_U7u8bxb5g')"> 
-												Video
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="TIME_NL_Position">1</td>
-									<td class="TIME_NL_player_name">FlediX2</td>
-									<td class="TIME_NL_time">3m 58s</td>
-									<td class="TIME_NL_date">12/07:2023</td>
-									<td class="TIME_NL_weapon">Bow</td>
-									<td class="TIME_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/CuIlANEdh8U')"> 
-												Video
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="TIME_NL_Position">1</td>
-									<td class="TIME_NL_player_name">Rasmos05</td>
-									<td class="TIME_NL_time">4m 03s</td>
-									<td class="TIME_NL_date">10/07:2023</td>
-									<td class="TIME_NL_weapon">Bow</td>
-									<td class="TIME_NL_proof">
-										<a class="ScoreProffLink" title="Picture of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/c3eYfEku6Tg')"> 
-												Video
-										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+					<!-- Category buttons -->
+					<section id="Category_buttons_section">
+						<div id="Category_buttons_main_div">
+							<div id="Categories_buttons">
+								<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_scores_button" onclick="ChangeShownTable('nl-score', 'neuland_score')">
+									<b>Neuland scores</b>
+								</button>
+								<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_scores_button" onclick="ChangeShownTable('nf-score', 'nordfels_score')">
+									<b>Nordfels scores</b>
+								</button>
+								<button type="button" class="btn btn-warning tableToggleButton" id="Neuland_time_button" onclick="ChangeShownTable('nl-time', 'neuland_time')">
+									<b>Neuland time</b>
+								</button>
+								<button type="button" class="btn btn-warning tableToggleButton" id="Nordfels_time_button" onclick="ChangeShownTable('nf-time', 'nordfels_time')">
+									<b>Nordfels time</b>
+								</button>
+							</div>
+							
+							<div id="Submit_score_button">					
+								<!-- submit score overlay button  -->
+								<button type="button" class="btn btn-warning submitScoreOverlayBtn" data-toggle="collapse" data-target="#submissionTypeGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
+									<strong>SUBMIT</strong>
+								</button>
+								<!-- <button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()">
+									<strong>SUBMIT SCORE</strong>
+								</button> -->
+								<button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#pageOptionsTogglesGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
+									<img src="./img/gear.png" style="width: 20px; height:20px"/>
+								</button>
+							</div>
+						</div>
+					</section>		
+
+					<section id="Options_buttons_section">
+						<div class="collapse" id="pageOptionsTogglesGroup">
+							<div class="card card-body" id="pageOptionsTogglesGroupCotentBox">
+
+								<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Options</h4>
+								<div id="Thmeme_toggles" style="display: inline-flexbox;">
+									<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles" type="button" onclick="ColourChangeDark()">
+										Dark theme
+									</button>
+									<button id="Light_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeLight()">
+										Light theme
+									</button>
+								</div>
+								<div id="Font_toggles" style="display: inline-flexbox;">
+									<button id="Clean_font_toggle"   class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToCleaner()">
+										<font style="font-family: Roboto,sans-serif,Arial;">Cleaner text</font>
+									</button>
+									<button id="Default_font_toggle" class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToDefault()">
+										Fancier text
+									</button>
+								</div>
+
+							</div>
+						</div>
+					</section>
+
+					<section id="Options_buttons_section">
+						<div class="collapse" id="submissionTypeGroup">
+							<div class="card card-body" id="submissionTypeGroupCotentBox">
+
+								<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Submit high-score or a speedrun time</h4>
+								<div id="Submit_score_group" style="display: inline-flexbox;">
+									<button id="submit_score" type="button" class="btn btn-warning submitScoreCollapeBtn" onclick="ShowFormWindow()">
+										<b>Submit high-score</b>
+									</button>
+									<button id="submit_speedrun" type="button" class="btn btn-warning submitScoreCollapeBtn" onclick="ShowFormWindowTime()">
+										<b>Submit speedrun</b>
+									</button>
+								</div>
+
+							</div>
+						</div>
+					</section>	
 					<hr class="horizontalSeparator">
-				</section> <!-- Neuland time lb -->
-								
-				<section id="Footer"> <!-- Footer -->
-					<center>
-						<h6>
-							<font id="footerText" style=" font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.6.1 (15/7/2023)</i> |
-								<a href="https://ghost-miner.github.io/">Website</a>, 
-								<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
-								<a href="https://discord.gg/DjUBY9h">Discord</a>
-							</font>							
-						</h6>
-					</center>
-				</section> <!-- Footer -->
-			</div>
+					
+					<section id="leaderBoard">
+						<!-- lb goes here -->
+						<section id="nf-score" class="LeaderBoard_section">
+							<!-- NF score lb goes here -->
+						</section>
+						<section id="nl-score" class="LeaderBoard_section">
+							<!-- NL score lb goes here -->
+						</section>
+						<section id="nf-time" class="LeaderBoard_section">
+							<!-- NF time lb goes here -->
+						</section>
+						<section id="nl-time" class="LeaderBoard_section">
+							<!-- NL time lb goes here -->
+						</section>
+					</section>
+									
+					<section id="Footer"> <!-- Footer -->
+						<center>
+							<h6>
+								<font id="footerText" style=" font-weight: bold;"><i>Leaderbaord page made by GhostMiner. v.1.6.1 (15/7/2023)</i> |
+									<a href="https://ghost-miner.github.io/">Website</a>, 
+									<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
+									<a href="https://discord.gg/DjUBY9h">Discord</a>
+								</font>							
+							</h6>
+						</center>
+					</section> <!-- Footer -->
+				</div>
 			</div>
 		</div>
 		<!-- Optional JavaScript -->
@@ -1224,27 +197,7 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script>
-			SetTheme();
-			SetFontStyle();
-
-			//ChangeShownTable("Nordfels_score_lb","nordfels_score");
 			
-			CheckAdressHref();
-			//CheckAdressSearch();
-			
-			//document.getElementById("submitFormFrame").src = "./submit.html";
-			ResetPositionNumbers("Nordfels");
-			ResetPositionNumbers("Neuland");
-			ResetPositionNumbers("Nordfels time");
-			ResetPositionNumbers("Neuland time");
-
-			AssignNumbers("Nordfels");
-			AssignNumbers("Neuland");
-			AssignNumbers("Nordfels time");
-			AssignNumbers("Neuland time");
-		</script>
-		
 		
 		
 		<!-- submit score overlay -->
@@ -1411,6 +364,7 @@
 
 		<!-- Pictue windiw overlay -->
 		<section class="overlays" id="scoreProofWindooOverlay">
+			<!-- Proof overlay -->
 			<style>
 				.proofOverlay
 				{
