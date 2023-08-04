@@ -65,39 +65,7 @@
 		</style>
 
 		<script>
-			function ChangeCategory(name)
-			{
-				document.getElementById("scoresSection").style.display = "none"; 
-				document.getElementById("timesSection") .style.display = "none";
-				document.getElementById("demoSection")  .style.display = "none";
-				
-				document.getElementById("hs_cat_btn").classList.remove("active");
-				document.getElementById("sr_cat_btn").classList.remove("active");
-				document.getElementById("demo_cat_btn").classList.remove("active");
-				
-				switch(name)
-				{
-					default:
-						console.log("[ ERROR ] In ChangeCategory(): " + name + " is not a valid category name!");
-					break;
-
-					case "score":
-						document.getElementById("scoresSection").style.display = "block"; 
-						document.getElementById("hs_cat_btn").classList.add("active");
-									
-					break;
-
-					case "time":
-						document.getElementById("timesSection").style.display = "block";
-						document.getElementById("sr_cat_btn").classList.add("active");
-					break;
-
-					case "demo":
-						document.getElementById("demoSection").style.display = "block";	
-						document.getElementById("demo_cat_btn").classList.add("active");
-					break;
-				}
-			}
+			
 		</script>
 
 		<div class="mainPageContainer" id="mainPageContainer">
@@ -201,14 +169,11 @@
 							
 							<div id="Submit_score_button">					
 								<!-- submit score overlay button  -->
-								<button type="button" class="btn btn-warning submitScoreOverlayBtn" data-toggle="collapse" data-target="#submissionTypeGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
-									<strong>SUBMIT</strong>
-								</button>
-								<!-- <button type="button" class="btn btn-warning submitScoreOverlayBtn" onclick="ShowFormWindow()">
-									<strong>SUBMIT SCORE</strong>
-								</button> -->
 								<button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#pageOptionsTogglesGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
 									<img src="./img/gear.png" style="width: 20px; height:20px"/>
+								</button>
+								<button type="button" class="btn btn-warning submitScoreOverlayBtn btn-lg" data-toggle="collapse" data-target="#submissionTypeGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
+									<strong>SUBMIT</strong>
 								</button>
 							</div>
 						</div>
@@ -285,7 +250,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 		<script>
-			ChangeCategory("demo");
+			//ChangeCategory("demo");
+			ChangeActiveCategory(GetAdressSearch());
 			
 			SetFontStyle();
 		</script>
