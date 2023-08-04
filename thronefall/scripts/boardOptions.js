@@ -39,10 +39,10 @@ let doneLoading = false;
 		ResetPositionNumbers("Nordfels time");
 		ResetPositionNumbers("Neuland time");
 
-		AssignNumbers("Nordfels");
-		AssignNumbers("Neuland");
-		AssignNumbers("Nordfels time");
-		AssignNumbers("Neuland time"); 
+		AssignNumbersDemo("Nordfels");
+		AssignNumbersDemo("Neuland");
+		AssignNumbersDemo("Nordfels time");
+		AssignNumbersDemo("Neuland time"); 
 
 		///ChangeShownTable('nf-score', 'nordfels_score');
 		
@@ -115,7 +115,7 @@ let doneLoading = false;
 					break;
 				}
 			}
-			function AssignNumbers (tableName)
+			function AssignNumbersDemo (tableName)
 			{
 				switch(tableName)
 				{
