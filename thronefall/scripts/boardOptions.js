@@ -140,6 +140,17 @@ function AssignNumbersDemo(tableName)
 	}
 }
 
+function AssignPositionNumbers ()
+{
+	const posColumn = document.getElementsByClassName("SB_Position");
+
+	for (let i = 0; i < posColumn.length; i++)
+	{
+		posColumn[i].textContent = (i + 1);
+		posColumn[i].style.textAlign = "center";
+	}
+}
+
 function ChangeActiveCategory (catName)
 {
 	switch (catName)
@@ -166,10 +177,10 @@ function ChangeActiveCategory (catName)
 		break;
 	}
 } 
-function ChangeActiveBoard (boardName)
+/*function ChangeActiveBoard (boardName)
 {
 	switch(boardName)
 	{
 		
 	}
-}
+}*/
