@@ -182,13 +182,15 @@
 					<section id="Options_buttons_section">
 						<div class="collapse" id="pageOptionsTogglesGroup">
 							<div class="card card-body" id="pageOptionsTogglesGroupCotentBox">
-
 								<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Options</h4>
+
+								<!-- Colour theme buttons disabled because they don't work on new tables. Will be fixed in the future -->
+								
 								<div id="Thmeme_toggles" style="display: inline-flexbox;">
-									<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles disabled" type="button" onclick="aColourChangeDark()">
+									<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles disabled" disabled type="button" onclick="ColourChangeDark()">
 										Dark theme
 									</button>
-									<button id="Light_theme_toggle" class="btn btn-warning options-toggles disabled" type="button" onclick="ColourChangeLight()">
+									<button id="Light_theme_toggle" class="btn btn-warning options-toggles disabled" disabled type="button" onclick="ColourChangeLight()">
 										Light theme
 									</button>
 								</div>
@@ -200,7 +202,6 @@
 										Fancier text
 									</button>
 								</div>
-
 							</div>
 						</div>
 					</section>
