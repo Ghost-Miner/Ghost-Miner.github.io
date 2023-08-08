@@ -1,0 +1,1 @@
+This directory is used by the home.html page which is (or was) supposed to be the new version of the homepage.
