@@ -74,7 +74,19 @@
 				font-weight: bold;
 				font-size: 2em;
 			}
-		</style>
+
+			#LBloadImg
+			{
+				width: 32%; 
+				height: auto; 
+				text-align: center; 
+				margin: 15px;
+			}
+			#leaderBoardSection
+			{
+				display: none
+			}
+			</style>
 
 		<div class="mainPageContainer" id="mainPageContainer">
 			<div class="BgrBox" id="BgrBox">
@@ -242,32 +254,40 @@
 					</section>	
 					<hr class="horizontalSeparator">
 										
-					<section id="leaderBoard">
-						<span id="tableName"> name </span>
-						<table class="table table-striped">
-							<thead class="table-dark" style="font-weight: bold;">
-								<td class="th-position">#</td>
-								<td class="th-name">Name</td>
-								<td class="th-score">Score</td>
-								<td class="th-coins">Gold</td>
-								<td class="th-date">Date</td>
-								<td class="th-proof">Proof</td>
-							</thead>
-							<tbody id="tbody">
-								<tr class="tableRow">
-									<td class="position">...</td>
-									<td class="name">...</td>
-									<td class="score">...</td>
-									<td class="coins">...</td>
-									<td class="date">...</td>
-									<td class="proof">
-										<a class="proofLink" href="" target="_blank">
-											View
-										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+					<section id="newLBSection">
+						<section id="newLBLoadingImg" style="text-align: center; ">
+							<img src="./img/loading edit.gif" id="LBloadImg">
+						</section>
+
+						<section id="leaderBoardSection">
+							<div class="tableContainer" style="overflow-x:auto;"> 
+								<span id="tableName"> name </span>
+								<table class="table table-striped">
+									<thead class="table-dark" style="font-weight: bold;">
+										<td class="th-position">#</td>
+										<td class="th-name">Name</td>
+										<td class="th-score">Score</td>
+										<td class="th-coins">Gold</td>
+										<td class="th-date">Date</td>
+										<td class="th-proof">Proof</td>
+									</thead>
+									<tbody id="tbody">
+										<tr class="tableRow">
+											<td class="position">...</td>
+											<td class="name">...</td>
+											<td class="score">...</td>
+											<td class="coins">...</td>
+											<td class="date">...</td>
+											<td class="proof">
+												<a class="proofLink" href="" target="_blank">
+													View
+												</a>
+											</td>
+										</tr>
+									</tbody>
+							</table>
+							</div>
+						</section>
 					</section>
 							
 					<script>

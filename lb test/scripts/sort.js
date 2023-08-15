@@ -230,5 +230,9 @@ function ChangeTableData(level)
     {
         tableRows[i].style.display = "none";
     }
+
+    document.getElementById("newLBLoadingImg").style.display = "none";
+    document.getElementById("leaderBoardSection").style.display = "block";
+    
 	document.getElementById("tableName").textContent = chosenMap;
 }
