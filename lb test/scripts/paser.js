@@ -94,7 +94,7 @@ async function GetCSVFile()
 		}
 
 		// Return the parsed data.
-        console.log("=============================================================");
+        console.log("== PARSER ==========================================================");
 		console.log(arrData);
 		return( arrData );
 

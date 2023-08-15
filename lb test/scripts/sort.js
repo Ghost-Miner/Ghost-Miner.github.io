@@ -10,7 +10,13 @@ function SpawnTableRows()
     }
 }
 
-let tableData;
+let tableData; // data from entries.csv parsed into an array
+
+function OrderArray() 
+{
+    console.log(FrostseeSubs);
+    FrostseeSubs.sort(Comparer);
+}
 
 async function GetSubData ()
 {
@@ -35,6 +41,8 @@ let canShowTableData = false;
 
 function SortSubData ()
 {
+    tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    console.log(tableData);
 
     // DISPLAY ARRAY CONTENT
     console.log("-- ALL SUBS ---------------------------------------------");
@@ -233,6 +241,6 @@ function ChangeTableData(level)
 
     document.getElementById("newLBLoadingImg").style.display = "none";
     document.getElementById("leaderBoardSection").style.display = "block";
-    
+
 	document.getElementById("tableName").textContent = chosenMap;
 }
