@@ -3,11 +3,11 @@ async function GetCSVFile()
     const fetchFile = await fetch("./entries.csv");
 	const fileText = await fetchFile.text();
 
-    console.log("== CONTENT ======================================================================================================");
-    console.log(fileText);
+     console.log("== CONTENT ======================================================================================================");
+     console.log(fileText);
     
-    console.log("== parse ======================================================================================================");
-    CSVToArray(fileText, ",");
+     console.log("== parse ======================================================================================================");
+    //CSVToArray(fileText, ",");
     return fileText;
 }
 

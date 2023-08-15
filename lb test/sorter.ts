@@ -1,10 +1,7 @@
-    
-let tableData;
-const OtableData = 
+let tableData = 
 [
     [
         "Submission Date",
-        "status",
         "Name",
         "Game version",
         "Level",
@@ -12,95 +9,103 @@ const OtableData =
         "Gold",
         "Screenshot/Video",
         "Date",
-        "Submission ID"
+        "Submission ID",
+        "Edit Link",
+        "IP"
     ],
     [
         "2023-06-27 18:55:17",
-        "a",
         "esteban8nn",
         "Demo",
         "Nordfels",
         "13152",
         "259",
         "https://cdn.discordapp.com/attachments/1117853463045476382/1121874081948651691/13k_pointss.PNG",
-        "N/A",
-        "5636941175145327386"
+        "",
+        "5636941175145327386",
+        "Edit Submission",
+        ""
     ],
     [
         "2023-06-30 17:22:15",
-        "a",
         "GhostMiner",
         "Demo",
         "Neuland",
         "4872",
         "42",
         "https://cdn.discordapp.com/attachments/697094989716521021/1124358589440598086/2420130_20230630170800_1.png",
-        "N/A",
-        "5639477353524707944"
+        "",
+        "5639477353524707944",
+        "Edit Submission",
+        ""
     ],
     [
         "2023-07-01 21:26:54",
-        "a",
         "neoarandil",
         "Demo",
         "Neuland",
         "5002",
         "70",
         "https://media.discordapp.net/attachments/1117853463045476382/1124441173075959990/image.png?width=1074&height=604",
-        "N/A",
-        "5640488143525514428"
+        "",
+        "5640488143525514428",
+        "Edit Submission",
+        ""
     ],
     [
         "2023-07-01 21:35:32",
-        "a",
         "deltatee",
         "Demo",
         "Nordfels",
         "12432",
         "529",
         "https://media.discordapp.net/attachments/1117853463045476382/1121339065107763230/image.png?width=1074&height=604",
-        "N/A",
-        "5640493323523656433"
+        "",
+        "5640493323523656433",
+        "Edit Submission",
+        ""
     ],
     [
         "2023-07-02 14:53:23",
-        "a",
         "arkqa",
         "Demo",
         "Neuland",
         "5201",
         "61",
         "https://cdn.discordapp.com/attachments/1117853463045476382/1125023335554760745/image.png",
-        "N/A",
-        "5641116033429398573"
+        "",
+        "5641116033429398573",
+        "Edit Submission",
+        "89.64.51.243"
     ],
     [
         "2023-07-02 17:34:57",
-        "a",
         "ToGreedy",
         "Demo",
         "Neuland",
         "5178",
         "610",
         "https://cdn.discordapp.com/attachments/1032264855815725126/1125087109284384838/image.png",
-        "N/A",
-        "5641212971612850952"
+        "",
+        "5641212971612850952",
+        "Edit Submission",
+        "91.4.14.161"
     ],
     [
         "2023-07-03 17:08:25",
-        "a",
         "Anael",
         "Demo",
         "Nordfels",
         "17312",
         "320",
         "https://www.youtube.com/watch?v=WAIV-AjWRa8",
-        "N/A",
-        "5642061050813835734"
+        "",
+        "5642061050813835734",
+        "Edit Submission",
+        "131.196.77.180"
     ],
     [
         "2023-07-04 3:48:34",
-        "a",
         "ToGreedy",
         "Demo",
         "Neuland",
@@ -108,11 +113,12 @@ const OtableData =
         "61",
         "https://cdn.discordapp.com/attachments/1117853463045476382/1125603735607988274/image.png",
         "04/07/2023 3:47",
-        "5642445144129133009"
+        "5642445144129133009",
+        "Edit Submission",
+        "217.253.121.214"
     ],
     [
         "2023-07-04 4:33:09",
-        "a",
         "ToGreedy",
         "Demo",
         "Nordfels",
@@ -120,11 +126,12 @@ const OtableData =
         "152",
         "https://cdn.discordapp.com/attachments/659527750268485640/1125615094714347671/image.png",
         "04/07/2023 4:32",
-        "5642471894123526752"
+        "5642471894123526752",
+        "Edit Submission",
+        "217.253.121.214"
     ],
     [
         "2023-07-04 5:50:26",
-        "r",
         "BabyKrokodile",
         "Demo",
         "Nordfels",
@@ -132,11 +139,12 @@ const OtableData =
         "472",
         "https://cdn.discordapp.com/attachments/937447824113664021/1125634645883621397/Screenshot_45.png",
         "04/07/2023 5:01",
-        "5642518260029250186"
+        "5642518260029250186",
+        "Edit Submission",
+        "88.73.95.200"
     ],
     [
         "2023-07-06 11:46:24",
-        "a",
         "Isaac",
         "Demo",
         "Nordfels",
@@ -144,11 +152,12 @@ const OtableData =
         "392",
         "https://drive.google.com/file/d/1ukyw_AsJqHD6a12WMN2FTUfUC-V8V_Sf/view?usp=drive_link",
         "06/07/2023 2:23",
-        "5644459848327569203"
+        "5644459848327569203",
+        "Edit Submission",
+        "71.59.192.238"
     ],
     [
         "2023-07-07 10:31:36",
-        "a",
         "The Gentleman",
         "Demo",
         "Nordfels",
@@ -156,11 +165,12 @@ const OtableData =
         "258",
         "https://steamuserimages-a.akamaihd.net/ugc/2028358250043827064/D48D6FB731C53A880425AE2A8848094F50DBF0DD/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
         "07/07/2023 1:30",
-        "5645278967428167097"
+        "5645278967428167097",
+        "Edit Submission",
+        "38.103.162.247"
     ],
     [
         "2023-07-09 2:59:30",
-        "r",
         "Isaac",
         "Demo",
         "Nordfels",
@@ -168,11 +178,12 @@ const OtableData =
         "279",
         "https://drive.google.com/file/d/1JH9-6KKyisGYGAt3XIzmdEy0lX772Qyo/view?usp=drive_link",
         "08/07/2023 17:57",
-        "5646735708328082245"
+        "5646735708328082245",
+        "Edit Submission",
+        "71.59.192.238"
     ],
     [
         "2023-07-09 3:34:32",
-        "a",
         "The Gentleman",
         "Demo",
         "Nordfels",
@@ -180,11 +191,12 @@ const OtableData =
         "293",
         "https://steamuserimages-a.akamaihd.net/ugc/2028358326463598485/08CD8326D0436D0B2A6271131FC50A00D6919740/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
         "08/07/2023 18:33",
-        "5646756727426192172"
+        "5646756727426192172",
+        "Edit Submission",
+        "38.103.162.247"
     ],
     [
         "2023-07-12 11:52:25",
-        "a",
         "Anael",
         "Demo",
         "Nordfels",
@@ -192,11 +204,12 @@ const OtableData =
         "321",
         "https://www.youtube.com/watch?v=OtlpDNgL-K0",
         "12/07/2023 6:50",
-        "5649647450811374184"
+        "5649647450811374184",
+        "Edit Submission",
+        "131.196.77.180"
     ],
     [
         "2023-07-15 16:41:33",
-        "a",
         "LukasRainbow",
         "Demo",
         "Neuland",
@@ -204,11 +217,12 @@ const OtableData =
         "43",
         "https://cdn.discordapp.com/attachments/1117853463045476382/1129752542755168388/image.png",
         "15/07/2023 14:33",
-        "5652412933695956096"
+        "5652412933695956096",
+        "Edit Submission",
+        "178.27.129.63"
     ],
     [
         "2023-07-15 17:31:25",
-        "a",
         "ItsMeRaven",
         "Demo",
         "Neuland",
@@ -216,11 +230,12 @@ const OtableData =
         "65",
         "https://youtu.be/AH2ums3NzvI",
         "15/07/2023 17:27",
-        "5652442853112556983"
+        "5652442853112556983",
+        "Edit Submission",
+        "84.151.114.113"
     ],
     [
         "2023-07-16 21:39:35",
-        "a",
         "Isaac",
         "Demo",
         "Nordfels",
@@ -228,11 +243,12 @@ const OtableData =
         "468",
         "https://drive.google.com/file/d/1bgARNO6YxeU1yUJaeUJDVHjluFtDD19_/view?usp=drive_link",
         "16/07/2023 12:38",
-        "5653455758328117552"
+        "5653455758328117552",
+        "Edit Submission",
+        "71.59.192.238"
     ],
     [
         "2023-07-16 22:14:01",
-        "a",
         "ItsMeRaven",
         "Demo",
         "Nordfels",
@@ -240,11 +256,12 @@ const OtableData =
         "287",
         "https://youtu.be/sr6zlDb_s1M",
         "16/07/2023 22:12",
-        "5653476415114885016"
+        "5653476415114885016",
+        "Edit Submission",
+        "84.151.113.115"
     ],
     [
         "2023-07-17 22:28:25",
-        "a",
         "Olivenstein",
         "Demo",
         "Nordfels",
@@ -252,11 +269,12 @@ const OtableData =
         "0",
         "https://ibb.co/ZhkTSmZ",
         "17/07/2023 22:21",
-        "5654349054916248930"
+        "5654349054916248930",
+        "Edit Submission",
+        "84.59.55.194"
     ],
     [
         "2023-07-19 18:42:18",
-        "a",
         "Elkku The Variety Gamer",
         "Demo",
         "Nordfels",
@@ -264,11 +282,12 @@ const OtableData =
         "280",
         "https://imgur.com/a/4BmBZAw",
         "19/07/2023 19:37",
-        "5655941384818414830"
+        "5655941384818414830",
+        "Edit Submission",
+        "87.95.245.184"
     ],
     [
         "2023-07-23 16:08:21",
-        "a",
         "boboo32",
         "Demo",
         "Nordfels",
@@ -276,11 +295,12 @@ const OtableData =
         "375",
         "https://media.discordapp.net/attachments/1130143101944594442/1132058023393775787/thronefall_high_score_nordfells.png?width=1073&height=604",
         "21/07/2023 16:07",
-        "5659305013526256772"
+        "5659305013526256772",
+        "Edit Submission",
+        ""
     ],
     [
         "2023-07-23 18:27:06",
-        "r",
         "Shentiko",
         "Demo",
         "Nordfels",
@@ -288,11 +308,12 @@ const OtableData =
         "450",
         "file:///C:/Users/meiks/OneDrive/Bilder/Screenshots/Screenshot%20(9).png",
         "23/07/2023 18:17",
-        "5659388261427872876"
+        "5659388261427872876",
+        "Edit Submission",
+        "77.185.62.241"
     ],
     [
         "2023-07-24 19:13:34",
-        "a",
         "digestives",
         "Demo",
         "Neuland",
@@ -300,11 +321,12 @@ const OtableData =
         "65",
         "https://i.ibb.co/BjbVQp0/thronefall-01-003.png",
         "24/07/2023 17:58",
-        "5660280142169917061"
+        "5660280142169917061",
+        "Edit Submission",
+        "193.160.246.12"
     ],
     [
         "2023-07-24 19:20:53",
-        "a",
         "digestives",
         "Demo",
         "Neuland",
@@ -312,11 +334,12 @@ const OtableData =
         "65",
         "https://i.ibb.co/hDRBCzT/thronefall-01-004.png",
         "24/07/2023 18:20",
-        "5660284532169986279"
+        "5660284532169986279",
+        "Edit Submission",
+        "193.160.246.12"
     ],
     [
         "2023-07-26 16:52:49",
-        "a",
         "LTU Adas",
         "Demo",
         "Nordfels",
@@ -324,11 +347,12 @@ const OtableData =
         "317",
         "https://i.imgur.com/ns8P12I.png",
         "26/07/2023 17:43",
-        "5661923696026743158"
+        "5661923696026743158",
+        "Edit Submission",
+        "84.15.189.206"
     ],
     [
         "2023-07-26 23:09:45",
-        "a",
         "LTU Adas",
         "Demo",
         "Nordfels",
@@ -336,23 +360,12 @@ const OtableData =
         "327",
         "https://i.imgur.com/pj8OtXL.png",
         "27/07/2023 11:58",
-        "5662149856026145095"
-    ],
-    [
-        "EARLY ACCESS RELEASE",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "5662149856026145095",
+        "Edit Submission",
+        "84.15.189.206"
     ],
     [
         "2023-08-03 2:38:14",
-        "o",
         "Anael",
         "Early access",
         "Nordfels",
@@ -360,11 +373,12 @@ const OtableData =
         "334",
         "https://www.youtube.com/watch?v=IvLhouTMPMA",
         "02/08/2023 21:36",
-        "5668322944412606773"
+        "5668322944412606773",
+        "Edit Submission",
+        "201.87.111.144"
     ],
     [
         "2023-08-03 3:25:47",
-        "o",
         "ItsMeRaven",
         "Early access",
         "Dursstein",
@@ -372,11 +386,12 @@ const OtableData =
         "526",
         "https://youtu.be/6a_Dy_Rf06A",
         "03/08/2023 3:25",
-        "5668351472311234450"
+        "5668351472311234450",
+        "Edit Submission",
+        "217.84.136.132"
     ],
     [
         "2023-08-03 4:35:18",
-        "o",
         "Anael",
         "Early access",
         "Dursstein",
@@ -384,11 +399,12 @@ const OtableData =
         "560",
         "https://www.youtube.com/watch?v=-fTEgypuoZk",
         "02/08/2023 23:34",
-        "5668393184416053817"
+        "5668393184416053817",
+        "Edit Submission",
+        "201.87.111.144"
     ],
     [
         "2023-08-03 13:16:07",
-        "o",
         "ItsMeRaven",
         "Early access",
         "Dursstein",
@@ -396,11 +412,12 @@ const OtableData =
         "548",
         "https://youtu.be/-cqGjSQgtv0",
         "03/08/2023 13:15",
-        "5668705676121612103"
+        "5668705676121612103",
+        "Edit Submission",
+        "217.84.148.216"
     ],
     [
         "2023-08-03 15:40:56",
-        "a",
         "ToGreedy",
         "Early access",
         "Dursstein",
@@ -408,11 +425,12 @@ const OtableData =
         "384",
         "https://www.youtube.com/watch?v=ywTwphwPZKo",
         "03/08/2023 15:38",
-        "5668792567243616188"
+        "5668792567243616188",
+        "Edit Submission",
+        "91.4.2.7"
     ],
     [
         "2023-08-04 2:14:38",
-        "o",
         "Anael",
         "Early access",
         "Nordfels",
@@ -420,11 +438,12 @@ const OtableData =
         "334",
         "https://www.youtube.com/watch?v=IvLhouTMPMA",
         "03/08/2023 21:11",
-        "5669172784416797195"
+        "5669172784416797195",
+        "Edit Submission",
+        "201.87.111.144"
     ],
     [
         "2023-08-04 2:16:05",
-        "r",
         "Anael",
         "Early access",
         "Dursstein",
@@ -432,11 +451,12 @@ const OtableData =
         "590",
         "https://www.youtube.com/watch?v=CeCehw6Gh0A",
         "03/08/2023 21:14",
-        "5669173654414391117"
+        "5669173654414391117",
+        "Edit Submission",
+        "201.87.111.144"
     ],
     [
         "2023-08-04 2:17:32",
-        "o",
         "Anael",
         "Early access",
         "Frostsee",
@@ -444,11 +464,12 @@ const OtableData =
         "96",
         "https://www.youtube.com/watch?v=OU6guPbp-RU",
         "03/08/2023 21:15",
-        "5669174524416574377"
+        "5669174524416574377",
+        "Edit Submission",
+        "201.87.111.144"
     ],
     [
         "2023-08-04 16:01:24",
-        "o",
         "ToGreedy",
         "Early access",
         "Neuland",
@@ -456,11 +477,12 @@ const OtableData =
         "65",
         "https://www.youtube.com/watch?v=cmjjoo9PNUY",
         "04/08/2023 16:00",
-        "5669668847242218720"
+        "5669668847242218720",
+        "Edit Submission",
+        "91.4.2.7"
     ],
     [
         "2023-08-04 18:18:59",
-        "a",
         "MrLlama",
         "Early access",
         "Neuland",
@@ -468,11 +490,12 @@ const OtableData =
         "70",
         "https://cdn.discordapp.com/attachments/1117853463045476382/1137056987671171113/image.png",
         "04/08/2023 12:17",
-        "5669751398845557650"
+        "5669751398845557650",
+        "Edit Submission",
+        "75.67.214.88"
     ],
     [
         "2023-08-04 20:44:53",
-        "a",
         "mkktbkkt",
         "Demo",
         "Nordfels",
@@ -480,11 +503,12 @@ const OtableData =
         "297",
         "https://i.postimg.cc/bwLHgdtz/Desktop-Screenshot-2023-08-02-22-33-51-66.png",
         "02/08/2023 22:33",
-        "5669838931327510833"
+        "5669838931327510833",
+        "Edit Submission",
+        "185.248.184.231"
     ],
     [
         "2023-08-04 21:09:49",
-        "a",
         "ToGreedy",
         "Early access",
         "Neuland",
@@ -492,11 +516,12 @@ const OtableData =
         "61",
         "https://www.youtube.com/watch?v=15EhLDymKOM",
         "04/08/2023 21:08",
-        "5669853897242728201"
+        "5669853897242728201",
+        "Edit Submission",
+        "91.4.2.7"
     ],
     [
         "2023-08-04 21:19:16",
-        "a",
         "GhostMiner",
         "Early access",
         "Nordfels",
@@ -504,11 +529,12 @@ const OtableData =
         "73",
         "http://img/scores/ea-nf",
         "04/08/2023 21:16",
-        "5669859563521143096"
+        "5669859563521143096",
+        "Edit Submission",
+        ""
     ],
     [
         "2023-08-05 9:49:46",
-        "a",
         "mkktbkkt",
         "Early access",
         "Nordfels",
@@ -516,11 +542,12 @@ const OtableData =
         "242",
         "https://i.postimg.cc/SKGLSJxH/Desktop-Screenshot-2023-08-04-18-11-15-37.png",
         "04/08/2023 18:11",
-        "5670309861327922884"
+        "5670309861327922884",
+        "Edit Submission",
+        "185.248.184.231"
     ],
     [
         "2023-08-05 16:35:00",
-        "a",
         "donner",
         "Early access",
         "Nordfels",
@@ -528,11 +555,12 @@ const OtableData =
         "268",
         "https://www.youtube.com/watch?v=vgwUyaSSwcg",
         "05/08/2023 15:33",
-        "5670553005114138699"
+        "5670553005114138699",
+        "Edit Submission",
+        "92.233.190.115"
     ],
     [
         "2023-08-05 17:26:38",
-        "r",
         "ItsMeRaven",
         "Early access",
         "Dursstein",
@@ -540,11 +568,12 @@ const OtableData =
         "616",
         "https://youtu.be/H7Xsnfj7fMg",
         "05/08/2023 0:01",
-        "5670583983595702380"
+        "5670583983595702380",
+        "Edit Submission",
+        "84.151.119.53"
     ],
     [
         "2023-08-05 18:13:38",
-        "a",
         "ItsMeRaven",
         "Early access",
         "Neuland",
@@ -552,11 +581,12 @@ const OtableData =
         "65",
         "https://youtu.be/iOeDhffHtEE",
         "05/08/2023 18:13",
-        "5670612183592720178"
+        "5670612183592720178",
+        "Edit Submission",
+        "84.151.119.53"
     ],
     [
         "2023-08-05 21:53:34",
-        "a",
         "LTU Adas",
         "Early access",
         "Nordfels",
@@ -564,11 +594,12 @@ const OtableData =
         "255",
         "https://i.imgur.com/wteb0kD.jpg",
         "05/08/2023 22:50",
-        "5670744147712099011"
+        "5670744147712099011",
+        "Edit Submission",
+        "84.15.191.77"
     ],
     [
         "2023-08-05 23:42:52",
-        "a",
         "Anael",
         "Early access",
         "Neuland",
@@ -576,11 +607,12 @@ const OtableData =
         "65",
         "https://www.youtube.com/watch?v=oUCOakw2l1Y",
         "05/08/2023 18:42",
-        "5670809724411322082"
+        "5670809724411322082",
+        "Edit Submission",
+        "201.87.111.144"
     ],
     [
         "2023-08-06 4:14:22",
-        "a",
         "polill00",
         "Early access",
         "Neuland",
@@ -588,11 +620,12 @@ const OtableData =
         "61",
         "https://imgur.com/a/EJjD7vW",
         "05/08/2023 20:11",
-        "5670972629252066421"
+        "5670972629252066421",
+        "Edit Submission",
+        "166.70.15.29"
     ],
     [
         "2023-08-06 23:34:37",
-        "o",
         "ItsMeRaven",
         "Early access",
         "Dursstein",
@@ -600,11 +633,12 @@ const OtableData =
         "480",
         "https://prnt.sc/WhC_0W_wEcFe",
         "06/08/2023 23:33",
-        "5671668770486992937"
+        "5671668770486992937",
+        "Edit Submission",
+        "217.84.148.40"
     ],
     [
         "2023-08-07 0:21:50",
-        "o",
         "Anael",
         "Early access",
         "Frostsee",
@@ -612,11 +646,12 @@ const OtableData =
         "156",
         "https://www.youtube.com/watch?v=Po7QCHq6ot4",
         "06/08/2023 19:20",
-        "5671697104414109250"
+        "5671697104414109250",
+        "Edit Submission",
+        "201.87.111.144"
     ],
     [
         "2023-08-07 5:11:37",
-        "a",
         "Anael",
         "Early access",
         "Dursstein",
@@ -624,11 +659,12 @@ const OtableData =
         "523",
         "https://www.youtube.com/watch?v=xOxx4XTmhDQ",
         "07/08/2023 0:10",
-        "5671870974416950063"
+        "5671870974416950063",
+        "Edit Submission",
+        "201.87.111.144"
     ],
     [
         "2023-08-07 18:15:28",
-        "o",
         "LTU Adas",
         "Early access",
         "Frostsee",
@@ -636,11 +672,12 @@ const OtableData =
         "122",
         "https://i.imgur.com/TxcNOvV.png",
         "07/08/2023 19:10",
-        "5672341287816812817"
+        "5672341287816812817",
+        "Edit Submission",
+        "84.15.185.187"
     ],
     [
         "2023-08-07 22:37:39",
-        "a",
         "LTU Adas",
         "Early access",
         "Neuland",
@@ -648,11 +685,12 @@ const OtableData =
         "650",
         "https://www.youtube.com/watch?v=BeF_U63oa-g",
         "07/08/2023 20:35",
-        "5672498597817743122"
+        "5672498597817743122",
+        "Edit Submission",
+        "84.15.185.187"
     ],
     [
         "2023-08-08 4:35:46",
-        "a",
         "Conq",
         "Early access",
         "Neuland",
@@ -660,11 +698,12 @@ const OtableData =
         "580",
         "https://ibb.co/1qf54TP",
         "08/08/2023 14:34",
-        "5672713468415598818"
+        "5672713468415598818",
+        "Edit Submission",
+        "206.83.102.148"
     ],
     [
         "2023-08-08 15:35:18",
-        "a",
         "ItsMeRaven",
         "Early access",
         "Dursstein",
@@ -672,11 +711,12 @@ const OtableData =
         "536",
         "https://youtu.be/Tg-9ZRt6Ed4",
         "08/08/2023 15:34",
-        "5673109183716373920"
+        "5673109183716373920",
+        "Edit Submission",
+        "217.84.132.173"
     ],
     [
         "2023-08-08 20:41:24",
-        "a",
         "Anael",
         "Early access",
         "Nordfels",
@@ -684,11 +724,12 @@ const OtableData =
         "291",
         "https://www.youtube.com/watch?v=4v1ONP9TnoM",
         "08/08/2023 15:39",
-        "5673292844419177833"
+        "5673292844419177833",
+        "",
+        ""
     ],
     [
         "2023-08-09 2:20:08",
-        "o",
         "Anael",
         "Early access",
         "Frostsee",
@@ -696,356 +737,220 @@ const OtableData =
         "184",
         "https://www.youtube.com/watch?v=L8c4C2nPdg4",
         "08/08/2023 21:19",
-        "5673496084418256537"
-    ],
-    [
-        "2023-08-10 15:32:21",
-        "a",
-        "donner",
-        "Early access",
-        "Dursstein",
-        "36053",
-        "512",
-        "https://www.youtube.com/watch?v=ggpTGKuA7uI",
-        "10/08/2023 14:31",
-        "5674835415112516079"
-    ],
-    [
-        "2023-08-10 18:15:24",
-        "a",
-        "Anael",
-        "Early access",
-        "Frostsee",
-        "27424",
-        "203",
-        "https://www.youtube.com/watch?v=IF-GYLt2V7A",
-        "10/08/2023 13:14",
-        "5674933244414882334"
-    ],
-    [
-        "2023-08-11 11:58:52",
-        "a",
-        "LTU Adas",
-        "Early access",
-        "Frostsee",
-        "26600",
-        "184",
-        "https://youtu.be/uPHTr1ppdAQ",
-        "10/08/2023 10:30",
-        "5675571323716046991"
-    ],
-    [
-        "2023-08-11 19:14:08",
-        "a",
-        "MJ",
-        "Early access",
-        "Nordfels",
-        "23506",
-        "60",
-        "https://ibb.co/72ptJQR",
-        "12/08/2023 1:10",
-        "5675832489216687149"
-    ],
-    [
-        "2023-08-11 21:51:28",
-        "a",
-        "lolidoli",
-        "Early access",
-        "Neuland",
-        "5231",
-        "65",
-        "https://www.youtube.com/watch?v=1yu1NCtVpxc",
-        "11/08/2023 19:40",
-        "5675926882905833854"
-    ],
-    [
-        "2023-08-12 12:46:53",
-        "o",
-        "Morry4C",
-        "Early access",
-        "Frostsee",
-        "28367",
-        "240",
-        "https://youtu.be/GNKS0jIT1Oo",
-        "12/08/2023 18:36",
-        "5676464130287824139"
-    ],
-    [
-        "2023-08-13 0:34:19",
-        "a",
-        "Froggurto",
-        "Early access",
-        "Nordfels",
-        "31261",
-        "285",
-        "https://imgur.com/pPGsEis",
-        "12/08/2023 21:40",
-        "5676888597812348613"
-    ],
-    [
-        "2023-08-13 9:41:45",
-        "a",
-        "Morry4C",
-        "Early access",
-        "Frostsee",
-        "30676",
-        "323",
-        "https://youtu.be/78fHfGybE8k",
-        "13/08/2023 15:40",
-        "5677217050288019562"
-    ],
-    [
-        "2023-08-13 13:20:20",
-        "a",
-        "LTU Adas",
-        "Early access",
-        "Dursstein",
-        "34524",
-        "501",
-        "https://i.imgur.com/nmNPPJv.png",
-        "13/08/2023 14:16",
-        "5677348203711549049"
-    ],
-    [
-        "2023-08-13 18:37:16",
-        "a",
-        "Termii",
-        "Early access",
-        "Frostsee",
-        "28278",
-        "231",
-        "https://www.youtube.com/watch?v=zkpKkA3dzq0",
-        "13/08/2023 18:06",
-        "5677538364684410741"
-    ],
-    [
-        "2023-08-14 13:21:01",
-        "w",
-        "TEST",
-        "Demo",
-        "Durststein",
-        "69420",
-        "420",
-        "http://d.d",
-        "14/08/2023 13:20",
-        "5678212613529803323"
+        "5673496084418256537",
+        ""
     ]
 ]
 
-async function GetSubData ()
+// DISPLAY ARRAY CONTENT
+console.log(tableData);
+console.log("---------------------------------------------");
+
+let demoGameSubs = new Array();
+let fullGameSubs = new Array();
+
+let fullGamearrNum = -1;
+let demoGamearrNum = -1;
+
+// SORT TO DEMO AND FULL GAME ARRAYS
+for (let i = 0; i < tableData.length; i++)
 {
-    const CSVresponse = await GetCSVFile();
-    const ParseCSV = await CSVToArray(CSVresponse);
+let arrayContent = tableData[i];
 
-    tableData = await ParseCSV;
+if (arrayContent[2] == "Demo")
+{   
+    demoGamearrNum++;
+    demoGameSubs[demoGamearrNum] = arrayContent;
+    // console.log("Element " + i + ", "+ demoGamearrNum + " is DEMO");
+}
+else 
+{
+    fullGamearrNum++;
+    fullGameSubs[fullGamearrNum] = arrayContent;
+    // console.log("Element " + i + ", "+ fullGamearrNum + " is full");
+}
+}
+console.log("-- Demo game subs -------------------------------------------");
+console.log(demoGameSubs);
+console.log("-- Full game subs -------------------------------------------");
+console.log(fullGameSubs);
+console.log("---------------------------------------------");
 
-    console.log("RESPINSE");
-    console.log(ParseCSV);
+// // DISPLAY ALL FUL LGAME ITEMS
+// for (let i = 0; i < fullGameSubs.length; i++)
+// {
+//     console.log(fullGameSubs[i]);
+// }
+// console.log("-FULL /\\-------------------------------------");
+// // DISPALY ALL DEMO ITEMS
+// for (let i = 0; i < demoGameSubs.length; i++)
+// {
+//     console.log(demoGameSubs[i]);
+// }
+// console.log("-DEMO /\\----------------------------------------");
 
-    SortSubData();
+/// =============================================
+// SORT DEMO MAPS
+let neulandDemoScores = new Array();
+let NordfelsDemoScores = new Array();
+
+let NLDemoSubsNumber = -1; 
+let NFDemoSubsNumber = -1; 
+
+for (let i = 0; i < demoGameSubs.length; i++)
+{
+    let arrayContent2 = demoGameSubs[i];
+    let map = arrayContent2[3];
+
+    switch(map)
+    {
+        default:
+            console.log("NOO MATCH FIR" + arrayContent2);
+        break;
+        
+        case "Neuland":
+            NLDemoSubsNumber++;
+            neulandDemoScores[NLDemoSubsNumber] = arrayContent2;
+        break;
+        
+        case "Nordfels":
+            NFDemoSubsNumber++;
+            NordfelsDemoScores[NFDemoSubsNumber] = arrayContent2;
+        break;
+    }
+}
+console.log("---------------------------------------------------------------------");
+// sORT FULL GAME MAPS
+
+let NeulandLevelsUnsorted = new Array();
+let NordfelsLevelsUnsorted = new Array();
+let DurststeinLevelsUnsorted = new Array();
+let FrostseeLevelsUnsorted = new Array();
+
+let NLlevelsLength = -1;
+let NFlevelsLength = -1;
+let DSlevelsLength = -1;
+let FSlevelsLength = -1;
+
+for (let i = 0; i < fullGameSubs.length; i++)
+{
+let arrayContent3 = fullGameSubs[i];
+let level = arrayContent3[3];
+
+switch(level)
+{
+    default:
+        console.log("no matc for " + level );
+        break;
+
+    case "Neuland":
+        NLlevelsLength++;
+        NeulandLevelsUnsorted[NLlevelsLength] = arrayContent3;
+        console.log("NL: " + NLDemoSubsNumber);
+    break;
+    
+    case "Nordfels":
+        NFlevelsLength++;
+        NordfelsLevelsUnsorted[NLlevelsLength] = arrayContent3;
+        console.log("NF: " + NFlevelsLength);
+    break;
+    
+    case "Durststein":
+        DSlevelsLength++;
+        DurststeinLevelsUnsorted[NLlevelsLength] = arrayContent3;
+        console.log("DS: " + DSlevelsLength);
+    break;                    
+    case "Dursstein":
+        DSlevelsLength++;
+        DurststeinLevelsUnsorted[NLlevelsLength] = arrayContent3;
+        console.log("DS: " + DSlevelsLength);
+    break;
+    
+    case "Frostsee":
+        FSlevelsLength++;
+        FrostseeLevelsUnsorted[NLlevelsLength] = arrayContent3;
+        console.log("FS: " + FSlevelsLength);
+    break; 
+    
+}
 }
 
-// VARIABLES SHARED BY SortSubData AND ChangeTableData
-let NeulandSubs = new Array();
-let NordfelsSubs = new Array();
-let DurststeinSubs = new Array();
-let FrostseeSubs = new Array();
-
-let canShowTableData = false;
-
-function SortSubData ()
+for (let i = 0; i < NeulandLevelsUnsorted.length; i++)
 {
-    // DISPLAY ARRAY CONTENT
-    console.log("-- ALL SUBS ---------------------------------------------");
-    console.log(tableData);
-    let chosenRow;
+console.log(NeulandLevelsUnsorted[i]);
+}
+console.log("-NEULAND /\\----------------------------------------");
+for (let i = 0; i < NordfelsLevelsUnsorted.length; i++)
+{
+console.log(NordfelsLevelsUnsorted[i]);
+}
+console.log("-NORDFELS /\\----------------------------------------");
+for (let i = 0; i < DurststeinLevelsUnsorted.length; i++)
+{
+console.log(DurststeinLevelsUnsorted[i]);
+}
+console.log("-durstein /\\----------------------------------------");
+for (let i = 0; i < FrostseeLevelsUnsorted.length; i++)
+{
+console.log(FrostseeLevelsUnsorted[i]);
+}
+console.log("-frosste /\\----------------------------------------");
+console.log(NeulandLevelsUnsorted);
+console.log(NordfelsLevelsUnsorted);
+console.log(DurststeinLevelsUnsorted);
+console.log(FrostseeLevelsUnsorted);
 
-    // REMOV ALL SUBMISSIOSN THAT ARENT EARLY ACCESSS
-    let fullGameSubs = new Array();
-    let fullGameSubsNum = -1;
 
-    for (let i = 0; i < tableData.length; i++)
-    {
-        chosenRow = tableData[i];
 
-        if (chosenRow[3] == "Early access")
-        {
-            fullGameSubsNum++;
-            fullGameSubs[fullGameSubsNum] = chosenRow;
-            // console.log("Element " + i + ", "+ fullGamearrNum + " is full");
-        }
-    }
-    console.log("== FULL GAME SUBS SORTED ===========================")
-    console.log(fullGameSubs);
 
-    // REMOVE ALL SUBS THAT ARENT ACCEPTED
+// SORT ITEMS INTO CORRESPOINDING VALUES
+let names = new Array();
+let score = new Array();
+let coins = new Array();
+let date = new Array();
+let proof  = new Array();
+let arrContent;
 
-    let acceptedSubs = new Array();
-    let acceptedSubsNumber = -1;
+for (let  i = 0; i < DurststeinLevelsUnsorted.length; i++)
+{
+arrContent = DurststeinLevelsUnsorted[i];;
 
-    for (let i = 0; i < fullGameSubs.length; i++)
-    {
-        chosenRow = fullGameSubs[i];
+names[i] = arrContent[1];
+score[i] = arrContent[4];
+coins[i] = arrContent[5];
+date [i] = arrContent[0];
+proof[i] = arrContent[6];
+}   
+console.log("---------------------------------------------");
+console.log(names);
+console.log(score);
+console.log(coins);
+console.log(date);
+console.log(proof);
 
-        if (chosenRow[1] == "a")
-        {
-            acceptedSubsNumber++;
-            acceptedSubs[acceptedSubsNumber] = chosenRow;
-        }
-        else
-        {
-            //console.log(chosenRow[1]);
-        }
-    }
-    console.log("== ACCEPTED SUBS SORTED ===========================")
-    console.log(acceptedSubs);
+// SORT 
 
-    // SORT BY MAP
-    let NLSubNum = -1;
-    let NFSubNum = -1;
-    let DSSubNum = -1;
-    let FSSubNum = -1;
-
-    for (let i = 0; i < acceptedSubs.length; i++)
-    {
-        chosenRow = acceptedSubs[i];
-        level = chosenRow[4];
-
-        switch (level)
-        {
-            default:
-                console.log("WARNING: " + chosenRow + " donest match with anxthing");
-                break;
-
-            case "Neuland":
-                NLSubNum++;
-                NeulandSubs[NLSubNum] = chosenRow;
-                break;
-
-            case "Nordfels":
-                NFSubNum++;
-                NordfelsSubs[NFSubNum] = chosenRow;
-                break;
-
-            case "Dursstein":
-                DSSubNum++;
-                DurststeinSubs[DSSubNum] = chosenRow;
-                break;
-            case "Durststein":
-                DSSubNum++;
-                DurststeinSubs[DSSubNum] = chosenRow;
-                break;
-
-            case "Frostsee":
-                FSSubNum++;
-                FrostseeSubs[FSSubNum] = chosenRow;
-                break;
-        }
-    }
-    console.log("== MAP SUBS SORTED ===========================");
-    console.log(NeulandSubs);
-    console.log(NordfelsSubs);
-    console.log(DurststeinSubs);
-    console.log(FrostseeSubs);
-
-    canShowTableData = true;
-    ChangeTableData('Neuland');
+// CREATE TABL ROWS
+for (let j = 0; j < DurststeinLevelsUnsorted.length - 1; j++)
+{
+    let tRow = document.getElementsByClassName("tableRow");
+    let newRow = tRow[0].cloneNode(true);
+    let tbl = document.getElementById("tbody").append(newRow);
 }
 
-function ChangeTableData(level)
+const tPosition = document.getElementsByClassName("position");
+const tNames = document.getElementsByClassName("name");
+const tScore = document.getElementsByClassName("score");
+const tCoins = document.getElementsByClassName("coins");
+const tDate = document.getElementsByClassName("date");
+const tProof = document.getElementsByClassName("proof");
+
+for (let k = 0; k < DurststeinLevelsUnsorted.length; k++)
 {
-    if (!canShowTableData)
-    {
-        console.log("NOT READY!");
-        return;
-    }
-
-	//console.log(document.getElementsByClassName("tableRow").length);
-	// SORT ITEMS INTO CORRESPOINDING VALUES
-	let chosenArray;
-	let chosenMap = level;
-
-	switch (chosenMap)
-	{
-		case "Neuland":
-			chosenArray = NeulandSubs;
-			break;
-
-		case "Nordfels":
-			chosenArray = NordfelsSubs;
-			break;
-
-		case "Durststein":
-			chosenArray = DurststeinSubs;
-			break;
-		case "Dursstein":
-			chosenArray = DurststeinSubs;
-			break;
-
-		case "Frostsee":
-			chosenArray = FrostseeSubs;
-			break;
-	}
-
-	let names = new Array();
-	let score = new Array();
-	let coins = new Array();
-	let date = new Array();
-	let proof = new Array();
-
-	for (let i = 0; i < chosenArray.length; i++)
-	{
-		chosenRow = chosenArray[i];;
-
-		names[i] = chosenRow[2];
-		score[i] = chosenRow[5];
-		coins[i] = chosenRow[6];
-		date[i] = chosenRow[8];
-		proof[i] = chosenRow[7];
-	}
-	console.log("---------------------------------------------");
-	console.log(names);
-	console.log(score);
-	console.log(coins);
-	console.log(date);
-	console.log(proof);
-	console.log("---------------------------------------------");
-
-	const tPosition = document.getElementsByClassName("position");
-	const tNames    = document.getElementsByClassName("name");
-	const tScore    = document.getElementsByClassName("score");
-	const tCoins    = document.getElementsByClassName("coins");
-	const tDate     = document.getElementsByClassName("date");
-	const tProof    = document.getElementsByClassName("proof");
-
-	let tableRows = document.getElementsByClassName("tableRow");
-    for (let i = 0; i < tableRows.length; i++)
-    {
-        tableRows[i].style.display = "table-row";
-    }
-
-	for (let k = 0; k < tableRows.length; k++)
-	{
-		tPosition[k].textContent = "";
-		tNames[k].textContent = "";
-		tScore[k].textContent = "";
-		tCoins[k].textContent = "";
-		tDate[k].textContent = "";
-		tProof[k].textContent = "";
-	}
-
-	for (let k = 0; k < chosenArray.length; k++)
-	{
-		tPosition[k].textContent = k + 1;
-		tNames[k].textContent = names[k];
-		tScore[k].textContent = score[k];
-		tCoins[k].textContent = coins[k];
-		tDate[k].textContent = date[k];
-		tProof[k].textContent = proof[k];
-	}
-    for (let i = chosenArray.length; i < tableRows.length; i++)
-    {
-        tableRows[i].style.display = "none";
-    }
-	document.getElementById("tableName").textContent = chosenMap;
+    tPosition[k].textContent = k + 1;
+    tNames[k].textContent = names[k];
+    tScore[k].textContent = score[k];
+    tCoins[k].textContent = coins[k];
+    tDate[k].textContent = date[k];
+    tProof[k].textContent = proof[k];
 }
