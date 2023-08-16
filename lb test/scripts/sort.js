@@ -227,23 +227,27 @@ function ChangeTableData(level)
     let isVideo = false;
     let proofString;
     const videoString = "youtu";
+    let scoreValue;
     
 	for (let k = 0; k < chosenArray.length; k++)
 	{
 		tPosition[k].textContent = k + 1;
 		tNames[k].textContent = names[k];
-		tScore[k].textContent = score[k];
+        tScore[k].textContent = SplitScore(score[k]);
+		// tScore[k].textContent = score[k];
 		tCoins[k].textContent = coins[k];
 		tDate[k].textContent = date[k];
 
         proofString = proof[k];
         isVideo = proofString.includes(videoString)
-        console.log(k + " has video " + isVideo); // true
+        // console.log(k + " has video " + isVideo); 
         if (isVideo)
         {   tProof[k].innerHTML = "<a class='proofLink' href='' target='_blank'> Video </a>";   }
         else
         {   tProof[k].innerHTML = "<a class='proofLink' href='' target='_blank'> Picture </a>";   }
         linkProof[k].href = proof[k];
+
+        
 	}
     for (let i = chosenArray.length; i < tableRows.length; i++)
     {
@@ -254,4 +258,50 @@ function ChangeTableData(level)
     document.getElementById("leaderBoardSection").style.display = "block";
 
 	document.getElementById("tableName").textContent = chosenMap;
+}
+
+function SplitScore(scoreNum)
+{
+    let charsArray = new Array();
+    let firstDigits = new Array();
+    let last3digits = new Array();
+    let digitArrNum = 0;
+    
+    let formattedString = "";
+    const str = scoreNum;
+    const chars = str.split('');
+
+    for (let i = 0; i < chars.length; i++)
+    {
+        // console.log(chars[i]);
+        charsArray[i] = chars[i]; 
+    }
+    // console.log(charsArray);
+    for (let i = 0; i < chars.length - 3; i++)
+    {
+        // console.log(charsArray[i]);
+        firstDigits[i] = chars[i]; 
+    }
+    // console.log(firstDigits);
+    for (let i = charsArray.length - 1; i > charsArray.length - 4; i--)
+    {
+        // console.log(charsArray[i]);
+        last3digits[digitArrNum] = charsArray[i];        
+        digitArrNum++;
+    }
+    for (let i = 0; i < firstDigits.length; i++)
+    {
+        formattedString = formattedString + firstDigits[i];
+    }
+    formattedString = formattedString + "\xa0"
+    for (let i = last3digits.length - 1; i >= 0; i--)
+    {
+        formattedString = formattedString + last3digits[i];
+    }
+    // console.log(last3digits);
+    // console.log(firstDigits + " " + last3digits[2] + last3digits[1] +last3digits[0]);
+
+    // console.log("==========================================================");
+    // console.log(formattedString);
+    return formattedString;
 }
