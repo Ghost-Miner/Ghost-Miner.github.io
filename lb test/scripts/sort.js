@@ -224,6 +224,10 @@ function ChangeTableData(level)
 		//tProof[k].textContent = "";
 	}
 
+    let isVideo = false;
+    let proofString;
+    const videoString = "youtu";
+    
 	for (let k = 0; k < chosenArray.length; k++)
 	{
 		tPosition[k].textContent = k + 1;
@@ -231,7 +235,14 @@ function ChangeTableData(level)
 		tScore[k].textContent = score[k];
 		tCoins[k].textContent = coins[k];
 		tDate[k].textContent = date[k];
-		//tProof[k].textContent = proof[k];
+
+        proofString = proof[k];
+        isVideo = proofString.includes(videoString)
+        console.log(k + " has video " + isVideo); // true
+        if (isVideo)
+        {   tProof[k].innerHTML = "<a class='proofLink' href='' target='_blank'> Video </a>";   }
+        else
+        {   tProof[k].innerHTML = "<a class='proofLink' href='' target='_blank'> Picture </a>";   }
         linkProof[k].href = proof[k];
 	}
     for (let i = chosenArray.length; i < tableRows.length; i++)
