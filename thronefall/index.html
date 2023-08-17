@@ -42,6 +42,9 @@
 		<script src="./scripts/theming.js"></script>
 
 		<script src="https://unpkg.com/htmx.org@1.9.4"></script>
+
+		<script src="./scripts/paser.js"></script>
+        <script src="./scripts/sort.js"></script>
 	</head>
 	<body>		
 		<style>			
@@ -62,15 +65,73 @@
 			{
 				display: none;
 			}
-		</style>
 
-		<script>
-			
-		</script>
+			.positionColumn
+			{
+				font-weight: bold;
+				text-align: center;
+				max-width: 32px;
+			}
+			.nameColumn
+			{
+				text-align: left;
+			}
+			/* .scoreColumn
+			{
+				max-width: 50px;
+				text-align: center;
+			}
+			.coinsColumn
+			{
+				max-width: 32px;
+				text-align: center;
+			}
+			.dateColumn
+			{
+				text-align: center;
+				max-width: 100px;
+			}
+			.mutatorsColumn
+			{
+				max-width: 50px;
+				text-align: center;
+			}
+			.proofColumn
+			{
+				max-width: 50px;
+			}
+			.versionColumn
+			{
+				max-width: 50px;
+				text-align: center;
+			} */
+
+			#tableName
+			{
+				font-weight: bold;
+				font-size: 1.75em;
+			}
+
+			#LBloadImg
+			{
+				width: 32%; 
+				height: auto; 
+				text-align: center; 
+				margin: 15px;
+			}
+			#newLBTable
+			{
+				display: none;
+			}
+			/* .subID
+			{
+				font-size: 0.75em;
+			} */
+		</style>
 
 		<div class="mainPageContainer" id="mainPageContainer">
 			<div class="BgrBox" id="BgrBox">
-				<div class="FrgBox" id ="FrgBox">
+				<!-- <div class="FrgBox" id ="FrgBox"> -->
 					<!-- Page head stuff -->
 					<section id ="Page_header"> 
 						<center>
@@ -109,7 +170,7 @@
 							<div id="Categories_buttons">
 								<div id="mainCatButtonsDiv">
 								<!-- Main category -->
-									<button type="button" onclick="ChangeCategory('score')" hx-get="./leaderboards/score/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="hs_cat_btn">
+									<button type="button" onclick="ChangeCategory('score')" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="hs_cat_btn">
 										<b>High-scores</b>
 									</button>
 									<button type="button" onclick="ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="sr_cat_btn">
@@ -121,16 +182,16 @@
 								</div>
 								<div id="subCatButtonsDiv">
 									<section id="scoresSection">
-										<button type="button" hx-get="./leaderboards/score/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nl_score_btn">
+										<button type="button" onclick="ChangeTableData('Neuland')" class="btn btn-warning tableToggleButton" id="nl_score_btn">
 											<b>Neuland</b>
 										</button>
-										<button type="button" hx-get="./leaderboards/score/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nf_score_btn">
+										<button type="button" onclick="ChangeTableData('Nordfels')" class="btn btn-warning tableToggleButton" id="nf_score_btn">
 											<b>Nordfels</b>
 										</button>
-										<button type="button" hx-get="./leaderboards/score/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="ds_score_btn">
+										<button type="button" onclick="ChangeTableData('Durststein')" class="btn btn-warning tableToggleButton" id="ds_score_btn">
 											<b>Durststein</b>
 										</button>								
-										<button type="button" hx-get="./leaderboards/score/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="fs_score_btn">
+										<button type="button" onclick="ChangeTableData('Frostsee')" class="btn btn-warning tableToggleButton" id="fs_score_btn">
 											<b>Frostsee</b>
 										</button>	
 									</section>
@@ -205,7 +266,6 @@
 							</div>
 						</div>
 					</section>
-
 					<section id="Options_buttons_section">
 						<div class="collapse" id="submissionTypeGroup">
 							<div class="card card-body" id="submissionTypeGroupCotentBox">
@@ -225,15 +285,59 @@
 					</section>	
 					<hr class="horizontalSeparator">
 										
-					<section id="leaderBoard" hx-get="./leaderboards/demo/nf-score.html" hx-swap="innerHTML" hx-trigger="load">
-						<!-- lb goes here -->
-						<img src="./img/loading edit.gif" id="loadingMobiMenuGif">
+					<section id="newLBSection">
+						<section id="newLBLoadingImg" style="text-align: center; ">
+							<img src="./img/loading edit.gif" id="LBloadImg">
+						</section>
+
+						<section id="newLBTable">
+							<div class="tableContainer" style="overflow-x:auto;"> 
+								<span id="tableName"> ... </span>
+								<table class="table table-striped" style="text-align: center;">
+									<thead class="table-dark" style="font-weight: bold;">
+										<td class="th-position positionColumn">#</td>
+										<td class="th-name nameColumn">Name</td>
+										<td class="th-score scoreColumn">Score</td>
+										<td class="th-coins coinsColumn">Gold</td>
+										<td class="th-mutNums mutatorsColumn">Mutators</td>
+										<td class="th-proof proofColumn">Proof</td>
+										<td class="th-version versionColumn">Version</td>
+										<td class="th-date dateColumn">Date</td>
+									</thead>
+									<tbody id="tbody">
+										<tr class="tableRow">
+											<td class="position positionColumn">...</td>
+											<td class="name nameColumn">...</td>
+											<td class="score scoreColumn">...</td>
+											<td class="coins coinsColumn">...</td>
+											<td class="mutNums mutatorsColumn">...</td>
+											<td class="proof proofColumn">
+												<a class="proofLink" href="" target="_blank"> View </a>
+											</td>
+											<td class="version versionColumn">...</td>
+											<td class="date dateColumn">...</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+						<hr>
+					</section> <!-- newLBSection -->					
+					<section id="leaderBoard">
+						<!-- old leaderbaord system here-->
 					</section>
-									
+
+					<script>
+						SpawnTableRows();
+						GetSubData();
+						
+						document.getElementById("hs_cat_btn").classList.add("active");
+					</script>
+
 					<section id="Footer"> <!-- Footer -->
 						<center>
 							<h6>
-								<span id="footerText" style=" font-weight: bold;"><i>Leaderboard page made by GhostMiner. v.1.7.1 (5/8/2023)</i> |
+								<span id="footerText" style=" font-weight: bold;"><i>Leaderboard page made by GhostMiner. v.1.8 (17/08/2023)</i> |
 									<a href="https://ghost-miner.github.io/">Website</a>, 
 									<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 									<a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -241,7 +345,6 @@
 							</h6>
 						</center>
 					</section> <!-- Footer -->
-				</div>
 			</div>
 		</div>
 		<!-- Optional JavaScript -->
@@ -252,7 +355,6 @@
 
 		<script>
 			//ChangeCategory("demo");
-			ChangeActiveCategory(GetAdressSearch());
 			
 			SetFontStyle();
 		</script>
