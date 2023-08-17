@@ -181,6 +181,7 @@ function ChangeTableData(level)
 	let coins = new Array();
 	let date = new Array();
 	let proof = new Array();
+    let subID = new Array();
 
 	for (let i = 0; i < chosenArray.length; i++)
 	{
@@ -191,6 +192,7 @@ function ChangeTableData(level)
 		coins[i] = chosenRow[6];
 		date[i] = chosenRow[8];
 		proof[i] = chosenRow[7];
+        subID[i] = chosenRow[9];
 	}
 	console.log("---------------------------------------------");
 	console.log(names);
@@ -207,6 +209,7 @@ function ChangeTableData(level)
 	const tDate     = document.getElementsByClassName("date");
 	const tProof    = document.getElementsByClassName("proof");
     const linkProof = document.getElementsByClassName("proofLink"); 
+    const tSubID    = document.getElementsByClassName("subID");
 
 	let tableRows = document.getElementsByClassName("tableRow");
     for (let i = 0; i < tableRows.length; i++)
@@ -222,12 +225,14 @@ function ChangeTableData(level)
 		tCoins[k].textContent = "";
 		tDate[k].textContent = "";
 		//tProof[k].textContent = "";
+        // tSubID[k].textContent = "";
 	}
 
     let isVideo = false;
     let proofString;
     const videoString = "youtu";
     let scoreValue;
+    let videoLinkToSplit;
     
 	for (let k = 0; k < chosenArray.length; k++)
 	{
@@ -239,15 +244,15 @@ function ChangeTableData(level)
 		tDate[k].textContent = date[k];
 
         proofString = proof[k];
-        isVideo = proofString.includes(videoString)
-        // console.log(k + " has video " + isVideo); 
-        if (isVideo)
-        {   tProof[k].innerHTML = "<a class='proofLink' href='' target='_blank'> Video </a>";   }
-        else
-        {   tProof[k].innerHTML = "<a class='proofLink' href='' target='_blank'> Picture </a>";   }
-        linkProof[k].href = proof[k];
+        isVideo = proofString.includes(videoString);
 
-        
+        if (isVideo)
+        {   
+            videoLinkToSplit = proof[k];
+            tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowEmbedWindow(\"" + GetEmbedYTLink(videoLinkToSplit) + "\")'> Video </a>";   }
+        else
+        {   tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowPictureWindow(\"" + proof[k] + "\")'> Picture </a>";   }
+        // linkProof[k].href = proof[k];
 	}
     for (let i = chosenArray.length; i < tableRows.length; i++)
     {
@@ -273,19 +278,14 @@ function SplitScore(scoreNum)
 
     for (let i = 0; i < chars.length; i++)
     {
-        // console.log(chars[i]);
         charsArray[i] = chars[i]; 
     }
-    // console.log(charsArray);
     for (let i = 0; i < chars.length - 3; i++)
     {
-        // console.log(charsArray[i]);
         firstDigits[i] = chars[i]; 
     }
-    // console.log(firstDigits);
     for (let i = charsArray.length - 1; i > charsArray.length - 4; i--)
     {
-        // console.log(charsArray[i]);
         last3digits[digitArrNum] = charsArray[i];        
         digitArrNum++;
     }
@@ -298,10 +298,37 @@ function SplitScore(scoreNum)
     {
         formattedString = formattedString + last3digits[i];
     }
-    // console.log(last3digits);
-    // console.log(firstDigits + " " + last3digits[2] + last3digits[1] +last3digits[0]);
-
-    // console.log("==========================================================");
-    // console.log(formattedString);
     return formattedString;
+}
+function GetEmbedYTLink (vidLink)
+{
+    let videoIDChars = new Array();
+    let vidIDIndex = 0;
+    let vidIDString = "";
+
+    const ytLink = "https://youtube.com/embed/";
+    const inputStr = vidLink;
+    const chars = inputStr.split(''); 
+
+    for (let i = chars.length - 1; i >= 0; i--)
+    {
+        if (chars[i] == "=" || chars[i] == "/")
+        {
+            break;
+        }
+        videoIDChars[vidIDIndex] = chars[i]; 
+        vidIDIndex++;
+    }
+
+    console.log(chars);
+    console.log("------------------------");
+    console.log(videoIDChars.reverse());
+
+    let IDs = videoIDChars;//.reverse();
+    for (let i = 0; i < IDs.length; i++)
+    {
+        vidIDString = vidIDString + IDs[i];
+    }
+    console.log(vidIDString);
+    return (ytLink + vidIDString);
 }

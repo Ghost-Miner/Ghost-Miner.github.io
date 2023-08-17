@@ -68,6 +68,7 @@
 			.position
 			{
 				font-weight: bold;
+				text-align: center;
 			}
 			#tableName
 			{
@@ -84,8 +85,12 @@
 			}
 			#leaderBoardSection
 			{
-				display: none
+				display: none;
 			}
+			/* .subID
+			{
+				font-size: 0.75em;
+			} */
 			</style>
 
 		<div class="mainPageContainer" id="mainPageContainer">
@@ -130,7 +135,6 @@
 	It wont be updated, and will be removed once all testing is done.
 </div>
 </center>	</strong>
-  
 					
 					<!-- Category buttons -->
 					<section id="Category_buttons_section">
@@ -264,12 +268,13 @@
 								<span id="tableName"> name </span>
 								<table class="table table-striped">
 									<thead class="table-dark" style="font-weight: bold;">
-										<td class="th-position">#</td>
+										<td class="th-position" style="text-align: center;">#</td>
 										<td class="th-name">Name</td>
 										<td class="th-score">Score</td>
 										<td class="th-coins">Gold</td>
 										<td class="th-date">Date</td>
 										<td class="th-proof">Proof</td>
+										<!-- <td class="th-subID" style="width: 10%;">ID</td> -->
 									</thead>
 									<tbody id="tbody">
 										<tr class="tableRow">
@@ -283,6 +288,7 @@
 													View
 												</a>
 											</td>
+											<!-- <td class="subID">...</td> -->
 										</tr>
 									</tbody>
 							</table>
