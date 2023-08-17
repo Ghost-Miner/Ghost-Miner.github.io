@@ -65,15 +65,51 @@
 			{
 				display: none;
 			}
-			.position
+
+			.positionColumn
 			{
 				font-weight: bold;
 				text-align: center;
+				max-width: 32px;
 			}
+			.nameColumn
+			{
+				text-align: left;
+			}
+			/* .scoreColumn
+			{
+				max-width: 50px;
+				text-align: center;
+			}
+			.coinsColumn
+			{
+				max-width: 32px;
+				text-align: center;
+			}
+			.dateColumn
+			{
+				text-align: center;
+				max-width: 100px;
+			}
+			.mutatorsColumn
+			{
+				max-width: 50px;
+				text-align: center;
+			}
+			.proofColumn
+			{
+				max-width: 50px;
+			}
+			.versionColumn
+			{
+				max-width: 50px;
+				text-align: center;
+			} */
+
 			#tableName
 			{
 				font-weight: bold;
-				font-size: 2em;
+				font-size: 1.75em;
 			}
 
 			#LBloadImg
@@ -83,7 +119,7 @@
 				text-align: center; 
 				margin: 15px;
 			}
-			#leaderBoardSection
+			#newLBTable
 			{
 				display: none;
 			}
@@ -91,11 +127,11 @@
 			{
 				font-size: 0.75em;
 			} */
-			</style>
+		</style>
 
 		<div class="mainPageContainer" id="mainPageContainer">
 			<div class="BgrBox" id="BgrBox">
-				<div class="FrgBox" id ="FrgBox">
+				<!-- <div class="FrgBox" id ="FrgBox"> -->
 					<!-- Page head stuff -->
 					<section id ="Page_header"> 
 						<center>
@@ -127,14 +163,6 @@
 						</center>
 					</section> <!-- Page head stuff -->
 					<hr class="horizontalSeparator">
-
-<center>	<strong>
-<div class="alert alert-warning" role="alert">
-	E X P E R I M E N T A L &ensp; P A G E <br> </strong>
-	This page is for testing new leaderboard updating system. <br>
-	This page is going to be removed once all testing is done.
-</div>
-</center>	
 					
 					<!-- Category buttons -->
 					<section id="Category_buttons_section">
@@ -142,13 +170,13 @@
 							<div id="Categories_buttons">
 								<div id="mainCatButtonsDiv">
 								<!-- Main category -->
-									<button type="button" disabled onclick="ChangeCategory('score')" hx-get="./leaderboards/score/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="hs_cat_btn">
+									<button type="button" onclick="ChangeCategory('score')" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="hs_cat_btn">
 										<b>High-scores</b>
 									</button>
-									<button type="button" disabled onclick="ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="sr_cat_btn">
+									<button type="button" onclick="ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="sr_cat_btn">
 										<b>Speed-runs</b>
 									</button>	
-									<button type="button" disabled onclick="ChangeCategory('demo')" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="demo_cat_btn">
+									<button type="button" onclick="ChangeCategory('demo')" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="demo_cat_btn">
 										<b>Demo scores & time</b>
 									</button>
 								</div>
@@ -205,7 +233,7 @@
 								<button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#pageOptionsTogglesGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
 									<img src="./img/gear.png" style="width: 20px; height:20px"/>
 								</button>
-								<button type="button" disabled class="btn btn-warning submitScoreOverlayBtn btn-lg" data-toggle="collapse" data-target="#submissionTypeGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
+								<button type="button" class="btn btn-warning submitScoreOverlayBtn btn-lg" data-toggle="collapse" data-target="#submissionTypeGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
 									<strong>SUBMIT</strong>
 								</button>
 							</div>
@@ -238,7 +266,6 @@
 							</div>
 						</div>
 					</section>
-
 					<section id="Options_buttons_section">
 						<div class="collapse" id="submissionTypeGroup">
 							<div class="card card-body" id="submissionTypeGroupCotentBox">
@@ -263,39 +290,42 @@
 							<img src="./img/loading edit.gif" id="LBloadImg">
 						</section>
 
-						<section id="leaderBoardSection">
+						<section id="newLBTable">
 							<div class="tableContainer" style="overflow-x:auto;"> 
-								<span id="tableName"> name </span>
-								<table class="table table-striped">
+								<span id="tableName"> ... </span>
+								<table class="table table-striped" style="text-align: center;">
 									<thead class="table-dark" style="font-weight: bold;">
-										<td class="th-position" style="text-align: center;">#</td>
-										<td class="th-name">Name</td>
-										<td class="th-score">Score</td>
-										<td class="th-coins">Gold</td>
-										<td class="th-date">Date</td>
-										<td class="th-proof">Proof</td>
-										<!-- <td class="th-subID" style="width: 10%;">ID</td> -->
+										<td class="th-position positionColumn">#</td>
+										<td class="th-name nameColumn">Name</td>
+										<td class="th-score scoreColumn">Score</td>
+										<td class="th-coins coinsColumn">Gold</td>
+										<td class="th-mutNums mutatorsColumn">Mutators</td>
+										<td class="th-proof proofColumn">Proof</td>
+										<td class="th-version versionColumn">Version</td>
+										<td class="th-date dateColumn">Date</td>
 									</thead>
 									<tbody id="tbody">
 										<tr class="tableRow">
-											<td class="position">...</td>
-											<td class="name">...</td>
-											<td class="score">...</td>
-											<td class="coins">...</td>
-											<td class="date">...</td>
-											<td class="proof">
-												<a class="proofLink" href="" target="_blank">
-													View
-												</a>
+											<td class="position positionColumn">...</td>
+											<td class="name nameColumn">...</td>
+											<td class="score scoreColumn">...</td>
+											<td class="coins coinsColumn">...</td>
+											<td class="mutNums mutatorsColumn">...</td>
+											<td class="proof proofColumn">
+												<a class="proofLink" href="" target="_blank"> View </a>
 											</td>
-											<!-- <td class="subID">...</td> -->
+											<td class="version versionColumn">...</td>
+											<td class="date dateColumn">...</td>
 										</tr>
 									</tbody>
-							</table>
+								</table>
 							</div>
 						</section>
+					</section> <!-- newLBSection -->					
+					<section id="leaderBoard">
+						<!-- old leaderbaord system here-->
 					</section>
-							
+
 					<script>
 						SpawnTableRows();
 						GetSubData();
@@ -312,7 +342,6 @@
 							</h6>
 						</center>
 					</section> <!-- Footer -->
-				</div>
 			</div>
 		</div>
 		<!-- Optional JavaScript -->

@@ -97,6 +97,5 @@ async function GetCSVFile()
         console.log("== PARSER ==========================================================");
 		console.log(arrData);
 		return( arrData );
-
 	} 
 	

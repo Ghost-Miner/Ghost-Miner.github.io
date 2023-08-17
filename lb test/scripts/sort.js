@@ -181,7 +181,9 @@ function ChangeTableData(level)
 	let coins = new Array();
 	let date = new Array();
 	let proof = new Array();
+    let mutators = new Array();
     let subID = new Array();
+    let version = new Array();
 
 	for (let i = 0; i < chosenArray.length; i++)
 	{
@@ -193,6 +195,8 @@ function ChangeTableData(level)
 		date[i] = chosenRow[8];
 		proof[i] = chosenRow[7];
         subID[i] = chosenRow[9];
+        mutators[i] = chosenRow[9];
+        version[i] = chosenRow[10];
 	}
 	console.log("---------------------------------------------");
 	console.log(names);
@@ -208,7 +212,8 @@ function ChangeTableData(level)
 	const tCoins    = document.getElementsByClassName("coins");
 	const tDate     = document.getElementsByClassName("date");
 	const tProof    = document.getElementsByClassName("proof");
-    const linkProof = document.getElementsByClassName("proofLink"); 
+    const tMutNums  = document.getElementsByClassName("mutNums");
+    const tVersion = document.getElementsByClassName("version");
     const tSubID    = document.getElementsByClassName("subID");
 
 	let tableRows = document.getElementsByClassName("tableRow");
@@ -224,7 +229,8 @@ function ChangeTableData(level)
 		tScore[k].textContent = "";
 		tCoins[k].textContent = "";
 		tDate[k].textContent = "";
-		//tProof[k].textContent = "";
+        tMutNums[k].textContent = "";
+        tVersion[k].textContent = "";
         // tSubID[k].textContent = "";
 	}
 
@@ -239,30 +245,27 @@ function ChangeTableData(level)
 		tPosition[k].textContent = k + 1;
 		tNames[k].textContent = names[k];
         tScore[k].textContent = SplitScore(score[k]);
-		// tScore[k].textContent = score[k];
 		tCoins[k].textContent = coins[k];
-		tDate[k].textContent = date[k];
+        tMutNums[k].textContent = mutators[k];
+		tDate[k].textContent = RemoveTimeFromData(date[k]);
+        tVersion[k].textContent = version[k];
 
         proofString = proof[k];
         isVideo = proofString.includes(videoString);
-
         if (isVideo)
-        {   
-            videoLinkToSplit = proof[k];
-            tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowEmbedWindow(\"" + GetEmbedYTLink(videoLinkToSplit) + "\")'> Video </a>";   }
+        {   tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowEmbedWindow(\"" + GetEmbedYTLink(proof[k]) + "\")'> Video </a>";   }
         else
-        {   tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowPictureWindow(\"" + proof[k] + "\")'> Picture </a>";   }
+        {   tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowPictureWindow(\"" + proof[k] + "\")'> Screenshot </a>";   }
         // linkProof[k].href = proof[k];
 	}
     for (let i = chosenArray.length; i < tableRows.length; i++)
     {
         tableRows[i].style.display = "none";
     }
-
     document.getElementById("newLBLoadingImg").style.display = "none";
-    document.getElementById("leaderBoardSection").style.display = "block";
+    document.getElementById("newLBTable").style.display = "block";
 
-	document.getElementById("tableName").textContent = chosenMap;
+	document.getElementById("tableName").textContent = chosenMap + " high-scores";
 }
 
 function SplitScore(scoreNum)
@@ -320,15 +323,39 @@ function GetEmbedYTLink (vidLink)
         vidIDIndex++;
     }
 
-    console.log(chars);
-    console.log("------------------------");
-    console.log(videoIDChars.reverse());
+    // console.log(chars);
+    // console.log("------------------------");
+    // console.log(videoIDChars.reverse());
 
     let IDs = videoIDChars;//.reverse();
     for (let i = 0; i < IDs.length; i++)
     {
         vidIDString = vidIDString + IDs[i];
     }
-    console.log(vidIDString);
+    // console.log(vidIDString);
     return (ytLink + vidIDString);
+}
+function RemoveTimeFromData (dateAndTime)
+{
+    if (dateAndTime.length <= 10)
+    {
+        return dateAndTime;
+    }
+    let dateChars = new Array();
+    let finalDateString = "";
+
+    const inputString = dateAndTime;
+    const inputChars = inputString.split('');
+
+    for (let i = 0; i < inputChars.length - 5; i++)
+    {
+        dateChars[i] = inputChars[i];
+    }
+    for (let i = 0; i < dateChars.length; i++)
+    {
+        finalDateString = finalDateString + dateChars[i];
+    }
+
+    //console.log(finalDateString.length);
+    return finalDateString;
 }

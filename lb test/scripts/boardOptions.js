@@ -16,10 +16,12 @@ function ChangeShownTable(tableToShow, sectionName)
 
 function ChangeCategory(name)
 {
+	// HIDE ALL SUB-CAT BUTTONS
 	document.getElementById("scoresSection").style.display = "none";
 	document.getElementById("timesSection").style.display = "none";
 	document.getElementById("demoSection").style.display = "none";
 
+	// RESET ALL CATEGORY BUTTONS
 	document.getElementById("hs_cat_btn").classList.remove("active");
 	document.getElementById("sr_cat_btn").classList.remove("active");
 	document.getElementById("demo_cat_btn").classList.remove("active");
@@ -31,16 +33,24 @@ function ChangeCategory(name)
 			break;
 
 		case "score":
+			document.getElementById("newLBTable").style.display = "block";
+			document.getElementById("leaderBoard").style.display ="none";
+
 			document.getElementById("scoresSection").style.display = "block";
 			document.getElementById("hs_cat_btn").classList.add("active");
-
 			break;
 
 		case "time":
+			document.getElementById("newLBTable").style.display = "none";
+			document.getElementById("leaderBoard").style.display ="block";
+
 			document.getElementById("timesSection").style.display = "block";
 			document.getElementById("sr_cat_btn").classList.add("active");
 			break;
 		case "demo":
+			document.getElementById("newLBTable").style.display = "none";
+			document.getElementById("leaderBoard").style.display ="block";
+
 			document.getElementById("demoSection").style.display = "block";
 			document.getElementById("demo_cat_btn").classList.add("active");
 			break;
