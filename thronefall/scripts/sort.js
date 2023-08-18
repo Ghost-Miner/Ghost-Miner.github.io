@@ -325,9 +325,9 @@ function GetEmbedYTLink (vidLink)
 
     // console.log(chars);
     // console.log("------------------------");
-    // console.log(videoIDChars.reverse());
+    // console.log(videoIDChars)//.reverse());
 
-    let IDs = videoIDChars;//.reverse();
+    let IDs = videoIDChars.reverse();
     for (let i = 0; i < IDs.length; i++)
     {
         vidIDString = vidIDString + IDs[i];
