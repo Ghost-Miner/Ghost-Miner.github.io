@@ -33,7 +33,7 @@ function ChangeCategory(name)
 			break;
 
 		case "score":
-			document.getElementById("newLBTable").style.display = "block";
+			document.getElementById("newLBTableSection").style.display = "block";
 			document.getElementById("leaderBoard").style.display ="none";
 
 			document.getElementById("scoresSection").style.display = "block";
@@ -41,14 +41,14 @@ function ChangeCategory(name)
 			break;
 
 		case "time":
-			document.getElementById("newLBTable").style.display = "none";
+			document.getElementById("newLBTableSection").style.display = "none";
 			document.getElementById("leaderBoard").style.display ="block";
 
 			document.getElementById("timesSection").style.display = "block";
 			document.getElementById("sr_cat_btn").classList.add("active");
 			break;
 		case "demo":
-			document.getElementById("newLBTable").style.display = "none";
+			document.getElementById("newLBTableSection").style.display = "none";
 			document.getElementById("leaderBoard").style.display ="block";
 
 			document.getElementById("demoSection").style.display = "block";

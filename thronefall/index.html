@@ -47,6 +47,7 @@
         <script src="./scripts/sort.js"></script>
 	</head>
 	<body>		
+		<script> SelectRandomBackground(); </script>
 		<style>			
 			#loadingMobiMenuGif
 			{
@@ -57,61 +58,17 @@
 				margin-left: 35%;
 				margin-right: 35%;
 			}
-			#demoSection
-			{
-				display: none;
-			}
-			#timesSection
-			{
-				display: none;
-			}
-
 			.positionColumn
 			{
 				font-weight: bold;
 				text-align: center;
 				max-width: 32px;
 			}
-			.nameColumn
-			{
-				text-align: left;
-			}
-			/* .scoreColumn
-			{
-				max-width: 50px;
-				text-align: center;
-			}
-			.coinsColumn
-			{
-				max-width: 32px;
-				text-align: center;
-			}
-			.dateColumn
-			{
-				text-align: center;
-				max-width: 100px;
-			}
-			.mutatorsColumn
-			{
-				max-width: 50px;
-				text-align: center;
-			}
-			.proofColumn
-			{
-				max-width: 50px;
-			}
-			.versionColumn
-			{
-				max-width: 50px;
-				text-align: center;
-			} */
-
 			#tableName
 			{
 				font-weight: bold;
 				font-size: 1.75em;
 			}
-
 			#LBloadImg
 			{
 				width: 32%; 
@@ -119,14 +76,23 @@
 				text-align: center; 
 				margin: 15px;
 			}
-			#newLBTable
+			/* #tablesDiv
 			{
-				display: none;
-			}
-			/* .subID
-			{
-				font-size: 0.75em;
+				width: 100%;
+				background-color: var(--backgroundColour);
 			} */
+			.table
+			{
+				/* border-radius: 5px; */
+				background-color: var(--backgroundColour);
+			}
+
+			.nameColumn { text-align: left;	}
+			#demoSection { display: none; }
+			#timesSection {	display: none;	}
+			#newLBTableSection { display: none;	}
+			/* .subID {	font-size: 0.75em; } */
+			#Thmeme_toggles { display: none; }
 		</style>
 
 		<div class="mainPageContainer" id="mainPageContainer">
@@ -248,10 +214,10 @@
 								<!-- Colour theme buttons disabled because they don't work on new tables. Will be fixed in the future -->
 								
 								<div id="Thmeme_toggles" style="display: inline-flexbox;">
-									<button id="Dark_theme_toggle"  class="btn btn-warning options-toggles disabled" disabled type="button" onclick="ColourChangeDark()">
+									<button id="Dark_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeDark()">
 										Dark theme
 									</button>
-									<button id="Light_theme_toggle" class="btn btn-warning options-toggles disabled" disabled type="button" onclick="ColourChangeLight()">
+									<button id="Light_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeLight()">
 										Light theme
 									</button>
 								</div>
@@ -284,48 +250,49 @@
 						</div>
 					</section>	
 					<hr class="horizontalSeparator">
-										
-					<section id="newLBSection">
-						<section id="newLBLoadingImg" style="text-align: center; ">
-							<img src="./img/loading edit.gif" id="LBloadImg">
-						</section>
-
-						<section id="newLBTable">
-							<div class="tableContainer" style="overflow-x:auto;"> 
-								<span id="tableName"> ... </span>
-								<table class="table table-striped" style="text-align: center;">
-									<thead class="table-dark" style="font-weight: bold;">
-										<td class="th-position positionColumn">#</td>
-										<td class="th-name nameColumn">Name</td>
-										<td class="th-score scoreColumn">Score</td>
-										<td class="th-coins coinsColumn">Gold</td>
-										<td class="th-mutNums mutatorsColumn">Mutators</td>
-										<td class="th-proof proofColumn">Proof</td>
-										<td class="th-version versionColumn">Version</td>
-										<td class="th-date dateColumn">Date</td>
-									</thead>
-									<tbody id="tbody">
-										<tr class="tableRow">
-											<td class="position positionColumn">...</td>
-											<td class="name nameColumn">...</td>
-											<td class="score scoreColumn">...</td>
-											<td class="coins coinsColumn">...</td>
-											<td class="mutNums mutatorsColumn">...</td>
-											<td class="proof proofColumn">
-												<a class="proofLink" href="" target="_blank"> View </a>
-											</td>
-											<td class="version versionColumn">...</td>
-											<td class="date dateColumn">...</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</section>
-						<hr>
+								
+					<div id="leaderboardsMainDiv">
+						<section id="newLBSection">
+							<section id="newLBLoadingImg" style="text-align: center; ">
+								<img src="./img/loading edit.gif" id="LBloadImg">
+							</section>
+							<section id="newLBTableSection">
+								<div class="tableContainer" style="overflow-x:auto;"> 
+									<span id="tableName"> ... </span>
+									<table class="table table-striped" id="newLBTable" style="text-align: center; border: 1px black dotted">
+										<thead class="table-dark" id="newLbHeader" style="font-weight: bold;">
+											<td class="th-position positionColumn">#</td>
+											<td class="th-name nameColumn">Name</td>
+											<td class="th-score scoreColumn">Score</td>
+											<td class="th-coins coinsColumn">Gold</td>
+											<td class="th-mutNums mutatorsColumn">Mutators</td>
+											<td class="th-proof proofColumn">Proof</td>
+											<td class="th-version versionColumn">Version</td>
+											<td class="th-date dateColumn">Date</td>
+										</thead>
+										<tbody id="newLbBody">
+											<tr class="tableRow">
+												<td class="position positionColumn">...</td>
+												<td class="name nameColumn">...</td>
+												<td class="score scoreColumn">...</td>
+												<td class="coins coinsColumn">...</td>
+												<td class="mutNums mutatorsColumn">...</td>
+												<td class="proof proofColumn">
+													<a class="proofLink" href="" target="_blank"> View </a>
+												</td>
+												<td class="version versionColumn">...</td>
+												<td class="date dateColumn">...</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</section>
+						<hr class="bottomSeparator">
 					</section> <!-- newLBSection -->					
 					<section id="leaderBoard">
 						<!-- old leaderbaord system here-->
 					</section>
+					</div>
 
 					<script>
 						SpawnTableRows();
@@ -333,7 +300,6 @@
 						
 						document.getElementById("hs_cat_btn").classList.add("active");
 					</script>
-
 					<section id="Footer"> <!-- Footer -->
 						<center>
 							<h6>
@@ -352,13 +318,9 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script>	/*ChangeCategory("demo");*/	SetFontStyle();		</script>
 
-		<script>
-			//ChangeCategory("demo");
-			
-			SetFontStyle();
-		</script>
-
+		
 
 		<!-- submit score overlay -->
 		<section class="overlays" id="SubmitScoreOverlay">
@@ -380,8 +342,7 @@
 				  z-index: 2;
 				  cursor: default;
 				  backdrop-filter: blur(16px);
-				}
-				
+				}				
 				#SubmitWinContent
 				{
 					border-radius: 5px;
@@ -437,15 +398,17 @@
 				<center>
 					<div class="submitBakcground" id="submitBakcgroundScore">
 						<div id="SubmitWinContent">
-							<iframe id="submitFormFrame" src="./submit.html" style="width:100%; height:100%; border:0px; background-color: #000;"></iframe>							
-							<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
-								Cancel
-							</button>
-							<a id="submitScoreFullscreen" href="./submit.html" target="_blank"> 
-								<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
-									Open in new tab
+							<div style="background-color: #e4d7ab; width: 100%; height: 100%;">
+								<iframe id="submitFormFrame" src="./submit.html" style="display: none; width:100%; height:100%; border:0px; background-color: #000;"></iframe>							
+								<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
+									Cancel
 								</button>
-							</a>
+								<a id="submitScoreFullscreen" href="./submit.html" target="_blank"> 
+									<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
+										Open in new tab
+									</button>
+								</a>
+							</div>
 						</div>
 					</div>
 					
@@ -464,18 +427,6 @@
 					</div>
 				</center>
 			<script>
-				let currPageTheme = GetCookie("PageTheme")
-				if (currPageTheme == "dark")
-				{
-					document.getElementById("submitFormFrame").src="./submit.html";
-					console.log("Changing to dark form");
-				}
-				else 
-				{
-					document.getElementById("submitFormFrame").src="./submit.html";
-					console.log("Using default form");
-				}
-
 				function ShowFormWindow() 
 				{
 					let currPageTheme = GetCookie("PageTheme")
@@ -500,18 +451,6 @@
 				
 				function ShowFormWindowTime() 
 				{
-					/*let currPageTheme = GetCookie("PageTheme")
-					if (currPageTheme == "dark")
-					{
-						document.getElementById("submitFormFrame").src="./submit.html";
-						console.log("Changing to dark form");
-					}
-					else 
-					{
-						document.getElementById("submitFormFrame").src="./submit.html";
-						console.log("Using default form");
-					}*/
-
 					document.getElementById("submitBakcgroundTime").style.display = "block";
 			  	}				  
 			  	function HideFormWindowTime() 
