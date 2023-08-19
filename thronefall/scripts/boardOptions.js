@@ -36,7 +36,7 @@ function ChangeCategory(name)
 			document.getElementById("newLBTableSection").style.display = "block";
 			document.getElementById("leaderBoard").style.display ="none";
 
-			document.getElementById("scoresSection").style.display = "block";
+			document.getElementById("scoresSection").style.display = "grid";
 			document.getElementById("hs_cat_btn").classList.add("active");
 			break;
 
@@ -44,14 +44,14 @@ function ChangeCategory(name)
 			document.getElementById("newLBTableSection").style.display = "none";
 			document.getElementById("leaderBoard").style.display ="block";
 
-			document.getElementById("timesSection").style.display = "block";
+			document.getElementById("timesSection").style.display = "grid";
 			document.getElementById("sr_cat_btn").classList.add("active");
 			break;
 		case "demo":
 			document.getElementById("newLBTableSection").style.display = "none";
 			document.getElementById("leaderBoard").style.display ="block";
 
-			document.getElementById("demoSection").style.display = "block";
+			document.getElementById("demoSection").style.display = "grid";
 			document.getElementById("demo_cat_btn").classList.add("active");
 			break;
 	}

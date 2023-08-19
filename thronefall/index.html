@@ -51,7 +51,7 @@
 		<style>		
 			#leaderboardsMainDiv
 			{
-				padding: 7px;
+				padding: 0px;
 			}	
 			#loadingMobiMenuGif
 			{
@@ -91,7 +91,7 @@
 			} */
 			.table
 			{
-				/* border-radius: 5px; */
+				border-radius: 5px;
 				background-color: var(--backgroundColour);
 			}
 
@@ -155,22 +155,30 @@
 									</button>
 								</div>
 								<div id="subCatButtonsDiv">
-									<section id="scoresSection">
-										<button type="button" onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" class="btn btn-warning tableToggleButton" id="nl_score_btn">
-											<b>Neuland</b>
-										</button>
-										<button type="button" onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')" class="btn btn-warning tableToggleButton" id="nf_score_btn">
-											<b>Nordfels</b>
-										</button>
-										<button type="button" onclick="SelectRandomBackground(3); ChangeTableData('Durststein')" class="btn btn-warning tableToggleButton" id="ds_score_btn">
-											<b>Durststein</b>
-										</button>								
-										<button type="button" onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')" class="btn btn-warning tableToggleButton" id="fs_score_btn">
-											<b>Frostsee</b>
-										</button>	
+									<section id="scoresSection" class="tableButtonsGridWrapper">
+										<!-- <div class="tableButtonGridCell"> -->
+											<button type="button" onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" class="btn btn-warning tableToggleButton" id="nl_score_btn">
+												<b>Neuland</b>
+											</button>
+										<!-- </div>
+										<div class="tableButtonGridCell"> -->
+											<button type="button" onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')" class="btn btn-warning tableToggleButton" id="nf_score_btn">
+												<b>Nordfels</b>
+											</button>
+										<!-- </div>
+										<div class="tableButtonGridCell"> -->
+											<button type="button" onclick="SelectRandomBackground(3); ChangeTableData('Durststein')" class="btn btn-warning tableToggleButton" id="ds_score_btn">
+												<b>Durststein</b>
+											</button>	
+										<!-- </div>
+										<div class="tableButtonGridCell">							 -->
+											<button type="button" onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')" class="btn btn-warning tableToggleButton" id="fs_score_btn">
+												<b>Frostsee</b>
+											</button>	
+										<!-- </div> -->
 									</section>
 
-									<section id="timesSection">
+									<section id="timesSection" class="tableButtonsGridWrapper">
 										<button type="button" onclick="SelectRandomBackground(1);" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nl_time_btn">
 											<b>Neuland</b>
 										</button>
@@ -185,7 +193,7 @@
 										</button>	
 									</section>
 
-									<section id="demoSection">
+									<section id="demoSection" class="tableButtonsGridWrapper">
 										<button type="button" onclick="SelectRandomBackground(1);" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nl_score_demo_btn">
 											<b>Neuland scores</b>
 										</button>

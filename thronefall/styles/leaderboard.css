@@ -54,24 +54,25 @@
 
 			#Category_buttons_main_div
 			{
-				padding-left: 5px;
-				display: flex;
-  				width: 100%;
-			}
-			#Categories_buttons
-			{
-				border: 0px green solid;
-				width: 70%;
+				border: 1px white solid;
 
-				text-align: left;
+				display: grid;
+				grid-template-columns: 3fr 1fr;
 			}
+			/* #Categories_buttons
+			{
+				border: 1px blue solid;
+				text-align: left;
+			} */
 			#Submit_score_button
 			{
-				border: 0px green solid;
-				width: 30%;
-
+				/* border: 1px yellow solid; */
 				text-align: right;
-				align-items: center;
+
+				margin: 0 autp;
+				position: relative;
+				/* justify-content: center; */
+				top: 25%;
 			}
 			#pageOptionsTogglesGroup
 			{
@@ -88,11 +89,18 @@
 			}
 			#mainCatButtonsDiv
 			{
-				border: 0px red dotted;
+				border: 1px red solid;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				width: 71%;
 			}
-			#subCatButtonsDiv
+			.tableButtonsGridWrapper
 			{
-				border: 0px blue dotted;
+				text-align: center;
+				border: 1px blue solid;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				width: 71%;
 			}
 
 			/* RESPONSIVE STUFF */
