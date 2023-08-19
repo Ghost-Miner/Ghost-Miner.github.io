@@ -272,7 +272,7 @@ function ChangeTableData(level)
 
 	document.getElementById("tableName").textContent = chosenMap + " high-scores";
 
-	SelectRandomBackground();
+	// SelectRandomBackground();
 }
 
 function SplitScore(scoreNum)

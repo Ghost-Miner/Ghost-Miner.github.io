@@ -47,8 +47,12 @@
         <script src="./scripts/sort.js"></script>
 	</head>
 	<body>		
-		<script> SelectRandomBackground(); </script>
-		<style>			
+		<!-- <script> SelectRandomBackground(); </script> -->
+		<style>		
+			#leaderboardsMainDiv
+			{
+				padding: 7px;
+			}	
 			#loadingMobiMenuGif
 			{
 				width: 32%; 
@@ -57,6 +61,10 @@
 				margin: 15px;
 				margin-left: 35%;
 				margin-right: 35%;
+			}
+			#tableName
+			{
+				margin-bottom: 5px;
 			}
 			.positionColumn
 			{
@@ -148,16 +156,16 @@
 								</div>
 								<div id="subCatButtonsDiv">
 									<section id="scoresSection">
-										<button type="button" onclick="ChangeTableData('Neuland')" class="btn btn-warning tableToggleButton" id="nl_score_btn">
+										<button type="button" onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" class="btn btn-warning tableToggleButton" id="nl_score_btn">
 											<b>Neuland</b>
 										</button>
-										<button type="button" onclick="ChangeTableData('Nordfels')" class="btn btn-warning tableToggleButton" id="nf_score_btn">
+										<button type="button" onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')" class="btn btn-warning tableToggleButton" id="nf_score_btn">
 											<b>Nordfels</b>
 										</button>
-										<button type="button" onclick="ChangeTableData('Durststein')" class="btn btn-warning tableToggleButton" id="ds_score_btn">
+										<button type="button" onclick="SelectRandomBackground(3); ChangeTableData('Durststein')" class="btn btn-warning tableToggleButton" id="ds_score_btn">
 											<b>Durststein</b>
 										</button>								
-										<button type="button" onclick="ChangeTableData('Frostsee')" class="btn btn-warning tableToggleButton" id="fs_score_btn">
+										<button type="button" onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')" class="btn btn-warning tableToggleButton" id="fs_score_btn">
 											<b>Frostsee</b>
 										</button>	
 									</section>
@@ -249,7 +257,7 @@
 							</div>
 						</div>
 					</section>	
-					<hr class="horizontalSeparator">
+					<!-- <hr class="horizontalSeparator"> -->
 								
 					<div id="leaderboardsMainDiv">
 						<section id="newLBSection">
@@ -287,7 +295,7 @@
 									</table>
 								</div>
 							</section>
-						<hr class="bottomSeparator">
+						<!-- <hr class="bottomSeparator"> -->
 					</section> <!-- newLBSection -->					
 					<section id="leaderBoard">
 						<!-- old leaderbaord system here-->
@@ -296,14 +304,13 @@
 
 					<script>
 						SpawnTableRows();
-						GetSubData();
-						
+						GetSubData();						
 						document.getElementById("hs_cat_btn").classList.add("active");
 					</script>
 					<section id="Footer"> <!-- Footer -->
 						<center>
 							<h6>
-								<span id="footerText" style=" font-weight: bold;"><i>Leaderboard page made by GhostMiner. v.1.8 (17/08/2023)</i> |
+								<span id="footerText" style=" font-weight: bold;"><i>Leaderboard page made by GhostMiner. v.1.9 (19/08/2023)</i> |
 									<a href="https://ghost-miner.github.io/">Website</a>, 
 									<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 									<a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -311,8 +318,9 @@
 							</h6>
 						</center>
 					</section> <!-- Footer -->
-			</div>
-		</div>
+			</div> <!-- BgrBox -->
+		</div> <!-- mainPageContainer -->
+
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -320,6 +328,9 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script>	/*ChangeCategory("demo");*/	SetFontStyle();		</script>
 
+		<!--
+			N E W   O V E R L A Y
+		-->
 		<section id="newOverlay">
 
 

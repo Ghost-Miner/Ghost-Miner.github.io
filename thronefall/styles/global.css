@@ -1,8 +1,8 @@
 /* BASIC STUFF */
 :root 
 {
-    --backgroundColour:  rgba(255, 255, 255, 0.95); 
-    --backgroundColour2: rgba(255, 255, 255, 0.95);
+    --backgroundColourSemiTransp:  rgba(255, 255, 255, 0.5); 
+    --backgroundColour: rgba(255, 255, 255, 0.95); 
     
     --outlineColour: rgba(255, 180, 0, 0.8);
 }
@@ -20,6 +20,7 @@ a:visited
 body 
 { 
     background: url(../img/bgr.jpg) no-repeat center center fixed; 
+    background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -36,15 +37,16 @@ body
 }
 .BgrBox 
 {
+    backdrop-filter: blur(16px);
     border-radius: 5px;
     padding: 10px;
     padding-top: 20px;
-    background-color: var(--backgroundColour);
+    background-color: var(--backgroundColourSemiTransp);
     
-    margin-top: 40px; 
+    margin-top: 25px; 
     margin-bottom: 25px; 
                         
-    box-shadow: 2px 2px 16px rgba(0,0,0,1);
+    box-shadow: 0px 0px 8px rgba(0,0,0,1);
     /*outline: 8px solid var(--outlineColour); */
 }
 .btn
@@ -75,6 +77,11 @@ body
     font-weight: bold;
 }
 
+.bottomSeparator
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .nav-link:link
 {
     color: #ba8303;
@@ -109,11 +116,10 @@ body
 }
 
 /* RESPONSIVE STUFF */
-@media screen and (max-width: 10500px)
+@media screen and (max-width: 1050px)
 {
     .BgrBox 
     {
-        background-color: var(--backgroundColour2);
         padding: 10px;					
         margin: 2vw; 
         padding-top:25px;
