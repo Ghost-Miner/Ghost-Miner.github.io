@@ -6,7 +6,7 @@ function SpawnTableRows()
     for (let i = 0; i < 50; i++)
     {
         let newRow = tableRow[0].cloneNode(true);
-        let tBody = document.getElementById("tbody").append(newRow);
+        let tBody = document.getElementById("newLbBody").append(newRow);
     }
 }
 
@@ -14,8 +14,8 @@ let tableData; // data from entries.csv parsed into an array
 
 function OrderArray() 
 {
-    console.log(FrostseeSubs);
-    FrostseeSubs.sort(Comparer);
+    // console.log(FrostseeSubs);
+    // FrostseeSubs.sort(Comparer);
 }
 
 async function GetSubData ()
@@ -25,8 +25,8 @@ async function GetSubData ()
 
     tableData = await ParseCSV;
 
-    console.log("RESPINSE");
-    console.log(ParseCSV);
+    // console.log("RESPONSE");
+    // console.log(ParseCSV);
 
     SortSubData();
 }
@@ -42,11 +42,12 @@ let canShowTableData = false;
 function SortSubData ()
 {
     tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    console.log("SORTED =================");
     console.log(tableData);
 
     // DISPLAY ARRAY CONTENT
-    console.log("-- ALL SUBS ---------------------------------------------");
-    console.log(tableData);
+    // console.log("-- ALL SUBS ---------------------------------------------");
+    // console.log(tableData);
     let chosenRow;
 
     // REMOV ALL SUBMISSIOSN THAT ARENT EARLY ACCESSS
@@ -64,8 +65,8 @@ function SortSubData ()
             // console.log("Element " + i + ", "+ fullGamearrNum + " is full");
         }
     }
-    console.log("== FULL GAME SUBS SORTED ===========================")
-    console.log(fullGameSubs);
+    // console.log("== FULL GAME SUBS SORTED ===========================")
+    // console.log(fullGameSubs);
 
     // REMOVE ALL SUBS THAT ARENT ACCEPTED
 
@@ -86,8 +87,8 @@ function SortSubData ()
             //console.log(chosenRow[1]);
         }
     }
-    console.log("== ACCEPTED SUBS SORTED ===========================")
-    console.log(acceptedSubs);
+    // console.log("== ACCEPTED SUBS SORTED ===========================")
+    // console.log(acceptedSubs);
 
     // SORT BY MAP
     let NLSubNum = -1;
@@ -131,11 +132,15 @@ function SortSubData ()
                 break;
         }
     }
-    console.log("== MAP SUBS SORTED ===========================");
-    console.log(NeulandSubs);
-    console.log(NordfelsSubs);
-    console.log(DurststeinSubs);
-    console.log(FrostseeSubs);
+    NeulandSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    NordfelsSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    DurststeinSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    FrostseeSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    // console.log("== MAP SUBS SORTED ===========================");
+    // console.log(NeulandSubs);
+    // console.log(NordfelsSubs);
+    // console.log(DurststeinSubs);
+    // console.log(FrostseeSubs);
 
     canShowTableData = true;
     ChangeTableData('Neuland');
@@ -198,13 +203,13 @@ function ChangeTableData(level)
         mutators[i] = chosenRow[9];
         version[i] = chosenRow[10];
 	}
-	console.log("---------------------------------------------");
-	console.log(names);
-	console.log(score);
-	console.log(coins);
-	console.log(date);
-	console.log(proof);
-	console.log("---------------------------------------------");
+	// console.log("---------------------------------------------");
+	// console.log(names);
+	// console.log(score);
+	// console.log(coins);
+	// console.log(date);
+	// console.log(proof);
+	// console.log("---------------------------------------------");
 
 	const tPosition = document.getElementsByClassName("position");
 	const tNames    = document.getElementsByClassName("name");
@@ -213,7 +218,7 @@ function ChangeTableData(level)
 	const tDate     = document.getElementsByClassName("date");
 	const tProof    = document.getElementsByClassName("proof");
     const tMutNums  = document.getElementsByClassName("mutNums");
-    const tVersion = document.getElementsByClassName("version");
+    const tVersion  = document.getElementsByClassName("version");
     const tSubID    = document.getElementsByClassName("subID");
 
 	let tableRows = document.getElementsByClassName("tableRow");
@@ -263,9 +268,11 @@ function ChangeTableData(level)
         tableRows[i].style.display = "none";
     }
     document.getElementById("newLBLoadingImg").style.display = "none";
-    document.getElementById("newLBTable").style.display = "block";
+    document.getElementById("newLBTableSection").style.display = "block";
 
 	document.getElementById("tableName").textContent = chosenMap + " high-scores";
+
+	SelectRandomBackground();
 }
 
 function SplitScore(scoreNum)
