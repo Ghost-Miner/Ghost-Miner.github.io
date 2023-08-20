@@ -32,8 +32,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<!-- Bootstrap and other CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
 		<link rel="stylesheet" href="./styles/global.css">
 		<link rel="stylesheet" href="./styles/leaderboard.css">
+		<link rel="stylesheet" href="./styles/overrides.css">
 
 		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
 
@@ -49,58 +51,18 @@
 	<body>		
 		<!-- <script> SelectRandomBackground(); </script> -->
 		<style>		
-			#leaderboardsMainDiv
+			#newButtonsBar
 			{
-				padding: 0px;
-			}	
-			#loadingMobiMenuGif
-			{
-				width: 32%; 
-				height: auto; 
-				text-align: center; 
-				margin: 15px;
-				margin-left: 35%;
-				margin-right: 35%;
+				border: 1px black black;
 			}
-			#tableName
+			#newLBToggles
 			{
-				line-height: 50px;
+				border: 1px blue solid;
 			}
-			.positionColumn
+			#newLBSubButton
 			{
-				font-weight: bold;
-				text-align: center;
-				max-width: 32px;
+				border: 1px green solid;
 			}
-			#tableName
-			{
-				font-weight: bold;
-				font-size: 1.75em;
-			}
-			#LBloadImg
-			{
-				width: 32%; 
-				height: auto; 
-				text-align: center; 
-				margin: 15px;
-			}
-			/* #tablesDiv
-			{
-				width: 100%;
-				background-color: var(--backgroundColour);
-			} */
-			.table
-			{
-				border-radius: 5px;
-				background-color: var(--backgroundColour);
-			}
-
-			.nameColumn { text-align: left;	}
-			#demoSection { display: none; }
-			#timesSection {	display: none;	}
-			#newLBTableSection { display: none;	}
-			/* .subID {	font-size: 0.75em; } */
-			#Thmeme_toggles { display: none; }
 		</style>
 
 		<div class="mainPageContainer" id="mainPageContainer">
@@ -139,7 +101,100 @@
 					<hr class="horizontalSeparator">
 					
 					<!-- Category buttons -->
-					<section id="Category_buttons_section">
+					<div id="newButtonsBar">
+						<div id="newLBToggles">
+							<!-- 
+								CATEGORY BUTTONS 
+							-->
+							<div id="newCategoryBuuttons">
+								<button class="btn btn-warning btn-whiteFill" id="newScoreCatToggle" type="button"
+										onclick="SelectRandomBackground(1); ChangeCategory('score')" >
+									High-scores
+								</button>
+								<button class="btn btn-warning btn-whiteFill" id="newTimCatToggle" type="button" disabled="true" onclick="SelectRandomBackground(1); ChangeCategory('time')" 
+										hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+									Speed-runs
+								</button>	
+								<button class="btn btn-warning btn-whiteFill" id="newDemoCatToggle" type="button" disabled="true" onclick="SelectRandomBackground(1); ChangeCategory('demo')" 
+										hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+									Demo version
+								</button>
+							</div> <!-- newCategoryBuuttons -->
+
+							<!--
+								LBs FOR EACH CATEGORY
+							-->
+							<div id="newLBTableToggle">
+								<!--
+									H I G H   S C O R E S
+								-->
+								<section id="newLBToggleScore" class="newSubsectionToggle">
+									<button type="button"class="btn btn-warning" id="nl_score_btn" onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" >
+										Neuland
+									</button>
+									<button type="button" class="btn btn-warning" id="nf_score_btn" onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')">
+										Nordfels
+									</button>
+									<button type="button" class="btn btn-warning" id="ds_score_btn" onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
+										Durststein
+									</button>
+									<button type="button" class="btn btn-warning" id="fs_score_btn" onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
+										Frostsee
+									</button>	
+								</section> <!-- newLBToggleScore -->
+
+								<section id="newLBToggleTime" class="newSubsectionToggle">
+									<!--
+										S P E E D   R U N S 
+									-->
+									<button type="button" class="btn btn-warning" id="nl_time_btn" onclick="SelectRandomBackground(1);" 
+											hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+										Neuland
+									</button>
+									<button type="button" class="btn btn-warning" id="nf_time_btn" onclick="SelectRandomBackground(2);" 
+											hx-get="./leaderboards/time/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+										Nordfels
+									</button>
+									<button type="button" class="btn btn-warning" id="ds_time_btn" onclick="SelectRandomBackground(3);" 
+											hx-get="./leaderboards/time/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+										Durststein
+									</button>								
+									<button type="button" class="btn btn-warning" id="fs_time_btn" onclick="SelectRandomBackground(4);" 
+											hx-get="./leaderboards/time/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+										Frostsee
+									</button>	
+								</section> <!-- newLBToggleTime -->
+
+								<section id="newLBToggleDemo" class="newSubsectionToggle">
+									<!--
+										D E M O   A R C H I V E
+									-->
+									<button type="button" class="btn btn-warning" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
+											hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+										Neuland
+									</button>
+									<button type="button" class="btn btn-warning" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
+											hx-get="./leaderboards/demo/nf-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+										Nordfels
+									</button>
+									<button type="button" class="btn btn-warning" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
+											hx-get="./leaderboards/demo/time.html" hx-target="#leaderBoard" hx-swap="innerHTML" >
+										Speed-runs
+									</button>
+								</section> <!-- newLBToggleDemo -->
+
+							</div> <!-- newLBTableToggle -->
+						</div> <!-- newLBToggles -->
+
+						<div id="newLBSubButton">
+							<button type="button" class="btn btn-warning btn-lg" data-toggle="collapse" data-target="#submissionTypeGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
+								SUBMIT
+							</button>
+						</div> <!-- newLBSubButton -->
+					</div> <!-- newButtonsBar -->
+
+
+					<section id="Category_buttons_section" style="display: none;">
 						<div id="Category_buttons_main_div">
 							<div id="Categories_buttons">
 								<div id="mainCatButtonsDiv">
@@ -147,35 +202,27 @@
 									<button type="button" onclick="SelectRandomBackground(1); ChangeCategory('score')" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="hs_cat_btn">
 										<b>High-scores</b>
 									</button>
-									<button type="button" onclick="SelectRandomBackground(1); ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="sr_cat_btn">
+									<button  class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="sr_cat_btn" type="button" disabled="true" onclick="SelectRandomBackground(1); ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<b>Speed-runs</b>
 									</button>	
-									<button type="button" onclick="SelectRandomBackground(1); ChangeCategory('demo')" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="demo_cat_btn">
-										<b>Demo scores & time</b>
+									<button  class="btn btn-warning tableToggleButton categoryToggleButton btn-whiteFill" id="demo_cat_btn" type="button" disabled="true" onclick="SelectRandomBackground(1); ChangeCategory('demo')" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+										<b>Demo version</b>
 									</button>
 								</div>
 								<div id="subCatButtonsDiv">
 									<section id="scoresSection" class="tableButtonsGridWrapper">
-										<!-- <div class="tableButtonGridCell"> -->
 											<button type="button" onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" class="btn btn-warning tableToggleButton" id="nl_score_btn">
 												<b>Neuland</b>
 											</button>
-										<!-- </div>
-										<div class="tableButtonGridCell"> -->
 											<button type="button" onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')" class="btn btn-warning tableToggleButton" id="nf_score_btn">
 												<b>Nordfels</b>
 											</button>
-										<!-- </div>
-										<div class="tableButtonGridCell"> -->
 											<button type="button" onclick="SelectRandomBackground(3); ChangeTableData('Durststein')" class="btn btn-warning tableToggleButton" id="ds_score_btn">
 												<b>Durststein</b>
-											</button>	
-										<!-- </div>
-										<div class="tableButtonGridCell">							 -->
+											</button>
 											<button type="button" onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')" class="btn btn-warning tableToggleButton" id="fs_score_btn">
 												<b>Frostsee</b>
 											</button>	
-										<!-- </div> -->
 									</section>
 
 									<section id="timesSection" class="tableButtonsGridWrapper">
@@ -193,19 +240,19 @@
 										</button>	
 									</section>
 
-									<section id="demoSection" class="tableButtonsGridWrapper">
+									<section id="demoSection" class="tableButtonsGridWrapperDemo">
 										<button type="button" onclick="SelectRandomBackground(1);" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML" class="btn btn-warning tableToggleButton" id="nl_score_demo_btn">
 											<b>Neuland scores</b>
 										</button>
 										<button type="button" onclick="SelectRandomBackground(2);" hx-get="./leaderboards/demo/nf-score.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton" id="nf_score_demo_btn">
 											<b>Nordfels scores</b>
 										</button>
-										<button type="button" onclick="SelectRandomBackground(3);" hx-get="./leaderboards/demo/nl-time.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton" id="nl_time_demo_btn">
-											<b>Neuland time</b>
+										<button type="button" onclick="SelectRandomBackground(1);" hx-get="./leaderboards/demo/time.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton" id="nl_time_demo_btn">
+											<b>Speed-runs</b>
 										</button>								
-										<button type="button" onclick="SelectRandomBackground(4);" hx-get="./leaderboards/demo/nf-time.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton" id="nf_time_demo_btn">
-											<b>Nordfels time</b>
-										</button>	
+										<!-- <button type="button" onclick="SelectRandomBackground(4);" hx-get="./leaderboards/demo/nf-time.html" hx-target="#leaderBoard" hx-swap="innerHTML"  class="btn btn-warning tableToggleButton" id="nf_time_demo_btn">
+											<b>Speed-runs</b>
+										</button>	 -->
 									</section>
 								</div>
 							</div>

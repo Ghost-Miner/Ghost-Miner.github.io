@@ -115,13 +115,55 @@ body
     padding-bottom: 5px;
 }
 
-/* RESPONSIVE STUFF */
-@media screen and (max-width: 1050px)
-{
-    .BgrBox 
-    {
-        padding: 10px;					
-        margin: 2vw; 
-        padding-top:25px;
-    }
-}
+#leaderboardsMainDiv
+			{
+				padding: 0px;
+			}	
+			#loadingMobiMenuGif
+			{
+				width: 32%; 
+				height: auto; 
+				text-align: center; 
+				margin: 15px;
+				margin-left: 35%;
+				margin-right: 35%;
+			}
+			#tableName
+			{
+				line-height: 50px;
+			}
+			.positionColumn
+			{
+				font-weight: bold;
+				text-align: center;
+				max-width: 32px;
+			}
+			#tableName
+			{
+				font-weight: bold;
+				font-size: 1.75em;
+			}
+			#LBloadImg
+			{
+				width: 32%; 
+				height: auto; 
+				text-align: center; 
+				margin: 15px;
+			}
+			/* #tablesDiv
+			{
+				width: 100%;
+				background-color: var(--backgroundColour);
+			} */
+			.table
+			{
+				border-radius: 5px;
+				background-color: var(--backgroundColour);
+			}
+
+			.nameColumn { text-align: left;	}
+			#demoSection { display: none; }
+			#timesSection {	display: none;	}
+			#newLBTableSection { display: none;	}
+			/* .subID {	font-size: 0.75em; } */
+			#Thmeme_toggles { display: none; }

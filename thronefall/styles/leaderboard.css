@@ -1,3 +1,8 @@
+			:root
+			{
+				--LBCategoryWidth: 55%;
+				--LBCategoryWidthWider: 75%;
+			}
 
 			/* C L A S S E S */
 			.tableToggleButton
@@ -6,6 +11,7 @@
 				
 				margin-top: 5px;
 				margin-bottom: 5px;
+				/* width: 100%; */
 			}
 			.ScoreProffLink
 			{
@@ -54,7 +60,7 @@
 
 			#Category_buttons_main_div
 			{
-				border: 1px white solid;
+				/* border: 1px white solid; */
 
 				display: grid;
 				grid-template-columns: 3fr 1fr;
@@ -87,57 +93,33 @@
 			{
 				background-color: var(--backgroundColour);
 			}
+
 			#mainCatButtonsDiv
 			{
-				border: 1px red solid;
+				/* border: 1px red solid; */
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
-				width: 71%;
+				width: var(--LBCategoryWidth);
 			}
 			.tableButtonsGridWrapper
 			{
 				text-align: center;
-				border: 1px blue solid;
+				/* border: 1px blue solid; */
 				display: grid;
 				grid-template-columns: repeat(4, 1fr);
-				width: 71%;
+				width: var(--LBCategoryWidth);
+			}
+			.tableButtonsGridWrapperDemo
+			{
+				text-align: center;
+				/* border: 1px blue solid; */
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				width: var(--LBCategoryWidth);
 			}
 
 			/* RESPONSIVE STUFF */
-			@media screen and (max-width: 850px)
-			{
-				.options-toggles
-				{
-					width: 100%;
-					height: auto;
-					margin-bottom: 2%;
-				}				
-				.submitScoreCollapeBtn
-				{
-					width: 100%;
-					height: auto;
-					margin-bottom: 2%;
-				}			
-					
-				#Category_buttons_main_div
-				{
-					display: block;
-					width: 100%;
-				}
-				#Categories_buttons
-				{
-					width: 100%;
-
-					text-align: center;
-				}
-				#Submit_score_button
-				{
-					margin-top: 10px;
-					width: 100%;
-
-					text-align: center;
-				}
-			}
+			
 
 			#Nordfels_score_lb
 				{	display: block;	}

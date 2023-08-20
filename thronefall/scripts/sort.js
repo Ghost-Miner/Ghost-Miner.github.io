@@ -1,4 +1,3 @@
-
 function SpawnTableRows()
 {
     let tableRow = document.getElementsByClassName("tableRow");
@@ -41,6 +40,8 @@ let canShowTableData = false;
 
 function SortSubData ()
 {
+    console.log("fdsssssssssssssssssssssssssssssssssssssssssssssssss");
+
     tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
     console.log("SORTED =================");
     console.log(tableData);
@@ -144,6 +145,9 @@ function SortSubData ()
 
     canShowTableData = true;
     ChangeTableData('Neuland');
+
+    document.getElementById("sr_cat_btn").disabled = false;
+    document.getElementById("demo_cat_btn").disabled = false;
 }
 
 function ChangeTableData(level)

@@ -1,0 +1,77 @@
+@media screen and (max-width: 1100px)
+{
+    .BgrBox 
+    {
+        padding: 10px;					
+        margin: 2vw; 
+        padding-top:25px;
+    }
+
+    #mainCatButtonsDiv
+    {
+        width: var(--LBCategoryWidthWider);
+    }
+    .tableButtonsGridWrapper
+    {
+        width: var(--LBCategoryWidthWider);
+    }
+    .tableButtonsGridWrapperDemo
+    {
+        width: var(--LBCategoryWidthWider);
+    }
+}
+
+@media screen and (max-width: 850px)
+{
+	.options-toggles
+	{
+		width: 100%;
+		height: auto;
+		margin-bottom: 2%;
+	}				
+	.submitScoreCollapeBtn
+	{
+		width: 100%;
+		height: auto;
+		margin-bottom: 2%;
+	}
+}
+
+@media screen and (max-width: 750px)
+{
+    #mainCatButtonsDiv
+    {
+        width: 100%;
+    }
+    .tableButtonsGridWrapper
+    {
+        width: 100%;
+    }
+    .tableButtonsGridWrapperDemo
+    {
+        width: 100%;
+    }
+    #Category_buttons_main_div
+    {
+        grid-template-columns: 1fr;
+    }
+    #Submit_score_button
+    {
+        padding: 15px;
+        text-align: center;
+        top: 0%
+    }
+}
+@media screen and (max-width: 500px)
+{
+
+    .tableButtonsGridWrapper
+    {
+        text-align: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tableButtonsGridWrapperDemo
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+}
