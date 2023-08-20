@@ -35,7 +35,7 @@
 		
 		<link rel="stylesheet" href="./styles/global.css">
 		<link rel="stylesheet" href="./styles/leaderboard.css">
-		<link rel="stylesheet" href="./styles/overrides.css">
+		<!-- Overrides at the bottom -->
 
 		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
 
@@ -50,7 +50,7 @@
 	</head>
 	<body>		
 		<!-- <script> SelectRandomBackground(); </script> -->
-		<style>		
+		<style>
 			#newButtonsBar
 			{
 				display: grid;
@@ -66,11 +66,13 @@
 
 				border: 1px blue solid;
 			}
-			#newLBSubButton
+			#newLBSubmitButton
 			{
 				border: 1px green solid;
 
 				text-align: right;
+				position: relative;
+				top: 25%;
 			}
 			#newCategoryBuuttons
 			{
@@ -96,6 +98,7 @@
 			}
 			#newLBToggleDemo
 			{
+				grid-template-columns: repeat(3, 1fr);
 				display: none;
 			}
 
@@ -104,6 +107,11 @@
 				width: 100%;
 			} */
 			.newCatToggleText
+			{
+				font-weight: bold;
+				font-size: 1.1rrem;
+			}
+			.subCatToggleText
 			{
 				font-weight: bold;
 			}
@@ -167,7 +175,6 @@
 									<span class="newCatToggleText"> Demo version </span>
 								</button>
 							</div> <!-- newCategoryBuuttons -->
-
 							<!--
 								LBs FOR EACH CATEGORY
 							-->
@@ -177,16 +184,16 @@
 								-->
 								<section id="newLBToggleScore" class="newSubsectionToggle">
 									<button type="button"class="btn btn-warning" id="nl_score_btn" onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" >
-										Neuland
+										<span class="subCatToggleText"> Neuland </span>
 									</button>
 									<button type="button" class="btn btn-warning" id="nf_score_btn" onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')">
-										Nordfels
+										<span class="subCatToggleText"> Nordfels </span>
 									</button>
 									<button type="button" class="btn btn-warning" id="ds_score_btn" onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
-										Durststein
+										<span class="subCatToggleText"> Durststein </span>
 									</button>
 									<button type="button" class="btn btn-warning" id="fs_score_btn" onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
-										Frostsee
+										<span class="subCatToggleText"> Frostsee </span>
 									</button>	
 								</section> <!-- newLBToggleScore -->
 
@@ -196,19 +203,19 @@
 									-->
 									<button type="button" class="btn btn-warning" id="nl_time_btn" onclick="SelectRandomBackground(1);" 
 											hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										Neuland
+										<span class="subCatToggleText"> Neuland </span>
 									</button>
 									<button type="button" class="btn btn-warning" id="nf_time_btn" onclick="SelectRandomBackground(2);" 
 											hx-get="./leaderboards/time/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										Nordfels
+										<span class="subCatToggleText"> Nordfels </span>
 									</button>
 									<button type="button" class="btn btn-warning" id="ds_time_btn" onclick="SelectRandomBackground(3);" 
 											hx-get="./leaderboards/time/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										Durststein
+										<span class="subCatToggleText"> Durststein </span>
 									</button>								
 									<button type="button" class="btn btn-warning" id="fs_time_btn" onclick="SelectRandomBackground(4);" 
 											hx-get="./leaderboards/time/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										Frostsee
+										<span class="subCatToggleText"> Frostsee </span>
 									</button>	
 								</section> <!-- newLBToggleTime -->
 
@@ -218,26 +225,26 @@
 									-->
 									<button type="button" class="btn btn-warning" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
 											hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										Neuland
+										<span class="subCatToggleText"> Neuland </span>
 									</button>
 									<button type="button" class="btn btn-warning" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
 											hx-get="./leaderboards/demo/nf-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										Nordfels
+										<span class="subCatToggleText"> Nordfels </span>
 									</button>
 									<button type="button" class="btn btn-warning" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
 											hx-get="./leaderboards/demo/time.html" hx-target="#leaderBoard" hx-swap="innerHTML" >
-										Speed-runs
+										<span class="subCatToggleText"> Speed-runs </span>
 									</button>
 								</section> <!-- newLBToggleDemo -->
 
 							</div> <!-- newLBTableToggle -->
 						</div> <!-- newLBToggles -->
 
-						<div id="newLBSubButton">
+						<div id="newLBSubmitButton">
 							<button type="button" class="btn btn-warning btn-lg" data-toggle="collapse" data-target="#submissionTypeGroup" aria-expanded="false" aria-controls="pageOptionsTogglesGroup">
-								SUBMIT
+								<span class="newCatToggleText">SUBMIT</span>
 							</button>
-						</div> <!-- newLBSubButton -->
+						</div> <!-- newLBSubmitButton -->
 					</div> <!-- newButtonsBar -->
 
 
@@ -424,6 +431,7 @@
 			</div> <!-- BgrBox -->
 		</div> <!-- mainPageContainer -->
 
+		<link rel="stylesheet" href="./styles/overrides.css">
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

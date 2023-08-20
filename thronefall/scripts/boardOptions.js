@@ -22,8 +22,8 @@ function ChangeCategory(name)
 	const demoSectionLBToggles  = document.getElementById("newLBToggleDemo");
 
 	const scoreCategoryToggle = document.getElementById("newScoreCatToggle");
-	const timeCategoryToggle = document.getElementById("newTimCatToggle");
-	const demoCategoryToggle = document.getElementById("newDemoCatToggle");
+	const timeCategoryToggle  = document.getElementById("newTimCatToggle");
+	const demoCategoryToggle  = document.getElementById("newDemoCatToggle");
 
 	scoreSectionLBToggles.style.display = "none";
 	timeSectionLBToggles .style.display = "none";
@@ -45,7 +45,7 @@ function ChangeCategory(name)
 			document.getElementById("leaderBoard").style.display ="none";
 
 			scoreSectionLBToggles.style.display = "grid";
-			document.getElementById("hs_cat_btn").classList.add("active");
+			scoreCategoryToggle.classList.add("active");
 			break;
 
 		case "time":
@@ -53,14 +53,14 @@ function ChangeCategory(name)
 			document.getElementById("leaderBoard").style.display ="block";
 
 			timeSectionLBToggles.style.display = "grid";
-			document.getElementById("sr_cat_btn").classList.add("active");
+			timeCategoryToggle.classList.add("active");
 			break;
 		case "demo":
 			document.getElementById("newLBTableSection").style.display = "none";
 			document.getElementById("leaderBoard").style.display ="block";
 
 			demoSectionLBToggles.style.display = "grid";
-			document.getElementById("demo_cat_btn").classList.add("active");
+			demoCategoryToggle.classList.add("active");
 			break;
 	}
 }

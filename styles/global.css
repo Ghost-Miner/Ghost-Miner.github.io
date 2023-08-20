@@ -60,13 +60,13 @@ body
 .pageTitleText
 {
     font-weight:600;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     vertical-align: middle;
 }
 .pageSubtitle
 {
     font-weight: 640;
-    font-size: 1.64em;
+    font-size: 1.64rem;
     text-decoration: overline;
 }
 
@@ -91,7 +91,7 @@ body
 .menuLinks
 {
     font-weight: bold;
-    font-size: 1.32em;
+    font-size: 1.32rem;
 }
 #menuBar
 {
@@ -131,7 +131,7 @@ body
 .gameGridText
 {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 .gameGridImg
 {
@@ -165,7 +165,7 @@ body
 #featVidTitle
 {
     font-weight: 650;
-    font-size: 1.64em;
+    font-size: 1.64rem;
 }
 .recomVideoImageDiv
 {
@@ -193,10 +193,10 @@ body
 }
 .recomVideoTitleText
 {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 650;
 
-    line-height: 1rem;
+    line-height: 1rrem;
 }
 
 #ProfileTitle
@@ -213,7 +213,7 @@ body
 #ProfileNameText
 {
     font-weight: 650;
-    font-size: 1.55em;
+    font-size: 1.55rem;
 }
 
 #aboutAndSocialsDiv
@@ -224,7 +224,7 @@ body
 #ProfileInfoTitle
 {
     font-weight: 610;
-    font-size: 1.32em;
+    font-size: 1.32rem;
 }
 
 #socilLinksGrid
@@ -238,5 +238,5 @@ body
 .soclLinksText
 {
     font-weight: bold;
-    font-size: 1.25em;
+    font-size: 1.25rem;
 }

@@ -6,19 +6,6 @@
         margin: 2vw; 
         padding-top:25px;
     }
-
-    #mainCatButtonsDiv
-    {
-        width: var(--LBCategoryWidthWider);
-    }
-    .tableButtonsGridWrapper
-    {
-        width: var(--LBCategoryWidthWider);
-    }
-    .tableButtonsGridWrapperDemo
-    {
-        width: var(--LBCategoryWidthWider);
-    }
 }
 
 @media screen and (max-width: 850px)
@@ -37,41 +24,47 @@
 	}
 }
 
-@media screen and (max-width: 750px)
+@media screen and (max-width: 600px)
 {
-    #mainCatButtonsDiv
-    {
-        width: 100%;
-    }
-    .tableButtonsGridWrapper
-    {
-        width: 100%;
-    }
-    .tableButtonsGridWrapperDemo
-    {
-        width: 100%;
-    }
-    #Category_buttons_main_div
+    #newButtonsBar
     {
         grid-template-columns: 1fr;
     }
-    #Submit_score_button
+    #newLBSubmitButton
     {
-        padding: 15px;
         text-align: center;
+        padding: 10px;
         top: 0%
     }
-}
-@media screen and (max-width: 500px)
-{
-
-    .tableButtonsGridWrapper
+    #newCategoryBuuttons
     {
-        text-align: center;
-        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
     }
-    .tableButtonsGridWrapperDemo
+    .newSubsectionToggle
     {
-        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px)
+{
+    #newCategoryBuuttons
+    {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 5px;
+
+        max-width: 100%;
+    }
+    .newSubsectionToggle
+    {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 5px;
+
+        max-width: 100%;
+    }
+    #newDemoCatToggle
+    {
+        position: relative;
+        left: 50%;
     }
 }

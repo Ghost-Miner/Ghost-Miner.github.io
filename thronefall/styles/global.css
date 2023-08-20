@@ -141,7 +141,7 @@ body
 			#tableName
 			{
 				font-weight: bold;
-				font-size: 1.75em;
+				font-size: 1.75rem;
 			}
 			#LBloadImg
 			{
@@ -165,5 +165,5 @@ body
 			#demoSection { display: none; }
 			#timesSection {	display: none;	}
 			#newLBTableSection { display: none;	}
-			/* .subID {	font-size: 0.75em; } */
+			/* .subID {	font-size: 0.75rem; } */
 			#Thmeme_toggles { display: none; }
