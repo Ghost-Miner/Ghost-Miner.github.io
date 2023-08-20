@@ -37,7 +37,7 @@ body
 }
 .BgrBox 
 {
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(8px);
     border-radius: 5px;
     padding: 10px;
     padding-top: 20px;
