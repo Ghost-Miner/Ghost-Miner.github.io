@@ -51,14 +51,12 @@
     #newCategoryBuuttons
     {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 5px;
 
         max-width: 100%;
     }
     .newSubsectionToggle
     {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 5px;
 
         max-width: 100%;
     }
