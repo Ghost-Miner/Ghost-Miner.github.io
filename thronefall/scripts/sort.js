@@ -40,8 +40,6 @@ let canShowTableData = false;
 
 function SortSubData ()
 {
-    console.log("fdsssssssssssssssssssssssssssssssssssssssssssssssss");
-
     tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
     console.log("SORTED =================");
     console.log(tableData);

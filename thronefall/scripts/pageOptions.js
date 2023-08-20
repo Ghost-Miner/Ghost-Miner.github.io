@@ -61,7 +61,7 @@ function SelectRandomBackground(mappNumner)
 
 	let bgrNumber = 0;
 	bgrNumber = GetRandomInt(1,11); 
-	console.log(bgrNumber);
+	// console.log(bgrNumber);
 	// console.log(body);
 
 	switch (mappNumner)

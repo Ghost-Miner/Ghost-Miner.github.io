@@ -53,15 +53,59 @@
 		<style>		
 			#newButtonsBar
 			{
-				border: 1px black black;
+				display: grid;
+				grid-template-columns: 3fr 1fr;
+				column-gap: 10px;
+				row-gap: 10x;
+
+				border: 1px black solid;
 			}
 			#newLBToggles
 			{
+				font-weight: bold;
+
 				border: 1px blue solid;
 			}
 			#newLBSubButton
 			{
 				border: 1px green solid;
+
+				text-align: right;
+			}
+			#newCategoryBuuttons
+			{
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: 5px;
+
+				padding-bottom: 10px;
+				max-width: 400px;
+			}
+			.newSubsectionToggle
+			{
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				column-gap: 5px;
+
+				max-width: 400px;
+			}
+			
+			#newLBToggleTime
+			{
+				display: none;
+			}
+			#newLBToggleDemo
+			{
+				display: none;
+			}
+
+			/* .nnewCatToggleButton
+			{
+				width: 100%;
+			} */
+			.newCatToggleText
+			{
+				font-weight: bold;
 			}
 		</style>
 
@@ -107,17 +151,20 @@
 								CATEGORY BUTTONS 
 							-->
 							<div id="newCategoryBuuttons">
-								<button class="btn btn-warning btn-whiteFill" id="newScoreCatToggle" type="button"
+								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newScoreCatToggle" type="button"
 										onclick="SelectRandomBackground(1); ChangeCategory('score')" >
-									High-scores
+
+									<span class="newCatToggleText"> High-scores </span>
 								</button>
-								<button class="btn btn-warning btn-whiteFill" id="newTimCatToggle" type="button" disabled="true" onclick="SelectRandomBackground(1); ChangeCategory('time')" 
-										hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-									Speed-runs
+								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newTimCatToggle" type="button"  
+										onclick="SelectRandomBackground(1); ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+
+									<span class="newCatToggleText"> Speed-runs </span>
 								</button>	
-								<button class="btn btn-warning btn-whiteFill" id="newDemoCatToggle" type="button" disabled="true" onclick="SelectRandomBackground(1); ChangeCategory('demo')" 
-										hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-									Demo version
+								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newDemoCatToggle" type="button" 
+										onclick="SelectRandomBackground(1); ChangeCategory('demo')" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+
+									<span class="newCatToggleText"> Demo version </span>
 								</button>
 							</div> <!-- newCategoryBuuttons -->
 
