@@ -144,8 +144,8 @@ function SortSubData ()
     canShowTableData = true;
     ChangeTableData('Neuland');
 
-    document.getElementById("sr_cat_btn").disabled = false;
-    document.getElementById("demo_cat_btn").disabled = false;
+    // document.getElementById("sr_cat_btn").disabled = false;
+    // document.getElementById("demo_cat_btn").disabled = false;
 }
 
 function ChangeTableData(level)
