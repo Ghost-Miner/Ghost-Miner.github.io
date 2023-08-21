@@ -244,7 +244,7 @@
 						</div> <!-- newLBToggles -->
 
 						<div id="newLBSubmitButton">
-							<button type="button" onclick="ShowSubWindow()" class="btn btn-warning btn-lg">
+							<button type="button" onclick="OpenSubWindow()" class="btn btn-warning btn-lg">
 								<span class="newCatToggleText">SUBMIT</span>
 							</button>
 						</div> <!-- newLBSubmitButton -->
@@ -352,7 +352,6 @@
 			</div> <!-- BgrBox -->
 		</div> <!-- mainPageContainer -->
 
-		<link rel="stylesheet" href="./styles/overrides.css">
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -365,11 +364,6 @@
 		-->
 		<section id="newOverlay" style="display: block">
 			<style>
-				:root
-				{	
-					--windowMainColourTop: #c27301;
-					--windowMainColourBotton: #c27301;
-				}
 				.overlaysBlur
 				{
 					z-index: 5;
@@ -407,10 +401,7 @@
 				{
 					display: grid;
 					grid-template-columns: 1fr;
-
-					/* overflow-y: auto; */
 					z-index: 7;
-					/* border-radius: 5px; */
 
 					width: 100%;
 					height: 100%;
@@ -435,14 +426,14 @@
 				{
 					position: relative;
 
-					width: 50%;
+					width: 70%;
 					display: flex;
 					align-items: center;
 					justify-content: left;
 				}
 				.titleBarRight
 				{
-					width: 50%;
+					width: 30%;
 					display: flex;
 					align-items: center;
 					justify-content: right;
@@ -456,7 +447,6 @@
 					background-color: white;
 					border: 1px black solid;
 					margin-left: 3px;
-					/* margin-bottom: 5px; */
 					width: 30px;
 				}
 				#closeWinButton
@@ -467,7 +457,7 @@
 				#WindowTtitleBarIcon
 				{
 					height: 100%;
-					width: auto;
+					width: 20px;
 					padding-bottom: 10px;
 					padding-top: -5px;
 				}
@@ -489,13 +479,8 @@
 				{
 					position: relative;
 					overflow-y: auto;
-
-					/* top:0; */
-					/* padding-top: 10%; */
-
 					display: flex;
 					justify-content: center;
-					/* align-items: center; */
 				}
 
 				#chooseSubTypeButtons
@@ -504,9 +489,7 @@
 					top:50%;
 					transform: translate(0, -50%);
 
-					max-width: 500px;
-					/* border: 2px solid red; */
-					
+					max-width: 500px;					
 					width: 100%;
 					text-align: center;
 				}
@@ -519,15 +502,18 @@
 				}
 			</style>
 			<script>
-				function ShowSubWindow()
+				function OpenSubWindow()
 				{
 					document.getElementById("newOverlay").style.display = "block";
 				}
-				function HideSubmitWindow ()
+				function CloseSubmitWindow ()
 				{
 					document.getElementById("newOverlay").style.display = "none";
-
 					ShowChoiceButtons();
+				}
+				function MinimizeSubmitWindow ()
+				{
+					document.getElementById("newOverlay").style.display = "none";
 				}
 
 				function HideChoiceButtons ()
@@ -551,10 +537,18 @@
 								<span class="windowTopBarTitle">New submission</span>
 							</div>
 							<div class="titleBarRight">
-								<a href="./submit.html" target="_blank">
-									<button class="windowTitleBarButton" id="newTabButton"><img src="./img/external.png" class="windowTitleBarButtonIcon"></button>
+								<a>
+									<button class="windowTitleBarButton" id="newTabButton" onclick="CloseSubmitWindow()">
+										<img src="./img/minimize.png" class="windowTitleBarButtonIcon">
+									</button>
 								</a>
-								<a><button class="windowTitleBarButton" id="closeWinButton" onclick="HideSubmitWindow()">
+								<a href="./submit.html" target="_blank">
+									<button class="windowTitleBarButton" id="newTabButton">
+										<img src="./img/external.png" class="windowTitleBarButtonIcon">
+									</button>
+								</a>
+								<a>
+									<button class="windowTitleBarButton" id="closeWinButton" onclick="CloseSubmitWindow()">
 										<img src="./img/cross.png" class="windowTitleBarButtonIcon">
 									</button>
 								</a>
@@ -938,5 +932,7 @@
 			 </script>
 		</section> <!-- scoreProofWindooOverlay -->
 
+		<!-- STYLE OVERRIDES -->		
+		<link rel="stylesheet" href="./styles/overrides.css">
 	</body>
 </html>

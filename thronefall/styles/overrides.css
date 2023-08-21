@@ -7,6 +7,13 @@
         padding-top:25px;
     }
 }
+@media screen and (max-width: 1000px)
+{
+    .overlaysBlur
+    {
+        padding: 25px;
+    }
+}
 
 @media screen and (max-width: 850px)
 {
@@ -44,6 +51,19 @@
     {
         max-width: 100%;
     }
+
+    .overlaysBlur
+    {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 550px)
+{
+   #chooseSubTypeButtons
+   {
+        width: 80%;
+   }
 }
 
 @media screen and (max-width: 400px)
@@ -64,5 +84,9 @@
     {
         position: relative;
         left: 50%;
+    }
+    #WindowTtitleBarIcon
+    {
+        display: none;
     }
 }

@@ -5,6 +5,9 @@
     --backgroundColour: rgba(255, 255, 255, 0.95); 
     
     --outlineColour: rgba(255, 180, 0, 0.8);
+    
+    --windowMainColourTop: #c27301;
+    --windowMainColourBotton: #c27301;
 }
 
 a:link 
