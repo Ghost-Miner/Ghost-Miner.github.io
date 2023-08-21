@@ -186,16 +186,20 @@
 									H I G H   S C O R E S
 								-->
 								<section id="newLBToggleScore" class="newSubsectionToggle">
-									<button type="button"class="btn btn-warning" id="nl_score_btn" onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" >
+									<button type="button"class="btn btn-warning btn_orangeGradient" id="nl_score_btn" 
+											onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" >
 										<span class="subCatToggleText"> Neuland </span>
 									</button>
-									<button type="button" class="btn btn-warning" id="nf_score_btn" onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')">
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="nf_score_btn" 
+											onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')">
 										<span class="subCatToggleText"> Nordfels </span>
 									</button>
-									<button type="button" class="btn btn-warning" id="ds_score_btn" onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="ds_score_btn" 
+											onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
 										<span class="subCatToggleText"> Durststein </span>
 									</button>
-									<button type="button" class="btn btn-warning" id="fs_score_btn" onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="fs_score_btn" 
+											onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
 										<span class="subCatToggleText"> Frostsee </span>
 									</button>	
 								</section> <!-- newLBToggleScore -->
@@ -204,19 +208,19 @@
 									<!--
 										S P E E D   R U N S 
 									-->
-									<button type="button" class="btn btn-warning" id="nl_time_btn" onclick="SelectRandomBackground(1);" 
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="nl_time_btn" onclick="SelectRandomBackground(1);" 
 											hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Neuland </span>
 									</button>
-									<button type="button" class="btn btn-warning" id="nf_time_btn" onclick="SelectRandomBackground(2);" 
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="nf_time_btn" onclick="SelectRandomBackground(2);" 
 											hx-get="./leaderboards/time/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Nordfels </span>
 									</button>
-									<button type="button" class="btn btn-warning" id="ds_time_btn" onclick="SelectRandomBackground(3);" 
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="ds_time_btn" onclick="SelectRandomBackground(3);" 
 											hx-get="./leaderboards/time/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Durststein </span>
 									</button>								
-									<button type="button" class="btn btn-warning" id="fs_time_btn" onclick="SelectRandomBackground(4);" 
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="fs_time_btn" onclick="SelectRandomBackground(4);" 
 											hx-get="./leaderboards/time/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Frostsee </span>
 									</button>	
@@ -226,15 +230,15 @@
 									<!--
 										D E M O   A R C H I V E
 									-->
-									<button type="button" class="btn btn-warning" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
 											hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Neuland </span>
 									</button>
-									<button type="button" class="btn btn-warning" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
 											hx-get="./leaderboards/demo/nf-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Nordfels </span>
 									</button>
-									<button type="button" class="btn btn-warning" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
+									<button type="button" class="btn btn-warning btn_orangeGradient" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
 											hx-get="./leaderboards/demo/time.html" hx-target="#leaderBoard" hx-swap="innerHTML" >
 										<span class="subCatToggleText"> Speed-runs </span>
 									</button>
@@ -244,7 +248,7 @@
 						</div> <!-- newLBToggles -->
 
 						<div id="newLBSubmitButton">
-							<button type="button" onclick="OpenSubWindow()" class="btn btn-warning btn-lg">
+							<button type="button" onclick="OpenSubWindow()" class="btn btn-warning btn-lg btn_orangeGradient">
 								<span class="newCatToggleText">SUBMIT</span>
 							</button>
 						</div> <!-- newLBSubmitButton -->
@@ -395,7 +399,7 @@
 
 					box-shadow: 2px 2px 6px black;
 
-					background: linear-gradient(to bottom, var(--windowMainColourTop), yellow);
+					background: linear-gradient(to bottom, var(--windowMainColourTop), var(--windowMainColourBottom));
 				}
 				.windowForeground
 				{
@@ -424,20 +428,20 @@
 				}
 				.titleBarLeft
 				{
-					position: relative;
+					/* position: relative; */
 
-					width: 70%;
+					width: 90%;
 					display: flex;
 					align-items: center;
-					justify-content: left;
+					justify-content: center;
 				}
 				.titleBarRight
 				{
-					width: 30%;
+					width: 10%;
 					display: flex;
 					align-items: center;
 					justify-content: right;
-					margin-top: -5px;
+					margin-top: -10px;
 					margin-right: 5px;
 				}
 
@@ -463,16 +467,21 @@
 				}
 				.windowTopBarTitle
 				{
-					font-size: 1.25rem;
-
+					font-size: 1.3rem;
+					
+					padding-left: 10%;
 					color:white;
 					margin-top: -10px;
 					margin-left: 5px;
 				}
 				.windowTitleBarButtonIcon
 				{
-					width: 15px; 
+					width: 20px; 
 					height: auto;
+				}
+				.windowTitleBarButtonIcon:hover
+				{
+					cursor: pointer;
 				}
 
 				#windowContentDiv
@@ -533,25 +542,25 @@
 					<div class="windowForeground">
 						<div class="topTitleBar">
 							<div class="titleBarLeft">
-								<img src="./img/crown.png" id="WindowTtitleBarIcon">
+								<!-- <img src="./img/crown.png" id="WindowTtitleBarIcon"> -->
 								<span class="windowTopBarTitle">New submission</span>
 							</div>
 							<div class="titleBarRight">
-								<a> <!-- Minimize -->
+								<!-- <a> 
 									<button class="windowTitleBarButton" id="newTabButton" onclick="MinimizeSubmitWindow()">
 										<img src="./img/minimize.png" class="windowTitleBarButtonIcon">
 									</button>
-								</a> <!-- open i nnew tab -->
+								</a>
 								<a href="./submit.html" target="_blank">
 									<button class="windowTitleBarButton" id="newTabButton">
 										<img src="./img/external.png" class="windowTitleBarButtonIcon">
 									</button>
-								</a>
-								<a> <!-- close -->
+								</a> -->
+								<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseSubmitWindow()">
+								<!-- <a> 
 									<button class="windowTitleBarButton" id="closeWinButton" onclick="CloseSubmitWindow()">
-										<img src="./img/cross.png" class="windowTitleBarButtonIcon">
 									</button>
-								</a>
+								</a> -->
 							</div>
 						</div> <!-- topTitleBar -->
 
