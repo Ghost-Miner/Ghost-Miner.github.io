@@ -39,6 +39,7 @@ a:visited
 }
 body 
 { 
+    color: black;
     background: url(../img/bgr.jpg) no-repeat center center fixed; 
     background-color: #000;
     -webkit-background-size: cover;
