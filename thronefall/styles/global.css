@@ -6,16 +6,25 @@
     
     --orange: #ba8303;
     
+    /* GRADIENTS  */
     --windowMainColourTop: #c27301;
     --windowMainColourBottom: orange;
 
     --buttonColour1: #ffa500;
     --buttonColour2: #ffc107;
+
+    --whiteColour1: white;
+    --whiteColour2: rgba(230,230,230, 1.0);
 }
 
 .btn_orangeGradient
 {
     background: linear-gradient(to bottom, var(--buttonColour1), var(--buttonColour2));
+    border: 1px var(--orange) solid;
+}
+.btn_orangeGradient:focus
+{
+    background-color: var(--backgroundColour);
 }
 
 a:link 
@@ -143,17 +152,14 @@ body
 #tableName
 {
 	line-height: 50px;
+	font-weight: bold;
+	font-size: 1.75rem;
 }
 .positionColumn
 {
 	font-weight: bold;
 	text-align: center;
 	max-width: 32px;
-}
-#tableName
-{
-	font-weight: bold;
-	font-size: 1.75rem;
 }
 #LBloadImg
 {
@@ -162,11 +168,18 @@ body
 	text-align: center; 
 	margin: 15px;
 }
-/* #tablesDiv
+
+.tableDarkHeader
 {
-	width: 100%;
-	background-color: var(--backgroundColour);
-} */
+    background: linear-gradient(to bottom, black, #24272b);
+    color: white;
+    border: 1px solid black;
+}
+.tableBodyBackground
+{
+    background: linear-gradient(to bottom, rgba(230,230,230, 1.0), white);
+}
+
 .table
 {
 	border-radius: 5px;

@@ -91,7 +91,19 @@
 
 			.btn-whiteFill
 			{
-				background-color: var(--backgroundColour);
+				/* background-color: var(--backgroundColour); */
+				background: linear-gradient(to bottom, var(--whiteColour1), var(--whiteColour2));
+				border: 1px var(--orange) solid;
+			}
+			
+			.demoArchiveTitle
+			{
+				font-weight: bold;
+				font-size: 1rem;
+			}
+			.demoArchiveTitle
+			{
+				font-style: italic;
 			}
 
 			#mainCatButtonsDiv

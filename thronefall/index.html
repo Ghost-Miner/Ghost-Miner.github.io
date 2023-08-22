@@ -133,12 +133,12 @@
 							<section id="Game_links">
 								<span class="ButtonText">
 									<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
-										<button type="button" class="btn btn-warning gameLinksBtn btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
+										<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
 											<b>Get the game</b>
 										</button>
 									</a>
 									<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
-										<button type="button" class="btn btn-warning gameLinksBtn btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
+										<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
 											<b>Discord server</b>
 										</button>
 									</a>
@@ -166,12 +166,12 @@
 
 									<span class="newCatToggleText"> High-scores </span>
 								</button>
-								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newTimCatToggle" type="button"  
+								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newTimCatToggle" type="button" disabled
 										onclick="SelectRandomBackground(1); ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 
 									<span class="newCatToggleText"> Speed-runs </span>
 								</button>	
-								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newDemoCatToggle" type="button" 
+								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newDemoCatToggle" type="button" disabled
 										onclick="SelectRandomBackground(1); ChangeCategory('demo')" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 
 									<span class="newCatToggleText"> Demo version </span>
@@ -186,19 +186,19 @@
 									H I G H   S C O R E S
 								-->
 								<section id="newLBToggleScore" class="newSubsectionToggle">
-									<button type="button"class="btn btn-warning btn_orangeGradient" id="nl_score_btn" 
+									<button type="button"class="btn btn_orangeGradient" id="nl_score_btn" 
 											onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" >
 										<span class="subCatToggleText"> Neuland </span>
 									</button>
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="nf_score_btn" 
+									<button type="button" class="btn btn_orangeGradient" id="nf_score_btn" 
 											onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')">
 										<span class="subCatToggleText"> Nordfels </span>
 									</button>
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="ds_score_btn" 
+									<button type="button" class="btn btn_orangeGradient" id="ds_score_btn" 
 											onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
 										<span class="subCatToggleText"> Durststein </span>
 									</button>
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="fs_score_btn" 
+									<button type="button" class="btn btn_orangeGradient" id="fs_score_btn" 
 											onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
 										<span class="subCatToggleText"> Frostsee </span>
 									</button>	
@@ -208,19 +208,19 @@
 									<!--
 										S P E E D   R U N S 
 									-->
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="nl_time_btn" onclick="SelectRandomBackground(1);" 
+									<button type="button" class="btn btn_orangeGradient" id="nl_time_btn" onclick="SelectRandomBackground(1);" 
 											hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Neuland </span>
 									</button>
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="nf_time_btn" onclick="SelectRandomBackground(2);" 
+									<button type="button" class="btn btn_orangeGradient" id="nf_time_btn" onclick="SelectRandomBackground(2);" 
 											hx-get="./leaderboards/time/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Nordfels </span>
 									</button>
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="ds_time_btn" onclick="SelectRandomBackground(3);" 
+									<button type="button" class="btn btn_orangeGradient" id="ds_time_btn" onclick="SelectRandomBackground(3);" 
 											hx-get="./leaderboards/time/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Durststein </span>
 									</button>								
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="fs_time_btn" onclick="SelectRandomBackground(4);" 
+									<button type="button" class="btn btn_orangeGradient" id="fs_time_btn" onclick="SelectRandomBackground(4);" 
 											hx-get="./leaderboards/time/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Frostsee </span>
 									</button>	
@@ -230,15 +230,15 @@
 									<!--
 										D E M O   A R C H I V E
 									-->
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
+									<button type="button" class="btn btn_orangeGradient" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
 											hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Neuland </span>
 									</button>
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
+									<button type="button" class="btn btn_orangeGradient" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
 											hx-get="./leaderboards/demo/nf-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Nordfels </span>
 									</button>
-									<button type="button" class="btn btn-warning btn_orangeGradient" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
+									<button type="button" class="btn btn_orangeGradient" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
 											hx-get="./leaderboards/demo/time.html" hx-target="#leaderBoard" hx-swap="innerHTML" >
 										<span class="subCatToggleText"> Speed-runs </span>
 									</button>
@@ -248,7 +248,7 @@
 						</div> <!-- newLBToggles -->
 
 						<div id="newLBSubmitButton">
-							<button type="button" onclick="OpenSubWindow()" class="btn btn-warning btn-lg btn_orangeGradient">
+							<button type="button" onclick="OpenSubWindow()" class="btn btn_orangeGradient btn-lg">
 								<span class="newCatToggleText">SUBMIT</span>
 							</button>
 						</div> <!-- newLBSubmitButton -->
@@ -258,22 +258,20 @@
 						<div class="collapse" id="pageOptionsTogglesGroup">
 							<div class="card card-body" id="pageOptionsTogglesGroupCotentBox">
 								<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Options</h4>
-
-								<!-- Colour theme buttons disabled because they don't work on new tables. Will be fixed in the future -->
 								
-								<div id="Thmeme_toggles" style="display: inline-flexbox;">
-									<button id="Dark_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeDark()">
+								<!-- <div id="Thmeme_toggles" style="display: inline-flexbox;">
+									<button id="Dark_theme_toggle" class="btn btn_orangeGradient options-toggles" type="button" onclick="ColourChangeDark()">
 										Dark theme
 									</button>
-									<button id="Light_theme_toggle" class="btn btn-warning options-toggles" type="button" onclick="ColourChangeLight()">
+									<button id="Light_theme_toggle" class="btn btn_orangeGradient options-toggles" type="button" onclick="ColourChangeLight()">
 										Light theme
 									</button>
-								</div>
+								</div> -->
 								<div id="Font_toggles" style="display: inline-flexbox;">
-									<button id="Clean_font_toggle"   class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToCleaner()">
+									<button id="Clean_font_toggle"   class="btn btn_orangeGradient options-toggles" type="button" onclick="ChangeFontToCleaner()">
 										<span style="font-family: Roboto,sans-serif,Arial;">Cleaner text</span>
 									</button>
-									<button id="Default_font_toggle" class="btn btn-warning options-toggles" type="button" onclick="ChangeFontToDefault()">
+									<button id="Default_font_toggle" class="btn btn_orangeGradient options-toggles" type="button" onclick="ChangeFontToDefault()">
 										Fancier text
 									</button>
 								</div>
@@ -285,10 +283,10 @@
 							<div class="card card-body" id="submissionTypeGroupCotentBox">
 								<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Submit high-score or a speedrun time</h4>
 								<div id="Submit_score_group" style="display: inline-flexbox;">
-									<button id="submit_score" type="button" class="btn btn-warning submitScoreCollapeBtn" onclick="ShowFormWindow()">
+									<button id="submit_score" type="button" class="btn btn_orangeGradient submitScoreCollapeBtn" onclick="ShowFormWindow()">
 										<b>Submit high-score</b>
 									</button>
-									<button id="submit_speedrun" type="button" class="btn btn-warning submitScoreCollapeBtn" onclick="ShowFormWindowTime()">
+									<button id="submit_speedrun" type="button" class="btn btn_orangeGradient submitScoreCollapeBtn" onclick="ShowFormWindowTime()">
 										<b>Submit speedrun</b>
 									</button>
 								</div> <!-- Submit_score_group -->
@@ -306,7 +304,7 @@
 								<div class="tableContainer" style="overflow-x:auto;"> 
 									<span id="tableName"> ... </span>
 									<table class="table table-striped" id="newLBTable" style="text-align: center; border: 1px black dotted">
-										<thead class="table-dark" id="newLbHeader" style="font-weight: bold;">
+										<thead class="table-dark tableDarkHeader" id="newLbHeader" style="font-weight: bold;">
 											<td class="th-position positionColumn">#</td>
 											<td class="th-name nameColumn">Name</td>
 											<td class="th-score scoreColumn">Score</td>
@@ -316,7 +314,7 @@
 											<td class="th-version versionColumn">Version</td>
 											<td class="th-date dateColumn">Date</td>
 										</thead>
-										<tbody id="newLbBody">
+										<tbody id="newLbBody" class="tableBodyBackground table-light">
 											<tr class="tableRow">
 												<td class="position positionColumn">...</td>
 												<td class="name nameColumn">...</td>
@@ -343,7 +341,7 @@
 					<script>
 						SpawnTableRows();
 						GetSubData();						
-						// document.getElementById("hs_cat_btn").classList.add("active");
+						document.getElementById("newScoreCatToggle").classList.add("active");
 						SelectRandomBackground(1);
 					</script>
 					<section id="Footer"> <!-- Footer -->
@@ -366,7 +364,7 @@
 		<!--
 			N E W   O V E R L A Y
 		-->
-		<section id="newOverlay" style="display: block">
+		<section id="newOverlay" style="display: none">
 			<style>
 				.overlaysBlur
 				{
@@ -507,7 +505,11 @@
 					color: black;
 					font-weight: bold;
 					font-size: 1.75rem;
-					line-height: 75px;
+					/* line-height: 75px; */
+				}
+				#topChoiceButton
+				{
+					margin-top: 25px;
 				}
 			</style>
 			<script>
@@ -543,7 +545,7 @@
 						<div class="topTitleBar">
 							<div class="titleBarLeft">
 								<!-- <img src="./img/crown.png" id="WindowTtitleBarIcon"> -->
-								<span class="windowTopBarTitle">New submission</span>
+								<span class="windowTopBarTitle">New&nbsp;submission</span>
 							</div>
 							<div class="titleBarRight">
 								<!-- <a> 
@@ -567,11 +569,11 @@
 						<div id="windowContentDiv">
 							<div id="chooseSubTypeButtons">
 								<span id="chooseSubTiypeTitle">Choose a category</span>
-								<button class="btn btn-lg btn-block btn-warning btn-whiteFill" onclick="HideChoiceButtons()"
+								<button id="topChoiceButton" class="btn btn-lg btn-block btn_orangeGradient btn-warning btn-whiteFill" onclick="HideChoiceButtons()"
 										hx-get="./submit.html" hx-swap="innerHTML" hx-target="#submitFormDiv">
 											<strong> High-score </strong>
 								</button>
-								<button class="btn btn-lg btn-block btn-warning btn-whiteFill" onclick="HideChoiceButtons()"
+								<button class="btn btn-lg btn-block btn_orangeGradient btn-warning btn-whiteFill" onclick="HideChoiceButtons()"
 										hx-get="./submitSpeed.html" hx-swap="innerHTML" hx-target="#submitFormDiv">
 											<strong> Speed-run </strong>
 								</button>
@@ -661,11 +663,11 @@
 					<div class="submitBakcground" id="submitBakcgroundScore">
 						<div id="SubmitWinContent">
 								<iframe id="submitFormFrame" src="./submit.html" style="display: block; width:100%; height:100%; border:0px; background-color: #000;"></iframe>							
-								<button onclick="HideFormWindow()" type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
+								<button onclick="HideFormWindow()" type="button" class="btn btn_orangeGradient btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
 									Cancel
 								</button>
 								<a id="submitScoreFullscreen" href="./submit.html" target="_blank"> 
-									<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
+									<button type="button" class="btn btn_orangeGradient btn-lg OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
 										Open in new tab
 									</button>
 								</a>
@@ -675,11 +677,11 @@
 					<div class="submitBakcground" id="submitBakcgroundTime">
 						<div id="SubmitWinContent">
 							<iframe id="submitFormFrame" src="./submitSpeed.html" style="width:100%; height:100%; border:0px; background-color: #000;"></iframe>							
-							<button onclick="HideFormWindowTime()" type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
+							<button onclick="HideFormWindowTime()" type="button" class="btn btn_orangeGradient btn-lg OpenPicInNewWindowButton" style="padding-left: 5%; padding-right: 5%; margin-top: 1%; background-color: var(--backgroundColour);">
 								Cancel
 							</button>
 							<a id="submitScoreFullscreen" href="./submitSpeed.html" target="_blank"> 
-								<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
+								<button type="button" class="btn btn_orangeGradient btn-lg OpenPicInNewWindowButton" style="margin-top: 1%; background-color: var(--backgroundColour);">
 									Open in new tab
 								</button>
 							</a>
@@ -814,11 +816,11 @@
 								<img id="scorePic" alt="Picture of the score" src="./img/loading.gif" style="object-fit: contain; width: 100%; height:100%; background-color: black;">
 							</div>
 							<div class="WindowButtons">
-								<button type="button" class="btn btn-warning btn-lg ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HidePictureWindow()">
+								<button type="button" class="btn btn_orangeGradient btn-lg ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HidePictureWindow()">
 									Close window
 								</button>							
 								<a id="ScorePicOriginalFile" href="#" target="_blank"> 
-									<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
+									<button type="button" class="btn btn_orangeGradient btn-lg OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
 										Open in new tab
 									</button>
 								</a>
@@ -836,11 +838,11 @@
 								</video>
 							</div>
 							<div class="WindowButtons">
-								<button type="button" class="btn btn-warning btn-lg ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideVideoWindow()">
+								<button type="button" class="btn btn_orangeGradient btn-lg ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideVideoWindow()">
 									Close window
 								</button>							
 								<a id="ScoreVideoOriginalFile" href="#" target="_blank"> 
-									<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
+									<button type="button" class="btn btn_orangeGradient btn-lg OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
 										Open in new tab
 									</button>
 								</a>
@@ -855,11 +857,11 @@
 								<iframe id="scoreEbed" src="" style="width: 100%; height: 100%; background-color: black; border:0px"></iframe>
 							</div>
 							<div class="WindowButtons">
-								<button type="button" class="btn btn-warning btn-lg ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideEmedWindow()">
+								<button type="button" class="btn btn_orangeGradient btn-lg ClosePicWindowButton" style="background-color: var(--backgroundColour);" onclick="HideEmedWindow()">
 									Close window
 								</button>							
 								<a id="ScoreEmbedOriginalFile" href="#" target="_blank"> 
-									<button type="button" class="btn btn-warning btn-lg OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
+									<button type="button" class="btn btn_orangeGradient btn-lg OpenPicInNewWindowButton" style="background-color: var(--backgroundColour);">
 										Open in new tab
 									</button>
 								</a>
