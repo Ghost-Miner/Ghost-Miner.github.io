@@ -149,248 +149,220 @@
 		<div class="mainPageContainer" id="mainPageContainer">
 			<div class="BgrBox" id="BgrBox">
 				<!-- Page head stuff -->
-				<section id ="Page_header"> 
-						<center>
-							<section id="Title">
-								<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
-								<h1> <strong> <em> Thronefall leaderboard </em> </strong> </h1>
-							</section>
+				<section id ="Page_header">
+					<center>
+						<section id="Title">
+							<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
+							<h1> <strong> <em> Thronefall leaderboard </em> </strong> </h1>
+						</section>
+						<hr class="horizontalSeparator">
+						<section id="Game_links">
+							<span class="ButtonText">
+							<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
+							<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
+							<b>Get the game</b>
+							</button>
+							</a>
+							<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
+							<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
+							<b>Discord server</b>
+							</button>
+							</a>
+							</span>
+						</section>
+						<noscript>
 							<hr class="horizontalSeparator">
-							<section id="Game_links">
-								<span class="ButtonText">
-									<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
-										<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
-											<b>Get the game</b>
-										</button>
-									</a>
-									<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
-										<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
-											<b>Discord server</b>
-										</button>
-									</a>
-								</span>
-							</section>
-
-							<noscript>		
-								<hr class="horizontalSeparator">						
-								<h3><strong><em>This website requires JavaScript to function correctly.</em></strong></h3>
-								<hr class="horizontalSeparator">
-							</noscript>
-						</center>
+							<h3><strong><em>This website requires JavaScript to function correctly.</em></strong></h3>
+							<hr class="horizontalSeparator">
+						</noscript>
+					</center>
 				</section> <!-- Page head stuff -->
 				<hr class="horizontalSeparator">
-					
+
 				<!-- Category buttons -->
 				<div id="newButtonsBar">
 					<div id="newLBToggles">
 						<!-- 
 							CATEGORY BUTTONS 
 						-->
-							<div id="newCategoryBuuttons">
-								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newScoreCatToggle" type="button"
-										onclick="SelectRandomBackground(1); ChangeCategory('score')" >
-
-									<span class="newCatToggleText"> High-scores </span>
-								</button>
-								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newTimCatToggle" type="button" disabled
-										onclick="SelectRandomBackground(2); ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-
-									<span class="newCatToggleText"> Speed-runs </span>
-								</button>	
-								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newDemoCatToggle" type="button" disabled
-										onclick="SelectRandomBackground(1); ChangeCategory('demo')" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-
-									<span class="newCatToggleText"> Demo version </span>
-								</button>
-							</div> <!-- newCategoryBuuttons -->
-
-							<!--
-								LBs FOR EACH CATEGORY
-							-->
-							<div id="newLBTableToggle">
-								<!--
-									H I G H   S C O R E S
-								-->
-								<section id="newLBToggleScore" class="newSubsectionToggle">
-									<button type="button"class="btn btn_orangeGradient" id="nl_score_btn" 
-											onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" >
-										<span class="subCatToggleText"> Neuland </span>
-									</button>
-									<button type="button" class="btn btn_orangeGradient" id="nf_score_btn" 
-											onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')">
-										<span class="subCatToggleText"> Nordfels </span>
-									</button>
-									<button type="button" class="btn btn_orangeGradient" id="ds_score_btn" 
-											onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
-										<span class="subCatToggleText"> Durststein </span>
-									</button>
-									<button type="button" class="btn btn_orangeGradient" id="fs_score_btn" 
-											onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
-										<span class="subCatToggleText"> Frostsee </span>
-									</button>	
-								</section> <!-- newLBToggleScore -->
-
-								<section id="newLBToggleTime" class="newSubsectionToggle">
-									<!--
-										S P E E D   R U N S 
-									-->
-									<button type="button" class="btn btn_orangeGradient" id="nl_time_btn" onclick="SelectRandomBackground(1);"
-											hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										<span class="subCatToggleText"> Neuland </span>
-									</button>
-									<button type="button" class="btn btn_orangeGradient" id="nf_time_btn" onclick="SelectRandomBackground(2);"
-											hx-get="./leaderboards/time/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										<span class="subCatToggleText"> Nordfels </span>
-									</button>
-									<button type="button" class="btn btn_orangeGradient" id="ds_time_btn" onclick="SelectRandomBackground(3);"
-											hx-get="./leaderboards/time/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										<span class="subCatToggleText"> Durststein </span>
-									</button>								
-									<button type="button" class="btn btn_orangeGradient" id="fs_time_btn" onclick="SelectRandomBackground(4);"
-											hx-get="./leaderboards/time/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										<span class="subCatToggleText"> Frostsee </span>
-									</button>	
-								</section> <!-- newLBToggleTime -->
-
-								<section id="newLBToggleDemo" class="newSubsectionToggle">
-									<!--
-										D E M O   A R C H I V E
-									-->
-									<button type="button" class="btn btn_orangeGradient" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
-											hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										<span class="subCatToggleText"> Neuland </span>
-									</button>
-									<button type="button" class="btn btn_orangeGradient" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
-											hx-get="./leaderboards/demo/nf-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-										<span class="subCatToggleText"> Nordfels </span>
-									</button>
-									<button type="button" class="btn btn_orangeGradient" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
-											hx-get="./leaderboards/demo/time.html" hx-target="#leaderBoard" hx-swap="innerHTML" >
-										<span class="subCatToggleText"> Speed-runs </span>
-									</button>
-								</section> <!-- newLBToggleDemo -->
-
-							</div> <!-- newLBTableToggle -->
-						</div> <!-- newLBToggles -->
-
-						<div id="newLBSubmitButton">
-							<button type="button" onclick="OpenSubWindow()" class="btn btn_orangeGradient btn-lg">
-								<span class="newCatToggleText">SUBMIT</span>
+						<div id="newCategoryBuuttons">
+							<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newScoreCatToggle" type="button"
+								onclick="SelectRandomBackground(1); ChangeCategory('score')" >
+							<span class="newCatToggleText"> High-scores </span>
 							</button>
-						</div> <!-- newLBSubmitButton -->
+							<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newTimCatToggle" type="button" disabled
+								onclick="SelectRandomBackground(2); ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+							<span class="newCatToggleText"> Speed-runs </span>
+							</button>	
+							<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newDemoCatToggle" type="button" disabled
+								onclick="SelectRandomBackground(1); ChangeCategory('demo')" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+							<span class="newCatToggleText"> Demo version </span>
+							</button>
+						</div> <!-- newCategoryBuuttons -->
+						<!--
+							LBs FOR EACH CATEGORY
+						-->
+						<div id="newLBTableToggle">
+							<!--
+								H I G H   S C O R E S
+							-->
+							<section id="newLBToggleScore" class="newSubsectionToggle">
+								<button type="button"class="btn btn_orangeGradient" id="nl_score_btn" 
+									onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" >
+								<span class="subCatToggleText"> Neuland </span>
+								</button>
+								<button type="button" class="btn btn_orangeGradient" id="nf_score_btn" 
+									onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')">
+								<span class="subCatToggleText"> Nordfels </span>
+								</button>
+								<button type="button" class="btn btn_orangeGradient" id="ds_score_btn" 
+									onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
+								<span class="subCatToggleText"> Durststein </span>
+								</button>
+								<button type="button" class="btn btn_orangeGradient" id="fs_score_btn" 
+									onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
+								<span class="subCatToggleText"> Frostsee </span>
+								</button>	
+							</section> <!-- newLBToggleScore -->
+							<section id="newLBToggleTime" class="newSubsectionToggle">
+								<!--
+									S P E E D   R U N S 
+								-->
+								<button type="button" class="btn btn_orangeGradient" id="nl_time_btn" onclick="SelectRandomBackground(1);"
+									hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+								<span class="subCatToggleText"> Neuland </span>
+								</button>
+								<button type="button" class="btn btn_orangeGradient" id="nf_time_btn" onclick="SelectRandomBackground(2);"
+									hx-get="./leaderboards/time/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+								<span class="subCatToggleText"> Nordfels </span>
+								</button>
+								<button type="button" class="btn btn_orangeGradient" id="ds_time_btn" onclick="SelectRandomBackground(3);"
+									hx-get="./leaderboards/time/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+								<span class="subCatToggleText"> Durststein </span>
+								</button>								
+								<button type="button" class="btn btn_orangeGradient" id="fs_time_btn" onclick="SelectRandomBackground(4);"
+									hx-get="./leaderboards/time/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+								<span class="subCatToggleText"> Frostsee </span>
+								</button>	
+							</section> <!-- newLBToggleTime -->
+							<section id="newLBToggleDemo" class="newSubsectionToggle">
+								<!--
+									D E M O   A R C H I V E
+								-->
+								<button type="button" class="btn btn_orangeGradient" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
+									hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+								<span class="subCatToggleText"> Neuland </span>
+								</button>
+								<button type="button" class="btn btn_orangeGradient" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
+									hx-get="./leaderboards/demo/nf-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+								<span class="subCatToggleText"> Nordfels </span>
+								</button>
+								<button type="button" class="btn btn_orangeGradient" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
+									hx-get="./leaderboards/demo/time.html" hx-target="#leaderBoard" hx-swap="innerHTML" >
+								<span class="subCatToggleText"> Speed-runs </span>
+								</button>
+							</section> <!-- newLBToggleDemo -->
+						</div> <!-- newLBTableToggle -->
+					</div> <!-- newLBToggles -->
+
+					<div id="newLBSubmitButton">
+						<button type="button" onclick="OpenSubWindow()" class="btn btn_orangeGradient btn-lg">
+						<span class="newCatToggleText">SUBMIT</span>
+						</button>
+					</div> <!-- newLBSubmitButton -->
 				</div> <!-- newButtonsBar -->
- 
-				<!-- <section id="Options_buttons_section">
-						<div class="collapse" id="pageOptionsTogglesGroup">
-							<div class="card card-body" id="pageOptionsTogglesGroupCotentBox">
-								<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Options</h4>
-								<div id="Thmeme_toggles" style="display: inline-flexbox;">
-									<button id="Dark_theme_toggle" class="btn btn_orangeGradient options-toggles" type="button" onclick="ColourChangeDark()">
-										Dark theme
-									</button>
-									<button id="Light_theme_toggle" class="btn btn_orangeGradient options-toggles" type="button" onclick="ColourChangeLight()">
-										Light theme
-									</button>
-								</div>
-								<div id="Font_toggles" style="display: inline-flexbox;">
-									<button id="Clean_font_toggle"   class="btn btn_orangeGradient options-toggles" type="button" onclick="ChangeFontToCleaner()">
-										<span style="font-family: Roboto,sans-serif,Arial;">Cleaner text</span>
-									</button>
-									<button id="Default_font_toggle" class="btn btn_orangeGradient options-toggles" type="button" onclick="ChangeFontToDefault()">
-										Fancier text
-									</button>
-								</div>
-							</div>
-						</div>
-					</section> -->
+
 				<section id="Options_buttons_section">
 					<div class="collapse" id="submissionTypeGroup">
 						<div class="card card-body" id="submissionTypeGroupCotentBox">
 							<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Submit high-score or a speedrun time</h4>
 							<div id="Submit_score_group" style="display: inline-flexbox;">
 								<button id="submit_score" type="button" class="btn btn_orangeGradient submitScoreCollapeBtn" onclick="ShowFormWindow()">
-									<b>Submit high-score</b>
+								<b>Submit high-score</b>
 								</button>
 								<button id="submit_speedrun" type="button" class="btn btn_orangeGradient submitScoreCollapeBtn" onclick="ShowFormWindowTime()">
-									<b>Submit speedrun</b>
+								<b>Submit speedrun</b>
 								</button>
 							</div> <!-- Submit_score_group -->
 						</div> <!-- submissionTypeGroupCotentBox -->
 					</div> <!-- submissionTypeGroup -->
-				</section>	<!-- -Options_buttons_section -->
-				<!-- <hr class="horizontalSeparator"> -->
-								
-					<!-- 
-						NEW SEMI-AUTO LEADERBOARD 
-					-->
-					<div id="leaderboardsMainDiv">
-						<section id="newLBSection">
-							<section id="newLBLoadingImg" style="text-align: center; ">
-								<img src="./img/loading edit.gif" id="LBloadImg">
-							</section>
-							<section id="newLBTableSection" style="display: block;">
-								<div class="tableContainer" style="overflow-x:auto;"> 
-									<span id="tableName"> ... </span>
-									<table class="table table-striped" id="newLBTable" style="text-align: center; border: 1px black dotted">
-										<thead class="table-dark tableDarkHeader" id="newLbHeader" style="font-weight: bold;">
-											<td class="th-position positionColumn">#</td>
-											<td class="th-name nameColumn">Name</td>
-											<td class="th-score scoreColumn">Score</td>
-											<td class="th-coins coinsColumn">Gold</td>
-											<td class="th-mutNums mutatorsColumn">Mutators</td>
-											<td class="th-proof proofColumn">Proof</td>
-											<td class="th-version versionColumn">Version</td>
-											<td class="th-date dateColumn">Date</td>
-										</thead>
-										<tbody id="newLbBody" class="tableBodyBackground table-light">
-											<tr class="tableRow">
-												<td class="position positionColumn">...</td>
-												<td class="name nameColumn">...</td>
-												<td class="score scoreColumn">...</td>
-												<td class="coins coinsColumn">...</td>
-												<td class="mutNums mutatorsColumn">...</td>
-												<td class="proof proofColumn">
-													...
-													<!-- <div id="extProofLinkDivWrapper">
-														<div id="extProofLinkDivText">
-															<a class="extProofLink" href="" target="_blank"> View </a>
-														</div>
-														<div id="extProofLinkDivIcon">
-															<img src="./img/external.png" id="extProofLinkDivImg">
-														</div>
-													</div> -->
-												</td>
-												<td class="version versionColumn">...</td>
-												<td class="date dateColumn">...</td>
-											</tr>
-										</tbody>
-									</table>
-								</div> <!-- tableContainer -->
-							</section> <!-- newLBTableSection -->
-						</section> <!-- newLBSection -->					
-						<!-- 
-							OLD LEADERBOARDS HERE
-						-->
-						<section id="leaderBoard">
-							<!-- Content injected by HTMX -->
+				</section> <!-- -Options_buttons_section -->
+				
+				<!-- 
+					NEW SEMI-AUTO LEADERBOARD 
+				-->
+				<div id="leaderboardsMainDiv">
+					<section id="newLBSection">
+						<section id="newLBLoadingImg" style="text-align: center; ">
+							<img src="./img/loading edit.gif" id="LBloadImg">
 						</section>
-					</div> <!-- leaderboardsMainDiv -->
-
-					<script>
-						SpawnTableRows();
-						GetSubData();
-						document.getElementById("newScoreCatToggle").classList.add("active");
-						SelectRandomBackground(1);
-					</script>
-					<section id="Footer"> <!-- Footer -->
-						<span id="footerText" style=" font-weight: bold;">Leaderboard page made by GhostMiner. v.1.9 (19/08/2023) |
-							<a href="https://ghost-miner.github.io/">Website</a>, 
-							<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
-							<a href="https://discord.gg/DjUBY9h">Discord</a>
-						</span>
-					</section> <!-- Footer -->
-			</div> <!-- BgrBox -->
-		</div> <!-- mainPageContainer -->
+						<section id="newLBTableSection" style="display: block;">
+							<div class="tableContainer" style="overflow-x:auto;">
+								<span id="tableName"> ... </span>
+								<table class="table table-striped" id="newLBTable" style="text-align: center; border: 1px black dotted">
+									<thead class="table-dark tableDarkHeader" id="newLbHeader" style="font-weight: bold;">
+										<td class="th-position positionColumn">#</td>
+										<td class="th-name nameColumn">Name</td>
+										<td class="th-score scoreColumn">Score</td>
+										<td class="th-coins coinsColumn">Gold</td>
+										<td class="th-mutNums mutatorsColumn">Mutators</td>
+										<td class="th-proof proofColumn">Proof</td>
+										<td class="th-version versionColumn">Version</td>
+										<td class="th-date dateColumn">Date</td>
+									</thead>
+									<tbody id="newLbBody" class="tableBodyBackground table-light">
+										<tr class="tableRow">
+											<td class="position positionColumn">...</td>
+											<td class="name nameColumn">...</td>
+											<td class="score scoreColumn">...</td>
+											<td class="coins coinsColumn">...</td>
+											<td class="mutNums mutatorsColumn">...</td>
+											<td class="proof proofColumn">
+												...
+												<!-- <div id="extProofLinkDivWrapper">
+													<div id="extProofLinkDivText">
+														<a class="extProofLink" href="" target="_blank"> View </a>
+													</div>
+													<div id="extProofLinkDivIcon">
+														<img src="./img/external.png" id="extProofLinkDivImg">
+													</div>
+													</div> -->
+											</td>
+											<td class="version versionColumn">...</td>
+											<td class="date dateColumn">...</td>
+										</tr>
+									</tbody>
+								</table>
+							</div> <!-- tableContainer -->
+						</section> <!-- newLBTableSection -->
+					</section> <!-- newLBSection --> 
+									
+					<!-- 
+						OLD LEADERBOARDS HERE
+					-->
+					<section id="leaderBoard">
+						<!-- Content injected by HTMX -->
+					</section>
+				</div> <!-- leaderboardsMainDiv -->
+				<script>
+					SpawnTableRows();
+					GetSubData();
+					SelectRandomBackground(1);
+					document.getElementById("newScoreCatToggle").classList.add("active");
+				</script>
+				<section id="Footer">
+					<!-- Footer -->
+					<span id="footerText" style=" font-weight: bold;">Leaderboard page made by GhostMiner. v.1.9 (19/08/2023) |
+					<a href="https://ghost-miner.github.io/">Website</a>, 
+					<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
+					<a href="https://discord.gg/DjUBY9h">Discord</a>
+					</span>
+				</section>
+				<!-- Footer -->
+			</div>
+			<!-- BgrBox -->
+		</div>
+		<!-- mainPageContainer -->
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
