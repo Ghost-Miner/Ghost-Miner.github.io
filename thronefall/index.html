@@ -36,6 +36,7 @@
 		<link rel="stylesheet" href="./styles/global.css">
 		<link rel="stylesheet" href="./styles/leaderboard.css">
 		<!-- Overrides at the bottom -->
+		<link rel="stylesheet" href="./styles/overlays.css">
 
 		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
 
@@ -47,6 +48,7 @@
 
 		<script src="./scripts/paser.js"></script>
         <script src="./scripts/sort.js"></script>
+		<script src="./scripts/overlays.js"></script>
 	</head>
 	<body>		
 		<!-- <script> SelectRandomBackground(); </script> -->
@@ -296,7 +298,8 @@
 						<section id="newLBLoadingImg" style="text-align: center; ">
 							<img src="./img/loading edit.gif" id="LBloadImg">
 						</section>
-						<section id="newLBTableSection" style="display: block;">
+
+						<section id="newLBTableSection" style="display: none;">
 							<div class="tableContainer" style="overflow-x:auto;">
 								<span id="tableName"> ... </span>
 								<table class="table table-striped" id="newLBTable" style="text-align: center; border: 1px black dotted">
@@ -357,198 +360,20 @@
 					<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 					<a href="https://discord.gg/DjUBY9h">Discord</a>
 					</span>
-				</section>
-				<!-- Footer -->
-			</div>
-			<!-- BgrBox -->
-		</div>
-		<!-- mainPageContainer -->
+				</section> <!-- Footer -->
+			</div> <!-- BgrBox -->
+		</div> <!-- mainPageContainer -->
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<!-- <script>	/*ChangeCategory("demo");*/	SetFontStyle();		</script> -->
 
 		<!--
 			N E W  S U B M I T  O V E R L A Y
 		-->
-		<section id="newOverlay" style="display: none">
-			<style>
-				.overlaysBlur
-				{
-					z-index: 5;
-					display: block;
-					position: fixed;
-					top: 0;
-
-					padding: 50px;
-					width: 100%;
-					height: 100%;
-
-					background-color: rgba(0,0,0,0.32);
-					backdrop-filter: blur(16px);
-				}
-				.windowBakcground
-				{
-					z-index: 6;
-					border-radius: 5px;
-
-					margin: auto;
-					padding: 7.5px;
-
-					max-width: 925px;
-					height: 100%;
-
-					display: flex;
-					align-items: center;
-					justify-content: center;
-
-					box-shadow: 2px 2px 6px black;
-
-					background: linear-gradient(to bottom, var(--windowMainColourTop), var(--windowMainColourBottom));
-				}
-				.windowForeground
-				{
-					display: grid;
-					grid-template-columns: 1fr;
-					z-index: 7;
-
-					width: 100%;
-					height: 100%;
-
-					background-color: #e4d7ab;
-				}
-				.topTitleBar
-				{
-					position:relative;
-					background-color: var(--windowMainColourTop);
-					margin: 0;
-					padding-left: 5px;
-					
-					max-width: 910px;
-					width: 100%;
-					height: 30px;
-					display: flex;
-
-					z-index: 8;
-				}
-				.titleBarLeft
-				{
-					/* position: relative; */
-
-					width: 90%;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-				}
-				.titleBarRight
-				{
-					width: 10%;
-					display: flex;
-					align-items: center;
-					justify-content: right;
-					margin-top: -10px;
-					margin-right: 5px;
-				}
-
-				.windowTitleBarButton
-				{
-					height: 100%;
-					background-color: white;
-					border: 1px black solid;
-					margin-left: 3px;
-					width: 30px;
-				}
-				#closeWinButton
-				{
-					width: 50px
-				}
-
-				#WindowTtitleBarIcon
-				{
-					height: 100%;
-					width: 20px;
-					padding-bottom: 10px;
-					padding-top: -5px;
-				}
-				.windowTopBarTitle
-				{
-					font-size: 1.3rem;
-					
-					padding-left: 10%;
-					color:white;
-					margin-top: -10px;
-					margin-left: 5px;
-				}
-				.windowTitleBarButtonIcon
-				{
-					width: 20px; 
-					height: auto;
-				}
-				.windowTitleBarButtonIcon:hover
-				{
-					cursor: pointer;
-				}
-
-				#windowContentDiv
-				{
-					position: relative;
-					overflow-y: auto;
-					display: flex;
-					justify-content: center;
-				}
-
-				#chooseSubTypeButtons
-				{
-					position: fixed;
-					top:50%;
-					transform: translate(0, -50%);
-
-					max-width: 500px;					
-					width: 100%;
-					text-align: center;
-				}
-				#chooseSubTiypeTitle
-				{
-					color: black;
-					font-weight: bold;
-					font-size: 1.75rem;
-					/* line-height: 75px; */
-				}
-				#topChoiceButton
-				{
-					margin-top: 25px;
-				}
-			</style>
-			<script>
-				function OpenSubWindow()
-				{
-					document.getElementById("newOverlay").style.display = "block";
-				}
-				function CloseSubmitWindow ()
-				{
-					document.getElementById("newOverlay").style.display = "none";
-					ShowChoiceButtons();
-				}
-				function MinimizeSubmitWindow ()
-				{
-					document.getElementById("newOverlay").style.display = "none";
-				}
-
-				function HideChoiceButtons ()
-				{
-					document.getElementById("chooseSubTypeButtons").style.display = "none";
-					document.getElementById("submitFormDiv").style.display = "block";
-				}
-				function ShowChoiceButtons ()
-				{
-					document.getElementById("chooseSubTypeButtons").style.display = "block";
-					document.getElementById("submitFormDiv").style.display = "none";
-				}
-			</script>
-
+		<section class="newOverlay" id="newSubmitOverlay" style="display: none">
 			<div class="overlaysBlur">
 				<div class="windowBakcground">
 					<div class="windowForeground">
@@ -581,7 +406,7 @@
 					</div> <!-- windowForeground -->
 				</div> <!-- windowBakcground -->
 			</div> <!-- overlaysBlur -->
-		</section> <!-- newOverlay -->
+		</section> <!-- newSubmitOverlay -->
 
 		<!-- 
 			OLD submit score overlay
