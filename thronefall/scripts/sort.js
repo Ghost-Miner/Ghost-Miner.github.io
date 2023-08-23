@@ -259,10 +259,26 @@ function ChangeTableData(level)
 
         proofString = proof[k];
         isVideo = proofString.includes(videoString);
-        if (isVideo)
-        {   tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowEmbedWindow(\"" + GetEmbedYTLink(proof[k]) + "\")'> Video </a>";   }
-        else
-        {   tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowPictureWindow(\"" + proof[k] + "\")'> Screenshot </a>";   }
+
+        const externalLinkDivsPart1 = "<div id=\"extProofLinkDivWrapper\"> <div id=\"extProofLinkDivText\"> <a class=\"extProofLink\" href=\""
+        const externalLinkDivsPart2 = "\" target=\"_blank\"> Screenshot </a> </div> <div id=\"extProofLinkDivIcon\"> <img src=\"./img/external.png\" id=\"extProofLinkDivImg\"> </div> </div>"
+
+        if (isVideo) // Link goes to a video
+        {   
+            tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='ShowEmbedWindow(\"" + GetEmbedYTLink(proof[k]) + "\")'> Video </a>";  
+        }
+        else // Link goes to a picture
+        {   
+            if (IsPicServiceSupoorted(proof[k]))
+            {
+                tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='ShowPictureWindow(\"" + proof[k] + "\")'> Screenshot </a>";
+            }
+            else
+            {
+                // tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' target='_blank' href=\"" + proof[k] + "\"> Screenshot </a>";
+                tProof[k].innerHTML = externalLinkDivsPart1 + proof[k] + externalLinkDivsPart2;
+            }
+        }
         // linkProof[k].href = proof[k];
 	}
     for (let i = chosenArray.length; i < tableRows.length; i++)
@@ -273,8 +289,27 @@ function ChangeTableData(level)
     document.getElementById("newLBTableSection").style.display = "block";
 
 	document.getElementById("tableName").textContent = chosenMap + " high-scores";
+}
 
-	// SelectRandomBackground();
+function IsPicServiceSupoorted (url)
+{
+    const supportedDomains = 
+    [
+        "i.postimg.cc",
+        "media.discordapp.net",
+        "cdn.discordapp.com",
+        "ghost-miner.github.io"
+    ]
+
+    for (let i = 0; i < supportedDomains.length; i++)
+    {
+        chosenDomain = supportedDomains[i];
+        if (url.includes(chosenDomain))
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 function SplitScore(scoreNum)

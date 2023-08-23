@@ -13,9 +13,18 @@
 				margin-bottom: 5px;
 				/* width: 100%; */
 			}
-			.ScoreProffLink
+			.ScoreProofLink
 			{
 				cursor: pointer;
+				color: black;
+			}
+			.extProofLink:link
+			{
+				color: black;
+			}
+			.extProofLink:visited
+			{
+				color: black;
 			}
 			.btn
 			{
