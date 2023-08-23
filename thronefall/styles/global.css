@@ -1,7 +1,7 @@
 /* BASIC STUFF */
 :root 
 {
-    --backgroundColourSemiTransp:  rgba(255, 255, 255, 0.5); 
+    --backgroundColourSemiTransp:  rgba(255, 255, 255, 0.64); 
     --backgroundColour: rgba(255, 255, 255, 0.95); 
     
     --orange: #ba8303;
@@ -14,7 +14,7 @@
     --buttonColour2: #ffc107;
 
     --whiteColour1: white;
-    --whiteColour2: rgba(230,230,230, 1.0);
+    --whiteColour2: rgba(220,220,220, 1.0);
 }
 
 .btn_orangeGradient
@@ -39,12 +39,9 @@ a:visited
 }
 body 
 { 
-    color: black;
-    background: url(../img/bgr.jpg) no-repeat center center fixed; 
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    color: black !important;
+    background-color: #000 !important;
+    background: url(../img/bgr.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -58,11 +55,12 @@ body
 }
 .BgrBox 
 {
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     border-radius: 5px;
     padding: 10px;
     padding-top: 20px;
     background-color: var(--backgroundColourSemiTransp);
+    /* background: linear-gradient(to bottom, var(--backgroundColourSemiTransp), var(--backgroundColour)); */
     
     margin-top: 25px; 
     margin-bottom: 25px; 

@@ -121,9 +121,8 @@
 
 		<div class="mainPageContainer" id="mainPageContainer">
 			<div class="BgrBox" id="BgrBox">
-				<!-- <div class="FrgBox" id ="FrgBox"> -->
-					<!-- Page head stuff -->
-					<section id ="Page_header"> 
+				<!-- Page head stuff -->
+				<section id ="Page_header"> 
 						<center>
 							<section id="Title">
 								<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
@@ -151,11 +150,11 @@
 								<hr class="horizontalSeparator">
 							</noscript>
 						</center>
-					</section> <!-- Page head stuff -->
-					<hr class="horizontalSeparator">
+				</section> <!-- Page head stuff -->
+				<hr class="horizontalSeparator">
 					
-					<!-- Category buttons -->
-					<div id="newButtonsBar">
+				<!-- Category buttons -->
+				<div id="newButtonsBar">
 						<div id="newLBToggles">
 							<!-- 
 								CATEGORY BUTTONS 
@@ -167,7 +166,7 @@
 									<span class="newCatToggleText"> High-scores </span>
 								</button>
 								<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newTimCatToggle" type="button" disabled
-										onclick="SelectRandomBackground(1); ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
+										onclick="SelectRandomBackground(2); ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 
 									<span class="newCatToggleText"> Speed-runs </span>
 								</button>	
@@ -208,19 +207,19 @@
 									<!--
 										S P E E D   R U N S 
 									-->
-									<button type="button" class="btn btn_orangeGradient" id="nl_time_btn" onclick="SelectRandomBackground(1);" 
+									<button type="button" class="btn btn_orangeGradient" id="nl_time_btn" onclick="SelectRandomBackground(1);"
 											hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Neuland </span>
 									</button>
-									<button type="button" class="btn btn_orangeGradient" id="nf_time_btn" onclick="SelectRandomBackground(2);" 
+									<button type="button" class="btn btn_orangeGradient" id="nf_time_btn" onclick="SelectRandomBackground(2);"
 											hx-get="./leaderboards/time/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Nordfels </span>
 									</button>
-									<button type="button" class="btn btn_orangeGradient" id="ds_time_btn" onclick="SelectRandomBackground(3);" 
+									<button type="button" class="btn btn_orangeGradient" id="ds_time_btn" onclick="SelectRandomBackground(3);"
 											hx-get="./leaderboards/time/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Durststein </span>
 									</button>								
-									<button type="button" class="btn btn_orangeGradient" id="fs_time_btn" onclick="SelectRandomBackground(4);" 
+									<button type="button" class="btn btn_orangeGradient" id="fs_time_btn" onclick="SelectRandomBackground(4);"
 											hx-get="./leaderboards/time/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML">
 										<span class="subCatToggleText"> Frostsee </span>
 									</button>	
@@ -252,21 +251,20 @@
 								<span class="newCatToggleText">SUBMIT</span>
 							</button>
 						</div> <!-- newLBSubmitButton -->
-					</div> <!-- newButtonsBar -->
+				</div> <!-- newButtonsBar -->
  
-					<section id="Options_buttons_section">
+				<!-- <section id="Options_buttons_section">
 						<div class="collapse" id="pageOptionsTogglesGroup">
 							<div class="card card-body" id="pageOptionsTogglesGroupCotentBox">
 								<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Options</h4>
-								
-								<!-- <div id="Thmeme_toggles" style="display: inline-flexbox;">
+								<div id="Thmeme_toggles" style="display: inline-flexbox;">
 									<button id="Dark_theme_toggle" class="btn btn_orangeGradient options-toggles" type="button" onclick="ColourChangeDark()">
 										Dark theme
 									</button>
 									<button id="Light_theme_toggle" class="btn btn_orangeGradient options-toggles" type="button" onclick="ColourChangeLight()">
 										Light theme
 									</button>
-								</div> -->
+								</div>
 								<div id="Font_toggles" style="display: inline-flexbox;">
 									<button id="Clean_font_toggle"   class="btn btn_orangeGradient options-toggles" type="button" onclick="ChangeFontToCleaner()">
 										<span style="font-family: Roboto,sans-serif,Arial;">Cleaner text</span>
@@ -277,8 +275,8 @@
 								</div>
 							</div>
 						</div>
-					</section>
-					<section id="Options_buttons_section">
+					</section> -->
+				<section id="Options_buttons_section">
 						<div class="collapse" id="submissionTypeGroup">
 							<div class="card card-body" id="submissionTypeGroupCotentBox">
 								<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Submit high-score or a speedrun time</h4>
@@ -292,9 +290,12 @@
 								</div> <!-- Submit_score_group -->
 							</div> <!-- submissionTypeGroupCotentBox -->
 						</div> <!-- submissionTypeGroup -->
-					</section>	<!-- -Options_buttons_section -->
-					<!-- <hr class="horizontalSeparator"> -->
+				</section>	<!-- -Options_buttons_section -->
+				<!-- <hr class="horizontalSeparator"> -->
 								
+					<!-- 
+						NEW SEMI-AUTO LEADERBOARD 
+					-->
 					<div id="leaderboardsMainDiv">
 						<section id="newLBSection">
 							<section id="newLBLoadingImg" style="text-align: center; ">
@@ -329,14 +330,16 @@
 											</tr>
 										</tbody>
 									</table>
-								</div>
-							</section>
-						<!-- <hr class="bottomSeparator"> -->
-					</section> <!-- newLBSection -->					
-					<section id="leaderBoard">
-						<!-- old leaderbaord system here-->
-					</section>
-					</div>
+								</div> <!-- tableContainer -->
+							</section> <!-- newLBTableSection -->
+						</section> <!-- newLBSection -->					
+						<!-- 
+							OLD LEADERBOARDS HERE
+						-->
+						<section id="leaderBoard">
+							<!-- Content injected by HTMX -->
+						</section>
+					</div> <!-- leaderboardsMainDiv -->
 
 					<script>
 						SpawnTableRows();
@@ -345,7 +348,7 @@
 						SelectRandomBackground(1);
 					</script>
 					<section id="Footer"> <!-- Footer -->
-						<span id="footerText" style=" font-weight: bold;"><i>Leaderboard page made by GhostMiner. v.1.9 (19/08/2023)</i> |
+						<span id="footerText" style=" font-weight: bold;">Leaderboard page made by GhostMiner. v.1.9 (19/08/2023) |
 							<a href="https://ghost-miner.github.io/">Website</a>, 
 							<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 							<a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -362,7 +365,7 @@
 		<script>	/*ChangeCategory("demo");*/	SetFontStyle();		</script>
 
 		<!--
-			N E W   O V E R L A Y
+			N E W  S U B M I T  O V E R L A Y
 		-->
 		<section id="newOverlay" style="display: none">
 			<style>
@@ -548,21 +551,7 @@
 								<span class="windowTopBarTitle">New&nbsp;submission</span>
 							</div>
 							<div class="titleBarRight">
-								<!-- <a> 
-									<button class="windowTitleBarButton" id="newTabButton" onclick="MinimizeSubmitWindow()">
-										<img src="./img/minimize.png" class="windowTitleBarButtonIcon">
-									</button>
-								</a>
-								<a href="./submit.html" target="_blank">
-									<button class="windowTitleBarButton" id="newTabButton">
-										<img src="./img/external.png" class="windowTitleBarButtonIcon">
-									</button>
-								</a> -->
 								<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseSubmitWindow()">
-								<!-- <a> 
-									<button class="windowTitleBarButton" id="closeWinButton" onclick="CloseSubmitWindow()">
-									</button>
-								</a> -->
 							</div>
 						</div> <!-- topTitleBar -->
 
@@ -578,15 +567,18 @@
 											<strong> Speed-run </strong>
 								</button>
 							</div>
-							<div id="submitFormDiv"></div>
-						</div>
+							<div id="submitFormDiv">
+								<!-- cHOSEN FORM GOES HERE -->
+							</div>
+						</div> <!-- windowContentDiv -->
 					</div> <!-- windowForeground -->
 				</div> <!-- windowBakcground -->
 			</div> <!-- overlaysBlur -->
+		</section> <!-- newOverlay -->
 
-		</section>
-
-		<!-- submit score overlay -->
+		<!-- 
+			OLD submit score overlay
+		-->
 		<section class="overlays" id="SubmitScoreOverlay">
 			<style>
 				.submitBakcground 
@@ -723,7 +715,7 @@
 			</script>
 		</section>
 
-		<!-- Pictue windiw overlay -->
+		<!-- Pictue window overlay -->
 		<section class="overlays" id="scoreProofWindooOverlay">
 			<!-- Proof overlay -->
 			<style>
