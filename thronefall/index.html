@@ -46,7 +46,7 @@
 
 		<script src="https://unpkg.com/htmx.org@1.9.4"></script>
 
-		<script src="./scripts/paser.js"></script>
+		<script src="./scripts/parser.js"></script>
         <script src="./scripts/sort.js"></script>
 		<script src="./scripts/overlays.js"></script>
 	</head>
@@ -347,12 +347,14 @@
 						<!-- Content injected by HTMX -->
 					</section>
 				</div> <!-- leaderboardsMainDiv -->
+				
 				<script>
 					SpawnTableRows();
 					GetSubData();
 					SelectRandomBackground(1);
 					document.getElementById("newScoreCatToggle").classList.add("active");
 				</script>
+
 				<section id="Footer">
 					<!-- Footer -->
 					<span id="footerText" style=" font-weight: bold;">Leaderboard page made by GhostMiner. v.1.9 (19/08/2023) |

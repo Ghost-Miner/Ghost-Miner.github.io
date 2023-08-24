@@ -1,7 +1,7 @@
 async function GetCSVFile()
 {
     const fetchFile = await fetch("./entries.csv");
-	const fileText = await fetchFile.text();
+	const fileText  = await fetchFile.text();
 
     //  console.log("== CONTENT ======================================================================================================");
     //  console.log(fileText);
@@ -94,7 +94,7 @@ async function GetCSVFile()
 		}
 
 		// Return the parsed data.
-        console.log("== PARSER ==========================================================");
+        console.log("== PARSERD DATA ================================");
 		console.log(arrData);
 		return( arrData );
 	} 

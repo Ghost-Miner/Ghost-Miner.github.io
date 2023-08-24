@@ -11,16 +11,10 @@ function SpawnTableRows()
 
 let tableData; // data from entries.csv parsed into an array
 
-function OrderArray() 
-{
-    // console.log(FrostseeSubs);
-    // FrostseeSubs.sort(Comparer);
-}
-
 async function GetSubData ()
 {
     const CSVresponse = await GetCSVFile();
-    const ParseCSV = await CSVToArray(CSVresponse);
+    const ParseCSV    = await CSVToArray(CSVresponse);
 
     tableData = await ParseCSV;
 
