@@ -13,7 +13,7 @@ let tableData; // data from entries.csv parsed into an array
 
 async function GetSubData ()
 {
-    const CSVresponse = await GetCSVFile();
+    const CSVresponse = await GetCSVFile("score");
     const ParseCSV    = await CSVToArray(CSVresponse);
 
     tableData = await ParseCSV;
