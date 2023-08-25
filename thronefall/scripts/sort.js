@@ -265,7 +265,7 @@ function ChangeTableData(level)
         {   
             if (IsPicServiceSupoorted(proof[k]))
             {
-                tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='ShowPictureWindow(\"" + proof[k] + "\")'> Screenshot </a>";
+                tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='OpenProofWindow(\"" + proof[k] + "\")'> Screenshot </a>";
             }
             else
             {

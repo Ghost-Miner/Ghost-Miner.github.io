@@ -496,23 +496,17 @@
 			<script>
 				function OpenProofWindow(picLink) 
 				{
-					document.getElementById("picWindow").style.display = "block";
+					document.getElementById("newProofWindowMain").style.display = "block";
 
 					var imgLink	   = document.getElementById("newProofImage");
-					// var buttonLink = document.getElementById("ScorePicOriginalFile");
-
 					imgLink.src = picLink;
-					// buttonLink.href = picLink;
 			  	}				  
 			  	function CloseProofWindow() 
 				{
 					document.getElementById("newProofWindowMain").style.display = "none";
 					
 					var imgLink    = document.getElementById("newProofImage");
-					// var buttonLink = document.getElementById("ScorePicOriginalFile");
-
 					imgLink.src = "";
-					// buttonLink.href = "#";
 			  	}
 			</script>
 
@@ -786,28 +780,7 @@
 				}
 			</style>
 			
-				<center>
-					<!-- proofWindow  --> 
-					<section id="proofWindow">
-						<div id="picWindow" class="proofOverlay">							
-							<div class="WindowButtons">
-								<div class="scoreTopTitleBar">
-									<div class="titleBarLeft">
-										<!-- <img src="./img/crown.png" id="WindowTtitleBarIcon"> -->
-										<span class="windowTopBarTitle">New&nbsp;submission</span>
-									</div>
-									<div class="titleBarRight">
-										<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="HidePictureWindow()">
-									</div>
-								</div> <!-- topTitleBar -->
-								
-							</div>
-							<div class="PicWinContent">
-								<img id="scorePic" alt="Picture of the score" src="./img/loading.gif" style="object-fit: contain; width: 100%; height:100%; background-color: black;">
-							</div>
-						</div>
-					</section>
-										
+				<center>										
 					<!-- Embed_window -->
 					<section id="Embed_window">
 						<div id="embedWindow" class="proofOverlay">
@@ -827,30 +800,6 @@
 						</div>
 					</section> 
 				</center>
-
-			<script>
-				// Picture box 
-				function ShowPictureWindow(picLink) 
-				{
-					document.getElementById("picWindow").style.display = "block";
-
-					var imgLink	   = document.getElementById("scorePic");
-					var buttonLink = document.getElementById("ScorePicOriginalFile");
-
-					imgLink.src = picLink;
-					buttonLink.href = picLink;
-			  	}				  
-			  	function HidePictureWindow() 
-				{
-					document.getElementById("picWindow").style.display = "none";
-					
-					var imgLink = document.getElementById("scorePic");
-					var buttonLink = document.getElementById("ScorePicOriginalFile");
-
-					imgLink.src = "./img/loading.gif";
-					buttonLink.href = "#";
-			  	}
-			</script>
 
 			<script>
 				// Video box 
