@@ -425,16 +425,18 @@
 					text-align: right;
 					/* padding-bottom: 10px; */
 					/* border: 1px cyan solid; */
-					max-width: 950px;
+					/* max-width: 950px; */
 				}
 				.newProofWindow
 				{
-					max-width: 950px;
+					max-width: 1000px;
 					margin: 0 auto;
 					
 					position: relative;
 					top: 50%;
 					transform: translate(0%,-50%);
+
+					box-shadow: 2px 2px 16px rgba(0,0,0,0.5);
 				}
 
 				.newProofWindowContent
@@ -484,6 +486,13 @@
 					height:100%; 
 					/* background-color: black; */
 				}
+				#newProofVideo
+				{
+					width: 100%; 
+					height: 100%; 
+					background-color: black; 
+					border:0px
+				}
 				.windowTopBarTitle
 				{
 					margin: auto;
@@ -494,31 +503,43 @@
 				}
 			</style>
 			<script>
-				function OpenProofWindow(picLink) 
+				function OpenProofWindowImage(picLink) 
 				{
-					document.getElementById("newProofWindowMain").style.display = "block";
+					document.getElementById("newProofWindowMainImage").style.display = "block";
 
 					var imgLink	   = document.getElementById("newProofImage");
 					imgLink.src = picLink;
 			  	}				  
-			  	function CloseProofWindow() 
+			  	function CloseProofWindowImage() 
 				{
-					document.getElementById("newProofWindowMain").style.display = "none";
+					document.getElementById("newProofWindowMainImage").style.display = "none";
 					
 					var imgLink    = document.getElementById("newProofImage");
 					imgLink.src = "";
 			  	}
+
+				function OpenVideoWindow(link) 
+				{
+					document.getElementById("newProofWindowMainVideo").style.display = "block";
+					var videoLink = document.getElementById("newProofVideo");
+					videoLink.src = link;
+			  	}				  
+			  	function CloseVideoWindow() 
+				{
+					document.getElementById("newProofWindowMainVideo").style.display = "none";
+					var videoLink = document.getElementById("newProofVideo");
+					videoLink.src = "";
+			  	}				
 			</script>
 
-			<!-- <center> -->
-			<div class="overlaysBlur" id="newProofWindowMain">
+			<div class="overlaysBlur" id="newProofWindowMainImage">
 				<div class="newProofWindow">
 					<div class="newProofWindowTitleBar">
 						<div class="titleBarLeft">
 							<span class="windowTopBarTitle">Submission&nbsp;proof</span>
 						</div>
 						<div class="titleBarRight">
-							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseProofWindow()">
+							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseProofWindowImage()">
 						</div>
 					</div> <!-- topTitleBar -->
 						
@@ -527,8 +548,28 @@
 					</div>
 				</div>
 			</div> <!-- overlaysBlur -->
-			<!-- </center> -->
-		</section> <!-- newSubmitOverlay -->
+			
+			<div class="overlaysBlur" id="newProofWindowMainVideo">
+				<div class="newProofWindow">
+					<div class="newProofWindowTitleBar">
+						<div class="titleBarLeft">
+							<span class="windowTopBarTitle">Submission&nbsp;proof</span>
+						</div>
+						<div class="titleBarRight">
+							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseVideoWindow()">
+						</div>
+					</div> <!-- topTitleBar -->
+						
+					<div class="newProofWindowContent">
+						<iframe id="newProofVideo" src=""></iframe>
+					</div>
+				</div>
+			</div> <!-- overlaysBlur -->
+		</section> <!-- newscoreProof -->
+
+
+
+
 
 		<!-- Pictue window overlay -->
 		<section class="overlays" id="scoreProofWindooOverlay">
@@ -661,8 +702,7 @@
 					</section> 
 				</center>
 
-			<script>
-				// Video box 
+			<!-- <script>
 				function ShowVideoWindow(picLink) 
 				{
 					document.getElementById("videoWindow").style.display = "block";
@@ -683,7 +723,7 @@
 					imgLink.src = "";
 					buttonLink.href = "#";
 			  	}
-			</script>
+			</script> -->
 
 			<script>
 				// Embed box 
