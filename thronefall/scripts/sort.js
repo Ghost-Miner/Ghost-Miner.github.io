@@ -259,7 +259,7 @@ function ChangeTableData(level)
 
         if (isVideo) // Link goes to a video
         {   
-            tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='ShowEmbedWindow(\"" + GetEmbedYTLink(proof[k]) + "\")'> Video </a>";  
+            tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='OpenVideoWindow(\"" + GetEmbedYTLink(proof[k]) + "\")'> Video </a>";  
         }
         else // Link goes to a picture
         {   
