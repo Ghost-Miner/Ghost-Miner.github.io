@@ -191,3 +191,92 @@ body
 #newLBTableSection { display: none;	}
 /* .subID {	font-size: 0.75rem; } */
 #Thmeme_toggles { display: none; }
+
+#newButtonsBar
+			{
+				display: grid;
+				grid-template-columns: 3fr 1fr;
+				column-gap: 10px;
+				row-gap: 10x;
+
+				/* border: 1px black solid; */
+			}
+			#newLBToggles
+			{
+				font-weight: bold;
+
+				/* border: 1px blue solid; */
+			}
+			#newLBSubmitButton
+			{
+				/* border: 1px green solid; */
+
+				text-align: right;
+				position: relative;
+				top: 25%;
+			}
+			#newCategoryBuuttons
+			{
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: 7px;
+        		row-gap: 7px;
+
+				padding-bottom: 10px;
+				max-width: 400px;
+			}
+			.newSubsectionToggle
+			{
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				column-gap: 7px;
+        		row-gap: 7px;
+
+				max-width: 400px;
+			}
+			
+			#newLBToggleTime
+			{
+				display: none;
+			}
+			#newLBToggleDemo
+			{
+				grid-template-columns: repeat(3, 1fr);
+				display: none;
+			}
+			.newCatToggleText
+			{
+				font-weight: bold;
+				font-size: 1.1rrem;
+			}
+			.subCatToggleText
+			{
+				font-weight: bold;
+			}
+
+
+			/* PROOF LINK ICON */
+			#extProofLinkDivWrapper
+			{
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+				/* align-items: center;
+				justify-content: center; */
+				column-gap: 10px;
+			}
+			#extProofLinkDivText
+			{
+				text-align: right;
+			}
+			#extProofLinkDivIcon
+			{
+				position: relative;
+				bottom: 3px;
+				text-align: left;
+			}
+
+			#extProofLinkDivImg
+			{
+				max-width:  15px;
+				max-height: 15px;
+			}

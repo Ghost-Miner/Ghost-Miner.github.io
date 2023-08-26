@@ -50,97 +50,9 @@
         <script src="./scripts/sort.js"></script>
 		<script src="./scripts/overlays.js"></script>
 	</head>
-	<body>		
-		<!-- <script> SelectRandomBackground(); </script> -->
+	<body>
 		<style>
-			#newButtonsBar
-			{
-				display: grid;
-				grid-template-columns: 3fr 1fr;
-				column-gap: 10px;
-				row-gap: 10x;
-
-				/* border: 1px black solid; */
-			}
-			#newLBToggles
-			{
-				font-weight: bold;
-
-				/* border: 1px blue solid; */
-			}
-			#newLBSubmitButton
-			{
-				/* border: 1px green solid; */
-
-				text-align: right;
-				position: relative;
-				top: 25%;
-			}
-			#newCategoryBuuttons
-			{
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				column-gap: 7px;
-        		row-gap: 7px;
-
-				padding-bottom: 10px;
-				max-width: 400px;
-			}
-			.newSubsectionToggle
-			{
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				column-gap: 7px;
-        		row-gap: 7px;
-
-				max-width: 400px;
-			}
 			
-			#newLBToggleTime
-			{
-				display: none;
-			}
-			#newLBToggleDemo
-			{
-				grid-template-columns: repeat(3, 1fr);
-				display: none;
-			}
-			.newCatToggleText
-			{
-				font-weight: bold;
-				font-size: 1.1rrem;
-			}
-			.subCatToggleText
-			{
-				font-weight: bold;
-			}
-
-
-			/* PROOF LINK ICON */
-			#extProofLinkDivWrapper
-			{
-				display: grid;
-				grid-template-columns: 2fr 1fr;
-				/* align-items: center;
-				justify-content: center; */
-				column-gap: 10px;
-			}
-			#extProofLinkDivText
-			{
-				text-align: right;
-			}
-			#extProofLinkDivIcon
-			{
-				position: relative;
-				bottom: 3px;
-				text-align: left;
-			}
-
-			#extProofLinkDivImg
-			{
-				max-width:  15px;
-				max-height: 15px;
-			}
 		</style>
 
 		<div class="mainPageContainer" id="mainPageContainer">
@@ -148,17 +60,21 @@
 				<!-- Page head stuff -->
 				<section id ="Page_header">
 					<center>
-						<section id="Title">
-							<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
-							<h1> <strong> <em> Thronefall leaderboard </em> </strong> </h1>
-						</section>
+					<section id="Title">
+						<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
+						<h1> <strong> <em> Thronefall leaderboard </em> </strong> </h1>
+					</section>
+					</center>
+
+					<noscript>
 						<hr class="horizontalSeparator">
-						<noscript>
-							<hr class="horizontalSeparator">
-							<h3><strong><em>This website requires JavaScript to function correctly.</em></strong></h3>
-							<hr class="horizontalSeparator">
-						</noscript>
-						<section id="Game_links">
+						<h2><strong><em>This website requires JavaScript to function correctly.</em></strong></h2>
+						<hr class="horizontalSeparator">
+					</noscript>
+
+					<center>
+					<section id="Game_links">
+						<hr class="horizontalSeparator">
 							<span class="ButtonText">
 								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
 									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
@@ -175,11 +91,11 @@
 										<b>Thronefall wiki</b>
 									</button>
 								</a>
-							</span> <!--ButtonText-->
-						</section> <!--Game_links-->
+						</span> <!--ButtonText-->
+						<hr class="horizontalSeparator">
+					</section> <!--Game_links-->	
 					</center>
 				</section> <!-- Page head stuff -->
-				<hr class="horizontalSeparator">
 
 				<!-- Category buttons -->
 				<div id="newButtonsBar">
@@ -359,7 +275,7 @@
 
 				<section id="Footer">
 					<!-- Footer -->
-					<span id="footerText" style=" font-weight: bold;">Leaderboard page made by GhostMiner. v.1.9 (19/08/2023) |
+					<span id="footerText" style=" font-weight: bold;">Leaderboard page made by GhostMiner. v.1.9 (26/08/2023) |
 					<a href="https://ghost-miner.github.io/">Website</a>, 
 					<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 					<a href="https://discord.gg/DjUBY9h">Discord</a>
