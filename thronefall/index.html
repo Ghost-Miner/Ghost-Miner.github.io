@@ -51,10 +51,6 @@
 		<script src="./scripts/overlays.js"></script>
 	</head>
 	<body>
-		<style>
-			
-		</style>
-
 		<div class="mainPageContainer" id="mainPageContainer">
 			<div class="BgrBox" id="BgrBox">
 				<!-- Page head stuff -->
@@ -72,8 +68,77 @@
 						<hr class="horizontalSeparator">
 					</noscript>
 
+					<section id="newGameLinksBarSection">
+						<style>
+							#newGameLinksDiv
+							{
+								padding: 7px;
+								/* padding-left: 7px;
+								padding-right: 7px; */
+								border-radius: 5px;
+
+								margin-top: 15px;
+								margin-bottom: 25px;
+
+								border: 1px #ba8303 solid;
+								box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
+								background: linear-gradient(to bottom, var(--whiteColour1), var(--whiteColour2));
+							    color: white;
+
+								display: flex;
+								/* grid-template-columns: repeat(8, 1fr); */
+							}
+
+							.newGameLinksItem
+							{
+								/* border: 1px green dotted; */
+								padding: 5px;
+								font-weight: bold;
+								font-size: 1.1rem;
+							}
+							.newGameLinksItem:link
+							{
+								color: black;
+							}
+							.newGameLinksItem:visited
+							{
+								color: black;
+							}
+
+							#vertLine
+							{
+								background-color: black;
+								margin: 3px;
+								margin-top: 10px;
+								margin-bottom: 10px;
+								width: 1.645px;
+							}
+						</style>
+
+						<div id="newGameLinksDiv">
+							<a href="https://store.steampowered.com/app/2239150/Thronefall/" class="newGameLinksItem" id="newLinksGetGame" target="_blank">
+								Get&nbsp;Thronefall
+							</a>
+							<a href="https://discord.gg/gVYctptyg8" class="newGameLinksItem" id="newLinksGameDiscord" target="_blank">
+								Discord&nbsp;server
+							</a>
+							<a href="https://discord.gg/gVYctptyg8" class="newGameLinksItem" id="newLinksGameDevlogs" target="_blank">
+								Devlogs
+							</a>
+							<div id="vertLine">
+
+							</div>
+							<a href="https://throne-fall.github.io/" class="newGameLinksItem" id="newLinksWiki" target="_blank">
+								Wiki
+							</a>
+							<a href="https://discord.com/invite/pfRJjfz6SU" class="newGameLinksItem" id="newLinksWikiDiscord" target="_blank">
+								Wiki&nbsp;Discord
+							</a>
+						</div>
+					</section>
+
 					<center>
-					<section id="Game_links">
+					<section id="Game_links" style="display: none;">
 						<hr class="horizontalSeparator">
 							<span class="ButtonText">
 								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
@@ -91,7 +156,7 @@
 										<b>Thronefall wiki</b>
 									</button>
 								</a>
-						</span> <!--ButtonText-->
+							</span> <!--ButtonText-->
 						<hr class="horizontalSeparator">
 					</section> <!--Game_links-->	
 					</center>
