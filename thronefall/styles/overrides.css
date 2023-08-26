@@ -138,12 +138,24 @@
     {
     	height: 350px;
     }
+    
+    .newProofWindow
+    {
+        height: 450px;
+        top: 0px;
+        transform: translate(0%,0%);
+    }
 }
 @media screen and (max-height: 500px)
 {
     #newProofVideo
     {
     	height: 300px;
+    }
+    
+    .newProofWindow
+    {
+        height: 350px;
     }
 }
 @media screen and (max-height: 450px)
@@ -152,11 +164,29 @@
     {
     	height: 250px;
     }
+    
+    .newProofWindow
+    {
+        height: 300px;
+    }
 }
 @media screen and (max-height: 400px)
 {
     #newProofVideo
     {
     	height: 200px;
+    }
+    
+    .newProofWindow
+    {
+        height: 250px;
+        width: 64%;
+    }
+}
+@media screen and (max-height: 300px)
+{
+    #newProofVideo
+    {
+    	height: 150px;
     }
 }
