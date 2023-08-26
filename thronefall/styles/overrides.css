@@ -117,3 +117,46 @@
     	height: 250px;
     }
 }
+
+@media screen and (max-height: 650px)
+{
+    #newProofVideo
+    {
+    	height: 450px;
+    }
+}
+@media screen and (max-height: 600px)
+{
+    #newProofVideo
+    {
+    	height: 400px;
+    }
+}
+@media screen and (max-height: 550px)
+{
+    #newProofVideo
+    {
+    	height: 350px;
+    }
+}
+@media screen and (max-height: 500px)
+{
+    #newProofVideo
+    {
+    	height: 300px;
+    }
+}
+@media screen and (max-height: 450px)
+{
+    #newProofVideo
+    {
+    	height: 250px;
+    }
+}
+@media screen and (max-height: 400px)
+{
+    #newProofVideo
+    {
+    	height: 200px;
+    }
+}
