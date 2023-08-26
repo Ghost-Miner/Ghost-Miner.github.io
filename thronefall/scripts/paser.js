@@ -3,10 +3,10 @@ async function GetCSVFile()
     const fetchFile = await fetch("./entries.csv");
 	const fileText = await fetchFile.text();
 
-     console.log("== CONTENT ======================================================================================================");
-     console.log(fileText);
+    //  console.log("== CONTENT ======================================================================================================");
+    //  console.log(fileText);
     
-     console.log("== parse ======================================================================================================");
+    //  console.log("== parse ======================================================================================================");
     //CSVToArray(fileText, ",");
     return fileText;
 }
@@ -94,8 +94,8 @@ async function GetCSVFile()
 		}
 
 		// Return the parsed data.
-        console.log("== PARSER ==========================================================");
-		console.log(arrData);
+        // console.log("== PARSER ==========================================================");
+		// console.log(arrData);
 		return( arrData );
 	} 
 	
