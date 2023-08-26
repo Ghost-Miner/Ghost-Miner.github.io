@@ -271,8 +271,6 @@ function ChangeTableData(level)
     document.getElementById("newLBTableSection").style.display = "block";
 
 	document.getElementById("tableName").textContent = chosenMap + " high-scores";
-
-	SelectRandomBackground();
 }
 
 function SplitScore(scoreNum)

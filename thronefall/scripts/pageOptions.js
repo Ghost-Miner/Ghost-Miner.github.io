@@ -11,50 +11,6 @@ function GetUrlInfo()
 	console.log("--------------------------------------------");
 }
 
-// Returns string after # in the address
-function GetAdressHash()
-{
-	const hash = window.location.hash;
-	console.log("URL hash: " + hash);
-	return hash;
-}
-// Returns string after ? in the address
-function GetAdressSearch()
-{
-	const srch = window.location.search;
-	console.log("URL hash: " + srch);
-	return srch;
-}
-
-function CheckAdressHref()
-{
-	console.log("[ WARNING ]: using only #<lb_name> to access a specific leaderboard is deprecated. use new format instead!");
-	/*let hash = window.location.hash;
-	switch (hash)
-	{
-		default:
-			console.log("CheckAdressHref | invalid hash. ignoring");
-			ChangeShownTable("nf-score", "nordfels_score");
-			break;
-
-		case "#nordfels_score":
-			ChangeShownTable("nf-score", "nordfels_score");
-			break;
-
-		case "#neuland_score":
-			ChangeShownTable("nl-score", "neuland_score");
-			break;
-
-		case "#nordfels_time":
-			ChangeShownTable("nf-time", "nordfels_time");
-			break;
-
-		case "#neuland_time":
-			ChangeShownTable("nl-time", "neuland_time");
-			break;
-	}*/
-}
-
 // --------
 // COOKIES
 //---------
