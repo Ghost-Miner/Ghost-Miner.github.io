@@ -26,6 +26,8 @@
 <html lang="en">
 	<head>
 		<title>= Thronefall leaderboard =</title>
+		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
+
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
@@ -37,8 +39,6 @@
 		<link rel="stylesheet" href="./styles/leaderboard.css">
 		<!-- Overrides at the bottom -->
 		<link rel="stylesheet" href="./styles/overlays.css">
-
-		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
 
 		<script src="./scripts/boardOptions.js"></script>
 		<script src="./scripts/pageOptions.js"></script>
@@ -105,11 +105,6 @@
 				grid-template-columns: repeat(3, 1fr);
 				display: none;
 			}
-
-			/* .nnewCatToggleButton
-			{
-				width: 100%;
-			} */
 			.newCatToggleText
 			{
 				font-weight: bold;
@@ -385,11 +380,10 @@
 				<div class="windowBakcground">
 					<div class="windowForeground">
 						<div class="topTitleBar">
-							<div class="titleBarLeft">
-								<!-- <img src="./img/crown.png" id="WindowTtitleBarIcon"> -->
+							<div class="titleBarLeft" style="margin-bottom: 0px;">
 								<span class="windowTopBarTitle">New&nbsp;submission</span>
 							</div>
-							<div class="titleBarRight">
+							<div class="titleBarRight" style="margin-bottom: 7px;">
 								<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseSubmitWindow()">
 							</div>
 						</div> <!-- topTitleBar -->
@@ -418,156 +412,47 @@
 		<!--
 			N E W  P R O O F  O V E R L A Y
 		-->
-		<section class="newOverlay" id="newscoreProof" style="display: block;">
-			<style>	
-				.newScoreProof
-				{
-					text-align: right;
-					/* padding-bottom: 10px; */
-					/* border: 1px cyan solid; */
-					/* max-width: 950px; */
-				}
-				.newProofWindow
-				{
-					max-width: 1000px;
-					margin: 0 auto;
-					
-					position: relative;
-					top: 50%;
-					transform: translate(0%,-50%);
-
-					box-shadow: 2px 2px 16px rgba(0,0,0,0.5);
-				}
-
-				.newProofWindowContent
-				{
-					border-radius: 0px 0px 5px 5px;
-					margin: auto;
-					padding: 10px;
-
-					max-height: 600px;
-
-					width: 100%;
-					height:100%;
-					
-					font-size: 30px;
-					color: white;
-				  	/* background-color: #c27301; */
-					  background: linear-gradient(to bottom, var(--windowMainColourTop), var(--windowMainColourBottom));
-				  	z-index: 4;
-					
-					/* box-shadow: 4px 4px 16px rgba(0,0,0,1); */
-					
-					/* border: 2px lime solid; */
-				}
-				.newProofWindowTitleBar
-				{
-					position:relative;
-					display: flex;
-
-					border-radius: 5px 5px 0px 0px;
-					background-color: var(--windowMainColourTop);
-					margin: 0;					
-					padding-top: 7px;
-
-					width: 100%;
-					height: 35px;
-					z-index: 5;
-				}
-				.titleBarRight
-				{
-					padding-right: 5px;
-				}
-				#newProofImage
-				{
-					border-radius: 5px;
-					object-fit: contain; 
-					width: 100%; 
-					height:100%; 
-					/* background-color: black; */
-				}
-				#newProofVideo
-				{
-					border-radius: 5px;
-					height: 580px;
-					width: 100%; 
-					/* background-color: black;  */
-					border:0px
-				}
-				.windowTopBarTitle
-				{
-					margin: auto;
-				}
-				.titleBarRight
-				{
-					margin-top: 0px;
-				}
-			</style>
-			<script>
-				function OpenProofWindowImage(picLink) 
-				{
-					document.getElementById("newProofWindowMainImage").style.display = "block";
-
-					var imgLink	   = document.getElementById("newProofImage");
-					imgLink.src = picLink;
-			  	}				  
-			  	function CloseProofWindowImage() 
-				{
-					document.getElementById("newProofWindowMainImage").style.display = "none";
-					
-					var imgLink    = document.getElementById("newProofImage");
-					imgLink.src = "";
-			  	}
-
-				function OpenVideoWindow(link) 
-				{
-					document.getElementById("newProofWindowMainVideo").style.display = "block";
-					var videoLink = document.getElementById("newProofVideo");
-					videoLink.src = link;
-			  	}				  
-			  	function CloseVideoWindow() 
-				{
-					document.getElementById("newProofWindowMainVideo").style.display = "none";
-					var videoLink = document.getElementById("newProofVideo");
-					videoLink.src = "";
-			  	}				
-			</script>
-
-			<div class="overlaysBlur" id="newProofWindowMainImage">
+		<section class="newOverlay" id="newscoreProof">
+			<!--
+				I M A G E
+			-->
+			<div class="overlaysBlur" id="newProofWindowMainImage" style="display: none;">
 				<div class="newProofWindow">
 					<div class="newProofWindowTitleBar">
 						<div class="titleBarLeft">
-							<span class="windowTopBarTitle">Submission&nbsp;proof</span>
+							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;screenshot</span>
 						</div>
 						<div class="titleBarRight">
 							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseProofWindowImage()">
 						</div>
-					</div> <!-- topTitleBar -->
+					</div> <!-- newProofWindowTitleBar -->
 						
 					<div class="newProofWindowContent">
 						<img id="newProofImage" alt="" src="">
 					</div>
 				</div>
-			</div> <!-- overlaysBlur -->
+			</div> <!-- overlaysBlur newProofWindowMainImage -->
 			
-			<div class="overlaysBlur" id="newProofWindowMainVideo">
+			<!--
+				V I D E O   E M B E D
+			-->
+			<div class="overlaysBlur" id="newProofWindowMainVideo" style="display: none;">
 				<div class="newProofWindow">
 					<div class="newProofWindowTitleBar">
 						<div class="titleBarLeft">
-							<span class="windowTopBarTitle">Submission&nbsp;proof</span>
+							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;video</span>
 						</div>
 						<div class="titleBarRight">
 							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseVideoWindow()">
 						</div>
-					</div> <!-- topTitleBar -->
+					</div> <!-- newProofWindowTitleBar -->
 						
 					<div class="newProofWindowContent">
 						<iframe id="newProofVideo" src=""></iframe>
 					</div>
 				</div>
-			</div> <!-- overlaysBlur -->
+			</div> <!-- overlaysBlur newProofWindowMainVideo -->
 		</section> <!-- newscoreProof -->
-
 
 		<!-- STYLE OVERRIDES -->		
 		<link rel="stylesheet" href="./styles/overrides.css">

@@ -13,6 +13,10 @@
     {
         padding: 25px;
     }
+    #newProofVideo
+    {
+    	height: 500px;
+    }
 }
 
 @media screen and (max-width: 850px)
@@ -29,8 +33,19 @@
 		height: auto;
 		margin-bottom: 2%;
 	}
+    #newProofVideo
+    {
+    	height: 450px;
+    }
 }
 
+@media screen and (max-width: 650px)
+{
+    #newProofVideo
+    {
+    	height: 400px;
+    }
+}
 @media screen and (max-width: 600px)
 {
     #newButtonsBar
@@ -56,6 +71,10 @@
     {
         padding: 10px;
     }
+    #newProofVideo
+    {
+    	height: 350px;
+    }
 }
 
 @media screen and (max-width: 550px)
@@ -63,6 +82,10 @@
    #chooseSubTypeButtons
    {
         width: 80%;
+   }
+   #newProofVideo
+   {
+       height: 300px;
    }
 }
 
@@ -88,5 +111,9 @@
     #WindowTtitleBarIcon
     {
         display: none;
+    }
+    #newProofVideo
+    {
+    	height: 250px;
     }
 }
