@@ -185,6 +185,7 @@ function ChangeTableData(level)
     let mutators = new Array();
     let subID = new Array();
     let version = new Array();
+    let usedWeapon = new Array();
 
 	for (let i = 0; i < chosenArray.length; i++)
 	{
@@ -198,6 +199,7 @@ function ChangeTableData(level)
         subID[i] = chosenRow[9];
         mutators[i] = chosenRow[9];
         version[i] = chosenRow[10];
+        usedWeapon[i] = chosenRow[11];
 	}
 	// console.log("---------------------------------------------");
 	// console.log(names);
@@ -215,7 +217,8 @@ function ChangeTableData(level)
 	const tProof    = document.getElementsByClassName("proof");
     const tMutNums  = document.getElementsByClassName("mutNums");
     const tVersion  = document.getElementsByClassName("version");
-    const tSubID    = document.getElementsByClassName("subID");
+    const tWeapon   = document.getElementsByClassName("usedWeapon");
+    // const tSubID    = document.getElementsByClassName("subID");
 
 	let tableRows = document.getElementsByClassName("tableRow");
     for (let i = 0; i < tableRows.length; i++)
@@ -232,6 +235,7 @@ function ChangeTableData(level)
 		tDate[k].textContent = "";
         tMutNums[k].textContent = "";
         tVersion[k].textContent = "";
+        tWeapon[k].textContent = "";
         // tSubID[k].textContent = "";
 	}
 
@@ -250,6 +254,7 @@ function ChangeTableData(level)
         tMutNums[k].textContent = mutators[k];
 		tDate[k].textContent = RemoveTimeFromData(date[k]);
         tVersion[k].textContent = version[k];
+        tWeapon[k].textContent = usedWeapon[k];
 
         proofString = proof[k];
         isVideo = proofString.includes(videoString);
