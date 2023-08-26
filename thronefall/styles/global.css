@@ -280,3 +280,10 @@ body
 				max-width:  15px;
 				max-height: 15px;
 			}
+
+#hiddenColumnsDiv
+{
+    text-align: center;
+    font-style:italic;
+    display: none;
+}

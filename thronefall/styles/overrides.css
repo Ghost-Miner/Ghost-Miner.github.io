@@ -39,6 +39,24 @@
     }
 }
 
+@media screen and (max-width: 800px)
+{
+    #hiddenColumnsDiv
+    {
+        display: block !important;
+    }
+}
+@media screen and (max-width: 700px)
+{
+    #gameLinksNormal
+    {
+    	display: none !important;
+    }
+    #gameLinksSplit
+    {
+        display: block !important;
+    }
+}
 @media screen and (max-width: 650px)
 {
     #newProofVideo
@@ -117,6 +135,11 @@
     	height: 250px;
     }
 }
+
+
+
+
+
 
 @media screen and (max-height: 650px)
 {

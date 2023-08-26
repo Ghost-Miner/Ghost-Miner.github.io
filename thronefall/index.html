@@ -69,10 +69,10 @@
 					</noscript>
 
 					<center>
-					<section id="Game_links">
+					<section class="Game_links" id="gameLinksNormal">
 						<hr class="horizontalSeparator">
 							<span class="ButtonText">
-								<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
+								<a href="https://store.steampowered.com/app/2239150/Thronefall" id="steam_page" target="_blank">
 									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
 										<b> Get Thronefall </b>
 									</button>
@@ -88,17 +88,51 @@
 									</button>
 								</a>
 
-								<a href="https://throne-fall.github.io/" id="discord_Link" target="_blank">
+								<a href="https://throne-fall.github.io" id="discord_Link" target="_blank">
 									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="margin-left: 10px; ">
 										<b>Thronefall wiki</b>
 									</button>
 								</a>
-								<a href="" id="discord_Link" target="_blank">
+								<a href="http://discord.gg/pfRJjfz6SU" id="discord_Link" target="_blank">
 									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
 										<b>Wiki Discord</b>
 									</button>
 								</a>
 							</span> <!--ButtonText-->
+						<hr class="horizontalSeparator">
+					</section> <!--Game_links-->
+
+					<section class="Game_links" id="gameLinksSplit" style="display: none;">
+						<hr class="horizontalSeparator">
+							<div class="ButtonText">
+								<a href="https://store.steampowered.com/app/2239150/Thronefall" id="steam_page" target="_blank">
+									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
+										<b> Get Thronefall </b>
+									</button>
+								</a>
+								<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
+									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
+										<b>Discord server</b>
+									</button>
+								</a>
+								<a href="" id="discord_Link" target="_blank">
+									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
+										<b>Devlogs</b>
+									</button>
+								</a>
+							</div>
+							<div class="ButtonText" style="margin-top: 7px;">
+								<a href="https://throne-fall.github.io" id="discord_Link" target="_blank">
+									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="margin-left: 10px; ">
+										<b>Thronefall wiki</b>
+									</button>
+								</a>
+								<a href="http://discord.gg/pfRJjfz6SU" id="discord_Link" target="_blank">
+									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
+										<b>Wiki Discord</b>
+									</button>
+								</a>
+							</div> <!--ButtonText-->
 						<hr class="horizontalSeparator">
 					</section> <!--Game_links-->	
 					</center>
@@ -224,6 +258,9 @@
 
 						<section id="newLBTableSection" style="display: none;">
 							<div class="tableContainer" style="overflow-x:auto;">
+								<div id="hiddenColumnsDiv">
+									<span id="hiddenColumnsText">Scroll horizontally to reveal columns that aren't visible.<br></span>
+								</div>
 								<span id="tableName"> ... </span>
 								<table class="table table-striped" id="newLBTable" style="text-align: center; border: 1px black dotted">
 									<thead class="table-dark tableDarkHeader" id="newLbHeader" style="font-weight: bold;">
