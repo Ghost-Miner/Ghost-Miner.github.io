@@ -166,7 +166,6 @@
 	/* background-color: #c27301; */
 	background: linear-gradient(to bottom, var(--windowMainColourTop), var(--windowMainColourBottom));
 	z-index: 4;
-	overflow-y: auto;
 }
 .newProofWindowTitleBar
 {
