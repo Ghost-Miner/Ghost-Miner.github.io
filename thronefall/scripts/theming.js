@@ -1,4 +1,3 @@
-
 function ChangeFontToCleaner ()
 {
     document.getElementById("mainPageContainer").style.fontFamily = "Roboto,sans-serif,Arial";
@@ -38,32 +37,39 @@ function SetFontStyle ()
 
 function ColourChangeDark() 
 {
+    // Text colour and background colour
     document.body.style.color="white";
     document.getElementById("BgrBox").style.backgroundColor="rgba(0, 0, 0, 0.95)";
     document.getElementById("footerText").style.color="white";
     
-    // Add dark teme to all tables with "LeaderBoard_table" class
-    const LBtable = document.getElementsByClassName("LeaderBoard_table");
-    for (let i = 0; i < LBtable.length; i++)
-    {
-        LBtable[i].classList.add("table-dark");
-    } 
+    // Add dark teme to all tables with "oldLBtable" class
+    const oldLBtable = document.getElementById("oldLBtable");
+    const newLBTable = document.getElementById("newLBTable");
+
+    oldLBtable.classList.add("table-dark");
+    newLBTable.classList.add("table-dark");
     
-    // Add dark teme to all tables with "LeaderBoard_table_header" class
-    const LBtableHeader = document.getElementsByClassName("LeaderBoard_table_header");
-    for (let i = 0; i < LBtableHeader.length; i++)
-    {
-        LBtableHeader[i].classList.remove("thead-dark"); 
-        LBtableHeader[i].classList.add("thead-light");  
-    } 
+    // Add dark teme to all tables with "oldLBHeader" class
+    const oldLBtableHeader = document.getElementsByClassName("oldLBHeader");
+    const newLBTableHead = document.getElementById("newLbHeader");
     
+    oldLBtableHeader.classList.remove("table-dark");
+    oldLBtableHeader.classList.add("table-light");
+    oldLBtableHeader.style.color = "black";
+
+    newLBTableHead.classList.remove("table-dark");
+    newLBTableHead.classList.add("table-light");
+    newLBTableHead.style.color = "black";
+        
+    //Colour of the collapsible section for submit and options
     document.getElementById("pageOptionsTogglesGroupCotentBox").style.backgroundColor = "#2c3034";
     document.getElementById("submissionTypeGroupCotentBox").style.backgroundColor = "#2c3034";
 
     document.getElementById("Dark_theme_toggle").disabled = true;
     document.getElementById("Light_theme_toggle").disabled = false;
 
-    let topButtons = document.getElementsByClassName("btn");
+    // Change buttons shadow to white
+    const topButtons = document.getElementsByClassName("btn");
     for (let i = 0; i < topButtons.length; i++)
     {
         topButtons[i].style.boxShadow = "2px 2px 8px rgba(255,255,255,0.5)";
@@ -72,32 +78,39 @@ function ColourChangeDark()
 }
 function ColourChangeLight() 
 {
-    document.body.style.color="black";
+    // Text colour and background colour
+    document.body.style.color = "black";
     document.getElementById("BgrBox").style.backgroundColor="rgba(255, 255, 255, 0.95)";
-    document.getElementById("footerText").style.color="black";
+    document.getElementById("footerText").style.color = "black";
     
-    // Add dark teme to all tables with "LeaderBoard_table" class
-    const LBtable = document.getElementsByClassName("LeaderBoard_table");
-    for (let i = 0; i < LBtable.length; i++)
-    {
-        LBtable[i].classList.remove("table-dark");
-    } 
+    // Add dark teme to all tables with "oldLBtable" class
+    const oldLBtable = document.getElementBy("oldLBtable");
+    const newLBTable = document.getElementById("newLBTable");
+
+    oldLBtable.classList.remove("table-dark");
+    newLBTable.classList.remove("table-dark");
     
-    // Add dark teme to all tables with "LeaderBoard_table_header" class
-    const LBtableHeader = document.getElementsByClassName("LeaderBoard_table_header");
-    for (let i = 0; i < LBtableHeader.length; i++)
-    {
-        LBtableHeader[i].classList.add("thead-dark"); 
-        LBtableHeader[i].classList.remove("thead-light");  
-    } 
-    
+    // Add dark teme to all tables with "oldLBHeader" class
+    const oldLBtableHead = document.getElementsById("oldLBHeader");
+    const newLBTableHead = document.getElementById("newLbHeader");
+
+    oldLBtableHead.classList.add("table-dark");
+    oldLBtableHead.classList.remove("table-light");
+    oldLBtableHead.style.color = "white";
+
+    newLBTableHead.classList.add("table-dark");
+    newLBTableHead.classList.remove("table-light");
+    newLBTableHead.style.color = "white";
+        
+    //Colour of the collapsible section for submit and options
     document.getElementById("pageOptionsTogglesGroupCotentBox").style.backgroundColor = "#ffffff";
     document.getElementById("submissionTypeGroupCotentBox").style.backgroundColor = "#ffffff";
 
     document.getElementById("Dark_theme_toggle").disabled = false;
     document.getElementById("Light_theme_toggle").disabled = true;
 
-    let topButtons = document.getElementsByClassName("btn");
+    // Change buttons shadow to white
+    const topButtons = document.getElementsByClassName("btn");
     for (let i = 0; i < topButtons.length; i++)
     {
         topButtons[i].style.boxShadow = "2px 2px 4px rgba(0,0,0,0.5)"; 

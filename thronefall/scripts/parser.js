@@ -1,17 +1,25 @@
-async function GetCSVFile()
+async function GetCSVFile(file)
 {
-    const fetchFile = await fetch("./entries.csv");
-	const fileText = await fetchFile.text();
+	let fetchFile;
+	if (file == "time")
+	{
+		fetchFile = await fetch("./entriesTime.csv"); 
+	}
+	else
+	{
+		fetchFile = await fetch("./entries.csv"); 
+	}
+	const fileText  = await fetchFile.text();
 
-    //  console.log("== CONTENT ======================================================================================================");
-    //  console.log(fileText);
+    // console.log("== CONTENT ======================================================================================================");
+    // console.log(fileText);
     
-    //  console.log("== parse ======================================================================================================");
-    //CSVToArray(fileText, ",");
+    // console.log("== parse ======================================================================================================");
+    // CSVToArray(fileText, ",");
     return fileText;
 }
 
-// This will parse a delimited string into an array of
+	// This will parse a delimited string into an array of
 	// arrays. The default delimiter is the comma, but this
 	// can be overriden in the second argument.
 	function CSVToArray( strData, strDelimiter )
@@ -94,8 +102,8 @@ async function GetCSVFile()
 		}
 
 		// Return the parsed data.
-        // console.log("== PARSER ==========================================================");
-		// console.log(arrData);
+        console.log("== PARSERD DATA ================================");
+		console.log(arrData);
 		return( arrData );
 	} 
 	

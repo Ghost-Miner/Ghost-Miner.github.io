@@ -1,14 +1,14 @@
 <!-- Neuland_score_lb -->
-					<h3><strong>Neuland high-scores</strong> <em>(Demo)</em></h3>					
+                <span id="tableName">Neuland high-scores times </span> <span class="demoArchiveTitle"> (Demo ver. archive) </span>				
 					<!-- 
 						Bootstrap styled table.
 						DO NOT CHANGE TABLE CLASSSES! 
 					-->
 					<!-- Div required to fit the table in the window without making it render off-screen -->
 					<div class="tableContainer" style="overflow-x:auto;"> 
-						<table id="Neuland_scores" class="table table-striped LeaderBoard_table">
+						<table id="oldLBtable Neuland_scores"class="table table-striped" >
 							<!-- Table header. Do not change or the styling might break! -->
-							<thead id="Neuland_scores_header" class="thead-dark LeaderBoard_table_header">
+							<thead id="Neuland_scores_header" class="table-dark tableDarkHeader">
 								<tr>
 									<th style="text-align: center;">
 										<span class="Table_header"> # </span>
@@ -31,7 +31,7 @@
 								</tr>
 							</thead>
 							<!-- You can only change content in "tbody" -->
-							<tbody>
+							<tbody class="tableBodyBackground table-light">
 								<tr>
 									<td class="SB_NL_Position">2</td>
 									<td class="SB_NL_player_name"> ItsMeRaven </td>
@@ -39,8 +39,8 @@
 									<td class="SB_NL_coins">65</td>
 									<td class="SB_NL_date">15/07/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowEmbedWindow('https://www.youtube.com/embed/AH2ums3NzvI')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenVideoWindow('https://www.youtube.com/embed/AH2ums3NzvI')"> 
 												Video
 										</a>
 									</td>
@@ -52,8 +52,8 @@
 									<td class="SB_NL_coins">65</td>
 									<td class="SB_NL_date">16/06/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/giraffasaur1.jpg')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/giraffasaur1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
@@ -65,8 +65,8 @@
 									<td class="SB_NL_coins">61</td>
 									<td class="SB_NL_date">02/07/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/arkqa1.jpg')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/arkqa1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
@@ -78,8 +78,8 @@
 									<td class="SB_NL_coins">61</td>
 									<td class="SB_NL_date">04/07/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/ToGreedy1.jpg')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/ToGreedy1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
@@ -91,8 +91,8 @@
 									<td class="SB_NL_coins">65</td>
 									<td class="SB_NL_date">16/06/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/babykrokodile1.jpg')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/babykrokodile1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
@@ -104,8 +104,8 @@
 									<td class="SB_NL_coins">59</td>
 									<td class="SB_NL_date">18/06/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/mrllama_1.jpg')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/mrllama_1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
@@ -117,8 +117,8 @@
 									<td class="SB_NL_coins">62</td>
 									<td class="SB_NL_date">16/06/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/bluesaphirxiv1.jpg')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/bluesaphirxiv1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
@@ -130,8 +130,8 @@
 									<td class="SB_NL_coins">65</td>
 									<td class="SB_NL_date">24/07/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/digestives1.png')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/digestives1.png')"> 
 												Screenshot
 										</a>
 									</td>
@@ -143,8 +143,8 @@
 									<td class="SB_NL_coins">70</td>
 									<td class="SB_NL_date">30/06/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/neoarandil1.jpg')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/neoarandil1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
@@ -156,8 +156,8 @@
 									<td class="SB_NL_coins">50</td>
 									<td class="SB_NL_date">30/06/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/ghostminer1.jpg')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/ghostminer1.jpg')"> 
 												Screenshot
 										</a>
 									</td>
@@ -169,8 +169,8 @@
 									<td class="SB_NL_coins">43</td>
 									<td class="SB_NL_date">15/07/2023</td>
 									<td class="SB_NL_proof">
-										<a class="ScoreProffLink" title="Proof of the highscore" 
-											onclick="ShowPictureWindow('./pictures/scores/nl/LukasRainbow1.png')"> 
+										<a class="ScoreProofLink" title="Proof of the highscore" 
+											onclick="OpenProofWindowImage('./img/scores/nl/LukasRainbow1.png')"> 
 												Screenshot
 										</a>
 									</td>
@@ -178,7 +178,7 @@
 							</tbody>
 						</table>
 					</div>
-					 <hr class="horizontalSeparator">
+					 
 					 
 <script>
 	AssignNumbersDemo("Neuland");

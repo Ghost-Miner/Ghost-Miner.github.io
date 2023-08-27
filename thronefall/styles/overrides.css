@@ -1,0 +1,219 @@
+@media screen and (max-width: 1100px)
+{
+    .BgrBox 
+    {
+        padding: 10px;					
+        margin: 2vw; 
+        padding-top:25px;
+    }
+}
+@media screen and (max-width: 1000px)
+{
+    .overlaysBlur
+    {
+        padding: 25px;
+    }
+    #newProofVideo
+    {
+    	height: 500px;
+    }
+}
+
+@media screen and (max-width: 850px)
+{
+	.options-toggles
+	{
+		width: 100%;
+		height: auto;
+		margin-bottom: 2%;
+	}				
+	.submitScoreCollapeBtn
+	{
+		width: 100%;
+		height: auto;
+		margin-bottom: 2%;
+	}
+    #newProofVideo
+    {
+    	height: 450px;
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    #hiddenColumnsDiv
+    {
+        display: block !important;
+    }
+}
+@media screen and (max-width: 700px)
+{
+    #gameLinksNormal
+    {
+    	display: none !important;
+    }
+    #gameLinksSplit
+    {
+        display: block !important;
+    }
+}
+@media screen and (max-width: 650px)
+{
+    #newProofVideo
+    {
+    	height: 400px;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    #newButtonsBar
+    {
+        grid-template-columns: 1fr;
+    }
+    #newLBSubmitButton
+    {
+        text-align: center;
+        padding: 10px;
+        top: 0%
+    }
+    #newCategoryBuuttons
+    {
+        max-width: 100%;
+    }
+    .newSubsectionToggle
+    {
+        max-width: 100%;
+    }
+
+    .overlaysBlur
+    {
+        padding: 10px;
+    }
+    #newProofVideo
+    {
+    	height: 350px;
+    }
+}
+
+@media screen and (max-width: 550px)
+{
+   #chooseSubTypeButtons
+   {
+        width: 80%;
+   }
+   #newProofVideo
+   {
+       height: 300px;
+   }
+   .windowTopBarTitle
+   {
+       padding-left: 5%;
+   }
+}
+
+@media screen and (max-width: 400px)
+{
+    #newCategoryBuuttons
+    {
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 100%;
+    }
+    .newSubsectionToggle
+    {
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 100%;
+    }
+    #newDemoCatToggle
+    {
+        position: relative;
+        left: 50%;
+    }
+    #WindowTtitleBarIcon
+    {
+        display: none;
+    }
+    #newProofVideo
+    {
+    	height: 250px;
+    }
+}
+
+
+
+
+
+
+@media screen and (max-height: 650px)
+{
+    #newProofVideo
+    {
+    	height: 450px;
+    }
+}
+@media screen and (max-height: 600px)
+{
+    #newProofVideo
+    {
+    	height: 400px;
+    }
+}
+@media screen and (max-height: 550px)
+{
+    #newProofVideo
+    {
+    	height: 350px;
+    }
+    
+    .newProofWindow
+    {
+        height: 450px;
+        top: 0px;
+        transform: translate(0%,0%);
+    }
+}
+@media screen and (max-height: 500px)
+{
+    #newProofVideo
+    {
+    	height: 350px;
+    }
+    
+    .newProofWindow
+    {
+        height: 350px;
+    }
+}
+@media screen and (max-height: 450px)
+{
+    #newProofVideo
+    {
+    	height: 250px;
+    }
+    
+    .newProofWindow
+    {
+        height: 300px;
+    }
+}
+@media screen and (max-height: 400px)
+{
+    #newProofVideo
+    {
+    	height: 200px;
+    }
+    
+    .newProofWindow
+    {
+        height: 250px;
+        width: 64%;
+    }
+}
+@media screen and (max-height: 300px)
+{
+    #newProofVideo
+    {
+    	height: 150px;
+    }
+}
