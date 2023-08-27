@@ -16,15 +16,23 @@ function ChangeShownTable(tableToShow, sectionName)
 
 function ChangeCategory(name)
 {
-	// HIDE ALL SUB-CAT BUTTONS
-	document.getElementById("scoresSection").style.display = "none";
-	document.getElementById("timesSection").style.display = "none";
-	document.getElementById("demoSection").style.display = "none";
+	// GET ALL SUB-CAT BUTTONS
+	const scoreSectionLBToggles = document.getElementById("newLBToggleScore");
+	const timeSectionLBToggles  = document.getElementById("newLBToggleTime");
+	const demoSectionLBToggles  = document.getElementById("newLBToggleDemo");
+
+	const scoreCategoryToggle = document.getElementById("newScoreCatToggle");
+	const timeCategoryToggle  = document.getElementById("newTimCatToggle");
+	const demoCategoryToggle  = document.getElementById("newDemoCatToggle");
+
+	scoreSectionLBToggles.style.display = "none";
+	timeSectionLBToggles .style.display = "none";
+	demoSectionLBToggles .style.display = "none";
 
 	// RESET ALL CATEGORY BUTTONS
-	document.getElementById("hs_cat_btn").classList.remove("active");
-	document.getElementById("sr_cat_btn").classList.remove("active");
-	document.getElementById("demo_cat_btn").classList.remove("active");
+	scoreCategoryToggle.classList.remove("active");
+	timeCategoryToggle .classList.remove("active");
+	demoCategoryToggle .classList.remove("active");
 
 	switch (name)
 	{
@@ -36,23 +44,23 @@ function ChangeCategory(name)
 			document.getElementById("newLBTableSection").style.display = "block";
 			document.getElementById("leaderBoard").style.display ="none";
 
-			document.getElementById("scoresSection").style.display = "block";
-			document.getElementById("hs_cat_btn").classList.add("active");
+			scoreSectionLBToggles.style.display = "grid";
+			scoreCategoryToggle.classList.add("active");
 			break;
 
 		case "time":
 			document.getElementById("newLBTableSection").style.display = "none";
 			document.getElementById("leaderBoard").style.display ="block";
 
-			document.getElementById("timesSection").style.display = "block";
-			document.getElementById("sr_cat_btn").classList.add("active");
+			timeSectionLBToggles.style.display = "grid";
+			timeCategoryToggle.classList.add("active");
 			break;
 		case "demo":
 			document.getElementById("newLBTableSection").style.display = "none";
 			document.getElementById("leaderBoard").style.display ="block";
 
-			document.getElementById("demoSection").style.display = "block";
-			document.getElementById("demo_cat_btn").classList.add("active");
+			demoSectionLBToggles.style.display = "grid";
+			demoCategoryToggle.classList.add("active");
 			break;
 	}
 }

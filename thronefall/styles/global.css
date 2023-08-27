@@ -1,28 +1,47 @@
 /* BASIC STUFF */
 :root 
 {
-    --backgroundColour:  rgba(255, 255, 255, 0.95); 
-    --backgroundColour2: rgba(255, 255, 255, 0.95);
+    --backgroundColourSemiTransp:  rgba(255, 255, 255, 0.55); 
+    --backgroundColour: rgba(255, 255, 255, 0.95); 
     
-    --outlineColour: rgba(255, 180, 0, 0.8);
+    --orange: #ba8303;
+    
+    /* GRADIENTS  */
+    --windowMainColourTop: #c27301;
+    --windowMainColourBottom: orange;
+
+    --buttonColour1: #ffa500;
+    --buttonColour2: #ffc107;
+
+    --whiteColour1: white;
+    --whiteColour2: rgba(225,225,225, 1.0);
+}
+
+.btn_orangeGradient
+{
+    background: linear-gradient(to bottom, var(--buttonColour1), var(--buttonColour2));
+    border: 1px var(--orange) solid;
+}
+.btn_orangeGradient:focus
+{
+    background-color: var(--backgroundColour);
 }
 
 a:link 
 {
-    color: #ba8303;
+    color: var(--orange);
     text-decoration: none;
 }
 a:visited 
 {
-    color: #ba8303;
+    color: var(--orange);
     text-decoration: none;
 }
 body 
 { 
-    background: url(../pictures/bgr.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    color: black !important;
+    background-color: #000 !important;
+    background: url(../img/bgr.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -36,24 +55,27 @@ body
 }
 .BgrBox 
 {
+    backdrop-filter: blur(10px);
     border-radius: 5px;
     padding: 10px;
     padding-top: 20px;
-    background-color: var(--backgroundColour);
+    background-color: var(--backgroundColourSemiTransp);
+    /* background: linear-gradient(to bottom, var(--backgroundColourSemiTransp), var(--backgroundColour)); */
     
-    margin-top: 40px; 
+    margin-top: 25px; 
     margin-bottom: 25px; 
                         
-    box-shadow: 2px 2px 16px rgba(0,0,0,1);
+    box-shadow: 0px 0px 8px rgba(0,0,0,1);
     /*outline: 8px solid var(--outlineColour); */
 }
 .btn
 {
     box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-.footerText 
+#Footer 
 {
     font-weight: bold;
+    text-align: center;
 }
 .pageNavbar
 {
@@ -75,13 +97,18 @@ body
     font-weight: bold;
 }
 
+.bottomSeparator
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .nav-link:link
 {
-    color: #ba8303;
+    color: var(--orange);
 }
 .nav-link:visited
 {
-    color: #ba8303;
+    color: var(--orange);
 }
 
 .flexContaier
@@ -108,14 +135,156 @@ body
     padding-bottom: 5px;
 }
 
-/* RESPONSIVE STUFF */
-@media screen and (max-width: 10500px)
+#leaderboardsMainDiv
 {
-    .BgrBox 
-    {
-        background-color: var(--backgroundColour2);
-        padding: 10px;					
-        margin: 2vw; 
-        padding-top:25px;
-    }
+	padding: 0px;
+}	
+#loadingMobiMenuGif
+{
+	width: 32%; 
+	height: auto; 
+	text-align: center; 
+	margin: 15px;
+	margin-left: 35%;
+	margin-right: 35%;
+}
+#tableName
+{
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 1.75rem;
+}
+.positionColumn
+{
+	font-weight: bold;
+	text-align: center;
+	max-width: 32px;
+}
+#LBloadImg
+{
+	width: 32%; 
+	height: auto; 
+	text-align: center; 
+	margin: 15px;
+}
+
+.tableDarkHeader
+{
+    background: linear-gradient(to bottom, black, #24272b);
+    color: white;
+    border: 1px solid black;
+}
+.tableBodyBackground
+{
+    background: linear-gradient(to bottom, var(--whiteColour2), var(--whiteColour1));
+}
+
+.table
+{
+	border-radius: 5px;
+	background-color: var(--backgroundColour);
+}
+
+.nameColumn { text-align: left;	}
+/* .scoreColumn { max-width: fit-content; } */
+/* .coinsColumn { max-width: fit-content; } */
+.mutatorsColumn { max-width: fit-content; text-align: center; }
+.proofColumn { max-width: fit-content; }
+/* .weaponColumn { max-width: fit-content; } */
+/* .versionColumn { max-width: fit-content; } */
+/* .dateColumn { max-width: fit-content; } */
+
+#demoSection { display: none; }
+#timesSection {	display: none;	}
+#newLBTableSection { display: none;	}
+/* .subID {	font-size: 0.75rem; } */
+#Thmeme_toggles { display: none; }
+
+#newButtonsBar
+	{
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	column-gap: 10px;
+	row-gap: 10x;
+	/* border: 1px black solid; */
+}
+#newLBToggles
+{
+	font-weight: bold;
+	/* border: 1px blue solid; */
+}
+#newLBSubmitButton
+{
+	/* border: 1px green solid; */
+	text-align: right;
+	position: relative;
+	top: 25%;
+}
+#newCategoryBuuttons
+{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 7px;
+    row-gap: 7px;
+	padding-bottom: 10px;
+	max-width: 400px;
+}
+.newSubsectionToggle
+{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 7px;
+    row-gap: 7px;
+	max-width: 400px;
+}
+		
+#newLBToggleTime
+{
+	display: none;
+}
+#newLBToggleDemo
+{
+	grid-template-columns: repeat(3, 1fr);
+	display: none;
+}
+.newCatToggleText
+{
+	font-weight: bold;
+	font-size: 1.1rrem;
+}
+.subCatToggleText
+{
+	font-weight: bold;
+}
+
+
+/* PROOF LINK ICON */
+#extProofLinkDivWrapper
+{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	column-gap: 10px;
+}
+#extProofLinkDivText
+{
+	text-align: right;
+}
+#extProofLinkDivIcon
+{
+	position: relative;
+	bottom: 3px;
+	text-align: left;
+}
+
+#extProofLinkDivImg
+{
+	max-width:  15px;
+	max-height: 15px;
+}
+
+#hiddenColumnsDiv
+{
+    text-align: center;
+    font-style:italic;
+    display: none;
 }

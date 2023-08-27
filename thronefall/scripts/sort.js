@@ -11,16 +11,10 @@ function SpawnTableRows()
 
 let tableData; // data from entries.csv parsed into an array
 
-function OrderArray() 
-{
-    // console.log(FrostseeSubs);
-    // FrostseeSubs.sort(Comparer);
-}
-
 async function GetSubData ()
 {
-    const CSVresponse = await GetCSVFile();
-    const ParseCSV = await CSVToArray(CSVresponse);
+    const CSVresponse = await GetCSVFile("score");
+    const ParseCSV    = await CSVToArray(CSVresponse);
 
     tableData = await ParseCSV;
 
@@ -41,8 +35,8 @@ let canShowTableData = false;
 function SortSubData ()
 {
     tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    // console.log("SORTED =================");
-    // console.log(tableData);
+    console.log("SORTED =================");
+    console.log(tableData);
 
     // DISPLAY ARRAY CONTENT
     // console.log("-- ALL SUBS ---------------------------------------------");
@@ -143,6 +137,9 @@ function SortSubData ()
 
     canShowTableData = true;
     ChangeTableData('Neuland');
+
+    document.getElementById("newTimCatToggle").disabled = false;
+    document.getElementById("newDemoCatToggle").disabled = false;
 }
 
 function ChangeTableData(level)
@@ -188,6 +185,7 @@ function ChangeTableData(level)
     let mutators = new Array();
     let subID = new Array();
     let version = new Array();
+    let usedWeapon = new Array();
 
 	for (let i = 0; i < chosenArray.length; i++)
 	{
@@ -201,6 +199,7 @@ function ChangeTableData(level)
         subID[i] = chosenRow[9];
         mutators[i] = chosenRow[9];
         version[i] = chosenRow[10];
+        usedWeapon[i] = chosenRow[11];
 	}
 	// console.log("---------------------------------------------");
 	// console.log(names);
@@ -218,7 +217,8 @@ function ChangeTableData(level)
 	const tProof    = document.getElementsByClassName("proof");
     const tMutNums  = document.getElementsByClassName("mutNums");
     const tVersion  = document.getElementsByClassName("version");
-    const tSubID    = document.getElementsByClassName("subID");
+    const tWeapon   = document.getElementsByClassName("usedWeapon");
+    // const tSubID    = document.getElementsByClassName("subID");
 
 	let tableRows = document.getElementsByClassName("tableRow");
     for (let i = 0; i < tableRows.length; i++)
@@ -235,6 +235,7 @@ function ChangeTableData(level)
 		tDate[k].textContent = "";
         tMutNums[k].textContent = "";
         tVersion[k].textContent = "";
+        tWeapon[k].textContent = "";
         // tSubID[k].textContent = "";
 	}
 
@@ -253,13 +254,30 @@ function ChangeTableData(level)
         tMutNums[k].textContent = mutators[k];
 		tDate[k].textContent = RemoveTimeFromData(date[k]);
         tVersion[k].textContent = version[k];
+        tWeapon[k].textContent = usedWeapon[k];
 
         proofString = proof[k];
         isVideo = proofString.includes(videoString);
-        if (isVideo)
-        {   tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowEmbedWindow(\"" + GetEmbedYTLink(proof[k]) + "\")'> Video </a>";   }
-        else
-        {   tProof[k].innerHTML = "<a class='ScoreProffLink' title='Proof of the highscore' onclick='ShowPictureWindow(\"" + proof[k] + "\")'> Screenshot </a>";   }
+
+        const externalLinkDivsPart1 = "<div id=\"extProofLinkDivWrapper\"> <div id=\"extProofLinkDivText\"> <a class=\"extProofLink\" href=\""
+        const externalLinkDivsPart2 = "\" target=\"_blank\"> Screenshot </a> </div> <div id=\"extProofLinkDivIcon\"> <img src=\"./img/external thin.png\" id=\"extProofLinkDivImg\"> </div> </div>"
+
+        if (isVideo) // Link goes to a video
+        {   
+            tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='OpenVideoWindow(\"" + GetEmbedYTLink(proof[k]) + "\")'> Video </a>";  
+        }
+        else // Link goes to a picture
+        {   
+            if (IsPicServiceSupoorted(proof[k]))
+            {
+                tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='OpenProofWindowImage(\"" + proof[k] + "\")'> Screenshot </a>";
+            }
+            else
+            {
+                // tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' target='_blank' href=\"" + proof[k] + "\"> Screenshot </a>";
+                tProof[k].innerHTML = externalLinkDivsPart1 + proof[k] + externalLinkDivsPart2;
+            }
+        }
         // linkProof[k].href = proof[k];
 	}
     for (let i = chosenArray.length; i < tableRows.length; i++)
@@ -270,6 +288,27 @@ function ChangeTableData(level)
     document.getElementById("newLBTableSection").style.display = "block";
 
 	document.getElementById("tableName").textContent = chosenMap + " high-scores";
+}
+
+function IsPicServiceSupoorted (url)
+{
+    const supportedDomains = 
+    [
+        "i.postimg.cc",
+        "media.discordapp.net",
+        "cdn.discordapp.com",
+        "ghost-miner.github.io"
+    ]
+
+    for (let i = 0; i < supportedDomains.length; i++)
+    {
+        chosenDomain = supportedDomains[i];
+        if (url.includes(chosenDomain))
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 function SplitScore(scoreNum)
