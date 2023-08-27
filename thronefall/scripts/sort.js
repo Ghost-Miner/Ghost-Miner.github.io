@@ -260,7 +260,7 @@ function ChangeTableData(level)
         isVideo = proofString.includes(videoString);
 
         const externalLinkDivsPart1 = "<div id=\"extProofLinkDivWrapper\"> <div id=\"extProofLinkDivText\"> <a class=\"extProofLink\" href=\""
-        const externalLinkDivsPart2 = "\" target=\"_blank\"> Screenshot </a> </div> <div id=\"extProofLinkDivIcon\"> <img src=\"./img/external2.jpg\" id=\"extProofLinkDivImg\"> </div> </div>"
+        const externalLinkDivsPart2 = "\" target=\"_blank\"> Screenshot </a> </div> <div id=\"extProofLinkDivIcon\"> <img src=\"./img/external thin.png\" id=\"extProofLinkDivImg\"> </div> </div>"
 
         if (isVideo) // Link goes to a video
         {   
