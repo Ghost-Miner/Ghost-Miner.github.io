@@ -186,7 +186,13 @@ body
 }
 
 .nameColumn { text-align: left;	}
-.mutatorsColumn { max-width: fit-content; text-align: center;}
+/* .scoreColumn { max-width: fit-content; } */
+/* .coinsColumn { max-width: fit-content; } */
+.mutatorsColumn { max-width: fit-content; text-align: center; }
+.proofColumn { max-width: fit-content; }
+/* .weaponColumn { max-width: fit-content; } */
+/* .versionColumn { max-width: fit-content; } */
+/* .dateColumn { max-width: fit-content; } */
 
 #demoSection { display: none; }
 #timesSection {	display: none;	}
