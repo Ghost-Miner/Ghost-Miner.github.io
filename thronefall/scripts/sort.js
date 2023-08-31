@@ -248,7 +248,12 @@ function ChangeTableData(level)
 	for (let k = 0; k < chosenArray.length; k++)
 	{
 		tPosition[k].textContent = k + 1;
-		tNames[k].textContent = names[k];
+		// tNames[k].textContent = names[k];
+        tNames[k].innerHTML = "<span " + 
+                                    "onclick= \' ShowScores( \"" + (k+1) + "," + names[k] + "," + score[k] + "," + coins[k] + "," +  mutators[k] + "," 
+                                    + usedWeapon[k] + "," + version[k] + "," + date[k] + "," + proof[k] + "\" ) \' "
+                                + ">" + names[k] + "</span>";
+
         tScore[k].textContent = SplitScore(score[k]);
 		tCoins[k].textContent = coins[k];
         tMutNums[k].textContent = mutators[k];
@@ -289,6 +294,8 @@ function ChangeTableData(level)
 
 	document.getElementById("tableName").textContent = chosenMap + " high-scores";
 }
+
+
 
 function IsPicServiceSupoorted (url)
 {
