@@ -23,33 +23,40 @@ function ShowScores ()
     console.log("=======================================================");
 }
 
-function ShowSubInfo (submission)
+function ShowSubInfo (submissionIndex)
 {
-    if (submission == undefined || submission[0] == "Submission Date" || submission[3] != "Early access")
+    if (submissionIndex >= tableData.length || submissionIndex == undefined || submissionIndex == "")
+    {
+        console.error("Invalid submission index.");
+        return;
+    }    
+    const chosenSubmission = tableData[submissionIndex];
+    if (chosenSubmission[0] == "Submission Date" || chosenSubmission[3] != "Early access")
     {
         console.error("Invalid submission");
         return;
     }
-    console.log(submission);
+    console.log(chosenSubmission);
     
-    if (submission[1] == "o")
+    if (chosenSubmission[1] == "o")
     {
         console.log("OBSOLETE");
     }
-    if (submission[1] == "r")
+    if (chosenSubmission[1] == "r")
     {
         console.log("REJECTED");
     }
 
     s_position   = "N/A";
-    s_name       = submission[2];
-    s_score      = submission[5];
-    s_gold       = submission[6];
-    s_mutators   = submission[9];
-    s_proof      = submission[7];
-    s_usedWeapon = submission[11];
-    s_version    = submission[10];
-    s_date       = submission[8];
+    s_name       = chosenSubmission[2];
+    s_score      = chosenSubmission[5];
+    s_gold       = chosenSubmission[6];
+    s_mutators   = chosenSubmission[9];
+    s_proof      = chosenSubmission[7];
+    s_usedWeapon = chosenSubmission[11];
+    s_version    = chosenSubmission[10];
+    s_date       = chosenSubmission[8];
 
+    location.hash = submissionIndex;
     ShowScores ();
 }

@@ -15,8 +15,10 @@ function GetUrlInfo()
 function GetAdressHash()
 {
 	const hash = window.location.hash;
-	console.log("URL hash: " + hash);
-	return hash;
+	const noHash = RemoveHasSymbol(hash);
+	
+	console.log("URL hash: " + hash + "; " + noHash);
+	return noHash;
 }
 // Returns string after ? in the address
 function GetAdressSearch()
@@ -26,33 +28,26 @@ function GetAdressSearch()
 	return srch;
 }
 
-function CheckAdressHref()
+function RemoveHasSymbol (hashString)
 {
-	console.log("[ WARNING ]: using only #<lb_name> to access a specific leaderboard is deprecated. use new format instead!");
-	/*let hash = window.location.hash;
-	switch (hash)
-	{
-		default:
-			console.log("CheckAdressHref | invalid hash. ignoring");
-			ChangeShownTable("nf-score", "nordfels_score");
-			break;
+    let returnStringChars = new Array();
+    let returnStringFull = "";
+    let charIndex = 0;
 
-		case "#nordfels_score":
-			ChangeShownTable("nf-score", "nordfels_score");
-			break;
+    const str   = hashString;
+    const chars = str.split('');
 
-		case "#neuland_score":
-			ChangeShownTable("nl-score", "neuland_score");
-			break;
+    for (let i = 1; i < chars.length; i++)
+    {
+        returnStringChars[charIndex] = chars[i];
+        charIndex++;
+    }
+    for (let i = 0; i < returnStringChars.length; i++)
+    {
+        returnStringFull = returnStringFull + returnStringChars[i];
+    }
 
-		case "#nordfels_time":
-			ChangeShownTable("nf-time", "nordfels_time");
-			break;
-
-		case "#neuland_time":
-			ChangeShownTable("nl-time", "neuland_time");
-			break;
-	}*/
+    return returnStringFull;
 }
 
 function SelectRandomBackground(mappNumner)
