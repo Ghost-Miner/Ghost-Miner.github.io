@@ -1,8 +1,3 @@
-// Unparsed values
-// let rawValString;
-// let rawValChars = new Array();
-
-// Parsed valzes
 let s_position   = "";
 let s_name       = "";
 let s_score      = "";
