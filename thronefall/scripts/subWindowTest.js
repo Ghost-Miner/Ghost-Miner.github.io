@@ -25,6 +25,17 @@ function ShowScores ()
 
 function ShowSubInfo (submissionIndex)
 {
+    document.getElementById("newSubInfoTest").style.display = "none";
+
+    document.getElementById("sil_name").textContent     = ""
+    document.getElementById("sil_score").textContent    = "";
+    document.getElementById("sil_gold").textContent     = "";
+    document.getElementById("sil_mutators").textContent = "";
+    document.getElementById("sil_proof").textContent    = "";
+    document.getElementById("sil_weapon").textContent   = "";
+    document.getElementById("sil_version").textContent  = "";
+    document.getElementById("sil_date").textContent     = "";
+
     if (submissionIndex >= tableData.length || submissionIndex == undefined || submissionIndex == "")
     {
         console.error("Invalid submission index.");
@@ -59,4 +70,15 @@ function ShowSubInfo (submissionIndex)
 
     location.hash = submissionIndex;
     ShowScores ();
+
+    document.getElementById("sil_name").textContent = s_name;
+    document.getElementById("sil_score").textContent = s_score;
+    document.getElementById("sil_gold").textContent = s_gold;
+    document.getElementById("sil_mutators").textContent = s_mutators;
+    document.getElementById("sil_proof").textContent = s_proof;
+    document.getElementById("sil_weapon").textContent = s_usedWeapon;
+    document.getElementById("sil_version").textContent = s_version;
+    document.getElementById("sil_date").textContent = s_date;
+    
+    document.getElementById("newSubInfoTest").style.display = "block";
 }
