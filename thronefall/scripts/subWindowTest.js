@@ -28,87 +28,33 @@ function ShowScores ()
     console.log("=======================================================");
 }
 
-function ParseSubValues (rawVals)
+function ShowSubInfo (submission)
 {
-    s_position   = "";
-    s_name       = "";
-    s_score      = "";
-    s_gold       = "";
-    s_mutators   = "";
-    s_proof      = "";
-    s_usedWeapon = "";
-    s_version    = "";
-    s_date       = "";
-
-    console.log(rawVals);
-    location.hash = "submission=" + rawVals;
-    
-    const rawValString = rawVals;
-    const valChars  = rawValString.split('');
-
-    let valueNumber = 1;
-
-    for (let i = 0; i < valChars.length; i++)
+    if (submission == undefined || submission[0] == "Submission Date" || submission[3] != "Early access")
     {
-        // console.log(valChars[i]);
-        if (valChars[i] == ";")
-        {
-            // console.log("Hit separator");
-            valueNumber++;
-            i++;
-        }
-
-        switch(valueNumber)
-        {
-            case 1: 
-                s_position = valChars[i];
-            break;
-            
-            case 2: 
-                s_name = s_name + valChars[i];
-            break;
-            
-            case 3: 
-                s_score = s_score + valChars[i];
-            break;
-            
-            case 4: 
-                s_gold = s_gold + valChars[i];
-            break;
-            
-            case 5: 
-                s_mutators = s_mutators + valChars[i];
-            break;
-            
-            case 9: 
-                s_proof = s_proof + valChars[i];
-            break;
-            
-            case 6: 
-                s_usedWeapon = s_usedWeapon + valChars[i];
-            break;
-            
-            case 7: 
-                s_version = s_version + valChars[i];
-            break;
-            
-            case 8: 
-                s_date = s_date + valChars[i];
-            break;
-        }
+        console.error("Invalid submission");
+        return;
+    }
+    console.log(submission);
+    
+    if (submission[1] == "o")
+    {
+        console.log("OBSOLETE");
+    }
+    if (submission[1] == "r")
+    {
+        console.log("REJECTED");
     }
 
-    // console.log( 
-    //         s_position   + ", " +
-    //         s_name       + ", " +
-    //         s_score      + ", " +
-    //         s_gold       + ", " +
-    //         s_mutators   + ", " +
-    //         s_proof      + ", " +
-    //         s_usedWeapon + ", " +
-    //         s_version    + ", " +
-    //         s_date       + ", "
-    // );
+    s_position   = "N/A";
+    s_name       = submission[2];
+    s_score      = submission[5];
+    s_gold       = submission[6];
+    s_mutators   = submission[9];
+    s_proof      = submission[7];
+    s_usedWeapon = submission[11];
+    s_version    = submission[10];
+    s_date       = submission[8];
 
-    ShowScores();
+    ShowScores ();
 }

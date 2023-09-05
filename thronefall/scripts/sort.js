@@ -34,9 +34,9 @@ let canShowTableData = false;
 
 function SortSubData ()
 {
-    tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    console.log("SORTED =================");
-    console.log(tableData);
+    // tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    // console.log("SORTED =================");
+    // console.log(tableData);
 
     // DISPLAY ARRAY CONTENT
     // console.log("-- ALL SUBS ---------------------------------------------");
