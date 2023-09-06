@@ -25,16 +25,16 @@ function ShowScores ()
 
 function ShowSubInfo (submissionIndex)
 {
-    document.getElementById("newSubInfoTest").style.display = "none";
+    // document.getElementById("newSubInfoTest").style.display = "none";
 
-    document.getElementById("sil_name").textContent     = ""
-    document.getElementById("sil_score").textContent    = "";
-    document.getElementById("sil_gold").textContent     = "";
-    document.getElementById("sil_mutators").textContent = "";
-    document.getElementById("sil_proof").textContent    = "";
-    document.getElementById("sil_weapon").textContent   = "";
-    document.getElementById("sil_version").textContent  = "";
-    document.getElementById("sil_date").textContent     = "";
+    document.getElementById("si_name").textContent     = ""
+    document.getElementById("si_score").textContent    = "";
+    document.getElementById("si_gold").textContent     = "";
+    document.getElementById("si_mutators").textContent = "";
+    // document.getElementById("sil_proof").textContent    = "";
+    document.getElementById("si_weapon").textContent   = "";
+    document.getElementById("si_version").textContent  = "";
+    document.getElementById("si_date").textContent     = "";
 
     if (submissionIndex >= tableData.length || submissionIndex == undefined || submissionIndex == "")
     {
@@ -71,14 +71,15 @@ function ShowSubInfo (submissionIndex)
     location.hash = submissionIndex;
     ShowScores ();
 
-    document.getElementById("sil_name").textContent = s_name;
-    document.getElementById("sil_score").textContent = s_score;
-    document.getElementById("sil_gold").textContent = s_gold;
-    document.getElementById("sil_mutators").textContent = s_mutators;
-    document.getElementById("sil_proof").textContent = s_proof;
-    document.getElementById("sil_weapon").textContent = s_usedWeapon;
-    document.getElementById("sil_version").textContent = s_version;
-    document.getElementById("sil_date").textContent = s_date;
+    document.getElementById("si_name").textContent = s_name;
+    document.getElementById("si_score").textContent = s_score;
+    document.getElementById("si_gold").textContent = s_gold;
+    document.getElementById("si_mutators").textContent = s_mutators;
+    // document.getElementById("sil_proof").textContent = s_proof;
+    document.getElementById("si_weapon").textContent = s_usedWeapon;
+    document.getElementById("si_version").textContent = s_version;
+    document.getElementById("si_date").textContent = s_date;
     
-    document.getElementById("newSubInfoTest").style.display = "block";
+    document.getElementById("subInfoImg").src = s_proof;
+    document.getElementById("newSubInfoWindow").style.display = "block";
 }

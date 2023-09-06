@@ -417,28 +417,85 @@
 				</div>
 			</div> <!-- overlaysBlur newProofWindowMainVideo -->¨
 
-			<div class="overlaysBlur" id="newSubInfoTest" style="display: none; height: 100%;">
+			<div class="overlaysBlur" id="newSubInfoWindow" style="display: none; height: 100%;">
+				<style>
+					.newProofWindowContent
+					{
+						max-height: 750px;
+					}
+					#subInfoImg
+					{
+						border-radius: 5px;
+						width: 75%;
+						height: auto;
+					}
+					#subIinfoImageDiv
+					{
+						text-align: center;
+					}
+
+					#subInfoTitle
+					{
+						text-align: center;
+						font-weight: bold;
+					}
+
+					#subInfoGridWrapper
+					{
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+						text-align: center;
+						max-width: 77%;
+
+						margin: auto;
+						padding: 10px;
+					}
+					#subInfoGridCell
+					{
+						border: 1px white solid;
+					}
+				</style>
 				<div class="newProofWindow">
 					<div class="newProofWindowTitleBar">
 						<div class="titleBarLeft">
-							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;screenshot</span>
+							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;details</span>
 						</div>
 						<div class="titleBarRight">
-							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseProofWindowImage()">
+							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseSubInfoWindow()">
 						</div>
 					</div> <!-- newProofWindowTitleBar -->
 						
 					<div class="newProofWindowContent" style="overflow-y: auto; font-size:larger;">
-						<ul id="subInfoList">
-							<li>Name: <span id="sil_name">...</span></li>
-							<li>Score: <span id="sil_score">...</span></li>
-							<li>Gold: <span id="sil_gold">...</span></li>
-							<li>Mutators: <span id="sil_mutators">...</span></li>
-							<li>Weapon: <span id="sil_weapon">...</span></li>
-							<li>Version: <span id="sil_version">...</span></li>
-							<li>Dare: <span id="sil_date">...</span></li>
-							<li>Proof: <span id="sil_proof">...</span></li>
-						</ul>
+						<div id="subIinfoImageDiv">
+							<img src="" id="subInfoImg">
+						</div>
+						
+						<div id="subInfoTitle">
+							Submitted by <var id="si_name">...</var> on <var id="si_date">...</var>.
+						</div>
+
+						<div id="subInfoGridWrapper">
+							<div id="subInfoGridCell">
+								Score: <br>
+								<span id="si_score">...</span>
+							</div>
+							<div id="subInfoGridCell">
+								Gold: <br>
+								<span id="si_gold">...</span>
+							</div>
+							<div id="subInfoGridCell">
+								Used weapon: <br>
+								<span id="si_weapon">...</span>
+							</div>
+							<div id="subInfoGridCell" style="position: relative; left: 50%;">
+								Mutators: <br>
+								<span id="si_mutators">...</span>
+							</div>
+							<div id="subInfoGridCell" style="position: relative; left: 50%;">
+								Version: <br>
+								<span id="si_version">...</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div> <!-- overlaysBlur newProofWindowMainImage -->
