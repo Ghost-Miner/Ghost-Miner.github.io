@@ -25,16 +25,7 @@ function ShowScores ()
 
 function ShowSubInfo (submissionIndex)
 {
-    // document.getElementById("newSubInfoTest").style.display = "none";
-
-    document.getElementById("si_name").textContent     = ""
-    document.getElementById("si_score").textContent    = "";
-    document.getElementById("si_gold").textContent     = "";
-    document.getElementById("si_mutators").textContent = "";
-    // document.getElementById("sil_proof").textContent    = "";
-    document.getElementById("si_weapon").textContent   = "";
-    document.getElementById("si_version").textContent  = "";
-    document.getElementById("si_date").textContent     = "";
+    // ResetSubInfoWindowValues();
 
     if (submissionIndex >= tableData.length || submissionIndex == undefined || submissionIndex == "")
     {
@@ -70,16 +61,56 @@ function ShowSubInfo (submissionIndex)
 
     location.hash = submissionIndex;
     ShowScores ();
+    AssignSubInfoWindowValues();
+}
+
+function AssignSubInfoWindowValues ()
+{
+    if (IsPicServiceSupoorted(s_proof))
+    {
+        document.getElementById("subIinfoImageDiv").style.display = "block";
+        document.getElementById("subInfoImg").src = s_proof;
+    }
+    else
+    {
+        if (s_proof.includes("youtu"))
+        {
+            document.getElementById("subIinfoVideoDiv").style.display = "block";
+            document.getElementById("subInfoVideo").src = GetEmbedYTLink(s_proof);
+            // document.getElementById("subInfoImg").style.display = "none";            
+        }
+        else
+        {
+            document.getElementById("subIinfoExternalImgDiv").style.display = "block";
+            document.getElementById("extenralImgButtonLink").href = s_proof;
+        }
+    }
 
     document.getElementById("si_name").textContent = s_name;
     document.getElementById("si_score").textContent = s_score;
     document.getElementById("si_gold").textContent = s_gold;
     document.getElementById("si_mutators").textContent = s_mutators;
-    // document.getElementById("sil_proof").textContent = s_proof;
     document.getElementById("si_weapon").textContent = s_usedWeapon;
     document.getElementById("si_version").textContent = s_version;
     document.getElementById("si_date").textContent = s_date;
     
-    document.getElementById("subInfoImg").src = s_proof;
     document.getElementById("newSubInfoWindow").style.display = "block";
+}
+function ResetSubInfoWindowValues ()
+{
+    document.getElementById("subInfoVideo").src = "";
+    document.getElementById("subInfoImg").src = "";
+
+    document.getElementById("subIinfoVideoDiv").style.display = "none";
+    document.getElementById("subIinfoImageDiv").style.display = "none";
+    document.getElementById("subIinfoExternalImgDiv").style.display = "none";
+
+    document.getElementById("si_name").textContent     = ""
+    document.getElementById("si_score").textContent    = "";
+    document.getElementById("si_gold").textContent     = "";
+    document.getElementById("si_mutators").textContent = "";
+    document.getElementById("si_weapon").textContent   = "";
+    document.getElementById("si_version").textContent  = "";
+    document.getElementById("si_date").textContent     = "";
+    // document.getElementById("sil_proof").textContent    = "";
 }

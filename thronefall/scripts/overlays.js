@@ -56,7 +56,7 @@ function CloseSubInfoWindow()
 {
 	document.getElementById("newSubInfoWindow").style.display = "none";
 	location.hash = "";		
-
-	var imgLink    = document.getElementById("subInfoImg");
-	imgLink.src = "";
+	ResetSubInfoWindowValues ();
+	// var imgLink    = document.getElementById("subInfoImg");
+	// imgLink.src = "";
 }

@@ -316,7 +316,10 @@
 					SpawnTableRows();
 					GetSubData();
 					SelectRandomBackground(1);
+
 					document.getElementById("newScoreCatToggle").classList.add("active");
+
+					ResetSubInfoWindowValues();
 				</script>
 
 				<section id="Footer">
@@ -419,6 +422,14 @@
 
 			<div class="overlaysBlur" id="newSubInfoWindow" style="display: none; height: 100%;">
 				<style>
+					#newProofWindowContentBackground
+					{
+						background: linear-gradient(to bottom, var(--whiteColour2), var(--whiteColour1));
+						color: black;
+
+						padding: 5px;
+						border-radius: 5px;
+					}
 					.newProofWindowContent
 					{
 						max-height: 750px;
@@ -426,17 +437,77 @@
 					#subInfoImg
 					{
 						border-radius: 5px;
-						width: 75%;
-						height: auto;
+						max-width: 85%;
+						max-height: 400px;
+						box-shadow: 2px 2px 8px black;
 					}
 					#subIinfoImageDiv
 					{
 						text-align: center;
 					}
+					
+					#subInfoVideo
+					{
+						border: 0px;
+						border-radius: 5px;
+						
+						width: 100%;
+						height: 100%;
+
+						background-color: #222222;
+						box-shadow: 2px 2px 8px black;
+					}
+					#subIinfoVideoDiv
+					{
+						height: 420px;
+						max-width: 75%;
+
+						position: relative;
+						left: 50%;
+						transform: translate(-50%,0);
+					}
+
+					#subIinfoExternalImgDiv
+					{
+						text-align: center;
+						height: 300px;
+						
+						background-image: url("./img/backgrounds/overworld blur.png");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+					}
+					#subInfoExtImg
+					{
+						filter: blur(16px);
+						border-radius: 5px;
+						max-width: 85%;
+						max-height: 400px;
+						box-shadow: 2px 2px 8px black;
+					}
+					#externalImgMessageDiv
+					{
+						font-size: 2rem;
+						position: relative;
+						top: -50%;
+						transform: translate(0%, 50%);
+					}
+					#extImgButton
+					{
+						position: relative;
+						top: 50%;
+						transform: translate(0,-50%);
+					}
 
 					#subInfoTitle
 					{
 						text-align: center;
+						/* font-weight: 501; */
+						font-size: 1.32rem;
+						padding: 10px;
+					}
+					.subInfoSubtitle
+					{
 						font-weight: bold;
 					}
 
@@ -444,15 +515,35 @@
 					{
 						display: grid;
 						grid-template-columns: repeat(3, 1fr);
+						column-gap: 10px;
+						row-gap: 10px;
+
 						text-align: center;
-						max-width: 77%;
+						max-width: 75%;
 
 						margin: auto;
 						padding: 10px;
 					}
 					#subInfoGridCell
 					{
-						border: 1px white solid;
+						box-shadow: 2px 2px 8px black;
+						background: linear-gradient(to bottom, var(--buttonColour1), var(--buttonColour2));
+						/* border: 1px black solid; */
+						border-radius: 5px;
+						padding-bottom: 5px;
+						/* background-color: gray; */
+						/* max-width: 200px; */
+					}
+
+					.subInfoVars
+					{
+						font-style: normal;
+						/* font-weight: bold; */
+					}
+					.subInfoVarsTitle
+					{
+						font-style: normal;
+						font-weight: bold;
 					}
 				</style>
 				<div class="newProofWindow">
@@ -465,41 +556,53 @@
 						</div>
 					</div> <!-- newProofWindowTitleBar -->
 						
-					<div class="newProofWindowContent" style="overflow-y: auto; font-size:larger;">
-						<div id="subIinfoImageDiv">
-							<img src="" id="subInfoImg">
-						</div>
-						
-						<div id="subInfoTitle">
-							Submitted by <var id="si_name">...</var> on <var id="si_date">...</var>.
-						</div>
+					<div class="newProofWindowContent" style="overflow-y: auto; font-size:larger;">		
+						<div id="newProofWindowContentBackground">
+							<div class="alert alert-warning" role="alert">
+								<center>Unfinished experimental feature.</center>
+							</div>  
+							<div id="subIinfoImageDiv" style="display: none;">
+								<img src="" id="subInfoImg">
+							</div>
+							<div id="subIinfoVideoDiv" style="display: none;">
+								<iframe src="https://www.youtube.com/embed/oUCOakw2l1Y" id="subInfoVideo"></iframe>
+							</div>
+							<div id="subIinfoExternalImgDiv" style="display: none;">
+								<a href="" id="extenralImgButtonLink" target="_blank">
+									<button class="btn btn-lg btn-warning btn-whiteFill" id="extImgButton">View image in new tab</button>
+								</a>
+							</div>
 
-						<div id="subInfoGridWrapper">
-							<div id="subInfoGridCell">
-								Score: <br>
-								<span id="si_score">...</span>
+							<div id="subInfoTitle">
+								Submitted by <var id="si_name" class="subInfoVarsTitle">...</var> on <var id="si_date" class="subInfoVarsTitle">...</var>.
 							</div>
-							<div id="subInfoGridCell">
-								Gold: <br>
-								<span id="si_gold">...</span>
+
+							<div id="subInfoGridWrapper">
+								<div id="subInfoGridCell">
+									<span class="subInfoSubtitle">Score: <br> </span>
+									<var class="subInfoVars" id="si_score">...</var>
+								</div>
+								<div id="subInfoGridCell">
+									<span class="subInfoSubtitle">Gold: <br></span>
+									<var class="subInfoVars" id="si_gold">...</var>
+								</div>
+								<div id="subInfoGridCell">
+									<span class="subInfoSubtitle">Version: <br></span>
+									<var class="subInfoVars" id="si_version">...</var>
+								</div>
+								<div id="subInfoGridCell" style="position: relative; left: 50%;">
+									<span class="subInfoSubtitle">Used weapon: <br></span>
+									<var class="subInfoVars" id="si_weapon">...</var>
+								</div>
+								<div id="subInfoGridCell" style="position: relative; left: 50%;">
+									<span class="subInfoSubtitle">Mutators: <br></span>
+									<var class="subInfoVars" id="si_mutators">...</var>
+								</div>
 							</div>
-							<div id="subInfoGridCell">
-								Used weapon: <br>
-								<span id="si_weapon">...</span>
-							</div>
-							<div id="subInfoGridCell" style="position: relative; left: 50%;">
-								Mutators: <br>
-								<span id="si_mutators">...</span>
-							</div>
-							<div id="subInfoGridCell" style="position: relative; left: 50%;">
-								Version: <br>
-								<span id="si_version">...</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> <!-- overlaysBlur newProofWindowMainImage -->
-		</section> <!-- newscoreProof -->
+						</div> <!-- newProofWindowContentBackground -->
+					</div> <!-- newProofWindowContent -->
+				</div> <!-- overlaysBlur newProofWindowMainImage -->
+			</section> <!-- newscoreProof -->
 
 		<!-- STYLE OVERRIDES -->		
 		<link rel="stylesheet" href="./styles/overrides.css">
