@@ -39,6 +39,7 @@
 		<link rel="stylesheet" href="./styles/leaderboard.css">
 		<!-- Overrides at the bottom -->
 		<link rel="stylesheet" href="./styles/overlays.css">
+		<link rel="stylesheet" href="./styles/submissionInfoWindow.css">
 
 		<script src="./scripts/boardOptions.js"></script>
 		<script src="./scripts/pageOptions.js"></script>
@@ -49,6 +50,8 @@
 		<script src="./scripts/parser.js"></script>
         <script src="./scripts/sort.js"></script>
 		<script src="./scripts/overlays.js"></script>
+
+		<script src="./scripts/subWindowTest.js"></script>
 	</head>
 	<body>
 		<div class="mainPageContainer" id="mainPageContainer">
@@ -248,7 +251,7 @@
 				</section> <!-- -Options_buttons_section -->
 				
 				<!-- 
-					NEW SEMI-AUTO LEADERBOARD 
+					NEW AUTO LEADERBOARD 
 				-->
 				<div id="leaderboardsMainDiv">
 					<section id="newLBSection">
@@ -314,7 +317,10 @@
 					SpawnTableRows();
 					GetSubData();
 					SelectRandomBackground(1);
+
 					document.getElementById("newScoreCatToggle").classList.add("active");
+
+					// ResetSubInfoWindowValues();
 				</script>
 
 				<section id="Footer">
@@ -413,8 +419,72 @@
 						<iframe id="newProofVideo" src=""></iframe>
 					</div>
 				</div>
-			</div> <!-- overlaysBlur newProofWindowMainVideo -->
-		</section> <!-- newscoreProof -->
+			</div> <!-- overlaysBlur newProofWindowMainVideo -->¨
+
+			<div class="overlaysBlur" id="newSubInfoWindow" style="display: none; height: 100%;">
+				<div class="newProofWindow" id="subInfoWindowOverride">
+					<div class="newProofWindowTitleBar">
+						<div class="titleBarLeft">
+							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;details&nbsp;<i>(Experimental)</i></span>
+						</div>
+						<div class="titleBarRight">
+							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseSubInfoWindow()">
+						</div>
+					</div> <!-- newProofWindowTitleBar -->
+
+					<div class="newProofWindowContent" id="submissionInfoWindow">
+						<div id="newProofWindowContentBackground">
+							<div class="alert alert-warning" id="obsoleteSubInfoBar" role="alert">
+								<center><strong>This submission is obsolete</strong></center>
+							</div>  
+							<div class="alert alert-danger" id="rejectedSubInfoBar" role="alert">
+								<center><strong>This submission was rejected.</strong></center>
+							</div>  
+
+							<div id="subIinfoImageDiv" style="display: none;">
+								<a href="" id="subInfoImgLink" target="_blank">
+									<img src="" id="subInfoImg">
+								</a>
+							</div>
+							<div id="subIinfoVideoDiv" style="display: none;">
+								<iframe src="https://www.youtube.com/embed/oUCOakw2l1Y" id="subInfoVideo"></iframe>
+							</div>
+							<div id="subIinfoExternalImgDiv" style="display: none;">
+								<a href="" id="extenralImgButtonLink" target="_blank">
+									<button class="btn btn-lg btn-warning btn-whiteFill" id="extImgButton">View image in new tab</button>
+								</a>
+							</div>
+
+							<div id="subInfoTitle">
+								Submitted by <var id="si_name" class="subInfoVarsTitle">...</var> on <var id="si_date" class="subInfoVarsTitle">...</var>
+							</div>
+
+							<div id="subInfoGridWrapper">
+								<div class="subInfoGridCell">
+									<span class="subInfoSubtitle">Score: <br> </span>
+									<var class="subInfoVars" id="si_score">...</var>
+								</div>
+								<div class="subInfoGridCell">
+									<span class="subInfoSubtitle">Gold: <br></span>
+									<var class="subInfoVars" id="si_gold">...</var>
+								</div>
+								<div class="subInfoGridCell">
+									<span class="subInfoSubtitle">Version: <br></span>
+									<var class="subInfoVars" id="si_version">...</var>
+								</div>
+								<div class="subInfoGridCell subInfoGridCellOverride" style="position: relative; left: 50%;">
+									<span class="subInfoSubtitle">Used weapon: <br></span>
+									<var class="subInfoVars" id="si_weapon">...</var>
+								</div>
+								<div class="subInfoGridCell subInfoGridCellOverride2" style="position: relative; left: 50%;">
+									<span class="subInfoSubtitle">Mutators: <br></span>
+									<var class="subInfoVars" id="si_mutators">...</var>
+								</div>
+							</div>
+						</div> <!-- newProofWindowContentBackground -->
+					</div> <!-- newProofWindowContent -->
+				</div> <!-- overlaysBlur newProofWindowMainImage -->
+			</section> <!-- newscoreProof -->
 
 		<!-- STYLE OVERRIDES -->		
 		<link rel="stylesheet" href="./styles/overrides.css">

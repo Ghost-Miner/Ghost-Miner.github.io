@@ -8,6 +8,7 @@ function SpawnTableRows()
         let tBody = document.getElementById("newLbBody").append(newRow);
     }
 }
+////////////////////////////////////////////////////////////////////////////////
 
 let tableData; // data from entries.csv parsed into an array
 
@@ -17,13 +18,10 @@ async function GetSubData ()
     const ParseCSV    = await CSVToArray(CSVresponse);
 
     tableData = await ParseCSV;
-
     // console.log("RESPONSE");
     // console.log(ParseCSV);
-
     SortSubData();
 }
-
 // VARIABLES SHARED BY SortSubData AND ChangeTableData
 let NeulandSubs = new Array();
 let NordfelsSubs = new Array();
@@ -34,9 +32,9 @@ let canShowTableData = false;
 
 function SortSubData ()
 {
-    tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    console.log("SORTED =================");
-    console.log(tableData);
+    // tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    // console.log("SORTED =================");
+    // console.log(tableData);
 
     // DISPLAY ARRAY CONTENT
     // console.log("-- ALL SUBS ---------------------------------------------");
@@ -50,6 +48,7 @@ function SortSubData ()
     for (let i = 0; i < tableData.length; i++)
     {
         chosenRow = tableData[i];
+        chosenRow[13] = i;
 
         if (chosenRow[3] == "Early access")
         {
@@ -140,6 +139,8 @@ function SortSubData ()
 
     document.getElementById("newTimCatToggle").disabled = false;
     document.getElementById("newDemoCatToggle").disabled = false;
+
+    ShowSubInfo(GetAdressHash());
 }
 
 function ChangeTableData(level)
@@ -186,6 +187,7 @@ function ChangeTableData(level)
     let subID = new Array();
     let version = new Array();
     let usedWeapon = new Array();
+    let subIndex = new Array();
 
 	for (let i = 0; i < chosenArray.length; i++)
 	{
@@ -200,6 +202,7 @@ function ChangeTableData(level)
         mutators[i] = chosenRow[9];
         version[i] = chosenRow[10];
         usedWeapon[i] = chosenRow[11];
+        subIndex[i] = chosenRow[13];
 	}
 	// console.log("---------------------------------------------");
 	// console.log(names);
@@ -248,7 +251,12 @@ function ChangeTableData(level)
 	for (let k = 0; k < chosenArray.length; k++)
 	{
 		tPosition[k].textContent = k + 1;
-		tNames[k].textContent = names[k];
+		// tNames[k].textContent = names[k];
+        // tNames[k].innerHTML = "<span " +
+        //                         "OnClick=\'ShowScores(\"" + /* start */ k+1 + + names[k], score[k], coins[k], mutators[k], usedWeapon[k], version[k], date[k], proof[k]) /* end */ + "\")\'"
+        //                         + ">" + names[k] + "</span>"
+        tNames[k].innerHTML = "<span class='nameText' onclick=\'ShowSubInfo(\"" + subIndex[k] + "\")\'>" + names[k] + "</span>";
+
         tScore[k].textContent = SplitScore(score[k]);
 		tCoins[k].textContent = coins[k];
         tMutNums[k].textContent = mutators[k];
@@ -289,6 +297,8 @@ function ChangeTableData(level)
 
 	document.getElementById("tableName").textContent = chosenMap + " high-scores";
 }
+
+//////////////////////////////////////////////////////////
 
 function IsPicServiceSupoorted (url)
 {
