@@ -150,3 +150,8 @@
 				{	display: none;	}
 			#Nordfels_time_lb
 				{ display: none; }
+
+			.nameText:hover
+			{
+				cursor: pointer;
+			}

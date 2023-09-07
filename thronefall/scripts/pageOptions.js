@@ -18,7 +18,15 @@ function GetAdressHash()
 	const noHash = RemoveHasSymbol(hash);
 	
 	console.log("URL hash: " + hash + "; " + noHash);
-	return noHash;
+
+	if (hash.includes("sub"))
+	{
+		return ExtractSubNumber(noHash);
+	}
+	else
+	{
+		return noHash;
+	}
 }
 // Returns string after ? in the address
 function GetAdressSearch()
@@ -28,6 +36,50 @@ function GetAdressSearch()
 	return srch;
 }
 
+function ExtractSubNumber (rawString)
+{
+    let returnStringChars = new Array();
+    let returnStringFull = "";
+    let charIndex = 0;
+
+    const str   = rawString;
+    const chars = str.split('');
+
+    for (let i = 1; i < chars.length; i++)
+    {
+        returnStringChars[charIndex] = chars[i];
+        charIndex++;
+    }
+    // console.log(returnStringChars);
+    
+    charIndex = 0;
+    returnStringChars.reverse();
+    let subNumChars = new Array();
+
+    console.log(returnStringChars);
+
+    for (let i = 0; i < returnStringChars.length; i++)
+    {
+        console.log(returnStringChars[i])
+        if (returnStringChars[i] == "=")
+        {
+            break;
+        }
+        subNumChars[charIndex] = returnStringChars[i];
+        charIndex++;
+    }
+    console.log(subNumChars);
+
+    subNumChars.reverse();
+    for (let i = 0; i < subNumChars.length; i++)
+    {
+        returnStringFull = returnStringFull + subNumChars[i];
+    }
+    console.log(subNumChars);
+    console.log(returnStringFull);
+
+    return returnStringFull;
+}
 function RemoveHasSymbol (hashString)
 {
     let returnStringChars = new Array();
@@ -49,6 +101,8 @@ function RemoveHasSymbol (hashString)
 
     return returnStringFull;
 }
+
+
 
 function SelectRandomBackground(mappNumner)
 {

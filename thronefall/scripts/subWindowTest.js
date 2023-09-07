@@ -25,6 +25,7 @@ function ShowScores ()
 
 function ShowSubInfo (submissionIndex)
 {
+    // submissionIndex = ExtractSubNumber(submissionIndex);
     // ResetSubInfoWindowValues();
 
     if (submissionIndex >= tableData.length || submissionIndex == undefined || submissionIndex == "")
@@ -35,7 +36,7 @@ function ShowSubInfo (submissionIndex)
     const chosenSubmission = tableData[submissionIndex];
     if (chosenSubmission[0] == "Submission Date" || chosenSubmission[3] != "Early access")
     {
-        console.error("Invalid submission");
+        console.error("Invalid submission " + chosenSubmission + "; " + submissionIndex);
         return;
     }
     console.log(chosenSubmission);
@@ -59,7 +60,7 @@ function ShowSubInfo (submissionIndex)
     s_version    = chosenSubmission[10];
     s_date       = chosenSubmission[8];
 
-    location.hash = submissionIndex;
+    location.hash = "submission=" + submissionIndex;
     ShowScores ();
     AssignSubInfoWindowValues();
 }
@@ -87,12 +88,12 @@ function AssignSubInfoWindowValues ()
     }
 
     document.getElementById("si_name").textContent = s_name;
-    document.getElementById("si_score").textContent = s_score;
+    document.getElementById("si_score").textContent = SplitScore(s_score);
     document.getElementById("si_gold").textContent = s_gold;
     document.getElementById("si_mutators").textContent = s_mutators;
     document.getElementById("si_weapon").textContent = s_usedWeapon;
     document.getElementById("si_version").textContent = s_version;
-    document.getElementById("si_date").textContent = s_date;
+    document.getElementById("si_date").textContent = RemoveTimeFromData(s_date);
     
     document.getElementById("newSubInfoWindow").style.display = "block";
 }
@@ -114,3 +115,4 @@ function ResetSubInfoWindowValues ()
     document.getElementById("si_date").textContent     = "";
     // document.getElementById("sil_proof").textContent    = "";
 }
+

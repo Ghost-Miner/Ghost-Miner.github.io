@@ -255,7 +255,7 @@ function ChangeTableData(level)
         // tNames[k].innerHTML = "<span " +
         //                         "OnClick=\'ShowScores(\"" + /* start */ k+1 + + names[k], score[k], coins[k], mutators[k], usedWeapon[k], version[k], date[k], proof[k]) /* end */ + "\")\'"
         //                         + ">" + names[k] + "</span>"
-        tNames[k].innerHTML = "<span onclick=\'ShowSubInfo(\"" + subIndex[k] + "\")\'>" + names[k] + "</span>";
+        tNames[k].innerHTML = "<span class='nameText' onclick=\'ShowSubInfo(\"" + subIndex[k] + "\")\'>" + names[k] + "</span>";
 
         tScore[k].textContent = SplitScore(score[k]);
 		tCoins[k].textContent = coins[k];

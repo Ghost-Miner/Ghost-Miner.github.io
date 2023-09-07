@@ -319,7 +319,7 @@
 
 					document.getElementById("newScoreCatToggle").classList.add("active");
 
-					ResetSubInfoWindowValues();
+					// ResetSubInfoWindowValues();
 				</script>
 
 				<section id="Footer">
@@ -427,7 +427,7 @@
 						background: linear-gradient(to bottom, var(--whiteColour2), var(--whiteColour1));
 						color: black;
 
-						padding: 5px;
+						padding: 20px;
 						border-radius: 5px;
 					}
 					.newProofWindowContent
@@ -528,11 +528,11 @@
 					{
 						box-shadow: 2px 2px 8px black;
 						background: linear-gradient(to bottom, var(--buttonColour1), var(--buttonColour2));
-						/* border: 1px black solid; */
+						/* border: 1px black dotted; */
 						border-radius: 5px;
-						padding-bottom: 5px;
-						/* background-color: gray; */
-						/* max-width: 200px; */
+
+						padding-top: 3px;
+						padding-bottom: 7px;
 					}
 
 					.subInfoVars
@@ -545,11 +545,20 @@
 						font-style: normal;
 						font-weight: bold;
 					}
+
+					#obsoleteSubInfoBar
+					{
+						display: none;
+					}
+					#rejectedSubInfoBar
+					{
+						display: none;
+					}
 				</style>
 				<div class="newProofWindow">
 					<div class="newProofWindowTitleBar">
 						<div class="titleBarLeft">
-							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;details</span>
+							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;details&nbsp;<i>(Experimental)</i></span>
 						</div>
 						<div class="titleBarRight">
 							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseSubInfoWindow()">
@@ -558,9 +567,13 @@
 						
 					<div class="newProofWindowContent" style="overflow-y: auto; font-size:larger;">		
 						<div id="newProofWindowContentBackground">
-							<div class="alert alert-warning" role="alert">
-								<center>Unfinished experimental feature.</center>
+							<div class="alert alert-warning" id="obsoleteSubInfoBar" role="alert">
+								<center><strong>This submission is obsolete</strong></center>
 							</div>  
+							<div class="alert alert-danger" id="rejectedSubInfoBar" role="alert">
+								<center><strong>This submission was rejected.</strong></center>
+							</div>  
+
 							<div id="subIinfoImageDiv" style="display: none;">
 								<img src="" id="subInfoImg">
 							</div>
