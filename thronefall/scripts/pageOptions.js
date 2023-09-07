@@ -15,8 +15,18 @@ function GetUrlInfo()
 function GetAdressHash()
 {
 	const hash = window.location.hash;
-	console.log("URL hash: " + hash);
-	return hash;
+	const noHash = RemoveHasSymbol(hash);
+	
+	console.log("URL hash: " + hash + "; " + noHash);
+
+	if (hash.includes("score") || hash.includes("sub"))
+	{
+		return ExtractSubNumber(noHash);
+	}
+	else
+	{
+		return noHash;
+	}
 }
 // Returns string after ? in the address
 function GetAdressSearch()
@@ -26,34 +36,73 @@ function GetAdressSearch()
 	return srch;
 }
 
-function CheckAdressHref()
+function ExtractSubNumber (rawString)
 {
-	console.log("[ WARNING ]: using only #<lb_name> to access a specific leaderboard is deprecated. use new format instead!");
-	/*let hash = window.location.hash;
-	switch (hash)
-	{
-		default:
-			console.log("CheckAdressHref | invalid hash. ignoring");
-			ChangeShownTable("nf-score", "nordfels_score");
-			break;
+    let returnStringChars = new Array();
+    let returnStringFull = "";
+    let charIndex = 0;
 
-		case "#nordfels_score":
-			ChangeShownTable("nf-score", "nordfels_score");
-			break;
+    const str   = rawString;
+    const chars = str.split('');
 
-		case "#neuland_score":
-			ChangeShownTable("nl-score", "neuland_score");
-			break;
+    for (let i = 1; i < chars.length; i++)
+    {
+        returnStringChars[charIndex] = chars[i];
+        charIndex++;
+    }
+    // console.log(returnStringChars);
+    
+    charIndex = 0;
+    returnStringChars.reverse();
+    let subNumChars = new Array();
 
-		case "#nordfels_time":
-			ChangeShownTable("nf-time", "nordfels_time");
-			break;
+    console.log(returnStringChars);
 
-		case "#neuland_time":
-			ChangeShownTable("nl-time", "neuland_time");
-			break;
-	}*/
+    for (let i = 0; i < returnStringChars.length; i++)
+    {
+        console.log(returnStringChars[i])
+        if (returnStringChars[i] == "=")
+        {
+            break;
+        }
+        subNumChars[charIndex] = returnStringChars[i];
+        charIndex++;
+    }
+    console.log(subNumChars);
+
+    subNumChars.reverse();
+    for (let i = 0; i < subNumChars.length; i++)
+    {
+        returnStringFull = returnStringFull + subNumChars[i];
+    }
+    console.log(subNumChars);
+    console.log(returnStringFull);
+
+    return returnStringFull;
 }
+function RemoveHasSymbol (hashString)
+{
+    let returnStringChars = new Array();
+    let returnStringFull = "";
+    let charIndex = 0;
+
+    const str   = hashString;
+    const chars = str.split('');
+
+    for (let i = 1; i < chars.length; i++)
+    {
+        returnStringChars[charIndex] = chars[i];
+        charIndex++;
+    }
+    for (let i = 0; i < returnStringChars.length; i++)
+    {
+        returnStringFull = returnStringFull + returnStringChars[i];
+    }
+
+    return returnStringFull;
+}
+
+
 
 function SelectRandomBackground(mappNumner)
 {

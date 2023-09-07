@@ -51,3 +51,12 @@ function CloseVideoWindow()
 	var videoLink = document.getElementById("newProofVideo");
 	videoLink.src = "";
 }
+
+function CloseSubInfoWindow() 
+{
+	document.getElementById("newSubInfoWindow").style.display = "none";
+	location.hash = "";		
+	ResetSubInfoWindowValues ();
+	// var imgLink    = document.getElementById("subInfoImg");
+	// imgLink.src = "";
+}
