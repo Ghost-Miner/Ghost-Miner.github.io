@@ -71,6 +71,7 @@ function AssignSubInfoWindowValues ()
     {
         document.getElementById("subIinfoImageDiv").style.display = "block";
         document.getElementById("subInfoImg").src = s_proof;
+        document.getElementById("subInfoImgLink").href = s_proof;
     }
     else
     {
