@@ -60,7 +60,7 @@ function ShowSubInfo (submissionIndex)
     s_version    = chosenSubmission[10];
     s_date       = chosenSubmission[8];
 
-    location.hash = "submission=" + submissionIndex;
+    location.hash = "score=" + submissionIndex;
     ShowScores ();
     AssignSubInfoWindowValues();
 }

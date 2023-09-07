@@ -140,11 +140,110 @@
     }
 }
 
+/*
+    SUBMISSION INFO WINDOW
+*/
+@media screen and (max-width: 900px)
+{
+    #subIinfoVideoDiv
+    {
+        height: 350px;
+    }
+}
+@media screen and (max-width: 750px)
+{
+    #subInfoGridWrapper
+    {
+        max-width: 100%;
+    }
+    #subInfoImg
+    {
+        max-width: 95%;
+    }
+    #subIinfoExternalImgDiv
+    {
+        height: 250px;
+    }
+    #subIinfoVideoDiv
+    {
+        height: 300px;
+    }
+}
+@media screen and (max-width: 550px)
+{
+    #subInfoGridWrapper
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+    .subInfoGridCellOverride
+    {
+        left: 0px !important;
+    }
+    #subIinfoExternalImgDiv
+    {
+        height: 200px;
+    }
+    #subIinfoVideoDiv
+    {
+        height: 250px;
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 450px)
+{
+    #subIinfoVideoDiv
+    {
+        height: 175px;
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 400px)
+{
+    .windowTopBarTitle
+    {
+        font-size: 1.1rem;
+    }
+    #subInfoTitle
+    {
+        font-size: 1.3rem;
+    }
 
+    #subInfoGridWrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    .subInfoGridCellOverride2
+    {
+        left: 0px !important;
+    }
+    .subInfoGridCell
+    {
+        padding-top: 0px;
+        padding-bottom: 3px;
 
+        font-size: 1.1rem;
+    }
+    #newProofWindowContentBackground
+    {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        height: 100%;
+        overflow-y: auto;
+    }
+    #subInfoWindowOverride
+    {
+        top: 0;
+        transform: translate(0,0);
+    }
+    #subIinfoExternalImgDiv
+    {
+        height: 150px;
+    }
+}
 
-
-
+/*
+    VIDEO PROOF WINDOW
+*/
 @media screen and (max-height: 650px)
 {
     #newProofVideo

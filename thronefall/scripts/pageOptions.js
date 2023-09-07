@@ -19,7 +19,7 @@ function GetAdressHash()
 	
 	console.log("URL hash: " + hash + "; " + noHash);
 
-	if (hash.includes("sub"))
+	if (hash.includes("score") || hash.includes("sub"))
 	{
 		return ExtractSubNumber(noHash);
 	}

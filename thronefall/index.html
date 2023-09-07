@@ -39,6 +39,7 @@
 		<link rel="stylesheet" href="./styles/leaderboard.css">
 		<!-- Overrides at the bottom -->
 		<link rel="stylesheet" href="./styles/overlays.css">
+		<link rel="stylesheet" href="./styles/submissionInfoWindow.css">
 
 		<script src="./scripts/boardOptions.js"></script>
 		<script src="./scripts/pageOptions.js"></script>
@@ -421,141 +422,7 @@
 			</div> <!-- overlaysBlur newProofWindowMainVideo -->¨
 
 			<div class="overlaysBlur" id="newSubInfoWindow" style="display: none; height: 100%;">
-				<style>
-					#newProofWindowContentBackground
-					{
-						background: linear-gradient(to bottom, var(--whiteColour2), var(--whiteColour1));
-						color: black;
-
-						padding: 20px;
-						border-radius: 5px;
-					}
-					.newProofWindowContent
-					{
-						max-height: 750px;
-					}
-					#subInfoImg
-					{
-						border-radius: 5px;
-						max-width: 85%;
-						max-height: 400px;
-						box-shadow: 2px 2px 8px black;
-					}
-					#subIinfoImageDiv
-					{
-						text-align: center;
-					}
-					
-					#subInfoVideo
-					{
-						border: 0px;
-						border-radius: 5px;
-						
-						width: 100%;
-						height: 100%;
-
-						background-color: #222222;
-						box-shadow: 2px 2px 8px black;
-					}
-					#subIinfoVideoDiv
-					{
-						height: 420px;
-						max-width: 75%;
-
-						position: relative;
-						left: 50%;
-						transform: translate(-50%,0);
-					}
-
-					#subIinfoExternalImgDiv
-					{
-						text-align: center;
-						height: 300px;
-						
-						background-image: url("./img/backgrounds/overworld blur.png");
-						background-size: contain;
-						background-position: center;
-						background-repeat: no-repeat;
-					}
-					#subInfoExtImg
-					{
-						filter: blur(16px);
-						border-radius: 5px;
-						max-width: 85%;
-						max-height: 400px;
-						box-shadow: 2px 2px 8px black;
-					}
-					#externalImgMessageDiv
-					{
-						font-size: 2rem;
-						position: relative;
-						top: -50%;
-						transform: translate(0%, 50%);
-					}
-					#extImgButton
-					{
-						position: relative;
-						top: 50%;
-						transform: translate(0,-50%);
-					}
-
-					#subInfoTitle
-					{
-						text-align: center;
-						/* font-weight: 501; */
-						font-size: 1.32rem;
-						padding: 10px;
-					}
-					.subInfoSubtitle
-					{
-						font-weight: bold;
-					}
-
-					#subInfoGridWrapper
-					{
-						display: grid;
-						grid-template-columns: repeat(3, 1fr);
-						column-gap: 10px;
-						row-gap: 10px;
-
-						text-align: center;
-						max-width: 75%;
-
-						margin: auto;
-						padding: 10px;
-					}
-					#subInfoGridCell
-					{
-						box-shadow: 2px 2px 8px black;
-						background: linear-gradient(to bottom, var(--buttonColour1), var(--buttonColour2));
-						/* border: 1px black dotted; */
-						border-radius: 5px;
-
-						padding-top: 3px;
-						padding-bottom: 7px;
-					}
-
-					.subInfoVars
-					{
-						font-style: normal;
-						/* font-weight: bold; */
-					}
-					.subInfoVarsTitle
-					{
-						font-style: normal;
-						font-weight: bold;
-					}
-
-					#obsoleteSubInfoBar
-					{
-						display: none;
-					}
-					#rejectedSubInfoBar
-					{
-						display: none;
-					}
-				</style>
-				<div class="newProofWindow">
+				<div class="newProofWindow" id="subInfoWindowOverride">
 					<div class="newProofWindowTitleBar">
 						<div class="titleBarLeft">
 							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;details&nbsp;<i>(Experimental)</i></span>
@@ -565,7 +432,7 @@
 						</div>
 					</div> <!-- newProofWindowTitleBar -->
 						
-					<div class="newProofWindowContent" style="overflow-y: auto; font-size:larger;">		
+					<div class="newProofWindowContent" id="submissionInfoWindow">
 						<div id="newProofWindowContentBackground">
 							<div class="alert alert-warning" id="obsoleteSubInfoBar" role="alert">
 								<center><strong>This submission is obsolete</strong></center>
@@ -587,27 +454,27 @@
 							</div>
 
 							<div id="subInfoTitle">
-								Submitted by <var id="si_name" class="subInfoVarsTitle">...</var> on <var id="si_date" class="subInfoVarsTitle">...</var>.
+								Submitted by <var id="si_name" class="subInfoVarsTitle">...</var> on <var id="si_date" class="subInfoVarsTitle">...</var>
 							</div>
 
 							<div id="subInfoGridWrapper">
-								<div id="subInfoGridCell">
+								<div class="subInfoGridCell">
 									<span class="subInfoSubtitle">Score: <br> </span>
 									<var class="subInfoVars" id="si_score">...</var>
 								</div>
-								<div id="subInfoGridCell">
+								<div class="subInfoGridCell">
 									<span class="subInfoSubtitle">Gold: <br></span>
 									<var class="subInfoVars" id="si_gold">...</var>
 								</div>
-								<div id="subInfoGridCell">
+								<div class="subInfoGridCell">
 									<span class="subInfoSubtitle">Version: <br></span>
 									<var class="subInfoVars" id="si_version">...</var>
 								</div>
-								<div id="subInfoGridCell" style="position: relative; left: 50%;">
+								<div class="subInfoGridCell subInfoGridCellOverride" style="position: relative; left: 50%;">
 									<span class="subInfoSubtitle">Used weapon: <br></span>
 									<var class="subInfoVars" id="si_weapon">...</var>
 								</div>
-								<div id="subInfoGridCell" style="position: relative; left: 50%;">
+								<div class="subInfoGridCell subInfoGridCellOverride2" style="position: relative; left: 50%;">
 									<span class="subInfoSubtitle">Mutators: <br></span>
 									<var class="subInfoVars" id="si_mutators">...</var>
 								</div>
