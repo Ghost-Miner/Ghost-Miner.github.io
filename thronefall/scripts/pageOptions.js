@@ -104,9 +104,9 @@ function RemoveHasSymbol (hashString)
 
 function OpenSubmitFromURL ()
 {
-	const urlSearch = GetAdressSearch();
+	const urlHash = GetAdressHash();
 
-	if (urlSearch == "?submit")
+	if (urlHash == "ubmit")
 	{
 		OpenSubWindow();
 	}

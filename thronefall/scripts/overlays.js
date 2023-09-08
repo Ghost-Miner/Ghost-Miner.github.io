@@ -4,12 +4,13 @@
 function OpenSubWindow() 
 {
 	document.getElementById("newSubmitOverlay").style.display = "block";
+	location.hash = "submit";
 }
 function CloseSubmitWindow ()
 {
 	document.getElementById("newSubmitOverlay").style.display = "none";
 	ShowChoiceButtons();
-	location.search = "";
+	location.hash = "";
 }
 function HideChoiceButtons ()
 {

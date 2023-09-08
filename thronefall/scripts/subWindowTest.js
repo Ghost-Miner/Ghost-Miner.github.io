@@ -28,6 +28,11 @@ function ShowSubInfo (submissionIndex)
     // submissionIndex = ExtractSubNumber(submissionIndex);
     // ResetSubInfoWindowValues();
 
+if (submissionIndex.includes("ubmit"))
+{
+    return;
+}
+
     if (submissionIndex >= tableData.length || submissionIndex == undefined || submissionIndex == "")
     {
         console.error("Invalid submission index.");
