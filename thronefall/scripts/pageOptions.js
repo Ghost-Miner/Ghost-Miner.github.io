@@ -16,10 +16,16 @@ function GetAdressHash()
 {
 	const hash = window.location.hash;
 	const noHash = RemoveHasSymbol(hash);
-	
+
+	// const hashChars = has.split('');
+	// if (hashChars[0] == "#")
+	// {
+		
+	// }
+
 	console.log("URL hash: " + hash + "; " + noHash);
 
-	if (hash.includes("score") || hash.includes("sub"))
+	if (hash.includes("score"))
 	{
 		return ExtractSubNumber(noHash);
 	}
@@ -106,7 +112,7 @@ function OpenSubmitFromURL ()
 {
 	const urlHash = GetAdressHash();
 
-	if (urlHash == "ubmit")
+	if (urlHash == "submit")
 	{
 		OpenSubWindow();
 	}
