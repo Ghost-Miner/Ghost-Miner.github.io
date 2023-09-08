@@ -9,6 +9,7 @@ function CloseSubmitWindow ()
 {
 	document.getElementById("newSubmitOverlay").style.display = "none";
 	ShowChoiceButtons();
+	location.search = "";
 }
 function HideChoiceButtons ()
 {

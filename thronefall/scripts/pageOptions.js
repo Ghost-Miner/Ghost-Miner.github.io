@@ -102,6 +102,15 @@ function RemoveHasSymbol (hashString)
     return returnStringFull;
 }
 
+function OpenSubmitFromURL ()
+{
+	const urlSearch = GetAdressSearch();
+
+	if (urlSearch == "?submit")
+	{
+		OpenSubWindow();
+	}
+}
 
 
 function SelectRandomBackground(mappNumner)
