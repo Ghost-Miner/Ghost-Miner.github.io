@@ -29,12 +29,12 @@
 
 a:link 
 {
-    color: var(--orange);
+    color: var(--windowMainColourTop);
     text-decoration: none;
 }
 a:visited 
 {
-    color: var(--orange);
+    color: var(--windowMainColourTop);
     text-decoration: none;
 }
 body 

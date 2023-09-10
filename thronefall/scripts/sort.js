@@ -217,7 +217,7 @@ function ChangeTableData(level)
 	const tScore    = document.getElementsByClassName("score");
 	const tCoins    = document.getElementsByClassName("coins");
 	const tDate     = document.getElementsByClassName("date");
-	const tProof    = document.getElementsByClassName("proof");
+	// const tProof    = document.getElementsByClassName("proof");
     const tMutNums  = document.getElementsByClassName("mutNums");
     const tVersion  = document.getElementsByClassName("version");
     const tWeapon   = document.getElementsByClassName("usedWeapon");
@@ -251,11 +251,8 @@ function ChangeTableData(level)
 	for (let k = 0; k < chosenArray.length; k++)
 	{
 		tPosition[k].textContent = k + 1;
-		// tNames[k].textContent = names[k];
-        // tNames[k].innerHTML = "<span " +
-        //                         "OnClick=\'ShowScores(\"" + /* start */ k+1 + + names[k], score[k], coins[k], mutators[k], usedWeapon[k], version[k], date[k], proof[k]) /* end */ + "\")\'"
-        //                         + ">" + names[k] + "</span>"
-        tNames[k].innerHTML = "<span class='nameText' onclick=\'ShowSubInfo(\"" + subIndex[k] + "\")\'>" + names[k] + "</span>";
+		tNames[k].textContent = names[k];
+        // tNames[k].innerHTML = "<span class='nameText' onclick=\'ShowSubInfo(\"" + subIndex[k] + "\")\'>" + names[k] + "</span>";
 
         tScore[k].textContent = SplitScore(score[k]);
 		tCoins[k].textContent = coins[k];
@@ -264,29 +261,29 @@ function ChangeTableData(level)
         tVersion[k].textContent = version[k];
         tWeapon[k].textContent = usedWeapon[k];
 
-        proofString = proof[k];
-        isVideo = proofString.includes(videoString);
+        // proofString = proof[k];
+        // isVideo = proofString.includes(videoString);
 
-        const externalLinkDivsPart1 = "<div id=\"extProofLinkDivWrapper\"> <div id=\"extProofLinkDivText\"> <a class=\"extProofLink\" href=\""
-        const externalLinkDivsPart2 = "\" target=\"_blank\"> Screenshot </a> </div> <div id=\"extProofLinkDivIcon\"> <img src=\"./img/external thin.png\" id=\"extProofLinkDivImg\"> </div> </div>"
+        // const externalLinkDivsPart1 = "<div id=\"extProofLinkDivWrapper\"> <div id=\"extProofLinkDivText\"> <a class=\"extProofLink\" href=\""
+        // const externalLinkDivsPart2 = "\" target=\"_blank\"> Screenshot </a> </div> <div id=\"extProofLinkDivIcon\"> <img src=\"./img/external thin.png\" id=\"extProofLinkDivImg\"> </div> </div>"
 
-        if (isVideo) // Link goes to a video
-        {   
-            tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='OpenVideoWindow(\"" + GetEmbedYTLink(proof[k]) + "\")'> Video </a>";  
-        }
-        else // Link goes to a picture
-        {   
-            if (IsPicServiceSupoorted(proof[k]))
-            {
-                tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='OpenProofWindowImage(\"" + proof[k] + "\")'> Screenshot </a>";
-            }
-            else
-            {
-                // tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' target='_blank' href=\"" + proof[k] + "\"> Screenshot </a>";
-                tProof[k].innerHTML = externalLinkDivsPart1 + proof[k] + externalLinkDivsPart2;
-            }
-        }
-        // linkProof[k].href = proof[k];
+        // if (isVideo) 
+        // {   
+        //     tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='OpenVideoWindow(\"" + GetEmbedYTLink(proof[k]) + "\")'> Video </a>";  
+        // }
+        // else 
+        // {   
+        //     if (IsPicServiceSupoorted(proof[k]))
+        //     {
+        //         tProof[k].innerHTML = "<a class='ScoreProofLink' title='Proof of the highscore' onclick='OpenProofWindowImage(\"" + proof[k] + "\")'> Screenshot </a>";
+        //     }
+        //     else
+        //     {
+        //         tProof[k].innerHTML = externalLinkDivsPart1 + proof[k] + externalLinkDivsPart2;
+        //     }
+        // }
+        
+        tableRows[k].addEventListener("click",() => { ShowSubInfo(subIndex[k]) },false,);
 	}
     for (let i = chosenArray.length; i < tableRows.length; i++)
     {

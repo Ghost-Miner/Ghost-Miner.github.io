@@ -28,20 +28,20 @@ function ShowSubInfo (submissionIndex)
     // submissionIndex = ExtractSubNumber(submissionIndex);
     // ResetSubInfoWindowValues();
 
-if (submissionIndex.includes("ubmit"))
-{
-    return;
-}
+    // if (submissionIndex.includes("submit"))
+    // {
+    //     return;
+    // }
 
     if (submissionIndex >= tableData.length || submissionIndex == undefined || submissionIndex == "")
     {
-        console.error("Invalid submission index.");
+        console.error("ShowSubInfo | Invalid submission index: " + submissionIndex);
         return;
     }    
     const chosenSubmission = tableData[submissionIndex];
     if (chosenSubmission[0] == "Submission Date" || chosenSubmission[3] != "Early access")
     {
-        console.error("Invalid submission " + chosenSubmission + "; " + submissionIndex);
+        console.error("ShowSubInfo | Invalid submission " + chosenSubmission + "; " + submissionIndex);
         return;
     }
     console.log(chosenSubmission);
@@ -71,7 +71,11 @@ if (submissionIndex.includes("ubmit"))
 }
 
 function AssignSubInfoWindowValues ()
-{
+{    
+    document.getElementById("subIinfoVideoDiv").style.display = "none";
+    document.getElementById("subIinfoImageDiv").style.display = "none";
+    document.getElementById("subIinfoExternalImgDiv").style.display = "none";
+
     if (IsPicServiceSupoorted(s_proof))
     {
         document.getElementById("subIinfoImageDiv").style.display = "block";

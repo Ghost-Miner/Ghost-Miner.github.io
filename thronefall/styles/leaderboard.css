@@ -155,3 +155,21 @@
 {
 	cursor: pointer;
 }
+
+.tableRow
+{
+	cursor: pointer;
+}
+.tableRow:hover
+{
+	background: linear-gradient(to bottom,var(--whiteColour2),var(--whiteColour1)) !important;
+	color: var(--windowMainColourTop);
+	/* font-weight: bold; */
+	/* font-style: italic; */
+	/* text-decoration: wavy; */
+}
+.tableRow:active
+{
+	/* background: linear-gradient(to top,var(--whiteColour2),var(--whiteColour1)) !important; */
+	color: var(--windowMainColourBottom);
+}

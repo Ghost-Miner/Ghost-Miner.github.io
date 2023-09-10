@@ -62,11 +62,11 @@ function ExtractSubNumber (rawString)
     returnStringChars.reverse();
     let subNumChars = new Array();
 
-    console.log(returnStringChars);
+    // console.log(returnStringChars);
 
     for (let i = 0; i < returnStringChars.length; i++)
     {
-        console.log(returnStringChars[i])
+        // console.log(returnStringChars[i])
         if (returnStringChars[i] == "=")
         {
             break;
@@ -74,15 +74,15 @@ function ExtractSubNumber (rawString)
         subNumChars[charIndex] = returnStringChars[i];
         charIndex++;
     }
-    console.log(subNumChars);
+    // console.log(subNumChars);
 
     subNumChars.reverse();
     for (let i = 0; i < subNumChars.length; i++)
     {
         returnStringFull = returnStringFull + subNumChars[i];
     }
-    console.log(subNumChars);
-    console.log(returnStringFull);
+    // console.log(subNumChars);
+    // console.log(returnStringFull);
 
     return returnStringFull;
 }
