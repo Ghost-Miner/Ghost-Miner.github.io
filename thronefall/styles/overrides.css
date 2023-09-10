@@ -244,6 +244,14 @@
 /*
     VIDEO PROOF WINDOW
 */
+@media screen and (max-height: 800px)
+{
+    .windowBakcground
+    {
+        top: 0;
+        transform: translate(0,0);
+    }
+}
 @media screen and (max-height: 650px)
 {
     #newProofVideo

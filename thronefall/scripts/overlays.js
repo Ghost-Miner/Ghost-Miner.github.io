@@ -12,15 +12,26 @@ function CloseSubmitWindow ()
 	ShowChoiceButtons();
 	location.hash = "";
 }
-function HideChoiceButtons ()
+function HideChoiceButtons (type)
 {
 	document.getElementById("chooseSubTypeButtons").style.display = "none";
 	document.getElementById("submitFormDiv").style.display = "block";
+
+	if (type == "time")
+	{
+		document.getElementById("submitFrame").src = "./submitSpeed.html"
+	}
+	else
+	{
+		document.getElementById("submitFrame").src = "./submit.html"
+	}
 }
 function ShowChoiceButtons ()
 {
 	document.getElementById("chooseSubTypeButtons").style.display = "block";
 	document.getElementById("submitFormDiv").style.display = "none";
+	
+	document.getElementById("submitFrame").src = ""
 }
 
 // 

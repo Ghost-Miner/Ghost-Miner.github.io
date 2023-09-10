@@ -63,13 +63,17 @@
 */
 .windowBakcground
 {
+	position: relative;
+  	top: 50%;
+  	transform: translate(0,-50%);
+
 	z-index: 6;
 	border-radius: 5px;
 
 	margin: auto;
 	padding: 7.5px;
 
-	max-width: 925px;
+	max-width: 900px;
 	height: 100%;
 
 	display: flex;

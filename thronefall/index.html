@@ -350,8 +350,8 @@
 			N E W  S U B M I T  O V E R L A Y
 		-->
 		<section class="newOverlay" id="newSubmitOverlay" style="display: none">
-			<div class="overlaysBlur">
-				<div class="windowBakcground">
+			<div class="overlaysBlur" style="overflow: auto;">
+				<div class="windowBakcground" style="max-height: 750px;">
 					<div class="windowForeground">
 						<div class="topTitleBar">
 							<div class="titleBarLeft" style="margin-bottom: 0px;">
@@ -365,17 +365,16 @@
 						<div id="windowContentDiv">
 							<div id="chooseSubTypeButtons">
 								<span id="chooseSubTiypeTitle">Choose a category</span>
-								<button id="topChoiceButton" class="btn btn-lg btn-block btn_orangeGradient btn-warning btn-whiteFill" onclick="HideChoiceButtons()"
-										hx-get="./submit.html" hx-swap="innerHTML" hx-target="#submitFormDiv">
-											<strong> High-score </strong>
+								<button class="btn btn-lg btn-block btn_orangeGradient btn-warning btn-whiteFill" onclick="HideChoiceButtons('score')" id="topChoiceButton">
+									<strong> High-score </strong>
 								</button>
-								<button class="btn btn-lg btn-block btn_orangeGradient btn-warning btn-whiteFill" onclick="HideChoiceButtons()"
-										hx-get="./submitSpeed.html" hx-swap="innerHTML" hx-target="#submitFormDiv">
-											<strong> Speed-run </strong>
+								<button class="btn btn-lg btn-block btn_orangeGradient btn-warning btn-whiteFill" onclick="HideChoiceButtons('time')">
+									<strong> Speed-run </strong>
 								</button>
 							</div>
-							<div id="submitFormDiv">
+							<div id="submitFormDiv" style="display: block; width: 100%; height: 100%;">
 								<!-- cHOSEN FORM GOES HERE -->
+								<iframe src=""style="width: 100%; height: 700px; border: 0px;" id="submitFrame"></iframe>
 							</div>
 						</div> <!-- windowContentDiv -->
 					</div> <!-- windowForeground -->
