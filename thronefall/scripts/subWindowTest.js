@@ -84,6 +84,8 @@ function AssignSubInfoWindowValues ()
         {
             document.getElementById("subIinfoVideoDiv").style.display = "block";
             document.getElementById("subInfoVideo").src = GetEmbedYTLink(s_proof);
+            document.getElementById("subIinfoFileUrl").href = s_proof;
+            document.getElementById("subIinfoFileUrl").textContent = ShortenYTLink(s_proof);
             // document.getElementById("subInfoImg").style.display = "none";            
         }
         else
@@ -122,3 +124,35 @@ function ResetSubInfoWindowValues ()
     // document.getElementById("sil_proof").textContent    = "";
 }
 
+function ShortenYTLink (url)
+{
+    let videoIDChars = new Array();
+    let vidIDIndex = 0;
+    let vidIDString = "";
+
+    const ytLink = "youtu.be/";
+    const inputStr = url;
+    const chars = inputStr.split(''); 
+
+    for (let i = chars.length - 1; i >= 0; i--)
+    {
+        if (chars[i] == "=" || chars[i] == "/")
+        {
+            break;
+        }
+        videoIDChars[vidIDIndex] = chars[i]; 
+        vidIDIndex++;
+    }
+
+    // console.log(chars);
+    // console.log("------------------------");
+    // console.log(videoIDChars)//.reverse());
+
+    let IDs = videoIDChars.reverse();
+    for (let i = 0; i < IDs.length; i++)
+    {
+        vidIDString = vidIDString + IDs[i];
+    }
+    // console.log(vidIDString);
+    return (ytLink + vidIDString);
+}

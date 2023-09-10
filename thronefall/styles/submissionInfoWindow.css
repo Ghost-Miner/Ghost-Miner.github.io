@@ -12,10 +12,6 @@
     overflow-y: auto; 
     font-size:larger; 
 }
-#subInfoTitle
-{
-    text-shadow: 2px 2px 2px gray;
-}
 .newProofWindowContent 
 {
 	max-height: 750px;
@@ -49,6 +45,7 @@
 
 	background-color: #222222;
 	box-shadow: 2px 2px 8px black;
+	margin-bottom: -5px;
 }
 
 #subIinfoVideoDiv 
@@ -102,6 +99,7 @@
 	/* font-weight: 501; */
 	font-size: 1.32rem;
 	padding: 10px;
+    text-shadow: 2px 2px 2px gray;
 }
 
 .subInfoSubtitle 
