@@ -217,11 +217,11 @@ function ChangeTableData(level)
 	const tScore    = document.getElementsByClassName("score");
 	const tCoins    = document.getElementsByClassName("coins");
 	const tDate     = document.getElementsByClassName("date");
-	// const tProof    = document.getElementsByClassName("proof");
+  //const tProof    = document.getElementsByClassName("proof");
     const tMutNums  = document.getElementsByClassName("mutNums");
     const tVersion  = document.getElementsByClassName("version");
     const tWeapon   = document.getElementsByClassName("usedWeapon");
-    // const tSubID    = document.getElementsByClassName("subID");
+  //const tSubID    = document.getElementsByClassName("subID");
 
 	let tableRows = document.getElementsByClassName("tableRow");
     for (let i = 0; i < tableRows.length; i++)
@@ -304,7 +304,8 @@ function IsPicServiceSupoorted (url)
         "i.postimg.cc",
         "media.discordapp.net",
         "cdn.discordapp.com",
-        "ghost-miner.github.io"
+        "ghost-miner.github.io",
+        "i.imgur.com"
     ]
 
     for (let i = 0; i < supportedDomains.length; i++)
