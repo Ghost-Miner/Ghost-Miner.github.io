@@ -48,7 +48,7 @@ function SortSubData ()
     for (let i = 0; i < tableData.length; i++)
     {
         chosenRow = tableData[i];
-        chosenRow[13] = i;
+        chosenRow[20] = i;
 
         if (chosenRow[3] == "Early access")
         {
@@ -124,15 +124,36 @@ function SortSubData ()
                 break;
         }
     }
-    NeulandSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    NordfelsSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    NeulandSubs   .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    NordfelsSubs  .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
     DurststeinSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    FrostseeSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    FrostseeSubs  .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
     // console.log("== MAP SUBS SORTED ===========================");
     // console.log(NeulandSubs);
     // console.log(NordfelsSubs);
     // console.log(DurststeinSubs);
     // console.log(FrostseeSubs);
+
+    for (let i = 0; i < NeulandSubs.length; i++)
+    {
+        chosenRow = NeulandSubs[i];
+        chosenRow[21] = i + 1;
+    }
+    for (let i = 0; i < NordfelsSubs.length; i++)
+    {
+        chosenRow = NordfelsSubs[i];
+        chosenRow[21] = i + 1;
+    }
+    for (let i = 0; i < DurststeinSubs.length; i++)
+    {
+        chosenRow = DurststeinSubs[i];
+        chosenRow[21] = i + 1;
+    }
+    for (let i = 0; i < FrostseeSubs.length; i++)
+    {
+        chosenRow = FrostseeSubs[i];
+        chosenRow[21] = i + 1;
+    }
 
     canShowTableData = true;
     ChangeTableData('Neuland');
@@ -178,6 +199,7 @@ function ChangeTableData(level)
 			break;
 	}
 
+	let position = new Array();
 	let names = new Array();
 	let score = new Array();
 	let coins = new Array();
@@ -193,6 +215,7 @@ function ChangeTableData(level)
 	{
 		chosenRow = chosenArray[i];;
 
+        position[i] = chosenRow[21];
 		names[i] = chosenRow[2];
 		score[i] = chosenRow[5];
 		coins[i] = chosenRow[6];
@@ -202,7 +225,7 @@ function ChangeTableData(level)
         mutators[i] = chosenRow[9];
         version[i] = chosenRow[10];
         usedWeapon[i] = chosenRow[11];
-        subIndex[i] = chosenRow[13];
+        subIndex[i] = chosenRow[20];
 	}
 	// console.log("---------------------------------------------");
 	// console.log(names);
@@ -217,11 +240,11 @@ function ChangeTableData(level)
 	const tScore    = document.getElementsByClassName("score");
 	const tCoins    = document.getElementsByClassName("coins");
 	const tDate     = document.getElementsByClassName("date");
-  //const tProof    = document.getElementsByClassName("proof");
+    //const tProof    = document.getElementsByClassName("proof");
     const tMutNums  = document.getElementsByClassName("mutNums");
     const tVersion  = document.getElementsByClassName("version");
     const tWeapon   = document.getElementsByClassName("usedWeapon");
-  //const tSubID    = document.getElementsByClassName("subID");
+    //const tSubID    = document.getElementsByClassName("subID");
 
 	let tableRows = document.getElementsByClassName("tableRow");
     for (let i = 0; i < tableRows.length; i++)
@@ -250,7 +273,7 @@ function ChangeTableData(level)
     
 	for (let k = 0; k < chosenArray.length; k++)
 	{
-		tPosition[k].textContent = k + 1;
+		tPosition[k].textContent = position[k];
 		tNames[k].textContent = names[k];
         // tNames[k].innerHTML = "<span class='nameText' onclick=\'ShowSubInfo(\"" + subIndex[k] + "\")\'>" + names[k] + "</span>";
 
@@ -409,4 +432,26 @@ function RemoveTimeFromData (dateAndTime)
 
     //console.log(finalDateString.length);
     return finalDateString;
+}
+function FormatPerksOrMutatorsList (toFormat)
+{   
+    const inputString = toFormat;
+    const inputChars = inputString.split('');
+
+    let formattedString = "";
+
+    for (let i = 0; i < inputChars.length; i++)
+    {
+        if (inputChars[i] == "\n")
+        {
+            console.log("New line");
+            inputChars[i] = ", ";
+        }
+    }
+    
+    for (let i = 0; i < inputChars.length; i++)
+    {
+        formattedString = formattedString + inputChars[i];
+    }
+    return formattedString;
 }

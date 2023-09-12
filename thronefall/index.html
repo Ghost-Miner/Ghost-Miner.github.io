@@ -335,7 +335,7 @@
 
 				<section id="Footer">
 					<!-- Footer -->
-					<span id="footerText" style=" font-weight: bold;">Leaderboard page made by GhostMiner. v.2.2 (10/09/2023) |
+					<span id="footerText" style=" font-weight: bold;">Leaderboard page made by GhostMiner. v.2.3 (12/09/2023) |
 					<a href="https://ghost-miner.github.io/">Website</a>, 
 					<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
 					<a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -387,7 +387,7 @@
 		</section> <!-- newSubmitOverlay -->
 
 		<!--
-			N E W  P R O O F  O V E R L A Y
+			O L D  &  N E W  P R O O F  O V E R L A Y
 		-->
 		<section class="newOverlay" id="newscoreProof">
 			<!--
@@ -433,7 +433,7 @@
 			<!--
 				SUBMISSION INFO
 			-->
-			<div class="overlaysBlur" id="newSubInfoWindow" style="display: none; height: 100%;">
+			<div class="overlaysBlur" id="newSubInfoWindow" style="display: none; height: 100%; overflow: auto;">
 				<div class="newProofWindow" id="subInfoWindowOverride">
 					<div class="newProofWindowTitleBar">
 						<div class="titleBarLeft">
@@ -453,6 +453,7 @@
 								<center><strong>This submission was rejected.</strong></center>
 							</div>  
 
+							<!-- SUBMISSION PROOF -->
 							<div id="subIinfoImageDiv" style="display: none;">
 								<a href="" id="subInfoImgLink" target="_blank">
 									<img src="" id="subInfoImg">
@@ -473,10 +474,12 @@
 								</div>
 							</div>
 
+							<!-- NAME AND DATE -->
 							<div id="subInfoTitle">
-								Submitted by <var id="si_name" class="subInfoVarsTitle">...</var> on <var id="si_date" class="subInfoVarsTitle">...</var>
+								<span id="si_position">#...</span>, Submitted by <var id="si_name" class="subInfoVarsTitle">...</var> on <var id="si_date" class="subInfoVarsTitle">...</var>
 							</div>
 
+							<!-- SUBMISSION DETAILS  -->
 							<div id="subInfoGridWrapper">
 								<div class="subInfoGridCell">
 									<span class="subInfoSubtitle">Score: <br> </span>
@@ -490,14 +493,27 @@
 									<span class="subInfoSubtitle">Version: <br></span>
 									<var class="subInfoVars" id="si_version">...</var>
 								</div>
-								<div class="subInfoGridCell subInfoGridCellOverride" style="position: relative; left: 50%;">
+								
+							</div> <!-- subInfoGridWrapper -->
+
+							<div id="subInfoTitle">
+								<strong>LOADOUT:</strong>
+							</div>
+							
+							<div id="lodoutGridWrapper">
+								<div class="subInfoGridCell">
 									<span class="subInfoSubtitle">Used weapon: <br></span>
 									<var class="subInfoVars" id="si_weapon">...</var>
 								</div>
-								<div class="subInfoGridCell subInfoGridCellOverride2" style="position: relative; left: 50%;">
-									<span class="subInfoSubtitle">Mutators: <br></span>
-									<var class="subInfoVars" id="si_mutators">...</var>
+								<div class="subInfoGridCell">
+									<span class="subInfoSubtitle" style="font-size: 0.9em;">Used perks: <br></span>
+									<var class="subInfoVars" id="si_perksList">... 	</var>
 								</div>
+							</div>
+							
+							<div id="mutListCell" class="subInfoGridCell" style="margin-bottom: 15px; max-width: 73%; text-align: center; padding: 10px; position: relative; left: 50%; transform: translate(-50%,0);">
+								<span class="subInfoSubtitle">Used mutators: <br></span>
+								<var class="subInfoVars" id="si_mutatorsList" style="font-size: 0.9em;">...</var>
 							</div>
 						</div> <!-- newProofWindowContentBackground -->
 					</div> <!-- newProofWindowContent -->

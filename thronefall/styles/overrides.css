@@ -12,6 +12,7 @@
     .overlaysBlur
     {
         padding: 25px;
+        overflow-y: auto;
     }
     #newProofVideo
     {
@@ -56,6 +57,14 @@
     {
         display: block !important;
     }
+    #lodoutGridWrapper
+    {
+        max-width: 100%;
+    }
+    #mutListCell
+    {
+        max-width: 96.5% !important;
+    }
 }
 @media screen and (max-width: 650px)
 {
@@ -97,18 +106,26 @@
 
 @media screen and (max-width: 550px)
 {
-   #chooseSubTypeButtons
-   {
-        width: 80%;
-   }
-   #newProofVideo
-   {
-       height: 300px;
-   }
-   .windowTopBarTitle
-   {
+    #chooseSubTypeButtons
+    {
+         width: 80%;
+    }
+    #newProofVideo
+    {
+        height: 300px;
+    }
+    .windowTopBarTitle
+    {
        padding-left: 5%;
-   }
+    }
+    #lodoutGridWrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    #mutListCell
+    {
+        max-width: 95% !important;
+    }
 }
 
 @media screen and (max-width: 400px)
