@@ -111,7 +111,7 @@ function AssignSubInfoWindowValues ()
     if (s_perks != "")
     {   document.getElementById("si_perksList").textContent = FormatPerksOrMutatorsList(s_perks);  }
     else
-    {   document.getElementById("si_perksList").textContent = "N/A";    }
+    {   document.getElementById("si_perksList").textContent = "Unknown";    }
     
     if (s_mutList != "")
     {   document.getElementById("si_mutatorsList").textContent = FormatPerksOrMutatorsList(s_mutList); }
