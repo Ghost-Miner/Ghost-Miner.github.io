@@ -31,6 +31,7 @@ body
 {
     max-width: 1000px;
     min-width: 1000px;
+    width: 100%;
     margin: 20px auto; 
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
      
@@ -44,9 +45,10 @@ body
 }
 #innerContainer
 {
-    min-width: 900px;
+    min-width: 00px;
     display: grid;
-    width: auto;
+
+    width: 100%;
 }
 .contentBox
 {
@@ -55,6 +57,8 @@ body
     width: auto;
     background-color: var(--foregroundColour);
     display: grid;
+    
+    width: 100%;
 }
 
 .pageTitleText
@@ -87,7 +91,7 @@ body
 #pageTitleDiv
 {
     width: 100%;
-    grid-template-columns: 10% auto;
+    grid-template-columns: 10% 90%;
 }
 .menuLinks
 {
@@ -110,10 +114,6 @@ body
 #ProfileInfo
 {
     margin-top: var(--containerSpacing);
-}
-#featuredVideoDiv
-{
-    margin-right: var(--containerSpacing);
 }
 #ProfileMain
 {
@@ -159,6 +159,7 @@ body
 {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-column-gap: var(--containerSpacing);
 
     margin-top: var(--containerSpacing);
 }
@@ -186,6 +187,7 @@ body
 #featuYTvide
 {
     border-radius: 5px;
+    width: 100%;
 }
 .recomVideoImage
 {
