@@ -34,7 +34,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<meta name="description" content="An unofficial leaderboard for high-scores and speed-runs of Thronefall.">
 		<meta name="keywords" content="Thronefall, leaderBoard, grizzly games, speedrun">
-		<meta name="title" content="Thronefall leaderboard">
 		<meta name="language" content="en">
 		<meta name='robots' content="index,follow">
 		<meta name='author' content="GhostMiner">
@@ -237,27 +236,11 @@
 
 					<div id="newLBSubmitButton">
 						<button type="button" onclick="OpenSubWindow()" class="btn btn_orangeGradient btn-lg">
-						<span class="newCatToggleText">SUBMIT</span>
+							<span class="newCatToggleText">SUBMIT</span>
 						</button>
 					</div> <!-- newLBSubmitButton -->
 				</div> <!-- newButtonsBar -->
 
-				<section id="Options_buttons_section">
-					<div class="collapse" id="submissionTypeGroup">
-						<div class="card card-body" id="submissionTypeGroupCotentBox">
-							<h4 style="text-align: center; padding-bottom: 10px; font-weight: bold;">Submit high-score or a speedrun time</h4>
-							<div id="Submit_score_group" style="display: inline-flexbox;">
-								<button id="submit_score" type="button" class="btn btn_orangeGradient submitScoreCollapeBtn" onclick="ShowFormWindow()">
-								<b>Submit high-score</b>
-								</button>
-								<button id="submit_speedrun" type="button" class="btn btn_orangeGradient submitScoreCollapeBtn" onclick="ShowFormWindowTime()">
-								<b>Submit speedrun</b>
-								</button>
-							</div> <!-- Submit_score_group -->
-						</div> <!-- submissionTypeGroupCotentBox -->
-					</div> <!-- submissionTypeGroup -->
-				</section> <!-- -Options_buttons_section -->
-				
 				<!-- 
 					NEW AUTO LEADERBOARD 
 				-->
@@ -272,7 +255,7 @@
 								<div id="hiddenColumnsDiv">
 									<span id="hiddenColumnsText">Scroll or swipe horizontally to reveal columns that aren't currently visible.<br></span>
 								</div>
-								<span id="tableName"> ... </span>
+								<span id="tableName"> *table name* </span>
 								<table class="table table-striped" id="newLBTable" style="text-align: center; border: 1px black dotted">
 									<thead class="table-dark tableDarkHeader" id="newLbHeader" style="font-weight: bold;">
 										<td class="th-position positionColumn 1">#		 </td>
