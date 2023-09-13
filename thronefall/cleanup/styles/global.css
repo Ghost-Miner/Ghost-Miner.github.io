@@ -1,0 +1,133 @@
+:root
+{
+    --backgroundColourTransparent:  rgba(255, 255, 255, 0.55); 
+    --backgroundColourOpaque: rgba(255, 255, 255, 0.95); 
+    
+    --windowMainColourTop: #c27301;
+    --windowMainColourBottom: orange;
+    
+    --buttonColour1: #ffa500;
+    --buttonColour2: #ffc107;
+
+    --shadowColour: rgba(0,0,0,1);
+}
+
+body
+{
+    background: url("../img/backgrounds/Overworld.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.btn_orangeGradient
+{
+    background: linear-gradient(to bottom, var(--buttonColour1), var(--buttonColour2));
+    border: 1px var(--orange) solid;
+}
+.dropShadow
+{
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* 
+    Page background
+*/
+#mainPageContainerBack
+{
+    max-width: 1000px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+#mainPageContainerFront
+{
+    background: var(--backgroundColourTransparent);
+    backdrop-filter: blur(8px);
+
+    padding: 10px;
+    padding-top: 20px;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+    
+    box-shadow: 0px 0px 8px var(--shadowColour);
+}
+
+/* 
+    PAGE HEADER
+*/
+header
+{
+    text-align: center;
+}
+#pageNameText
+{
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.gameLinksBtn
+{
+    font-weight: bold;
+}
+
+/* 
+    CATEGORY BUTTONS 
+*/
+
+#categoryButtonsWrapper
+{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+    width: 100%;
+}
+#categoryButtons
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5px;
+    row-gap: 5px;
+    
+    width: 100%;
+    margin-bottom: 10px;
+}
+.levelsToggleButtons
+{
+    display: none; /* DEFAULT: Grid */
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5px;
+    row-gap: 5px;
+    
+    width: 100%;
+    margin-bottom: 10px;
+}
+#scoreLevelsToggle
+{
+    display: grid;
+}
+
+.categoryToggleText
+{
+    font-weight: bold;
+}
+.levelToggleText
+{
+    font-weight: bold;
+}
+
+#submissionButtonCell
+{
+    text-align: right;
+}
+
+/* 
+    FOOTER
+*/
+footer 
+{
+    font-weight: bold;
+    text-align: center;
+}
