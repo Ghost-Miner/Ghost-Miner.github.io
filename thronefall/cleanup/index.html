@@ -43,12 +43,15 @@
    
         <!-- Custom CSS stylesheets and libraries -->
         <link rel="stylesheet" href="./styles/global.css">
+
+        <!-- Scripts -->
+        <script src="./scripts/pageOptions.js"></script>
+        <script src="./scripts/lbOptions.js"></script>
     </head>
 
     <body>
         <div id="mainPageContainerBack">
             <div id="mainPageContainerFront">
-
                 <!-- 
                     PAGE TITLE AND GAME LINK BUTTONS
                  -->
@@ -92,14 +95,14 @@
                         <div id="categoryButtonsMain">
                             <!-- CATEGORY -->
                             <div id="categoryButtons">
-                                <button class="btn btn-warning dropShadow" id="" type="button" onclick="SelectRandomBackground(1); ChangeCategory('score')">
+                                <button class="btn btn-warning dropShadow" id="scoreCategoryButton" type="button" onclick="SelectRandomBackground(1); ChangeCategory('score')">
                                     <span class="categoryToggleText"> High-scores </span>
                                 </button>
-                                <button class="btn btn-warning dropShadow" id="" type="button" disabled onclick="SelectRandomBackground(2); ChangeCategory('time')" 
+                                <button class="btn btn-warning dropShadow" id="timeCategoryButton" type="button" disabled onclick="SelectRandomBackground(2); ChangeCategory('time')" 
                                         hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
                                     <span class="categoryToggleText"> Speed-runs </span>
                                 </button>	
-                                <button class="btn btn-warning dropShadow" id="" type="button" disabled onclick="SelectRandomBackground(1); ChangeCategory('demo')" 
+                                <button class="btn btn-warning dropShadow" id="demoCategoryButton" type="button" disabled onclick="SelectRandomBackground(1); ChangeCategory('demo')" 
                                         hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
                                     <span class="categoryToggleText"> Demo version </span>
                                 </button>
@@ -183,7 +186,7 @@
                     <section id="leaderBoards">
                         <div id="leaderBoardMain">
                             <section id="LBLoadingIndicator">
-                                <img src="./img/loading edit.gif" id="lbLoadImage">
+                                <img src="./img/loading edit.gif" id="lbLoadImage" class="centerHorizontal">
                             </section>
                             <section id="leaderboardContent">
                                 <span id="leaderboardNameText">*table name*</span>
@@ -218,19 +221,17 @@
                         </div> <!-- oldLeaderBoards -->
                     </section> <!-- leaderBoards -->
                 </main>
-
                 <!-- 
                     FOOTER
                  -->
-                <footer>Leaderboard page made by GhostMiner. v.2.3 (12/09/2023) |
-                        <a href="https://ghost-miner.github.io/">Website</a>, 
-                        <a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
-                        <a href="https://discord.gg/DjUBY9h">Discord</a>
+                <footer>
+                    Leaderboard page made by GhostMiner. v.2.3 (12/09/2023) |
+                    <a href="https://ghost-miner.github.io/">Website</a>, 
+                    <a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
+                    <a href="https://discord.gg/DjUBY9h">Discord</a>
                 </footer>
             </div> <!-- mainPageContainerFront -->
         </div> <!-- mainPageContainerBack -->
-
-
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

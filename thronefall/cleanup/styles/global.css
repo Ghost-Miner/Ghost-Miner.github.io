@@ -20,7 +20,27 @@ body
     font-family: 'Times New Roman', Times, serif;
     color: black;
 }
+a:link 
+{
+    color: var(--windowMainColourTop);
+    text-decoration: none;
+}
+a:visited 
+{
+    color: var(--windowMainColourTop);
+    text-decoration: none;
+}
 
+.centerHorizontal
+{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+/* .centerVertical
+{
+
+} */
 .btn_orangeGradient
 {
     background: linear-gradient(to bottom, var(--buttonColour1), var(--buttonColour2));
@@ -122,6 +142,23 @@ header
 {
     text-align: right;
 }
+/* 
+    LEADERBOARDS
+*/
+#lbLoadImage
+{
+    max-width: 300px;
+    /* width: 32%; */
+    height: auto;
+    margin: 15px;
+}
+
+#leaderboardNameText
+{
+    line-height: 55px;
+    font-weight: bold;
+    font-size: 1.75rem;
+}
 
 /* 
     FOOTER
@@ -130,4 +167,5 @@ footer
 {
     font-weight: bold;
     text-align: center;
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
 }
