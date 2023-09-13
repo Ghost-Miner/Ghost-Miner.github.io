@@ -27,6 +27,7 @@ function ShowScores ()
 
 function ShowSubInfo (submissionIndex)
 {
+    console.log("===== NEW SUBUINFI =========");
     // submissionIndex = ExtractSubNumber(submissionIndex);
     // ResetSubInfoWindowValues();
 
@@ -75,7 +76,7 @@ function ShowSubInfo (submissionIndex)
     s_mutList    = chosenSubmission[12]
 
     location.hash = "score=" + submissionIndex;
-    ShowScores ();
+    // ShowScores ();
     AssignSubInfoWindowValues();
 }
 
