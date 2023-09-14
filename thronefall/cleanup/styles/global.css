@@ -10,6 +10,10 @@
     --buttonColour2: #ffc107;
 
     --shadowColour: rgba(0,0,0,1);
+    
+    --whiteColour1: white;
+    --whiteColour2: rgba(225,225,225, 1.0);
+    --customOrange: #ba8303;
 }
 
 body
@@ -19,6 +23,11 @@ body
 
     font-family: 'Times New Roman', Times, serif;
     color: black;
+}
+a
+{
+    color: var(--windowMainColourTop);
+    text-decoration: none;
 }
 a:link 
 {
@@ -31,24 +40,34 @@ a:visited
     text-decoration: none;
 }
 
+/* 
+    VARIOUS GLOBAL PROPERTIES
+*/
 .centerHorizontal
 {
     position: relative;
     left: 50%;
     transform: translate(-50%,0);
 }
-/* .centerVertical
+.centerVertical
 {
-
-} */
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
 .btn_orangeGradient
 {
     background: linear-gradient(to bottom, var(--buttonColour1), var(--buttonColour2));
-    border: 1px var(--orange) solid;
+    border: 1px var(--customOrange) solid;
 }
 .dropShadow
 {
     box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.whiteGradient
+{
+    background: linear-gradient(to bottom, var(--whiteColour1), var(--whiteColour2));
+    border: 1px var(--customOrange) solid;
 }
 
 /* 
@@ -91,11 +110,23 @@ header
 .gameLinksBtn
 {
     font-weight: bold;
+    
+    padding: 15px;
+    padding-top: 15px;
+    padding-top: 7px;
+    
+    padding-bottom: 7px;
+    margin-bottom: 7px;
 }
 
 /* 
     CATEGORY BUTTONS 
 */
+
+#SubmitButtonText
+{
+    font-weight: bold;
+}
 
 #categoryButtonsWrapper
 {
@@ -107,12 +138,14 @@ header
 #categoryButtons
 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 5px;
     row-gap: 5px;
     
     width: 100%;
     margin-bottom: 10px;
+
+    max-width: 450px;
 }
 .levelsToggleButtons
 {
@@ -123,10 +156,16 @@ header
     
     width: 100%;
     margin-bottom: 10px;
+
+    max-width: 450px;
 }
 #scoreLevelsToggle
 {
     display: grid;
+}
+#demoLevelsToggle
+{
+    grid-template-columns: repeat(3,1fr);
 }
 
 .categoryToggleText
@@ -142,22 +181,59 @@ header
 {
     text-align: right;
 }
+
 /* 
     LEADERBOARDS
 */
+
+.tableRow:hover
+{
+	background: linear-gradient(to bottom,var(--whiteColour2),var(--whiteColour1)) !important;
+	color: var(--windowMainColourTop);
+    cursor: pointer;
+}
+.tableRow:active
+{
+	color: var(--windowMainColourBottom);
+}
+
 #lbLoadImage
 {
-    max-width: 300px;
-    /* width: 32%; */
+    /* max-width: 300px; */
+    width: 32%;
     height: auto;
     margin: 15px;
 }
 
+#LBtableMain
+{
+    text-align: center;
+}
+#LBtableHead
+{
+    font-weight: bold;
+}
 #leaderboardNameText
 {
     line-height: 55px;
     font-weight: bold;
     font-size: 1.75rem;
+}
+
+.th_DaarkGradient
+{
+    background: linear-gradient(to bottom, black, #24272b) !important;
+    color: white !important;
+    border: 1px solid black !important;
+}
+.tBody_WhoteGradient
+{
+    background: linear-gradient(to bottom, var(--whiteColour2), var(--whiteColour1));
+}
+
+.nameColumn
+{
+    text-align: left;
 }
 
 /* 
@@ -168,4 +244,20 @@ footer
     font-weight: bold;
     text-align: center;
     /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
+}
+
+/* 
+    OLD TABLES
+*/
+#tableName
+{
+    line-height: 55px;
+    font-weight: bold;
+    font-size: 1.75rem;
+}
+.demoArchiveTitle
+{
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-style: italic;
 }

@@ -16,91 +16,62 @@ function ChangeShownTable(tableToShow, sectionName)
 
 function ChangeCategory(name)
 {
-	// HIDE ALL SUB-CAT BUTTONS
-	document.getElementById("scoreLevelsToggle").style.display = "none";
-	document.getElementById("timeLevelsToggle") .style.display = "none";
-	document.getElementById("demoLevelsToggle") .style.display = "none";
+	const scoreLevelsButton = document.getElementById("scoreLevelsToggle");
+	const timeLevelsButton  = document.getElementById("timeLevelsToggle");
+	const demoLevelsButton  = document.getElementById("demoLevelsToggle");
 
-	// RESET ALL CATEGORY BUTTONS
-	document.getElementById("scoreCategoryButton").classList.remove("active");
-	document.getElementById("timeCategoryButton") .classList.remove("active");
-	document.getElementById("demoCategoryButton") .classList.remove("active");
+	const scoreCatButton = document.getElementById("scoreCategoryButton");
+	const timeCatButton  = document.getElementById("timeCategoryButton"); 
+	const demoCatButton  = document.getElementById("demoCategoryButton");
+
+	const leaderboardSection = document.getElementById("leaderBoardMain");
+	const oldLeaderboardSection = document.getElementById("oldLeaderBoards")
+
+	// HIDE ALL SUB-CAT BUTTONS
+	scoreLevelsButton.style.display = "none";
+	timeLevelsButton .style.display = "none";
+	demoLevelsButton .style.display = "none";
+
+	// RESET ALL CATEGORY BUTTONS ACTIVE STATE
+	scoreCatButton.classList.remove("active");
+	timeCatButton .classList.remove("active");
+	demoCatButton .classList.remove("active");
 
 	switch (name)
 	{
 		default:
-			console.log("[ ERROR ] In ChangeCategory(): " + name + " is not a valid category name!");
-			break;
+			console.log("[ ERROR ] In ChangeCategory: " + name + " is not a valid category name!");
+		break;
 
 		case "score":
-			document.getElementById("newLBTableSection").style.display = "block";
-			document.getElementById("leaderBoard").style.display ="none";
+			leaderboardSection.style.display = "block";
+			oldLeaderboardSection.style.display ="none";
 
-			document.getElementById("scoresSection").style.display = "block";
-			document.getElementById("hs_cat_btn").classList.add("active");
-			break;
+			// Levels toggle
+			scoreLevelsButton.style.display = "grid";
+			// Category toggle
+			scoreCatButton.classList.add("active");
+		break;
 
 		case "time":
-			document.getElementById("newLBTableSection").style.display = "none";
-			document.getElementById("leaderBoard").style.display ="block";
+			leaderboardSection.style.display = "none";
+			oldLeaderboardSection.style.display ="block";
 
-			document.getElementById("timesSection").style.display = "block";
-			document.getElementById("sr_cat_btn").classList.add("active");
-			break;
+			// Levels toggle
+			timeLevelsButton.style.display = "grid";
+			// Category toggle
+			timeCatButton.classList.add("active");
+		break;
+
 		case "demo":
-			document.getElementById("newLBTableSection").style.display = "none";
-			document.getElementById("leaderBoard").style.display ="block";
+			leaderboardSection.style.display = "none";
+			oldLeaderboardSection.style.display ="block";
 
-			document.getElementById("demoSection").style.display = "block";
-			document.getElementById("demo_cat_btn").classList.add("active");
-			break;
-	}
-}
-
-function ResetPositionNumbers(tableName)
-{
-	switch (tableName)
-	{
-		case "Nordfels":
-
-			const NFcollection = document.getElementsByClassName("SB_NF_Position");
-
-			for (let i = 0; i < NFcollection.length; i++)
-			{
-				NFcollection[i].textContent = "#";
-				NFcollection[i].style.textAlign = "center";
-			}
-			break;
-
-		case "Neuland":
-			const NLcollection = document.getElementsByClassName("SB_NL_Position");
-
-			for (let i = 0; i < NLcollection.length; i++)
-			{
-				NLcollection[i].textContent = "#";
-				NLcollection[i].style.textAlign = "center";
-			}
-			break;
-
-		case "Nordfels time":
-			const NFTimeCollection = document.getElementsByClassName("TIME_NF_Position");
-
-			for (let i = 0; i < NFTimeCollection.length; i++)
-			{
-				NFTimeCollection[i].textContent = "#";
-				NFTimeCollection[i].style.textAlign = "center";
-			}
-			break;
-
-		case "Neuland time":
-			const NLTimeCollection = document.getElementsByClassName("TIME_NL_Position");
-
-			for (let i = 0; i < NLTimeCollection.length; i++)
-			{
-				NLTimeCollection[i].textContent = "#";
-				NLTimeCollection[i].style.textAlign = "center";
-			}
-			break;
+			// Levels toggle
+			demoLevelsButton.style.display = "grid";
+			// Category toggle
+			demoCatButton.classList.add("active");
+		break;
 	}
 }
 
@@ -161,36 +132,154 @@ function AssignPositionNumbers ()
 	}
 }
 
-function ChangeActiveCategory (catName)
+function SpawnTableRows()
 {
-	switch (catName)
-	{
-		default:
-			console.log("[ EEROR ]: Category " + catName + " does not exist.");
-		break;
+    let tableRow = document.getElementsByClassName("tableRow");
 
-		case "":
-			console.log("[ INFO ]: No category selected. using default.");
-			ChangeCategory("demo");
-			break;
+    for (let i = 0; i < 50; i++)
+    {
+        let newRow = tableRow[0].cloneNode(true);
+        let tBody = document.getElementById("LBtableBody").append(newRow);
+    }
+}
 
-		case "?score":
-			ChangeCategory("score")
-		break;
+/////////////////////////////////////////////////////////////////
 
-		case "?time":
-			ChangeCategory("time")
-		break;
-
-		case "?demo":
-			ChangeCategory("demo")
-		break;
-	}
-} 
-/*function ChangeActiveBoard (boardName)
+function IsPicServiceSupoorted (url)
 {
-	switch(boardName)
-	{
-		
-	}
-}*/
+    const supportedDomains = 
+    [
+        "i.postimg.cc",
+        "media.discordapp.net",
+        "cdn.discordapp.com",
+        "ghost-miner.github.io",
+        "i.imgur.com"
+    ]
+
+    for (let i = 0; i < supportedDomains.length; i++)
+    {
+        chosenDomain = supportedDomains[i];
+        if (url.includes(chosenDomain))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+function SplitScore(scoreNum)
+{
+    let charsArray = new Array();
+    let firstDigits = new Array();
+    let last3digits = new Array();
+    let digitArrNum = 0;
+    
+    let formattedString = "";
+    const str = scoreNum;
+    const chars = str.split('');
+
+    for (let i = 0; i < chars.length; i++)
+    {
+        charsArray[i] = chars[i]; 
+    }
+    for (let i = 0; i < chars.length - 3; i++)
+    {
+        firstDigits[i] = chars[i]; 
+    }
+    for (let i = charsArray.length - 1; i > charsArray.length - 4; i--)
+    {
+        last3digits[digitArrNum] = charsArray[i];        
+        digitArrNum++;
+    }
+    for (let i = 0; i < firstDigits.length; i++)
+    {
+        formattedString = formattedString + firstDigits[i];
+    }
+    formattedString = formattedString + "\xa0"
+    for (let i = last3digits.length - 1; i >= 0; i--)
+    {
+        formattedString = formattedString + last3digits[i];
+    }
+    return formattedString;
+}
+
+function GetEmbedYTLink (vidLink)
+{
+    let videoIDChars = new Array();
+    let vidIDIndex = 0;
+    let vidIDString = "";
+
+    const ytLink = "https://youtube.com/embed/";
+    const inputStr = vidLink;
+    const chars = inputStr.split(''); 
+
+    for (let i = chars.length - 1; i >= 0; i--)
+    {
+        if (chars[i] == "=" || chars[i] == "/")
+        {
+            break;
+        }
+        videoIDChars[vidIDIndex] = chars[i]; 
+        vidIDIndex++;
+    }
+
+    // console.log(chars);
+    // console.log("------------------------");
+    // console.log(videoIDChars)//.reverse());
+
+    let IDs = videoIDChars.reverse();
+    for (let i = 0; i < IDs.length; i++)
+    {
+        vidIDString = vidIDString + IDs[i];
+    }
+    // console.log(vidIDString);
+    return (ytLink + vidIDString);
+}
+
+function RemoveTimeFromData (dateAndTime)
+{
+    if (dateAndTime.length <= 10)
+    {
+        return dateAndTime;
+    }
+    let dateChars = new Array();
+    let finalDateString = "";
+
+    const inputString = dateAndTime;
+    const inputChars = inputString.split('');
+
+    for (let i = 0; i < inputChars.length - 5; i++)
+    {
+        dateChars[i] = inputChars[i];
+    }
+    for (let i = 0; i < dateChars.length; i++)
+    {
+        finalDateString = finalDateString + dateChars[i];
+    }
+
+    //console.log(finalDateString.length);
+    return finalDateString;
+}
+
+function FormatPerksOrMutatorsList (toFormat)
+{   
+    const inputString = toFormat;
+    const inputChars = inputString.split('');
+
+    let formattedString = "";
+
+    for (let i = 0; i < inputChars.length; i++)
+    {
+        if (inputChars[i] == "\n")
+        {
+            console.log("New line");
+            inputChars[i] = ", ";
+        }
+    }
+    
+    for (let i = 0; i < inputChars.length; i++)
+    {
+        formattedString = formattedString + inputChars[i];
+    }
+    return formattedString;
+}
