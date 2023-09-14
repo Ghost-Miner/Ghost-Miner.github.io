@@ -55,6 +55,7 @@
         <script src="./scripts/parser.js"></script>
         <script src="./scripts/processScores.js"></script>
         <script src="./scripts/parser.js"></script>
+        <script src="./scripts/overlays.js"></script>
     </head>
 
     <body>
@@ -180,7 +181,8 @@
                         </div> <!-- categoryButtonsMain -->
 
                         <div id="submissionButtonCell">
-                            <button type="button" onclick="OpenSubWindow()" class="btn btn-warning btn_orangeGradient btn-lg dropShadow centerVertical">
+                            <button type="button" class="btn btn-warning btn_orangeGradient btn-lg dropShadow centerVertical"
+                                    hx-get="./submitWindow.html" hx-swap="innerHTML" hx-target="#overlayWindow" >
                                 <span id="SubmitButtonText">SUBMIT</span>
                             </button>
                         </div> <!-- submissionButtonCell -->
@@ -257,20 +259,7 @@
 
 
         <section id="overlayWindow">
-            <div id="overlayBlur">
-                <div id="windowBakcground">
-                    <div id="windowForeground">
-                        <div id="windowTitleBar">
-                            <div class="titleBarCell" id="titleBarText">
-                                New submission
-                            </div>
-                            <div class="titleBarCell" id="titleBarClose">
-                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubmitWindow()">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            
+        </section> <!-- overlayWindow -->
     </body>
 </html>

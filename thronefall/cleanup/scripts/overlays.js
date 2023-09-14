@@ -1,37 +1,40 @@
 // 
 // SUBMISSION WINDOW
 // 
-function OpenSubmitWindow() 
-{
-	document.getElementById("newSubmitOverlay").style.display = "block";
-	location.hash = "submit";
-}
+// function OpenSubmitWindow() 
+// {
+// 	document.getElementById("overlayWindow").style.display = "block";
+// 	location.hash = "submit";
+// }
 function CloseSubmitWindow ()
 {
-	document.getElementById("newSubmitOverlay").style.display = "none";
-	ShowChoiceButtons();
+	// document.getElementById("overlayWindow").style.display = "none";
+	// ShowChoiceButtons();
 	location.hash = "";
+	document.getElementById("overlayWindow").innerHTML = "";
 }
 
-function ShowChoiceButtons ()
-{
-	document.getElementById("chooseSubTypeButtons").style.display = "block";
-	document.getElementById("submitFormDiv").style.display = "none";
+// function ShowChoiceButtons ()
+// {
+// 	document.getElementById("chooseSubTypeButtons").style.display = "block";
+// 	document.getElementById("submiFormDiv").style.display = "none";
 	
-	document.getElementById("submitFrame").src = ""
-}
+// 	document.getElementById("submitFormFrame").src = ""
+// }
 function HideChoiceButtons (type)
 {
 	document.getElementById("chooseSubTypeButtons").style.display = "none";
-	document.getElementById("submitFormDiv").style.display = "block";
+	document.getElementById("submiFormDiv").style.display = "block";
 
 	if (type == "time")
 	{
-		document.getElementById("submitFrame").src = "./submitSpeed.html"
+		document.getElementById("titleBarText").textContent = "Submit new speed-run";
+		document.getElementById("submitFormFrame").src = "./submitSpeed.html"
 	}
 	else
 	{
-		document.getElementById("submitFrame").src = "./submit.html"
+		document.getElementById("titleBarText").textContent = "Submit new high-score";
+		document.getElementById("submitFormFrame").src = "./submit.html"
 	}
 }
 
@@ -47,6 +50,7 @@ function CloseSubInfoWindow()
 
 // 
 // OLD SCORE/TIME PROOF 
+// Used for speed-runs and demo 
 // 
 function OpenProofWindowImage(picLink) 
 {
