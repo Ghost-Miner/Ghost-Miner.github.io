@@ -236,6 +236,39 @@ function GetEmbedYTLink (vidLink)
     return (ytLink + vidIDString);
 }
 
+function ShortenYTLink (url)
+{
+    let videoIDChars = new Array();
+    let vidIDIndex = 0;
+    let vidIDString = "";
+
+    const ytLink = "youtu.be/";
+    const inputStr = url;
+    const chars = inputStr.split(''); 
+
+    for (let i = chars.length - 1; i >= 0; i--)
+    {
+        if (chars[i] == "=" || chars[i] == "/")
+        {
+            break;
+        }
+        videoIDChars[vidIDIndex] = chars[i]; 
+        vidIDIndex++;
+    }
+
+    // console.log(chars);
+    // console.log("------------------------");
+    // console.log(videoIDChars)//.reverse());
+
+    let IDs = videoIDChars.reverse();
+    for (let i = 0; i < IDs.length; i++)
+    {
+        vidIDString = vidIDString + IDs[i];
+    }
+    // console.log(vidIDString);
+    return (ytLink + vidIDString);
+}
+
 function RemoveTimeFromData (dateAndTime)
 {
     if (dateAndTime.length <= 10)

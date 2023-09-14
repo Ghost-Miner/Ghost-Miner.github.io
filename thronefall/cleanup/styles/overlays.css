@@ -1,7 +1,7 @@
 /* 
     SUBMIT WINDOW
 */
-#overlayBlur
+#submitOverlayBlur
 {
     display: block;
     position: fixed;
@@ -12,7 +12,7 @@
     background-color: rgba(0,0,0,0.32);
     backdrop-filter: blur(16px);
 }
-#windowBakcground
+#submitWindowBakcground
 {
     display: flex;
     position: relative;
@@ -30,15 +30,13 @@
     box-shadow: 2px 2px 6px black;
     background: linear-gradient(to bottom, var(--windowMainColourTop), var(--windowMainColourBottom));
 }
-#windowForeground
+#submitWindowForeground
 {
     width: 100%;
     /* height: 100%; */
     background-color: #e4d7ab;
 }
-/* 
-    TITLE BAR
-*/
+/*  TITLE BAR   */
 #windowTitleBar
 {
     /* display: grid;
@@ -54,7 +52,7 @@
     text-align: center;
     font-size: 1.3rem;;
     margin-bottom: -30px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 #windowTitleBarCloseImage
 {
@@ -66,9 +64,7 @@
 {
     text-align: right;
 }
-/* 
-    CHOOSE TYPE BUTTONS
-*/
+/*  CHOOSE TYPE BUTTONS    */
 #chooseSubTypeButtons
 {
     text-align: center;
@@ -88,9 +84,7 @@
     margin-top: 20px;
 }
 
-/* 
-    SUBMIT FORM FRAME
-*/
+/*  SUBMIT FORM FRAME   */
 #submiFormDiv
 {
     display: none;
@@ -100,4 +94,217 @@
     width: 100%;
     height: 725px;
     border: 0px;
+}
+
+/* 
+    SUBMISION INFORMATION
+*/
+#subInfoOverlayBlur
+{
+    display: block;
+    position: fixed;
+    top: 0;
+    padding: 25px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.32);
+    backdrop-filter: blur(16px);
+}
+#obsoleteSubInfoBar
+{
+    display: none;
+
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+#rejectedSubInfoBar
+{
+    display: none;
+
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#subInfoWindowsBackground
+{
+    display: flex;
+    position: relative;
+    top: 50%;
+    transform: translate(0,-50%);
+    
+    border-radius: 5px;
+    margin: auto;
+    padding: 7.5px;
+    padding-top: 0px;
+    
+    max-width: 900px;
+    height: 100%;
+    
+    box-shadow: 2px 2px 6px black;
+    background: linear-gradient(to bottom, var(--windowMainColourTop), var(--windowMainColourBottom));
+}
+#subInfoWindowsForeground
+{
+    width: 100%;
+    /* height: 100%; */
+    background: linear-gradient(to top, var(--whiteColour1), var(--whiteColour2));
+}
+#subInfoWindowContent
+{
+    margin-top: 25px;
+}
+
+#subInfoImg 
+{
+	border-radius: 5px;
+	max-width: 85%;
+	max-height: 400px;
+	box-shadow: 2px 2px 8px black;
+}
+
+#subIinfoImageDiv 
+{
+	text-align: center;
+}
+
+#subInfoVideo 
+{
+	border: 0px;
+	border-radius: 5px;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: #222222;
+	box-shadow: 2px 2px 8px black;
+	margin-bottom: -5px;
+}
+
+#subIinfoVideoDiv 
+{
+	height: 420px;
+	max-width: 75%;
+
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+#subIinfoExternalImgDiv 
+{
+	text-align: center;
+	height: 300px;
+
+	background-image: url("../img/backgrounds/overworld blur.png");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#subInfoExtImg
+{
+	filter: blur(16px);
+	border-radius: 5px;
+	max-width: 85%;
+	max-height: 400px;
+	box-shadow: 2px 2px 8px black;
+}
+
+#externalImgMessageDiv 
+{
+	font-size: 2rem;
+	position: relative;
+	top: -50%;
+	transform: translate(0%, 50%);
+}
+
+#extenralImgButtonDiv 
+{
+	position: relative;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+#subInfoTitle 
+{
+	text-align: center;
+	/* font-weight: 501; */
+	font-size: 1.32rem;
+	padding: 10px;
+    text-shadow: 2px 2px 2px gray;
+}
+
+.subInfoSubtitle 
+{
+	font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#lodoutGridWrapper
+{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	column-gap: 10px;
+	row-gap: 10px;
+
+	text-align: center;
+	max-width: 75%;
+
+	margin: auto;
+	padding: 10px;
+}
+#subInfoGridWrapper
+{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 10px;
+	row-gap: 10px;
+
+	text-align: center;
+	max-width: 75%;
+
+	margin: auto;
+	padding: 10px;
+}
+
+.subInfoGridCell 
+{
+	box-shadow: 2px 2px 8px black;
+	background: linear-gradient(to bottom, var(--buttonColour1), var(--buttonColour2));
+	/* border: 1px black dotted; */
+	border-radius: 5px;
+
+	padding-top: 3px;
+	padding-bottom: 7px;
+}
+
+.subInfoVars 
+{
+	font-style: normal;
+	/* font-weight: bold; */
+}
+
+.subInfoVarsTitle 
+{
+	font-style: normal;
+	font-weight: bold;
+}
+
+#obsoleteSubInfoBar 
+{
+	display: none;
+}
+
+#rejectedSubInfoBar 
+{
+	display: none;
+}
+#extenralImgTitle
+{
+	font-weight: bold;
+	color: white;
+	font-size: 1.25em;
+    text-shadow: 2px 2px 2px black;
 }

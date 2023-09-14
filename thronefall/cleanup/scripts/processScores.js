@@ -151,7 +151,7 @@ function SortSubData ()
     document.getElementById("timeCategoryButton").disabled = false;
     document.getElementById("demoCategoryButton").disabled = false;
 
-    // ShowSubInfo(GetAdressHash());
+    ShowSubInfo(GetAdressHash());
 }
 
 function ChangeTableData(level)
