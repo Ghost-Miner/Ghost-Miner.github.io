@@ -245,9 +245,6 @@
         </div> <!-- mainPageContainerBack -->
 
         <script>
-            SpawnTableRows();
-            GetSubData();
-            SelectRandomBackground(1);
         </script>
 
         <!-- 
@@ -417,6 +414,11 @@
 		</div> <!-- old_overlaysBlur old_ProofWindowMainImage -->
 
 		<script>
+            document.getElementById("scoreCategoryButton").classList.add("active");
+            SpawnTableRows();
+            GetSubData();
+            SelectRandomBackground(1)
+
 			OpenSubmitFromURL();
 		</script>
 

@@ -114,7 +114,7 @@ function OpenSubmitFromURL ()
 
 	if (urlHash == "submit")
 	{
-		OpenSubWindow();
+		OpenSubmitWindow();
 	}
 }
 

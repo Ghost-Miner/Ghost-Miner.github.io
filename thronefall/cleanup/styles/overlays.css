@@ -24,6 +24,7 @@
     padding: 7.5px;
     padding-top: 0px;
     
+	width: 100%;
     max-width: 900px;
     height: 100%;
     
@@ -52,7 +53,7 @@
     text-align: center;
     font-size: 1.3rem;;
     margin-bottom: -30px;
-    /* font-weight: bold; */
+    font-weight: bold;
 }
 #windowTitleBarCloseImage
 {
@@ -71,7 +72,7 @@
     font-weight: bold;
     font-size: 1.75rem;
 
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
 
     position: fixed;
