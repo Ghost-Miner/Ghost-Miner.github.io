@@ -1,0 +1,181 @@
+@media only screen and (max-width: 1000px)
+{
+    #subInfoOverlayBlur
+    {
+        padding: 3%;
+    }
+}
+
+@media only screen and (max-width: 900px)
+{
+    #subIinfoVideoDiv
+    {
+        height: 360px;
+    }
+}
+
+@media only screen and (max-width: 800px)
+{
+    #subIinfoVideoDiv
+    {
+        height: 380px;
+    }
+
+    #subInfoGridWrapper, #lodoutGridWrapper, #mutListCell, #subInfoImg, #subIinfoVideoDiv
+    {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 700px)
+{
+    #subIinfoVideoDiv
+    {
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width: 600px)
+{
+    #subIinfoVideoDiv
+    {
+        height: 280px;
+    }
+    #subInfoGridWrapper, #lodoutGridWrapper, #mutListCell, #subInfoImg, #subIinfoVideoDiv
+    {
+        max-width: 95%;
+    }
+    #subIinfoExternalImgDiv
+    {
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 550px)
+{
+    #categoryButtonsWrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    #categoryButtons, .levelsToggleButtons
+    {
+        max-width: 100%;
+    }
+    #submissionButtonCell
+    {
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px)
+{
+    #subIinfoVideoDiv
+    {
+        height: 240px;
+    }
+    #lodoutGridWrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    #subIinfoExternalImgDiv
+    {
+        height: 225px;
+    }
+}
+
+@media only screen and (max-width: 400px)
+{
+    #scoreLevelsToggle, #categoryButtons
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+    #demoCategoryButton
+    {
+        position: relative;
+        left: 50%;
+    }
+
+    #subIinfoVideoDiv
+    {
+        height: 180px;
+    }
+    #subInfoGridWrapper
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+    #subIinfoExternalImgDiv
+    {
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 300px)
+{
+    #subInfoGridWrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    #subIinfoExternalImgDiv
+    {
+        height: 125px;
+    }
+}
+
+@media only screen and (max-width: 200px) { }
+
+
+
+
+@media only screen and (max-height: 550px)
+{
+    #newProofVideo
+    {
+    	height: 350px;
+    }
+    
+    .newProofWindow
+    {
+        height: 450px;
+        top: 0px;
+        transform: translate(0%,0%);
+    }
+}
+@media only screen and (max-height: 500px)
+{
+    #newProofVideo
+    {
+    	height: 350px;
+    }
+    
+    .newProofWindow
+    {
+        height: 350px;
+    }
+}
+@media only screen and (max-height: 450px)
+{
+    #newProofVideo
+    {
+    	height: 250px;
+    }
+    
+    .newProofWindow
+    {
+        height: 300px;
+    }
+}
+@media only screen and (max-height: 400px)
+{
+    #newProofVideo
+    {
+    	height: 200px;
+    }
+    
+    .newProofWindow
+    {
+        height: 250px;
+        width: 64%;
+    }
+}

@@ -312,7 +312,7 @@
 								</a><br>
 								<!-- <span class="subInfoUrlText"> Video URL: <a href="" id="subIinfoFileUrl" target="_blank">*url*</a> </span> -->
 							</div>
-							<div id="subIinfoVideoDiv" style="display: none; text-align: center; font-size: 1rem; margin-bottom: 15px;">
+							<div id="subIinfoVideoDiv">
 								<iframe src="https://www.youtube.com/embed/oUCOakw2l1Y" id="subInfoVideo"></iframe>
 								<span class="subInfoUrlText"> Video&nbsp;URL:&nbsp;<a href="" id="subIinfoFileUrl" target="_blank">*url*</a> </span>
 							</div>
@@ -363,7 +363,7 @@
 								</div>
 							</div>
 							
-							<div id="mutListCell" class="subInfoGridCell" style="margin-bottom: 15px; max-width: 73%; text-align: center; padding: 10px; position: relative; left: 50%; transform: translate(-50%,0);">
+							<div id="mutListCell" class="subInfoGridCell">
 								<span class="subInfoSubtitle">Used mutators: <br></span>
 								<var class="subInfoVars" id="si_mutatorsList" style="font-size: 0.9em;">...</var>
 							</div>
@@ -417,11 +417,11 @@
             document.getElementById("scoreCategoryButton").classList.add("active");
             SpawnTableRows();
             GetSubData();
-            SelectRandomBackground(1)
-
+            SelectRandomBackground(1);
 			OpenSubmitFromURL();
 		</script>
 
+        <link rel="stylesheet" href="./styles/overrides.css">
         
         <!-- Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
