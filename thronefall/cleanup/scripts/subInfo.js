@@ -25,6 +25,13 @@ function ShowScores ()
     console.log("=======================================================");
 }
 
+function CloseSubInfoWindow() 
+{
+	document.getElementById("subInfoOverlayWindow").style.display = "none";
+	location.hash = "";		
+	ResetSubInfoWindowValues ();
+}
+
 function ShowSubInfo (submissionIndex)
 {
     console.log("===== NEW SUBUINFI =========");

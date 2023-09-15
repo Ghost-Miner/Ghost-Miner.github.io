@@ -1,26 +1,26 @@
 // 
 // SUBMISSION WINDOW
 // 
-// function OpenSubmitWindow() 
-// {
-// 	document.getElementById("overlayWindow").style.display = "block";
-// 	location.hash = "submit";
-// }
+function OpenSubmitWindow() 
+{
+	document.getElementById("overlayWindow").style.display = "block";
+	location.hash = "submit";
+}
 function CloseSubmitWindow ()
 {
-	// document.getElementById("overlayWindow").style.display = "none";
-	// ShowChoiceButtons();
+	document.getElementById("overlayWindow").style.display = "none";
 	location.hash = "";
-	document.getElementById("overlayWindow").innerHTML = "";
+	ShowChoiceButtons();
+	// document.getElementById("overlayWindow").innerHTML = "";
 }
 
-// function ShowChoiceButtons ()
-// {
-// 	document.getElementById("chooseSubTypeButtons").style.display = "block";
-// 	document.getElementById("submiFormDiv").style.display = "none";
+function ShowChoiceButtons ()
+{
+	document.getElementById("chooseSubTypeButtons").style.display = "block";
+	document.getElementById("submiFormDiv").style.display = "none";
 	
-// 	document.getElementById("submitFormFrame").src = ""
-// }
+	document.getElementById("submitFormFrame").src = ""
+}
 function HideChoiceButtons (type)
 {
 	document.getElementById("chooseSubTypeButtons").style.display = "none";
@@ -37,46 +37,36 @@ function HideChoiceButtons (type)
 		document.getElementById("submitFormFrame").src = "./submit.html"
 	}
 }
-
-// 
-// SUBMISSION INFO WINDOW
-// 
-function CloseSubInfoWindow() 
-{
-	document.getElementById("subInfoOverlayWindow").style.display = "none";
-	location.hash = "";		
-	ResetSubInfoWindowValues ();
-}
-
 // 
 // OLD SCORE/TIME PROOF 
 // Used for speed-runs and demo 
 // 
-function OpenProofWindowImage(picLink) 
+function OpenProofWindowImage(imgLink) 
 {
-	document.getElementById("newProofWindowMainImage").style.display = "block";
+	console.warn("OpenProofWindowImage() is a deprectaed function and only used for demo archive and speedruns. Use ShowSubInfo() instead");
+	document.getElementById("old_ProofWindowMainImage").style.display = "block";
 
-	var imgLink	   = document.getElementById("newProofImage");
-	imgLink.src = picLink;
+	var img	   = document.getElementById("old_ProofImage");
+	img.src = imgLink;
 }				  
 function CloseProofWindowImage() 
 {
-	document.getElementById("newProofWindowMainImage").style.display = "none";
+	document.getElementById("old_ProofWindowMainImage").style.display = "none";
 					
-	var imgLink    = document.getElementById("newProofImage");
+	var imgLink    = document.getElementById("old_ProofImage");
 	imgLink.src = "";
 }
 
 function OpenVideoWindow(link) 
 {
 	document.getElementById("newProofWindowMainVideo").style.display = "block";
-	var videoLink = document.getElementById("newProofVideo");
+	var videoLink = document.getElementById("old_ProofVideo");
 	videoLink.src = link;
 }				  
 function CloseVideoWindow() 
 {
 	document.getElementById("newProofWindowMainVideo").style.display = "none";
-	var videoLink = document.getElementById("newProofVideo");
+	var videoLink = document.getElementById("old_ProofVideo");
 	videoLink.src = "";
 }
 

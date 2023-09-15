@@ -29,7 +29,7 @@
 		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
 
         <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
 
         <!-- Page meta infromation -->
 		<meta name="description" content="An unofficial leaderboard for high-scores and speed-runs of Thronefall.">
@@ -182,8 +182,7 @@
                         </div> <!-- categoryButtonsMain -->
 
                         <div id="submissionButtonCell">
-                            <button type="button" class="btn btn-warning btn_orangeGradient btn-lg dropShadow centerVertical"
-                                    hx-get="./submitWindow.html" hx-swap="innerHTML" hx-target="#overlayWindow" >
+                            <button type="button" class="btn btn-warning btn_orangeGradient btn-lg dropShadow centerVertical" onclick="OpenSubmitWindow()">
                                 <span id="SubmitButtonText">SUBMIT</span>
                             </button>
                         </div> <!-- submissionButtonCell -->
@@ -248,19 +247,47 @@
         <script>
             SpawnTableRows();
             GetSubData();
+            SelectRandomBackground(1);
         </script>
 
-        <!-- Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
+        <!-- 
+            O V E R L A Y S
+        -->
         
-        <section id="overlayWindow">
-
+        <!-- SUBMIT SCORE/TIME WINDOW  -->
+        <section id="overlayWindow" style="display: none;">
+            <div id="overlayBlur">
+                <div id="submitWindowBakcground">
+                    <div id="submitWindowForeground">
+                        <div id="windowTitleBar">
+                            <div class="titleBarCell" id="titleBarText">
+                                New submission
+                            </div>
+                            <div class="titleBarCell" id="titleBarClose">
+                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubmitWindow()">
+                            </div>
+                        </div> <!-- windowTitleBar -->
+            
+                        <div id="windowContent">
+                            <div id="chooseSubTypeButtons">
+                                <span id="chooseSubTiypeTitle">Choose a category</span>
+                                <button class="btn btn-lg btn-block btn-warning whiteGradient dropShadow" onclick="HideChoiceButtons('score')" id="topChoiceButton">
+                                    <strong> High-score </strong>
+                                </button>
+                                <button class="btn btn-lg btn-block btn-warning whiteGradient dropShadow" onclick="HideChoiceButtons('time')">
+                                    <strong> Speed-run </strong>
+                                </button>
+                            </div> <!--chooseSubTypeButtons -->
+                            <div id="submiFormDiv">
+                                <iframe id="submitFormFrame" src=""></iframe>
+                            </div>
+                        </div> <!-- windowContent -->
+                    </div> <!-- submitWindowForeground -->
+                </div> <!-- submitWindowBakcground -->
+            </div> <!-- overlayBlur -->
         </section>
 
+        <!-- SUBMISSION INFO WINDOW -->
         <section id="subInfoOverlayWindow" style="display: none;">
             <div id="subInfoOverlayBlur">
                 <div id="subInfoWindowsBackground">
@@ -348,5 +375,56 @@
                 </div> <!-- subInfoWindowsBackground --> 
             </div> <!-- overlayBlur -->
         </section> <!-- overlayWindow -->
+        
+        <!--
+		V I D E O   E M B E D
+		-->
+		<div class="old_overlaysBlur" id="newProofWindowMainVideo" style="display: none;">
+			<div class="old_ProofWindow">
+				<div class="old_ProofWindowTitleBar">
+					<div class="old_titleBarLeft">
+						<span class="old_windowTitleBarButton" style="margin: auto;">Submission&nbsp;video</span>
+					</div>
+					<div class="old_titleBarRight">
+						<img src="./img/cross white.png" class="old_windowTitleBarButtonIcon" onclick="CloseVideoWindow()">
+					</div>
+				</div> <!-- old_ProofWindowTitleBar -->
+					
+				<div class="old_ProofWindowContent" style="overflow-y: hidden;">
+					<iframe id="old_ProofVideo" src=""></iframe>
+				</div>
+			</div>
+		</div> <!-- old_overlaysBlur newProofWindowMainVideo -->¨
+
+        <!--
+			I M A G E
+		-->
+		<div class="old_overlaysBlur" id="old_ProofWindowMainImage" style="display: none;">
+			<div class="old_ProofWindow">
+				<div class="old_ProofWindowTitleBar">
+					<div class="old_titleBarLeft">
+						<span class="old_windowTopBarTitle" style="margin: auto;">Submission&nbsp;screenshot</span>
+					</div>
+					<div class="old_titleBarRight">
+						<img src="./img/cross white.png" class="old_windowTitleBarButtonIcon" onclick="CloseProofWindowImage()">
+					</div>
+				</div> <!-- old_ProofWindowTitleBar -->
+					
+				<div class="old_ProofWindowContent" style="overflow-y: auto;">
+					<img id="old_ProofImage" alt="" src="">
+				</div>
+			</div>
+		</div> <!-- old_overlaysBlur old_ProofWindowMainImage -->
+
+		<script>
+			OpenSubmitFromURL();
+		</script>
+
+        
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     </body>
 </html>

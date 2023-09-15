@@ -55,13 +55,13 @@ function CloseProofWindowImage()
 function OpenVideoWindow(link) 
 {
 	document.getElementById("newProofWindowMainVideo").style.display = "block";
-	var videoLink = document.getElementById("newProofVideo");
+	var videoLink = document.getElementById("old_ProofVideo");
 	videoLink.src = link;
 }				  
 function CloseVideoWindow() 
 {
 	document.getElementById("newProofWindowMainVideo").style.display = "none";
-	var videoLink = document.getElementById("newProofVideo");
+	var videoLink = document.getElementById("old_ProofVideo");
 	videoLink.src = "";
 }
 
