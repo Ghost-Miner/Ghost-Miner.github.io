@@ -197,6 +197,10 @@ header
 {
 	color: var(--windowMainColourBottom);
 }
+.positionColumn
+{
+    font-weight: bold;
+}
 
 #lbLoadImage
 {
@@ -205,7 +209,6 @@ header
     height: auto;
     margin: 15px;
 }
-
 #LBtableMain
 {
     text-align: center;
