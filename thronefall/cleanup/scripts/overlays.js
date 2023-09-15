@@ -43,7 +43,7 @@ function HideChoiceButtons (type)
 // 
 function CloseSubInfoWindow() 
 {
-	document.getElementById("overlayWindow").style.display = "none";
+	document.getElementById("subInfoOverlayWindow").style.display = "none";
 	location.hash = "";		
 	ResetSubInfoWindowValues ();
 }

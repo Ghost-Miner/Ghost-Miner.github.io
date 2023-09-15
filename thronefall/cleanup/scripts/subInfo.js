@@ -129,7 +129,7 @@ function AssignSubInfoWindowValues ()
     document.getElementById("si_version").textContent = s_version;
     document.getElementById("si_date").textContent = RemoveTimeFromData(s_date);
     
-    document.getElementById("newSubInfoWindow").style.display = "block";
+    document.getElementById("subInfoOverlayWindow").style.display = "block";
 }
 function ResetSubInfoWindowValues ()
 {
