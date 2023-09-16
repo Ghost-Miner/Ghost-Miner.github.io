@@ -36,6 +36,10 @@
     {
         padding: 3%;
     }
+    .old_overlaysBlur
+    {
+        padding: 2%;
+    }
 }
 
 @media only screen and (max-width: 700px)
@@ -59,6 +63,15 @@
     #subIinfoExternalImgDiv
     {
         height: 250px;
+    }
+
+    #newProofWindowMainVideo
+    {
+        padding: 3%;
+    }
+    #old_ProofVideo
+    {
+        height: 320px;
     }
 }
 
@@ -133,6 +146,15 @@
         position: relative;
         left: 50%;
     }
+
+    #newProofWindowMainVideo
+    {
+        padding: 2%;
+    }
+    #old_ProofVideo
+    {
+        height: 240px;
+    }
 }
 
 @media only screen and (max-width: 300px)
@@ -168,6 +190,11 @@
     {
         padding: 3%;
     }
+
+    #old_ProofVideo
+    {
+        height: 500px;
+    }
 }
 
 @media only screen and (max-height: 600px)
@@ -188,6 +215,10 @@
     {
         max-width: 750px;
     } */
+    #old_ProofVideo
+    {
+        height: 400px;
+    }
 }
 
 @media only screen and (max-height: 550px)
@@ -198,7 +229,7 @@
     }
     
     /* O L D */
-    #newProofVideo
+    /* #newProofVideo
     {
     	height: 350px;
     }    
@@ -207,24 +238,24 @@
         height: 450px;
         top: 0px;
         transform: translate(0%,0%);
-    }
+    } */
 }
 
 @media only screen and (max-height: 500px)
 {
-    #newProofVideo
-    {
-    	height: 350px;
-    }
     #subInfoWindowsBackground
     {
         max-width: 50%;
     }
     
-    .newProofWindow
+    /* #newProofVideo
     {
         height: 350px;
     }
+    .newProofWindow
+    {
+        height: 350px;
+    } */
     #overlayBlur
     {
         padding: 1%;
@@ -233,11 +264,15 @@
     {
         max-width: 500px;
     } */
+    #old_ProofVideo
+    {
+        height: 300px;
+    }
 }
 
 @media only screen and (max-height: 450px)
 {
-    #newProofVideo
+    /* #newProofVideo
     {
     	height: 250px;
     }
@@ -245,12 +280,12 @@
     .newProofWindow
     {
         height: 300px;
-    }
+    } */
 }
 
 @media only screen and (max-height: 400px)
 {
-    #newProofVideo
+    /* #newProofVideo
     {
     	height: 200px;
     }
@@ -259,17 +294,27 @@
     {
         height: 250px;
         width: 64%;
+    } */
+    #old_ProofVideo
+    {
+        height: 250px;
     }
 }
 
-/* @media only screen and (max-height: 300px)
+@media only screen and (max-height: 300px)
 {
-    #subInfoWindowsBackground
+    .old_ProofWindow
+    {
+        height: 80%;
+        top: 0;
+        transform: translate(0,0);
+    }
+    /* #subInfoWindowsBackground
     {
         max-width: 40%;
     }
     #subIinfoVideoDiv
     {
         height: 200px;
-    }
-} */
+    } */
+}
