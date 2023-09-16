@@ -95,6 +95,11 @@
     {
         padding: 2%;
     }
+    #gameLinks
+    {
+        grid-template-columns: 1fr 1fr;
+        max-width: 350px;
+    }
 }
 
 @media only screen and (max-width: 500px)
@@ -166,6 +171,27 @@
     #subIinfoExternalImgDiv
     {
         height: 125px;
+    }
+    #scoreLevelsToggle, #categoryButtons, #timeLevelsToggle, #gameLinks
+    {
+        margin: auto;
+        grid-template-columns: 1fr;
+        row-gap: 5px;
+        max-width: 200px;
+    }
+    #demoCategoryButton
+    {
+        left: 0;
+    }
+
+    #gameLinks
+    {
+        row-gap: 0px;
+    }
+    #levelsButtons
+    {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 }
 

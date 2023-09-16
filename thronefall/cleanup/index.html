@@ -72,7 +72,7 @@
                         <span id="pageNameText"> Thronefall leaderboard </span>
                     </section>
                     <hr>
-                    <section id="gmaeLinks">
+                    <section id="gameLinks">
                         <a href="https://store.steampowered.com/app/2239150/Thronefall" id="gl_steamPage" target="_blank">
                             <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient">
                                 Get Thronefall
@@ -90,11 +90,16 @@
                         </a>
 
                         <a href="https://throne-fall.github.io" id="gl_Wiki" target="_blank">
-                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient" style="margin-left: 10px;">
+                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient" style="margin-left: 0px;">
                                 Thronefall wiki
                             </button>
                         </a>
-                        <br> <span id="screenSizeText">*screen WxH, window WxH*</span>
+                        <!-- <br> <span id="screenSizeText">*screen WxH, window WxH*</span>
+                        <script>
+                            const screenHeight = screen.height;     const screenWidth = screen.width;
+                            const winWidth     = window.innerWidth; const winHeight   = window.innerHeight;
+                            document.getElementById("screenSizeText").textContent = "(WxH) Screen: " + screenWidth + "x" + screenHeight + "; Window: " + winWidth + "x" + winHeight;
+                        </script> -->
                     </section>
                 </header>
                 <hr>
@@ -240,7 +245,7 @@
                     FOOTER
                  -->
                 <footer>
-                    Leaderboard page made by GhostMiner. v.2.3 (12/09/2023) |
+                    Leaderboard page made by GhostMiner. v.2.4 (16/09/2023) |
                     <a href="https://ghost-miner.github.io/">Website</a>, 
                     <a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
                     <a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -425,12 +430,6 @@
             GetSubData();
             SelectRandomBackground(1);
 			OpenSubmitFromURL();
-
-            const screenHeight = screen.height
-            const screenWidth = screen.width
-            const winWidth  = window.innerWidth;
-            const winHeight = window.innerHeight;
-            document.getElementById("screenSizeText").textContent = "(WxH) Screen: " + screenWidth + "x" + screenHeight + "; Window: " + winWidth + "x" + winHeight;
 		</script>
 
         <link rel="stylesheet" href="./styles/overrides.css">
