@@ -94,7 +94,7 @@
                                 Thronefall wiki
                             </button>
                         </a>
-                        <br> <span id="screenSizeText">Screen: W x H</span>
+                        <br> <span id="screenSizeText">*screen WxH, window WxH*</span>
                     </section>
                 </header>
                 <hr>
@@ -423,10 +423,12 @@
             SelectRandomBackground(1);
 			OpenSubmitFromURL();
 
-            const winWidth  = screen.width;
-            const winHeight = screen.height;
+            const screenHeight = screen.height
+            const screenWidth = screen.width
+            const winWidth  = window.innerWidth;
+            const winHeight = window.innerHeight;
 
-            document.getElementById("screenSizeText").textContent = "Screen: w:" + winWidth + " h:" + winHeight;
+            document.getElementById("screenSizeText").textContent = "(WxH) Screen: " + screenWidth + "x" + screenHeight + "; Window: " + winWidth + "x" + winHeight;
 		</script>
 
         <link rel="stylesheet" href="./styles/overrides.css">

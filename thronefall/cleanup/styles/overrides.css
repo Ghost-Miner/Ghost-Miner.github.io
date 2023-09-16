@@ -148,13 +148,55 @@
 /* 
     H E I G H T
 */
+@media only screen and (max-height: 800px)
+{
+
+}
+
+@media only screen and (max-height: 700px)
+{
+    #subInfoOverlayBlur
+    {
+        padding: 1%;
+    }
+    #overlayBlur
+    {
+        padding: 3%;
+    }
+}
+
+@media only screen and (max-height: 600px)
+{
+    /* #subInfoWindowsBackground
+    {
+        max-width: 64%;
+    } */
+    #subIinfoVideoDiv
+    {
+        height: 320px;
+    }
+    #overlayBlur
+    {
+        padding: 2%;
+    }
+    /* /* #submitWindowBakcground */
+    {
+        max-width: 750px;
+    } */
+}
+
 @media only screen and (max-height: 550px)
 {
+    #subIinfoVideoDiv
+    {
+        height: 250px;
+    }
+    
+    /* O L D */
     #newProofVideo
     {
     	height: 350px;
-    }
-    
+    }    
     .newProofWindow
     {
         height: 450px;
@@ -162,18 +204,32 @@
         transform: translate(0%,0%);
     }
 }
+
 @media only screen and (max-height: 500px)
 {
     #newProofVideo
     {
     	height: 350px;
     }
+    #subInfoWindowsBackground
+    {
+        max-width: 50%;
+    }
     
     .newProofWindow
     {
         height: 350px;
     }
+    #overlayBlur
+    {
+        padding: 1%;
+    }
+    /* #submitWindowBakcground
+    {
+        max-width: 500px;
+    } */
 }
+
 @media only screen and (max-height: 450px)
 {
     #newProofVideo
@@ -186,6 +242,7 @@
         height: 300px;
     }
 }
+
 @media only screen and (max-height: 400px)
 {
     #newProofVideo
@@ -199,3 +256,15 @@
         width: 64%;
     }
 }
+
+/* @media only screen and (max-height: 300px)
+{
+    #subInfoWindowsBackground
+    {
+        max-width: 40%;
+    }
+    #subIinfoVideoDiv
+    {
+        height: 200px;
+    }
+} */
