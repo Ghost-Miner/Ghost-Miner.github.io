@@ -106,4 +106,3 @@ async function GetCSVFile(file)
 		console.log(arrData);
 		return( arrData );
 	} 
-	

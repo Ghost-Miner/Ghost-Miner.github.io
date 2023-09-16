@@ -1,179 +1,62 @@
-@media screen and (max-width: 1100px)
-{
-    .BgrBox 
-    {
-        padding: 10px;					
-        margin: 2vw; 
-        padding-top:25px;
-    }
-}
-@media screen and (max-width: 1000px)
-{
-    .overlaysBlur
-    {
-        padding: 25px;
-        overflow-y: auto;
-    }
-    #newProofVideo
-    {
-    	height: 500px;
-    }
-}
-
-@media screen and (max-width: 850px)
-{
-	.options-toggles
-	{
-		width: 100%;
-		height: auto;
-		margin-bottom: 2%;
-	}				
-	.submitScoreCollapeBtn
-	{
-		width: 100%;
-		height: auto;
-		margin-bottom: 2%;
-	}
-    #newProofVideo
-    {
-    	height: 450px;
-    }
-}
-
-@media screen and (max-width: 800px)
-{
-    #hiddenColumnsDiv
-    {
-        display: block !important;
-    }
-}
-@media screen and (max-width: 700px)
-{
-    #gameLinksNormal
-    {
-    	display: none !important;
-    }
-    #gameLinksSplit
-    {
-        display: block !important;
-    }
-    #lodoutGridWrapper
-    {
-        max-width: 100%;
-    }
-    #mutListCell
-    {
-        max-width: 96.5% !important;
-    }
-}
-@media screen and (max-width: 650px)
-{
-    #newProofVideo
-    {
-    	height: 400px;
-    }
-}
-@media screen and (max-width: 600px)
-{
-    #newButtonsBar
-    {
-        grid-template-columns: 1fr;
-    }
-    #newLBSubmitButton
-    {
-        text-align: center;
-        padding: 10px;
-        top: 0%
-    }
-    #newCategoryBuuttons
-    {
-        max-width: 100%;
-    }
-    .newSubsectionToggle
-    {
-        max-width: 100%;
-    }
-
-    .overlaysBlur
-    {
-        padding: 10px;
-    }
-    #newProofVideo
-    {
-    	height: 350px;
-    }
-}
-
-@media screen and (max-width: 550px)
-{
-    #chooseSubTypeButtons
-    {
-         width: 80%;
-    }
-    #newProofVideo
-    {
-        height: 300px;
-    }
-    .windowTopBarTitle
-    {
-       padding-left: 5%;
-    }
-    #lodoutGridWrapper
-    {
-        grid-template-columns: 1fr;
-    }
-    #mutListCell
-    {
-        max-width: 95% !important;
-    }
-}
-
-@media screen and (max-width: 400px)
-{
-    #newCategoryBuuttons
-    {
-        grid-template-columns: repeat(2, 1fr);
-
-        max-width: 100%;
-    }
-    .newSubsectionToggle
-    {
-        grid-template-columns: repeat(2, 1fr);
-
-        max-width: 100%;
-    }
-    #newDemoCatToggle
-    {
-        position: relative;
-        left: 50%;
-    }
-    #WindowTtitleBarIcon
-    {
-        display: none;
-    }
-    #newProofVideo
-    {
-    	height: 250px;
-    }
-}
-
-/*
-    SUBMISSION INFO WINDOW
+/* 
+    W I D T H
 */
-@media screen and (max-width: 900px)
+@media only screen and (max-width: 1000px)
+{
+    #subInfoOverlayBlur
+    {
+        padding: 3%;
+    }
+}
+
+@media only screen and (max-width: 900px)
 {
     #subIinfoVideoDiv
     {
-        height: 350px;
+        height: 360px;
+    }
+    #overlayBlur
+    {
+        padding: 50px;
     }
 }
-@media screen and (max-width: 750px)
+
+@media only screen and (max-width: 800px)
 {
-    #subInfoGridWrapper
+    #subIinfoVideoDiv
     {
-        max-width: 100%;
+        height: 380px;
     }
-    #subInfoImg
+
+    #subInfoGridWrapper, #lodoutGridWrapper, #mutListCell, #subInfoImg, #subIinfoVideoDiv
+    {
+        max-width: 90%;
+    }
+    #overlayBlur
+    {
+        padding: 3%;
+    }
+    .old_overlaysBlur
+    {
+        padding: 2%;
+    }
+}
+
+@media only screen and (max-width: 700px)
+{
+    #subIinfoVideoDiv
+    {
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width: 600px)
+{
+    #subIinfoVideoDiv
+    {
+        height: 280px;
+    }
+    #subInfoGridWrapper, #lodoutGridWrapper, #mutListCell, #subInfoImg, #subIinfoVideoDiv
     {
         max-width: 95%;
     }
@@ -181,137 +64,241 @@
     {
         height: 250px;
     }
-    #subIinfoVideoDiv
-    {
-        height: 300px;
-    }
-}
-@media screen and (max-width: 550px)
-{
-    #subInfoGridWrapper
-    {
-        grid-template-columns: 1fr 1fr;
-    }
-    .subInfoGridCellOverride
-    {
-        left: 0px !important;
-    }
-    #subIinfoExternalImgDiv
-    {
-        height: 200px;
-    }
-    #subIinfoVideoDiv
-    {
-        height: 250px;
-        max-width: 90%;
-    }
-}
-@media screen and (max-width: 450px)
-{
-    #subIinfoVideoDiv
-    {
-        height: 175px;
-        max-width: 90%;
-    }
-}
-@media screen and (max-width: 400px)
-{
-    .windowTopBarTitle
-    {
-        font-size: 1.1rem;
-    }
-    #subInfoTitle
-    {
-        font-size: 1.3rem;
-    }
 
-    #subInfoGridWrapper
+    #newProofWindowMainVideo
+    {
+        padding: 3%;
+    }
+    #old_ProofVideo
+    {
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width: 550px)
+{
+    #categoryButtonsWrapper
     {
         grid-template-columns: 1fr;
     }
-    .subInfoGridCellOverride2
+    #categoryButtons, .levelsToggleButtons
     {
-        left: 0px !important;
+        max-width: 100%;
     }
-    .subInfoGridCell
+    #submissionButtonCell
     {
-        padding-top: 0px;
-        padding-bottom: 3px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    #overlayBlur
+    {
+        padding: 2%;
+    }
+    #gameLinks
+    {
+        grid-template-columns: 1fr 1fr;
+        max-width: 350px;
+    }
+}
 
-        font-size: 1.1rem;
-    }
-    #newProofWindowContentBackground
+@media only screen and (max-width: 500px)
+{
+    #subIinfoVideoDiv
     {
-        padding-top: 10px;
-        padding-bottom: 5px;
-        height: 100%;
-        overflow-y: auto;
+        height: 240px;
     }
-    #subInfoWindowOverride
+    #lodoutGridWrapper
     {
-        top: 0;
-        transform: translate(0,0);
+        grid-template-columns: 1fr;
+    }
+    #subIinfoExternalImgDiv
+    {
+        height: 225px;
+    }
+    #chooseSubTypeButtons
+    {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 400px)
+{
+    #scoreLevelsToggle, #categoryButtons, #timeLevelsToggle
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+    #demoCategoryButton
+    {
+        position: relative;
+        left: 50%;
+    }
+
+    #subIinfoVideoDiv
+    {
+        height: 180px;
+    }
+    #subInfoGridWrapper
+    {
+        grid-template-columns: 1fr 1fr;
     }
     #subIinfoExternalImgDiv
     {
         height: 150px;
     }
+    #versionInfoCell
+    {
+        position: relative;
+        left: 50%;
+    }
+
+    #newProofWindowMainVideo
+    {
+        padding: 2%;
+    }
+    #old_ProofVideo
+    {
+        height: 240px;
+    }
 }
 
-/*
-    VIDEO PROOF WINDOW
+@media only screen and (max-width: 300px)
+{
+    #subInfoGridWrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    #subIinfoExternalImgDiv
+    {
+        height: 125px;
+    }
+    #scoreLevelsToggle, #categoryButtons, #timeLevelsToggle, #gameLinks
+    {
+        margin: auto;
+        grid-template-columns: 1fr;
+        row-gap: 5px;
+        max-width: 175px;
+    }
+    #demoCategoryButton
+    {
+        left: 0;
+    }
+
+    #gameLinks
+    {
+        row-gap: 0px;
+    }
+    #levelsButtons
+    {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 200px) { }
+
+
+/* 
+    H E I G H T
 */
-@media screen and (max-height: 800px)
+@media only screen and (max-height: 800px)
 {
-    .windowBakcground
+
+}
+
+@media only screen and (max-height: 700px)
+{
+    #subInfoOverlayBlur
     {
-        top: 0;
-        transform: translate(0,0);
+        padding: 1%;
+    }
+    #overlayBlur
+    {
+        padding: 3%;
+    }
+
+    #old_ProofVideo
+    {
+        height: 500px;
     }
 }
-@media screen and (max-height: 650px)
+
+@media only screen and (max-height: 600px)
 {
-    #newProofVideo
+    /* #subInfoWindowsBackground
     {
-    	height: 450px;
+        max-width: 64%;
+    } */
+    #subIinfoVideoDiv
+    {
+        height: 250px;
+    }
+    #overlayBlur
+    {
+        padding: 2%;
+    }
+    /* #submitWindowBakcground
+    {
+        max-width: 750px;
+    } */
+    #old_ProofVideo
+    {
+        height: 400px;
     }
 }
-@media screen and (max-height: 600px)
+
+@media only screen and (max-height: 550px)
 {
-    #newProofVideo
+    #subIinfoVideoDiv
     {
-    	height: 400px;
-    }
-}
-@media screen and (max-height: 550px)
-{
-    #newProofVideo
-    {
-    	height: 350px;
+        height: 250px;
     }
     
+    /* O L D */
+    /* #newProofVideo
+    {
+    	height: 350px;
+    }    
     .newProofWindow
     {
         height: 450px;
         top: 0px;
         transform: translate(0%,0%);
-    }
+    } */
 }
-@media screen and (max-height: 500px)
+
+@media only screen and (max-height: 500px)
 {
-    #newProofVideo
+    #subInfoWindowsBackground
     {
-    	height: 350px;
+        max-width: 50%;
     }
     
-    .newProofWindow
+    /* #newProofVideo
     {
         height: 350px;
     }
+    .newProofWindow
+    {
+        height: 350px;
+    } */
+    #overlayBlur
+    {
+        padding: 1%;
+    }
+    /* #submitWindowBakcground
+    {
+        max-width: 500px;
+    } */
+    #old_ProofVideo
+    {
+        height: 300px;
+    }
 }
-@media screen and (max-height: 450px)
+
+@media only screen and (max-height: 450px)
 {
-    #newProofVideo
+    /* #newProofVideo
     {
     	height: 250px;
     }
@@ -319,11 +306,12 @@
     .newProofWindow
     {
         height: 300px;
-    }
+    } */
 }
-@media screen and (max-height: 400px)
+
+@media only screen and (max-height: 400px)
 {
-    #newProofVideo
+    /* #newProofVideo
     {
     	height: 200px;
     }
@@ -332,12 +320,27 @@
     {
         height: 250px;
         width: 64%;
+    } */
+    #old_ProofVideo
+    {
+        height: 250px;
     }
 }
-@media screen and (max-height: 300px)
+
+@media only screen and (max-height: 300px)
 {
-    #newProofVideo
+    .old_ProofWindow
     {
-    	height: 150px;
+        height: 80%;
+        top: 0;
+        transform: translate(0,0);
     }
+    /* #subInfoWindowsBackground
+    {
+        max-width: 40%;
+    }
+    #subIinfoVideoDiv
+    {
+        height: 200px;
+    } */
 }

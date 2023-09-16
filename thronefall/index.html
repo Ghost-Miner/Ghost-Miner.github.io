@@ -18,433 +18,311 @@
 			⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
 			⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉
 			
-		Created by GhostMiner, June/July 2023.
+		Created by GhostMiner, June-August 2023.
 		> Ghost-Miner.Github.io,
 		> YouTube.com/GhostMinerMC
 			
 -->
 <html lang="en">
-	<head>
+    <head>
 		<title>Thronefall leaderboard</title>
 		<link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
-		<!-- <link rel="icon" type="image/png" href="./img/crown.png"/> -->
 
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
+        <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+        <!-- Page meta infromation -->
 		<meta name="description" content="An unofficial leaderboard for high-scores and speed-runs of Thronefall.">
 		<meta name="keywords" content="Thronefall, leaderBoard, grizzly games, speedrun">
 		<meta name="language" content="en">
 		<meta name='robots' content="index,follow">
 		<meta name='author' content="GhostMiner">
+        
+        <!-- htmx -->
+        <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
 
-		<!-- Bootstrap and other CSS -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<!-- Custom requred page CSS  -->
-		<link rel="stylesheet" href="./styles/global.css">
-		<link rel="stylesheet" href="./styles/leaderboard.css">
-		<!-- Overrides at the bottom -->
-		<link rel="stylesheet" href="./styles/overlays.css">
-		<link rel="stylesheet" href="./styles/submissionInfoWindow.css">
+        <!-- Bootstrap 4 CSS library -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-		<!-- Page scripts -->
-		<script src="./scripts/boardOptions.js"></script>
-		<script src="./scripts/pageOptions.js"></script>
-		<!-- <script src="./scripts/theming.js"></script> -->
+        <!-- Custom CSS stylesheets and libraries -->
+        <link rel="stylesheet" href="./styles/global.css">
+        <link rel="stylesheet" href="./styles/overlays.css">
 
-		<script src="https://unpkg.com/htmx.org@1.9.4"></script>
+        <!-- Scripts -->
+        <script src="./scripts/pageOptions.js"></script>
+        <script src="./scripts/lbOptions.js"></script>
 
-		<!-- Śubmission processing scripts -->
-		<script src="./scripts/parser.js"></script>
-        <script src="./scripts/sort.js"></script>
-		<script src="./scripts/overlays.js"></script>
-		<script src="./scripts/subWindowTest.js"></script>
-	</head>
-	<body>
-		<div class="mainPageContainer" id="mainPageContainer">
-			<div class="BgrBox" id="BgrBox">
-				<!-- Page head stuff -->
-				<section id ="Page_header">
-					<center>
-					<section id="Title">
-						<img src="./img/crown.png" alt="Crown icon" id="crown_Icon">
-						<h1> <strong> <em> Thronefall leaderboard </em> </strong> </h1>
-					</section>
-					</center>
+        <script src="./scripts/parser.js"></script>
+        <script src="./scripts/processScores.js"></script>
+        <script src="./scripts/parser.js"></script>
+        <script src="./scripts/overlays.js"></script>
+        <script src="./scripts/subInfo.js"></script>
+    </head>
 
-					<noscript>
-						<hr class="horizontalSeparator">
-						<h2><strong><em>This website requires JavaScript to function correctly.</em></strong></h2>
-						<hr class="horizontalSeparator">
-					</noscript>
+    <body>
+        <div id="mainPageContainerBack">
+            <div id="mainPageContainerFront">
+                <!-- 
+                    PAGE TITLE AND GAME LINK BUTTONS
+                 -->
+                <header>
+                    <section id="pageTitle">
+                        <img src="./img/crown.png" id="pageLogo">
+                        <br>
+                        <span id="pageNameText"> Thronefall leaderboard </span>
+                    </section>
+                    <hr>
+                    <section id="gameLinks">
+                        <a href="https://store.steampowered.com/app/2239150/Thronefall" id="gl_steamPage" target="_blank">
+                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient">
+                                Get Thronefall
+                            </button>
+                        </a>
+                        <a href="https://discord.gg/gVYctptyg8" id="gl_Discord" target="_blank">
+                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient">
+                                Discord server
+                            </button>
+                        </a>
+                        <a href="https://www.youtube.com/playlist?list=PLgsD7taGtaBhNaErAOaiEiTzt6-lOpVp0" id="gl_Devlogs" target="_blank">
+                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient">
+                                Devlogs
+                            </button>
+                        </a>
 
-					<center>
-					<section class="Game_links" id="gameLinksNormal">
-						<hr class="horizontalSeparator">
-							<span class="ButtonText">
-								<a href="https://store.steampowered.com/app/2239150/Thronefall" id="steam_page" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
-										<b> Get Thronefall </b>
-									</button>
-								</a>
-								<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
-										<b>Discord server</b>
-									</button>
-								</a>
-								<a href="https://www.youtube.com/playlist?list=PLgsD7taGtaBhNaErAOaiEiTzt6-lOpVp0" id="devligs_Link" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
-										<b>Devlogs</b>
-									</button>
-								</a>
+                        <a href="https://throne-fall.github.io" id="gl_Wiki" target="_blank">
+                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient" style="margin-left: 0px;">
+                                Thronefall wiki
+                            </button>
+                        </a>
+                        <!-- <br> <span id="screenSizeText">*screen WxH, window WxH*</span>
+                        <script>
+                            const screenHeight = screen.height;     const screenWidth = screen.width;
+                            const winWidth     = window.innerWidth; const winHeight   = window.innerHeight;
+                            document.getElementById("screenSizeText").textContent = "(WxH) Screen: " + screenWidth + "x" + screenHeight + "; Window: " + winWidth + "x" + winHeight;
+                        </script> -->
+                    </section>
+                </header>
+                <hr>
+                <!-- 
+                    CATEGORY BUTTONS
+                 -->
+                <nav>
+                    <div id="categoryButtonsWrapper">
+                        <div id="categoryButtonsMain">
+                            <!-- CATEGORY -->
+                            <div id="categoryButtons">
+                                <button class="btn btn-warning dropShadow whiteGradient" id="scoreCategoryButton" type="button"
+                                        onclick="SelectRandomBackground(1); ChangeCategory('score')">
+                                    <span class="categoryToggleText"> High-scores </span>
+                                </button>
+                                <button class="btn btn-warning dropShadow whiteGradient" id="timeCategoryButton" type="button" 
+                                        onclick="SelectRandomBackground(2); ChangeCategory('time')" DISABLED
+                                        hx-get="./leaderboards/time/nl.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
+                                    <span class="categoryToggleText"> Speed-runs </span>
+                                </button>	
+                                <button class="btn btn-warning dropShadow whiteGradient" id="demoCategoryButton" type="button" DISABLED 
+                                        onclick="SelectRandomBackground(1); ChangeCategory('demo')" 
+                                        hx-get="./leaderboards/demo/nl-score.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
+                                    <span class="categoryToggleText"> Demo version </span>
+                                </button>
+                            </div> <!-- categoryButtons -->
 
-								<a href="https://throne-fall.github.io" id="discord_Link" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="margin-left: 10px; ">
-										<b>Thronefall wiki</b>
-									</button>
-								</a>
-								<!-- <a href="http://discord.gg/pfRJjfz6SU" id="discord_Link" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
-										<b>Wiki Discord</b>
-									</button>
-								</a> -->
-							</span> <!--ButtonText-->
-						<hr class="horizontalSeparator">
-					</section> <!--Game_links-->
+                            <!-- LEVELS -->
+                            <div id="levelsButtons">
+                                <section id="scoreLevelsToggle" class="levelsToggleButtons">
+                                    <button type="button"class="btn btn-warning btn_orangeGradient dropShadow" id="nl_score_btn" 
+                                            onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" >
+                                        <span class="levelToggleText"> Neuland </span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="nf_score_btn" 
+                                            onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')">
+                                        <span class="levelToggleText"> Nordfels </span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="ds_score_btn" 
+                                            onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
+                                        <span class="levelToggleText"> Durststein </span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="fs_score_btn" 
+                                            onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
+                                        <span class="levelToggleText"> Frostsee </span>
+                                    </button>	
+                                </section> <!-- scoreLevelsToggle -->
 
-					<section class="Game_links" id="gameLinksSplit" style="display: none;">
-						<hr class="horizontalSeparator">
-							<div class="ButtonText">
-								<a href="https://store.steampowered.com/app/2239150/Thronefall" id="steam_page" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
-										<b> Get Thronefall </b>
-									</button>
-								</a>
-								<a href="https://discord.gg/gVYctptyg8" id="discord_Link" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
-										<b>Discord server</b>
-									</button>
-								</a>
-								<a href="https://www.youtube.com/playlist?list=PLgsD7taGtaBhNaErAOaiEiTzt6-lOpVp0" id="devligs_Link" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
-										<b>Devlogs</b>
-									</button>
-								</a>
+                                <section id="timeLevelsToggle" class="levelsToggleButtons">
+                                    <!--
+                                        S P E E D   R U N S 
+                                    -->
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="nl_time_btn" onclick="SelectRandomBackground(1);"
+                                            hx-get="./leaderboards/time/nl.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
+                                        <span class="levelToggleText"> Neuland </span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="nf_time_btn" onclick="SelectRandomBackground(2);"
+                                            hx-get="./leaderboards/time/nf.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
+                                        <span class="levelToggleText"> Nordfels </span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="ds_time_btn" onclick="SelectRandomBackground(3);"
+                                            hx-get="./leaderboards/time/ds.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
+                                        <span class="levelToggleText"> Durststein </span>
+                                    </button>								
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="fs_time_btn" onclick="SelectRandomBackground(4);"
+                                            hx-get="./leaderboards/time/fs.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
+                                        <span class="levelToggleText"> Frostsee </span>
+                                    </button>	
+                                </section> <!-- timeLevelsToggle -->
+
+                                <section id="demoLevelsToggle" class="levelsToggleButtons">
+                                    <!--
+                                        D E M O   A R C H I V E
+                                    -->
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
+                                            hx-get="./leaderboards/demo/nl-score.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
+                                        <span class="levelToggleText"> Neuland </span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
+                                            hx-get="./leaderboards/demo/nf-score.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
+                                        <span class="levelToggleText"> Nordfels </span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
+                                            hx-get="./leaderboards/demo/time.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML" >
+                                        <span class="levelToggleText"> Speed-runs </span>
+                                    </button>
+                                </section> <!-- demoLevelsToggle -->
+                            </div> <!-- levelsButtons -->
+                        </div> <!-- categoryButtonsMain -->
+
+                        <div id="submissionButtonCell">
+                            <button type="button" class="btn btn-warning btn_orangeGradient btn-lg dropShadow centerVertical" onclick="OpenSubmitWindow()">
+                                <span id="SubmitButtonText">SUBMIT</span>
+                            </button>
+                        </div> <!-- submissionButtonCell -->
+                    </div> <!-- categoryButtonsWrapper -->
+                </nav>
+                <!-- 
+                    LEADERBOARDS
+                 -->
+                <main>
+                    <section id="leaderBoards">
+                        <div id="leaderBoardMain">
+                            <section id="LBLoadingIndicator">
+                                <img src="./img/loading edit.gif" id="lbLoadImage" class="centerHorizontal">
+                            </section> <!-- LBLoadingIndicator -->
+                            <section id="leaderboardContent" style="display: none;">
+                                <span id="leaderboardNameText">*table name*</span>
+                                <table class="table table-striped" id="LBtableMain">
+                                    <thead class="table-dark th_DaarkGradient" id="LBtableHead">
+                                        <tr>
+                                            <td class="th-position positionColumn 1">#		 </td>
+                                            <td class="th-name nameColumn 2">		 Name	 </td>
+                                            <td class="th-score scoreColumn 3">		 Score	 </td>
+                                            <td class="th-coins coinsColumn 4">		 Gold	 </td>
+                                            <td class="th-mutNums mutatorsColumn 5"> Mutators</td>
+                                            <td class="th-usedWeapon weaponColumn 7">Used&nbsp;weapon</td>
+                                            <td class="th-version versionColumn 8">	 Version </td>
+                                            <td class="th-date dateColumn 9">		 Date	 </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tBody_WhoteGradient table-light" id="LBtableBody" >
+                                        <tr class="tableRow">
+                                            <td class="position positionColumn 1">...</td>
+                                            <td class="name nameColumn 2">		  ...</td>
+                                            <td class="score scoreColumn 3">	  ...</td>
+                                            <td class="coins coinsColumn 4">	  ...</td>
+                                            <td class="mutNums mutatorsColumn 5"> ...</td>
+                                            <td class="usedWeapon weaponColumn 7">...</td>
+                                            <td class="version versionColumn 8">  ...</td>
+                                            <td class="date dateColumn 9">		  ...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section> <!-- leaderboardContent -->
+                        </div> <!-- leaderBoardMain -->
+                        <div id="oldLeaderBoards">
+                            <!-- Old leaderboards inserted by HTMX -->
+                        </div> <!-- oldLeaderBoards -->
+                    </section> <!-- leaderBoards -->
+                </main>
+                <!-- 
+                    FOOTER
+                 -->
+                <footer>
+                    Leaderboard page made by GhostMiner. v.2.4 (16/09/2023) |
+                    <a href="https://ghost-miner.github.io/">Website</a>, 
+                    <a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
+                    <a href="https://discord.gg/DjUBY9h">Discord</a>
+                </footer>
+            </div> <!-- mainPageContainerFront -->
+        </div> <!-- mainPageContainerBack -->
+
+        <script>
+        </script>
+
+        <!-- 
+            O V E R L A Y S
+        -->
+        
+        <!-- SUBMIT SCORE/TIME WINDOW  -->
+        <section id="overlayWindow" style="display: none;">
+            <div id="overlayBlur">
+                <div id="submitWindowBakcground">
+                    <div id="submitWindowForeground">
+                        <div id="windowTitleBar">
+                            <div class="titleBarCell" id="titleBarText">
+                                New submission
+                            </div>
+                            <div class="titleBarCell" id="titleBarClose">
+                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubmitWindow()">
+                            </div>
+                        </div> <!-- windowTitleBar -->
+            
+                        <div id="windowContent">
+                            <div id="chooseSubTypeButtons">
+                                <span id="chooseSubTiypeTitle">Choose a category</span>
+                                <button class="btn btn-lg btn-block btn-warning whiteGradient dropShadow" onclick="HideChoiceButtons('score')" id="topChoiceButton">
+                                    <strong> High-score </strong>
+                                </button>
+                                <button class="btn btn-lg btn-block btn-warning whiteGradient dropShadow" onclick="HideChoiceButtons('time')">
+                                    <strong> Speed-run </strong>
+                                </button>
+                            </div> <!--chooseSubTypeButtons -->
+                            <div id="submiFormDiv">
+                                <iframe id="submitFormFrame" src=""></iframe>
+                            </div>
+                        </div> <!-- windowContent -->
+                    </div> <!-- submitWindowForeground -->
+                </div> <!-- submitWindowBakcground -->
+            </div> <!-- overlayBlur -->
+        </section>
+
+        <!-- SUBMISSION INFO WINDOW -->
+        <section id="subInfoOverlayWindow" style="display: none;">
+            <div id="subInfoOverlayBlur">
+                <div id="subInfoWindowsBackground">
+                    <div id="subInfoWindowsForeground">
+                        <div id="windowTitleBar">
+                            <div class="titleBarCell" id="titleBarText">
+                                Submission details
+                            </div>
+                            <div class="titleBarCell" id="titleBarClose">
+                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubInfoWindow()">
+                            </div>
+                        </div> <!-- windowTitleBar -->
+                        <div id="subInfoWindowContent">
+                            <div class="alert alert-warning" id="obsoleteSubInfoBar" role="alert">
+								This submission is obsolete.
 							</div>
-							<div class="ButtonText" style="margin-top: 7px;">
-								<a href="https://throne-fall.github.io" id="wiki_Link" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill" style="margin-left: 10px; ">
-										<b>Thronefall wiki</b>
-									</button>
-								</a>
-								<!-- <a href="http://discord.gg/pfRJjfz6SU" id="wikiDiscord_Link" target="_blank">
-									<button type="button" class="btn gameLinksBtn btn-warning btn-whiteFill">
-										<b>Wiki Discord</b>
-									</button>
-								</a> -->
-							</div> <!--ButtonText-->
-						<hr class="horizontalSeparator">
-					</section> <!--Game_links-->	
-					</center>
-				</section> <!-- Page head stuff -->
-
-				<!-- Category buttons -->
-				<div id="newButtonsBar">
-					<div id="newLBToggles">
-						<!-- 
-							CATEGORY BUTTONS 
-						-->
-						<div id="newCategoryBuuttons">
-							<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newScoreCatToggle" type="button"
-								onclick="SelectRandomBackground(1); ChangeCategory('score')">
-							<span class="newCatToggleText"> High-scores </span>
-							</button>
-							<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newTimCatToggle" type="button" disabled
-								onclick="SelectRandomBackground(2); ChangeCategory('time')" hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-							<span class="newCatToggleText"> Speed-runs </span>
-							</button>	
-							<button class="btn btn-warning btn-whiteFill newCatToggleButton" id="newDemoCatToggle" type="button" disabled
-								onclick="SelectRandomBackground(1); ChangeCategory('demo')" hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-							<span class="newCatToggleText"> Demo version </span>
-							</button>
-						</div> <!-- newCategoryBuuttons -->
-						<!--
-							LBs FOR EACH CATEGORY
-						-->
-						<div id="newLBTableToggle">
-							<!--
-								H I G H   S C O R E S
-							-->
-							<section id="newLBToggleScore" class="newSubsectionToggle">
-								<button type="button"class="btn btn_orangeGradient" id="nl_score_btn" 
-									onclick="SelectRandomBackground(1); ChangeTableData('Neuland')" >
-								<span class="subCatToggleText"> Neuland </span>
-								</button>
-								<button type="button" class="btn btn_orangeGradient" id="nf_score_btn" 
-									onclick="SelectRandomBackground(2); ChangeTableData('Nordfels')">
-								<span class="subCatToggleText"> Nordfels </span>
-								</button>
-								<button type="button" class="btn btn_orangeGradient" id="ds_score_btn" 
-									onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
-								<span class="subCatToggleText"> Durststein </span>
-								</button>
-								<button type="button" class="btn btn_orangeGradient" id="fs_score_btn" 
-									onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
-								<span class="subCatToggleText"> Frostsee </span>
-								</button>	
-							</section> <!-- newLBToggleScore -->
-							<section id="newLBToggleTime" class="newSubsectionToggle">
-								<!--
-									S P E E D   R U N S 
-								-->
-								<button type="button" class="btn btn_orangeGradient" id="nl_time_btn" onclick="SelectRandomBackground(1);"
-									hx-get="./leaderboards/time/nl.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-								<span class="subCatToggleText"> Neuland </span>
-								</button>
-								<button type="button" class="btn btn_orangeGradient" id="nf_time_btn" onclick="SelectRandomBackground(2);"
-									hx-get="./leaderboards/time/nf.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-								<span class="subCatToggleText"> Nordfels </span>
-								</button>
-								<button type="button" class="btn btn_orangeGradient" id="ds_time_btn" onclick="SelectRandomBackground(3);"
-									hx-get="./leaderboards/time/ds.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-								<span class="subCatToggleText"> Durststein </span>
-								</button>								
-								<button type="button" class="btn btn_orangeGradient" id="fs_time_btn" onclick="SelectRandomBackground(4);"
-									hx-get="./leaderboards/time/fs.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-								<span class="subCatToggleText"> Frostsee </span>
-								</button>	
-							</section> <!-- newLBToggleTime -->
-							<section id="newLBToggleDemo" class="newSubsectionToggle">
-								<!--
-									D E M O   A R C H I V E
-								-->
-								<button type="button" class="btn btn_orangeGradient" id="nl_score_demo_btn" onclick="SelectRandomBackground(1);" 
-									hx-get="./leaderboards/demo/nl-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-								<span class="subCatToggleText"> Neuland </span>
-								</button>
-								<button type="button" class="btn btn_orangeGradient" id="nf_score_demo_btn" onclick="SelectRandomBackground(2);" 
-									hx-get="./leaderboards/demo/nf-score.html" hx-target="#leaderBoard" hx-swap="innerHTML">
-								<span class="subCatToggleText"> Nordfels </span>
-								</button>
-								<button type="button" class="btn btn_orangeGradient" id="nl_time_demo_btn" onclick="SelectRandomBackground(1);" 
-									hx-get="./leaderboards/demo/time.html" hx-target="#leaderBoard" hx-swap="innerHTML" >
-								<span class="subCatToggleText"> Speed-runs </span>
-								</button>
-							</section> <!-- newLBToggleDemo -->
-						</div> <!-- newLBTableToggle -->
-					</div> <!-- newLBToggles -->
-
-					<div id="newLBSubmitButton">
-						<button type="button" onclick="OpenSubWindow()" class="btn btn_orangeGradient btn-lg">
-							<span class="newCatToggleText">SUBMIT</span>
-						</button>
-					</div> <!-- newLBSubmitButton -->
-				</div> <!-- newButtonsBar -->
-
-				<!-- 
-					NEW AUTO LEADERBOARD 
-				-->
-				<div id="leaderboardsMainDiv">
-					<section id="newLBSection">
-						<section id="newLBLoadingImg" style="text-align: center; ">
-							<img src="./img/loading edit.gif" id="LBloadImg">
-						</section>
-
-						<section id="newLBTableSection" style="display: none;">
-							<div class="tableContainer" style="overflow-x:auto;">
-								<div id="hiddenColumnsDiv">
-									<span id="hiddenColumnsText">Scroll or swipe horizontally to reveal columns that aren't currently visible.<br></span>
-								</div>
-								<span id="tableName"> *table name* </span>
-								<table class="table table-striped" id="newLBTable" style="text-align: center; border: 1px black dotted">
-									<thead class="table-dark tableDarkHeader" id="newLbHeader" style="font-weight: bold;">
-										<td class="th-position positionColumn 1">#		 </td>
-										<!-- <td class="th-proofType" style="max-width: 20px;"> Proof ype image/video </td> -->
-										<td class="th-name nameColumn 2">		 Name	 </td>
-										<td class="th-score scoreColumn 3">		 Score	 </td>
-										<td class="th-coins coinsColumn 4">		 Gold	 </td>
-										<td class="th-mutNums mutatorsColumn 5"> Mutators</td>
-										<!-- <td class="th-proof proofColumn 6">		 Proof	 </td> -->
-										<td class="th-usedWeapon weaponColumn 7">Used&nbsp;weapon</td>
-										<td class="th-version versionColumn 8">	 Version </td>
-										<td class="th-date dateColumn 9">		 Date	 </td>
-									</thead>
-									<tbody id="newLbBody" class="tableBodyBackground table-light">
-										<tr class="tableRow">
-											<td class="position positionColumn 1">...</td>
-											<!-- <td class="proofType"> 
-												<img src="./img/tf wiki discord .png" style="width: 20px; height: 20px;">
-											</td> -->
-											<td class="name nameColumn 2">		  ...</td>
-											<td class="score scoreColumn 3">	  ...</td>
-											<td class="coins coinsColumn 4">	  ...</td>
-											<td class="mutNums mutatorsColumn 5"> ...</td>
-											<!-- <td class="proof proofColumn 6">
-												... -->
-												<!-- <div id="extProofLinkDivWrapper">
-													<div id="extProofLinkDivText">
-														<a class="extProofLink" href="" target="_blank"> View </a>
-													</div>
-													<div id="extProofLinkDivIcon">
-														<img src="./img/external.png" id="extProofLinkDivImg">
-													</div>
-													</div> -->
-											<!-- </td> -->
-											<td class="usedWeapon weaponColumn 7">...</td>
-											<td class="version versionColumn 8">  ...</td>
-											<td class="date dateColumn 9">		  ...</td>
-										</tr>
-									</tbody>
-								</table>
-							</div> <!-- tableContainer -->
-						</section> <!-- newLBTableSection -->
-					</section> <!-- newLBSection --> 
-									
-					<!-- 
-						OLD LEADERBOARDS HERE
-					-->
-					<section id="leaderBoard">
-						<!-- Content injected by HTMX -->
-					</section>
-				</div> <!-- leaderboardsMainDiv -->
-				
-				<script>
-					SpawnTableRows();
-					GetSubData();
-					SelectRandomBackground(1);
-					document.getElementById("newScoreCatToggle").classList.add("active");
-					// ResetSubInfoWindowValues();
-				</script>
-
-				<section id="Footer">
-					<!-- Footer -->
-					<span id="footerText" style=" font-weight: bold;">Leaderboard page made by GhostMiner. v.2.3 (12/09/2023) |
-					<a href="https://ghost-miner.github.io/">Website</a>, 
-					<a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
-					<a href="https://discord.gg/DjUBY9h">Discord</a>
-					</span>
-				</section> <!-- Footer -->
-			</div> <!-- BgrBox -->
-		</div> <!-- mainPageContainer -->
-
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-		<!--
-			N E W  S U B M I T  O V E R L A Y
-		-->
-		<section class="newOverlay" id="newSubmitOverlay" style="display: none">
-			<div class="overlaysBlur" style="overflow: auto;">
-				<div class="windowBakcground" style="max-height: 750px;">
-					<div class="windowForeground">
-						<div class="topTitleBar">
-							<div class="titleBarLeft" style="margin-bottom: 0px;">
-								<span class="windowTopBarTitle">New&nbsp;submission</span>
-							</div>
-							<div class="titleBarRight" style="margin-bottom: 7px;">
-								<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseSubmitWindow()">
-							</div>
-						</div> <!-- topTitleBar -->
-
-						<div id="windowContentDiv">
-							<div id="chooseSubTypeButtons">
-								<span id="chooseSubTiypeTitle">Choose a category</span>
-								<button class="btn btn-lg btn-block btn_orangeGradient btn-warning btn-whiteFill" onclick="HideChoiceButtons('score')" id="topChoiceButton">
-									<strong> High-score </strong>
-								</button>
-								<button class="btn btn-lg btn-block btn_orangeGradient btn-warning btn-whiteFill" onclick="HideChoiceButtons('time')">
-									<strong> Speed-run </strong>
-								</button>
-							</div>
-							<div id="submitFormDiv" style="display: block; width: 100%; height: 100%;">
-								<!-- cHOSEN FORM GOES HERE -->
-								<iframe src=""style="width: 100%; height: 700px; border: 0px;" id="submitFrame"></iframe>
-							</div>
-						</div> <!-- windowContentDiv -->
-					</div> <!-- windowForeground -->
-				</div> <!-- windowBakcground -->
-			</div> <!-- overlaysBlur -->
-		</section> <!-- newSubmitOverlay -->
-
-		<!--
-			O L D  &  N E W  P R O O F  O V E R L A Y
-		-->
-		<section class="newOverlay" id="newscoreProof">
-			<!--
-				I M A G E
-			-->
-			<div class="overlaysBlur" id="newProofWindowMainImage" style="display: none;">
-				<div class="newProofWindow">
-					<div class="newProofWindowTitleBar">
-						<div class="titleBarLeft">
-							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;screenshot</span>
-						</div>
-						<div class="titleBarRight">
-							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseProofWindowImage()">
-						</div>
-					</div> <!-- newProofWindowTitleBar -->
-						
-					<div class="newProofWindowContent" style="overflow-y: auto;">
-						<img id="newProofImage" alt="" src="">
-					</div>
-				</div>
-			</div> <!-- overlaysBlur newProofWindowMainImage -->
-			
-			<!--
-				V I D E O   E M B E D
-			-->
-			<div class="overlaysBlur" id="newProofWindowMainVideo" style="display: none;">
-				<div class="newProofWindow">
-					<div class="newProofWindowTitleBar">
-						<div class="titleBarLeft">
-							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;video</span>
-						</div>
-						<div class="titleBarRight">
-							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseVideoWindow()">
-						</div>
-					</div> <!-- newProofWindowTitleBar -->
-						
-					<div class="newProofWindowContent" style="overflow-y: hidden;">
-						<iframe id="newProofVideo" src=""></iframe>
-					</div>
-				</div>
-			</div> <!-- overlaysBlur newProofWindowMainVideo -->¨
-
-			<!--
-				SUBMISSION INFO
-			-->
-			<div class="overlaysBlur" id="newSubInfoWindow" style="display: none; height: 100%; overflow: auto;">
-				<div class="newProofWindow" id="subInfoWindowOverride">
-					<div class="newProofWindowTitleBar">
-						<div class="titleBarLeft">
-							<span class="windowTopBarTitle" style="margin: auto;">Submission&nbsp;details</span>
-						</div>
-						<div class="titleBarRight">
-							<img src="./img/cross white.png" class="windowTitleBarButtonIcon" onclick="CloseSubInfoWindow()">
-						</div>
-					</div> <!-- newProofWindowTitleBar -->
-
-					<div class="newProofWindowContent" id="submissionInfoWindow">
-						<div id="newProofWindowContentBackground">
-							<div class="alert alert-warning" id="obsoleteSubInfoBar" role="alert">
-								<center><strong>This submission is obsolete</strong></center>
-							</div>  
 							<div class="alert alert-danger" id="rejectedSubInfoBar" role="alert">
-								<center><strong>This submission was rejected.</strong></center>
-							</div>  
+								    This submission was rejected!
+							</div>
 
-							<!-- SUBMISSION PROOF -->
+                            <!-- SUBMISSION PROOF -->
 							<div id="subIinfoImageDiv" style="display: none;">
 								<a href="" id="subInfoImgLink" target="_blank">
 									<img src="" id="subInfoImg">
 								</a><br>
 								<!-- <span class="subInfoUrlText"> Video URL: <a href="" id="subIinfoFileUrl" target="_blank">*url*</a> </span> -->
 							</div>
-							<div id="subIinfoVideoDiv" style="display: none; text-align: center; font-size: 1rem; margin-bottom: 15px;">
-								<iframe src="https://www.youtube.com/embed/oUCOakw2l1Y" id="subInfoVideo"></iframe>
+							<div id="subIinfoVideoDiv">
+								<iframe src="" id="subInfoVideo"></iframe>
 								<span class="subInfoUrlText"> Video&nbsp;URL:&nbsp;<a href="" id="subIinfoFileUrl" target="_blank">*url*</a> </span>
 							</div>
 							<div id="subIinfoExternalImgDiv" style="display: none;">
@@ -457,9 +335,9 @@
 								</div>
 							</div>
 
-							<!-- NAME AND DATE -->
+							<!-- POSITION NAME AND DATE -->
 							<div id="subInfoTitle">
-								<span id="si_position">#...</span>, Submitted by <var id="si_name" class="subInfoVarsTitle">...</var> on <var id="si_date" class="subInfoVarsTitle">...</var>
+								<var id="si_position" class="subInfoVarsTitle">#...</var> Submitted by <var id="si_name" class="subInfoVarsTitle">...</var> on <var id="si_date" class="subInfoVarsTitle">...</var>
 							</div>
 
 							<!-- SUBMISSION DETAILS  -->
@@ -472,7 +350,7 @@
 									<span class="subInfoSubtitle">Gold: <br></span>
 									<var class="subInfoVars" id="si_gold">...</var>
 								</div>
-								<div class="subInfoGridCell">
+								<div class="subInfoGridCell" id="versionInfoCell">
 									<span class="subInfoSubtitle">Version: <br></span>
 									<var class="subInfoVars" id="si_version">...</var>
 								</div>
@@ -489,24 +367,77 @@
 									<var class="subInfoVars" id="si_weapon">...</var>
 								</div>
 								<div class="subInfoGridCell">
-									<span class="subInfoSubtitle" style="font-size: 0.9em;">Used perks: <br></span>
+									<span class="subInfoSubtitle">Used perks: <br></span>
 									<var class="subInfoVars" id="si_perksList">... 	</var>
 								</div>
 							</div>
 							
-							<div id="mutListCell" class="subInfoGridCell" style="margin-bottom: 15px; max-width: 73%; text-align: center; padding: 10px; position: relative; left: 50%; transform: translate(-50%,0);">
+							<div id="mutListCell" class="subInfoGridCell">
 								<span class="subInfoSubtitle">Used mutators: <br></span>
 								<var class="subInfoVars" id="si_mutatorsList" style="font-size: 0.9em;">...</var>
 							</div>
-						</div> <!-- newProofWindowContentBackground -->
-					</div> <!-- newProofWindowContent -->
-				</div> <!-- overlaysBlur newProofWindowMainImage -->
-			</section> <!-- newscoreProof -->
+                        </div> <!-- windowContent -->
+                    </div> <!-- subInfoWindowsFpreground-->
+                </div> <!-- subInfoWindowsBackground --> 
+            </div> <!-- overlayBlur -->
+        </section> <!-- overlayWindow -->
+        
+        <!-- 
+            < ! >   O B S O L E T E   < ! >
+        -->
+            <!-- V I D E O   E M B E D -->
+            <div class="old_overlaysBlur" id="newProofWindowMainVideo" style="display: none;">
+                <div class="old_ProofWindow">
+                    <div class="old_ProofWindowTitleBar">
+                        <div class="old_titleBarLeft">
+                            <span class="old_windowTitleBarButton" style="margin: auto;">Submission&nbsp;video</span>
+                        </div>
+                        <div class="old_titleBarRight">
+                            <img src="./img/cross white.png" class="old_windowTitleBarButtonIcon" onclick="CloseVideoWindow()">
+                        </div>
+                    </div> <!-- old_ProofWindowTitleBar -->
+                        
+                    <div class="old_ProofWindowContent" style="overflow-y: hidden;">
+                        <iframe id="old_ProofVideo" src=""></iframe>
+                    </div>
+                </div>
+            </div> <!-- old_overlaysBlur newProofWindowMainVideo -->¨
 
-			<script>
-				OpenSubmitFromURL();
-			</script>
-		<!-- STYLE OVERRIDES -->		
-		<link rel="stylesheet" href="./styles/overrides.css">
-	</body>
+            <!-- I M A G E-->
+            <div class="old_overlaysBlur" id="old_ProofWindowMainImage" style="display: none;">
+                <div class="old_ProofWindow">
+                    <div class="old_ProofWindowTitleBar">
+                        <div class="old_titleBarLeft">
+                            <span class="old_windowTopBarTitle" style="margin: auto;">Submission&nbsp;screenshot</span>
+                        </div>
+                        <div class="old_titleBarRight">
+                            <img src="./img/cross white.png" class="old_windowTitleBarButtonIcon" onclick="CloseProofWindowImage()">
+                        </div>
+                    </div> <!-- old_ProofWindowTitleBar -->
+                        
+                    <div class="old_ProofWindowContent" style="overflow-y: auto;">
+                        <img id="old_ProofImage" alt="" src="">
+                    </div>
+                </div>
+            </div> <!-- old_overlaysBlur old_ProofWindowMainImage -->
+        <!-- 
+            < i > OBSOLETE STUFF ENDS HERE < i >
+        -->
+
+		<script>
+            document.getElementById("scoreCategoryButton").classList.add("active");
+            SpawnTableRows();
+            GetSubData();
+            SelectRandomBackground(1);
+			OpenSubmitFromURL();
+		</script>
+
+        <link rel="stylesheet" href="./styles/overrides.css">
+        
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
 </html>

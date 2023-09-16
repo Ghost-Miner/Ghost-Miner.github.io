@@ -1,0 +1,33 @@
+<div id="overlayBlur">
+    <div id="submitWindowBakcground">
+        <div id="submitWindowForeground">
+            <div id="windowTitleBar">
+                <div class="titleBarCell" id="titleBarText">
+                    New submission
+                </div>
+                <div class="titleBarCell" id="titleBarClose">
+                    <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubmitWindow()">
+                </div>
+            </div> <!-- windowTitleBar -->
+
+            <div id="windowContent">
+                <div id="chooseSubTypeButtons">
+                    <span id="chooseSubTiypeTitle">Choose a category</span>
+                    <button class="btn btn-lg btn-block btn-warning whiteGradient dropShadow" onclick="HideChoiceButtons('score')" id="topChoiceButton">
+                        <strong> High-score </strong>
+                    </button>
+                    <button class="btn btn-lg btn-block btn-warning whiteGradient dropShadow" onclick="HideChoiceButtons('time')">
+                        <strong> Speed-run </strong>
+                    </button>
+                </div> <!--chooseSubTypeButtons -->
+                <div id="submiFormDiv">
+                    <iframe id="submitFormFrame" src=""></iframe>
+                </div>
+            </div> <!-- windowContent -->
+        </div> <!-- submitWindowForeground -->
+    </div> <!-- submitWindowBakcground -->
+</div> <!-- overlayBlur -->
+
+<script>
+    location.hash = "submit";
+</script>

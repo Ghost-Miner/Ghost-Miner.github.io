@@ -1,54 +1,59 @@
 // 
 // SUBMISSION WINDOW
 // 
-function OpenSubWindow() 
+function OpenSubmitWindow() 
 {
-	document.getElementById("newSubmitOverlay").style.display = "block";
+	document.getElementById("overlayWindow").style.display = "block";
 	location.hash = "submit";
 }
 function CloseSubmitWindow ()
 {
-	document.getElementById("newSubmitOverlay").style.display = "none";
-	ShowChoiceButtons();
+	document.getElementById("overlayWindow").style.display = "none";
 	location.hash = "";
+	ShowChoiceButtons();
+	// document.getElementById("overlayWindow").innerHTML = "";
+}
+
+function ShowChoiceButtons ()
+{
+	document.getElementById("chooseSubTypeButtons").style.display = "block";
+	document.getElementById("submiFormDiv").style.display = "none";
+	
+	document.getElementById("submitFormFrame").src = ""
 }
 function HideChoiceButtons (type)
 {
 	document.getElementById("chooseSubTypeButtons").style.display = "none";
-	document.getElementById("submitFormDiv").style.display = "block";
+	document.getElementById("submiFormDiv").style.display = "block";
 
 	if (type == "time")
 	{
-		document.getElementById("submitFrame").src = "./submitSpeed.html"
+		document.getElementById("titleBarText").textContent = "Submit new speed-run";
+		document.getElementById("submitFormFrame").src = "./submitSpeed.html"
 	}
 	else
 	{
-		document.getElementById("submitFrame").src = "./submit.html"
+		document.getElementById("titleBarText").textContent = "Submit new high-score";
+		document.getElementById("submitFormFrame").src = "./submit.html"
 	}
 }
-function ShowChoiceButtons ()
-{
-	document.getElementById("chooseSubTypeButtons").style.display = "block";
-	document.getElementById("submitFormDiv").style.display = "none";
-	
-	document.getElementById("submitFrame").src = ""
-}
-
 // 
-// NEW SCORE/TIME PROOF 
+// OLD SCORE/TIME PROOF 
+// Used for speed-runs and demo 
 // 
-function OpenProofWindowImage(picLink) 
+function OpenProofWindowImage(imgLink) 
 {
-	document.getElementById("newProofWindowMainImage").style.display = "block";
+	console.warn("OpenProofWindowImage() is a deprectaed function and only used for demo archive and speedruns. Use ShowSubInfo() instead");
+	document.getElementById("old_ProofWindowMainImage").style.display = "block";
 
-	var imgLink	   = document.getElementById("newProofImage");
-	imgLink.src = picLink;
+	var img	   = document.getElementById("old_ProofImage");
+	img.src = imgLink;
 }				  
 function CloseProofWindowImage() 
 {
-	document.getElementById("newProofWindowMainImage").style.display = "none";
+	document.getElementById("old_ProofWindowMainImage").style.display = "none";
 					
-	var imgLink    = document.getElementById("newProofImage");
+	var imgLink    = document.getElementById("old_ProofImage");
 	imgLink.src = "";
 }
 
@@ -65,11 +70,3 @@ function CloseVideoWindow()
 	videoLink.src = "";
 }
 
-function CloseSubInfoWindow() 
-{
-	document.getElementById("newSubInfoWindow").style.display = "none";
-	location.hash = "";		
-	ResetSubInfoWindowValues ();
-	// var imgLink    = document.getElementById("subInfoImg");
-	// imgLink.src = "";
-}
