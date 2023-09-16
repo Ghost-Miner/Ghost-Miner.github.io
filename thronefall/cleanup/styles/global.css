@@ -231,13 +231,13 @@ header
     font-size: 1.75rem;
 }
 
-.th_DaarkGradient
+.th_DaarkGradient, .tableDarkHeader
 {
     background: linear-gradient(to bottom, black, #24272b) !important;
     color: white !important;
     border: 1px solid black !important;
 }
-.tBody_WhoteGradient
+.tBody_WhoteGradient, .tableBodyBackground 
 {
     background: linear-gradient(to bottom, var(--whiteColour2), var(--whiteColour1));
 }

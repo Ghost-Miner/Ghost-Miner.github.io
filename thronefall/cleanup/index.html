@@ -106,14 +106,17 @@
                         <div id="categoryButtonsMain">
                             <!-- CATEGORY -->
                             <div id="categoryButtons">
-                                <button class="btn btn-warning dropShadow whiteGradient" id="scoreCategoryButton" type="button" onclick="SelectRandomBackground(1); ChangeCategory('score')">
+                                <button class="btn btn-warning dropShadow whiteGradient" id="scoreCategoryButton" type="button"
+                                        onclick="SelectRandomBackground(1); ChangeCategory('score')">
                                     <span class="categoryToggleText"> High-scores </span>
                                 </button>
-                                <button class="btn btn-warning dropShadow whiteGradient" id="timeCategoryButton" type="button" onclick="SelectRandomBackground(2); ChangeCategory('time')" 
+                                <button class="btn btn-warning dropShadow whiteGradient" id="timeCategoryButton" type="button" 
+                                        onclick="SelectRandomBackground(2); ChangeCategory('time')" DISABLED
                                         hx-get="./leaderboards/time/nl.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
                                     <span class="categoryToggleText"> Speed-runs </span>
                                 </button>	
-                                <button class="btn btn-warning dropShadow whiteGradient" id="demoCategoryButton" type="button" onclick="SelectRandomBackground(1); ChangeCategory('demo')" 
+                                <button class="btn btn-warning dropShadow whiteGradient" id="demoCategoryButton" type="button" DISABLED 
+                                        onclick="SelectRandomBackground(1); ChangeCategory('demo')" 
                                         hx-get="./leaderboards/demo/nl-score.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
                                     <span class="categoryToggleText"> Demo version </span>
                                 </button>
@@ -427,7 +430,6 @@
             const screenWidth = screen.width
             const winWidth  = window.innerWidth;
             const winHeight = window.innerHeight;
-
             document.getElementById("screenSizeText").textContent = "(WxH) Screen: " + screenWidth + "x" + screenHeight + "; Window: " + winWidth + "x" + winHeight;
 		</script>
 
