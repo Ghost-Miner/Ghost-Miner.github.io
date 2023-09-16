@@ -18,7 +18,8 @@
 
 body
 {
-    background: url("../img/backgrounds/Overworld.jpg") no-repeat center center fixed;
+    background-color: black;
+    background-image: url("../img/backgrounds/Overworld.jpg") no-repeat center center fixed;
     background-size: cover;
 
     font-family: 'Times New Roman', Times, serif;
