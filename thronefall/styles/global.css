@@ -205,14 +205,6 @@ header
 /* 
     LEADERBOARDS
 */
-
-/* Table head sort buttons */
-#th-version
-{
-    cursor: default;
-}
-
-/* Other */
 #leaderboardContent
 {
     overflow: auto;

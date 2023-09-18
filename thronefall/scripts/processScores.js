@@ -284,13 +284,14 @@ function ChangeTableData(level)
     }
 
     // Add order utton to table header
-    document.getElementById("th-position")  .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "score") }   , false);
-    document.getElementById("th-name")      .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "name") }    , false);
-    document.getElementById("th-score")     .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "score") }   , false);
-    document.getElementById("th-coins")     .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "gold") }    , false);
+    document.getElementById("th-position")  .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "score")    }, false);
+    document.getElementById("th-name")      .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "name")     }, false);
+    document.getElementById("th-score")     .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "score")    }, false);
+    document.getElementById("th-coins")     .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "gold")     }, false);
     document.getElementById("th-mutNums")   .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "mutators") }, false);
-    document.getElementById("th-usedWeapon").addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "weapon") }  , false);
-    document.getElementById("th-date")      .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "date") }    , false);
+    document.getElementById("th-usedWeapon").addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "weapon")   }, false);
+    document.getElementById("th-date")      .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "date")     }, false);
+    document.getElementById("th-version")   .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "version")  }, false);
     // HIDE LOADING ANIMATION
     document.getElementById("LBLoadingIndicator").style.display = "none";
     // SHOW LEADERBOAR SECTION
@@ -330,17 +331,20 @@ function OrderBoardBy (map, orderType)
     }
 
     // Replace all "unknown"s in mutator columns with -1 for better sorting.
-    let chosenMut;
+    let chosenRow;
     let chosenMutString;
+    let chosenVerString;
     for (let i = 0; i < chosenMapArray.length; i++)
     {
-        chosenMut       = chosenMapArray[i];
-        chosenMutString = chosenMut[9];
+        chosenRow       = chosenMapArray[i];
+        chosenMutString = chosenRow[9];
+        chosenVerString = chosenRow[10];
 
-        if (chosenMutString == "unknown")
-        {                       
-            // console.log("i: " + i + ", " + chosenMut[21] + " mut unknown " + chosenMut[i]);
-            chosenMut[9] = -1;
+        if (chosenMutString == "unknown" || chosenVerString == "unknown")
+        {
+            // console.log("i: " + i + ", " + chosenRow[21] + " mut unknown " + chosenRow[i]);
+            chosenRow[9] = -1;
+            chosenRow[10] = -1;
         }
     }
 
@@ -361,6 +365,10 @@ function OrderBoardBy (map, orderType)
         
         case "mutators":
             chosenMapArray.sort((a,b) => parseInt(b[9]) - parseInt(a[9]));
+        break;
+        
+        case "version":
+            chosenMapArray.sort((a,b) => parseFloat(b[10]) - parseFloat(a[10]));
         break;
 
         case "weapon":
@@ -398,17 +406,23 @@ function OrderBoardBy (map, orderType)
     // Sett all mutator column with -1 back to unknown
     for (let i = 0; i < chosenMapArray.length; i++)
     {
-        chosenMut       = chosenMapArray[i];
-        chosenMutString = chosenMut[9];
+        chosenRow       = chosenMapArray[i];
+        chosenMutString = chosenRow[9];
+        chosenVerString = chosenRow[10];
 
         if (chosenMutString == "-1")
-        {                       
-            // console.log("i: " + i + ", " + chosenMut[21] + " setting back to unknown " + chosenMut[i]);
-            chosenMut[9] = "unknown";
+        {
+            // console.log("i: " + i + ", " + chosenRow[21] + " setting back to unknown " + chosenRow[i]);
+            chosenRow[9] = "unknown";
+        }
+        if (chosenVerString == "-1")
+        {
+            // console.log("i: " + i + ", " + chosenRow[21] + " setting back to unknown " + chosenRow[i]);
+            chosenRow[10] = "unknown";
         }
     }
     // console.log("--- chosenMapArray ordered -----------------------------------")
-    // console.log(chosenMapArray);
+    console.log(chosenMapArray);
 
     ////////////////////////////////////////////////////////////////
 
