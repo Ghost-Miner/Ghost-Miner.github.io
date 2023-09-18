@@ -165,6 +165,9 @@ function ChangeTableData(level)
         return;
     }
 
+    // Reset the leaderboard section to remove all event listenvers
+    document.getElementById("leaderboardContent").outerHTML = document.getElementById("leaderboardContent").outerHTML
+
 	// SORT ITEMS INTO CORRESPOINDING VALUES
 	let chosenArray;
 	let chosenMap = level;
@@ -275,7 +278,7 @@ function ChangeTableData(level)
         tVersion[k].textContent = version[k];
         tWeapon[k].textContent = usedWeapon[k];
         
-        tableRows[k].addEventListener("click",() => { ShowSubInfo(subIndex[k]) },false,);
+        tableRows[k].addEventListener("click",() => { ShowSubInfo(subIndex[k]) },false);
 	}
     // HIDE ALL EMPTY ROWS
     for (let i = chosenArray.length; i < tableRows.length; i++)
@@ -300,7 +303,7 @@ function ChangeTableData(level)
 	document.getElementById("leaderboardNameText").textContent = chosenMap + " high-scores";
 }
 
-
+let sortDown = true;
 function OrderBoardBy (map, orderType)
 {
     // Initialize array to sort
@@ -421,9 +424,24 @@ function OrderBoardBy (map, orderType)
             chosenRow[10] = "unknown";
         }
     }
-    // console.log("--- chosenMapArray ordered -----------------------------------")
-    console.log(chosenMapArray);
+    // console.log("--- chosenMapArray ordered -----------------------------------");
+    // console.log(chosenMapArray);
 
+    if (!sortDown)
+    {
+        let oldArray = chosenMapArray;
+        let newArray = new Array()
+        let j = 0;
+        for (let i = oldArray.length - 1; i >= 0; i--)
+        {
+            newArray[j] = oldArray[i];
+            j++; 
+        }
+        chosenMapArray = newArray
+        // console.log("--------------------------------------");
+        // console.log(chosenMapArray);
+    }
+    sortDown = !sortDown;
     ////////////////////////////////////////////////////////////////
 
      // CREATE ARRAYS FOR EACH VALUE TYPE
@@ -510,4 +528,6 @@ function OrderBoardBy (map, orderType)
     {
         tableRows[i].style.display = "none";
     }
+    console.log(sortDown);
+
 }

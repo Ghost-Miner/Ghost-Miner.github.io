@@ -34,7 +34,7 @@ function CloseSubInfoWindow()
 
 function ShowSubInfo (submissionIndex)
 {
-    console.log("===== NEW SUBUINFI =========");
+    // console.log("===== NEW SUBUINFI =========");
     // submissionIndex = ExtractSubNumber(submissionIndex);
     // ResetSubInfoWindowValues();
 
@@ -46,7 +46,9 @@ function ShowSubInfo (submissionIndex)
     // document.getElementById("obsoleteSubInfoBar").style.display = "none";
     // document.getElementById("rejectedSubInfoBar").style.display = "none";
     
-    if (submissionIndex >= tableData.length || submissionIndex == undefined || submissionIndex == "")
+    if (submissionIndex == "")
+    {   return;   }
+    if (submissionIndex >= tableData.length || submissionIndex == undefined)
     {
         console.error("ShowSubInfo | Invalid submission index: " + submissionIndex);
         return;
