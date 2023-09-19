@@ -1,11 +1,14 @@
-/* BASIC STUFF */
+/* 
+    G E N E R AL 
+*/
 :root 
 {
     --baackgroundColour:  rgba(245, 245, 245, 0.65);
-    --foregroundColour:  rgba(111, 255, 75, 0.75); 
+    --foregroundColour:   rgba(111, 255, 75, 0.75); 
     --darkGreen: #072f0a;
 
-    --containerSpacing: 20px;
+    --containerSpacing: 10px;
+    --borderRadius: 5px;
 }
 a:link 
 {
@@ -19,227 +22,126 @@ a:visited
 }
 a:hover
 {
-    text-decoration:underline;
+    text-decoration: underline;
 }
 body
 {
-    background: url(../picture/bgr.jpg) no-repeat center center; 
+    background-image: url("../img/bgr.jpg"); 
     background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-origin: border-box;
     background-color: #1c2d0c;
 }
-.mainPageContainer 
+
+#mainPageContainerBack
 {
     max-width: 1000px;
-    min-width: 1000px;
-    width: 100%;
-    margin: 20px auto; 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-     
-    border-radius: 10px;
-    padding: 10px;
+    margin: 25px auto;
+    padding: var(--containerSpacing);
+
     background-color: var(--baackgroundColour);
-                        
-    box-shadow: 2px 2px 16px rgba(0,0,0,1);  
-
-    backdrop-filter: blur(0px);
 }
-#innerContainer
+#mainPageContainerFront
 {
-    min-width: 00px;
-    display: grid;
-
-    width: 100%;
+    border-radius: var(--borderRadius);
 }
+
+.greenBakcground
+{
+    background-color: var(--foregroundColour);
+}
+.roundCorners
+{
+    border-radius: var(--borderRadius);
+}
+
 .contentBox
 {
-    border-radius: 5px;
-    padding: 10px;
-    width: auto;
     background-color: var(--foregroundColour);
-    display: grid;
-    
-    width: 100%;
+    border-radius: var(--borderRadius);
+    padding: 10px;    
 }
-
-.pageTitleText
+.containerTitle
 {
-    font-weight:600;
-    font-size: 2.5rem;
-    vertical-align: middle;
-}
-.pageSubtitle
-{
-    font-weight: 640;
-    font-size: 1.64rem;
+    font-weight: 501;
     text-decoration: overline;
+    font-size: 1.75rem;
 }
 
-.footerText 
+/*
+    HEADER
+*/
+#pageTtleGridWrapper
 {
-    font-weight: bold;
-    color: black;
+    display:grid;
+    grid-template-columns: 10% 90%;
+    padding: 10px;
 }
-
-
-
-
-#titleImage
+#pageLogoImage
 {
-    width: 70px;
-    height: auto;
+    width: 100%;
+    max-width: 75px;
+}
+#pageTitleText
+{
+    font-weight: 501;
+    font-size: 2rem;
 }
 #pageTitleDiv
 {
-    width: 100%;
-    grid-template-columns: 10% 90%;
-}
-.menuLinks
-{
-    font-weight: bold;
-    font-size: 1.32rem;
-}
-#menuBar
-{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-#featuredGamesDiv
-{
-    margin-top: var(--containerSpacing) - 5px;
-}
-#socialPages
-{
-    margin-top: var(--containerSpacing);
-}
-#ProfileInfo
-{
-    margin-top: var(--containerSpacing);
-}
-#ProfileMain
-{
-    margin-right: var(--containerSpacing);
+    align-items: center;
+    display: flex;
+    margin-top: -5px;
 }
 
-#featGamesWraper
+/*
+    MENU
+*/
+#menuGridWrapper
 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
-    grid-column-gap: 50px;
-    justify-content: center;
     text-align: center;
-}
-.gameGridText
-{
+    margin: 7px;
+    margin-left: -10px;
+    max-width: 320px;
+
     font-weight: bold;
-    font-size: 1.5rem;
-}
-.gameGridImg
-{
-    border-radius: 5px;
-    max-width: 175px;
-    height: auto;
-}
-.gameGridLink:link
-{
-    color: #1c2d0c;
-    text-decoration: none;
-}
-.gameGridLink:visited
-{
-    color: #1c2d0c;
-    text-decoration: none;
-}
-.gameGridLink:hover
-{
-    text-decoration:underline;
-}
-
-#videosDiv
-{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-column-gap: var(--containerSpacing);
-
-    margin-top: var(--containerSpacing);
-}
-
-#featVidTitle
-{
-    font-weight: 650;
-    font-size: 1.64rem;
-}
-.recomVideoImageDiv
-{
-    margin-right: 10px;
-}
-.recomVideoBox
-{
-    padding-bottom: 10px;
-    width: 100%;
-    height: auto;
-
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-}
-
-#featuYTvide
-{
-    border-radius: 5px;
-    width: 100%;
-}
-.recomVideoImage
-{
-    max-width: 120px;
-    border-radius: 5px;
-}
-.recomVideoTitleText
-{
-    font-size: 1rem;
-    font-weight: 650;
-
-    line-height: 1rrem;
-}
-
-#ProfileTitle
-{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    align-items: center;
-}
-
-#profilePicture
-{
-    width: 100%;
-}
-#ProfileNameText
-{
-    font-weight: 650;
-    font-size: 1.55rem;
-}
-
-#aboutAndSocialsDiv
-{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-}
-#ProfileInfoTitle
-{
-    font-weight: 610;
     font-size: 1.32rem;
 }
 
-#socilLinksGrid
+/*
+    FEATURED PROJECTS
+*/
+#featuredProjectsGridWrapper
 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
     text-align: center;
 }
-.soclLinksText
+
+.featuredProjectsImage
 {
-    font-weight: bold;
-    font-size: 1.25rem;
+    width: 100%;
+    max-width: 150px;
+}
+
+/*
+    FEATURED AND REOCMMENEDED VIDEOS
+*/
+
+/* FEATURED VIDEO */
+#featuredVideoEmbed
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* RECOMMENDED VIDEO */¨
+#videosBox
+{
+    display: grid;
+    grid-template-columns: 66% 33%;
 }
