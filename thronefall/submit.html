@@ -50,12 +50,12 @@
 		</span>
 	</noscript>
 
-  <script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.45334" type="text/javascript"></script>
-<script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.45334" type="text/javascript"></script>
-<script src="https://cdn01.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.45334" type="text/javascript"></script>
-<script defer src="https://cdn02.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.45334" type="text/javascript"></script>
-<script defer src="https://cdn03.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.45334" type="text/javascript"></script>
-<script src="https://cdn01.jotfor.ms/js/payments/validategateways.js?v=3.3.45334" type="text/javascript"></script>
+  <script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.45937" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.45937" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.45937" type="text/javascript"></script>
+<script defer src="https://cdn02.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.45937" type="text/javascript"></script>
+<script defer src="https://cdn03.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.45937" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/payments/validategateways.js?v=3.3.45937" type="text/javascript"></script>
 <script type="text/javascript">	JotForm.newDefaultTheme = true;
 	JotForm.extendsNewTheme = false;
 	JotForm.singleProduct = false;
@@ -65,16 +65,12 @@
 	JotForm.submitError="jumpToFirstError";JotForm.init(function(){
 	/*INIT-START*/
 if (window.JotForm && JotForm.accessible) $('input_4').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_4').hint('Name to be dispalyed on the leaderboard');
-       }, 20);
 if (window.JotForm && JotForm.accessible) $('input_30').setAttribute('tabindex',0);
 if (window.JotForm && JotForm.accessible) $('input_6').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_6').hint('A link to a screenshot or a video file');
-       }, 20);
 
  JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ if (!JotForm.calenderViewMonths) JotForm.calenderViewMonths = {};  JotForm.calenderViewMonths[18] = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ if (!JotForm.calenderViewDays) JotForm.calenderViewDays = {};  JotForm.calenderViewDays[18] = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
  JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
  JotForm.calendarOther = {"today":"Today"};
  var languageOptions = document.querySelectorAll('#langList li'); 
@@ -95,17 +91,17 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Thronefa
 </script>
 <style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
 <link id="custom-font" type="text/css" rel="stylesheet" href="//cdn.jotfor.ms/fonts/?family=Roboto" />
-<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.45334"/>
-<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.45334" />
-<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.45334" />
-<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/donationBox.css?v=3.3.45334">
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.45937"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.45937" />
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.45937" />
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/donationBox.css?v=3.3.45937">
 <style type="text/css" id="form-designer-style">
     /* Injected CSS Code */
 /*PREFERENCES STYLE*/
   /* NEW THEME STYLE */
 
   /* colors */
-	body 
+  body 
 		{
 			background-color: #e4d7ab;
 		}
@@ -411,7 +407,6 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Thronefa
   }
   .form-line[data-payment="true"] hr,
   .form-line[data-payment=true] .p_item_separator,
-  .form-line[data-payment="true"] .payment_footer.new_ui,
   .form-line.card-3col .form-product-item.new_ui,
   .form-line.card-2col .form-product-item.new_ui {
     border-color: #b8bdc9;
@@ -967,6 +962,7 @@ hr {
             <option value="Nordfels">Nordfels</option>
             <option value="Durststein">Durststein</option>
             <option value="Frostsee">Frostsee</option>
+            <option value="Uferwind">Uferwind</option>
           </select> </div>
       </li>
       <li class="form-line jf-required" data-type="control_number" id="id_5"><label class="form-label form-label-right form-label-auto" id="label_5" for="input_5" aria-hidden="false"> Total score<span class="form-required">*</span> </label>
@@ -980,7 +976,7 @@ hr {
       </li>
       <li class="form-line jf-required" data-type="control_radio" id="id_34"><label class="form-label form-label-right form-label-auto" id="label_34" for="input_34" aria-hidden="false"> Used weapon<span class="form-required">*</span> </label>
         <div id="cid_34" class="form-input jf-required" data-layout="full">
-          <div class="form-single-column" role="group" aria-labelledby="label_34" data-component="radio"><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_34" class="form-radio validate[required]" id="input_34_0" name="q34_usedWeapon" value="Bow" required="" /><label id="label_input_34_0" for="input_34_0">Bow</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_34" class="form-radio validate[required]" id="input_34_1" name="q34_usedWeapon" value="Spear" required="" /><label id="label_input_34_1" for="input_34_1">Spear</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_34" class="form-radio validate[required]" id="input_34_2" name="q34_usedWeapon" value="Sword" required="" /><label id="label_input_34_2" for="input_34_2">Sword</label></span></div>
+          <div class="form-multiple-column" data-columncount="2" role="group" aria-labelledby="label_34" data-component="radio"><span class="form-radio-item"><span class="dragger-item"></span><input type="radio" aria-describedby="label_34" class="form-radio validate[required]" id="input_34_0" name="q34_usedWeapon" value="Bow" required="" /><label id="label_input_34_0" for="input_34_0">Bow</label></span><span class="form-radio-item"><span class="dragger-item"></span><input type="radio" aria-describedby="label_34" class="form-radio validate[required]" id="input_34_1" name="q34_usedWeapon" value="Spear" required="" /><label id="label_input_34_1" for="input_34_1">Spear</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_34" class="form-radio validate[required]" id="input_34_2" name="q34_usedWeapon" value="Sword" required="" /><label id="label_input_34_2" for="input_34_2">Sword</label></span><span class="form-radio-item"><span class="dragger-item"></span><input type="radio" aria-describedby="label_34" class="form-radio validate[required]" id="input_34_3" name="q34_usedWeapon" value="Lightning staff" required="" /><label id="label_input_34_3" for="input_34_3">Lightning staff</label></span></div>
         </div>
       </li>
       <li class="form-line jf-required" data-type="control_textbox" id="id_30"><label class="form-label form-label-right form-label-auto" id="label_30" for="input_30" aria-hidden="false"> Game version<span class="form-required">*</span> </label>
@@ -992,7 +988,7 @@ hr {
       <li class="form-line jf-required" data-type="control_datetime" id="id_18"><label class="form-label form-label-right form-label-auto" id="label_18" for="lite_mode_18" aria-hidden="false"> Date<span class="form-required">*</span> </label>
         <div id="cid_18" class="form-input jf-required" data-layout="half">
           <div data-wrapper-react="true">
-            <div style="display:none"><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="day_18" name="q18_date[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_day" /><span class="date-separate" aria-hidden="true"> /</span><label class="form-sub-label" for="day_18" id="sublabel_18_day" style="min-height:13px" aria-hidden="false">Day</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="month_18" name="q18_date[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_month" /><span class="date-separate" aria-hidden="true"> /</span><label class="form-sub-label" for="month_18" id="sublabel_18_month" style="min-height:13px" aria-hidden="false">Month</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="year_18" name="q18_date[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_year" /><label class="form-sub-label" for="year_18" id="sublabel_18_year" style="min-height:13px" aria-hidden="false">Year</label></span></div><span class="form-sub-label-container" style="vertical-align:top"><input type="text" class="form-textbox validate[required, limitDate, validateLiteDate]" id="lite_mode_18" size="12" data-maxlength="12" maxLength="12" data-age="" value="" required="" data-format="ddmmyyyy" data-seperator="/" placeholder="DD/MM/YYYY" autoComplete="off" aria-labelledby="label_18 sublabel_18_litemode" /><img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_18_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" /><label class="form-sub-label" for="lite_mode_18" id="sublabel_18_litemode" style="min-height:13px" aria-hidden="false">Date</label></span>
+            <div style="display:none"><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="day_18" name="q18_date[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_day" /><span class="date-separate" aria-hidden="true"> /</span><label class="form-sub-label" for="day_18" id="sublabel_18_day" style="min-height:13px" aria-hidden="false">Day</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="month_18" name="q18_date[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_month" /><span class="date-separate" aria-hidden="true"> /</span><label class="form-sub-label" for="month_18" id="sublabel_18_month" style="min-height:13px" aria-hidden="false">Month</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="year_18" name="q18_date[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_year" /><label class="form-sub-label" for="year_18" id="sublabel_18_year" style="min-height:13px" aria-hidden="false">Year</label></span></div><span class="form-sub-label-container" style="vertical-align:top"><input type="text" class="form-textbox validate[required, limitDate, validateLiteDate]" id="lite_mode_18" size="12" data-maxlength="12" maxLength="12" data-age="" value="" required="" data-format="ddmmyyyy" data-seperator="/" placeholder="DD/MM/YYYY" data-placeholder="DD/MM/YYYY" autoComplete="off" aria-labelledby="label_18 sublabel_18_litemode" /><img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_18_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" /><label class="form-sub-label" for="lite_mode_18" id="sublabel_18_litemode" style="min-height:13px" aria-hidden="false">Date</label></span>
           </div>
         </div>
       </li>
@@ -1031,9 +1027,9 @@ hr {
       all_spc[i].value = "231755087536059-231755087536059";
     }
   </script>
-</form><script type="text/javascript">JotForm.ownerView=true;</script><script type="text/javascript">JotForm.forwardToEu=true;</script><script type="text/javascript">JotForm.showAlternateHIPAABadge=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.45334"></script>
-<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.45334"></script>
-<script type="text/javascript">JotForm.isNewSACL=true;</script>
+</form><script type="text/javascript">JotForm.ownerView=true;</script><script type="text/javascript">JotForm.forwardToEu=true;</script><script src="https://static-interlogyllc.netdna-ssl.com//js/vendor/smoothscroll.min.js?v=3.3.45937"></script>
+<script src="https://static-interlogyllc.netdna-ssl.com//js/errorNavigation.js?v=3.3.45937"></script>
+<script type="text/javascript">JotForm.isNewSACL=true;</script>¨
 
 	</body>
 </html>
