@@ -19,6 +19,7 @@ let NeulandSubs = new Array();
 let NordfelsSubs = new Array();
 let DurststeinSubs = new Array();
 let FrostseeSubs = new Array();
+let UferWindSubs = new Array();
 
 let canShowTableData = false;
 
@@ -79,6 +80,7 @@ function SortSubData ()
     let NFSubNum = -1;
     let DSSubNum = -1;
     let FSSubNum = -1;
+    let UFSubNum = -1;
 
     for (let i = 0; i < acceptedSubs.length; i++)
     {
@@ -114,12 +116,19 @@ function SortSubData ()
                 FSSubNum++;
                 FrostseeSubs[FSSubNum] = chosenRow;
                 break;
+
+            case "Uferwind":
+                UFSubNum++;
+                UferWindSubs[UFSubNum] = chosenRow;
+                break;
+            
         }
     }
     NeulandSubs   .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
     NordfelsSubs  .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
     DurststeinSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
     FrostseeSubs  .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+    UferWindSubs  .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
     // console.log("== MAP SUBS SORTED ===========================");
     // console.log(NeulandSubs);
     // console.log(NordfelsSubs);
@@ -144,6 +153,11 @@ function SortSubData ()
     for (let i = 0; i < FrostseeSubs.length; i++)
     {
         chosenRow = FrostseeSubs[i];
+        chosenRow[21] = i + 1;
+    }
+    for (let i = 0; i < UferWindSubs.length; i++)
+    {
+        chosenRow = UferWindSubs[i];
         chosenRow[21] = i + 1;
     }
 
@@ -192,6 +206,10 @@ function ChangeTableData(level)
 		case "Frostsee":
 			chosenArray = FrostseeSubs;
 			break;
+
+		case "Uferwind":
+			chosenArray = UferWindSubs;
+			break;
 	}
 
     // CREATE ARRAYS FOR EACH VALUE TYPE
@@ -212,17 +230,17 @@ function ChangeTableData(level)
 	{
 		chosenRow = chosenArray[i];;
 
-        position[i] = chosenRow[21];
-		names[i] = chosenRow[2];
-		score[i] = chosenRow[5];
-		coins[i] = chosenRow[6];
-		date[i] = chosenRow[8];
-		proof[i] = chosenRow[7];
-        subID[i] = chosenRow[9];
-        mutators[i] = chosenRow[9];
-        version[i] = chosenRow[10];
+        position[i]   = chosenRow[21];
+		names[i]      = chosenRow[2];
+		score[i]      = chosenRow[5];
+		coins[i]      = chosenRow[6];
+		date[i]       = chosenRow[8];
+		proof[i]      = chosenRow[7];
+        subID[i]      = chosenRow[9];
+        mutators[i]   = chosenRow[9];
+        version[i]    = chosenRow[10];
         usedWeapon[i] = chosenRow[11];
-        subIndex[i] = chosenRow[20];
+        subIndex[i]   = chosenRow[20];
 	}
 	// console.log("---------------------------------------------");
 	// console.log(names);
@@ -330,6 +348,10 @@ function OrderBoardBy (map, orderType)
 
         case "frostsee":
             chosenMapArray = FrostseeSubs;
+        break;
+
+        case "uferwind":
+            chosenMapArray = UferWindSubs;
         break;
     }
 
