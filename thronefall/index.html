@@ -142,10 +142,14 @@
                                             onclick="SelectRandomBackground(3); ChangeTableData('Durststein')">
                                         <span class="levelToggleText"> Durststein </span>
                                     </button>
-                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="fs_score_btn" 
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow frostseeBtn" id="fs_score_btn" 
                                             onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
                                         <span class="levelToggleText"> Frostsee </span>
-                                    </button>	
+                                    </button>
+                                    <button DISABLED type="button" class="DISABLED btn btn-warning btn_orangeGradient dropShadow uferwindBtn" id="uf_score_btn" 
+                                            onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
+                                        <span class="levelToggleText"> Uferwind </span>
+                                    </button>
                                 </section> <!-- scoreLevelsToggle -->
 
                                 <section id="timeLevelsToggle" class="levelsToggleButtons">
@@ -164,10 +168,14 @@
                                             hx-get="./leaderboards/time/ds.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
                                         <span class="levelToggleText"> Durststein </span>
                                     </button>								
-                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="fs_time_btn" onclick="SelectRandomBackground(4);"
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow frostseeBtn" id="fs_time_btn" onclick="SelectRandomBackground(4);"
                                             hx-get="./leaderboards/time/fs.html" hx-target="#oldLeaderBoards" hx-swap="innerHTML">
                                         <span class="levelToggleText"> Frostsee </span>
-                                    </button>	
+                                    </button>
+                                    <button DISABLED type="button" class="DISABLED btn btn-warning btn_orangeGradient dropShadow uferwindBtn" id="uf_score_btn" 
+                                            onclick="SelectRandomBackground(4); ChangeTableData('Frostsee')">
+                                        <span class="levelToggleText"> Uferwind </span>
+                                    </button>
                                 </section> <!-- timeLevelsToggle -->
 
                                 <section id="demoLevelsToggle" class="levelsToggleButtons">

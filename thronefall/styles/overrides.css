@@ -75,7 +75,7 @@
     }
 }
 
-@media only screen and (max-width: 550px)
+@media only screen and (max-width: 600px)
 {
     #categoryButtonsWrapper
     {
@@ -120,6 +120,17 @@
     {
         max-width: 90%;
     }
+
+    #scoreLevelsToggle, #categoryButtons, #timeLevelsToggle 
+    {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .uferwindBtn, .frostseeBtn
+    {
+        position: relative;
+        left: 50%
+    }
 }
 
 @media only screen and (max-width: 400px)
@@ -159,6 +170,16 @@
     #old_ProofVideo
     {
         height: 240px;
+    }
+
+    .frostseeBtn
+    {
+        left: 0;
+    }
+    .uferwindBtn
+    {
+        position: relative;
+        left: 50%
     }
 }
 
