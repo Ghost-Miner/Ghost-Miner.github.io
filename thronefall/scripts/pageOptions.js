@@ -218,6 +218,27 @@ function SelectRandomBackground(mappNumner)
 					case 11:document.body.style.backgroundImage = 'url("./img/backgrounds/4 Frostsee/Frostsee Victory.jpg")'; break;
 				}
 		break;
+
+		case 5: // Uferwind
+			switch(bgrNumber)
+				{		
+					// Day
+					case 1: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Day/Uferwind Day 1.png")'; break;
+					case 2: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Day/Uferwind Day 2.png")'; break;
+					case 3: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Day/Uferwind Day 3.png")'; break;
+					case 4: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Day/Uferwind Day 4.png")'; break;
+					case 5: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Day/Uferwind Day 5.png")'; break;
+							
+					// Night
+					case 6: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Night/Uferwind Night 1.png")'; break;
+					case 7: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Night/Uferwind Night 2.png")'; break;
+					case 8: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Night/Uferwind Night 3.png")'; break;
+					case 9: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Night/Uferwind Night 4.png")'; break;
+					case 10:document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Night/Uferwind Night 5.png")'; break;
+
+					case 11:document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Uferwind Victory.png")'; break;
+				}
+		break;
 	}
 	// console.log	(document.body.style.backgroundImage);
 }
