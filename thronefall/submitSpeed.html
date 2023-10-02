@@ -51,12 +51,12 @@
 		</span>
 	</noscript>
 
-  <script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.44736" type="text/javascript"></script>
-<script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.44736" type="text/javascript"></script>
-<script src="https://cdn01.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.44736" type="text/javascript"></script>
-<script defer src="https://cdn02.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.44736" type="text/javascript"></script>
-<script defer src="https://cdn03.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.44736" type="text/javascript"></script>
-<script src="https://cdn01.jotfor.ms/js/payments/validategateways.js?v=3.3.44736" type="text/javascript"></script>
+  <script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.45980" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.45980" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.45980" type="text/javascript"></script>
+<script defer src="https://cdn02.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.45980" type="text/javascript"></script>
+<script defer src="https://cdn03.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.45980" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/payments/validategateways.js?v=3.3.45980" type="text/javascript"></script>
 <script type="text/javascript">	JotForm.newDefaultTheme = true;
 	JotForm.extendsNewTheme = false;
 	JotForm.singleProduct = false;
@@ -66,19 +66,12 @@
 	JotForm.submitError="jumpToFirstError";JotForm.init(function(){
 	/*INIT-START*/
 if (window.JotForm && JotForm.accessible) $('input_4').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_4').hint('Name to be dispalyed on the leaderboard');
-       }, 20);
-      setTimeout(function() {
-          $('input_31').hint('e.g., 23');
-       }, 20);
 if (window.JotForm && JotForm.accessible) $('input_32').setAttribute('tabindex',0);
 if (window.JotForm && JotForm.accessible) $('input_6').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_6').hint('Inert valid link to a video ');
-       }, 20);
 
  JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ if (!JotForm.calenderViewMonths) JotForm.calenderViewMonths = {};  JotForm.calenderViewMonths[18] = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ if (!JotForm.calenderViewDays) JotForm.calenderViewDays = {};  JotForm.calenderViewDays[18] = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
  JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
  JotForm.calendarOther = {"today":"Today"};
  var languageOptions = document.querySelectorAll('#langList li'); 
@@ -96,25 +89,25 @@ if (window.JotForm && JotForm.accessible) $('input_33').setAttribute('tabindex',
 	});
 
    setTimeout(function() {
-JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Thronefall speedrun submission","type":"control_head"},{"name":"submit2","qid":"2","text":"Submit","type":"control_button"},null,{"description":"","name":"nane","qid":"4","subLabel":"","text":"Name","type":"control_textbox"},null,{"description":"","name":"typeA","qid":"6","subLabel":"Requires \"http:\u002F\u002F\" or \"https:\u002F\u002F\" before the URL","text":"Video","type":"control_textbox"},{"description":"","name":"typeA7","qid":"7","subLabel":"","text":"Level","type":"control_dropdown"},null,null,null,{"description":"","name":"pleaseVerify","qid":"11","text":"Please verify that you are human","type":"control_captcha"},null,null,null,null,null,null,{"description":"","name":"date","qid":"18","text":"Date","type":"control_datetime"},null,null,null,null,null,null,null,null,{"description":"","name":"name","qid":"27","text":"Time","type":"control_fullname"},null,{"description":"","name":"usedWeapon","qid":"29","subLabel":"","text":"Used weapon","type":"control_dropdown"},{"description":"","name":"typeA30","qid":"30","text":"Type a question","type":"control_radio"},{"description":"","name":"number","qid":"31","subLabel":"","text":" Number of mutators","type":"control_number"},{"description":"","name":"typeA32","qid":"32","subLabel":"","text":"Game version","type":"control_textbox"},{"description":"","name":"typeA33","qid":"33","subLabel":"","text":"Statis","type":"control_textbox"}]);}, 20); 
+JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Thronefall speedrun submission","type":"control_head"},{"name":"submit2","qid":"2","text":"Submit","type":"control_button"},null,{"description":"","name":"nane","qid":"4","subLabel":"","text":"Name","type":"control_textbox"},null,{"description":"","name":"typeA","qid":"6","subLabel":"Requires \"http:\u002F\u002F\" or \"https:\u002F\u002F\" before the URL","text":"Video","type":"control_textbox"},{"description":"","name":"typeA7","qid":"7","subLabel":"","text":"Level","type":"control_dropdown"},null,null,null,{"description":"","name":"pleaseVerify","qid":"11","text":"Please verify that you are human","type":"control_captcha"},null,null,null,null,null,null,{"description":"","name":"date","qid":"18","text":"Date","type":"control_datetime"},null,null,null,null,null,null,null,null,{"description":"","name":"time36","qid":"27","text":"Time","type":"control_fullname"},null,{"description":"","name":"usedWeapon","qid":"29","subLabel":"","text":"Used weapon","type":"control_dropdown"},{"description":"","name":"typeA30","qid":"30","text":"Type a question","type":"control_radio"},{"description":"","name":"number","qid":"31","subLabel":"","text":" Number of mutators","type":"control_number"},{"description":"","name":"typeA32","qid":"32","subLabel":"","text":"Game version","type":"control_textbox"},{"description":"","name":"typeA33","qid":"33","subLabel":"","text":"Statis","type":"control_textbox"}]);}, 20); 
 </script>
 <style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
 <link id="custom-font" type="text/css" rel="stylesheet" href="//cdn.jotfor.ms/fonts/?family=Roboto" />
-<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.44736"/>
-<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.44736" />
-<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.44736" />
-<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/donationBox.css?v=3.3.44736">
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.45980"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.45980" />
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.45980" />
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/donationBox.css?v=3.3.45980">
 <style type="text/css" id="form-designer-style">
     /* Injected CSS Code */
 /*PREFERENCES STYLE*/
   /* NEW THEME STYLE */
 
-  body 
-  {
-    background-color: #e4d7ab;
-  }
   /* colors */
 
+  body 
+		{
+			background-color: #e4d7ab;
+		}
   .form-textbox, .form-textarea {
     color: undefined;
   }
@@ -417,6 +410,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Thronefa
   }
   .form-line[data-payment="true"] hr,
   .form-line[data-payment=true] .p_item_separator,
+  .form-line[data-payment="true"] .payment_footer.new_ui,
   .form-line.card-3col .form-product-item.new_ui,
   .form-line.card-2col .form-product-item.new_ui {
     border-color: #b8bdc9;
@@ -794,7 +788,7 @@ div.form-header-group.hasImage {
   color: #000104;
 }
 .form-header-group {
-  background-color: ;
+  background-color: #f1f1f1;
 }
 .form-line-error {
   overflow: hidden;
@@ -957,60 +951,62 @@ hr {
           </div>
         </div>
       </li>
-      <li class="form-line jf-required" data-type="control_textbox" id="id_4"><label class="form-label form-label-right form-label-auto" id="label_4" for="input_4"> Name<span class="form-required">*</span> </label>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_4"><label class="form-label form-label-right form-label-auto" id="label_4" for="input_4" aria-hidden="false"> Name<span class="form-required">*</span> </label>
         <div id="cid_4" class="form-input jf-required" data-layout="half"> <input type="text" id="input_4" name="q4_nane" data-type="input-textbox" class="form-textbox validate[required, AlphaNumeric]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="Name to be dispalyed on the leaderboard" data-component="textbox" aria-labelledby="label_4" required="" /> </div>
       </li>
-      <li class="form-line always-hidden jf-required" data-type="control_radio" id="id_30"><label class="form-label form-label-right form-label-auto" id="label_30" for="input_30"> Type a question<span class="form-required">*</span> </label>
+      <li class="form-line always-hidden jf-required" data-type="control_radio" id="id_30"><label class="form-label form-label-right form-label-auto" id="label_30" for="input_30" aria-hidden="false"> Type a question<span class="form-required">*</span> </label>
         <div id="cid_30" class="form-input always-hidden jf-required" data-layout="full">
           <div class="form-single-column" role="group" aria-labelledby="label_30" data-component="radio"><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_30" disabled="" class="form-radio validate[required]" id="input_30_0" name="q30_typeA30" value="Demo" required="" /><label id="label_input_30_0" for="input_30_0">Demo</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_30" disabled="" class="form-radio validate[required]" id="input_30_1" name="q30_typeA30" checked="" value="Early access" required="" /><label id="label_input_30_1" for="input_30_1">Early access</label></span></div>
         </div>
       </li>
-      <li class="form-line jf-required" data-type="control_dropdown" id="id_7"><label class="form-label form-label-right form-label-auto" id="label_7" for="input_7"> Level<span class="form-required">*</span> </label>
+      <li class="form-line jf-required" data-type="control_dropdown" id="id_7"><label class="form-label form-label-right form-label-auto" id="label_7" for="input_7" aria-hidden="false"> Level<span class="form-required">*</span> </label>
         <div id="cid_7" class="form-input jf-required" data-layout="half"> <select class="form-dropdown validate[required]" id="input_7" name="q7_typeA7" style="width:310px" data-component="dropdown" required="" aria-label="Level">
             <option value="">Please Select</option>
             <option value="Neuland">Neuland</option>
             <option value="Nordfels">Nordfels</option>
             <option value="Durststein">Durststein</option>
             <option value="Frostsee">Frostsee</option>
+            <option value="Uferwind">Uferwind</option>
           </select> </div>
       </li>
-      <li class="form-line jf-required" data-type="control_fullname" id="id_27"><label class="form-label form-label-top form-label-extended" id="label_27" for="first_27"> Time<span class="form-required">*</span> </label>
+      <li class="form-line jf-required" data-type="control_fullname" id="id_27"><label class="form-label form-label-top form-label-extended" id="label_27" for="first_27" aria-hidden="false"> Time<span class="form-required">*</span> </label>
         <div id="cid_27" class="form-input-wide jf-required" data-layout="full">
-          <div data-wrapper-react="true" class="extended"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_27" name="q27_name[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_27 given-name" size="10" value="" data-component="first" aria-labelledby="label_27 sublabel_27_first" required="" /><label class="form-sub-label" for="first_27" id="sublabel_27_first" style="min-height:13px" aria-hidden="false">Minutes</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle"><input type="text" id="middle_27" name="q27_name[middle]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_27 additional-name" size="10" value="" data-component="middle" aria-labelledby="label_27 sublabel_27_middle" required="" /><label class="form-sub-label" for="middle_27" id="sublabel_27_middle" style="min-height:13px" aria-hidden="false">Seconds</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_27" name="q27_name[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_27 family-name" size="15" value="" data-component="last" aria-labelledby="label_27 sublabel_27_last" required="" /><label class="form-sub-label" for="last_27" id="sublabel_27_last" style="min-height:13px" aria-hidden="false">Milliseconds</label></span></div>
+          <div data-wrapper-react="true" class="extended"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_27" name="q27_time36[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_27 given-name" size="10" value="" data-component="first" aria-labelledby="label_27 sublabel_27_first" required="" /><label class="form-sub-label" for="first_27" id="sublabel_27_first" style="min-height:13px" aria-hidden="false">Minutes</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle"><input type="text" id="middle_27" name="q27_time36[middle]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_27 additional-name" size="10" value="" data-component="middle" aria-labelledby="label_27 sublabel_27_middle" required="" /><label class="form-sub-label" for="middle_27" id="sublabel_27_middle" style="min-height:13px" aria-hidden="false">Seconds</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_27" name="q27_time36[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_27 family-name" size="15" value="" data-component="last" aria-labelledby="label_27 sublabel_27_last" required="" /><label class="form-sub-label" for="last_27" id="sublabel_27_last" style="min-height:13px" aria-hidden="false">Milliseconds</label></span></div>
         </div>
       </li>
-      <li class="form-line jf-required" data-type="control_number" id="id_31"><label class="form-label form-label-right form-label-auto" id="label_31" for="input_31"> Number of mutators<span class="form-required">*</span> </label>
+      <li class="form-line jf-required" data-type="control_number" id="id_31"><label class="form-label form-label-right form-label-auto" id="label_31" for="input_31" aria-hidden="false"> Number of mutators<span class="form-required">*</span> </label>
         <div id="cid_31" class="form-input jf-required" data-layout="half"> <input type="number" id="input_31" name="q31_number" data-type="input-number" class=" form-number-input form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="e.g., 23" data-component="number" aria-labelledby="label_31" required="" step="any" /> </div>
       </li>
-      <li class="form-line jf-required" data-type="control_dropdown" id="id_29"><label class="form-label form-label-right form-label-auto" id="label_29" for="input_29"> Used weapon<span class="form-required">*</span> </label>
+      <li class="form-line jf-required" data-type="control_dropdown" id="id_29"><label class="form-label form-label-right form-label-auto" id="label_29" for="input_29" aria-hidden="false"> Used weapon<span class="form-required">*</span> </label>
         <div id="cid_29" class="form-input jf-required" data-layout="half"> <select class="form-dropdown validate[required]" id="input_29" name="q29_usedWeapon" style="width:310px" data-component="dropdown" required="" aria-label="Used weapon">
             <option value="">Please Select</option>
             <option value="Bow">Bow</option>
             <option value="Spear">Spear</option>
             <option value="Sword">Sword</option>
+            <option value="Lightning staff">Lightning staff</option>
           </select> </div>
       </li>
-      <li class="form-line jf-required" data-type="control_textbox" id="id_32"><label class="form-label form-label-right form-label-auto" id="label_32" for="input_32"> Game version<span class="form-required">*</span> </label>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_32"><label class="form-label form-label-right form-label-auto" id="label_32" for="input_32" aria-hidden="false"> Game version<span class="form-required">*</span> </label>
         <div id="cid_32" class="form-input jf-required" data-layout="half"> <input type="text" id="input_32" name="q32_typeA32" data-type="input-textbox" class="form-textbox validate[required, Numeric]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_32" required="" /> </div>
       </li>
-      <li class="form-line jf-required" data-type="control_textbox" id="id_6"><label class="form-label form-label-right form-label-auto" id="label_6" for="input_6"> Video<span class="form-required">*</span> </label>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_6"><label class="form-label form-label-right form-label-auto" id="label_6" for="input_6" aria-hidden="false"> Video<span class="form-required">*</span> </label>
         <div id="cid_6" class="form-input jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_6" name="q6_typeA" data-type="input-textbox" class="form-textbox validate[required, Url]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="Inert valid link to a video " data-component="textbox" aria-labelledby="label_6 sublabel_input_6" required="" /><label class="form-sub-label" for="input_6" id="sublabel_input_6" style="min-height:13px" aria-hidden="false">Requires &quot;http://&quot; or &quot;https://&quot; before the URL</label></span> </div>
       </li>
-      <li class="form-line jf-required" data-type="control_datetime" id="id_18"><label class="form-label form-label-right form-label-auto" id="label_18" for="lite_mode_18"> Date<span class="form-required">*</span> </label>
+      <li class="form-line jf-required" data-type="control_datetime" id="id_18"><label class="form-label form-label-right form-label-auto" id="label_18" for="lite_mode_18" aria-hidden="false"> Date<span class="form-required">*</span> </label>
         <div id="cid_18" class="form-input jf-required" data-layout="half">
           <div data-wrapper-react="true">
-            <div style="display:none"><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="currentDate form-textbox validate[required, limitDate]" id="day_18" name="q18_date[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="24" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_day" /><span class="date-separate" aria-hidden="true"> /</span><label class="form-sub-label" for="day_18" id="sublabel_18_day" style="min-height:13px" aria-hidden="false">Day</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="month_18" name="q18_date[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="08" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_month" /><span class="date-separate" aria-hidden="true"> /</span><label class="form-sub-label" for="month_18" id="sublabel_18_month" style="min-height:13px" aria-hidden="false">Month</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="year_18" name="q18_date[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="2023" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_year" /><label class="form-sub-label" for="year_18" id="sublabel_18_year" style="min-height:13px" aria-hidden="false">Year</label></span></div><span class="form-sub-label-container" style="vertical-align:top"><input type="text" class="form-textbox validate[required, limitDate, validateLiteDate]" id="lite_mode_18" size="12" data-maxlength="12" maxLength="12" data-age="" value="24/08/2023" required="" data-format="ddmmyyyy" data-seperator="/" placeholder="DD/MM/YYYY" autoComplete="off" aria-labelledby="label_18 sublabel_18_litemode" /><img class="showAutoCalendar newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_18_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" /><label class="form-sub-label" for="lite_mode_18" id="sublabel_18_litemode" style="min-height:13px" aria-hidden="false">Date</label></span>
+            <div style="display:none"><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="currentDate form-textbox validate[required, limitDate]" id="day_18" name="q18_date[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="02" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_day" /><span class="date-separate" aria-hidden="true"> /</span><label class="form-sub-label" for="day_18" id="sublabel_18_day" style="min-height:13px" aria-hidden="false">Day</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="month_18" name="q18_date[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="10" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_month" /><span class="date-separate" aria-hidden="true"> /</span><label class="form-sub-label" for="month_18" id="sublabel_18_month" style="min-height:13px" aria-hidden="false">Month</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="year_18" name="q18_date[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="2023" required="" autoComplete="off" aria-labelledby="label_18 sublabel_18_year" /><label class="form-sub-label" for="year_18" id="sublabel_18_year" style="min-height:13px" aria-hidden="false">Year</label></span></div><span class="form-sub-label-container" style="vertical-align:top"><input type="text" class="form-textbox validate[required, limitDate, validateLiteDate]" id="lite_mode_18" size="12" data-maxlength="12" maxLength="12" data-age="" value="02/10/2023" required="" data-format="ddmmyyyy" data-seperator="/" placeholder="DD/MM/YYYY" data-placeholder="DD/MM/YYYY" autoComplete="off" aria-labelledby="label_18 sublabel_18_litemode" /><img class="showAutoCalendar newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_18_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" /><label class="form-sub-label" for="lite_mode_18" id="sublabel_18_litemode" style="min-height:13px" aria-hidden="false">Date</label></span>
           </div>
         </div>
       </li>
-      <li class="form-line jf-required" data-type="control_captcha" id="id_11"><label class="form-label form-label-right" id="label_11" for="input_11"> Please verify that you are human<span class="form-required">*</span> </label>
+      <li class="form-line jf-required" data-type="control_captcha" id="id_11"><label class="form-label form-label-right" id="label_11" for="input_11" aria-hidden="false"> Please verify that you are human<span class="form-required">*</span> </label>
         <div id="cid_11" class="form-input jf-required" data-layout="full">
           <div class="form-captcha" data-component="captcha"><label for="input_11"><img alt="Captcha - Reload if not displayed" id="input_11_captcha" class="form-captcha-image" style="background:url(https://cdn.jotfor.ms/images/loader-big.gif) no-repeat center" src="https://cdn.jotfor.ms/images/blank.gif" width="150" height="41" /></label>
             <div style="white-space:nowrap"><input type="text" id="input_11" class="form-textbox validate[required]" name="captcha" style="width:130px" required="" /><img src="https://cdn.jotfor.ms/images/reload.png" alt="Reload" style="cursor:pointer;vertical-align:middle" id="input_11_reload" /><input type="hidden" name="captcha_id" id="input_11_captcha_id" value="0" /></div>
           </div>
         </div>
       </li>
-      <li class="form-line form-line-column form-col-1 always-hidden" data-type="control_textbox" id="id_33"><label class="form-label form-label-top" id="label_33" for="input_33"> Statis </label>
+      <li class="form-line form-line-column form-col-1 always-hidden" data-type="control_textbox" id="id_33"><label class="form-label form-label-top" id="label_33" for="input_33" aria-hidden="false"> Statis </label>
         <div id="cid_33" class="form-input-wide always-hidden" data-layout="half"> <input type="text" id="input_33" name="q33_typeA33" data-type="input-textbox" class="form-textbox" data-defaultvalue="w" style="width:310px" size="310" value="w" data-component="textbox" aria-labelledby="label_33" /> </div>
       </li>
       <li class="form-line" data-type="control_button" id="id_2">
@@ -1020,12 +1016,7 @@ hr {
       </li>
       <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
     </ul>
-  </div>
-  <script>
-  </script>
-  <script>
-    JotForm.poweredByText = "Powered by Jotform";
-  </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="231953700240346" />
+  </div><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="231953700240346" />
   <script type="text/javascript">
     var all_spc = document.querySelectorAll("form[id='231953700240346'] .si" + "mple" + "_spc");
     for (var i = 0; i < all_spc.length; i++)
@@ -1033,8 +1024,8 @@ hr {
       all_spc[i].value = "231953700240346-231953700240346";
     }
   </script>
-</form><script type="text/javascript">JotForm.ownerView=true;</script><script type="text/javascript">JotForm.forwardToEu=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.44736"></script>
-<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.44736"></script>
+</form><script type="text/javascript">JotForm.ownerView=true;</script><script type="text/javascript">JotForm.forwardToEu=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.45980"></script>
+<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.45980"></script>
 <script type="text/javascript">JotForm.isNewSACL=true;</script>
 
 	</body>
