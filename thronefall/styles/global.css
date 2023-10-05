@@ -89,7 +89,7 @@ a:visited
 #mainPageContainerFront
 {
     background: var(--backgroundColourTransparent);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
     border-radius: 5px;
 
     padding: 10px;
