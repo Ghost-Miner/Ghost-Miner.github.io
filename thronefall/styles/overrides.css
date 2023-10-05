@@ -1,6 +1,13 @@
 /* 
     W I D T H
 */
+@media only screen and (max-width: 1050px)
+{
+    #mainPageContainerFront
+    {
+        margin: 1%;
+    }
+}
 @media only screen and (max-width: 1000px)
 {
     #subInfoOverlayBlur
