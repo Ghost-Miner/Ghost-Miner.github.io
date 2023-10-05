@@ -57,6 +57,25 @@
     }
 }
 
+@media only screen and (max-width: 625px)
+{
+    #categoryButtonsWrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    #categoryButtons, .levelsToggleButtons
+    {
+        max-width: 100%;
+    }
+    #submissionButtonCell
+    {
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+}
+
 @media only screen and (max-width: 600px)
 {
     #subIinfoVideoDiv
@@ -80,24 +99,7 @@
     {
         height: 320px;
     }
-}
 
-@media only screen and (max-width: 600px)
-{
-    #categoryButtonsWrapper
-    {
-        grid-template-columns: 1fr;
-    }
-    #categoryButtons, .levelsToggleButtons
-    {
-        max-width: 100%;
-    }
-    #submissionButtonCell
-    {
-        text-align: center;
-        margin-top: 5px;
-        margin-bottom: 10px;
-    }
     #overlayBlur
     {
         padding: 2%;
@@ -150,6 +152,16 @@
     {
         position: relative;
         left: 50%;
+    }
+
+    #categoryButtons, #levelsButtons
+    {
+        max-width: 350px;
+        margin: auto;
+    }
+    #levelsButtons
+    {
+        padding-top: 15px;
     }
 
     #subIinfoVideoDiv
