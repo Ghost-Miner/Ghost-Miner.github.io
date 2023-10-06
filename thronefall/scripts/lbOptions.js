@@ -316,3 +316,49 @@ function FormatPerksOrMutatorsList (toFormat)
     }
     return formattedString;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function LinkSplice (_inputString, _subID)
+{
+    const fileWebsite = "http://thronefall.maweb.eu/files/score/Thronefall score submission";
+    const subID = _subID; 
+
+    // Input
+    const inputString = _inputString;
+    const inputChars = inputString.split('');
+
+    // Output
+    let outCharsIndex = 0;
+    let outputChars = new Array();
+    let outputString = "";
+    let finalString = "";
+
+    inputChars.reverse();
+    for (let i = 0; i < inputChars.length; i++)
+    {
+        if (inputChars[i] == "/")
+        {
+            console.log("FOUND SSLASH " + i);
+            break;
+        }
+        outputChars[outCharsIndex] = inputChars[i];
+        outCharsIndex++;
+    }
+    outputChars.reverse();
+    console.log(outputChars);
+
+    for (let i = 0; i < outputChars.length; i++)
+    {
+        outputString = outputString + outputChars[i];
+    }
+    console.log(outputString);
+
+    finalString = fileWebsite + "/" + subID + "/" + outputString;
+    
+    document.getElementById("someText").href = finalString;
+    document.getElementById("someText").textContent = finalString;
+    
+    //console.log(finalString);
+    return finalString;
+}
