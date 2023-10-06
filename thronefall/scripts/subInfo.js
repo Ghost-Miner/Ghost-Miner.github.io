@@ -59,7 +59,7 @@ function ShowSubInfo (submissionIndex)
         console.error("ShowSubInfo | Invalid submission " + chosenSubmission + "; " + submissionIndex);
         return;
     }
-    console.log(chosenSubmission);
+   // console.log(chosenSubmission);
     
     if (chosenSubmission[1] == "o")
     {
