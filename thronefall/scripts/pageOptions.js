@@ -16,18 +16,15 @@ function GetAdressHash()
 {
 	const hash = window.location.hash;
 	const noHash = RemoveHasSymbol(hash);
-
-	// const hashChars = has.split('');
-	// if (hashChars[0] == "#")
-	// {
-		
-	// }
-
 	console.log("URL hash: " + hash + "; " + noHash);
 
 	if (hash.includes("score"))
 	{
 		return ExtractSubNumber(noHash);
+	}
+	else if (hash.includes("id="))
+	{
+		return ExtractSubID(noHash);
 	}
 	else
 	{
@@ -42,9 +39,54 @@ function GetAdressSearch()
 	return srch;
 }
 
+
 function ExtractSubNumber (rawString)
 {
     let returnStringChars = new Array();
+    let returnStringFull = "";
+    let charIndex = 0;
+
+    const str   = rawString;
+    const chars = str.split('');
+
+    for (let i = 1; i < chars.length; i++)
+    {
+        returnStringChars[charIndex] = chars[i];
+        charIndex++;
+    }
+    // console.log(returnStringChars);
+    
+    charIndex = 0;
+    returnStringChars.reverse();
+    let subNumChars = new Array();
+
+    // console.log(returnStringChars);
+
+    for (let i = 0; i < returnStringChars.length; i++)
+    {
+        // console.log(returnStringChars[i])
+        if (returnStringChars[i] == "=")
+        {
+            break;
+        }
+        subNumChars[charIndex] = returnStringChars[i];
+        charIndex++;
+    }
+    // console.log(subNumChars);
+
+    subNumChars.reverse();
+    for (let i = 0; i < subNumChars.length; i++)
+    {
+        returnStringFull = returnStringFull + subNumChars[i];
+    }
+    // console.log(subNumChars);
+    // console.log(returnStringFull);
+
+    return returnStringFull;
+}
+function ExtractSubID(rawString)
+{
+	let returnStringChars = new Array();
     let returnStringFull = "";
     let charIndex = 0;
 

@@ -167,7 +167,8 @@ function SortSubData ()
     document.getElementById("timeCategoryButton").disabled = false;
     document.getElementById("demoCategoryButton").disabled = false;
 
-    ShowSubInfo(GetAdressHash());
+    ShowSubInfo(GetAdressHash()); // Open submission by its number
+    SearchSubs(GetAdressHash()); // Open submission by its ID
 }
 
 function ChangeTableData(level)

@@ -305,7 +305,7 @@ function FormatPerksOrMutatorsList (toFormat)
     {
         if (inputChars[i] == "\n")
         {
-            console.log("New line");
+            //console.log("New line");
             inputChars[i] = ", ";
         }
     }
@@ -363,22 +363,39 @@ function LinkSplice (_inputString, _subID)
     return finalString;
 }
 
-function SearchSubs (_subID)
+function SearchSubs(_subID)
 {
     let chosenSub;
     let submissionID;
     let subNumber;
 
+    console.log("-------------------------------------------------------");
+
     for (let i = 0; i < tableData.length; i++)
     {
         chosenSub = tableData[i];
-        submissionID = chosenSub[14];
+        submissionID = chosenSub[15];
         subNumber = chosenSub[20];
 
+        //console.log(i + " " + subNumber);
+        
+        if(submissionID == null)
+        {
+            console.error("SearchSubs | submissionID value is invallid or undefined!");
+            return;
+        }        
         if (submissionID == _subID)
         {
-            console.log("SearchSubs | FOUND MATCH AT INDEX" + i);
+            console.log("SearchSubs | FOUND MATCH AT INDEX " + i);
+            ShowSubInfo(subNumber); 
+            return;
         }
     }
-    ShowSubInfo(subNumber);
+    
+    console.log("-------------------------------------------------------");
+    console.log("[ WARN] No submission with such ID was found");
+    console.log(chosenSub);
+    console.log(submissionID);
+    console.log(subNumber);
+    console.log("============================================================");
 }
