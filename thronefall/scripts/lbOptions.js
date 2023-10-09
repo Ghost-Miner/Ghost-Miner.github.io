@@ -362,3 +362,23 @@ function LinkSplice (_inputString, _subID)
     //console.log(finalString);
     return finalString;
 }
+
+function SearchSubs (_subID)
+{
+    let chosenSub;
+    let submissionID;
+    let subNumber;
+
+    for (let i = 0; i < tableData.length; i++)
+    {
+        chosenSub = tableData[i];
+        submissionID = chosenSub[14];
+        subNumber = chosenSub[20];
+
+        if (submissionID == _subID)
+        {
+            console.log("SearchSubs | FOUND MATCH AT INDEX" + i);
+        }
+    }
+    ShowSubInfo(subNumber);
+}
