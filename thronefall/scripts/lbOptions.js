@@ -357,7 +357,7 @@ function SearchSubs(_subID)
 
 function LinkSplice (_inputString, _subID)
 {
-    const fileWebsite = "http://thronefall.maweb.eu/files/score/Thronefall score submission";
+    const fileWebsite = "http://thronefall.maweb.eu/files/score/Thronefall%20score%20submission";
     const subID = _subID; 
 
     // Input
