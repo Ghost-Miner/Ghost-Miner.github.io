@@ -77,7 +77,14 @@ function ShowSubInfo (submissionIndex)
     s_score      = chosenSubmission[5];
     s_gold       = chosenSubmission[6];
     s_mutators   = chosenSubmission[9];
-    s_proof      = chosenSubmission[7];
+    // video (old) proof = 7
+    // image (new) proof = 17
+    s_proof      = chosenSubmission[7]; 
+        if (s_proof == "")
+        {
+            console.log("Submission #" + submissionIndex + " uses image (new) proof");
+            s_proof = chosenSubmission[17];
+        }
     s_usedWeapon = chosenSubmission[11];
     s_version    = chosenSubmission[10];
     s_date       = chosenSubmission[8];

@@ -219,7 +219,7 @@ function ChangeTableData(level)
 	let score = new Array();
 	let coins = new Array();
 	let date = new Array();
-	let proof = new Array();
+	// let proof = new Array();
     let mutators = new Array();
     let subID = new Array();
     let version = new Array();
@@ -236,7 +236,7 @@ function ChangeTableData(level)
 		score[i]      = chosenRow[5];
 		coins[i]      = chosenRow[6];
 		date[i]       = chosenRow[8];
-		proof[i]      = chosenRow[7];
+		// proof[i]      = chosenRow[7];
         subID[i]      = chosenRow[9];
         mutators[i]   = chosenRow[9];
         version[i]    = chosenRow[10];
@@ -257,7 +257,7 @@ function ChangeTableData(level)
 	const tScore    = document.getElementsByClassName("score");
 	const tCoins    = document.getElementsByClassName("coins");
 	const tDate     = document.getElementsByClassName("date");
-    //const tProof    = document.getElementsByClassName("proof");
+    //const tProof    = document.getElementsByClassName("proof");   DEPRECATED
     const tMutNums  = document.getElementsByClassName("mutNums");
     const tVersion  = document.getElementsByClassName("version");
     const tWeapon   = document.getElementsByClassName("usedWeapon");
@@ -473,7 +473,7 @@ function OrderBoardBy (map, orderType)
 	let score = new Array();
 	let coins = new Array();
 	let date = new Array();
-	let proof = new Array();
+	// let proof = new Array();
     let mutators = new Array();
     let subID = new Array();
     let version = new Array();
@@ -490,7 +490,7 @@ function OrderBoardBy (map, orderType)
 		score[i] = chosenRow[5];
 		coins[i] = chosenRow[6];
 		date[i] = chosenRow[8];
-		proof[i] = chosenRow[7];
+		// proof[i] = chosenRow[7];
         subID[i] = chosenRow[9];
         mutators[i] = chosenRow[9];
         version[i] = chosenRow[10];

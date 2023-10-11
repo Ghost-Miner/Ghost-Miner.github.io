@@ -153,7 +153,8 @@ function IsPicServiceSupoorted (url)
         "media.discordapp.net",
         "cdn.discordapp.com",
         "ghost-miner.github.io",
-        "i.imgur.com"
+        "i.imgur.com",
+        "thronefall.maweb.eu"
     ]
 
     for (let i = 0; i < supportedDomains.length; i++)
@@ -345,15 +346,15 @@ function SearchSubs(_subID)
         }
     }
     
-    console.log("-------------------------------------------------------");
-    console.log("[ WARN] No submission with such ID was found");
-    console.log(chosenSub);
-    console.log(submissionID);
-    console.log(subNumber);
-    console.log("============================================================");
+    // console.log("-------------------------------------------------------");
+    // console.log("[ WARN] No submission with such ID was found");
+    // console.log(chosenSub);
+    // console.log(submissionID);
+    // console.log(subNumber);
+    // console.log("============================================================");
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function LinkSplice (_inputString, _subID)
 {
