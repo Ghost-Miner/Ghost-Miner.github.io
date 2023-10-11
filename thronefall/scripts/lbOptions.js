@@ -316,6 +316,42 @@ function FormatPerksOrMutatorsList (toFormat)
     }
     return formattedString;
 }
+function SearchSubs(_subID)
+{
+    let chosenSub;
+    let submissionID;
+    let subNumber;
+
+    console.log("-------------------------------------------------------");
+
+    for (let i = 0; i < tableData.length; i++)
+    {
+        chosenSub = tableData[i];
+        submissionID = chosenSub[15];
+        subNumber = chosenSub[20];
+
+        //console.log(i + " " + subNumber);
+        
+        if(submissionID == null)
+        {
+            console.error("SearchSubs | submissionID value is invallid or undefined!");
+            return;
+        }        
+        if (submissionID == _subID)
+        {
+            console.log("SearchSubs | FOUND MATCH AT INDEX " + i);
+            ShowSubInfo(subNumber); 
+            return;
+        }
+    }
+    
+    console.log("-------------------------------------------------------");
+    console.log("[ WARN] No submission with such ID was found");
+    console.log(chosenSub);
+    console.log(submissionID);
+    console.log(subNumber);
+    console.log("============================================================");
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -356,46 +392,6 @@ function LinkSplice (_inputString, _subID)
 
     finalString = fileWebsite + "/" + subID + "/" + outputString;
     
-    document.getElementById("someText").href = finalString;
-    document.getElementById("someText").textContent = finalString;
-    
     //console.log(finalString);
     return finalString;
-}
-
-function SearchSubs(_subID)
-{
-    let chosenSub;
-    let submissionID;
-    let subNumber;
-
-    console.log("-------------------------------------------------------");
-
-    for (let i = 0; i < tableData.length; i++)
-    {
-        chosenSub = tableData[i];
-        submissionID = chosenSub[15];
-        subNumber = chosenSub[20];
-
-        //console.log(i + " " + subNumber);
-        
-        if(submissionID == null)
-        {
-            console.error("SearchSubs | submissionID value is invallid or undefined!");
-            return;
-        }        
-        if (submissionID == _subID)
-        {
-            console.log("SearchSubs | FOUND MATCH AT INDEX " + i);
-            ShowSubInfo(subNumber); 
-            return;
-        }
-    }
-    
-    console.log("-------------------------------------------------------");
-    console.log("[ WARN] No submission with such ID was found");
-    console.log(chosenSub);
-    console.log(submissionID);
-    console.log(subNumber);
-    console.log("============================================================");
 }
