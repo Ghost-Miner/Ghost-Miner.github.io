@@ -375,7 +375,7 @@ function LinkSplice (_inputString, _subID)
     {
         if (inputChars[i] == "/")
         {
-            console.log("FOUND SSLASH " + i);
+            console.log("FOUND SLASH " + i);
             break;
         }
         outputChars[outCharsIndex] = inputChars[i];
