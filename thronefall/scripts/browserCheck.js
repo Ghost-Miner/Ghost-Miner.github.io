@@ -25,7 +25,7 @@
 	{
 		console.log("UNSOPPORTED BROWSER");
 		const bodyHTML = "<center> <strong> <span style=\"font-size: 3rem; color:white;\"> Internet Explorer isn't supported!</span> </strong> <br>" +
-                            "<h3 style=\"font-weight: bold; color:white;\">Use any modern web browser like Firefox or Chrome.</h3> <br>" +
+                            "<h3 style=\"font-weight: bold; color:white;\">Use any modern web browser like Firefox.</h3> <br>" +
                             "<img src=\"https://media.tenor.com/images/88eb7114fe68416d13be491222096bf0/tenor.gif\"/> <hr>" +
                             "<a href=\"https://store.steampowered.com/app/2239150/Thronefall\"> <button type=\"button\" class=\"btn btn-warning dropShadow whiteGradient\"> <strong> Get Thronefall </strong> </button> </a>" +
                             "<a href=\"https://www.mozilla.org/firefox/new/\"> <button type=\"button\" class=\"btn btn-warning dropShadow whiteGradient\"> <strong> Get modern browser </strong> </button> </a>" +
