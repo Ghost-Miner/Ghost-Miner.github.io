@@ -57,10 +57,23 @@
         <script src="./scripts/parser.js"></script>
         <script src="./scripts/overlays.js"></script>
         <script src="./scripts/subInfo.js"></script>
-
     </head>
-
     <body>
+        <style>
+            #submitScoreBtnSplit
+            {
+                padding: 10px;
+                padding-left: 15px;
+            }
+            #submitTimeBtnSplit
+            {
+                padding: 10px;
+            }
+            #submitTimeLink, #submitTimeLink:link, #submitTimeLink:visited
+            {
+                color: black;
+            }
+        </style>
         <div id="mainPageContainerBack">
             <div id="mainPageContainerFront">
                 <!-- 
@@ -200,9 +213,23 @@
                         </div> <!-- categoryButtonsMain -->
 
                         <div id="submissionButtonCell">
-                            <button type="button" class="btn btn-warning btn_orangeGradient btn-lg dropShadow centerVertical" onclick="OpenSubmitWindow()">
+                            <!-- <button type="button" class="btn btn-warning btn_orangeGradient btn-lg dropShadow centerVertical" onclick="OpenSubmitWindow()">
                                 <span id="SubmitButtonText">SUBMIT</span>
-                            </button>
+                            </button> -->
+                            <!-- Example split danger button -->
+                            <!-- Example split danger button -->
+                                <div class="btn-group centerVertical">
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="submitScoreBtnSplit" onclick="OpenSubmitWindow(); HideChoiceButtons('score')">
+                                        <span id="SubmitButtonText">SUBMIT SCORE</span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow dropdown-toggle dropdown-toggle-split" id="submitTimeBtnSplit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" id="submitTimeLink" href="#" onclick="OpenSubmitWindow(); HideChoiceButtons('time')">Submit speed-run</a>
+                                        <!-- <div class="dropdown-divider"></div> -->
+                                    </div>
+                                </div>
                         </div> <!-- submissionButtonCell -->
                     </div> <!-- categoryButtonsWrapper -->
                 </nav>
@@ -254,21 +281,18 @@
                     FOOTER
                  -->
                 <footer>
-                    Made by GhostMiner, 2023; v.2.5 (18/09/2023) |
+                    Made by GhostMiner. | v.2.5.1 (21/10/2023) |
                     <a href="https://ghost-miner.github.io/">Website</a>, 
                     <a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
                     <a href="https://discord.gg/DjUBY9h">Discord</a>
                 </footer>
             </div> <!-- mainPageContainerFront -->
         </div> <!-- mainPageContainerBack -->
-
-        <script>
-        </script>
+        <script></script>
 
         <!-- 
             O V E R L A Y S
-        -->
-        
+        -->        
         <!-- SUBMIT SCORE/TIME WINDOW  -->
         <section id="overlayWindow" style="display: none;">
             <div id="overlayBlur">
