@@ -1,0 +1,57 @@
+/* 
+    ADD table-dark TO LB TABLE
+*/
+:root
+{
+    --dark1Transl: rgba(30, 31, 33, 0.55);
+    --dark1Opaque: rgba(30, 31, 33, 1.0);
+    --dark2: black;
+}
+
+body
+{
+    color: white
+}
+hr
+{
+    background: grey;
+}
+
+
+#mainPageContainerFront
+{
+    background: var(--dark1Transl);
+}
+
+
+.tableHead_gradient, .tableDarkHeader
+{
+    background: linear-gradient(to bottom, var(--whiteColour2), var(--whiteColour1));
+    color: black;
+}
+.tableBody_gradient, .tableBodyBackground 
+{
+    background: linear-gradient(to bottom, var(--dark2), var(--dark1Opaque));
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.tableRow:hover
+{
+    background: linear-gradient(to bottom,var(--dark1Opaque),var(--dark2));
+}
+
+
+#subInfoWindowsForeground
+{
+    background: linear-gradient(to top, var(--dark1Opaque),var(--dark2));
+}
+.subInfoGridCell
+{
+    background: linear-gradient(to bottom, hsl(39, 100%, 35%), hsl(45, 100%, 36%));
+}
+
+#submitWindowForeground
+{
+    background-color: var(--dark1Opaque);
+}

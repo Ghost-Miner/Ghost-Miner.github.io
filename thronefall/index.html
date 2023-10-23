@@ -286,7 +286,7 @@
                             <section id="leaderboardContent" style="display: none;">
                                 <span id="leaderboardNameText">*table name*</span>
                                 <table class="table table-striped" id="LBtableMain">
-                                    <thead class="table-dark th_DaarkGradient" id="LBtableHead">
+                                    <thead class="table-dark tableHead_gradient" id="LBtableHead">
                                         <tr>
                                             <td id="th-position"   class="positionColumn 1">#		 </td>
                                             <td id="th-name"       class="nameColumn 2">		 Name	 </td>
@@ -298,7 +298,7 @@
                                             <td id="th-date"       class="dateColumn 9">		 Date	 </td>
                                         </tr>
                                     </thead>
-                                    <tbody class="tBody_WhoteGradient table-light" id="LBtableBody" >
+                                    <tbody class="table-light tableBody_gradient" id="LBtableBody">
                                         <tr class="tableRow">
                                             <td class="position positionColumn 1">...</td>
                                             <td class="name nameColumn 2">		  ...</td>
@@ -460,11 +460,8 @@
                 </div> <!-- subInfoWindowsBackground --> 
             </div> <!-- overlayBlur -->
         </section> <!-- overlayWindow -->
-        
         <!-- 
-
-            < ! >   O B S O L E T E   < ! >
-        
+            < ! >   O B S O L E T E   < ! >        
         -->
             <!-- V I D E O   E M B E D -->
             <div class="old_overlaysBlur" id="newProofWindowMainVideo" style="display: none;">
@@ -482,7 +479,7 @@
                         <iframe id="old_ProofVideo" src=""></iframe>
                     </div>
                 </div>
-            </div> <!-- old_overlaysBlur newProofWindowMainVideo -->¨
+            </div> <!-- old_overlaysBlur newProofWindowMainVideo -->
 
             <!-- I M A G E-->
             <div class="old_overlaysBlur" id="old_ProofWindowMainImage" style="display: none;">
@@ -519,7 +516,14 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="./scripts/browserCheck.js"></script>
 
-        <script src="./scripts/browserCheck.js"></script> 
+        <!-- <div style="background-color: black;">
+            Dark mode
+            <link rel="stylesheet" href="./styles/darkmode.css">
+            <script>
+                document.getElementById("LBtableMain").classList.add("table-dark");
+            </script>
+        </div> -->
     </body>
 </html>
