@@ -1,6 +1,6 @@
 async function GetCSVFile()
 {
-    const fetchFile = await fetch("../../entries.csv");
+    const fetchFile = await fetch("../entries.csv");
 	const fileText = await fetchFile.text();
 
     //  console.log("== CONTENT ======================================================================================================");
