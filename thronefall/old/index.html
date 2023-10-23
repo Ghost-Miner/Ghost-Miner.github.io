@@ -92,6 +92,14 @@
 			#newLBTableSection { display: none;	}
 			/* .subID {	font-size: 0.75em; } */
 			#Thmeme_toggles { display: none; }
+
+			#gmLinksSpan
+			{
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				max-width: 500px;
+				column-gap: 5px;
+			}
 		</style>
 
 		<div class="mainPageContainer" id="mainPageContainer">
@@ -106,7 +114,7 @@
 							</section>
 							<hr class="horizontalSeparator">
 							<section id="Game_links">
-								<span class="ButtonText">
+								<span class="ButtonText" id="gmLinksSpan">
 									<a href="https://store.steampowered.com/app/2239150/Thronefall/" id="steam_page" target="_blank">
 										<button type="button" class="btn btn-warning gameLinksBtn btn-whiteFill" style="padding: 15px; padding-top: 7px;  padding-bottom: 7px;">
 											<b>Get the game</b>
