@@ -28,13 +28,27 @@ function HideChoiceButtons (type)
 
 	if (type == "time")
 	{
+		if (currentTheme == "dark")
+		{
+			document.getElementById("submitFormFrame").src = "./submitSpeedDark.html"
+		}
+		else
+		{
+			document.getElementById("submitFormFrame").src = "./submitSpeed.html"
+		}
 		document.getElementById("titleBarText").textContent = "Submit new speed-run";
-		document.getElementById("submitFormFrame").src = "./submitSpeed.html"
 	}
 	else
 	{
+		if (currentTheme == "dark")
+		{
+			document.getElementById("submitFormFrame").src = "./submitDark.html"	
+		}
+		else
+		{
+			document.getElementById("submitFormFrame").src = "./submit.html"
+		}
 		document.getElementById("titleBarText").textContent = "Submit new high-score";
-		document.getElementById("submitFormFrame").src = "./submit.html"
 	}
 }
 // 

@@ -16,7 +16,7 @@ function GetAdressHash()
 {
 	const hash = window.location.hash;
 	const noHash = RemoveHasSymbol(hash);
-	console.log("URL hash: " + hash + "; " + noHash);
+	console.log("URL hash: " + hash + " - " + noHash);
 
 	if (hash.includes("score"))
 	{
@@ -35,10 +35,15 @@ function GetAdressHash()
 function GetAdressSearch()
 {
 	const srch = window.location.search;
-	console.log("URL hash: " + srch);
+	console.log("URL search: " + srch);
+
+	if (urlSearch == "?dark")
+	{
+		SetDarkTheme();
+	}
+
 	return srch;
 }
-
 
 function ExtractSubNumber (rawString)
 {
@@ -166,7 +171,22 @@ function SelectRandomBackground(mappNumner)
 	// const body = document.getElementsByTagName('body')[0];
 
 	let bgrNumber = 0;
-	bgrNumber = GetRandomInt(1,11); 
+	let minRand = 1; let maxRand = 10;
+
+	switch (currentTheme)
+    {
+        case "light":
+			minRand = 0;
+			maxRand = 5;
+        break;
+
+        case "dark":
+			minRand = 6;
+			maxRand = 10;            
+        break;
+    }
+
+	bgrNumber = GetRandomInt(minRand,maxRand);
 	// console.log(bgrNumber);
 	// console.log(body);
 
@@ -194,7 +214,7 @@ function SelectRandomBackground(mappNumner)
 					case 9: document.body.style.backgroundImage = 'url("./img/backgrounds/1 Neulands/night/Neulands Night 4.jpg")'; break;
 					case 10:document.body.style.backgroundImage = 'url("./img/backgrounds/1 Neulands/night/Neulands Night 5.jpg")'; break;
 
-					case 11:document.body.style.backgroundImage = 'url("./img/backgrounds/1 Neulands/Neulands Victory.jpg")'
+					case 0: document.body.style.backgroundImage = 'url("./img/backgrounds/1 Neulands/Neulands Victory.jpg")'
 				}
 		break;
 
@@ -215,7 +235,7 @@ function SelectRandomBackground(mappNumner)
 					case 9: document.body.style.backgroundImage = 'url("./img/backgrounds/2 Nordfels/Night/Nordfels Night 4.jpg")'; break;
 					case 10:document.body.style.backgroundImage = 'url("./img/backgrounds/2 Nordfels/Night/Nordfels Night 5.jpg")'; break;
 
-					case 11:document.body.style.backgroundImage = 'url("./img/backgrounds/2 Nordfels/Nordfels Victory.jpg")'
+					case 0: document.body.style.backgroundImage = 'url("./img/backgrounds/2 Nordfels/Nordfels Victory.jpg")'
 				}
 		break;
 		
@@ -236,7 +256,7 @@ function SelectRandomBackground(mappNumner)
 					case 9: document.body.style.backgroundImage = 'url("./img/backgrounds/3 Durststein/Night/Durststein Night 4.jpg")'; break;
 					case 10:document.body.style.backgroundImage = 'url("./img/backgrounds/3 Durststein/Night/Durststein Night 5.jpg")'; break;
 
-					case 11:document.body.style.backgroundImage = 'url("./img/backgrounds/3 Durststein/Durststein Victory.jpg")'
+					case 0: document.body.style.backgroundImage = 'url("./img/backgrounds/3 Durststein/Durststein Victory.jpg")'
 				}
 		break;
 
@@ -257,7 +277,7 @@ function SelectRandomBackground(mappNumner)
 					case 9: document.body.style.backgroundImage = 'url("./img/backgrounds/4 Frostsee/Night/Frostsee Night 4.jpg")'; break;
 					case 10:document.body.style.backgroundImage = 'url("./img/backgrounds/4 Frostsee/Night/Frostsee Night 5.jpg")'; break;
 
-					case 11:document.body.style.backgroundImage = 'url("./img/backgrounds/4 Frostsee/Frostsee Victory.jpg")'; break;
+					case 0: document.body.style.backgroundImage = 'url("./img/backgrounds/4 Frostsee/Frostsee Victory.jpg")'; break;
 				}
 		break;
 
@@ -278,7 +298,7 @@ function SelectRandomBackground(mappNumner)
 					case 9: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Night/Uferwind Night 4.png")'; break;
 					case 10:document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Night/Uferwind Night 5.png")'; break;
 
-					case 11:document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Uferwind Victory.png")'; break;
+					case 0: document.body.style.backgroundImage = 'url("./img/backgrounds/5 Uferwind/Uferwind Victory.png")'; break;
 				}
 		break;
 	}

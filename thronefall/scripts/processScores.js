@@ -320,6 +320,9 @@ function ChangeTableData(level)
     document.getElementById("leaderboardContent").style.display = "block";
     // SET LEADERBOARD TITLE
 	document.getElementById("leaderboardNameText").textContent = chosenMap + " high-scores";
+
+    // Hide the "loading page" used to hide the transition from light to dark mode
+    // HideLoadingScreen();
 }
 
 let sortDown = true;
