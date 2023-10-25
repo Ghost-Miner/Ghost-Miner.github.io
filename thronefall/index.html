@@ -258,14 +258,8 @@
                             <!-- <button type="button" class="btn btn-warning btn_orangeGradient btn-lg dropShadow centerVertical" onclick="OpenSubmitWindow()">
                                 <span id="SubmitButtonText">SUBMIT</span>
                             </button> -->
-                            <!-- Example split danger button -->
-                            <!-- Example split danger button -->
-                                <div class="btn-group centerVertical">
-                                    <button onclick="ToggleThemes()" id="colourThemeToggleButton" class="btn btn-warning btn_orangeGradient dropShadow">
-                                        <!-- THEME -->
-                                        <img src="./img/sun.png" style="max-width: 30px;" id="colourThemeToggleIcon">
-                                    </button>
-
+                            <!-- <div class="btn-group centerVertical"> -->
+                                <div id="submitButtonSplit">
                                     <!-- Submisison split button -->
                                     <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="submitScoreBtnSplit" onclick="OpenSubmitWindow(); HideChoiceButtons('score')">
                                         <span id="SubmitButtonText">SUBMIT SCORE</span>
@@ -277,7 +271,19 @@
                                         <a class="dropdown-item" id="submitTimeLink" href="#" onclick="OpenSubmitWindow(); HideChoiceButtons('time')">Submit speed-run</a>
                                         <!-- <div class="dropdown-divider"></div> -->
                                     </div>
-                                </div>
+                                </div> <!-- submitButtonSplit -->
+                                
+                                <button title="Toggle colour theme" type="button" onclick="ToggleThemes()" id="colourThemeToggleButton" class="btn btn-warning btn_orangeGradient dropShadow">
+                                    <!-- THEME -->
+                                    <img src="./img/sun.png" style="max-width: 25px;" id="colourThemeToggleIcon">
+                                </button>
+
+                                <button title="Toggle text style" type="button" onclick="ToggleFontStyle()" id="colourThemeToggleButton" class="btn btn-warning btn_orangeGradient dropShadow">
+                                    <!-- THEME -->
+                                    <img src="./img/text style white.png" style="max-width: 25px;" id="fontStyleToggleIcon">
+                                </button>
+                            <!-- </div>  -->
+                              <!-- /\ centerVertical -->
                         </div> <!-- submissionButtonCell -->
                     </div> <!-- categoryButtonsWrapper -->
                 </nav>
@@ -329,7 +335,7 @@
                     FOOTER
                  -->
                 <footer>
-                    Made by GhostMiner. | v.2.6 (24/10/2023) |
+                    Made by GhostMiner. | v.2.6.1 (25/10/2023) |
                     <a href="https://ghost-miner.github.io/">Website</a>, 
                     <a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
                     <a href="https://discord.gg/DjUBY9h">Discord</a>
@@ -532,7 +538,7 @@
 
         <script>
             CheckSavedTheme();
-            
+            CheckSavedFontStyle();
         </script>
     </body>
 </html>

@@ -82,9 +82,10 @@ function SetDarkTheme ()
     document.getElementById("LBtableMain").classList.add("table-dark");
 
     document.getElementById("colourThemeToggleIcon").src = "./img/moon.png";
+    document.getElementById("fontStyleToggleIcon").src = "./img/text style white.png";
+
     SelectRandomBackground(1); 
     ChangeTableData('Neuland');
-
     // Loading screen is hidden by the darkmode stylesheet
 }
 function SetLightTheme ()
@@ -100,9 +101,10 @@ function SetLightTheme ()
     document.getElementById("LBtableMain").classList.remove("table-dark"); // Add BS4 table-dark class to tables to make stripes visible
 
     document.getElementById("colourThemeToggleIcon").src = "./img/sun.png"; // Replace toggle button icon with sun
+    document.getElementById("fontStyleToggleIcon").src = "./img/text style black.png";
+
     SelectRandomBackground(1); 
-    ChangeTableData('Neuland');
-    
+    ChangeTableData('Neuland');    
     HideLoadingScreen(); // Hide laoding screen
 }
 

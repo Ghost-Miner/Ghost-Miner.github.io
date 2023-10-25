@@ -313,37 +313,47 @@ function GetRandomInt(min, max)
 }
   
 
-// --------
-// COOKIES
-//---------
-function SetCookie(cname, cvalue)
+let textStyle = "fancy";
+function ToggleFontStyle()
 {
-	document.cookie = cname + "=" + cvalue + ";" + ";path=/";
-}
-
-function GetCookie(cname)
-{
-	let name = cname + "=";
-	let decodedCookie = decodeURIComponent(document.cookie);
-	let ca = decodedCookie.split(';');
-	for (let i = 0; i < ca.length; i++)
+	console.log(textStyle);
+	switch(textStyle)
 	{
-		let c = ca[i];
-		while (c.charAt(0) == ' ')
-		{
-			c = c.substring(1);
-		}
-		if (c.indexOf(name) == 0)
-		{
-			return c.substring(name.length, c.length);
-		}
+		default:
+			console.error("ChangeFontStyle() | Invalid textStyle value " + textStyle);
+		break;
+
+		case "fancy": // Toggle to clear
+			SetCookie("Font","clear");
+			textStyle = "clear";
+			document.body.style.fontFamily = "Arial, Helvetica, sans-serif";
+		break;
+
+		case "clear": // Toggle to fancy
+			SetCookie("Font","fancy");
+			textStyle = "fancy";
+			document.body.style.fontFamily = "'Times New Roman', Times, serif";
+		break;
 	}
-	return "";
 }
-
-function CheckCookie(cname)
+function CheckSavedFontStyle()
 {
-	let cookieValue = GetCookie(cname);
+    currentTheme = GetCookie("Font");
 
-	return cookieValue;
+    switch(currentTheme)
+    {
+        default:
+            console.warn("No cookie for Font found.");
+        break;
+
+        case "fancy":
+			textStyle = "clear";
+			ToggleFontStyle();
+        break;
+        
+        case "clear":
+			textStyle = "fancy";
+			ToggleFontStyle();
+        break;
+    }
 }
