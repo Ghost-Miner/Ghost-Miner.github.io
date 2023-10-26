@@ -77,7 +77,7 @@ function SetDarkTheme ()
 
     currentTheme = "dark";
 
-    const divContent = '<link rel="stylesheet" href="./styles/darkmode.css"> <script> document.getElementById("LBtableMain").classList.add("table-dark"); </script>'
+    const divContent = '<link rel="stylesheet" href="./styles/darkmode.css">'
     const darkThemeTogglerDiv = document.getElementById("darkThemeTogglerDiv");
 
     darkThemeTogglerDiv.innerHTML = divContent;
