@@ -50,13 +50,13 @@ function ShowSubInfo (submissionIndex)
     {   return;   }
     if (submissionIndex >= tableData.length || submissionIndex == undefined)
     {
-        console.warn("ShowSubInfo | Invalid submission index: " + submissionIndex);
+        // console.warn("ShowSubInfo | Invalid submission index: " + submissionIndex);
         return;
     }    
     const chosenSubmission = tableData[submissionIndex];
     if (chosenSubmission[0] == "Submission Date" || chosenSubmission[3] != "Early access")
     {
-        console.warn("ShowSubInfo | Invalid submission " + chosenSubmission + "; " + submissionIndex);
+        // console.warn("ShowSubInfo | Invalid submission " + chosenSubmission + "; " + submissionIndex);
         return;
     }
    // console.log(chosenSubmission);
