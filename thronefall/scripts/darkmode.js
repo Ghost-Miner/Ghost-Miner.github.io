@@ -3,11 +3,12 @@ let currentTheme = "light";
 function CheckSavedTheme()
 {
     currentTheme = GetCookie("Theme");
+    console.log("SAVED: " + currentTheme);
 
     switch(currentTheme)
     {
         default:
-            console.warn("No cookie for Theme found.");
+            console.warn("CheckSavedTheme | No cookie for Theme found. " + currentTheme);
             SetLightTheme();
         break;
 
@@ -23,22 +24,22 @@ function CheckSavedTheme()
 
 function ToggleThemes ()
 {
-    console.log("ToggleThemes | " + currentTheme)
     switch(currentTheme)
     {
         default:
-            console.warn("No cookie for Theme found.");
+            console.warn("ToggleThemes | No cookie for Theme found. " + currentTheme);
             SetLightTheme();
         break;
-
+        
         case "light":
             SetDarkTheme();
         break;
-        
+            
         case "dark":
             SetLightTheme();
         break;
     }
+    console.log("ToggleThemes | " + currentTheme);
 }
 
 function ChangeOldTableClass()
@@ -71,6 +72,7 @@ function ChangeOldTableClass()
 
 function SetDarkTheme ()
 {
+    console.log("Setting dark theme");
     SetCookie("Theme","dark");
 
     currentTheme = "dark";
@@ -90,6 +92,7 @@ function SetDarkTheme ()
 }
 function SetLightTheme ()
 {
+    console.log("Setting light theme");
     SetCookie("Theme","light"); // Save theme to cookies
     
     currentTheme = "light"; // Update current theme 
