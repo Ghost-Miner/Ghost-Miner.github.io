@@ -188,8 +188,10 @@ header
 #submitScoreBtnSplit
 {
     padding: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+
     margin-right: -5px;
-    padding-left: 15px;
     border-radius: 5px;
 }
 #submitTimeBtnSplit

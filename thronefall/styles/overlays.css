@@ -325,6 +325,34 @@
 
 
 /* 
+	R U LE S
+*/
+#rulesWindow
+{
+	display: none;
+}
+#rulesWindowContent
+{
+	padding: 15px;
+}
+#overlayWindoTitle
+{
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+#subRules_ScreenshotRuleDiv
+{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 5px;
+}
+.subRules_ScreenshotRuleImg
+{
+	width: 100%;
+	border-radius: 5px;
+}
+
+/* 
     OLD IMAGE AND VIIDEO PROOF WINDOWS
 */
 .old_overlaysBlur

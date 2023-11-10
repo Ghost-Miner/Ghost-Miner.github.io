@@ -27,27 +27,21 @@
     <head>
 		<title>Thronefall leaderboard</title>
 		<link rel="shortcut icon" type="image/jpg" href="./img/tf wiki discord .png">
-
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
         <!-- Page meta infromation -->
 		<meta name="description" content="A leaderboard for high-scores and speed-runs of Thronefall.">
 		<meta name="keywords" content="Thronefall, leaderBoard, grizzly games, speedrun">
 		<meta name="language" content="en">
 		<meta name='robots' content="index,follow">
 		<meta name='author' content="GhostMiner">
-        
         <!-- htmx -->
         <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
-
         <!-- Bootstrap 4 CSS library -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
         <!-- Custom CSS stylesheets and libraries -->
         <link rel="stylesheet" href="./styles/global.css">
         <link rel="stylesheet" href="./styles/overlays.css">
-
         <!-- Scripts -->
         <script src="./scripts/pageOptions.js"></script>
         <script src="./scripts/lbOptions.js"></script>
@@ -62,9 +56,8 @@
     </head>
     <body>
         <style>
-
         </style>
-
+        <!-- Loadin overlay to hide trnasition from light to dark theme -->
         <div id="loadingOVerlay">
             <div id="loadingTextBox">
                 <img src="./img/crown.png" id="loadingPageLogo">
@@ -74,7 +67,7 @@
                 <img src="./img/loading 3.gif" id="loadingPageLogo">
             </div>
         </div>
-
+        <!-- The entire page -->
         <div id="mainPageContainerBack">
             <div id="mainPageContainerFront">
                 <!-- 
@@ -272,14 +265,18 @@
                                         <!-- <div class="dropdown-divider"></div> -->
                                     </div>
                                 </div> <!-- submitButtonSplit -->
-                                
+                                     
+                                <button title="Submission rules" type="button" onclick="ShowRulesWindow()" id="colourThemeToggleButton" class="btn btn-warning btn_orangeGradient dropShadow">
+                                    <span id="SubmitButtonText">RULES</span>
+                                </button>
+
                                 <button title="Toggle colour theme" type="button" onclick="ToggleThemes()" id="colourThemeToggleButton" class="btn btn-warning btn_orangeGradient dropShadow">
                                     <!-- THEME -->
                                     <img src="./img/sun.png" style="max-width: 25px;" id="colourThemeToggleIcon">
                                 </button>
 
                                 <button title="Toggle text style" type="button" onclick="ToggleFontStyle()" id="colourThemeToggleButton" class="btn btn-warning btn_orangeGradient dropShadow">
-                                    <!-- THEME -->
+                                    <!-- TEXT STYLE -->
                                     <img src="./img/text style white.png" style="max-width: 25px;" id="fontStyleToggleIcon">
                                 </button>
                             <!-- </div>  -->
@@ -344,10 +341,15 @@
         </div> <!-- mainPageContainerBack -->
         <script></script>
 
-        <!-- 
+        <!-------------------------------
+        
             O V E R L A Y S
-        -->        
-        <!-- SUBMIT SCORE/TIME WINDOW  -->
+        
+        --------------------------------->
+
+        <!-- 
+            SUBMIT SCORE/TIME WINDOW 
+        -->
         <section id="overlayWindow" style="display: none;">
             <div id="overlayBlur">
                 <div id="submitWindowBakcground">
@@ -395,6 +397,7 @@
                                 <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubInfoWindow()">
                             </div>
                         </div> <!-- windowTitleBar -->
+
                         <div id="subInfoWindowContent">
                             <div class="alert alert-warning" id="obsoleteSubInfoBar" role="alert">
 								This submission is obsolete.
@@ -473,6 +476,47 @@
                 </div> <!-- subInfoWindowsBackground --> 
             </div> <!-- overlayBlur -->
         </section> <!-- overlayWindow -->
+
+        <!-- 
+            RULES WINDOW    
+        -->
+        <section id="rulesWindow">
+            <div id="overlayBlur">
+                <div id="subInfoWindowsBackground">
+                    <div id="subInfoWindowsForeground">
+                        <div id="windowTitleBar">
+                            <div class="titleBarCell" id="titleBarText">
+                                Submission rules
+                            </div>
+                            <div class="titleBarCell" id="titleBarClose">
+                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="HideRulesWindow()">
+                            </div>
+                        </div> <!-- windowTitleBar -->
+                        
+                        <div id="rulesWindowContent">
+                            <p><strong>GENERAL</strong></p>
+                            <p><strong>1.1:</strong> Submission must not be played on beta versions. <br>
+                            <strong>1.2:</strong> World record submissions must include a video. <br>
+                            <strong>1.3:</strong> All submissions must be played in the vanilla version of the game (no mods).</p>
+                            <hr>
+                            <p><strong>SCREENSHOT SUBMISSIONS</strong></p>
+                            <p><strong>2.1:</strong> Screenshot must show the entire victory screen.</p>
+                            <div id="subRules_ScreenshotRuleDiv">
+                                <img class="subRules_ScreenshotRuleImg" src="./img/sub img rule img 1.png">
+                                <img class="subRules_ScreenshotRuleImg" src="./img/sub img rule img 2.png">
+                                <img class="subRules_ScreenshotRuleImg" src="./img/sub img rule img 3.png">
+                            </div>
+                            
+                            <hr>
+                            <p><strong>VIDEO SUBMISSIONS</strong></p>
+                            <p><strong>3.1:</strong> Video must include the loadout screen and the final score.
+                               <strong>3.2:</strong> Video must include the game's audio.</p>
+                        </div>
+                    </div>                    
+                </div>                
+            </div>
+        </section>
+
         <!-- 
             < ! >   O B S O L E T E   < ! >        
         -->
@@ -514,6 +558,7 @@
         <!-- 
             < i > OBSOLETE STUFF ENDS HERE < i >
         -->
+
 		<script>
             document.getElementById("scoreCategoryButton").classList.add("active");
             SpawnTableRows();

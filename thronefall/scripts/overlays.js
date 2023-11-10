@@ -84,3 +84,12 @@ function CloseVideoWindow()
 	videoLink.src = "";
 }
 
+function ShowRulesWindow ()
+{
+	document.getElementById("rulesWindow").style.display = "block";
+}
+
+function HideRulesWindow ()
+{
+	document.getElementById("rulesWindow").style.display = "none";
+}
