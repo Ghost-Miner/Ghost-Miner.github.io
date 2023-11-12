@@ -248,15 +248,15 @@ function AssignSubInfoIcons ()
             if (usedPerks.length <= 1)
             {
                 // Left
-                perksIcons[0].src = "../img/nothing.png";
+                perksIcons[0].src = "./img/nothing.png";
                 perksIcons[0].title = ""; 
                 perkName[0].textContent = "";
                 // Middle
-                perksIcons[1].src = "../img/nothing.png";
+                perksIcons[1].src = "./img/nothing.png";
                 perksIcons[1].title = chosenPerk; 
                 perkName[1].textContent = chosenPerk;
                 // Right
-                perksIcons[2].src = "../img/nothing.png";
+                perksIcons[2].src = "./img/nothing.png";
                 perksIcons[2].title = ""; 
                 perkName[2].textContent = "";
 
@@ -288,7 +288,7 @@ function AssignSubInfoIcons ()
             document.getElementById("si_mutatorsList").style.display = "block";
             document.getElementById("si_mutatorsList").textContent = chosenMutator;
 
-            mutatorIcons[i].src = "../img/nothing.png";
+            mutatorIcons[i].src = "./img/nothing.png";
             mutatorIcons[i].title = ""; 
             mutatorName[i].textContent = "";
         }
@@ -297,7 +297,7 @@ function AssignSubInfoIcons ()
             document.getElementById("si_mutatorsList").style.display = "block";
             document.getElementById("si_mutatorsList").textContent = chosenMutator;
 
-            mutatorIcons[i].src = "../img/nothing.png";
+            mutatorIcons[i].src = "./img/nothing.png";
             mutatorIcons[i].title = ""; 
             mutatorName[i].textContent = "";
         }
@@ -310,6 +310,6 @@ function AssignSubInfoIcons ()
     }    
     for (let i = usedMutators.length; i < mutatorIcons.length; i++)
     {
-        mutatorIcons[i].src = "../img/nothing.png";
+        mutatorIcons[i].src = "./img/nothing.png";
     }
 }
