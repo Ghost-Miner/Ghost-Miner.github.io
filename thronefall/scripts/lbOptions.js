@@ -295,8 +295,15 @@ function RemoveTimeFromData (dateAndTime)
     return finalDateString;
 }
 
+/////////////////////////////////////////////////
+
 function FormatPerksOrMutatorsList (toFormat)
-{   
+{
+    console.log("=======================================");
+    let perksArrString = "";
+    let perksArr = new Array();
+    let perksArrIndex = 0;
+
     const inputString = toFormat;
     const inputChars = inputString.split('');
 
@@ -304,19 +311,101 @@ function FormatPerksOrMutatorsList (toFormat)
 
     for (let i = 0; i < inputChars.length; i++)
     {
+        // console.log("ICL: "+ inputChars.length + "; " + i
         if (inputChars[i] == "\n")
         {
-            //console.log("New line");
+            inputChars[i] = "";
+            perksArr[perksArrIndex] = perksArrString;
+            perksArrIndex++;
+            perksArrString = "";
+        }
+        perksArrString = perksArrString + inputChars[i];
+    }
+    perksArr[perksArrIndex] = perksArrString;
+    perksArrIndex++;
+    perksArrString = "";
+
+    console.log(perksArrString);
+    console.log(perksArr);
+
+    for (let i = 0; i < inputChars.length; i++)
+    {
+        if (inputChars[i] == "\n")
+        {
+            // console.log("New line");
             inputChars[i] = ", ";
         }
-    }
-    
+    }    
     for (let i = 0; i < inputChars.length; i++)
     {
         formattedString = formattedString + inputChars[i];
+        // perksArr[perksArrIndex] = formattedString;
+        // console.log(perksArr);
     }
+    // console.log(perksArr + "; " + inputString)
     return formattedString;
 }
+
+function FormatPerksOrMutatorIcons(toFormat)
+{
+    // console.log("=======================================");
+    let perksArrString = "";
+    let perksArr = new Array();
+    let perksArrIndex = 0;
+
+    if (toFormat == "")
+    {
+        console.log("passsed string (" + toFormat + ") is empty");
+        perksArr[0] = "unknown"
+        perksArr[1] = "unknown"
+        perksArr[2] = "unknown"
+        return perksArr;
+    }
+
+    let perksArrStringSplit;
+    let perksArrStringCopy = "";
+
+    const inputString = toFormat;
+    const inputChars = inputString.split('');
+
+    for (let i = 0; i < inputChars.length; i++)
+    {
+        // console.log("ICL: "+ inputChars.length + "; " + i
+        if (inputChars[i] == "\n" || inputChars[i] == ",")
+        {
+            inputChars[i] = "";
+            perksArr[perksArrIndex] = perksArrString;
+            perksArrIndex++;
+            perksArrString = "";
+        }
+        // console.log(inputChars[i]);
+        perksArrString = perksArrString + inputChars[i];
+
+        perksArrStringSplit = perksArrString.split('');
+        if (perksArrStringSplit[0] == " ")
+        {
+            console.log("SPACE IS ILLEGAL");
+            perksArrStringCopy = perksArrString;
+            perksArrString = "";
+
+            for (let i = 0; i < perksArrStringCopy; i++)
+            {
+                perksArrString = perksArrString + perksArrStringSplit[i];
+            }
+        }
+    }    
+    // perksArrStringSplit = perksArrString.split('');
+    // if (perksArrStringSplit[0] == " ")
+    // {
+    //     console.log("SPACE IS ILLEGAL");
+    // }
+    perksArr[perksArrIndex] = perksArrString;
+    perksArrIndex++;
+    perksArrString = "";
+    
+    return perksArr;
+}
+
 function SearchSubs(_subID)
 {
     let chosenSub;
