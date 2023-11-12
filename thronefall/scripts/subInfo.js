@@ -202,25 +202,25 @@ function AssignSubInfoIcons ()
             break;
 
         case "Bow":
-            weaponIcon.src = "../img/icons/weapons/Long_Bow_Icon.png";
+            weaponIcon.src = "./img/icons/weapons/Long_Bow_Icon.png";
             weaponIcon.title = "Bow";
             // weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Bow.html";
             break;
             
         case "Spear":
-            weaponIcon.src = "../img/icons/weapons/Spear_Icon.png";
+            weaponIcon.src = "./img/icons/weapons/Spear_Icon.png";
             weaponIcon.title = "Spear";
             // weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Spear.html";
             break;
             
         case "Sword":
-            weaponIcon.src = "../img/icons/weapons/Sword_Icon.png";
+            weaponIcon.src = "./img/icons/weapons/Sword_Icon.png";
             weaponIcon.title = "Sword";
             // weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Sword.html";
             break;
             
         case "Lightning staff":
-            weaponIcon.src = "../img/icons/weapons/Lightning_Staff_Icon.png";
+            weaponIcon.src = "./img/icons/weapons/Lightning_Staff_Icon.png";
             weaponIcon.title = "Lightning staff";
             // weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Lightning_Staff.html";
             break;
