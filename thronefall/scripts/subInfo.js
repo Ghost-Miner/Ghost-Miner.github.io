@@ -197,7 +197,7 @@ function AssignSubInfoIcons ()
             break;
 
         case "unknown":
-            weaponIcon.src = "../img/icons/unknown icon.png";
+            weaponIcon.src = "./img/icons/unknown icon.png";
             weaponIcon.title = "Unknown";
             break;
 
@@ -239,7 +239,7 @@ function AssignSubInfoIcons ()
 
         if (chosenPerk == "unknown")
         {
-            perksIcons[i].src = "../img/icons/unknown icon.png";
+            perksIcons[i].src = "./img/icons/unknown icon.png";
             perksIcons[i].title = chosenPerk; 
             perkName[i].textContent = usedPerks[i];
         }
@@ -265,7 +265,7 @@ function AssignSubInfoIcons ()
         }
         else
         {
-            perksIcons[i].src = "../img/icons/perks/" + chosenPerk + ".png";
+            perksIcons[i].src = "./img/icons/perks/" + chosenPerk + ".png";
             perksIcons[i].title = chosenPerk; 
             perkName[i].textContent = usedPerks[i];
         }
@@ -303,7 +303,7 @@ function AssignSubInfoIcons ()
         }
         else 
         {
-            mutatorIcons[i].src = "../img/icons/mutators/" + chosenMutator + ".png";
+            mutatorIcons[i].src = "./img/icons/mutators/" + chosenMutator + ".png";
             mutatorIcons[i].title = chosenMutator; 
             mutatorName[i].textContent = usedMutators[i];
         }
