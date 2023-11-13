@@ -184,7 +184,9 @@ function AssignSubInfoIcons ()
     document.getElementById("si_mutatorsList").style.display = "none";
     // document.getElementById("si_weapon").style.display = "none";
 
+    //
     // W E A P O N
+    //
     let weaponIcon = document.getElementById("subInfoWeaponIcon");
     let weaponWikiLink = document.getElementById("weaponWikiLink");
     let usedWeapon = s_usedWeapon;
@@ -199,34 +201,37 @@ function AssignSubInfoIcons ()
         case "unknown":
             weaponIcon.src = "./img/icons/unknown icon.png";
             weaponIcon.title = "Unknown";
+            weaponWikiLink.href = "#";
             break;
 
         case "Bow":
             weaponIcon.src = "./img/icons/weapons/Long_Bow_Icon.png";
             weaponIcon.title = "Bow";
-            // weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Bow.html";
+            weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Bow.html";
             break;
             
         case "Spear":
             weaponIcon.src = "./img/icons/weapons/Spear_Icon.png";
             weaponIcon.title = "Spear";
-            // weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Spear.html";
+            weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Spear.html";
             break;
             
         case "Sword":
             weaponIcon.src = "./img/icons/weapons/Sword_Icon.png";
             weaponIcon.title = "Sword";
-            // weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Sword.html";
+            weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Sword.html";
             break;
             
         case "Lightning staff":
             weaponIcon.src = "./img/icons/weapons/Lightning_Staff_Icon.png";
             weaponIcon.title = "Lightning staff";
-            // weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Lightning_Staff.html";
+            weaponWikiLink.href = "https://throne-fall.github.io/game%20content/weapons/Lightning_Staff.html";
             break;
     }
 
+    //
     // P E R K S 
+    //
     let perksIcons = document.getElementsByClassName("subInfoPerkIcon");
     let perkWikiLink = document.getElementsByClassName("perkWikiLink");
     let perkName = document.getElementsByClassName("subInfoPerkName");
@@ -259,7 +264,6 @@ function AssignSubInfoIcons ()
                 perksIcons[2].src = "./img/nothing.png";
                 perksIcons[2].title = ""; 
                 perkName[2].textContent = "";
-
                 break;
             }
         }
@@ -272,9 +276,11 @@ function AssignSubInfoIcons ()
         // perkWikiLink[i].href = "https://throne-fall.github.io/game%20content/perks/" + chosenPerk.toLowerCase();
     }
 
+    //
     // M U T A T O R S
+    //
     let mutatorIcons = document.getElementsByClassName("subInfomutatorIcon");
-    let mutatorWikiLink = document.getElementsByClassName("perkWikiLink");
+    let mutatorWikiLink = document.getElementsByClassName("mutatorWikiLink");
     let mutatorName = document.getElementsByClassName("subInfoMutatorName");
     let usedMutators = FormatPerksOrMutatorIcons(s_mutList);
     let chosenMutator;
@@ -283,8 +289,11 @@ function AssignSubInfoIcons ()
     {
         chosenMutator = usedMutators[i];
 
+        // UNKNOWN
         if (chosenMutator == "unknown")
         {
+            mutatorWikiLink[i].href = "#";
+
             document.getElementById("si_mutatorsList").style.display = "block";
             document.getElementById("si_mutatorsList").textContent = chosenMutator;
 
@@ -292,8 +301,11 @@ function AssignSubInfoIcons ()
             mutatorIcons[i].title = ""; 
             mutatorName[i].textContent = "";
         }
+        // NONE
         else if (chosenMutator == "None" || chosenMutator == "- NONE -" || chosenMutator == "NONE")
         {
+            mutatorWikiLink[i].href = "#";
+
             document.getElementById("si_mutatorsList").style.display = "block";
             document.getElementById("si_mutatorsList").textContent = chosenMutator;
 
@@ -301,13 +313,16 @@ function AssignSubInfoIcons ()
             mutatorIcons[i].title = ""; 
             mutatorName[i].textContent = "";
         }
+        // HAS MUTATORS
         else 
         {
+            mutatorWikiLink[i].href = GetMutatorPageName(chosenMutator);
+
             mutatorIcons[i].src = "./img/icons/mutators/" + chosenMutator + ".png";
             mutatorIcons[i].title = chosenMutator; 
             mutatorName[i].textContent = usedMutators[i];
         }
-    }    
+    }
     for (let i = usedMutators.length; i < mutatorIcons.length; i++)
     {
         mutatorIcons[i].src = "./img/nothing.png";
