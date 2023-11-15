@@ -460,10 +460,10 @@ function GetPerkPageName (perkName)
     const wikiURL = "https://throne-fall.github.io/game%20content/perks/";
     const extension = ".html";
 
-    switch (mutatorName)
+    switch (perkName)
     {
         default:
-            console.error(mutatorName + " is not recognized");
+            console.error(perkName + " is not recognized");
             return "#";
 
         case "Anti-air telescope":
@@ -558,7 +558,6 @@ function GetPerkPageName (perkName)
 
         case "Warrior mode":
             return (wikiURL + "warrior mode" + extension);
-
     }
 
 }
