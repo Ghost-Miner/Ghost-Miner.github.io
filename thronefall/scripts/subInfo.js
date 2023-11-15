@@ -269,11 +269,12 @@ function AssignSubInfoIcons ()
         }
         else
         {
+            perkWikiLink[i].href = GetPerkPageName(chosenPerk);
+
             perksIcons[i].src = "./img/icons/perks/" + chosenPerk + ".png";
             perksIcons[i].title = chosenPerk; 
             perkName[i].textContent = usedPerks[i];
         }
-        // perkWikiLink[i].href = "https://throne-fall.github.io/game%20content/perks/" + chosenPerk.toLowerCase();
     }
 
     //
