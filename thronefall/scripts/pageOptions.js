@@ -34,15 +34,18 @@ function GetAdressHash()
 // Returns string after ? in the address
 function GetAdressSearch()
 {
-	const srch = window.location.search;
-	console.log("URL search: " + srch);
+	const search = window.location.search;
+	const searchNoQ = RemoveQuesMarkSymbol(search);
+	console.log("URL search: " + search);
 
-	if (urlSearch == "?dark")
+	if (search.includes("name"))
 	{
-		SetDarkTheme();
+		return ExtractSubNumber(search);
 	}
-
-	return srch;
+	else 
+	{
+		return searchNoQ;
+	}
 }
 
 function ExtractSubNumber (rawString)
@@ -130,6 +133,28 @@ function ExtractSubID(rawString)
     }
     // console.log(subNumChars);
     // console.log(returnStringFull);
+
+    return returnStringFull;
+}
+
+function RemoveQuesMarkSymbol (hashString)
+{
+    let returnStringChars = new Array();
+    let returnStringFull = "";
+    let charIndex = 0;
+
+    const str   = hashString;
+    const chars = str.split('');
+
+    for (let i = 1; i < chars.length; i++)
+    {
+        returnStringChars[charIndex] = chars[i];
+        charIndex++;
+    }
+    for (let i = 0; i < returnStringChars.length; i++)
+    {
+        returnStringFull = returnStringFull + returnStringChars[i];
+    }
 
     return returnStringFull;
 }
