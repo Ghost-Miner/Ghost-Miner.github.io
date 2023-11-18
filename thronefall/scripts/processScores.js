@@ -169,6 +169,10 @@ function SortSubData ()
 
     ShowSubInfo(GetAdressHash()); // Open submission by its number
     FindSubmissionById(GetAdressHash()); // Open submission by its ID
+    if (GetAdressSearch() != "")
+    {
+        SearchSubByName(GetAdressSearch());
+    }
 }
 
 function ChangeTableData(level)
