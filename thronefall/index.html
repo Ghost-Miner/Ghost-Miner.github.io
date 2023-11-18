@@ -279,10 +279,22 @@
                                     <!-- TEXT STYLE -->
                                     <img src="./img/text style white.png" style="max-width: 25px;" id="fontStyleToggleIcon">
                                 </button>
+
+                                <button title="Toggle text style" type="button" onclick="ToggleSearchField()" id="colourThemeToggleButton" class="btn btn-warning btn_orangeGradient dropShadow">
+                                    <!-- TEXT STYLE -->
+                                    <img src="./img/search white.png" style="max-width: 25px;" id="searchToggleButtonIcon">
+                                </button>
                             <!-- </div>  -->
                               <!-- /\ centerVertical -->
                         </div> <!-- submissionButtonCell -->
                     </div> <!-- categoryButtonsWrapper -->
+
+                    <div id="searchDiv" class="">
+                        <!-- <label for="site-search" class="searchElements">Search by name:</label> -->
+                        <input type="search" id="site-search" class="searchElements dropShadow whiteGradient" placeholder="Search by name"/>
+                        <button onclick="SearchSubByName(GetSearchInputSring())" id="searchButton" class="btn btn-warning btn_orangeGradient dropShadow">Search</button>
+                        <!-- <span id="searchResultsLegendText">O = Obsolete, R = Rejected</span> -->
+                    </div>
                 </nav>
                 <!-- 
                     LEADERBOARDS
@@ -294,22 +306,27 @@
                                 <img src="./img/loading 3.gif" id="lbLoadImage" class="centerHorizontal">
                             </section> <!-- LBLoadingIndicator -->
                             <section id="leaderboardContent" style="display: none;">
-                                <span id="leaderboardNameText">*table name*</span>
+                                <section id="tableTitle">
+                                    <span id="leaderboardNameText">*table name*</span>
+                                    <span id="searchResultsLegendText">*table name*</span>
+                                </section>
                                 <table class="table table-striped" id="LBtableMain">
                                     <thead class="table-dark tableHead_gradient" id="LBtableHead">
                                         <tr>
-                                            <td id="th-position"   class="positionColumn 1">#		 </td>
-                                            <td id="th-name"       class="nameColumn 2">		 Name	 </td>
-                                            <td id="th-score"      class="scoreColumn 3">		 Score	 </td>
-                                            <td id="th-coins"      class="coinsColumn 4">		 Gold	 </td>
-                                            <td id="th-mutNums"    class="mutatorsColumn 5"> Mutators</td>
+                                            <td id="th-mapName"    class="mapNameColumn 0">     Level     </td>
+                                            <td id="th-position"   class="positionColumn 1">      #       </td>
+                                            <td id="th-name"       class="nameColumn 2">		 Name	  </td>
+                                            <td id="th-score"      class="scoreColumn 3">		 Score 	  </td>
+                                            <td id="th-coins"      class="coinsColumn 4">		 Gold 	  </td>
+                                            <td id="th-mutNums"    class="mutatorsColumn 5"> Mutators     </td>
                                             <td id="th-usedWeapon" class="weaponColumn 7">Used&nbsp;weapon</td>
-                                            <td id="th-version"    class="versionColumn 8">	 Version </td>
-                                            <td id="th-date"       class="dateColumn 9">		 Date	 </td>
+                                            <td id="th-version"    class="versionColumn 8">	 Version      </td>
+                                            <td id="th-date"       class="dateColumn 9">		 Date	  </td>
                                         </tr>
                                     </thead>
                                     <tbody class="table-light tableBody_gradient" id="LBtableBody">
                                         <tr class="tableRow">
+                                            <td class="mapName mapNameColumn 0">  ...</td>
                                             <td class="position positionColumn 1">...</td>
                                             <td class="name nameColumn 2">		  ...</td>
                                             <td class="score scoreColumn 3">	  ...</td>
@@ -332,14 +349,13 @@
                     FOOTER
                  -->
                 <footer>
-                    Made by GhostMiner. | v.2.7.1 (13/11/2023) |
+                    Made by GhostMiner. | v.2.8 (13/11/2023) |
                     <a href="https://ghost-miner.github.io/">Website</a>, 
                     <a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
                     <a href="https://discord.gg/DjUBY9h">Discord</a>
                 </footer>
             </div> <!-- mainPageContainerFront -->
         </div> <!-- mainPageContainerBack -->
-        <script></script>
 
         <!-------------------------------
         
@@ -684,7 +700,6 @@
                     document.getElementById("LBtableMain").classList.add("table-dark");
                 </script> -->
             </div>
-
             <script>
                 CheckSavedTheme();
                 CheckSavedFontStyle();

@@ -43,8 +43,8 @@ function ShowSubInfo (submissionIndex)
     //     return;
     // }
 
-    // document.getElementById("obsoleteSubInfoBar").style.display = "none";
-    // document.getElementById("rejectedSubInfoBar").style.display = "none";
+    document.getElementById("obsoleteSubInfoBar").style.display = "none";
+    document.getElementById("rejectedSubInfoBar").style.display = "none";
     
     if (submissionIndex == "")
     {   return;   }

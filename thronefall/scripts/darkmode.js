@@ -85,6 +85,7 @@ function SetDarkTheme ()
 
     document.getElementById("colourThemeToggleIcon").src = "./img/moon.png";
     document.getElementById("fontStyleToggleIcon").src = "./img/text style white.png";
+    document.getElementById("searchToggleButtonIcon").src = "./img/search white.png";
 
     SelectRandomBackground(1); 
     ChangeTableData('Neuland');
@@ -105,6 +106,7 @@ function SetLightTheme ()
 
     document.getElementById("colourThemeToggleIcon").src = "./img/sun.png"; // Replace toggle button icon with sun
     document.getElementById("fontStyleToggleIcon").src = "./img/text style black.png";
+    document.getElementById("searchToggleButtonIcon").src = "./img/search black.png";
 
     SelectRandomBackground(1); 
     ChangeTableData('Neuland');    

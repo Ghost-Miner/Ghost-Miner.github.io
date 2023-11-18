@@ -357,3 +357,28 @@ function CheckSavedFontStyle()
         break;
     }
 }
+
+let searchVisible = false; 
+function ToggleSearchField()
+{
+	switch(searchVisible)
+	{
+		case false:
+			ShowSearchField();
+			break;
+
+		case true:
+			HideSearchField();
+			break;
+	}
+}
+function ShowSearchField ()
+{
+	document.getElementById("searchDiv").style.display = "block";
+	searchVisible = true; 
+}
+function HideSearchField ()
+{
+	document.getElementById("searchDiv").style.display = "none";
+	searchVisible = false; 
+}

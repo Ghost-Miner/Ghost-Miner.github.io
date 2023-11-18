@@ -180,6 +180,11 @@ header
     text-align: center;
     margin: auto;
 }
+#searchToggleButton
+{
+    border-radius: 5px;
+    margin-top: 5px;
+}
 #colourThemeToggleButton
 {
     border-radius: 5px;
@@ -214,7 +219,7 @@ header
 #categoryButtonsWrapper
 {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2.5fr 1.5fr;
 
     width: 100%;
 }
@@ -266,8 +271,38 @@ header
 }
 
 /* 
+    SEARCH
+*/
+#searchDiv
+{
+    display: none;
+    margin: auto;
+    text-align: right;
+    height: 40px;
+}
+.searchElements
+{
+    height: 100%;
+}
+#searchButton
+{
+    margin-top: -4px;
+}
+#site-search
+{
+    border-radius: 5px;
+    max-width: 200px;
+    width: 100%;
+}
+
+/* 
     LEADERBOARDS
 */
+#tableTitle
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 #leaderboardContent
 {
     overflow: auto;
@@ -307,6 +342,14 @@ header
     line-height: 55px;
     font-weight: bold;
     font-size: 1.75rem;
+}
+#searchResultsLegendText
+{
+    display: none;
+    position: relative;
+    top: 25%;
+    /* transform: translate(0%,-25%); */
+    text-align: center;
 }
 
 .tableHead_gradient, .tableDarkHeader

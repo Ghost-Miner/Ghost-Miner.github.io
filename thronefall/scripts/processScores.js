@@ -168,7 +168,7 @@ function SortSubData ()
     document.getElementById("demoCategoryButton").disabled = false;
 
     ShowSubInfo(GetAdressHash()); // Open submission by its number
-    SearchSubs(GetAdressHash()); // Open submission by its ID
+    FindSubmissionById(GetAdressHash()); // Open submission by its ID
 }
 
 function ChangeTableData(level)
@@ -180,8 +180,10 @@ function ChangeTableData(level)
         return;
     }
 
+    HideLevelNameColumn();
     // Reset the leaderboard section to remove all event listenvers
     document.getElementById("leaderboardContent").outerHTML = document.getElementById("leaderboardContent").outerHTML
+    // Hide level name column
 
 	// SORT ITEMS INTO CORRESPOINDING VALUES
 	let chosenArray;
@@ -211,9 +213,20 @@ function ChangeTableData(level)
 		case "Uferwind":
 			chosenArray = UferWindSubs;
 			break;
+
+        case "Search":
+            ShowLevelNameColumn();
+            if (searchResultsSubs == null)
+            {
+                console.error("ChangeTableData || searchResultsSubs is empty. Run SearchSubByName() first!");
+                return;
+            }
+            chosenArray = searchResultsSubs;
+            break;
 	}
 
     // CREATE ARRAYS FOR EACH VALUE TYPE
+    let map = new Array();
 	let position = new Array();
 	let names = new Array();
 	let score = new Array();
@@ -231,6 +244,7 @@ function ChangeTableData(level)
 	{
 		chosenRow = chosenArray[i];;
 
+        map[i]        = chosenRow[4];
         position[i]   = chosenRow[21];
 		names[i]      = chosenRow[2];
 		score[i]      = chosenRow[5];
@@ -252,6 +266,7 @@ function ChangeTableData(level)
 	// console.log("---------------------------------------------");
 
     // GET EACH TABLE COLUMN
+    const tMapName  = document.getElementsByClassName("mapName ");
 	const tPosition = document.getElementsByClassName("position");
 	const tNames    = document.getElementsByClassName("name");
 	const tScore    = document.getElementsByClassName("score");
@@ -273,6 +288,7 @@ function ChangeTableData(level)
     // REST TEXT INSIDE CELLS
 	for (let k = 0; k < tableRows.length; k++)
 	{
+		tMapName[k].textContent = "";
 		tPosition[k].textContent = "";
 		tNames[k].textContent = "";
 		tScore[k].textContent = "";
@@ -287,6 +303,7 @@ function ChangeTableData(level)
     // ASSIGN TEXT INSIDE EACH CELL
 	for (let k = 0; k < chosenArray.length; k++)
 	{
+		tMapName[k].textContent = map[k];
 		tPosition[k].textContent = position[k];
 		tNames[k].textContent = names[k];
 
@@ -306,6 +323,7 @@ function ChangeTableData(level)
     }
 
     // Add order utton to table header
+    // document.getElementById("th-mapName")   .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "mapName")  }, false);
     document.getElementById("th-position")  .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "score")    }, false);
     document.getElementById("th-name")      .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "name")     }, false);
     document.getElementById("th-score")     .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "score")    }, false);
@@ -320,6 +338,14 @@ function ChangeTableData(level)
     document.getElementById("leaderboardContent").style.display = "block";
     // SET LEADERBOARD TITLE
 	document.getElementById("leaderboardNameText").textContent = chosenMap + " high-scores";
+    // HIDE SEARCH RESULTS LEGEND
+    document.getElementById("searchResultsLegendText").style.display = "none";
+    // SHOW SEARCH RESULTS LEGEND
+    if (chosenMap == "Search")
+    { 
+        document.getElementById("searchResultsLegendText").style.display = "block";
+        document.getElementById("searchResultsLegendText").textContent = "(O = Obsolete, R = Rejected)"; 
+    }
 
     // Hide the "loading page" used to hide the transition from light to dark mode
     // HideLoadingScreen();
@@ -335,7 +361,7 @@ function OrderBoardBy (map, orderType)
     switch (map)
     {
         default:
-            console.error("OrderBoardBy | Invalid value for map! " + map);
+            console.error("OrderBoardBy | Invalid value for map! (" + map + ")");
         return;
 
         case "neuland":
@@ -356,6 +382,15 @@ function OrderBoardBy (map, orderType)
 
         case "uferwind":
             chosenMapArray = UferWindSubs;
+        break;
+
+        case "search":
+            if (searchResultsSubs == null)
+            {
+                console.error("ChangeTableData || searchResultsSubs is empty. Run SearchSubByName() first!");
+                return;
+            }
+            chosenMapArray = searchResultsSubs;
         break;
     }
 
@@ -417,6 +452,17 @@ function OrderBoardBy (map, orderType)
                     const nameB = b[2].toUpperCase(); //console.log("B: " + nameB);
                     if (nameA < nameB) { return -1; }
                     if (nameA > nameB) { return  1; }
+                    // names must be equal 
+                    return 0;    
+                } );
+        break;
+
+        case "mapName":
+            chosenMapArray.sort((a,b) => {
+                    const mapA = a[4].toUpperCase(); //console.log("A: " + nameA);
+                    const mapB = b[4].toUpperCase(); //console.log("B: " + nameB);
+                    if (mapA < mapB) { return -1; }
+                    if (mapA > mapB) { return  1; }
                     // names must be equal 
                     return 0;    
                 } );

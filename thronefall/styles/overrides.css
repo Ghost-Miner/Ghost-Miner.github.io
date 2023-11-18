@@ -28,8 +28,20 @@
     }
 }
 
-@media only screen and (max-width: 800px)
+@media only screen and (max-width: 810px)
 {
+    #searchDiv
+    {
+        text-align: center;
+    }
+    #tableTitle
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #searchResultsLegendText
+    {
+        text-align: right;
+    }
     #subIinfoVideoDiv
     {
         height: 380px;
@@ -120,6 +132,16 @@
 
 @media only screen and (max-width: 500px)
 {
+    #tableTitle
+    {
+        grid-template-columns: 1fr;
+    }
+    #searchResultsLegendText
+    {
+        margin-bottom: 15px;
+        margin-top: -15px;
+        text-align: left;
+    }
     #subIinfoVideoDiv
     {
         height: 240px;

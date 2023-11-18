@@ -136,10 +136,27 @@ function SpawnTableRows()
 {
     let tableRow = document.getElementsByClassName("tableRow");
 
-    for (let i = 0; i < 50; i++)
+    for (let i = 0; i < 200; i++)
     {
         let newRow = tableRow[0].cloneNode(true);
         let tBody = document.getElementById("LBtableBody").append(newRow);
+    }
+}
+
+function HideLevelNameColumn ()
+{
+    const levelNameCol = document.getElementsByClassName("mapNameColumn");
+    for (let i = 0; i < levelNameCol.length; i++)
+    {
+        levelNameCol[i].style.display = "none";
+    }
+}
+function ShowLevelNameColumn ()
+{
+    const levelNameCol = document.getElementsByClassName("mapNameColumn");
+    for (let i = 0; i < levelNameCol.length; i++)
+    {
+        levelNameCol[i].style.display = "block";
     }
 }
 
@@ -414,7 +431,7 @@ function GetMutatorPageName (mutatorName)
     switch (mutatorName)
     {
         default:
-            console.error(mutatorName + " is not recognized");
+            console.error("GetMutatorPageName | \"" + mutatorName + "\" is not a valid Mutator name");
             return "#";
 
         case "Falcon god":
@@ -463,7 +480,7 @@ function GetPerkPageName (perkName)
     switch (perkName)
     {
         default:
-            console.error(perkName + " is not recognized");
+            console.error("GetPerkPageName | \"" + perkName + "\" is not a valid perk name");
             return "#";
 
         case "Anti-air telescope":
@@ -561,9 +578,79 @@ function GetPerkPageName (perkName)
     }
 
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function SearchSubs(_subID)
+function GetSearchInputSring()
+{
+    const value = document.getElementById("site-search").value;
+    console.log(value);
+    return value;
+}
+let searchResultsSubs;
+function SearchSubByName(searchedString)
+{
+    if (searchedString == "" || searchedString == null)
+    {
+        alert("Search input cannot be empty!");
+        return;
+    }
+    if (searchedString.toLowerCase() == "never gonna give you up" || searchedString.toLowerCase() == "rick astley")
+    {
+        location.replace("https://www.youtube.com/embed/dQw4w9WgXcQ");
+        return;
+    }
+
+    searchResultsSubs = new Array();
+    let srcResArrIndex = 0;
+
+    let srcString = searchedString.toUpperCase();
+    let chosenSub;
+    let subName;
+    let subIndex;
+    let gameType;
+
+    for (let i = 0; i < tableData.length; i++)
+    {
+        if (i >= 200)
+        {
+            console.warn("SearchSubByName | Number of search results is higher than number of available table rows.");
+            alert("WARNING: \nNumber of search results is higher than the number of available table rows. \nSome results aren't shown.");
+            break;
+        }
+        chosenSub = tableData[i];
+
+        subName = chosenSub[2].toUpperCase();
+        gameType = chosenSub[3];
+        subIndex = chosenSub[20];
+
+        if (chosenSub[21] == "" || chosenSub[21] == null)
+        {
+            chosenSub[21] = chosenSub[1].toUpperCase();
+        }
+
+        if (subName.includes(srcString) && gameType == "Early access" && !subName.includes("TEST"))
+        {
+            // console.log("=======================================")
+            // console.log("Added match to src res list");
+            // console.log(chosenSub);
+            // console.log("Found match at " + i);
+            searchResultsSubs[srcResArrIndex] = chosenSub;
+            srcResArrIndex++;
+        }
+    }
+    console.log("== RESULTS ==================");
+    console.log(searchResultsSubs);
+
+    if (searchResultsSubs[0] == null)
+    {
+        alert("No result found.");
+        return;
+    }
+
+    ChangeTableData("Search");
+    HideSearchField();
+}
+
+function FindSubmissionById(_subID)
 {
     let chosenSub;
     let submissionID;
@@ -581,12 +668,12 @@ function SearchSubs(_subID)
         
         if(submissionID == null)
         {
-            console.error("SearchSubs | submissionID value is invallid or undefined!");
+            console.error("FindSubmissionById | submissionID value is invallid or undefined!");
             return;
         }        
         if (submissionID == _subID)
         {
-            console.log("SearchSubs | FOUND MATCH AT INDEX " + i);
+            // console.log("FindSubmissionById | FOUND MATCH AT INDEX " + i);
             ShowSubInfo(subNumber); 
             return;
         }
@@ -600,6 +687,10 @@ function SearchSubs(_subID)
     // console.log("============================================================");
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// U N U S E D
+//
 function LinkSplice (_inputString, _subID)
 {
     const fileWebsite = "http://thronefall.maweb.eu/files/score/Thronefall%20score%20submission";
