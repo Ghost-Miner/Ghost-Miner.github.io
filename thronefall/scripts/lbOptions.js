@@ -593,9 +593,9 @@ function SearchSubByName(searchedString)
         alert("Search input cannot be empty!");
         return;
     }
-    if (searchedString.toLowerCase() == "never gonna give you up" || searchedString.toLowerCase() == "rick astley")
+    if (searchedString.toLowerCase() == "never gonna give you up" || searchedString.toLowerCase() == "rick astley" || searchedString.toLowerCase() == "rick roll");
     {
-        location.replace("https://www.youtube.com/embed/dQw4w9WgXcQ");
+        location.replace("../img/rick 720p.mp4");
         return;
     }
 
