@@ -599,7 +599,6 @@ function SearchSubByName(searchedString)
         location.replace("./img/rick 720p.mp4");
         return;
     }
-
     searchResultsSubs = new Array();
     let srcResArrIndex = 0;
 
@@ -613,7 +612,7 @@ function SearchSubByName(searchedString)
     {
         if (i >= 200)
         {
-            console.warn("SearchSubByName | Number of search results is higher than number of available table rows.");
+            console.warn("SearchSubByName() | Number of search results is higher than number of available table rows.");
             alert("WARNING: \nNumber of search results is higher than the number of available table rows. \nSome results aren't shown.");
             break;
         }
@@ -640,13 +639,11 @@ function SearchSubByName(searchedString)
     }
     console.log("== RESULTS ==================");
     console.log(searchResultsSubs);
-
     // if (searchResultsSubs[0] == null)
     // {
     //     alert("No result found.");
     //     return;
     // }
-
     ChangeTableData("Search");
     HideSearchField();
 }
