@@ -641,11 +641,11 @@ function SearchSubByName(searchedString)
     console.log("== RESULTS ==================");
     console.log(searchResultsSubs);
 
-    if (searchResultsSubs[0] == null)
-    {
-        alert("No result found.");
-        return;
-    }
+    // if (searchResultsSubs[0] == null)
+    // {
+    //     alert("No result found.");
+    //     return;
+    // }
 
     ChangeTableData("Search");
     HideSearchField();
