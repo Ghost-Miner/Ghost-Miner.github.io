@@ -595,7 +595,7 @@ function SearchSubByName(searchedString)
     }
     if (searchedString.toLowerCase() == "never gonna give you up" || searchedString.toLowerCase() == "rick astley" || searchedString.toLowerCase() == "rick roll");
     {
-        location.replace("../img/rick 720p.mp4");
+        location.replace("./img/rick 720p.mp4");
         return;
     }
 
