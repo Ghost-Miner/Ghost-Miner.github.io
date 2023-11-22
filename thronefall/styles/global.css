@@ -35,6 +35,17 @@ a, a:link, a:visited
     text-decoration: none;
 }
 
+/* OLD LB */
+.ScoreProofLink
+{
+    cursor: pointer;
+}
+.ScoreProofLink:hover
+{
+    text-decoration: underline !important;
+    font-style: italic;
+}
+
 /* 
     VARIOUS GLOBAL PROPERTIES
 */
