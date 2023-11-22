@@ -244,7 +244,7 @@ header
     width: 100%;
     margin-bottom: 10px;
 
-    max-width: 500px;
+    max-width: 600px;
 }
 .levelsToggleButtons
 {
@@ -256,8 +256,14 @@ header
     width: 100%;
     margin-bottom: 10px;
 
-    max-width: 500px;
+    max-width: 600px;
 }
+
+#timeLevelsToggle
+{
+    grid-template-columns: repeat(6, 1fr);
+}
+
 #scoreLevelsToggle
 {
     display: grid;
