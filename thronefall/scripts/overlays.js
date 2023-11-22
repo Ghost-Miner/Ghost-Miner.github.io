@@ -23,6 +23,7 @@ function ShowChoiceButtons ()
 }
 function HideChoiceButtons (type)
 {
+	console.log("HideChoiceButtons " + currentTheme);
 	document.getElementById("chooseSubTypeButtons").style.display = "none";
 	document.getElementById("submiFormDiv").style.display = "block";
 

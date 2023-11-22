@@ -1,4 +1,4 @@
-let currentTheme = "light";
+let currentTheme;
 
 function CheckSavedTheme()
 {
@@ -24,6 +24,7 @@ function CheckSavedTheme()
 
 function ToggleThemes ()
 {
+    currentTheme = GetCookie("Theme");
     switch(currentTheme)
     {
         default:
@@ -44,6 +45,7 @@ function ToggleThemes ()
 
 function ChangeOldTableClass()
 {
+    currentTheme = GetCookie("Theme");
     const oldTableBgr = document.getElementsByClassName("oldLBtable");
     console.log(oldTableBgr);
     switch (currentTheme)

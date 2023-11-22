@@ -361,11 +361,12 @@ function ToggleFontStyle()
 		break;
 	}
 }
+
 function CheckSavedFontStyle()
 {
-    currentTheme = GetCookie("Font");
+    textStyle = GetCookie("Font");
 
-    switch(currentTheme)
+    switch(textStyle)
     {
         default:
             console.warn("No cookie for Font found.");
