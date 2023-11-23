@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST</title>
+        <!-- <link rel="stylesheet" href="../styles/global.css"> -->
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="./formTest.css">
+        <script src="./formTest.js"></script>
+        <script src="./process.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="formBodyDiv" class="">
+            <center>
+                <span id="formTitle">Thronefall score submission</span>
+            </center>   
+            <hr>
+
+            <form id="scoreSubmitForm" name="Score submittion test" action="./form submit.html" method="get">
+                <!-- Name -->
+                <div class="formCellWrapper">
+                    <div class="formCellTitle">
+                        <label for="displayName">Name *</label>
+                    </div> <!-- formCellTitle -->
+                    <div class="formCellField">
+                        <input type="text" name="displayName" id="displayName" class="formInputField" required />
+                    </div> <!-- formCellField -->
+                </div> <!-- formCellWrapper -->
+
+                <!-- Level -->
+                <div class="formCellWrapper">
+                    <div class="formCellTitle">
+                        <label for="levelName">Level *</label>
+                    </div> <!-- formCellTitle -->
+                    <div class="formCellField">
+                        <div class="formSelectionColumnWrapper">
+                            <div class="selectionColumnCell">
+                                <input type="radio" name="levelName" class="levelField form-check-input" id="Neuland" required />
+                                <label for="Neuland">Neuland</label>
+                            </div> 
+                            <div class="selectionColumnCell">
+                                <input type="radio" name="levelName" class="levelField form-check-input" id="Nordfels" required />
+                                <label for="Nordfels">Nordfels</label>
+                            </div> 
+                            <div class="selectionColumnCell">
+                                <input type="radio" name="levelName" class="levelField form-check-input" id="Durststein" required />
+                                <label for="Durststein">Durststein</label>
+                            </div> 
+                            <div class="selectionColumnCell">
+                                <input type="radio" name="levelName" class="levelField form-check-input" id="Frostsee" required />
+                                <label for="Frostsee">Frostsee</label>
+                            </div> 
+                            <div class="selectionColumnCell">
+                                <input type="radio" name="levelName" class="levelField form-check-input" id="Uferwind" required />
+                                <label for="Uferwind">Uferwind</label>
+                            </div> 
+                        </div> <!-- formSelectionColumnWrapper -->
+                    </div> <!-- formCellField -->
+                </div> <!-- formCellWrapper -->
+
+                <!-- Score -->
+                <div class="formCellWrapper">
+                    <div class="formCellTitle">
+                        <label for="totalScore">Total score *</label>
+                    </div> <!-- formCellTitle -->
+                    <div class="formCellField">
+                        <input type="number" name="totalScore" id="totalScore" class="formInputField" required min="0"/>
+                    </div> <!-- formCellField -->
+                </div> <!-- formCellWrapper -->
+                
+                <!-- Gold -->
+                <div class="formCellWrapper">
+                    <div class="formCellTitle">
+                        <label for="gold">Gold *</label>
+                    </div> <!-- formCellTitle -->
+                    <div class="formCellField">
+                        <input type="number" name="gold" id="gold" class="formInputField" required min="0"/>
+                    </div> <!-- formCellField -->
+                </div> <!-- formCellWrapper -->
+                
+                <!-- Number of mutators -->
+                <div class="formCellWrapper">
+                    <div class="formCellTitle">
+                        <label for="numOfMutators">Number of mutators *</label>
+                    </div> <!-- formCellTitle -->
+                    <div class="formCellField">
+                        <input type="number" name="numOfMutators" id="numOfMutators" class="formInputField" required min="0" max="7"/>
+                    </div> <!-- formCellField -->
+                </div> <!-- formCellWrapper -->
+
+                <!-- Weapon -->
+                <div class="formCellWrapper">
+                    <div class="formCellTitle">
+                        <label for="levelName">Weapon *</label>
+                    </div> <!-- formCellTitle -->
+                    <div class="formCellField">
+                        <div class="formSelectionColumnWrapper">
+                            <div class="selectionColumnCell">
+                                <input type="radio" name="weaponName" class="weaponField form-check-input" id="Bow" required />
+                                <label for="Bow">Bow</label>
+                            </div> 
+                            <div class="selectionColumnCell">
+                                <input type="radio" name="weaponName" class="weaponField form-check-input" id="Spear" required />
+                                <label for="Spear">Spear</label>
+                            </div> 
+                            <div class="selectionColumnCell">
+                                <input type="radio" name="weaponName" class="weaponField form-check-input" id="Sword" required />
+                                <label for="Sword">Sword</label>
+                            </div> 
+                            <div class="selectionColumnCell">
+                                <input type="radio" name="weaponName" class="weaponField form-check-input" id="Lightning staff" required />
+                                <label for="Lightning staff">Bow</label>
+                            </div>
+                        </div> <!-- formSelectionColumnWrapper -->
+                    </div> <!-- formCellField -->
+                </div> <!-- formCellWrapper -->
+                
+                <!-- Version -->
+                <div class="formCellWrapper">
+                    <div class="formCellTitle">
+                        <label for="gameVersion">Version *</label>
+                    </div> <!-- formCellTitle -->
+                    <div class="formCellField">
+                        <input type="text" name="gameVersion" id="gameVersion" class="formInputField" required />
+                    </div> <!-- formCellField -->
+                </div> <!-- formCellWrapper -->
+                
+                <!-- Date -->
+                <div class="formCellWrapper">
+                    <div class="formCellTitle">
+                        <label for="date">Date *</label>
+                    </div> <!-- formCellTitle -->
+                    <div class="formCellField">
+                        <input type="date" name="date" id="date" class="formInputField" required />
+                    </div> <!-- formCellField -->
+                </div> <!-- formCellWrapper -->
+                
+                <!-- Version -->
+                <div class="formCellWrapper">
+                    <div class="formCellTitle">
+                        <label for="scorePRoof">Proof *</label>
+                    </div> <!-- formCellTitle -->
+                    <div class="formCellField">
+                        <input type="url" name="scorePRoof" id="scorePRoof" class="formInputField" required />
+                    </div> <!-- formCellField -->
+                </div> <!-- formCellWrapper -->
+                
+                <hr>
+                <div id="submitFormDiv">
+                    <input type="submit" value="Submit" id="submitButton" class="btn btn-warning"/>
+                    <!-- onclick="GetFormData()" required /> -->
+                </div>
+            </form>
+        </div> <!-- formBodyDiv -->
+        <center>
+            v. alpha 0.0.1
+        </center>
+    </body>
+</html>
+<!-- 
+
+    <li clas="formItem">
+        <label for=""></label>
+        <input type="" name="" id="" required />
+    </li>
+
+ -->
