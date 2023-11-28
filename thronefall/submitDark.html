@@ -962,7 +962,36 @@
     
         /* Injected CSS Code */
     </style>
+    <style>
+      #notificationBar
+      {
+        background: linear-gradient(to bottom, rgb(194, 115, 1), orange);
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.75);
     
+        position: fixed;
+        top: 0;
+        z-index: 10;
+      }
+      a:link
+      {
+        color: black !important;
+      }
+      a:visited
+      {
+        color: black !important;
+      }
+    </style>
+    
+    <div id="notificationBar">
+      <span id="notifBarText">
+        This version of the submission form is going to be deprecated. <a href="./submit/v2/" target="_blank">Try the new version here.</a>
+      </span>
+    </div>
     <form class="jotform-form" action="https://eu-submit.jotform.com/submit/231755087536059" method="post" enctype="multipart/form-data" name="form_231755087536059" id="231755087536059" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID" value="231755087536059" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden" id="cardinalOrderNumber" value="" /><input type="hidden" id="jsExecutionTracker" name="jsExecutionTracker" value="start-1698176638146" />
       <div role="main" class="form-all">
         <ul class="form-section page-section">
