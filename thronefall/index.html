@@ -258,15 +258,17 @@
                             <!-- <div class="btn-group centerVertical"> -->
                                 <div id="submitButtonSplit">
                                     <!-- Submisison split button -->
-                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="submitScoreBtnSplit" onclick="OpenSubmitWindow(); HideChoiceButtons('score')">
-                                        <span id="SubmitButtonText">SUBMIT SCORE</span>
+                                  <a href="./submit/v2/" target="_blank">
+                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="submitScoreBtnSplit" >
+                                        <span id="SubmitButtonText"> SUBMIT SCORE </span>
                                     </button>
+                                  </a>
                                     <button type="button" class="btn btn-warning btn_orangeGradient dropShadow dropdown-toggle dropdown-toggle-split" id="submitTimeBtnSplit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" id="submitTimeLink" href="#" onclick="OpenSubmitWindow(); HideChoiceButtons('score')">Submit score (old)</a>
                                         <a class="dropdown-item" id="submitTimeLink" href="#" onclick="OpenSubmitWindow(); HideChoiceButtons('time')">Submit speed-run</a>
-                                        <a class="dropdown-item" id="submitTimeLink" href="./submit/v2/" target="_blank" onclick="">submit score v2</a>
                                         <!-- <div class="dropdown-divider"></div> -->
                                     </div>
                                 </div> <!-- submitButtonSplit -->
