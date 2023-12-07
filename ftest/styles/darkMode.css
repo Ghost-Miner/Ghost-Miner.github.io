@@ -1,0 +1,61 @@
+:root
+{
+    --bakcgroundColourLightTransp: rgba(228, 214, 170,0.64);
+    --bakcgroundColourLightOpaque: rgba(228, 214, 170,1.0);
+    --backgroundColourDarkTransp: rgba(0, 0 ,0, 0.64);
+    --backgroundColourDarkOpaque: rgba(0, 0 ,0, 1.0);
+    --darkBlue: #000435;
+}
+body
+{
+    background-color: black;
+    color: white;
+    
+}
+.dropShadow
+{
+    box-shadow: 1px 2px 6px rgba(255,255,255,0.5);
+}
+
+/* 
+    FORM BASIC
+*/
+#formBodyDiv
+{
+    background-color: var(--backgroundColourDarkTransp);
+    color: white;
+    box-shadow: 0px 0px 8px white;
+}
+.formInputField
+{
+    background-color: var(--darkBlue);
+    /* border: 1px solid white; */
+    color: white;
+}
+#submitButton
+{
+    background-color: var(--darkBlue);;
+    color: white;
+}
+
+#captchaText
+{
+    background-color: var(--backgroundColourDarkOpaque);
+    border: 1px white solid;
+}
+
+/* Radio button outline */
+.form-check-input
+{
+    border: 2px black solid;
+}
+
+/* 
+    FIRM INPUT FIELDS
+*/
+#dateFieldSetTodayButton
+{
+    border: 1px white solid;
+    background-color: var(--darkBlue);
+    color: white;
+}

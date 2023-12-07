@@ -1,0 +1,255 @@
+/* 
+    Basic and global tags 
+*/
+:root
+{
+    --bakcgroundColourLightTransp: rgba(255, 255, 255, 0.64);
+    --bakcgroundColourLightOpaque: rgba(228, 214, 170,1.0);
+    --backgroundColourDarkTransp: rgba(0, 0 ,0, 0.64);
+    --backgroundColourDarkOpaque: rgba(0, 0 ,0, 1.0);
+}
+body
+{
+    background-color: black;
+    background-image: url("../img/backgrounds/Overworld.jpg");
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: cover;
+
+    color: black;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: Arial, Helvetica, sans-serif;
+
+    max-width: 100%;
+}
+label
+{
+    margin-right: 5px;
+}
+hr
+{
+    background-color: grey;
+}
+
+.hidden
+{
+    display: none !important;
+    /* background-color: green; */
+}
+.dropShadow
+{
+    box-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+}
+
+/* 
+    FORM BASIC
+*/
+#scoreSubmitForm
+{
+    margin-top: 32px;
+}
+#formTitle
+{
+    font-weight: bold;
+    font-size: 1.75rem;
+    /* text-align: center !important; */
+}
+#formBodyDiv
+{
+    margin: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    max-width: 800px;
+    /* width: 100%; */
+    /* text-align: right; */
+
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px black;
+    backdrop-filter: blur(12px);
+
+    padding: 50px;
+    padding-top: 40px;
+    background-color: var(--bakcgroundColourLightTransp);
+    color: black;
+}
+
+.formCellWrapper
+{
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 40% 60%;
+    /* border: 1px solid green; */
+    /* width: 100%; */
+    margin-top: 30px;
+}
+.formCellTitle
+{
+    font-weight: bold;
+    text-align: right;
+    padding-top: 5px;
+}
+.formSubTitleDiv
+{
+    margin: 25px;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold ;
+}
+.thickseparator
+{
+    border-width: 3px;
+    border-radius: 50px;
+}
+
+/* Radio button outline */
+.form-check-input
+{
+    border: 1px grey solid;
+}
+
+/* =================================================== */
+/* 
+    FORM FIELDS
+*/
+
+.formInputField
+{
+    width: 95%;
+    position: relative;
+    right: 1%;
+    border-radius: 5px;
+    padding: 5px;
+}
+/* .formInputField:invalid
+{
+    border: 2px red solid;
+    background-color: rgba(255,0,0,0.15);
+} */
+
+.formSelectionColumnWrapper
+{
+    display: grid;
+    /* column-gap: 10px; */
+    /* row-gap: 3px; */
+    grid-template-columns: 1fr 1fr;
+    /* border: 1px solid blue; */
+    /* width: 100%;     */
+}
+
+#date
+{
+    text-align: center;
+}
+#dateFieldSetTodayButton
+{
+    margin-right: 5px;
+    border: 1px black dotted;
+    background-color: white;
+    color: black;
+}
+
+#submitFormDiv
+{
+    margin-top: 15px;
+    text-align: center;
+}
+#submitButton
+{
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 10px;
+    max-width: 200px;
+    width: 100%;
+}
+
+#noMutatorsDiv, #unknownMutatorsDiv, #unknownPerksDiv, #noPerksDiv
+{
+    margin-bottom: 5px;
+}
+
+/* 
+    OVERLAYS
+*/
+#overlayBlur
+{
+    z-index: 10;
+    display: block;
+    position: fixed;
+    top: 0;
+    padding: 75px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.32);
+    backdrop-filter: blur(16px);
+}
+
+#submitWindowBackground
+{
+    margin: auto;
+    max-width: 750px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    color: white;
+    padding: 25px;
+    position: relative;
+    top: 50%;
+    transform: translate(0%,-50%);
+    text-align: center;   
+}
+#captchaOverlay
+{
+    top: -50%;
+    width: 100%;
+    height: 250%;
+    position: relative;
+    text-align: center;
+    transform: translate(-2%,-65%);
+    background: rgba(0, 0 ,0, 0);
+    z-index: 2;
+}
+
+/* 
+    O T H E R
+*/
+.invalid
+{
+    border: 3px solid red !important;
+    background-color: rgba(255,0,0,0.15) !important;
+}
+
+#dateSplitCol
+{
+    display: grid; 
+    grid-template-columns: 30% 70%; 
+    position: relative; 
+    right: 1%;
+}
+
+#captchaDiv
+{
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    position: relative; 
+    right: 1%;
+}
+#captchaText
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1.32rem;
+    text-align: center;
+    letter-spacing: 3px;
+
+    background-color: white;
+    border: 1px black dotted;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 7px;
+}
+#captchaField
+{
+    width: 90%;
+}
