@@ -39,6 +39,10 @@ function HideChoiceButtons (type)
 		}
 		document.getElementById("titleBarText").textContent = "Submit new speed-run";
 	}
+	else if (type == "scoreNew")
+	{
+		document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2/";
+	}
 	else
 	{
 		if (currentTheme == "dark")
