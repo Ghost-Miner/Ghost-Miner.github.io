@@ -23,7 +23,7 @@ function ShowChoiceButtons ()
 }
 function HideChoiceButtons (type)
 {
-	console.log("HideChoiceButtons " + currentTheme);
+	// console.log("HideChoiceButtons " + currentTheme);
 	document.getElementById("chooseSubTypeButtons").style.display = "none";
 	document.getElementById("submiFormDiv").style.display = "block";
 
@@ -41,18 +41,19 @@ function HideChoiceButtons (type)
 	}
 	else if (type == "scoreNew")
 	{
-		document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2/";
-	}
-	else
-	{
+		document.getElementById("titleBarText").textContent = "Submit new high-score";
 		if (currentTheme == "dark")
 		{
-			document.getElementById("submitFormFrame").src = "./submit/legacy/scoreDark.html"	
+			document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2#dark";
 		}
 		else
 		{
-			document.getElementById("submitFormFrame").src = "./submit/legacy/score.html"
+			document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2#light";
 		}
+	}
+	else
+	{
+		document.getElementById("submitFormFrame").src = "./submit/score/index.html";
 		document.getElementById("titleBarText").textContent = "Submit new high-score";
 	}
 }
@@ -78,6 +79,8 @@ function CloseProofWindowImage()
 
 function OpenVideoWindow(link) 
 {
+	console.warn("OpenProofWindowImage() is a deprectaed function and only used for demo archive and speedruns. Use ShowSubInfo() instead");
+
 	document.getElementById("newProofWindowMainVideo").style.display = "block";
 	var videoLink = document.getElementById("old_ProofVideo");
 	videoLink.src = link;
@@ -98,3 +101,4 @@ function HideRulesWindow ()
 {
 	document.getElementById("rulesWindow").style.display = "none";
 }
+
