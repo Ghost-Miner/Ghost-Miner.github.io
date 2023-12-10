@@ -44,11 +44,11 @@ function HideChoiceButtons (type)
 		document.getElementById("titleBarText").textContent = "Submit new high-score";
 		if (currentTheme == "dark")
 		{
-			document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2#dark";
+			document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2?id=" + formID + "#dark";
 		}
 		else
 		{
-			document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2#light";
+			document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2?id=" + formID + "#light";
 		}
 	}
 	else
