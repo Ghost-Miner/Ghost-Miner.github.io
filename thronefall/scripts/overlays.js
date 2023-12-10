@@ -29,6 +29,7 @@ function HideChoiceButtons (type)
 
 	if (type == "time")
 	{
+		document.getElementById("titleBarText").textContent = "Submit new speed-run";
 		if (currentTheme == "dark")
 		{
 			document.getElementById("submitFormFrame").src = "./submit/legacy/timeDark.html"
@@ -37,7 +38,6 @@ function HideChoiceButtons (type)
 		{
 			document.getElementById("submitFormFrame").src = "./submit/legacy/time.html"
 		}
-		document.getElementById("titleBarText").textContent = "Submit new speed-run";
 	}
 	else if (type == "scoreNew")
 	{
@@ -53,8 +53,15 @@ function HideChoiceButtons (type)
 	}
 	else
 	{
-		document.getElementById("submitFormFrame").src = "./submit/score/index.html";
-		document.getElementById("titleBarText").textContent = "Submit new high-score";
+		document.getElementById("titleBarText").textContent = "Submit new speed-run";
+		if (currentTheme == "dark")
+		{
+			document.getElementById("submitFormFrame").src = "./submit/legacy/scoreDark.html"
+		}
+		else
+		{
+			document.getElementById("submitFormFrame").src = "./submit/legacy/score.html"
+		}
 	}
 }
 // 
