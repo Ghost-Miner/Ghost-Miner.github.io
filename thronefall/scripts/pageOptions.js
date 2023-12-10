@@ -411,7 +411,8 @@ function CheckSavedFontStyle()
     }
 }
 
-let formID = GetCookie("formID");
+let formID;
+formID = GetCookie("formID");
 function GetformID()
 {
     if (formID == "" || formID == undefined || formID == null)
