@@ -190,6 +190,7 @@ function OpenSubmitFromURL ()
 	}
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function SelectRandomBackground(mappNumner)
 {
@@ -330,13 +331,40 @@ function SelectRandomBackground(mappNumner)
 	// console.log	(document.body.style.backgroundImage);
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function GetRandomInt(min, max) 
 {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
+function GenerateRandomCharacters(strLength) 
+{
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let result = "";
   
+    for (let i = 0; i < strLength; i++) 
+    {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        result += charset.charAt(randomIndex);
+    }  
+    return result;
+}
+function GenerateRandomNumber(strLength) 
+{
+    const charset = "0123456789";
+    let result = "";
+  
+    for (let i = 0; i < strLength; i++) 
+    {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        result += charset.charAt(randomIndex);
+    }  
+    return result.toString();
+}
+  
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let textStyle = "fancy";
 function ToggleFontStyle()
@@ -361,7 +389,6 @@ function ToggleFontStyle()
 		break;
 	}
 }
-
 function CheckSavedFontStyle()
 {
     textStyle = GetCookie("Font");
@@ -383,6 +410,20 @@ function CheckSavedFontStyle()
         break;
     }
 }
+
+let formID = GetCookie("formID");
+function GetformID()
+{
+    if (formID == "" || formID == undefined || formID == null)
+    {
+        formID = GenerateRandomCharacters(16);
+		SetCookie("formID",formID);
+        console.log("set formID " + formID);
+    }
+    return formID;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let searchVisible = false; 
 function ToggleSearchField()
