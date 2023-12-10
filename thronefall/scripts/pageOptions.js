@@ -412,9 +412,9 @@ function CheckSavedFontStyle()
 }
 
 let formID;
-formID = GetCookie("formID");
 function GetformID()
 {
+	formID = GetCookie("formID");
     if (formID == "" || formID == undefined || formID == null)
     {
         formID = GenerateRandomCharacters(16);
