@@ -40,6 +40,31 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	</head>
 	<body>	
+              <style>
+                #notificationBar 
+                {
+                  background: rgb(194, 115, 1);
+                  width: 100%;
+                  color: white;
+                  text-align: center;
+                  padding: 10px;
+                  font-weight: bold;
+                  box-shadow: 0px 2px 8px rgba(0,0,0,0.75);
+                  position: fixed;
+                  top: 0;
+                  z-index: 10;
+                }
+                #notifBarText
+                {
+                  color: white;
+                  text-shadow: 1px 1px 4px red;
+                }
+              </style>
+              <div id="notificationBar">
+                <span id="notifBarText">
+                  This form is obsolete and is going to be replaced by a new version soon.
+                </span>
+              </div>
 	<noscript>
 		<span style="color:red;">
 			<center>
@@ -961,6 +986,7 @@
         <li id="cid_1" class="form-input-wide" data-type="control_head">
           <div class="form-header-group  header-large">
             <div class="header-text httac htvam">
+              
               <h1 id="header_1" class="form-header" data-component="header">Thronefall speedrun submission</h1>
             </div>
           </div>

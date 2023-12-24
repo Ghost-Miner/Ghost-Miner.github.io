@@ -1,221 +1,243 @@
-// data from entries.csv parsed into an array
-    let tableData;
-// Current sort order
-    let sortOrder = "down";
+let scoresData; // data from entries.csv parsed into an array
+let sortOrder = "down"; // Current sort order
 
+const sc_subDateColumn     = 0;
+const sc_statusColumn      = 1;
+const sc_nameColumn        = 2;
+const sc_levelColumn       = 3;
+const sc_scoreColumn       = 4;
+const sc_goldColumn        = 5;
+const sc_proofColumn       = 6;
+const sc_userDateColumn    = 7;
+const sc_numOfMutsColumn   = 8;
+const sc_versionColumn     = 9;
+const sc_weaponColumn      = 10;
+const sc_usedMutsColumn    = 11;
+const sc_usedPerksColumn   = 12;
+const sc_notesColumn       = 13;
+
+const sc_subIDColumn       = 14;
+const sc_sudIndexColumn    = 50;
+const sc_positionColumn    = 51;
+
+// 
+// REQUEST DATA
+// 
 async function GetSubData ()
 {
-    const CSVresponse = await GetCSVFile("score");
-    const ParseCSV    = await CSVToArray(CSVresponse);
+    const CSVresponse = await GetScoresData();//GetCSVFile("score"); // Download data
+    const ParseCSV    = await CSVToArray(CSVresponse,","); // Convert it to an array
 
-    tableData = await ParseCSV;
+    scoresData = await ParseCSV; // Load downloaded data into a variable
     // console.log("RESPONSE");
     // console.log(ParseCSV);
     SortSubData();
 }
 
 // VARIABLES SHARED BY SortSubData AND ChangeTableData
-let NeulandSubs = new Array();
-let NordfelsSubs = new Array();
-let DurststeinSubs = new Array();
-let FrostseeSubs = new Array();
-let UferWindSubs = new Array();
+// Each array contains list of ubmission for the according level
+let sc_NeulandSubsScor = new Array();
+let sc_NordfelsSubs    = new Array();
+let sc_DurststeinSubs  = new Array();
+let sc_FrostseeSubsa   = new Array();
+let sc_UferWindSubs    = new Array();
+let sc_etTrialsSubs    = new Array();
 
-let canShowTableData = false;
+let sc_canShowTableData = false;
 
+// 
+// SORT DATA
+// 
 function SortSubData ()
 {
-    // tableData.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    // console.log("SORTED =================");
-    // console.log(tableData);
-
-    // DISPLAY ARRAY CONTENT
-    // console.log("-- ALL SUBS ---------------------------------------------");
-    // console.log(tableData);
+    // Currently chosen submission
     let chosenRow;
 
-    // REMOV ALL SUBMISSIOSN THAT ARENT EARLY ACCESSS
-    let fullGameSubs = new Array();
-    let fullGameSubsNum = -1;
-
-    for (let i = 0; i < tableData.length; i++)
-    {
-        chosenRow = tableData[i];
-        chosenRow[20] = i;
-
-        if (chosenRow[3] == "Early access")
-        {
-            fullGameSubsNum++;
-            fullGameSubs[fullGameSubsNum] = chosenRow;
-            // console.log("Element " + i + ", "+ fullGamearrNum + " is full");
-        }
-    }
-    // console.log("== FULL GAME SUBS SORTED ===========================")
-    // console.log(fullGameSubs);
-
     // REMOVE ALL SUBS THAT ARENT ACCEPTED
-
     let acceptedSubs = new Array();
-    let acceptedSubsNumber = -1;
+    let acceptedSubsNumber = 0;
 
-    for (let i = 0; i < fullGameSubs.length; i++)
+    for (let i = 0; i < scoresData.length; i++)
     {
-        chosenRow = fullGameSubs[i];
-
-        if (chosenRow[1] == "a")
+        chosenRow = scoresData[i];
+        chosenRow[sc_sudIndexColumn] = i;
+        if (chosenRow[sc_statusColumn] == "a")
         {
-            acceptedSubsNumber++;
             acceptedSubs[acceptedSubsNumber] = chosenRow;
-        }
-        else
-        {
-            //console.log(chosenRow[1]);
+            acceptedSubsNumber++;
         }
     }
     // console.log("== ACCEPTED SUBS SORTED ===========================")
     // console.log(acceptedSubs);
 
     // SORT BY MAP
-    let NLSubNum = -1;
-    let NFSubNum = -1;
-    let DSSubNum = -1;
-    let FSSubNum = -1;
-    let UFSubNum = -1;
+    let NLSubNum = 0;
+    let NFSubNum = 0;
+    let DSSubNum = 0;
+    let FSSubNum = 0;
+    let UFSubNum = 0
+    let etSubNum = 0
 
     for (let i = 0; i < acceptedSubs.length; i++)
     {
         chosenRow = acceptedSubs[i];
-        level = chosenRow[4];
+        level = chosenRow[sc_levelColumn];
 
         switch (level)
         {
             default:
-                console.log("WARNING: " + chosenRow + " donest match with anxthing");
+                console.error("SortSubData | \"level\" value: " + chosenRow + " is unknown.");
                 break;
 
             case "Neuland":
+                sc_NeulandSubsScor[NLSubNum] = chosenRow;
                 NLSubNum++;
-                NeulandSubs[NLSubNum] = chosenRow;
                 break;
 
             case "Nordfels":
+                sc_NordfelsSubs[NFSubNum] = chosenRow;
                 NFSubNum++;
-                NordfelsSubs[NFSubNum] = chosenRow;
                 break;
 
             case "Durststein":
+                sc_DurststeinSubs[DSSubNum] = chosenRow;
                 DSSubNum++;
-                DurststeinSubs[DSSubNum] = chosenRow;
                 break;
             case "Durststein":
+                sc_DurststeinSubs[DSSubNum] = chosenRow;
                 DSSubNum++;
-                DurststeinSubs[DSSubNum] = chosenRow;
                 break;
 
             case "Frostsee":
+                sc_FrostseeSubsa[FSSubNum] = chosenRow;
                 FSSubNum++;
-                FrostseeSubs[FSSubNum] = chosenRow;
                 break;
 
             case "Uferwind":
+                sc_UferWindSubs[UFSubNum] = chosenRow;
                 UFSubNum++;
-                UferWindSubs[UFSubNum] = chosenRow;
+                break;
+
+            case "EternalTrials":
+                sc_etTrialsSubs[etSubNum] = chosenRow;
+                etSubNum++;
                 break;
             
         }
     }
-    NeulandSubs   .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    NordfelsSubs  .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    DurststeinSubs.sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    FrostseeSubs  .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
-    UferWindSubs  .sort((a, b) => parseInt(b[5]) - parseInt(a[5]));
+
+    // SORT LISTS BY SCORE
+    sc_NeulandSubsScor.sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
+    sc_NordfelsSubs   .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
+    sc_DurststeinSubs .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
+    sc_FrostseeSubsa  .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
+    sc_UferWindSubs   .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
+    sc_etTrialsSubs   .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
     // console.log("== MAP SUBS SORTED ===========================");
-    // console.log(NeulandSubs);
-    // console.log(NordfelsSubs);
-    // console.log(DurststeinSubs);
-    // console.log(FrostseeSubs);
+    // console.log(sc_NeulandSubsScor);
+    // console.log(sc_NordfelsSubs);
+    // console.log(sc_DurststeinSubs);
+    // console.log(sc_FrostseeSubsa);
 
-    for (let i = 0; i < NeulandSubs.length; i++)
+    // ASSIGN SUBMISSION NUMBER
+    // Neuland
+    for (let i = 0; i < sc_NeulandSubsScor.length; i++)
     {
-        chosenRow = NeulandSubs[i];
-        chosenRow[21] = i + 1;
+        chosenRow = sc_NeulandSubsScor[i];
+        chosenRow[sc_positionColumn] = i + 1;
     }
-    for (let i = 0; i < NordfelsSubs.length; i++)
+    // Nordfels
+    for (let i = 0; i < sc_NordfelsSubs.length; i++)
     {
-        chosenRow = NordfelsSubs[i];
-        chosenRow[21] = i + 1;
+        chosenRow = sc_NordfelsSubs[i];
+        chosenRow[sc_positionColumn] = i + 1;
     }
-    for (let i = 0; i < DurststeinSubs.length; i++)
+    // Durststein
+    for (let i = 0; i < sc_DurststeinSubs.length; i++)
     {
-        chosenRow = DurststeinSubs[i];
-        chosenRow[21] = i + 1;
+        chosenRow = sc_DurststeinSubs[i];
+        chosenRow[sc_positionColumn] = i + 1;
     }
-    for (let i = 0; i < FrostseeSubs.length; i++)
+    // Frostsee
+    for (let i = 0; i < sc_FrostseeSubsa.length; i++)
     {
-        chosenRow = FrostseeSubs[i];
-        chosenRow[21] = i + 1;
+        chosenRow = sc_FrostseeSubsa[i];
+        chosenRow[sc_positionColumn] = i + 1;
     }
-    for (let i = 0; i < UferWindSubs.length; i++)
+    // Uferwind
+    for (let i = 0; i < sc_UferWindSubs.length; i++)
     {
-        chosenRow = UferWindSubs[i];
-        chosenRow[21] = i + 1;
+        chosenRow = sc_UferWindSubs[i];
+        chosenRow[sc_positionColumn] = i + 1;
+    }
+    // eternal trials
+    for (let i = 0; i < sc_etTrialsSubs.length; i++)
+    {
+        chosenRow = sc_etTrialsSubs[i];
+        chosenRow[sc_positionColumn] = i + 1;
     }
 
-    canShowTableData = true;
-    ChangeTableData('Neuland');
+    sc_canShowTableData = true; // ALLOW USER TO CHANGE TABLE
 
-    document.getElementById("timeCategoryButton").disabled = false;
-    document.getElementById("demoCategoryButton").disabled = false;
-
-    ShowSubInfo(GetAdressHash()); // Open submission by its number
-    FindSubmissionById(GetAdressHash()); // Open submission by its ID
-    if (GetAdressSearch() != "")
-    {
-        SearchSubByName(GetAdressSearch());
-    }
+    LeaderBoarReadyEvent();
+    
+    // if (GetAdressSearch() != "")
+    // {
+    //     SearchSubByName(GetAdressSearch());
+    // }
 }
 
+// DISPLAY TABLE FOR REQUESTED LEVEL
 function ChangeTableData(level)
 {
     // STOP FUNCTION IF IT'S ALREADY RUNNING
-    if (!canShowTableData)
+    if (!sc_canShowTableData)
     {
-        console.log("NOT READY!");
+        // console.log("LEADERBOARD IS NOT READY!");
         return;
     }
 
+    // Hide level name column 
     HideLevelNameColumn();
     // Reset the leaderboard section to remove all event listenvers
     document.getElementById("leaderboardContent").outerHTML = document.getElementById("leaderboardContent").outerHTML
-    // Hide level name column
 
 	// SORT ITEMS INTO CORRESPOINDING VALUES
 	let chosenArray;
 	let chosenMap = level;
 
+    // SELECT CORRECR ARRAY
 	switch (chosenMap)
 	{
+        default:
+            console.error("ChangeTableData | invalid value for chosenMap: " + chosenMap);
+            return;
+
 		case "Neuland":
-			chosenArray = NeulandSubs;
+			chosenArray = sc_NeulandSubsScor;
 			break;
 
 		case "Nordfels":
-			chosenArray = NordfelsSubs;
+			chosenArray = sc_NordfelsSubs;
 			break;
 
 		case "Durststein":
-			chosenArray = DurststeinSubs;
+			chosenArray = sc_DurststeinSubs;
 			break;
 		case "Durststein":
-			chosenArray = DurststeinSubs;
+			chosenArray = sc_DurststeinSubs;
 			break;
 
 		case "Frostsee":
-			chosenArray = FrostseeSubs;
+			chosenArray = sc_FrostseeSubsa;
 			break;
 
 		case "Uferwind":
-			chosenArray = UferWindSubs;
+			chosenArray = sc_UferWindSubs;
+			break;
+
+		case "Eternal trials":
+			chosenArray = sc_etTrialsSubs;
 			break;
 
         case "Search":
@@ -248,18 +270,17 @@ function ChangeTableData(level)
 	{
 		chosenRow = chosenArray[i];;
 
-        map[i]        = chosenRow[4];
-        position[i]   = chosenRow[21];
-		names[i]      = chosenRow[2];
-		score[i]      = chosenRow[5];
-		coins[i]      = chosenRow[6];
-		date[i]       = chosenRow[8];
-		// proof[i]      = chosenRow[7];
-        subID[i]      = chosenRow[9];
-        mutators[i]   = chosenRow[9];
-        version[i]    = chosenRow[10];
-        usedWeapon[i] = chosenRow[11];
-        subIndex[i]   = chosenRow[20];
+        map[i]        = chosenRow[sc_levelColumn];
+        position[i]   = chosenRow[sc_positionColumn];
+		names[i]      = chosenRow[sc_nameColumn];
+		score[i]      = chosenRow[sc_scoreColumn];
+		coins[i]      = chosenRow[sc_goldColumn];
+		date[i]       = chosenRow[sc_userDateColumn];
+        subID[i]      = chosenRow[sc_subIDColumn];
+        mutators[i]   = chosenRow[sc_numOfMutsColumn];
+        version[i]    = chosenRow[sc_versionColumn];
+        usedWeapon[i] = chosenRow[sc_weaponColumn];
+        subIndex[i]   = chosenRow[sc_sudIndexColumn];
 	}
 	// console.log("---------------------------------------------");
 	// console.log(names);
@@ -282,7 +303,7 @@ function ChangeTableData(level)
     const tWeapon   = document.getElementsByClassName("usedWeapon");
     //const tSubID    = document.getElementsByClassName("subID");
 
-	let tableRows = document.getElementsByClassName("tableRow");
+	let tableRows = document.getElementsByClassName("scoreTableRow");
 
     for (let i = 0; i < tableRows.length; i++)
     {
@@ -290,33 +311,33 @@ function ChangeTableData(level)
     }
 
     // REST TEXT INSIDE CELLS
-	for (let k = 0; k < tableRows.length; k++)
-	{
-		tMapName[k].textContent = "";
-		tPosition[k].textContent = "";
-		tNames[k].textContent = "";
-		tScore[k].textContent = "";
-		tCoins[k].textContent = "";
-		tDate[k].textContent = "";
-        tMutNums[k].textContent = "";
-        tVersion[k].textContent = "";
-        tWeapon[k].textContent = "";
-        // tSubID[k].textContent = "";
-	}
+	// for (let k = 0; k < tableRows.length; k++)
+	// {
+	// 	tMapName[k].textContent  = "";
+	// 	tPosition[k].textContent = "";
+	// 	tNames[k].textContent    = "";
+	// 	tScore[k].textContent    = "";
+	// 	tCoins[k].textContent    = "";
+	// 	tDate[k].textContent     = "";
+    //     tMutNums[k].textContent  = "";
+    //     tVersion[k].textContent  = "";
+    //     tWeapon[k].textContent   = "";
+    //     // tSubID[k].textContent = "";
+	// }
 
     // ASSIGN TEXT INSIDE EACH CELL
 	for (let k = 0; k < chosenArray.length; k++)
 	{
-		tMapName[k].textContent = map[k];
+		tMapName[k] .textContent = map[k];
 		tPosition[k].textContent = position[k];
-		tNames[k].textContent = names[k];
+		tNames[k]   .textContent = names[k];
 
-        tScore[k].textContent = SplitScore(score[k]);
-		tCoins[k].textContent = coins[k];
+        tScore[k]  .textContent = SplitScore(score[k]);
+		tCoins[k]  .textContent = coins[k];
         tMutNums[k].textContent = mutators[k];
-		tDate[k].textContent = RemoveTimeFromData(date[k]);
+		tDate[k]   .textContent = RemoveTimeFromData(date[k]);
         tVersion[k].textContent = version[k];
-        tWeapon[k].textContent = usedWeapon[k];
+        tWeapon[k] .textContent = usedWeapon[k];
         
         tableRows[k].addEventListener("click",() => { ShowSubInfo(subIndex[k]) },false);
 	}
@@ -336,14 +357,12 @@ function ChangeTableData(level)
     document.getElementById("th-usedWeapon").addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "weapon")   }, false);
     document.getElementById("th-date")      .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "date")     }, false);
     document.getElementById("th-version")   .addEventListener("click",() => { OrderBoardBy(level.toLowerCase(), "version")  }, false);
-    // HIDE LOADING ANIMATION
-    document.getElementById("LBLoadingIndicator").style.display = "none";
-    // SHOW LEADERBOAR SECTION
-    document.getElementById("leaderboardContent").style.display = "block";
-    // SET LEADERBOARD TITLE
-	document.getElementById("leaderboardNameText").textContent = chosenMap + " high-scores";
-    // HIDE SEARCH RESULTS LEGEND
-    document.getElementById("searchResultsLegendText").style.display = "none";
+    
+    document.getElementById("LBLoadingIndicator").style.display = "none";   // HIDE LOADING ANIMATION
+    document.getElementById("leaderboardContent").style.display = "block";  // SHOW LEADERBOAR SECTION
+	document.getElementById("leaderboardNameText").textContent = chosenMap + " high-scores"; // SET LEADERBOARD TITLE
+    document.getElementById("searchResultsLegendText").style.display = "none";  // HIDE SEARCH RESULTS LEGEND
+
     // SHOW SEARCH RESULTS LEGEND
     if (chosenMap == "Search")
     { 
@@ -351,10 +370,37 @@ function ChangeTableData(level)
         document.getElementById("searchResultsLegendText").textContent = "(O = Obsolete, R = Rejected)"; 
     }
 
+    // Hide weapon and mutators column for Neuland
+    const mutatorColumn = document.getElementsByClassName("mutatorsColumn ");
+    const weaponColumn = document.getElementsByClassName("weaponColumn");
+    if (chosenMap == "Neuland")
+    {
+        for (let i = 0; i < mutatorColumn.length; i++)
+        {
+            mutatorColumn[i].style.display = "none";
+        }
+        for (let i = 0; i < weaponColumn.length; i++)
+        {
+            weaponColumn[i].style.display = "none";
+        }
+    }
+    else
+    {
+        for (let i = 0; i < mutatorColumn.length; i++)
+        {
+            mutatorColumn[i].style.display = "table-cell";
+        }
+        for (let i = 0; i < weaponColumn.length; i++)
+        {
+            weaponColumn[i].style.display = "table-cell";
+        }
+    }
+
     // Hide the "loading page" used to hide the transition from light to dark mode
     // HideLoadingScreen();
 }
 
+// CHANGE TABLE ORDER
 let sortDown = true;
 function OrderBoardBy (map, orderType)
 {
@@ -369,29 +415,29 @@ function OrderBoardBy (map, orderType)
         return;
 
         case "neuland":
-            chosenMapArray = NeulandSubs;
+            chosenMapArray = sc_NeulandSubsScor;
         break;
 
         case "nordfels":
-            chosenMapArray = NordfelsSubs;
+            chosenMapArray = sc_NordfelsSubs;
         break;
 
         case "durststein":
-            chosenMapArray = DurststeinSubs;
+            chosenMapArray = sc_DurststeinSubs;
         break;
 
         case "frostsee":
-            chosenMapArray = FrostseeSubs;
+            chosenMapArray = sc_FrostseeSubsa;
         break;
 
         case "uferwind":
-            chosenMapArray = UferWindSubs;
+            chosenMapArray = sc_UferWindSubs;
         break;
 
         case "search":
             if (searchResultsSubs == null)
             {
-                console.error("ChangeTableData || searchResultsSubs is empty. Run SearchSubByName() first!");
+                console.error("ChangeTableData | searchResultsSubs is empty. Run SearchSubByName() first!");
                 return;
             }
             chosenMapArray = searchResultsSubs;
@@ -405,14 +451,14 @@ function OrderBoardBy (map, orderType)
     for (let i = 0; i < chosenMapArray.length; i++)
     {
         chosenRow       = chosenMapArray[i];
-        chosenMutString = chosenRow[9];
-        chosenVerString = chosenRow[10];
+        chosenMutString = chosenRow[sc_numOfMutsColumn];
+        chosenVerString = chosenRow[sc_versionColumn];
 
         if (chosenMutString == "unknown" || chosenVerString == "unknown")
         {
-            // console.log("i: " + i + ", " + chosenRow[21] + " mut unknown " + chosenRow[i]);
-            chosenRow[9] = -1;
-            chosenRow[10] = -1;
+            // console.log("i: " + i + ", " + chosenRow[sc_positionColumn] + " mut unknown " + chosenRow[i]);
+            chosenRow[sc_numOfMutsColumn] = -1;
+            chosenRow[sc_versionColumn] = -1;
         }
     }
 
@@ -424,25 +470,25 @@ function OrderBoardBy (map, orderType)
         return;
         
         case "score":
-            chosenMapArray.sort((a,b) => parseInt(b[5]) - parseInt(a[5]));
+            chosenMapArray.sort((a,b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
         break;
         
         case "gold":
-            chosenMapArray.sort((a,b) => parseInt(b[6]) - parseFloat(a[6]));
+            chosenMapArray.sort((a,b) => parseInt(b[sc_goldColumn]) - parseInt(a[sc_goldColumn]));
         break;
         
         case "mutators":
-            chosenMapArray.sort((a,b) => parseInt(b[9]) - parseInt(a[9]));
+            chosenMapArray.sort((a,b) => parseInt(b[sc_numOfMutsColumn]) - parseInt(a[sc_numOfMutsColumn]));
         break;
         
         case "version":
-            chosenMapArray.sort((a,b) => parseFloat(b[10]) - parseFloat(a[10]));
+            chosenMapArray.sort((a,b) => parseFloat(b[sc_versionColumn]) - parseFloat(a[sc_versionColumn]));
         break;
 
         case "weapon":
             chosenMapArray.sort((a,b) => {
-                    const weaponA = a[11].toUpperCase(); //console.log("A: " + nameA);
-                    const weaponB = b[11].toUpperCase(); //console.log("B: " + nameB);
+                    const weaponA = a[sc_weaponColumn].toUpperCase(); //console.log("A: " + nameA);
+                    const weaponB = b[sc_weaponColumn].toUpperCase(); //console.log("B: " + nameB);
                     if (weaponA < weaponB) { return -1; }
                     if (weaponA > weaponB) { return  1; }
                     // names must be equal 
@@ -452,8 +498,8 @@ function OrderBoardBy (map, orderType)
 
         case "name":
             chosenMapArray.sort((a,b) => {
-                    const nameA = a[2].toUpperCase(); //console.log("A: " + nameA);
-                    const nameB = b[2].toUpperCase(); //console.log("B: " + nameB);
+                    const nameA = a[sc_nameColumn].toUpperCase(); //console.log("A: " + nameA);
+                    const nameB = b[sc_nameColumn].toUpperCase(); //console.log("B: " + nameB);
                     if (nameA < nameB) { return -1; }
                     if (nameA > nameB) { return  1; }
                     // names must be equal 
@@ -463,8 +509,8 @@ function OrderBoardBy (map, orderType)
 
         case "mapName":
             chosenMapArray.sort((a,b) => {
-                    const mapA = a[4].toUpperCase(); //console.log("A: " + nameA);
-                    const mapB = b[4].toUpperCase(); //console.log("B: " + nameB);
+                    const mapA = a[sc_levelColumn].toUpperCase(); //console.log("A: " + nameA);
+                    const mapB = b[sc_levelColumn].toUpperCase(); //console.log("B: " + nameB);
                     if (mapA < mapB) { return -1; }
                     if (mapA > mapB) { return  1; }
                     // names must be equal 
@@ -474,8 +520,8 @@ function OrderBoardBy (map, orderType)
 
         case "date":
                 chosenMapArray.sort((a,b) => {
-                    const dateA = a[0]; 
-                    const dateB = b[0]; 
+                    const dateA = a[sc_subDateColumn]; 
+                    const dateB = b[sc_subDateColumn]; 
                     if (dateA > dateB) { return -1; }
                     if (dateA < dateB) { return  1; }
                 } );
@@ -486,18 +532,18 @@ function OrderBoardBy (map, orderType)
     for (let i = 0; i < chosenMapArray.length; i++)
     {
         chosenRow       = chosenMapArray[i];
-        chosenMutString = chosenRow[9];
-        chosenVerString = chosenRow[10];
+        chosenMutString = chosenRow[sc_numOfMutsColumn];
+        chosenVerString = chosenRow[sc_versionColumn];
 
         if (chosenMutString == "-1")
         {
-            // console.log("i: " + i + ", " + chosenRow[21] + " setting back to unknown " + chosenRow[i]);
-            chosenRow[9] = "unknown";
+            // console.log("i: " + i + ", " + chosenRow[sc_positionColumn] + " setting back to unknown " + chosenRow[i]);
+            chosenRow[sc_numOfMutsColumn] = "unknown";
         }
         if (chosenVerString == "-1")
         {
-            // console.log("i: " + i + ", " + chosenRow[21] + " setting back to unknown " + chosenRow[i]);
-            chosenRow[10] = "unknown";
+            // console.log("i: " + i + ", " + chosenRow[sc_positionColumn] + " setting back to unknown " + chosenRow[i]);
+            chosenRow[sc_versionColumn] = "unknown";
         }
     }
     // console.log("--- chosenMapArray ordered -----------------------------------");
@@ -538,17 +584,16 @@ function OrderBoardBy (map, orderType)
 	{
 		chosenRow = chosenMapArray[i];;
 
-        position[i] = chosenRow[21];
-		names[i] = chosenRow[2];
-		score[i] = chosenRow[5];
-		coins[i] = chosenRow[6];
-		date[i] = chosenRow[8];
-		// proof[i] = chosenRow[7];
-        subID[i] = chosenRow[9];
-        mutators[i] = chosenRow[9];
-        version[i] = chosenRow[10];
-        usedWeapon[i] = chosenRow[11];
-        subIndex[i] = chosenRow[20];
+        position[i]   = chosenRow[sc_positionColumn];
+		names[i]      = chosenRow[sc_nameColumn];
+		score[i]      = chosenRow[sc_scoreColumn];
+		coins[i]      = chosenRow[sc_goldColumn];
+		date[i]       = chosenRow[sc_userDateColumn];
+        subID[i]      = chosenRow[sc_subIDColumn];
+        mutators[i]   = chosenRow[sc_numOfMutsColumn];
+        version[i]    = chosenRow[sc_versionColumn];
+        usedWeapon[i] = chosenRow[sc_weaponColumn];
+        subIndex[i]   = chosenRow[sc_sudIndexColumn];
 	}
 
     // GET EACH TABLE COLUMN
@@ -563,7 +608,7 @@ function OrderBoardBy (map, orderType)
     const tWeapon   = document.getElementsByClassName("usedWeapon");
     //const tSubID    = document.getElementsByClassName("subID");
 
-	let tableRows = document.getElementsByClassName("tableRow");
+	let tableRows = document.getElementsByClassName("scoreTableRow");
 
     for (let i = 0; i < tableRows.length; i++)
     {
@@ -571,31 +616,31 @@ function OrderBoardBy (map, orderType)
     }
 
     // REST TEXT INSIDE CELLS
-	for (let k = 0; k < tableRows.length; k++)
-	{
-		tPosition[k].textContent = "";
-		tNames[k].textContent = "";
-		tScore[k].textContent = "";
-		tCoins[k].textContent = "";
-		tDate[k].textContent = "";
-        tMutNums[k].textContent = "";
-        tVersion[k].textContent = "";
-        tWeapon[k].textContent = "";
-        // tSubID[k].textContent = "";
-	}
+	// for (let k = 0; k < tableRows.length; k++)
+	// {
+	// 	tPosition[k].textContent = "";
+	// 	tNames[k].textContent    = "";
+	// 	tScore[k].textContent    = "";
+	// 	tCoins[k].textContent    = "";
+	// 	tDate[k].textContent     = "";
+    //     tMutNums[k].textContent  = "";
+    //     tVersion[k].textContent  = "";
+    //     tWeapon[k].textContent   = "";
+    //     // tSubID[k].textContent = "";
+	// }
 
     // ASSIGN TEXT INSIDE EACH CELL
 	for (let k = 0; k < chosenMapArray.length; k++)
 	{
 		tPosition[k].textContent = position[k];
-		tNames[k].textContent = names[k];
+		tNames[k].textContent    = names[k];
 
-        tScore[k].textContent = SplitScore(score[k]);
-		tCoins[k].textContent = coins[k];
+        tScore[k].textContent   = SplitScore(score[k]);
+		tCoins[k].textContent   = coins[k];
         tMutNums[k].textContent = mutators[k];
-		tDate[k].textContent = RemoveTimeFromData(date[k]);
+		tDate[k].textContent    = RemoveTimeFromData(date[k]);
         tVersion[k].textContent = version[k];
-        tWeapon[k].textContent = usedWeapon[k];
+        tWeapon[k].textContent  = usedWeapon[k];
         
         tableRows[k].addEventListener("click",() => { ShowSubInfo(subIndex[k]) },false,);
 	}
@@ -604,6 +649,5 @@ function OrderBoardBy (map, orderType)
     {
         tableRows[i].style.display = "none";
     }
-    console.log(sortDown);
-
+    // console.log(sortDown);
 }

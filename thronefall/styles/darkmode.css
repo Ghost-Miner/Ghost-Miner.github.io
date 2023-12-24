@@ -24,6 +24,7 @@ hr
 #mainPageContainerFront
 {
     background: var(--dark1Transl);
+    box-shadow: 0px 0px 6px rgba(255,255,255,0.5);
 }
 .btn_orangeGradient 
 {
@@ -41,6 +42,11 @@ hr
     color: var(--darkButtonCol1);
 }
 
+.dropShadow
+{
+    box-shadow: 1px 2px 6px rgba(255,255,255,0.5);
+}
+
 
 .tableHead_gradient, .tableDarkHeader
 {
@@ -54,13 +60,13 @@ hr
     border: 1px solid black;
     cursor: pointer;
 }
-.tableRow:hover
+.scoreTableRow:hover, .timeTableRow:hover
 {
     background: linear-gradient(to bottom,var(--dark1Opaque),var(--dark2));
 }
 
 
-#subInfoWindowsForeground
+#subInfoWindowsForeground, #advancedSearchWindowsForeground
 {
     background: linear-gradient(to top, var(--dark1Opaque),var(--dark2));
 }
@@ -69,12 +75,30 @@ hr
     background: linear-gradient(to bottom, var(--darkButtonCol1), var(--darkButtonCol2));
 }
 
-#submitWindowForeground
+/* #submitWindowForeground
 {
     background-color: black;
-}
+} */
 
 #loadingOVerlay
 {
     display: none;
+}
+
+.searchOptionsSection
+{
+    background-color: rgba(255,255,255,0.1);
+}
+
+.contextMenu 
+{
+    color: white;
+	background-color: var(--dark1Transl);
+	
+    border: 1px solid white;
+	box-shadow: 2px 2px 5px rgba(255, 255, 2555, 0.5);
+}
+.contextMenu li:hover 
+{
+	background-color: var(--dark1Opaque);
 }

@@ -27,13 +27,33 @@ function ShowScores ()
 
 function CloseSubInfoWindow() 
 {
-	document.getElementById("subInfoOverlayWindow").style.display = "none";
+    const subInfoWindow = document.getElementById("subInfoWindowsBackground");
+    const subInfoOverlay = document.getElementById("subInfoOverlayWindow");
+
+	subInfoWindow.classList.remove("windowOpenAnim");
+	subInfoWindow.classList.add("windowCloseAnim");
+
+    Sleep(500).then(() => 
+	{ 
+		subInfoOverlay.classList.add("overlayHideAnim");
+	} );
+    Sleep(750).then(() => 
+	{ 
+		subInfoOverlay.style.display = "none";
+	} );
 	location.hash = "";		
 	ResetSubInfoWindowValues ();
 }
 
 function ShowSubInfo (submissionIndex)
 {
+    const subInfoWindow = document.getElementById("subInfoWindowsBackground");
+    const subInfoOverlay = document.getElementById("subInfoOverlayWindow");
+    
+	subInfoWindow.classList.add("windowOpenAnim");
+	subInfoWindow.classList.remove("windowCloseAnim");
+    subInfoOverlay.classList.remove("overlayHideAnim");
+
     // console.log("===== NEW SUBUINFI =========");
     // submissionIndex = ExtractSubNumber(submissionIndex);
     // ResetSubInfoWindowValues();
@@ -46,50 +66,45 @@ function ShowSubInfo (submissionIndex)
     document.getElementById("obsoleteSubInfoBar").style.display = "none";
     document.getElementById("rejectedSubInfoBar").style.display = "none";
     
-    if (submissionIndex == "")
+    if (submissionIndex == "" || submissionIndex == undefined)
     {   return;   }
-    if (submissionIndex >= tableData.length || submissionIndex == undefined)
+    
+    if (submissionIndex >= scoresData.length)
     {
-        // console.warn("ShowSubInfo | Invalid submission index: " + submissionIndex);
+        console.log("ShowSubInfo | Invalid submission index: " + submissionIndex);
         return;
     }    
-    const chosenSubmission = tableData[submissionIndex];
-    if (chosenSubmission[0] == "Submission Date" || chosenSubmission[3] != "Early access")
+    const chosenSubmission = scoresData[submissionIndex];
+    // console.log(chosenSubmission);
+    if (chosenSubmission[sc_subDateColumn] == "Submission Date")
     {
-        // console.warn("ShowSubInfo | Invalid submission " + chosenSubmission + "; " + submissionIndex);
+        console.warn("ShowSubInfo | Invalid submission " + chosenSubmission + "; " + submissionIndex);
         return;
     }
    // console.log(chosenSubmission);
     
-    if (chosenSubmission[1] == "o")
+    if (chosenSubmission[sc_statusColumn] == "o")
     {
-        console.log("OBSOLETE");
+        // console.log("OBSOLETE");
         document.getElementById("obsoleteSubInfoBar").style.display = "block";
     }
-    if (chosenSubmission[1] == "r")
+    if (chosenSubmission[sc_statusColumn] == "r")
     {
-        console.log("REJECTED");
+        // console.log("REJECTED");
         document.getElementById("rejectedSubInfoBar").style.display = "block";
     }
 
-    s_position   = chosenSubmission[21];
-    s_name       = chosenSubmission[2];
-    s_score      = chosenSubmission[5];
-    s_gold       = chosenSubmission[6];
-    s_mutators   = chosenSubmission[9];
-    // video (old) proof = 7
-    // image (new) proof = 17
-    s_proof      = chosenSubmission[7]; 
-        if (s_proof == "")
-        {
-            console.log("Submission #" + submissionIndex + " uses new image proof");
-            s_proof = chosenSubmission[17];
-        }
-    s_usedWeapon = chosenSubmission[11];
-    s_version    = chosenSubmission[10];
-    s_date       = chosenSubmission[8];
-    s_perks      = chosenSubmission[13]
-    s_mutList    = chosenSubmission[12]
+    s_position   = chosenSubmission[sc_positionColumn];
+    s_name       = chosenSubmission[sc_nameColumn];
+    s_score      = chosenSubmission[sc_scoreColumn];
+    s_gold       = chosenSubmission[sc_goldColumn];
+    s_mutators   = chosenSubmission[sc_numOfMutsColumn];
+    s_proof      = chosenSubmission[sc_proofColumn];
+    s_usedWeapon = chosenSubmission[sc_weaponColumn];
+    s_version    = chosenSubmission[sc_versionColumn];
+    s_date       = chosenSubmission[sc_userDateColumn];
+    s_perks      = chosenSubmission[sc_usedPerksColumn];
+    s_mutList    = chosenSubmission[sc_usedMutsColumn]
 
     location.hash = "score=" + submissionIndex;
     // ShowScores ();

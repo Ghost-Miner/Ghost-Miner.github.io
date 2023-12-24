@@ -3,6 +3,12 @@
 */
 @media only screen and (max-width: 1050px)
 {
+    #mainPageContainerBack
+    {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
     #mainPageContainerFront
     {
         margin: 2%;
@@ -22,13 +28,13 @@
     {
         height: 360px;
     }
-    #overlayBlur
+    .overlayBlur
     {
         padding: 50px;
     }
 }
 
-@media only screen and (max-width: 810px)
+@media only screen and (max-width: 860px)
 {
     #searchDiv
     {
@@ -51,7 +57,7 @@
     {
         max-width: 90%;
     }
-    #overlayBlur
+    .overlayBlur
     {
         padding: 3%;
     }
@@ -77,6 +83,11 @@
         margin-top: 5px;
         margin-bottom: 10px;
     }
+
+    #underScoreButtonsGroup
+    {
+        justify-content: center;
+    }
 }
 
 @media only screen and (max-width: 700px)
@@ -87,11 +98,49 @@
     }
 }
 
-@media only screen and (max-width: 625px)
+@media only screen and (max-width: 650px)
 {
     #categoryButtonsWrapper
     {
         width: 100%;
+    }
+    #scoreLevelsToggle, #categoryButtons, #timeLevelsToggle 
+    {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #subTypeTitle
+    {
+        position: relative;
+        top: 25%;
+    }
+    #searchForOptionsWrapper
+    {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .searchOptionsSection
+    {
+        grid-template-columns: 1fr;
+    }
+    .searchOptionsSection
+    {
+        text-align: center;
+    }
+    .searchOptionsTitle
+    {
+        text-align: center;
+    }
+    #advancedSearchWindowsBackground
+    {
+        max-height: 425px;
+    }
+    #advancedSearchString
+    {
+        max-width: 100%;
+    }
+    #searchSubTypeWrapper
+    {
+        max-width: 100%;
     }
 }
 
@@ -119,7 +168,7 @@
         height: 320px;
     }
 
-    #overlayBlur
+    .overlayBlur
     {
         padding: 2%;
     }
@@ -162,11 +211,6 @@
     #chooseSubTypeButtons
     {
         max-width: 90%;
-    }
-
-    #scoreLevelsToggle, #categoryButtons, #timeLevelsToggle 
-    {
-        grid-template-columns: repeat(3, 1fr);
     }
 
     /* .uferwindBtn, .frostseeBtn
@@ -234,6 +278,22 @@
         position: relative;
         left: 50%
     } */
+    #searchBarNewLine
+    {
+        display: block;
+    }
+    #searchButton
+    {
+        margin-top: 5px;
+    }
+    #advancedSearchButton
+    {
+        margin-top: 5px;
+    }
+    #leaderBoards
+    {
+        margin-top: 40px;
+    }
 }
 
 @media only screen and (max-width: 300px)
@@ -291,7 +351,7 @@
     {
         padding: 1%;
     }
-    #overlayBlur
+    .overlayBlur
     {
         padding: 3%;
     }
@@ -312,7 +372,7 @@
     {
         height: 250px;
     }
-    #overlayBlur
+    .overlayBlur
     {
         padding: 2%;
     }
@@ -361,7 +421,7 @@
     {
         height: 350px;
     } */
-    #overlayBlur
+    .overlayBlur
     {
         padding: 1%;
     }

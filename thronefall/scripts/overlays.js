@@ -1,16 +1,52 @@
 // 
 // SUBMISSION WINDOW
 // 
+const submitWinString = "submit";
 function OpenSubmitWindow() 
 {
-	document.getElementById("overlayWindow").style.display = "block";
-	location.hash = "submit";
+	const submitWindow = document.getElementById("submitWindowBakcground");
+	const overlayWindow = document.getElementById("overlayWindow");
+
+	submitWindow.classList.remove("windowCloseAnim");
+	overlayWindow.classList.remove("overlayHideAnim");
+
+	if (animationsEnabled)
+	{
+		submitWindow.classList.add("windowOpenAnim");
+	}
+	overlayWindow.style.display = "block";
+	location.hash = submitWinString;
+
+	HideChoiceButtons("score");	
 }
 function CloseSubmitWindow ()
 {
-	document.getElementById("overlayWindow").style.display = "none";
+	const submitWindow  = document.getElementById("submitWindowBakcground");
+	const overlayWindow = document.getElementById("overlayWindow");
+	const windowIframe  = document.getElementById("submitFormFrame");
+
+	submitWindow.classList.remove("windowOpenAnim");
+	
+	if (animationsEnabled)
+	{
+		submitWindow.classList.add("windowCloseAnim");
+		
+		Sleep(500).then(() => 
+		{ 
+			overlayWindow.classList.add("overlayHideAnim");
+		} );
+		Sleep(750).then(() => 
+		{ 
+			overlayWindow.style.display = "none";
+		} );
+	}
+	else
+	{
+		overlayWindow.style.display = "none";
+	}
+	windowIframe.src = "";
 	location.hash = "";
-	ShowChoiceButtons();
+	// ShowChoiceButtons();
 	// document.getElementById("overlayWindow").innerHTML = "";
 }
 
@@ -26,10 +62,12 @@ function HideChoiceButtons (type)
 	// console.log("HideChoiceButtons " + currentTheme);
 	document.getElementById("chooseSubTypeButtons").style.display = "none";
 	document.getElementById("submiFormDiv").style.display = "block";
+	const submitWinTitle = document.getElementById("titleBarText");
 
 	if (type == "time")
 	{
-		document.getElementById("titleBarText").textContent = "Submit new speed-run";
+		submitWinTitle.textContent = "Submit new speed-run";
+
 		if (currentTheme == "dark")
 		{
 			document.getElementById("submitFormFrame").src = "./submit/legacy/timeDark.html"
@@ -39,29 +77,10 @@ function HideChoiceButtons (type)
 			document.getElementById("submitFormFrame").src = "./submit/legacy/time.html"
 		}
 	}
-	else if (type == "scoreNew")
-	{
-		document.getElementById("titleBarText").textContent = "Submit new high-score";
-		if (currentTheme == "dark")
-		{
-			document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2?id=" + formID + "#dark";
-		}
-		else
-		{
-			document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2?id=" + formID + "#light";
-		}
-	}
 	else
 	{
-		document.getElementById("titleBarText").textContent = "Submit new speed-run";
-		if (currentTheme == "dark")
-		{
-			document.getElementById("submitFormFrame").src = "./submit/legacy/scoreDark.html"
-		}
-		else
-		{
-			document.getElementById("submitFormFrame").src = "./submit/legacy/score.html"
-		}
+		submitWinTitle.textContent = "Submit new high-score";
+		document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2?id=" + formID + "#" + currentTheme + "&" + textStyle;
 	}
 }
 // 
@@ -99,13 +118,50 @@ function CloseVideoWindow()
 	videoLink.src = "";
 }
 
+// 
+// R U L E S 
+// 
 function ShowRulesWindow ()
 {
-	document.getElementById("rulesWindow").style.display = "block";
+	const rulesWindow 	= document.getElementById("rulesWindowsBackground");
+	const overlayWindow = document.getElementById("rulesWindow");
+
+	overlayWindow.classList.remove("overlayHideAnim");
+	rulesWindow.classList  .remove("windowCloseAnim");
+	if (animationsEnabled)
+	{
+		rulesWindow.classList  .add	  ("windowOpenAnim");
+	}		
+	overlayWindow.style.display = "block";
 }
 
 function HideRulesWindow ()
 {
-	document.getElementById("rulesWindow").style.display = "none";
+	const rulesWindow 	= document.getElementById("rulesWindowsBackground");
+	const overlayWindow = document.getElementById("rulesWindow");
+
+	rulesWindow.classList.remove("windowOpenAnim");
+	if (animationsEnabled)
+	{
+		rulesWindow.classList.add("windowCloseAnim");
+		
+		// document.getElementById("overlayWindow").style.display = "none";
+		Sleep(500).then(() => 
+		{ 
+			overlayWindow.classList.add("overlayHideAnim");
+		} );
+		Sleep(750).then(() => 
+		{ 
+			overlayWindow.style.display = "none";
+		} );
+	}
+	else
+	{
+		// rulesWindow	 .style.display = "none";
+		overlayWindow.style.display = "none";
+	}
+
+
+	// document.getElementById("rulesWindow").style.display = "none";
 }
 

@@ -1,7 +1,7 @@
-async function GetCSVFile(file)
+async function GetCSVFile(type)
 {
 	let fetchFile;
-	if (file == "time")
+	if (type == "time")
 	{
 		fetchFile = await fetch("./entriesTime.csv"); 
 	}
@@ -10,13 +10,49 @@ async function GetCSVFile(file)
 		fetchFile = await fetch("./entries.csv"); 
 	}
 	const fileText  = await fetchFile.text();
-
-    // console.log("== CONTENT ======================================================================================================");
+    // console.log("== CONTENT ======================================================================");
     // console.log(fileText);
-    
-    // console.log("== parse ======================================================================================================");
-    // CSVToArray(fileText, ",");
     return fileText;
+}
+
+const appsScriptUrl = "https://script.google.com/macros/s/AKfycbwxaY7WgG_vPJPCUxWYTm_kZ3oRD9DtqYPeTE0jPgL63eJSqxPAdh4zUj4yQRW5m9z3/exec";
+async function GetScoresData() 
+{
+	try 
+	{
+		const response = await fetch(appsScriptUrl + "?type=score"); // Adjust the URL and format parameter as needed
+	  	const csvData  = await response.text();
+  
+	  	// Process the CSV data as needed
+	  	// const dataArray = convertCSVToArray(csvData);
+  
+	  	// console.log(csvData);
+		return csvData;
+	} 
+	catch (error) 
+	{
+		console.error('Error fetching data:', error);
+		alert("== ERROR FETCHING DATA == \n" + error);
+	}
+}
+async function GetTimeData() 
+{
+	try 
+	{
+		const response = await fetch(appsScriptUrl + "?type=time"); // Adjust the URL and format parameter as needed
+	  	const csvData  = await response.text();
+  
+	  	// Process the CSV data as needed
+	  	// const dataArray = convertCSVToArray(csvData);
+  
+	  	// console.log(csvData);
+		return csvData;
+	} 
+	catch (error) 
+	{
+		console.error('Error fetching data:', error);
+		alert("== ERROR FETCHING DATA == \n" + error);
+	}
 }
 
 	// This will parse a delimited string into an array of
@@ -24,6 +60,7 @@ async function GetCSVFile(file)
 	// can be overriden in the second argument.
 	function CSVToArray( strData, strDelimiter )
     {
+
 		// Check to see if the delimiter is defined. If not,
 		// then default to comma.
 		strDelimiter = (strDelimiter || ",");
@@ -105,4 +142,4 @@ async function GetCSVFile(file)
         // console.log("== PARSERD DATA ================================");
 		// console.log(arrData);
 		return( arrData );
-	} 
+	}

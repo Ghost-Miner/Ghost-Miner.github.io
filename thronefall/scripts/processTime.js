@@ -238,6 +238,15 @@ function ChangeTimeTableData(level)
 		case "Full":
 			chosenArray = ti_FullGamedSubs;
 			break;
+
+        case "Search":
+            if (searchResultsSubs == null)
+            {
+                console.error("ChangeTableData | searchResultsSubs is empty. Run SearchSubByName() first!");
+                return;
+            }
+            chosenArray = searchResultsSubs;
+            break;
 	}
 
     // CREATE ARRAYS FOR EACH VALUE TYPE

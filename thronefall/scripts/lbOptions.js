@@ -1,6 +1,6 @@
 function ChangeShownTable(tableToShow, sectionName)
 {
-	console.log("ChangeShownTable: " + tableToShow + "; " + sectionName);
+	// console.log("ChangeShownTable: " + tableToShow + "; " + sectionName);
 	const LBsections = document.getElementsByClassName("LeaderBoard_section");
 
 	for (let i = 0; i < LBsections.length; i++)
@@ -16,36 +16,41 @@ function ChangeShownTable(tableToShow, sectionName)
 
 function ChangeCategory(name)
 {
+    HideLevelNameColumn();
+    // Subcategory buttons
 	const scoreLevelsButton = document.getElementById("scoreLevelsToggle");
 	const timeLevelsButton  = document.getElementById("timeLevelsToggle");
 	const demoLevelsButton  = document.getElementById("demoLevelsToggle");
-
+    // Category buttons
 	const scoreCatButton = document.getElementById("scoreCategoryButton");
 	const timeCatButton  = document.getElementById("timeCategoryButton"); 
 	const demoCatButton  = document.getElementById("demoCategoryButton");
-
-	const leaderboardSection = document.getElementById("leaderBoardMain");
-	const oldLeaderboardSection = document.getElementById("oldLeaderBoards")
+    // LB secions
+	const scoresSection = document.getElementById("lbScoresSection");
+    const timeSection   = document.getElementById("lbTimeSection")
+	const demoSection   = document.getElementById("lbDemoSection")
 
 	// HIDE ALL SUB-CAT BUTTONS
 	scoreLevelsButton.style.display = "none";
 	timeLevelsButton .style.display = "none";
 	demoLevelsButton .style.display = "none";
-
 	// RESET ALL CATEGORY BUTTONS ACTIVE STATE
 	scoreCatButton.classList.remove("active");
 	timeCatButton .classList.remove("active");
 	demoCatButton .classList.remove("active");
 
+    scoresSection.style.display = "none";
+    timeSection  .style.display = "none";
+    demoSection  .style.display = "none";
+
 	switch (name)
 	{
 		default:
-			console.log("[ ERROR ] In ChangeCategory: " + name + " is not a valid category name!");
+			console.error("ChangeCategory | Name (\""+ name +"\") is not a valid category name!");
 		break;
 
 		case "score":
-			leaderboardSection.style.display = "block";
-			oldLeaderboardSection.style.display ="none";
+			scoresSection.style.display = "block";
 
 			// Levels toggle
 			scoreLevelsButton.style.display = "grid";
@@ -54,18 +59,18 @@ function ChangeCategory(name)
 		break;
 
 		case "time":
-			leaderboardSection.style.display = "none";
-			oldLeaderboardSection.style.display ="block";
+			timeSection.style.display ="block";
 
 			// Levels toggle
 			timeLevelsButton.style.display = "grid";
 			// Category toggle
 			timeCatButton.classList.add("active");
+            ChangeTimeTableData("Neuland");
+            SelectRandomBackground(1);
 		break;
 
 		case "demo":
-			leaderboardSection.style.display = "none";
-			oldLeaderboardSection.style.display ="block";
+			demoSection.style.display ="block";
 
 			// Levels toggle
 			demoLevelsButton.style.display = "grid";
@@ -132,14 +137,23 @@ function AssignPositionNumbers ()
 	}
 }
 
+const tableMaxRows = 200;
 function SpawnTableRows()
 {
-    let tableRow = document.getElementsByClassName("tableRow");
+    let scoreTableRow = document.getElementsByClassName("scoreTableRow");
+    let timeTableRow  = document.getElementsByClassName("timeTableRow");
+    let scoreTableBody = document.getElementById("scoreLBtableBody");
+    let timeTableBody = document.getElementById("timeLBtableBody");
+    let newScoreRow;
+    let newTimeRow;
 
-    for (let i = 0; i < 200; i++)
+    for (let i = 0; i < tableMaxRows; i++)
     {
-        let newRow = tableRow[0].cloneNode(true);
-        let tBody = document.getElementById("LBtableBody").append(newRow);
+        newScoreRow = scoreTableRow[0].cloneNode(true);
+        scoreTableBody.append(newScoreRow);
+        
+        newTimeRow = timeTableRow[0].cloneNode(true);
+        timeTableBody.append(newTimeRow);
     }
 }
 
@@ -316,7 +330,7 @@ function RemoveTimeFromData (dateAndTime)
 
 function FormatPerksOrMutatorsList (toFormat)
 {
-    console.log("=======================================");
+    // console.log("= FormatPerksOrMutatorsList ======================================");
     let perksArrString = "";
     let perksArr = new Array();
     let perksArrIndex = 0;
@@ -329,7 +343,7 @@ function FormatPerksOrMutatorsList (toFormat)
     for (let i = 0; i < inputChars.length; i++)
     {
         // console.log("ICL: "+ inputChars.length + "; " + i
-        if (inputChars[i] == "\n")
+        if (inputChars[i] == ";")
         {
             inputChars[i] = "";
             perksArr[perksArrIndex] = perksArrString;
@@ -342,12 +356,12 @@ function FormatPerksOrMutatorsList (toFormat)
     perksArrIndex++;
     perksArrString = "";
 
-    console.log(perksArrString);
-    console.log(perksArr);
+    // console.log(perksArrString);
+    // console.log(perksArr);
 
     for (let i = 0; i < inputChars.length; i++)
     {
-        if (inputChars[i] == "\n")
+        if (inputChars[i] == ";")
         {
             // console.log("New line");
             inputChars[i] = ", ";
@@ -365,14 +379,14 @@ function FormatPerksOrMutatorsList (toFormat)
 
 function FormatPerksOrMutatorIcons(toFormat)
 {
-    // console.log("=======================================");
+    // console.log("====PERSKS OR MUTA===================================");
     let perksArrString = "";
     let perksArr = new Array();
     let perksArrIndex = 0;
 
     if (toFormat == "")
     {
-        console.log("passsed string (" + toFormat + ") is empty");
+        console.error("FormatPerksOrMutatorIcons | 'toFormat' argument is empty");
         perksArr[0] = "unknown"
         perksArr[1] = "unknown"
         perksArr[2] = "unknown"
@@ -387,8 +401,8 @@ function FormatPerksOrMutatorIcons(toFormat)
 
     for (let i = 0; i < inputChars.length; i++)
     {
-        // console.log("ICL: "+ inputChars.length + "; " + i
-        if (inputChars[i] == "\n" || inputChars[i] == ",")
+        // console.log("ICL: "+ inputChars.length + "; " + i);
+        if (inputChars[i] == ";" || inputChars[i] == ",")
         {
             inputChars[i] = "";
             perksArr[perksArrIndex] = perksArrString;
@@ -401,7 +415,7 @@ function FormatPerksOrMutatorIcons(toFormat)
         perksArrStringSplit = perksArrString.split('');
         if (perksArrStringSplit[0] == " ")
         {
-            console.log("SPACE IS ILLEGAL");
+            console.warn("FormatPerksOrMutatorIcons | Space character is not allowedů");
             perksArrStringCopy = perksArrString;
             perksArrString = "";
 
@@ -420,6 +434,7 @@ function FormatPerksOrMutatorIcons(toFormat)
     perksArrIndex++;
     perksArrString = "";
     
+    // console.log(perksArr);
     return perksArr;
 }
 
@@ -579,10 +594,11 @@ function GetPerkPageName (perkName)
 
 }
 
+//////////////////////////////////////////////////////////////////////////////////////
+
 function GetSearchInputSring()
 {
     const value = document.getElementById("site-search").value;
-    console.log(value);
     return value;
 }
 let searchResultsSubs;
@@ -595,7 +611,7 @@ function SearchSubByName(searchedString)
     }
     if (searchedString.toLowerCase() == "never gonna give you up" || searchedString.toLowerCase() == "rick astley" || searchedString.toLowerCase() == "rick roll")
     {
-        console.log("SECRET FOUND " + searchedString);
+        // console.log("SECRET FOUND " + searchedString);
         location.replace("./img/rick 720p.mp4");
         return;
     }
@@ -606,39 +622,36 @@ function SearchSubByName(searchedString)
     let chosenSub;
     let subName;
     let subIndex;
-    let gameType;
 
-    for (let i = 0; i < tableData.length; i++)
+    for (let i = 1; i < scoresData.length; i++)
     {
-        if (i >= 200)
+        if (i >= tableMaxRows)
         {
             console.warn("SearchSubByName() | Number of search results is higher than number of available table rows.");
             alert("WARNING: \nNumber of search results is higher than the number of available table rows. \nSome results aren't shown.");
             break;
-        }
-        chosenSub = tableData[i];
+        }        
+        chosenSub = scoresData[i];
 
-        subName = chosenSub[2].toUpperCase();
-        gameType = chosenSub[3];
-        subIndex = chosenSub[20];
+        subName = chosenSub[sc_nameColumn].toUpperCase();
+        subIndex = chosenSub[sc_sudIndexColumn];
 
-        if (chosenSub[21] == "" || chosenSub[21] == null)
+        if (chosenSub[sc_positionColumn] == "" || chosenSub[sc_positionColumn] == null)
         {
-            chosenSub[21] = chosenSub[1].toUpperCase();
+            chosenSub[sc_positionColumn] = chosenSub[sc_statusColumn].toUpperCase();
         }
 
-        if (subName.includes(srcString) && gameType == "Early access" && !subName.includes("TEST"))
+        if (subName.includes(srcString) && !subName.includes("TEST"))
         {
             // console.log("=======================================")
             // console.log("Added match to src res list");
-            // console.log(chosenSub);
-            // console.log("Found match at " + i);
+            // console.log("Found match at " + i + ": " + chosenSub[sc_nameColumn]);
             searchResultsSubs[srcResArrIndex] = chosenSub;
             srcResArrIndex++;
         }
     }
-    console.log("== RESULTS ==================");
-    console.log(searchResultsSubs);
+    // console.log("== RESULTS ==================");
+    // console.log(searchResultsSubs);
     // if (searchResultsSubs[0] == null)
     // {
     //     alert("No result found.");
@@ -654,13 +667,11 @@ function FindSubmissionById(_subID)
     let submissionID;
     let subNumber;
 
-    console.log("-------------------------------------------------------");
-
-    for (let i = 0; i < tableData.length; i++)
+    for (let i = 0; i < scoresData.length; i++)
     {
-        chosenSub = tableData[i];
-        submissionID = chosenSub[15];
-        subNumber = chosenSub[20];
+        chosenSub = scoresData[i];
+        submissionID = chosenSub[sc_subIDColumn];
+        subNumber = chosenSub[sc_sudIndexColumn];
 
         //console.log(i + " " + subNumber);
         
@@ -709,20 +720,20 @@ function LinkSplice (_inputString, _subID)
     {
         if (inputChars[i] == "/")
         {
-            console.log("FOUND SLASH " + i);
+            // console.log("FOUND SLASH " + i);
             break;
         }
         outputChars[outCharsIndex] = inputChars[i];
         outCharsIndex++;
     }
     outputChars.reverse();
-    console.log(outputChars);
+    // console.log(outputChars);
 
     for (let i = 0; i < outputChars.length; i++)
     {
         outputString = outputString + outputChars[i];
     }
-    console.log(outputString);
+    // console.log(outputString);
 
     finalString = fileWebsite + "/" + subID + "/" + outputString;
     
