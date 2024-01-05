@@ -1,3 +1,1 @@
-This directory is used for the Thronefall* leaderboards.
-
-*a game by GrizzlyGames
+This directory is used for the Thronefall leaderboards.

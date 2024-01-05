@@ -372,7 +372,8 @@ function ChangeTableData(level)
 
     // Hide weapon and mutators column for Neuland
     const mutatorColumn = document.getElementsByClassName("mutatorsColumn ");
-    const weaponColumn = document.getElementsByClassName("weaponColumn");
+    const weaponColumn  = document.getElementsByClassName("weaponColumn");
+    const goldColumn    = document.getElementsByClassName("coinsColumn");
     if (chosenMap == "Neuland")
     {
         for (let i = 0; i < mutatorColumn.length; i++)
@@ -384,6 +385,21 @@ function ChangeTableData(level)
             weaponColumn[i].style.display = "none";
         }
     }
+    else if (chosenMap == "Eternal trials")
+    {
+        for (let i = 0; i < mutatorColumn.length; i++)
+        {
+            mutatorColumn[i].style.display = "none";
+        }
+        for (let i = 0; i < weaponColumn.length; i++)
+        {
+            weaponColumn[i].style.display = "none";
+        }
+        for (let i = 0; i < goldColumn.length; i++)
+        {
+            goldColumn[i].style.display = "none";
+        }
+    }
     else
     {
         for (let i = 0; i < mutatorColumn.length; i++)
@@ -393,6 +409,10 @@ function ChangeTableData(level)
         for (let i = 0; i < weaponColumn.length; i++)
         {
             weaponColumn[i].style.display = "table-cell";
+        }
+        for (let i = 0; i < goldColumn.length; i++)
+        {
+            goldColumn[i].style.display = "table-cell";
         }
     }
 
