@@ -41,6 +41,8 @@ let sc_NordfelsSubs    = new Array();
 let sc_DurststeinSubs  = new Array();
 let sc_FrostseeSubsa   = new Array();
 let sc_UferWindSubs    = new Array();
+let sc_SturmklammSubs   = new Array();
+
 let sc_etTrialsSubs    = new Array();
 
 let sc_canShowTableData = false;
@@ -75,8 +77,10 @@ function SortSubData ()
     let NFSubNum = 0;
     let DSSubNum = 0;
     let FSSubNum = 0;
-    let UFSubNum = 0
-    let etSubNum = 0
+    let UFSubNum = 0;
+    let SKSubNum = 0;
+
+    let etSubNum = 0;
 
     for (let i = 0; i < acceptedSubs.length; i++)
     {
@@ -118,6 +122,11 @@ function SortSubData ()
                 UFSubNum++;
                 break;
 
+            case "Sturmklamm":
+                sc_SturmklammSubs[SKSubNum] = chosenRow;
+                SKSubNum++;
+                break;
+
             case "EternalTrials":
                 sc_etTrialsSubs[etSubNum] = chosenRow;
                 etSubNum++;
@@ -132,6 +141,8 @@ function SortSubData ()
     sc_DurststeinSubs .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
     sc_FrostseeSubsa  .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
     sc_UferWindSubs   .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
+    sc_SturmklammSubs  .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
+
     sc_etTrialsSubs   .sort((a, b) => parseInt(b[sc_scoreColumn]) - parseInt(a[sc_scoreColumn]));
     // console.log("== MAP SUBS SORTED ===========================");
     // console.log(sc_NeulandSubsScor);
@@ -170,6 +181,7 @@ function SortSubData ()
         chosenRow = sc_UferWindSubs[i];
         chosenRow[sc_positionColumn] = i + 1;
     }
+    
     // eternal trials
     for (let i = 0; i < sc_etTrialsSubs.length; i++)
     {
@@ -236,6 +248,10 @@ function ChangeTableData(level)
 			chosenArray = sc_UferWindSubs;
 			break;
 
+		case "Sturmklamm":
+			chosenArray = sc_SturmklammSubs;
+			break;
+
 		case "Eternal trials":
 			chosenArray = sc_etTrialsSubs;
 			break;
@@ -252,18 +268,18 @@ function ChangeTableData(level)
 	}
 
     // CREATE ARRAYS FOR EACH VALUE TYPE
-    let map = new Array();
+    let map      = new Array();
 	let position = new Array();
-	let names = new Array();
-	let score = new Array();
-	let coins = new Array();
-	let date = new Array();
+	let names    = new Array();
+	let score    = new Array();
+	let coins    = new Array();
+	let date     = new Array();
 	// let proof = new Array();
-    let mutators = new Array();
-    let subID = new Array();
-    let version = new Array();
+    let mutators   = new Array();
+    let subID      = new Array();
+    let version    = new Array();
     let usedWeapon = new Array();
-    let subIndex = new Array();
+    let subIndex   = new Array();
 
     // ASSIGN EACH VALUE TYPE
 	for (let i = 0; i < chosenArray.length; i++)
