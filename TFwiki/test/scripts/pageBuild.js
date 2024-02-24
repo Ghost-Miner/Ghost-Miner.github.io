@@ -24,7 +24,7 @@ function PageInit (type)
 //
 async function BuilPageLayout ()
 {
-    const baseHtml = await fetch ("/tfwiki/_test/base.html");
+    const baseHtml = await fetch ("/tfwiki/test/base.html");
     const baseText = await baseHtml.text();
 
     document.body.outerHTML  = baseText;
