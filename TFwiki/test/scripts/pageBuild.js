@@ -24,14 +24,14 @@ function PageInit (type)
 //
 async function BuilPageLayout ()
 {
-    const baseHtml = await fetch ("/tfwiki/test/base.html");
+    const baseHtml = await fetch ("/TFwiki/test/base.html");
     const baseText = await baseHtml.text();
 
     document.body.outerHTML  = baseText;
     
-    const headerHtml = await fetch("/tfwiki/assets/parts/header.html");
-    const navHtml    = await fetch("/tfwiki/assets/parts/nav.html");
-    const footerHtml = await fetch("/tfwiki/assets/parts/footer.html");
+    const headerHtml = await fetch("/TFwiki/assets/parts/header.html");
+    const navHtml    = await fetch("/TFwiki/assets/parts/nav.html");
+    const footerHtml = await fetch("/TFwiki/assets/parts/footer.html");
 
     const headerText = await headerHtml.text();
     const navText    = await navHtml   .text();
@@ -80,7 +80,7 @@ async function AddStyle (styleName)
         await new Promise(resolve => setTimeout(resolve, nextCheckDelay));
     }
 
-    const stylePath = "/tfwiki/assets/styles/";
+    const stylePath = "/TFwiki/assets/styles/";
     const styleHtmlText = "<link rel=\"stylesheet\" href=\"" + stylePath + styleName + ".css\">";
 
     const bodyHtml = document.body.innerHTML;
