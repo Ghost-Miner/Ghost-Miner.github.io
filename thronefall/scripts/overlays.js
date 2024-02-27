@@ -80,7 +80,8 @@ function HideChoiceButtons (type)
 	else
 	{
 		submitWinTitle.textContent = "Submit new high-score";
-		document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2?id=" + formID + "#" + currentTheme + "&" + textStyle;
+		// document.getElementById("submitFormFrame").src = "https://dev-thronefall.pantheonsite.io/submitv2?id=" + formID + "#" + currentTheme + "&" + textStyle;
+		document.getElementById("submitFormFrame").src = "./img/rightback.png";
 	}
 }
 // 
