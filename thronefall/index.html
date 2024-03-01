@@ -80,11 +80,11 @@
         <!-- Loadin overlay to hide trnasition from light to dark theme -->
         <div id="loadingOVerlay">
             <div id="loadingTextBox">
-                <img src="./img/crown.png" id="loadingPageLogo">
+                <img src="./img/crown.png" id="loadingPageLogo" alt="Page logo">
                 <br>
                 <span id="loadingPageNameText"> Thronefall leaderboard </span>
                 <br>
-                <img src="./img/loading.gif" id="loadingPageLogo">
+                <img src="./img/loading.gif" id="loadingPageLogo" alt="loading animation">
             </div>
         </div>
         <!-- The entire page -->
@@ -95,9 +95,9 @@
                  -->
                 <header>
                     <section id="pageTitle">
-                        <img src="./img/crown.png" id="pageLogo">
+                        <img src="./img/crown.png" id="pageLogo" alt="Page logo">
                         <br>
-                        <span id="pageNameText"> Thronefall leaderboard </span>
+                        <h1> Thronefall leaderboard </h1>
                     </section>
                     <hr>
                     <section id="gameLinks">
@@ -301,7 +301,7 @@
                                     <div id="pageOptionsSplit">
                                         <!-- THEME -->
                                         <button title="Toggle colour theme" type="button" onclick="ToggleThemes()" id="colourThemeToggleButton" class="btn btn-warning btn_orangeGradient dropShadow">
-                                            <img src="./img/sun.png" style="max-width: 25px;" id="colourThemeToggleIcon">
+                                            <img alt="colour theme icon" src="./img/sun.png" style="max-width: 25px;" id="colourThemeToggleIcon">
                                         </button>
                                         <button type="button" class="btn btn-warning btn_orangeGradient dropShadow dropdown-toggle dropdown-toggle-split" id="pageOptionsSplitDrpBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <span class="sr-only">Toggle Dropdown</span>
@@ -321,7 +321,7 @@
                                     
                                     <!-- SEARCH -->
                                     <button title="Toggle text style" type="button" onclick="ToggleSearchField()" id="searchButton" class="btn btn-warning btn_orangeGradient dropShadow">
-                                        <img src="./img/search white.png" style="max-width: 25px;" id="searchToggleButtonIcon">
+                                        <img alt="search submissions icon" src="./img/search white.png" style="max-width: 25px;" id="searchToggleButtonIcon">
                                     </button>
                                 </div>
                             <!-- </div>  -->
@@ -346,7 +346,7 @@
                     <section id="leaderBoards">
                         <div id="lbScoresSection">
                             <section id="LBLoadingIndicator" >
-                                <img src="./img/loading.gif" id="lbLoadImage" class="centerHorizontal">
+                                <img alt="loading submisisons animation" src="./img/loading.gif" id="lbLoadImage" class="centerHorizontal">
                             </section> <!-- LBLoadingIndicator -->
                             <section id="leaderboardContent" style="display: none;">
                                 <section id="tableTitle">
@@ -456,7 +456,7 @@
                                 New submission
                             </div>
                             <div class="titleBarCell" id="titleBarClose">
-                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubmitWindow()">
+                                <img alt="close window icon" src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubmitWindow()">
                             </div>
                         </div> <!-- windowTitleBar -->
             
@@ -492,7 +492,7 @@
                                 Submission details
                             </div>
                             <div class="titleBarCell" id="titleBarClose">
-                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubInfoWindow()">
+                                <img alt="close window icon" src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="CloseSubInfoWindow()">
                             </div>
                         </div> <!-- windowTitleBar -->
 
@@ -508,7 +508,7 @@
                                 <!-- Image -->
 							<div id="subIinfoImageDiv" style="display: none;">
 								<a href="" id="subInfoImgLink" target="_blank">
-									<img src="./img/loading.gif" id="subInfoImg">
+									<img alt="loading animation" src="./img/loading.gif" id="subInfoImg">
 								</a><br>
 								<!-- <span class="subInfoUrlText"> Video URL: <a href="" id="subIinfoFileUrl" target="_blank">*url*</a> </span> -->
 							</div>
@@ -559,7 +559,7 @@
 								<div class="subInfoGridCell">
 									<span class="subInfoSubtitle">Used weapon: <br></span>
                                     <a href="#" id="weaponWikiLink" target="_blank">
-                                        <img src="./img/loading black.gif" title="" id="subInfoWeaponIcon" class="subInfoIcon">
+                                        <img alt="loading animation" src="./img/loading black.gif" title="" id="subInfoWeaponIcon" class="subInfoIcon">
                                     </a>
                                     <br> <var class="subInfoVars" id="si_weapon">...</var>
 								</div>
@@ -570,19 +570,19 @@
                                     <div id="perksIconsWrapper">
                                         <div class="perksIconsCell">
                                             <a href="#" class="perkWikiLink" target="_blank">
-                                                <img src="./img/loading black.gif" title="" class="subInfoIcon subInfoPerkIcon" id="subInfoPerkIcon1">
+                                                <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfoPerkIcon" id="subInfoPerkIcon1">
                                             </a>
     									    <p class="subInfoVars subInfoPerkName">...</p>
                                         </div>
                                         <div class="perksIconsCell">
                                             <a href="#" class="perkWikiLink" target="_blank">
-                                                <img src="./img/loading black.gif" title="" class="subInfoIcon subInfoPerkIcon" id="subInfoPerkIcon2">
+                                                <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfoPerkIcon" id="subInfoPerkIcon2">
                                             </a>
     									    <p class="subInfoVars subInfoPerkName">...</p>
                                         </div>
                                         <div class="perksIconsCell">
                                             <a href="#" class="perkWikiLink" target="_blank">
-                                                <img src="./img/loading black.gif" title="" class="subInfoIcon subInfoPerkIcon" id="subInfoPerkIcon3">
+                                                <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfoPerkIcon" id="subInfoPerkIcon3">
                                             </a>
     									    <p class="subInfoVars subInfoPerkName">...</p>
                                         </div>
@@ -599,73 +599,73 @@
                                 <div id="mutatorIconsWrapper">
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
                                     <div class="mutatorIconsCell">
                                         <a href="#" class="mutatorWikiLink" target="_blank">
-                                            <img src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
+                                            <img alt="loading animation" src="./img/loading black.gif" title="" class="subInfoIcon subInfomutatorIcon">
                                         </a>
                                         <p class="subInfoVars subInfoMutatorName">...</p>
                                     </div>
@@ -689,7 +689,7 @@
                                 Submission rules
                             </div>
                             <div class="titleBarCell" id="titleBarClose">
-                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="HideRulesWindow()">
+                                <img alt="close window" src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="HideRulesWindow()">
                             </div>
                         </div> <!-- windowTitleBar -->
                         
@@ -705,9 +705,9 @@
                             <p><strong>SCREENSHOT SUBMISSIONS</strong></p>
                             <p><strong>2.1:</strong> Screenshot must show the entire victory screen.</p>
                             <div id="subRules_ScreenshotRuleDiv">
-                                <img class="subRules_ScreenshotRuleImg" src="./img/sub img rule img 1.png">
-                                <img class="subRules_ScreenshotRuleImg" src="./img/sub img rule img 2.png">
-                                <img class="subRules_ScreenshotRuleImg" src="./img/sub img rule img 3.png">
+                                <img alt="submission rules image 1" class="subRules_ScreenshotRuleImg" src="./img/sub img rule img 1.png">
+                                <img alt="submission rules image 2" class="subRules_ScreenshotRuleImg" src="./img/sub img rule img 2.png">
+                                <img alt="submission rules image 2" class="subRules_ScreenshotRuleImg" src="./img/sub img rule img 3.png">
                             </div>
                             
                             <hr>
@@ -732,7 +732,7 @@
                                 Options
                             </div>
                             <div class="titleBarCell" id="titleBarClose">
-                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="HideOptionsWindow()">
+                                <img alt="close window icon" src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="HideOptionsWindow()">
                             </div>
                         </div> <!-- windowTitleBar -->                        
                         <div id="rulesWindowContent">
@@ -761,7 +761,7 @@
                                 Advanced search
                             </div>
                             <div class="titleBarCell" id="titleBarClose">
-                                <img src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="HideAdvancedSearchWindow()">
+                                <img alt="close window icon" src="./img/cross white.png" id="windowTitleBarCloseImage" onclick="HideAdvancedSearchWindow()">
                             </div>
                         </div> <!-- windowTitleBar -->
 
@@ -860,7 +860,9 @@
         </section> <!-- rulesWindow -->        
 
         <!-- 
-            < ! >   O B S O L E T E   < ! >        
+
+            < ! >   O B S O L E T E   < ! >
+
         -->
             <!-- V I D E O   E M B E D -->
             <div class="old_overlaysBlur" id="newProofWindowMainVideo" style="display: none;">
@@ -870,7 +872,7 @@
                             <span class="old_windowTitleBarButton" style="margin: auto;">Submission&nbsp;video</span>
                         </div>
                         <div class="old_titleBarRight">
-                            <img src="./img/cross white.png" class="old_windowTitleBarButtonIcon" onclick="CloseVideoWindow()">
+                            <img alt="close window icon" src="./img/cross white.png" class="old_windowTitleBarButtonIcon" onclick="CloseVideoWindow()">
                         </div>
                     </div> <!-- old_ProofWindowTitleBar -->
                         
@@ -888,12 +890,12 @@
                             <span class="old_windowTopBarTitle" style="margin: auto;">Submission&nbsp;screenshot</span>
                         </div>
                         <div class="old_titleBarRight">
-                            <img src="./img/cross white.png" class="old_windowTitleBarButtonIcon" onclick="CloseProofWindowImage()">
+                            <img alt="close window icon" src="./img/cross white.png" class="old_windowTitleBarButtonIcon" onclick="CloseProofWindowImage()">
                         </div>
                     </div> <!-- old_ProofWindowTitleBar -->
                         
                     <div class="old_ProofWindowContent" style="overflow-y: auto;">
-                        <img id="old_ProofImage" alt="" src="">
+                        <img id="old_ProofImage" alt="image in deprectaed proof window" src="">
                     </div>
                 </div>
             </div> <!-- old_overlaysBlur old_ProofWindowMainImage -->
