@@ -181,6 +181,12 @@ function SortSubData ()
         chosenRow = sc_UferWindSubs[i];
         chosenRow[sc_positionColumn] = i + 1;
     }
+    // Sturmnklamm
+    for (let i = 0; i < sc_SturmklammSubs.length; i++)
+    {
+        chosenRow = sc_SturmklammSubs[i];
+        chosenRow[sc_positionColumn] = i + 1;
+    }
     
     // eternal trials
     for (let i = 0; i < sc_etTrialsSubs.length; i++)
