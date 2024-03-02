@@ -303,7 +303,7 @@ function ShortenYTLink (url)
 
 function RemoveTimeFromData (dateAndTime)
 {
-    if (dateAndTime.length <= 10)
+    if (dateAndTime.length <= 10 && dateAndTime.includes("/"))
     {
         return dateAndTime;
     }
@@ -313,9 +313,19 @@ function RemoveTimeFromData (dateAndTime)
     const inputString = dateAndTime;
     const inputChars = inputString.split('');
 
-    for (let i = 0; i < inputChars.length - 5; i++)
+    if (dateAndTime.includes("-"))
     {
-        dateChars[i] = inputChars[i];
+        for (let i = 0; i < inputChars.length - 1; i++)
+        {
+            dateChars[i] = inputChars[i];
+        }
+    }
+    else
+    {       
+        for (let i = 0; i < inputChars.length - 5; i++)
+        {
+            dateChars[i] = inputChars[i];
+        }
     }
     for (let i = 0; i < dateChars.length; i++)
     {
