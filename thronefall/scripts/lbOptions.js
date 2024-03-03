@@ -223,6 +223,7 @@ function SplitScore(scoreNum)
 }
 
 // Remove that werd character at the end of version numbers.
+// this function follows the same structure as SplitScore(scoreNum). 
 function FormatVersionNumber (versionString)
 {
     const inputVerString = versionString;
@@ -238,6 +239,56 @@ function FormatVersionNumber (versionString)
         outputVerString = outputVerString + versionChars[i];
     }
     return outputVerString;
+}
+
+// Change the date format to day/month/year
+// this function follows the same structure as SplitScore(scoreNum). 
+function FormatSubmissionDate (dateString)
+{
+    // Do format the date if it doesnt contain dah (which means it already formatted)
+    if (!dateString.includes("-"))
+    {
+        return dateString;
+    }
+    const inputDate = dateString; 
+    const dateChars = inputDate.split('');
+    let outputDateString = "";
+
+    let dayStr = ""; // Day part
+    let monthStr = ""; // month part
+    let yearStr = ""; // year part
+    let dashCount = 0; // first dash separates year from month, second one separates mknth from day
+    for (let i = 0; i < dateChars.length; i++)
+    {
+        // This character is uput at the end to keep the date in plain text. Skip it while formatting
+        if (dateChars[i] == "´")
+        {
+            continue;
+        }
+        // Skip to the next character 
+        if (dateChars[i] == "-")
+        {
+            dashCount++;
+            continue;
+        }
+        switch(dashCount)
+        {
+            case 0: // Year
+                yearStr = yearStr + dateChars[i];
+                break;
+            
+            case 1: // Month
+                monthStr = monthStr + dateChars[i];
+                break;
+            
+            case 2: // Day
+                dayStr = dayStr + dateChars[i];
+                break;
+            
+        }
+    }
+
+    return (dayStr + "/" + monthStr + "/" + yearStr);
 }
 
 function GetEmbedYTLink (vidLink)
@@ -272,6 +323,7 @@ function GetEmbedYTLink (vidLink)
     // console.log(vidIDString);
     return (ytLink + vidIDString);
 }
+
 
 function ShortenYTLink (url)
 {

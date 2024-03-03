@@ -357,7 +357,7 @@ function ChangeTableData(level)
         tScore[k]  .textContent = SplitScore(score[k]);
 		tCoins[k]  .textContent = coins[k];
         tMutNums[k].textContent = mutators[k];
-		tDate[k]   .textContent = RemoveTimeFromData(date[k]);
+		tDate[k]   .textContent = FormatSubmissionDate(date[k]);
         tVersion[k].textContent = FormatVersionNumber(version[k]);
         tWeapon[k] .textContent = usedWeapon[k];
         
