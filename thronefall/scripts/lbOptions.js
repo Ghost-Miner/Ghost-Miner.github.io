@@ -199,40 +199,27 @@ function IsPicServiceSupoorted (url)
     return false;
 }
 
+// Add spaces to separate thousand and million (69420 => 69 420 (plase laugh))
 function SplitScore(scoreNum)
 {
-    let charsArray = new Array();
-    let firstDigits = new Array();
-    let last3digits = new Array();
-    let digitArrNum = 0;
-    
-    let formattedString = "";
-    const str = scoreNum;
-    const chars = str.split('');
+    const inputNumber = scoreNum; // Input value
+    const inputNumsChars = inputNumber.split('').reverse(); // Split into indiviual charascters and reverse it 
+    let   outputNumber = ""; // Initialize output string
 
-    for (let i = 0; i < chars.length; i++)
+    for (let i = 0; i < inputNumsChars.length; i++)
     {
-        charsArray[i] = chars[i]; 
+        // 3: thousand, 6: million
+        if (i == 3 || i == 6)
+        {
+            outputNumber = outputNumber + "\xa0" + inputNumsChars[i];
+        }
+        else
+        {
+            outputNumber = outputNumber + inputNumsChars[i];
+        }
     }
-    for (let i = 0; i < chars.length - 3; i++)
-    {
-        firstDigits[i] = chars[i]; 
-    }
-    for (let i = charsArray.length - 1; i > charsArray.length - 4; i--)
-    {
-        last3digits[digitArrNum] = charsArray[i];        
-        digitArrNum++;
-    }
-    for (let i = 0; i < firstDigits.length; i++)
-    {
-        formattedString = formattedString + firstDigits[i];
-    }
-    formattedString = formattedString + "\xa0"
-    for (let i = last3digits.length - 1; i >= 0; i--)
-    {
-        formattedString = formattedString + last3digits[i];
-    }
-    return formattedString;
+    // Split output string into individual characters, reverse the order, and join all characters back together
+    return outputNumber.split('').reverse().join('');
 }
 
 function GetEmbedYTLink (vidLink)
