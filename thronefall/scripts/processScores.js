@@ -476,6 +476,14 @@ function OrderBoardBy (map, orderType)
             chosenMapArray = sc_UferWindSubs;
         break;
 
+        case "sturmklamm":
+            chosenMapArray = sc_SturmklammSubs;
+        break;
+        
+        case "eternal trials":
+            chosenMapArray = sc_etTrialsSubs;
+        break;
+
         case "search":
             if (searchResultsSubs == null)
             {
