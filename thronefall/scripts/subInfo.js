@@ -164,7 +164,7 @@ function AssignSubInfoWindowValues ()
     document.getElementById("si_gold").textContent = s_gold;
     // document.getElementById("si_mutators").textContent = s_mutators;
     document.getElementById("si_weapon").textContent = s_usedWeapon;
-    document.getElementById("si_version").textContent = s_version;
+    document.getElementById("si_version").textContent = FormatVersionNumber(s_version);
     document.getElementById("si_date").textContent = RemoveTimeFromData(s_date);
     
     document.getElementById("subInfoOverlayWindow").style.display = "block";

@@ -222,6 +222,24 @@ function SplitScore(scoreNum)
     return outputNumber.split('').reverse().join('');
 }
 
+// Remove that werd character at the end of version numbers.
+function FormatVersionNumber (versionString)
+{
+    const inputVerString = versionString;
+    const versionChars = inputVerString.split('');
+    let   outputVerString = "";
+
+    for (let i = 0; i < versionChars.length; i++)
+    {
+        if (versionChars[i] == "´")
+        {
+            break;
+        }
+        outputVerString = outputVerString + versionChars[i];
+    }
+    return outputVerString;
+}
+
 function GetEmbedYTLink (vidLink)
 {
     let videoIDChars = new Array();
@@ -588,7 +606,6 @@ function GetPerkPageName (perkName)
         case "Warrior mode":
             return (wikiURL + "warrior mode" + extension);
     }
-
 }
 
 //////////////////////////////////////////////////////////////////////////////////////

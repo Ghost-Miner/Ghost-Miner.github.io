@@ -358,7 +358,7 @@ function ChangeTableData(level)
 		tCoins[k]  .textContent = coins[k];
         tMutNums[k].textContent = mutators[k];
 		tDate[k]   .textContent = RemoveTimeFromData(date[k]);
-        tVersion[k].textContent = version[k];
+        tVersion[k].textContent = FormatVersionNumber(version[k]);
         tWeapon[k] .textContent = usedWeapon[k];
         
         tableRows[k].addEventListener("click",() => { ShowSubInfo(subIndex[k]) },false);
