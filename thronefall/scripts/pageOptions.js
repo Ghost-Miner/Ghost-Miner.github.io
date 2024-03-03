@@ -341,7 +341,7 @@ function SelectRandomBackground(mappNumner)
 		{
 			switch(bgrNumber)
 			{
-				case 1: document.body.style.backgroundImage = 'url("./img/backgrounds/6 Sutmrklam/Sturmklammm_1.png")'; break;
+				case 1: document.body.style.backgroundImage = 'url("./img/backgrounds/6 Sturmklamm/sturmklamm_1.png")'; break;
 			}
 		}
 	}
