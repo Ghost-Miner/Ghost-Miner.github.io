@@ -181,11 +181,11 @@ function IsPicServiceSupoorted (url)
     const supportedDomains = 
     [
         "i.postimg.cc",
+        "i.ibb.co",
+        "i.imgur.com",
         "media.discordapp.net",
         "cdn.discordapp.com",
         "ghost-miner.github.io",
-        "i.imgur.com",
-        "thronefall.maweb.eu"
     ]
 
     for (let i = 0; i < supportedDomains.length; i++)
