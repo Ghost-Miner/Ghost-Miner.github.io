@@ -339,9 +339,20 @@ function SelectRandomBackground(mappNumner)
 
 		case 6: // Sturmklamm
 		{
+			const onlyBgrUrl = "./img/backgrounds/6 Sturmklamm/sturmklamm_1.png" ;
 			switch(bgrNumber)
 			{
-				case 1: document.body.style.backgroundImage = 'url("./img/backgrounds/6 Sturmklamm/sturmklamm_1.png")'; break;
+				case 1: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 2: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 3: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 4: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 5: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 6: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 7: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 8: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 9: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 10: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case  0: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
 			}
 		}
 	}
