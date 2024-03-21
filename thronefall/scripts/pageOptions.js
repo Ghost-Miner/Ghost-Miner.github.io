@@ -352,7 +352,7 @@ function SelectRandomBackground(mappNumner)
 				case 8: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
 				case 9: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
 				case 10: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
-				case  0: document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
+				case 0:  document.body.style.backgroundImage = 'url("' + onlyBgrUrl + '")'; break;
 			}
 		}
 	}
