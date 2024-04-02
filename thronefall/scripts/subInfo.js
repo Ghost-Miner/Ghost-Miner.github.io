@@ -128,7 +128,13 @@ function AssignSubInfoWindowValues ()
     }
     else
     {
-        if (s_proof.includes("youtu"))
+        if (s_proof.includes(".mp4"))
+        {
+            document.getElementById("subIinfoVideoDiv").style.display = "block";
+            document.getElementById("subInfoVideo").src = s_proof;
+            document.getElementById("subIinfoFileUrl").textContent = "";
+        }
+        else if (s_proof.includes("youtu"))
         {
             document.getElementById("subIinfoVideoDiv").style.display = "block";
             document.getElementById("subInfoVideo").src = GetEmbedYTLink(s_proof);

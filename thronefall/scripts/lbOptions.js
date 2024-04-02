@@ -185,7 +185,7 @@ function IsPicServiceSupoorted (url)
         "i.imgur.com",
         "media.discordapp.net",
         "cdn.discordapp.com",
-        "ghost-miner.github.io",
+        // "ghost-miner.github.io",
     ]
 
     for (let i = 0; i < supportedDomains.length; i++)
