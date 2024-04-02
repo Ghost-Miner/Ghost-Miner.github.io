@@ -396,6 +396,7 @@ function ChangeTableData(level)
     const mutatorColumn = document.getElementsByClassName("mutatorsColumn ");
     const weaponColumn  = document.getElementsByClassName("weaponColumn");
     const goldColumn    = document.getElementsByClassName("coinsColumn");
+
     if (chosenMap == "Neuland")
     {
         for (let i = 0; i < mutatorColumn.length; i++)
@@ -421,6 +422,7 @@ function ChangeTableData(level)
         {
             goldColumn[i].style.display = "none";
         }
+	    document.getElementById("leaderboardNameText").textContent = "Eternal trials season 2 high-scores"; // SET LEADERBOARD TITLE
     }
     else
     {
