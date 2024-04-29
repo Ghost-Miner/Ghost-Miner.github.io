@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--
+░█░█░█░█░█▀█░▀█▀░░░█▀█░█▀▄░█▀▀░░░█░█░█▀█░█░█░░░█▀▄░█▀█░▀█▀░█▀█░█▀▀░░░▀█▀░█▀█░░░█▄█░█░█░░░█▀▀░█▀█░█▀▄░█▀▀░▀▀█░█
+░█▄█░█▀█░█▀█░░█░░░░█▀█░█▀▄░█▀▀░░░░█░░█░█░█░█░░░█░█░█░█░░█░░█░█░█░█░░░░█░░█░█░░░█░█░░█░░░░█░░░█░█░█░█░█▀▀░░▀░░▀
+░▀░▀░▀░▀░▀░▀░░▀░░░░▀░▀░▀░▀░▀▀▀░░░░▀░░▀▀▀░▀▀▀░░░▀▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀░▀░░░▀░▀░░▀░░░░▀▀▀░▀▀▀░▀▀░░▀▀▀░░▀░░▀
+                            ⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+                            ⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ 
+                            ⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ 
+                            ⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ 
+                            ⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+                            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉
+
+    Very cut down version of the leaderboard intended for embedding on other pages.
+	
+    Created by GhostMiner 2023-2024
+    > Ghost-Miner.Github.io
+	> YouTube.com/GhostMinerMC
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thronefall leaderboard</title>
+        <link rel="shortcut icon" type="image/jpg" href="./img/crown.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- Page meta infromation -->
+        <!-- <meta name="description" content="Official leaderboard for high-scores and speed-runs of Thronefall."> -->
+        <!-- <meta name="keywords" content="Thronefall, leaderBoard, grizzly games, speedrun, fandom, Jonas Tyroller, Neuland, Nordfels, Durststein, Frostsee, Uferwind, Sturmklamm, Eternal trials, submission, submit"> -->
+        <meta name="language" content="en">
+        <meta name='robots' content="noindex">
+        <meta name='author' content="GhostMiner">
+        <!-- htmx -->
+        <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
+        <!-- Bootstrap 4 CSS library -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+
+        <!-- Custom CSS stylesheets and libraries -->
+        <link rel="stylesheet" href="../styles/global.css">
+        <link rel="stylesheet" href="../styles/overlays.css">
+        <link rel="stylesheet" href="../styles/animations.css">
+        <link rel="stylesheet" href="../styles/contextMenu.css">
+        
+        <!-- Scripts -->
+        <!-- page scripts -->
+        <script src="../scripts/pageOptions.js"></script>
+        <script src="../scripts/lbOptions.js"></script>
+        <script src="../scripts/darkmode.js"></script>
+        <script src="../scripts/cookies.js"></script>
+        <script src="../scripts/events.js"></script>
+        <!-- Submission scripts -->
+        <script src="../scripts/processScores.js"></script>
+        <script src="../scripts/processTime.js"></script>
+        <script src="../scripts/overlays.js"></script>
+        <script src="../scripts/subInfo.js"></script>
+        <script src="../scripts/parser.js"></script>
+    </head>
+    <body>
+        <style>
+            body 
+            {
+                background: none;
+                padding: 3px;
+                border: 1px black solid;
+                /* border-radius: 10px; */
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            header
+            {
+                display: none;
+            }
+            .table
+            {
+                margin: 0px;
+            }
+            footer
+            {
+                text-shadow: 1px 1px 4px white;
+            }
+
+            #embed_levelSelectButtonsMainDiv
+            {
+                text-align: center;
+                display: grid;
+                grid-template-columns: repeat(8,1fr);
+                grid-gap: 5px;
+                row-gap:  5px;
+            }
+            #tableTitle 
+            {
+                display: block;
+                text-shadow: 1px 1px 4px white;
+                /* text-align: center; */
+            }
+
+            @media screen and (max-width: 900px) 
+            {
+                #embed_levelSelectButtonsMainDiv
+                {
+                    grid-template-columns: repeat(4,1fr);;
+                }
+            }
+            @media screen and (max-width: 600px) 
+            {
+                #embed_levelSelectButtonsMainDiv
+                {
+                    grid-template-columns: repeat(3,1fr);;
+                }
+            }
+            @media screen and (max-width: 400px) 
+            {
+                #embed_levelSelectButtonsMainDiv
+                {
+                    grid-template-columns: repeat(2,1fr);;
+                }
+            }
+        </style>
+
+        <div id="embed_mainPageContainerBack">
+            <div id="embed_mainPageContainerFront">
+                <header>
+                    <section id="pageTitle">
+                        <img src="../img/crown.png" id="pageLogo" alt="Page logo">
+                        <br>
+                        <h1> Thronefall leaderboard </h1>
+                    </section>
+                    <hr>
+                    <section id="gameLinks">
+                        <a href="https://store.steampowered.com/app/2239150/Thronefall" id="gl_steamPage" target="_blank">
+                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient">
+                                Get Thronefall
+                            </button>
+                        </a>
+                        <a href="https://discord.gg/gVYctptyg8" id="gl_Discord" target="_blank">
+                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient">
+                                Discord server
+                            </button>
+                        </a>
+                        <a href="https://youtube.com/playlist?list=PLgsD7taGtaBhNaErAOaiEiTzt6-lOpVp0" id="gl_Devlogs" target="_blank">
+                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient">
+                                Devlogs
+                            </button>
+                        </a>
+
+                        <a href="https://throne-fall.github.io" id="gl_Wiki" target="_blank">
+                            <button type="button" class="btn gameLinksBtn btn-warning dropShadow whiteGradient" style="margin-left: 0px;">
+                                Thronefall wiki
+                            </button>
+                        </a>
+                    </section>
+                    <hr>
+                </header>
+
+                <nav>
+                    <div id="embed_levelSelectButtonsMainDiv">
+                        <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="nl_score_btn" onclick="ChangeTableData('Neuland')" >
+                            <span class="levelToggleText"> Neuland </span>
+                        </button>
+                        <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="nf_score_btn" onclick="ChangeTableData('Nordfels')">
+                            <span class="levelToggleText"> Nordfels </span>
+                        </button>
+                        <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="ds_score_btn" onclick="ChangeTableData('Durststein')">
+                            <span class="levelToggleText"> Durststein </span>
+                        </button>
+                        <button type="button" class="btn btn-warning btn_orangeGradient dropShadow frostseeBtn" id="fs_score_btn" onclick="ChangeTableData('Frostsee')">
+                            <span class="levelToggleText"> Frostsee </span>
+                        </button>
+                        <button type="button" class="btn btn-warning btn_orangeGradient dropShadow uferwindBtn" id="uf_score_btn" onclick="ChangeTableData('Uferwind')">
+                            <span class="levelToggleText"> Uferwind </span>
+                        </button>
+                        <button type="button" class="btn btn-warning btn_orangeGradient dropShadow uferwindBtn" id="uf_score_btn" onclick="ChangeTableData('Sturmklamm')">
+                            <span class="levelToggleText"> Sturmklamm </span>
+                        </button>
+                        <button type="button" class="btn btn-warning btn_orangeGradient dropShadow uferwindBtn" id="uf_score_btn" onclick="ChangeTableData('Eternal trials')">
+                            <span class="levelToggleText"> Eternal trials </span>
+                        </button>
+                        <button type="button" class="btn btn-warning btn_orangeGradient dropShadow uferwindBtn" id="uf_score_btn" onclick="ChangeTableData('Eternal trials season 1')">
+                            <span class="levelToggleText"> Eternal trials S1 </span>
+                        </button>
+                    </div>
+                </nav>
+
+                <main>
+                    <div id="lbScoresSection">
+                        <section id="LBLoadingIndicator" >
+                            <img alt="loading submisisons animation" src="../img/loading.gif" id="lbLoadImage" class="centerHorizontal">
+                        </section> <!-- LBLoadingIndicator -->
+                        <section id="leaderboardContent" style="display: none;">
+                            <section id="tableTitle">
+                                <span id="leaderboardNameText">*table name*</span>
+                                <span id="searchResultsLegendText">*search legend*</span>
+                            </section>
+                            <table class="table table-striped" id="LBtableMain">
+                                <thead class="table-dark tableHead_gradient" id="LBtableHead">
+                                    <tr>
+                                        <td id="th-mapName"    class="mapNameColumn 0">     Level     </td>
+                                        <td id="th-position"   class="positionColumn 1">      #       </td>
+                                        <td id="th-name"       class="nameColumn 2">		 Name	  </td>
+                                        <td id="th-score"      class="scoreColumn 3">		 Score 	  </td>
+                                        <td id="th-coins"      class="coinsColumn 4">		 Gold 	  </td>
+                                        <td id="th-mutNums"    class="mutatorsColumn 5"> Mutators     </td>
+                                        <td id="th-usedWeapon" class="weaponColumn 7">Used&nbsp;weapon</td>
+                                        <td id="th-version"    class="versionColumn 8">	 Version      </td>
+                                        <td id="th-date"       class="dateColumn 9">		 Date	  </td>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-light tableBody_gradient" id="scoreLBtableBody">
+                                    <tr class="scoreTableRow">
+                                        <td class="mapName mapNameColumn 0">  ...</td>
+                                        <td class="position positionColumn 1">...</td>
+                                        <td class="name nameColumn 2">		  ...</td>
+                                        <td class="score scoreColumn 3">	  ...</td>
+                                        <td class="coins coinsColumn 4">	  ...</td>
+                                        <td class="mutNums mutatorsColumn 5"> ...</td>
+                                        <td class="usedWeapon weaponColumn 7">...</td>
+                                        <td class="version versionColumn 8">  ...</td>
+                                        <td class="date dateColumn 9">		  ...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section> <!-- leaderboardContent -->
+                    </div> <!-- lbScoresSection -->
+                    <div id="lbTimeSection" style="display: none">
+                        <!-- <section id="LBLoadingIndicator" >
+                            <img src="./img/loading.gif" id="lbLoadImage" class="centerHorizontal">
+                        </section>  -->
+                        <section id="t_leaderboardContent">
+                            <section id="tableTitle">
+                                <span id="t_leaderboardNameText">*table name*</span>
+                            </section>
+                            <table class="table table-striped" id="LBtableMainTime">
+                                <thead class="table-dark tableHead_gradient" id="LBtableHead">
+                                    <tr>
+                                        <td id="th-mapName"    class="mapNameColumn 0">     Level     </td>
+                                        <td id="th-position"   class="positionColumn 1">      #       </td>
+                                        <td id="th-name"       class="nameColumn 2">		 Name	  </td>
+                                        <td id="th-time"       class="timeColumn 3">		 Time 	  </td>
+                                        <td id="th-coins"      class="coinsColumn 4">		 Gold 	  </td>
+                                        <td id="th-mutNums"    class="t_mutatorsColumn 5">   Mutators   </td>
+                                        <td id="th-usedWeapon" class="t_weaponColumn 7">Used&nbsp;weapon</td>
+                                        <td id="th-version"    class="versionColumn 8">	   Version    </td>
+                                        <td id="th-date"       class="dateColumn 9">	     Date 	  </td>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-light tableBody_gradient" id="timeLBtableBody">
+                                    <tr class="timeTableRow">
+                                        <td class="t_mapName mapNameColumn 0">  ...</td>
+                                        <td class="t_position positionColumn 1">...</td>
+                                        <td class="t_name nameColumn 2">		...</td>
+                                        <td class="t_time timeColumn 3">	    ...</td>
+                                        <td class="t_coins coinsColumn 4">	    ...</td>
+                                        <td class="t_mutNums t_mutatorsColumn 5"> ...</td>
+                                        <td class="t_usedWeapon t_weaponColumn 7">...</td>
+                                        <td class="t_version versionColumn 8">  ...</td>
+                                        <td class="t_date dateColumn 9">		...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section> <!-- leaderboardContent -->
+                    </div> <!-- lbScoresSection -->
+                </main>
+
+                <footer>
+                    Thronefall leaderboard embedded v.1.0 | Made by GhostMiner. <br>
+                    <a href="https://ghost-miner.github.io/thronefall" target="_blank">Full version</a>, 
+                    <a href="https://ghost-miner.github.io/">Website</a>, 
+                    <a href="http://youtube.com/ghostMinerMC">Youtube</a>, 
+                    <a href="https://discord.gg/DjUBY9h">Discord</a>
+                </footer>
+            </div> <!-- embed_mainPageContainerFriónt -->
+        </div> <!-- embed_mainPageContainerBack -->
+        
+        <link rel="stylesheet" href="../styles/overrides.css">
+        <script src="../scripts/browserCheck.js"></script>
+        <script>
+            EmbedPageReadyEvent();
+        </script>
+    </body>
+</html>
