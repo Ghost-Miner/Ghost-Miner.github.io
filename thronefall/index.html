@@ -217,7 +217,7 @@
                             </button>
                         </a>
 
-                        <a href="#" id="gl_Wiki">
+                        <a href="#" id="gl_Wiki" style="display: none;">
                             <button type="button" id="statisticsButtonHeader" class="btn gameLinksBtn btn-warning dropShadow whiteGradient" style="margin-left: 0px;" onclick="OpenStatsSection();">
                                 Statistics
                             </button>
@@ -248,10 +248,7 @@
                                 <button class="btn btn-warning dropShadow whiteGradient" id="scoreCategoryButton" type="button" onclick="SelectRandomBackground(1); ChangeCategory('score');">
                                     <span class="categoryToggleText"> High-scores </span>
                                 </button>
-                                <button style="display:none;" class="btn btn-warning dropShadow whiteGradient" id="bonusModesCategoryButton" type="button" onclick="SelectRandomBackground(1); ChangeCategory('bonusModes');">
-                                    <span class="categoryToggleText"> Bonus modes </span>
-                                </button>
-                                <button class="btn btn-warning dropShadow whiteGradient" id="timeCategoryButton" type="button" disabled onclick="SelectRandomBackground(2); ChangeCategory('time');" hx-get="./leaderboards/time.html" hx-target="#lbTimeSection" hx-swap="innerHTML">
+                                <button style="display: none;" class="btn btn-warning dropShadow whiteGradient" id="timeCategoryButton" type="button" disabled onclick="SelectRandomBackground(2); ChangeCategory('time');" hx-get="./leaderboards/time.html" hx-target="#lbTimeSection" hx-swap="innerHTML">
                                     <span class="categoryToggleText"> Speed-runs </span>
                                 </button>	
                                 <button class="btn btn-warning dropShadow whiteGradient" id="demoCategoryButton" type="button" disabled onclick="SelectRandomBackground(1); ChangeCategory('demo');" hx-get="./leaderboards/demo/nl-score.html" hx-target="#lbDemoSection" hx-swap="innerHTML">
@@ -297,27 +294,6 @@
                                         <span class="levelToggleText"> Eternal trials </span>
                                     </button>
                                 </section> <!-- scoreLevelsToggle -->
-
-                                <!--
-                                    B O N U S   M O D E S 
-                                -->
-                                <section id="bonusModesToggle" class="levelsToggleButtons">
-                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="nf_score_btn" onclick="SelectRandomBackground(2); ChangeTableData('Nordfels',true)" DISABLED>
-                                        <span class="levelToggleText"> Nordfels </span>
-                                    </button>
-                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="ds_score_btn" onclick="SelectRandomBackground(3); ChangeTableData('Durststein',true)" DISABLED>
-                                        <span class="levelToggleText"> Durststein </span>
-                                    </button>
-                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow frostseeBtn" id="fs_score_btn" onclick="SelectRandomBackground(4); ChangeTableData('Frostsee',true)" DISABLED>
-                                        <span class="levelToggleText"> Frostsee </span>
-                                    </button>
-                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow uferwindBtn" id="uf_score_btn" onclick="SelectRandomBackground(5); ChangeTableData('Uferwind',true)" DISABLED>
-                                        <span class="levelToggleText"> Uferwind </span>
-                                    </button>
-                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow uferwindBtn" id="uf_score_btn" onclick="SelectRandomBackground(6); ChangeTableData('Sturmklamm',true)" DISABLED>
-                                        <span class="levelToggleText"> Sturmklamm </span>
-                                    </button>
-                                </section>
 
                                 <!--
                                     S P E E D   R U N S 
@@ -370,7 +346,7 @@
                                     <button type="button" class="btn btn-warning btn_orangeGradient dropShadow" id="submitScoreBtnSplit"  href="#" onclick="OpenSubmitWindow(); HideChoiceButtons('score')">
                                         <span id="SubmitButtonText"> SUBMIT SCORE </span>
                                     </button>
-                                    <button type="button" class="btn btn-warning btn_orangeGradient dropShadow dropdown-toggle dropdown-toggle-split" id="submitTimeBtnSplit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button style="display: none;" type="button" class="btn btn-warning btn_orangeGradient dropShadow dropdown-toggle dropdown-toggle-split" id="submitTimeBtnSplit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right">
@@ -390,7 +366,7 @@
                                         <button title="Toggle colour theme" type="button" onclick="ToggleThemes()" id="colourThemeToggleButton" class="btn btn-warning btn_orangeGradient dropShadow">
                                             <img alt="colour theme icon" src="./img/sun.png" style="max-width: 25px;" id="colourThemeToggleIcon">
                                         </button>
-                                        <button type="button" class="btn btn-warning btn_orangeGradient dropShadow dropdown-toggle dropdown-toggle-split" id="pageOptionsSplitDrpBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button style="display: none;" type="button" class="btn btn-warning btn_orangeGradient dropShadow dropdown-toggle dropdown-toggle-split" id="pageOptionsSplitDrpBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -402,7 +378,7 @@
                                     </div> <!-- submitButtonSplit -->
                                     
                                     <!-- SEARCH -->
-                                    <button title="Toggle text style" type="button" onclick="ToggleSearchField()" id="searchButton" class="btn btn-warning btn_orangeGradient dropShadow">
+                                    <button style="display: none;" title="Toggle text style" type="button" onclick="ToggleSearchField()" id="searchButton" class="btn btn-warning btn_orangeGradient dropShadow">
                                         <img alt="search submissions icon" src="./img/search white.png" style="max-width: 25px;" id="searchToggleButtonIcon">
                                     </button>
                                 </div>
@@ -780,47 +756,6 @@
                                             <td class="t_usedWeapon t_weaponColumn 7">...</td>
                                             <td class="t_version versionColumn 8">  ...</td>
                                             <td class="t_date dateColumn 9">		...</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </section> <!-- leaderboardContent -->
-                        </div> <!-- lbScoresSection -->
-
-                        <!-- 
-                            B P N U S   M O D E S
-                         -->
-                         <div id="lbbonusModeSection">
-                            <div id="bonusModesTitle">Bonus modes <br> Coming soon...</div>
-                            <section id="leaderboardContent" style="display: none;">
-                                <section id="tableTitle">
-                                    <span id="leaderboardNameText">*table name*</span>
-                                    <span id="searchResultsLegendText">*search legend*</span>
-                                </section>
-                                <table class="table table-striped" id="LBtableMain">
-                                    <thead class="table-dark tableHead_gradient" id="LBtableHead">
-                                        <tr>
-                                            <td id="th-mapName"    class="mapNameColumn 0">     Level     </td>
-                                            <td id="th-position"   class="positionColumn 1">      #       </td>
-                                            <td id="th-name"       class="nameColumn 2">		 Name	  </td>
-                                            <td id="th-score"      class="scoreColumn 3">		 Score 	  </td>
-                                            <td id="th-coins"      class="coinsColumn 4">		 Gold 	  </td>
-                                            <td id="th-mutNums"    class="bm_mutatorsColumn 5"> Mutators     </td>
-                                            <td id="th-usedWeapon" class="bm_weaponColumn 7">Used&nbsp;weapon</td>
-                                            <td id="th-version"    class="versionColumn 8">	 Version      </td>
-                                            <td id="th-date"       class="dateColumn 9">		 Date	  </td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table-light tableBody_gradient" id="scoreLBtableBody">
-                                        <tr class="bonusModesTableRow">
-                                            <td class="bm_mapName    mapNameColumn 0">  ...</td>
-                                            <td class="bm_position   positionColumn 1">...</td>
-                                            <td class="bm_name       nameColumn 2">		  ...</td>
-                                            <td class="bm_score      scoreColumn 3">	  ...</td>
-                                            <td class="bm_coins      coinsColumn 4">	  ...</td>
-                                            <td class="bm_mutNums    bm_mutatorsColumn 5"> ...</td>
-                                            <td class="bm_usedWeapon bm_weaponColumn 7">...</td>
-                                            <td class="bm_version    versionColumn 8">  ...</td>
-                                            <td class="bm_date       dateColumn 9">		  ...</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1311,7 +1246,7 @@
             <script>
                 PageReadyEvent();
                 CheckIfFixTF2PanelShouldBeClosed();
-                const websiteVersion = "3.5.3, 4/8/2024 - For ET S3 only";
+                const websiteVersion = "3.5.4, 20/10/2024";
             </script>
 
             <script src="./scripts/contextMenu.js"></script>
