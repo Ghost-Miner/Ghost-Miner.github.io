@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EOS trailer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./trailer.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- TRAILER IMAGES AND VIDEO -->
+    <div id="mainContainer">
+        <img src="/img/eos trailer optimized.gif" alt=""   class="eosTrailerGif" id="eosJPEG">
+
+        <img src="/img/eos trailer optimized.gif" alt=""   class="eosTrailerGif" id="eosGif">
+
+        <iframe src="/img/EOS trailer.mp4" frameborder="0" class="eosTrailerGif" id="eosVideo"></iframe>
+    </div>
+
+    <!-- CLICK TO PLAY TEXT OVERLAY -->
+    <div id="overlayBlurDiv" onclick="ReplaceGifWothVideo()">
+        <div id="overlayTextDiv">
+            <span id="overlayText">Click here to watch in HD with sound </span>
+        </div>
+    </div>
+
+    <!-- MOVIE TITLE -->
+    <div id="MovieTitleDiv">
+        <span id="movieTitle">The Edge of Sleep (2024) Trailer</span>
+    </div>
+    <script>
+        HidePlayTextOverlay();
+        AnimatedImage();
+    </script>
+</body>
+</html>
