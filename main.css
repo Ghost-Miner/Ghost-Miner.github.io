@@ -1,6 +1,7 @@
 body
 {
-    background-image: url("./img/bliss.jpg");
+    /* background-image: url("./img/bliss.jpg"); */
+    background-image: url("./img/Radiance.jpg");
     background-position: top;
     background-attachment: fixed;
     background-size:cover;
