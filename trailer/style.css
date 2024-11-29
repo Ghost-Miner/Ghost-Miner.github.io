@@ -1,0 +1,142 @@
+*
+{
+	scrollbar-width: none !important;
+	scrollbar-color: rgba(0,0,0,0) rgba(0,0,0,1);
+}
+body 
+{
+	margin: 0px;
+	padding: 0px;
+	/* background: black; */
+	overflow:visible;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#mainContainer 
+{
+	/* position: absolute; */
+	top: 0;
+	left: 0;
+	z-index: 0;
+
+	width: 100vh;
+	height: 100vh;
+	width: 100svw;
+	height: 100svh;
+
+	margin: 0px;
+	padding: 0px;
+	background: black;
+}
+
+.eosTrailerGif, #eosVideo
+{
+	width: 100vh;
+	height: 100vh;
+	width: 100svw;
+	height: 100svh;
+	aspect-ratio: 16/9;
+}
+
+#overlayBlurDiv 
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+
+	z-index: 1;
+	width: 100svw;
+	height: 100svh;
+
+	border-radius: 15px;
+	backdrop-filter: blur(8px);
+	background: rgba(0, 0, 0, 0.1);
+}
+
+#overlayTextDiv 
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	border-radius: 20px;
+	/* backdrop-filter: blur(8px); */
+
+	padding: 25px;
+	color: white;
+	background: rgba(0, 0, 0, 0.64);
+
+	text-align: center;
+	z-index: 2;
+}
+
+#overlayTextDiv 
+{
+	width: 100%;
+	max-width: 450px;
+
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.overlayHide 
+{
+	animation-duration: 0.5s;
+	animation-name: overlayHideKF;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+
+@keyframes overlayHideKF 
+{
+	0% {
+		opacity: 100%;
+	}
+
+	100% {
+		opacity: 0%;
+	}
+}
+
+.overlayBlurDivHover:hover 
+{
+	opacity: 1 !important;
+}
+
+#eosVideo, #MovieTitleDiv, #eosJPEG
+{
+	display: none;
+}
+
+#MovieTitleDiv 
+{
+	position: fixed;
+	top: 0;
+
+	z-index: 5;
+	padding: 10px;
+	border-radius: 15px;
+
+	font-size: 1rem;
+	/* background: green; */
+	color: white;
+	backdrop-filter: blur(6px);
+}
+
+#debugShitDiv
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.debugShitButton
+{
+	/* margin-top: 10px; */
+	padding: 5px;
+	font-weight: bold;
+	font-size: 1rem;
+}
