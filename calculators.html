@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculators | GhostMiner</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <link href="./img/icon.png" rel="shortcut icon" type="image/jpg">
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
+        <link href="./main.css" rel="stylesheet">
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+		<!-- BOOTSTRAP 5 -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    </head>
+    <body>
+        <style>
+            /* div
+            {
+                border: 1px dotted black;
+            } */
+            #formContainer
+            {
+                display: grid;
+                /* grid-template-columns: repeat(2,1fr); */
+            }
+            .formFieldDiv
+            {
+                display: grid;
+                grid-template-columns: 1fr;
+
+                margin-bottom: 10px;
+            }
+            .inputFieldTitle
+            {
+                font-weight: bold;
+            }
+            #fileSizeContainer, #transferspeedContainer
+            {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                row-gap: 15px;
+                column-gap: 15px;
+            }
+            input
+            {
+                padding: 5px;
+                border-radius: 5px;
+            }
+            h1
+            {
+                font-size: 1.75rem;
+                font-weight: 600;
+                color: white;
+            }
+        </style>
+
+        <div id="pageContainer">
+            <div id="">
+                <h1>Transfer time calculator</h1>
+                <hr>
+
+                <div id="inputFieldsDiv">
+                    <form action="" method="get" onsubmit="return CalculateTime(event)">
+                        <div id="formContainer">
+
+                            <div id="fileSizeContainer" class="">
+                                <div id="fileSizeInputPsDiv" class="formFieldDiv">
+                                    <label for="fileSiteField" class="inputFieldTitle">File size:</label>
+                                    <input type="number" name="fileSiteField" id="fileSiteField" required>
+                                </div>
+                                
+                                <div id="sizeUnitsDiv" class="formFieldDiv">
+                                    <span class="inputFieldTitle">Unit</span>
+                                    <div id="sizeUnitsDiv">
+                                        <input type="radio" name="sizeUnitRadio" id="sizeUnitRadioGB" onclick="ChangeSizeUnit('GB')">
+                                        <label for="sizeUnitRadioGB">Gigabyte</label>
+                                        
+                                        <input type="radio" name="sizeUnitRadio" id="sizeUnitRadioMB" onclick="ChangeSizeUnit('MB')" checked>
+                                        <label for="sizeUnitRadioMB">Megabyte</label>
+                                        
+                                        <input type="radio" name="sizeUnitRadio" id="sizeUnitRadioKB" onclick="ChangeSizeUnit('KB')">
+                                        <label for="sizeUnitRadioKB">Kilobyte</label>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div id="transferspeedContainer" class="">
+                                <div id="transferspeedDiv" class="formFieldDiv">
+                                    <label for="speedField" class="inputFieldTitle">Transfer speed:</label>
+                                    <input type="number" name="speedField" id="speedield" required>
+                                </div>
+                                
+                                <div id="speedUnitsDiv" class="formFieldDiv">
+                                    <span class="inputFieldTitle">Unit</span>
+                                    <div id="sizeUnitsDiv">
+                                        <input type="radio" name="transferSpeedUnitRadio" id="sizeUnitRadioGbs" onclick="ChangeTransferUnits('Gb/s')">
+                                        <label for="sizeUnitRadioGbs">Gigabit/s</label>
+                                        
+                                        <input type="radio" name="transferSpeedUnitRadio" id="sizeUnitRadioMbs" onclick="ChangeTransferUnits('Mb/s')" checked>
+                                        <label for="sizeUnitRadioMbs">Megabit/s</label>
+                                        
+                                        <input type="radio" name="transferSpeedUnitRadio" id="sizeUnitRadioKbs" onclick="ChangeTransferUnits('kb/s')">
+                                        <label for="sizeUnitRadioKbs">kilobit/s</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="calcResultDiv" class="formFieldDiv">
+                                <!-- <h4>Result: <span id="transferTimeResult"></span> </h4> -->
+                                <label for="resultBox" class="inputFieldTitle">Result</label>
+                                <input type="text" name="resultBox" id="resultBox" readonly>
+                            </div>                            
+                        </div>
+
+                        <hr>
+                        <input type="submit" value="Calculate"  class="btn btn-success">
+                        <a href="./speedtest.html" target="_blank" rel="">
+                            <input type="button" value="Speed test" class="btn btn-success">
+                        </a>
+                    </form>
+                </div>
+
+                <!-- <button onclick="CalculateTime()" class="btn btn-success">Calculate</button> -->
+                <br>
+            </div> <!-- contentContainer -->
+
+        </div> <!-- pageContainer -->
+
+        <script>
+            let sizeUnit = "MB";
+            let transferUnit = "Mb/s";
+
+            $("#sizeUnitRadioMB")[0].checked = true;
+            $("#sizeUnitRadioMbs")[0].checked = true;
+
+            function ChangeSizeUnit (newUnit)
+            {
+                console.log("unit changed to " + newUnit);
+                sizeUnit = newUnit;
+            }
+            function ChangeTransferUnits (newUnit)
+            {
+                 console.log("unit changed to " + newUnit);
+                 transferUnit = newUnit;
+            }
+
+            function CalculateTime (e)
+            {
+                console.clear();
+                e.preventDefault();
+
+                let resultText       = $("#resultBox")[0];
+                let fileSizeRaw      = $("#fileSiteField")[0].value;
+                let transferSpeedRaw = $("#speedield")[0].value;
+
+                if (fileSizeRaw < 1 || transferSpeedRaw < 1)
+                {
+                    resultText.value = "File size or transfer speed cannot be 0!";
+                    return;  
+                }
+
+                let fileSizeMbyte   = ConvertToMegaByte(fileSizeRaw);
+                let fileSizeInMBits = ConvertToMbits(fileSizeMbyte);
+
+                let transferspeedMbit = SpeedConvertToMbits(transferSpeedRaw);
+
+                // RAW time
+                let transferTimeSeconds = fileSizeInMBits     / transferspeedMbit;
+                let transferTimeMinutes = transferTimeSeconds / 60;
+                let transferTimeHours   = transferTimeMinutes / 60;
+                let transferTimeDays    = transferTimeHours   / 24;
+
+                // split minutes into whole number and remainder
+                let minuteInt = Math.floor(transferTimeMinutes);
+                let minuteDec = transferTimeMinutes - minuteInt;
+                
+                let daysInt = Math.floor(transferTimeDays);
+                let daysDec = transferTimeDays - daysInt;
+
+                // split minutes  into whole number and remainder
+                let hoursInt = Math.floor(transferTimeHours);
+                let hoursDec = transferTimeHours - hoursInt
+
+                let realSeconds = Math.round(60 * minuteDec);
+                let realMinutes = Math.floor(60 * hoursDec);
+                let realHours   = Math.floor(24 * daysDec);
+                let realDays    = daysInt;
+
+                // console.clear();
+                console.table([transferSpeedRaw,transferspeedMbit])
+                // console.table([transferTimeDays,transferTimeHours,transferTimeMinutes,transferTimeSeconds]);
+                // console.table([hoursInt,hoursDec,,minuteInt,minuteDec,,daysInt,daysDec]);
+                // console.table([realDays,realHours,realMinutes,realSeconds]);
+
+                resultText.value = realDays + " day(s) " + realHours + " hour(s), " + realMinutes + " minutes, " + realSeconds + " seconds";
+            }
+
+            function ConvertToMegaByte (toConvert)
+            {
+                switch (sizeUnit)
+                {
+                    default:
+                        console.error("invalid unit");
+                        break;
+
+                    case "MB":
+                        return toConvert;
+                        break;
+
+                    case "GB":
+                        return toConvert * 1000;
+                        break;
+
+                    case "KB":
+                        return toConvert / 1000;
+                        break;
+                }
+            }
+            function SpeedConvertToMbits (toConvert)
+            {
+                switch (transferUnit)
+                {
+                    default:
+                        console.error("invalid unit");
+                        break;
+
+                    case "Mb/s":
+                        return toConvert;
+                        break;
+
+                    case "Gb/s":
+                        return toConvert * 1000;
+                        break;
+
+                    case "kb/s":
+                        return toConvert / 1000;
+                        break;
+                }
+                console.log(toConvert);
+            }
+
+            function ConvertToMbits (toConvert)
+            {
+                return toConvert * 8;
+            }
+        </script>
+    </body>    
+</html>
