@@ -1,8 +1,9 @@
 let videoIsPlaying = false;
 
-function HidePlayTextOverlay()
+async function HidePlayTextOverlay()
 {
-	milliseconds = 2500;
+
+	milliseconds = 2000;
 	setTimeout(() =>
 	{
 		$("#overlayBlurDiv")[0].classList.add("overlayHide");
@@ -14,10 +15,7 @@ function HidePlayTextOverlay()
 		$("#overlayBlurDiv")[0].style.opacity = 0;
 		$("#overlayBlurDiv")[0].classList.add("overlayBlurDivHover");
 	}, milliseconds);
-}
 
-function ReplaceGifWothVideo()
-{
 	videoIsPlaying = true;
 	console.log("REPLACING IMAGEE WITH VIDEO");
 	$("#eosGif")[0].style.display = "none";
@@ -26,15 +24,7 @@ function ReplaceGifWothVideo()
 
 	$("#eosVideo")[0].style.display = "block";
 	$("#MovieTitleDiv")[0].style.display = "block";
-}
 
-function Sleep(ms)
-{
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function AnimatedImage()
-{
 	$("#eosGif")[0].style.display = "none";
 	$("#eosJPEG")[0].style.display = "block";
 
@@ -56,7 +46,9 @@ async function AnimatedImage()
 
 		await Sleep(frameTime);
 	}
+}
 
-	await Sleep(1000);
-	AnimatedImage();
+function Sleep(ms)
+{
+	return new Promise(resolve => setTimeout(resolve, ms));
 }
