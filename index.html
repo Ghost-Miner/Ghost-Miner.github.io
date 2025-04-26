@@ -8,16 +8,25 @@
         <link href="https://fonts.googleapis.com" rel="preconnect">
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
         <link href="./main.css" rel="stylesheet">
+        <script src="/trailers.js"></script>
     </head>
     <body>
-        <div id="pageContainer">
-            <div id="EOStrailerDiv">
-                <!-- <iframe src="https://www.youtube.com/embed/JGxCmkPjCNk" frameborder="0" id="EOFSTrailerFrame"></iframe> -->
-                <!-- <img src="/img/eos trailer optimized.gif" frameborder="0" id="EOFSTrailerFrame"></img> -->
-                <iframe src="/trailer/index.html" frameborder="0" id="EOFSTrailerFrame" scrolling="false"></iframe>
-            </div>
+        <style>
+            #eosVideo,.eosTrailerGif, #trailerVideo {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16/9;
+                border-radius: 10px;
+            }
+        </style>
 
+        <div id="pageContainer">
+            <div class="" id="EOStrailerDiv">
+                <video id="trailerVideo" src="/img/EOS_trailer.mp4" frameborder="0" class="" id="eosVideo" autoplay muted controls loop></video>
+            </div>
             <div id="contentContainer">
                 <div id="brbImgDiv">
                     <img id="brbImg" src="./img/4c7f9dde9aa8489785e7c9c3eaa75444.webp">
@@ -39,5 +48,8 @@
             </div> <!-- contentContainer -->
 
         </div> <!-- pageContainer -->
+        <script>
+            ChooseRandomTrailer();
+        </script>
     </body>    
 </html>
