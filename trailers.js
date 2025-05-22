@@ -10,10 +10,6 @@ function ChooseRandomTrailer ()
         case 0:
             trailerPath = "/img/EOS_trailer.mp4";
             break;
-
-        case 1:
-            trailerPath = "/img/EOS_trailer.mp4";
-            break;
             
         case 2:
             trailerPath = "/img/ISWM_trailer.mp4";
