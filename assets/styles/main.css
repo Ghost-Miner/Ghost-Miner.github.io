@@ -1,0 +1,46 @@
+body
+{
+    /* background-image: url("./img/bliss.jpg"); */
+    background-image: url("/img/Radiance.webp");
+    background-position: top;
+    background-attachment: fixed;
+    background-size:cover;
+    /* color: white; */
+    font-family: Roboto, Ubuntu, Cantarell, 'Open Sans';
+}
+
+.masterPageContaner
+{
+    /* min-width: 600px; */
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    /* margin-top: 150px; */
+    background-color: rgba(255, 255, 255,0.25);
+    border-radius: 10px;
+    margin-top: 5svh;
+    margin-bottom: 5svh;
+    padding: 50px;
+    box-shadow: 2px 2px 16px black;
+    backdrop-filter: blur(12px);
+}
+
+.contentContainer
+{
+    box-shadow: 2px 2px 16px black;
+    backdrop-filter: blur(12px);
+
+}
+
+#titleContainer
+{
+    display: grid;
+    grid-template-columns: 150px auto;
+}
+
+#titleImage 
+{
+    border-radius: 10px;
+    max-width: 100px;
+    height: auto;
+}

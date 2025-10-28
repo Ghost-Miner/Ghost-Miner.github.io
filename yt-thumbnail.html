@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Get YouTube video thumbnail | GhostMiner</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <link href="./img/icon.png" rel="shortcut icon" type="image/jpg">
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+        <link href="./main.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"rel="stylesheet">
+    </head>
+
+    <body>
+        <style>
+            img
+            {
+                max-width: 100%;
+                height: auto;
+            }
+            hr
+            {
+                background-color: gray;
+            }
+            body
+            {
+                color: white;;
+            }
+            a, a:link, a:visited 
+            {
+                color: white;
+            }
+            a:hover
+            {
+                font-weight: normal;
+            }
+
+            #videiIdField
+            {
+                width: 75%;
+                height: 32px;
+                margin-bottom: 5px;
+            }
+
+
+            .thumbnailImg
+            {
+                margin-top: 10px;
+            }
+            .thumbnailContainer
+            {
+                display: none;
+
+                padding: 15px;
+                margin-bottom: 15px;
+                border-radius: 5px;
+
+                background: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+            }
+
+            #tinyThumbnailGrid
+            {
+                /* display: grid; */
+                display: none;
+                grid-template-columns: repeat(4,1fr);
+                justify-content: center;
+                align-items: center;
+                column-gap: 5px;
+                text-align: center;
+            }
+            .tinyThumbnailImg
+            {
+                width: 100%;
+
+            }
+            .tinyThumbnailContainer
+            {
+                background-color: rgba(0,0,0,0);
+                margin: 5px;
+            }
+        </style>
+
+        <div id="pageContainer">
+                <h1>Get YouTube video thumbnail</h1>
+                <hr>
+
+                <center>
+                <form action="" method="get" onsubmit="return GetThumbnail(event)">
+                    <input type="text" name="videoIdField" id="videiIdField" placeholder="video link">
+                    <br>
+                    <input type="submit" value="Get thumbnail" class="btn btn-success">
+                </form>
+                </center>
+
+                <br>
+
+                <div class="thumbnailContainer" id="maxResImgDiv">
+                    <h4>HD 1280 x 720 </h4>
+                    <img src="https://i3.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="max res thumbnail" class="thumbnailImg" id="thumbnailImg_maxRes">
+                    <br>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="maxResDefaukt-link">*url*</a>
+                </div>
+
+                <div class="thumbnailContainer" id="">
+                    <h4>SD 640 x 480</h4>
+                    <img src="https://i3.ytimg.com/vi/dQw4w9WgXcQ/sddefault.jpg" alt="SD thumbnail" class="thumbnailImg" id="thumbnailImg_sd">
+                    <br>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="sddefault-link">*url*</a>
+                </div>
+                
+                <br>
+                <div class="thumbnailContainer" id="">
+                    <h4>320 x 180</h4>
+                    <img src="https://i3.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="MQ thumbnail" class="thumbnailImg" id="thumbnailImg_mq">
+                    <br>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="mqdefault-link">*url*</a>
+                </div>
+
+                <div class="thumbnailContainer" id="tinyThumbnailGrid">
+                    <div class="     tinyThumbnailContainer" id="">
+                        <h4>0</h4>
+                        <img src="https://i3.ytimg.com/vi/dQw4w9WgXcQ/0.jpg" alt="thumbnail 0" class="thumbnailImg tinyThumbnailImg" id="tiny0">
+                        <a href="" target="_blank" rel="noopener noreferrer" id="tiny0-link">Open image</a>
+                    </div>
+                    <div class=" tinyThumbnailContainer" id="">
+                        <h4>1</h4>
+                        <img src="https://i3.ytimg.com/vi/dQw4w9WgXcQ/1.jpg" alt="thumbnail 0" class="thumbnailImg tinyThumbnailImg" id="tiny1">
+                        <a href="" target="_blank" rel="noopener noreferrer" id="tiny1-link">Open image</a>
+                    </div>
+                    <div class=" tinyThumbnailContainer" id="">
+                        <h4>2</h4>
+                        <img src="https://i3.ytimg.com/vi/dQw4w9WgXcQ/2.jpg" alt="thumbnail 0" class="thumbnailImg tinyThumbnailImg" id="tiny2">
+                        <a href="" target="_blank" rel="noopener noreferrer" id="tiny2-link">Open image</a>
+                    </div>
+                    <div class=" tinyThumbnailContainer" id="">
+                        <h4>3</h4>
+                        <img src="https://i3.ytimg.com/vi/dQw4w9WgXcQ/3.jpg" alt="thumbnail 0" class="thumbnailImg tinyThumbnailImg" id="tiny3">
+                        <a href="" target="_blank" rel="noopener noreferrer" id="tiny3-link">Open image</a>
+                    </div>
+                </div>
+        </div> <!-- pageContainer -->
+
+        <script>
+            function GetThumbnail(e) 
+            {
+                e.preventDefault();
+
+                let containers = $(".thumbnailContainer");
+
+                for (let i = 0; i < containers.length; i++)
+                {
+                    containers[i].style.display = "block"
+                }
+                $("#tinyThumbnailGrid")[0].style.display = "grid";
+
+                let videoId = ExtractVideoId($("#videiIdField")[0].value);
+
+                $("#thumbnailImg_maxRes")[0].src = "https://i3.ytimg.com/vi/" + videoId + "/maxresdefault.jpg";
+                $("#thumbnailImg_sd")    [0].src = "https://i3.ytimg.com/vi/" + videoId + "/sddefault.jpg";
+                $("#thumbnailImg_mq")    [0].src = "https://i3.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
+
+                $("#tiny0")[0].src = "https://i3.ytimg.com/vi/" + videoId + "/0.jpg";
+                $("#tiny1")[0].src = "https://i3.ytimg.com/vi/" + videoId + "/1.jpg";
+                $("#tiny2")[0].src = "https://i3.ytimg.com/vi/" + videoId + "/2.jpg";
+                $("#tiny3")[0].src = "https://i3.ytimg.com/vi/" + videoId + "/3.jpg";
+
+
+                $("#maxResDefaukt-link")[0].href = "https://i3.ytimg.com/vi/" + videoId + "/maxresdefault.jpg";
+                $("#sddefault-link")    [0].href = "https://i3.ytimg.com/vi/" + videoId + "/sddefault.jpg";
+                $("#mqdefault-link")    [0].href = "https://i3.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
+
+                $("#tiny0-link")[0].href = "https://i3.ytimg.com/vi/" + videoId + "/0.jpg";
+                $("#tiny1-link")[0].href = "https://i3.ytimg.com/vi/" + videoId + "/1.jpg";
+                $("#tiny2-link")[0].href = "https://i3.ytimg.com/vi/" + videoId + "/2.jpg";
+                $("#tiny3-link")[0].href = "https://i3.ytimg.com/vi/" + videoId + "/3.jpg";
+
+
+                $("#maxResDefaukt-link")[0].textContent = "https://i3.ytimg.com/vi/" + videoId + "/maxresdefault.jpg";
+                $("#sddefault-link")    [0].textContent = "https://i3.ytimg.com/vi/" + videoId + "/sddefault.jpg";
+                $("#mqdefault-link")    [0].textContent = "https://i3.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
+            }
+
+            function ExtractVideoId (url)
+            {
+                let urlParts;
+                let videoId;
+
+                if (url.includes("youtu.be"))
+                {
+                    urlParts = url.split("/");
+
+                    videoId = urlParts[urlParts.length - 1];
+                    videoId = videoId.split("?")[0];
+                }
+                else if (url.includes("watch?v="))
+                {
+                    urlParts = url.split("watch?v=");
+
+                    videoId = urlParts[urlParts.length - 1];
+                    videoId = videoId.split("&")[0];
+                }
+                else if (url.includes("/v/"))
+                {
+                    urlParts = url.split("/v/");
+
+                    videoId = urlParts[urlParts.length - 1];
+                    videoId = videoId.split("&")[0];
+                }
+                else 
+                {
+                    alert("Invalid video link");
+                }
+
+                return videoId
+            }
+        </script>
+    </body>
+</html>
