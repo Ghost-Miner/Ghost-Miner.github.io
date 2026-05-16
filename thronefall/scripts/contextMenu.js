@@ -53,15 +53,6 @@ document.addEventListener('DOMContentLoaded', function ()
 			case 'menu-item-1':
 				ToggleThemes();
 				break;
-			case 'menu-item-2':
-				ToggleFontStyle();
-				break;
-			case 'menu-item-3':
-				ToggleAnimations();
-				break;
-			case 'menu-item-4':
-				OpenAdvancedSearchWindow();
-				break;
 		}
 
 		// Hide the context menu after clicking

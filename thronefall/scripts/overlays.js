@@ -4,17 +4,13 @@
 const submitWinString = "submit";
 function OpenSubmitWindow() 
 {
-	// TrackUserEvents("button click","open submit window","N/A");
+	// 
 	const submitWindow = document.getElementById("submitWindowBakcground");
 	const overlayWindow = document.getElementById("overlayWindow");
 
 	submitWindow.classList.remove("windowCloseAnim");
 	overlayWindow.classList.remove("overlayHideAnim");
 
-	if (animationsEnabled)
-	{
-		submitWindow.classList.add("windowOpenAnim");
-	}
 	overlayWindow.style.display = "block";
 	location.hash = submitWinString;
 
@@ -22,30 +18,24 @@ function OpenSubmitWindow()
 }
 function CloseSubmitWindow ()
 {
-	TrackUserEvents("button click","close submit window","N/A");
+	
 	const submitWindow  = document.getElementById("submitWindowBakcground");
 	const overlayWindow = document.getElementById("overlayWindow");
 	const windowIframe  = document.getElementById("submitFormFrame");
 
 	submitWindow.classList.remove("windowOpenAnim");
 	
-	if (animationsEnabled)
-	{
-		submitWindow.classList.add("windowCloseAnim");
+	submitWindow.classList.add("windowCloseAnim");
 		
-		Sleep(500).then(() => 
-		{ 
-			overlayWindow.classList.add("overlayHideAnim");
-		} );
-		Sleep(750).then(() => 
-		{ 
-			overlayWindow.style.display = "none";
-		} );
-	}
-	else
-	{
+	Sleep(500).then(() => 
+	{ 
+		overlayWindow.classList.add("overlayHideAnim");
+	} );
+	Sleep(750).then(() => 
+	{ 
 		overlayWindow.style.display = "none";
-	}
+	} );
+	
 	windowIframe.src = "";
 	location.hash = "";
 	// ShowChoiceButtons();
@@ -66,9 +56,6 @@ function HideChoiceButtons (type)
 	document.getElementById("submiFormDiv").style.display = "block";
 	const submitWinTitle = document.getElementById("titleBarText");
 
-	textStyle = "Fancy";
-	animationsEnabled = "true";
-
 	console.log(type);
 	if (type == "time")
 	{
@@ -86,11 +73,10 @@ function HideChoiceButtons (type)
 	else
 	{
 		submitWinTitle.textContent = "Submit new high-score";
-		document.getElementById("submitFormFrame").src = "https://ghostminer.maweb.eu/submit/?id=" + formID + "#" + currentTheme + "&" + textStyle + "&" + 
+		document.getElementById("submitFormFrame").src = "https://ghostminer.maweb.eu/submit/?id=" + formID + "#" + currentTheme + "&" + "N/A" + "&" + 
 																												 + "&" + window.innerWidth + "x" + window.innerHeight;
 		// document.getElementById("submitFormFrame").src = "./img/rightback.png";
-	}
-	TrackUserEvents("button click","load submit " + type + " form","N/A");
+	}	
 }
 
 // 
@@ -98,16 +84,13 @@ function HideChoiceButtons (type)
 // 
 function ShowRulesWindow ()
 {
-	TrackUserEvents("button click","show rules","show rules windows")
 	const rulesWindow 	= document.getElementById("rulesWindowsBackground");
 	const overlayWindow = document.getElementById("rulesWindow");
 
 	overlayWindow.classList.remove("overlayHideAnim");
 	rulesWindow.classList  .remove("windowCloseAnim");
-	if (animationsEnabled)
-	{
-		rulesWindow.classList  .add	  ("windowOpenAnim");
-	}		
+
+	rulesWindow.classList  .add	  ("windowOpenAnim");
 	overlayWindow.style.display = "block";
 }
 
@@ -117,27 +100,18 @@ function HideRulesWindow ()
 	const overlayWindow = document.getElementById("rulesWindow");
 
 	rulesWindow.classList.remove("windowOpenAnim");
-	if (animationsEnabled)
-	{
-		rulesWindow.classList.add("windowCloseAnim");
-		
-		// document.getElementById("overlayWindow").style.display = "none";
-		Sleep(500).then(() => 
-		{ 
-			overlayWindow.classList.add("overlayHideAnim");
-		} );
-		Sleep(750).then(() => 
-		{ 
-			overlayWindow.style.display = "none";
-		} );
-	}
-	else
-	{
-		// rulesWindow	 .style.display = "none";
+	rulesWindow.classList.add("windowCloseAnim");
+	
+	// document.getElementById("overlayWindow").style.display = "none";
+	Sleep(500).then(() => 
+	{ 
+		overlayWindow.classList.add("overlayHideAnim");
+	} );
+	Sleep(750).then(() => 
+	{ 
 		overlayWindow.style.display = "none";
-	}
-
-
+	} );
+	
 	// document.getElementById("rulesWindow").style.display = "none";
 }
 

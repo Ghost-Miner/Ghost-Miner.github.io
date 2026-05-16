@@ -21,8 +21,7 @@ function ChangeCategory(name)
 {
 	location.hash = "";
     HideLevelNameColumn();
-    CloseStatsSection();
-    TrackUserEvents("category change",name,"category button");
+    
     // Subcategory buttons
     const scoreLevelsButton = document.getElementById("scoreLevelsToggle");
     // Category buttons
@@ -342,49 +341,6 @@ function GetMutatorPageName (mutatorName)
     const extension = ".html";
 
     return wikiURL + mutatorName.split("_").join("-") + extension;
-
-    switch (mutatorName)
-    {
-        default:
-            console.error("GetMutatorPageName | \"" + mutatorName + "\" is not a valid Mutator name");
-            return "#";
-
-        case "Falcon god":
-            return (wikiURL + "falcon_god" + extension);
-
-        case "God of death":
-            return (wikiURL + "death_god" + extension);
-
-        case "God of destruction":
-            return (wikiURL + "destruction_god" + extension);
-
-        case "No towers pact":
-            return (wikiURL + "no_towers_pact" + extension);
-
-        case "No units pact":
-            return (wikiURL + "no_units_pact" + extension);
-
-        case "No walls pact":
-            return (wikiURL + "no_walls_pact" + extension);
-
-        case "Phoenix god":
-            return (wikiURL + "phoenix_god" + extension);
-
-        case "Pray to the war gods":
-            return (wikiURL + "pray_to_the_war_gods" + extension);
-
-        case "Snake god":
-            return (wikiURL + "snake_god" + extension);
-
-        case "Tiger god":
-            return (wikiURL + "tiger_god" + extension);
-
-        case "Turtle god":
-            return (wikiURL + "turtle_god" + extension);
-
-        case "Wasp god":
-            return (wikiURL + "wasp_god" + extension);
-    }
 }
 
 function GetPerkPageName (perkName)
@@ -393,106 +349,6 @@ function GetPerkPageName (perkName)
     const extension = ".html";
 
     return wikiURL + perkName.split("_").join("-") + extension;
-
-    switch (perkName)
-    {
-        default:
-            console.error("GetPerkPageName | \"" + perkName + "\" is not a valid perk name");
-            return "#";
-
-        case "Anti-air telescope":
-            return (wikiURL + "anti-air telescope" + extension);
-
-        case "Arcane towers":
-            return (wikiURL + "arcane towers" + extension);
-
-        case "Archery skills":
-            return (wikiURL + "archery skills" + extension);
-
-        case "Architect's council":
-            return (wikiURL + "architects council" + extension);
-
-        case "Big harbours":
-            return (wikiURL + "big harbours" + extension);
-
-        case "Castle blueprints":
-            return (wikiURL + "castle blueprints" + extension);
-
-        case "Castle Fortifications":
-            return (wikiURL + "castle fortifications" + extension);
-
-        case "Commander mode":
-            return (wikiURL + "commander mode" + extension);
-
-        case "Elite warriors":
-            return (wikiURL + "elite warriors" + extension);
-
-        case "Faster research":
-            return (wikiURL + "faster research" + extension);
-
-        case "Fortified houses":
-            return (wikiURL + "fortified houses" + extension);
-
-        case "Gladiator school":
-            return (wikiURL + "gladiator school" + extension);
-
-        case "Glass cannon":
-            return (wikiURL + "glass cannon" + extension);
-
-        case "Gods lotion":
-            return (wikiURL + "gods lotion" + extension);
-
-        case "Healing spirits":
-            return (wikiURL + "healing spirits" + extension);
-
-        case "Health potions":
-            return (wikiURL + "health potions" + extension);
-
-        case "Heavy armour":
-            return (wikiURL + "heavy armor" + extension);
-
-        case "Ice magic":
-            return (wikiURL + "ice magic" + extension);
-
-        case "Indestructible mines":
-            return (wikiURL + "indestructable mines" + extension);
-
-        case "Melee damage":
-            return (wikiURL + "melee damage" + extension);
-
-        case "Melee resistance":
-            return (wikiURL + "melee resistance" + extension);
-
-        case "Power towers":
-            return (wikiURL + "power tower" + extension);
-
-        case "Pumpkin fields":
-            return (wikiURL + "pumpkin fields" + extension);
-
-        case "Ranged damage":
-            return (wikiURL + "ranged damage" + extension);
-
-        case "Ranged resistance":
-            return (wikiURL + "ranged resistance" + extension);
-
-        case "Ring of resurrection":
-            return (wikiURL + "ring of resurrection" + extension);
-
-        case "Royal mint":
-            return (wikiURL + "royal mint" + extension);
-
-        case "Stronger_Heroes_Icon":
-            return (wikiURL + "stronger heros" + extension);
-
-        case "Treasure hunter":
-            return (wikiURL + "treasure hunter" + extension);
-
-        case "War horse":
-            return (wikiURL + "war horse" + extension);
-
-        case "Warrior mode":
-            return (wikiURL + "warrior mode" + extension);
-    }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -505,7 +361,7 @@ function GetSearchInputSring()
 let searchResultsSubs;
 function SearchSubByName(searchedString)
 {
-	TrackUserEvents("button click","search sub by name","searchButton");
+	
     if (searchedString == "" || searchedString == null)
     {
         alert("Search input cannot be empty!");

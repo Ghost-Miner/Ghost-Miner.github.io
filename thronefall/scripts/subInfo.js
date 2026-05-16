@@ -43,10 +43,10 @@ function CloseSubInfoWindow()
 	} );
 	location.hash = "";
 	ResetSubInfoWindowValues ();
-    TrackUserEvents("close sub info","N/A","N/A");
+    
 }
 
-function ShowSubInfo (submissionIndex,isUserAction)
+function ShowSubInfo (submissionIndex)
 {
     if (!location.hash.toLowerCase().includes("score="))
     {
@@ -56,11 +56,6 @@ function ShowSubInfo (submissionIndex,isUserAction)
     {
         alert("Submission details are not available in embedded version.");
         return;
-    }
-
-    if (isUserAction)
-    {
-        TrackUserEvents("show sub info",submissionIndex,"table row");
     }
     const subInfoWindow = document.getElementById("subInfoWindowsBackground");
     const subInfoOverlay = document.getElementById("subInfoOverlayWindow");

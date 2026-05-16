@@ -9,7 +9,7 @@ function PageReadyEvent()
     SpawnTableRows();
     GetSubData();
     OpenSubmitFromURL();
-    GetPageInfo();
+    dummy2();
 }
 function EmbedPageReadyEvent()
 {
@@ -24,7 +24,6 @@ function EmbedPageReadyEvent()
     SpawnTableRows();
     GetSubData();
     // OpenSubmitFromURL();
-    // GetPageInfo();
 }
 
 let LbReady = false;
@@ -37,12 +36,6 @@ function LeaderBoarReadyEvent ()
 
     ShowSubInfo(GetAdressHash(),false); // Open submission by its number
     FindSubmissionById(GetAdressHash()); // Open submission by its ID
-
-    if (location.hash.toLowerCase().includes("statistics") || location.hash.toLowerCase().includes("stats"))
-    {
-        OpenStatsSection();
-    }
-
 
     // $("#statisticsButtonHeader")[0].disabled = false;
 

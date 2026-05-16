@@ -51,7 +51,7 @@
    ██    ██   ██ ██   ██ ██    ██ ████   ██ ██      ██      ██   ██ ██      ██                  
    ██    ███████ ██████  ██    ██ ██ ██  ██ █████   █████   ███████ ██      ██                  
    ██    ██   ██ ██   ██ ██    ██ ██  ██ ██ ██      ██      ██   ██ ██      ██                  
-   ██    ██   ██ ██   ██  ██████  ██   ████ ███████ ██      ██   ██ ███████ ███████ ██          
+   ██    ██   ██ ██   ██  ██████  ██   ████ ███████ ██      ██   ██ ███████ █████████          
                                                                                         
       .--,-``-.                           
      /   /     '.              ,----..    
@@ -69,8 +69,9 @@
       `--`-,,-'      `--"      `---`      
 	Created by GhostMiner, 
     v.1.0-2.0: June - November 2023, 
-    v.3.0-3.5: December 2023 - Present
-	x
+    v.3.0-3.5: December 2023 - 2026/05/16
+    v.3.6:     2026/05/16
+	
     > Ghost-Miner.Github.io
 	> YouTube.com/GhostMinerMC
 -->
@@ -95,7 +96,6 @@
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
         <!-- Custom CSS stylesheets and libraries -->
-        <link rel="stylesheet" href="./styles/stats.css">
         <link rel="stylesheet" href="./styles/global.css">
         <link rel="stylesheet" href="./styles/overlays.css">
         <link rel="stylesheet" href="./styles/animations.css">
@@ -108,12 +108,9 @@
         <script src="./scripts/events.js"></script>
         <!-- Submission scripts -->
         <script src="./scripts/processScores.js"></script>
-        <script src="./scripts/processTime.js"></script>
         <script src="./scripts/overlays.js"></script>
         <script src="./scripts/subInfo.js"></script>
         <script src="./scripts/parser.js"></script>
-        <script src="./scripts/graphs.js"></script>
-        <script src="./scripts/counters.js"></script>
     </head>
     <body>
         <!-- Loading overlay to hide trnasition from light to dark theme -->
@@ -792,7 +789,6 @@
             </div>
             <script>
                 PageReadyEvent();
-                CheckIfFixTF2PanelShouldBeClosed();
                 const websiteVersion = "3.5.5, 22/01/2025"; // version moved to this semi-hidden place to hide the fact this webpage has not been given shit about for a long tome
             </script>
             <script src="./scripts/contextMenu.js"></script>
@@ -801,30 +797,28 @@
 </html>
 <!-- 
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⠜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⠿⠿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿
-⣿⣿⡏⠁⠀⠀⠀⠀⠀⣀⣠⣤⣤⣶⣶⣶⣶⣶⣦⣤⡄⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⠜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⠿⠿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⡏⠁⠀⠀⠀⠀⠀⣀⣠⣤⣤⣶⣶⣶⣶⣶⣦⣤⡄⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿
 ⣿⣿⣷⣄⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⡧⠇⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣾⣮⣭⣿⡻⣽⣒⠀⣤⣜⣭⠐⢐⣒⠢⢰⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣏⣿⣿⣿⣿⣿⣿⡟⣾⣿⠂⢈⢿⣷⣞⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣷⣶⣾⡿⠿⣿⠗⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠻⠋⠉⠑⠀⠀⢘⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⡿⠟⢹⣿⣿⡇⢀⣶⣶⠴⠶⠀⠀⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⡿⠀⠀⢸⣿⣿⠀⠀⠣⠀⠀⠀⠀⠀⡟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠹⣿⣧⣀⠀⠀⠀⠀⡀⣴⠁⢘⡙⢿⣿⣿⣿⣿⣿⣿⣿⣿
-⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⠗⠂⠄⠀⣴⡟⠀⠀⡃⠀⠉⠉⠟⡿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠾⠛⠂⢹⠀⠀⠀⢡⠀⠀⠀⠀⠀⠙⠛⠿⢿
+⣿⣿⣿⣿⣿⣿⡿⠀⠀⢸⣿⣿⠀⠀⠣⠀⠀⠀⠀⠀⡟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠹⣿⣧⣀⠀⠀⠀⠀⡀⣴⠁⢘⡙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⠗⠂⠄⠀⣴⡟⠀⠀⡃⠀⠉⠉⠟⡿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠾⠛⠂⢹⠀⠀⠀⢡⠀⠀⠀⠀⠀⠙⠛⠿⢿⣿⣿⣿
 ░▀█▀░░░█▀█░█▄█░░░▀█▀░█░█░█▀▀░░░█▀█░█▀█░█▀▀░░░█░█░█░█░█▀█░░░█░█░█▀▀░█▀▀░█▀█░█▀▀░░
 ░░█░░░░█▀█░█░█░░░░█░░█▀█░█▀▀░░░█░█░█░█░█▀▀░░░█▄█░█▀█░█░█░░░█▀▄░█▀▀░█▀▀░█▀▀░▀▀█░░
 ░▀▀▀░░░▀░▀░▀░▀░░░░▀░░▀░▀░▀▀▀░░░▀▀▀░▀░▀░▀▀▀░░░▀░▀░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀▀▀░▀░░░▀▀▀░░
 ░▀█▀░█░█░█▀▀░░░█▀▀░█░█░█▀▀░▀█▀░█▀▀░█▄█░░░█▀▄░█░█░█▀█░█▀█░▀█▀░█▀█░█▀▀░█░█        
 ░░█░░█▀█░█▀▀░░░▀▀█░░█░░▀▀█░░█░░█▀▀░█░█░░░█▀▄░█░█░█░█░█░█░░█░░█░█░█░█░▀░▀        
 ░░▀░░▀░▀░▀▀▀░░░▀▀▀░░▀░░▀▀▀░░▀░░▀▀▀░▀░▀░░░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀        
--->
-<!--
-good luck trying ti deciper all of those unreadable and/or obfuscated scripts. :wink:
+
     
 ░▀█▀░█░█░█▀▄░█▀█░█▀█░█▀▀░█▀▀░█▀█░█░░░█░░░░░█░░░█▀▀░█▀█░█▀▄░█▀▀░█▀▄░█▀▄░█▀█░█▀█░█▀▄░█▀▄░░░█░█░░░░░▀▀█░
 ░░█░░█▀█░█▀▄░█░█░█░█░█▀▀░█▀▀░█▀█░█░░░█░░░░░█░░░█▀▀░█▀█░█░█░█▀▀░█▀▄░█▀▄░█░█░█▀█░█▀▄░█░█░░░▀▄▀░░░░░░▀▄░

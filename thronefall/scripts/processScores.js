@@ -314,25 +314,16 @@ function SortSubData ()
     {
         LeaderBoarReadyEvent();
     }
-    // DRAW GRAPHS
-    // SetGlobalChartsProperties();
-    // DrawAllGraphs();
-    // OpenStatsSection();
 }
 
 // DISPLAY TABLE FOR REQUESTED LEVEL
-function ChangeTableData(level,isUserAction)
+function ChangeTableData(level)
 {
     // STOP FUNCTION IF IT'S ALREADY RUNNING
     if (!sc_canShowTableData)
     {
         // console.log("LEADERBOARD IS NOT READY!");
         return;
-    }
-
-    if (isUserAction)
-    {
-        TrackUserEvents("level change",level,"change level button");
     }
     // Hide level name column 
     HideLevelNameColumn();
