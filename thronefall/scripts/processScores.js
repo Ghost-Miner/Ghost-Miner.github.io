@@ -82,7 +82,6 @@ let sc_canShowTableData = false;
 // 
 function SortSubData ()
 {
-
     // Currently chosen submission
     let chosenRow;
 
