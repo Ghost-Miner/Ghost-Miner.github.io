@@ -29,7 +29,14 @@ a:hover
     padding-top: 1px;  
     width: 1200px; 
     margin: auto;
+
     margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.imageItemLinkContainer:hover
+{
+    text-decoration: none;
 }
 
 /***********************************************/
@@ -47,7 +54,7 @@ a:hover
 .foldersGridMaster
 {
     margin: auto;
-    border: red 2px dotted;
+    /* border: red 2px dotted; */
     
     display: grid;
     max-width: 900px;
@@ -85,4 +92,12 @@ a:hover
     border-radius: 5px;
     max-width: 80%;
     max-height: 80%;
+}
+
+.divColumns2
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
+    margin-left: 10px;
+    margin-right: 10px;
 }

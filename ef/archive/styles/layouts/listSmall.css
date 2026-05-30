@@ -24,7 +24,10 @@
 {
 	background-color: lightgray;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); 
-	transform: scale(105%);
+	transform: scale(125%);
+	z-index: 10;
+	
+	font-weight: bold;
 }
 
 .listSmallDivContent {
@@ -42,5 +45,7 @@
 .listSmallIcon {
 	border-radius: 5px;
 	width: auto;
-	height: 100px
+	/* height: 100px; */
+	max-height: 105px;
+	max-width: 95%;
 }
