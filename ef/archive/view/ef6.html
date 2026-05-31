@@ -7,6 +7,7 @@
     
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/layouts//listSmall.css">
+    <link rel="stylesheet" href="../styles/overlays.css">   
 
     <script src="/ef/archive/scripts/pageBuilder.js"></script>
 </head>
@@ -128,16 +129,16 @@
             <li class="imagesList"> <a href="../assets/EF6/tigress.com/BlackCat_01.jpg" class="imageLink"> BlackCat_01.jpg </a> </li>
             <li class="imagesList"> <a href="../assets/EF6/tigress.com/BlackCat_02.jpg" class="imageLink"> BlackCat_02.jpg </a> </li>
             <li class="imagesList"> <a href="../assets/EF6/tigress.com/Cairyn.jpg" class="imageLink"> Cairyn.jpg </a> </li>                    
-        </div>
+        </div> <!-- imageLinksListDiv -->
 
         <hr>
 
-        <div class="divColumns2" id="">
+        <div class="divColumns2" id="browseMoreAndSourcesDiv">
             <div class="" id="seeMoreLinksDiv">
                 <h3>Browse more:</h3>
                 <ul>
                     <li><a href="../assets/EF6/Index of _EF6_conpics_mow (25. 5. 2026 21：50：06).html">EF6 pictures by mow</a></li>
-                    <li><a href="https://archive.eurofurence.org/EF6/conpics/beholder/BeholdEF6-03.html">EF6 Pictures by Beholder </a></li>
+                    <li><a href="https://archive.eurofurence.org/EF6/conpics/beholder/BeholdEF6-01  .html">EF6 Pictures by Beholder </a></li>
                     <li><a href="https://fursuit.timduru.org/view/FurryCon/EuroFurence/EF6">Timduru"s fursuit archive - pictures</a></li>
                     <li><a href="https://fursuit.timduru.org/view/FursuitVideo/FurryCon/Eurofurence/EF6">Timduru"s fursuit archive - videos</a></li>
                 </ul>
@@ -151,8 +152,28 @@
                     <li><a href="../assets/EF6/tigress.com/Photos_01 (25. 5. 2026 20：41：51).html">tigress.com/thalian/photos_01.html </a></li>
                 </ul>
             </div>
-        </div>
-    </div>
+        </div> <!-- browseMoreAndSourcesDiv -->
+
+    </div> <!-- masterDiv -->
+
+    <!-- 
+       IMAGE VIEWER
+   -->
+   <section id="imageViewWindowSection" class="">
+       <div class="" id="windowOverlayBlur">
+            <div class="" id="windowContent">
+                <div class="windowColumn" id="windowLeftColumn">
+
+                </div>
+                <div class="windowColumn" id="windowMiddleColumn">
+                    <img src="../assets/EF20/furcon.de/ef20 Fuchur P1060010.JPG" alt="" class="" id="windowImageElem">
+                </div>
+                <div class="windowColumn" id="windowRightColumn">
+                    
+                </div>
+           </div>
+       </div>
+   </section> <!-- overlayWindow -->
     
     <script>
         CreateThumbnailGrid();
