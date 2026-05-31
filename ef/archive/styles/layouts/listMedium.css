@@ -1,43 +1,74 @@
-#listMediumMainDiv {
-	max-width: 1300px;
+.listMediumMainDiv 
+{
+	max-width: 85%;
 	margin: auto;
-	padding-bottom: 25px;
+	margin-top: 1rem;
+	margin-bottom: 25px;
+	/* padding-bottom: 25px; */
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	row-gap: 15px;
-	column-gap: 15px
+	grid-template-columns: repeat(2,1fr);
+	row-gap: 20px;
+	column-gap: 20px;
 }
 
-.listMediumItemDiv {
-	width: 100%;
+.listMediumItemDiv 
+{
+	/* width: 99%; */
 	display: grid;
-	grid-template-columns: 22% auto;
+	grid-template-columns: 30% auto;
 	column-gap: 15px;
 	background-color: lightgray;
 	border-radius: 10px;
-	padding: 10px;
+	padding: 12px;
 	box-shadow: 3px 3px 8px gray
 }
+.listMediumItemDiv:hover
+{
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
+	transform: scale(115%);
+	z-index: 10;
+	/* font-weight: bold; */
 
-.listMediumImageDiv {
+	.listMediumTextTitle 
+	{
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+	.listMediumTextDetails
+	{
+		font-size: 1rem;
+	}
+}
+
+.listMediumImageDiv 
+{
 	margin: auto
 }
 
-.listMediumTextDiv {
+/* .listMediumTextDiv 
+{
 	margin-top: -0px
-}
+} */
 
-.listMediumTextTitle {
-	font-weight: 600;
+.listMediumTextTitle 
+{
+	font-weight: 700;
 	font-size: 1.15rem
 }
 
-.listMediumTextDetails {
+.listMediumTextDetails 
+{
 	font-size: 0.95rem
 }
 
-.listMediumImage {
-	border-radius: 10px;
-	max-height: 110px;
-	max-width: 110px
+.listMediumImage 
+{
+	border-radius: 5px;
+	max-height: 95px;
+	max-width: 99%
+}
+
+.listMediumTextDescriptionLink:hover
+{
+	text-decoration: none;
 }
