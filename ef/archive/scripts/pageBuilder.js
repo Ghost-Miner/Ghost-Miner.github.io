@@ -1,5 +1,4 @@
 
-
 function CompilePage ()
 {
     let imageLinksDiv = document.querySelector("#imageLinksListDiv");
@@ -44,6 +43,7 @@ function CompilePage ()
         let imgElem = document.createElement("img");
         imgElem.classList.add("listSmallIcon");
         imgElem.src = imageLinks[i];
+        imgElem.loading = "lazy";
 
         // put everything together
         imageItemDiv.insertAdjacentElement("afterbegin",contentDiv);
