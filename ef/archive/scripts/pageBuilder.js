@@ -1,5 +1,5 @@
 
-function CompilePage ()
+function CreateThumbnailGrid ()
 {
     let imageLinksDiv = document.querySelector("#imageLinksListDiv");
     let imageLinksList = document.getElementsByClassName("imageLink");
@@ -16,9 +16,10 @@ function CompilePage ()
         imageNames[i] = imageLinksList[i].text;
     }
 
-    console.table(imageLinks);
-    console.table(imageNames);
+    // console.table(imageLinks);
+    // console.table(imageNames);
 
+    // Create individual items
     for (let i = 0; i < imageLinksList.length; i++)
     {    
         // Create main div
@@ -47,11 +48,13 @@ function CompilePage ()
 
         // put everything together
         imageItemDiv.insertAdjacentElement("afterbegin",contentDiv);
-        contentDiv.insertAdjacentElement  ("afterbegin",anchorElem);
-        anchorElem.insertAdjacentElement  ("afterbegin",imgElem);
-        anchorElem.insertAdjacentHTML     ("beforeend","<br>");
-        anchorElem.insertAdjacentElement  ("beforeend", spanElem)
+        contentDiv  .insertAdjacentElement("afterbegin",anchorElem);
+        
+        anchorElem  .insertAdjacentElement("afterbegin",imgElem);
+        anchorElem  .insertAdjacentHTML   ("beforeend","<br>");
+        anchorElem  .insertAdjacentElement("beforeend", spanElem)
 
+        // Add the created item into the grid div
         imageContentDiv.insertAdjacentElement("beforeend", imageItemDiv);
     }
 
