@@ -1,3 +1,16 @@
+:root {
+	--backgroundColourTransparent: rgba(255, 255, 255, 0.55);
+	--backgroundColourOpaque: rgba(255, 255, 255, 0.95);
+	--windowMainColourTop: rgb(194, 115, 1);
+	--windowMainColourBottom: orange;
+	--buttonColour1: rgb(255, 165, 0);
+	--buttonColour2: rgb(255, 193, 7);
+	--shadowColour: rgba(0, 0, 0, 1);
+	--whiteColour1: white;
+	--whiteColour2: rgba(225, 225, 225, 1.0);
+	--customOrange: rgb(186, 131, 3)
+}
+
 body
 {
     background-color: darkgray;
