@@ -45,6 +45,16 @@ function CreateThumbnailGrid ()
         imgElem.classList.add("listSmallIcon");
         imgElem.src = imageLinks[i];
         imgElem.loading = "lazy";
+        if (imageLinks[i].includes(".jpg"))
+        {
+            imgElem.src = (imageLinks[i].split(".jpg")[0] + "_thumb.webp");;
+        }
+        else if (imageLinks[i].includes(".png"))
+        {
+            imgElem.src = (imageLinks[i].split(".png")[0] + "_thumb.webp");
+        }
+
+        // console.log(imageLinks[i].split(".jpg")[0] + "_thumb.webp");
 
         // put everything together
         imageItemDiv.insertAdjacentElement("afterbegin",contentDiv);
