@@ -1,7 +1,18 @@
+#imageViewWindowSection
+{
+	position: fixed;
+	top: 0;
+	height: 100svh;
+	width: 100svw;
+	margin: 0px;
+
+	/* display: none; */
+}
+
 #windowOverlayBlur
 {
-	display: block;
 	position: fixed;
+	display: block;
 	top: 0;
 	left: 0;
 	width: 100svw;
@@ -27,7 +38,7 @@
 	top: 50%;
 	transform: translateY(-50%);
 
-	background-color: white;
+	/* background-color: white; */
 }
 
 .windowColumn
@@ -39,167 +50,133 @@
 	justify-content: center;
 	align-items: center;
 }
-#windowLeftColumn, #windowRightColumn
+#windowLeftColumn, 
+#windowRightColumn
 {
+	display: flex;
+	align-items: baseline;
+	justify-content: stretch;
+	font-size: 4rem;
+	color: gray;
 	width: 60px;
-	background-color: transparent;
+	/* background-color: yellow; */
+	flex-direction: column;
 }
+
 #windowMiddleColumn
 {
-	background-color: black;
-	object-fit: contain;
-	overflow:hidden;
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    min-width: 0;
+    min-height: 0;
+}
+#imageDiv
+{
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 0;
+    overflow: hidden;
+}
+
+#detailsDiv
+{
+    flex: 0 0 auto;
+    padding: 10px;
+	padding-bottom: 20px;
+	color: white;
+	background-color: #20152b;
+	width: 100%;
 }
 
 #windowImageElem
 {
-	/* height: 100%; */
-	/* width: 100%;	 */
-	max-height: 90svh;
-	object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
+#imageNameSpan
+{
+	font-weight: 600;
+	font-size: 1.5rem;
+}
 
-
-
-
-
-
-
-.overlayBlur {
-	display: block;
-	position: fixed;
-	top: 0;
-	padding: 75px;
+.windowNavDivTop
+{
+	max-height: 50px;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.32);
-	backdrop-filter: blur(16px)
+	font-size: 2rem;
+	/* background-color: red; */
+	display: flex;		
+	align-items: baseline;	
+  	justify-content: center;
+	padding-top: 10px;
 }
-
-#windowTitleBar {
-	background: var(--windowMainColourTop);
-	padding: 5px 5px 10px
-}
-
-#titleBarText {
-	color: white;
-	text-align: center;
-	font-size: 1.3rem;
-	margin-bottom: -30px;
-	font-weight: bold
-}
-
-#windowTitleBarCloseImage {
-	width: 20px;
-	height: auto;
-	cursor: pointer
-}
-
-#windowOverlayBlur__
+.windowNavDivBottom
 {
-	display: block;
-	position: fixed;
-	top: 0;
-	left: 0	;
-	padding: 25px;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.32);
-	backdrop-filter: blur(16px)
+	/* margin-bottom: 60px; */
+	/* background-color: green;	 */
+	display: flex;		
+	align-items: center;
+  	justify-content: center;
 }
 
-#obsoleteSubInfoBar {
-	display: none;
-	box-shadow: 2px 2px 32px var(--shadowColour);
-	margin: 10px;
-	font-weight: bold;
-	text-align: center;
-	font-size: 1.1rem
-}
-
-#rejectedSubInfoBar {
-	display: none;
-	box-shadow: 2px 2px 32px var(--shadowColour);
-	margin: 10px;
-	font-weight: bold;
-	text-align: center;
-	font-size: 1.2rem
-}
-
-#windowsBackground__
+#windowCloseButtonDiv:hover,
+#windowNavRight:hover,
+#windowNavLeft:hover
 {
-	display: flex;
-	position: relative;
-	top: 50%;
-	transform: translate(0, -50%);
-	border-radius: 5px;
-	margin: auto;
-	padding: 7.5px;
-	max-width: 90svw;
-	height: 100svh;
-	scrollbar-color: var(--windowMainColourTop) var(--windowMainColourBottom);
-	box-shadow: 2px 2px 6px black;
-	/* background: linear-gradient(to bottom, var(--windowMainColourTop), var(--windowMainColourBottom)) */
-}
-
-#wndowsForeground__ 
-{
-	overflow: auto;
-	width: 100%;
-	background: linear-gradient(to top, var(--whiteColour1), var(--whiteColour2))
-}
-
-#extenralImgTitle {
-	font-weight: bold;
 	color: white;
-	font-size: 1.75em;
-	text-shadow: 2px 2px 2px black
+	cursor: pointer;
+	opacity: 1;
+}
+#windowNavLeft
+{
+	margin-bottom: 60px;
 }
 
-#mutListCell {
-	margin-bottom: 15px;
-	max-width: 75%;
-	text-align: center;
-	padding: 10px;
-	position: relative;
-	left: 50%;
-	transform: translate(-50%, 0)
+.windowImgIcon
+{
+	width: 25px;
+	height: auto;	
+	opacity: 0.5;
+}
+.windowImgIcon:hover
+{
+	transform: scale(150%);	
+	opacity: 1;
 }
 
-#overlayWindoTitle {
-	font-size: 1.25rem;
-	font-weight: bold
+#windowNavArrowRight,
+#windowNavArrowLeft
+{
+	width: 40px;
 }
-
-#subRules_ScreenshotRuleDiv {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	column-gap: 5px
+#windowNavArrowLeft
+{
+	transform: rotate(180deg);
 }
-
-.subRules_ScreenshotRuleImg {
-	width: 100%;
-	border-radius: 5px
+#windowNavArrowLeft:hover
+{
+	transform: rotate(180deg) scale(150%);
 }
-
-#buttonsGridWrapper {
-	display: grid;
-	grid-template-columns: 1fr;
-	row-gap: 10px;
-	max-width: 400px;
-	margin: auto
+#windowDownloadImg
+{
+	width: 40px;
 }
-
-.optionsWinButton {
-	font-weight: bold;
-	font-size: 1.1rem
-}
-
-.optionsDoneWinButton {
-	max-width: 200px;
-	position: relative;
-	left: 25%;
-	font-weight: bold;
-	font-size: 1.15rem
+#windowDownloadButtonDiv
+{
+	/* display: grid;
+	align-items: baseline;	 */
 }

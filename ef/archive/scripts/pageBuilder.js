@@ -1,3 +1,6 @@
+let imageLinks = new Array();
+let imageNames = new Array();
+
 
 function CreateThumbnailGrid ()
 {
@@ -6,9 +9,6 @@ function CreateThumbnailGrid ()
 
     let imageContentDiv = document.createElement("div")
     imageContentDiv.classList.add("listSmallMainDiv");
-
-    let imageLinks = new Array();
-    let imageNames = new Array();
 
     for (let i = 0; i < imageLinksList.length; i++)
     {
@@ -25,6 +25,8 @@ function CreateThumbnailGrid ()
         // Create main div
         let imageItemDiv = document.createElement("div");
         imageItemDiv.classList.add("listSmallItemDiv");
+
+        imageItemDiv.addEventListener("click", () => OpenImageView(imageLinks[i], imageNames[i]));
         
         // Create div for content
         let contentDiv = document.createElement("div");

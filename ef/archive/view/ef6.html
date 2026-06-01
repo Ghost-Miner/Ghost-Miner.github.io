@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="../styles/layouts//listSmall.css">
     <link rel="stylesheet" href="../styles/overlays.css">   
 
-    <script src="/ef/archive/scripts/pageBuilder.js"></script>
+    <script src="../scripts/pageBuilder.js"></script>
+    <script src="../scripts/ImageViewer.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
 </head>
 <body>
     <noscript>
@@ -163,13 +165,34 @@
        <div class="" id="windowOverlayBlur">
             <div class="" id="windowContent">
                 <div class="windowColumn" id="windowLeftColumn">
+                    <div class="windowNavDivTop" id=""> 
+                    </div>
 
+                    <div class="windowNavDivBottom" id="windowNavLeft">
+                        <img src="../assets/icons/arrow2.png" alt="" class="windowImgIcon" id="windowNavArrowLeft">
+                    </div>
                 </div>
                 <div class="windowColumn" id="windowMiddleColumn">
-                    <img src="../assets/EF20/furcon.de/ef20 Fuchur P1060010.jpg" alt="" class="" id="windowImageElem">
+                    <div class="" id="imageDiv">
+                        <img src="../assets/EF20/furcon.de/ef20 Fuchur P1050884.jpg" alt="" class="" id="windowImageElem">
+                    </div>
+                    <div id="detailsDiv" class="">
+                        <span id="imageNameSpan">Lorem ipsum</span>
+                        <br>
+                        <span id="imageDescriptionSpan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus culpa porro architecto nobis explicabo ducimus. Modi laborum aut expedita impedit animi. Dolores aliquam quo beatae aperiam nam, fugiat obcaecati magnam?  </span>
+                    </div>
                 </div>
                 <div class="windowColumn" id="windowRightColumn">
+                    <div id="windowCloseButtonDiv" class="windowNavDivTop" onclick="CloseImageView()">  
+                        <img src="../assets/icons/close.png " alt="" class="windowImgIcon" id="windowCloseImg">
+                    </div>
                     
+                    <div class="windowNavDivBottom" id="windowNavRight">
+                        <img src="../assets/icons/arrow2.png" alt="" class="windowImgIcon" id="windowNavArrowRight">
+                    </div>
+                    <div id="windowDownloadButtonDiv" class="windowNavDivTop" onclick="CloseImageView()">  
+                        <img src="../assets/icons/download.png " alt="" class="windowImgIcon" id="windowDownloadImg">
+                    </div>  
                 </div>
            </div>
        </div>
