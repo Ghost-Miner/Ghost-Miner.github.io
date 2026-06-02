@@ -8,12 +8,18 @@
     
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/layouts//listSmall.css">
+    <link rel="stylesheet" href="../styles/overlays.css">   
 
-    <script src="/ef/archive/scripts/pageBuilder.js"></script>
+    <script src="../scripts/pageBuilder.js"></script>
+    <script src="../scripts/ImageViewer.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js" 
+            integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <noscript>
-        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html">Return to Homepage</a></button></center></strong>
+        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html" rel="noopener noreferrer">Return to Homepage</a></button></center></strong>
     </noscript>
     
     <div class="boxShadow04" id="masterDiv">
@@ -21,7 +27,7 @@
         <hr>
 
         <div id="imageLinksListDiv">
-            <!-- <li class="imagesList"> <a href="../assets/EF4/eisfuchs - eurofurence4.gif" class="imageLink"> eisfuchs - eurofurence4.gif </a> </li> -->
+            <!-- <li class="imagesList"> <a href="../assets/EF4/eisfuchs - eurofurence4.gif" class="imageLink" rel="noopener noreferrer"> eisfuchs - eurofurence4.gif </a> </li> -->
         </div>
 
         <hr>
@@ -30,21 +36,22 @@
             <div class="" id="seeMoreLinksDiv">
                 <h3>Browse more:</h3>
                 <ul>
-                    <li><a href="https://fursuit.timduru.org/view/FurryCon/EuroFurence/EF4">Timduru"s fursuit archive</a></li>
+                    <li><a href="https://fursuit.timduru.org/view/FurryCon/EuroFurence/EF4" rel="noopener noreferrer">Timduru"s fursuit archive</a></li>
                 </ul>
             </div>
 
             <div class="" id="imageSourcesDiv" style="display: none;">
                 <h3>Images taken from:</h3>
                 <ul>
-                    <li><a href="https://web.archive.org/web/*/www.furcon.de*" target="_blank">furcon.de</a> and <a href="https://web.archive.org/web/*/media.furcon.de*" target="_blank">media.furcon.de </a></li>
+                    <li><a href="https://web.archive.org/web/*/www.furcon.de*" target="_blank" rel="noopener noreferrer">furcon.de</a> and <a href="https://web.archive.org/web/*/media.furcon.de*" target="_blank" rel="noopener noreferrer">media.furcon.de </a></li>
                 </ul>
             </div>
         </div>
     </div>
     
+    
     <script>
-        // CreateThumbnailGrid();
+        // BuildPage();
     </script>    
 </body>
 </html>

@@ -1,11 +1,9 @@
 .listSmallMainDiv
 {
-	/* border: 3px solid blue; */
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	column-gap: 5px;
 	row-gap: 5px;
-	/* text-align: center;	 */
 	justify-content: center;
 	align-items: center;
 	max-width: fit-content;
@@ -14,23 +12,15 @@
 
 .listSmallItemDiv 
 {
-	/* border: red 1px solid; */
-	/* background-color: lightgray; */
-	/* border-radius: 10px;	 */
+	background-color: transparent;	
 	height: 200px;
 	width: 200px;
 	margin: auto;
-	/* padding: 10px; */
-	/* font-weight: bold; */
-	/* font-size: 1.1em; */
-	/* box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4) */
 }
 .listSmallItemDiv:hover
 {
-	background-color: transparent;	
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.75); 
-	transform: scale(125%);
-	border-radius: 10px;		
+	transform: scale(115%);	
 	z-index: 10;
 	
 	cursor: pointer;
@@ -50,22 +40,51 @@
 	width: 100%;
 	height: 100%;
 }
-
-.listSmallDivContent:link,
-.listSmallDivContent:visited {
-	color: white
+.listSmallDivContent:hover, .listSmallItemDiv:hover
+{
+	border-radius: 10px;
 }
 
-.listSmallIcon 
+/* .listSmallDivContent:link,
+.listSmallDivContent:visited 
 {
-	/* border-radius: 5px; */
+	color: white
+} */
+
+.listSmallIconImage 
+{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	/* max-height: 105px;
-	max-width: 95%; */
 }
-.listSmallIcon:hover
+
+.listSmallIconTitle
 {
-	border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    text-shadow: 0 0 5px black;	
+    z-index: 1;
+	display: none;
+}
+
+.listSmallItemDiv:hover .listSmallIconTitle
+{
+    display: block;
+}
+.listSmallIconTitleDiv
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.listSmallIconTitleDiv:hover
+{	
+	background: rgba(0,0,0,0.5);
 }

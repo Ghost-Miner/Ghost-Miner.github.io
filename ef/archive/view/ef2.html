@@ -7,12 +7,18 @@
     
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/layouts//listSmall.css">
+    <link rel="stylesheet" href="../styles/overlays.css">   
 
-    <script src="/ef/archive/scripts/pageBuilder.js"></script>
+    <script src="../scripts/pageBuilder.js"></script>
+    <script src="../scripts/ImageViewer.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js" 
+            integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <noscript>
-        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html">Return to Homepage</a></button></center></strong>
+        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html" rel="noopener noreferrer">Return to Homepage</a></button></center></strong>
     </noscript>
     
     <div class="boxShadow04" id="masterDiv">
@@ -20,61 +26,62 @@
         <hr>
 
         <div id="imageLinksListDiv">
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/m2000.gif" class="imageLink"> m2000.gif </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/ef2_logo_andre.gif" class="imageLink"> ef2_logo_andre.gif </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/ef2_logo_nimbl.gif" class="imageLink"> ef2_logo_nimbl.gif </a> </li>   
-            <li class="imagesList"> <a href="../assets/EF2/furcon.de/ef2 cheetah EF 2 12.jpg" class="imageLink"> ef2 cheetah EF 2 12.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/furcon.de/ef2 cheetah EF 2 18.jpg" class="imageLink"> ef2 cheetah EF 2 18.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/furcon.de/ef2 cheetah EF 2 23.jpg" class="imageLink"> ef2 cheetah EF 2 23.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/furcon.de/ef2 cheetah EF 2 29.jpg" class="imageLink"> ef2 cheetah EF 2 29.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/furcon.de/ef2 cheetah EF 2 5.jpg" class="imageLink"> ef2 cheetah EF 2 5.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/furcon.de/EF_2_34.jpg" class="imageLink"> EF_2_34.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_1.jpg" class="imageLink"> EF_2_1.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_10.jpg" class="imageLink"> EF_2_10.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_11.jpg" class="imageLink"> EF_2_11.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_13.jpg" class="imageLink"> EF_2_13.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_14.jpg" class="imageLink"> EF_2_14.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_15.jpg" class="imageLink"> EF_2_15.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_16.jpg" class="imageLink"> EF_2_16.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_17.jpg" class="imageLink"> EF_2_17.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_19.jpg" class="imageLink"> EF_2_19.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_2.jpg" class="imageLink"> EF_2_2.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_20.jpg" class="imageLink"> EF_2_20.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_20L.jpg" class="imageLink"> EF_2_20L.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_21.jpg" class="imageLink"> EF_2_21.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_22.jpg" class="imageLink"> EF_2_22.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_24.jpg" class="imageLink"> EF_2_24.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_25.jpg" class="imageLink"> EF_2_25.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_26.jpg" class="imageLink"> EF_2_26.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_27.jpg" class="imageLink"> EF_2_27.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_28.jpg" class="imageLink"> EF_2_28.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_3.jpg" class="imageLink"> EF_2_3.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_30.jpg" class="imageLink"> EF_2_30.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_31.jpg" class="imageLink"> EF_2_31.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_32.jpg" class="imageLink"> EF_2_32.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_33.jpg" class="imageLink"> EF_2_33.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_35.jpg" class="imageLink"> EF_2_35.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_36.jpg" class="imageLink"> EF_2_36.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_37.jpg" class="imageLink"> EF_2_37.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_38.jpg" class="imageLink"> EF_2_38.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_4.jpg" class="imageLink"> EF_2_4.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_5_LA.jpg" class="imageLink"> EF_2_5_LA.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_7.jpg" class="imageLink"> EF_2_7.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_8.jpg" class="imageLink"> EF_2_8.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF2/tigress.com/EF_2_9.jpg" class="imageLink"> EF_2_9.jpg </a> </li>          
-            <li class="imagesList"> <a href="../assets/EF2/furcon.de/EF2 outside.png" class="imageLink"> EF2 outside.png </a> </li>            
+            <li class="imagesList"> <a id='The new Mosquito 2000T. Character & Artwork (c) 1996 by Lonewolf.' href="../assets/EF2/tigress.com/m2000.gif" class="imageLink" rel="noopener noreferrer"> m2000.gif </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF2/tigress.com/ef2_logo_andre.gif" class="imageLink" rel="noopener noreferrer"> ef2_logo_andre.gif </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF2/tigress.com/ef2_logo_nimbl.gif" class="imageLink" rel="noopener noreferrer"> ef2_logo_nimbl.gif </a> </li>   
+            <li class="imagesList"> <a id=" Charon, Jaffa and MOW are browsing each other's furry collection in the sleeping room. " href="../assets/EF2/furcon.de/ef2 cheetah EF 2 12.jpg" class="imageLink" rel="noopener noreferrer"> ef2 cheetah EF 2 12.jpg </a> </li>
+            <li class="imagesList"> <a id=' In the "sleeping room": Tabalon and Unci (leaning against the wall). Smilodon, Jumpy and Chama (sitting at the edge of the mat.) Andre Heinonen (leaning against the back wall.) ' href="../assets/EF2/furcon.de/ef2 cheetah EF 2 18.jpg" class="imageLink" rel="noopener noreferrer"> ef2 cheetah EF 2 18.jpg </a> </li>
+            <li class="imagesList"> <a id=' Dust Drawing by Kobus. ' href="../assets/EF2/furcon.de/ef2 cheetah EF 2 23.jpg" class="imageLink" rel="noopener noreferrer"> ef2 cheetah EF 2 23.jpg </a> </li>
+            <li class="imagesList"> <a id=' Jumpy and Tabalon, transcribing the dialogues of the movie "Felidae". ' href="../assets/EF2/furcon.de/ef2 cheetah EF 2 29.jpg" class="imageLink" rel="noopener noreferrer"> ef2 cheetah EF 2 29.jpg </a> </li>
+            <li class="imagesList"> <a id=' Accipiter, presenting his skills on a blackboard. ' href="../assets/EF2/furcon.de/ef2 cheetah EF 2 5.jpg" class="imageLink" rel="noopener noreferrer"> ef2 cheetah EF 2 5.jpg </a> </li>
+            <li class="imagesList"> <a id=' Smilodon, giving me his finest "back from hell" look... ' href="../assets/EF2/furcon.de/EF_2_34.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_34.jpg </a> </li>
+            <li class="imagesList"> <a id=' Heribert, Unci and Tabalon arrive at the con site, and say hello to MOW. ' href="../assets/EF2/tigress.com/EF_2_1.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_1.jpg </a> </li>
+            <li class="imagesList"> <a id=' Left side of table, front to back: Smilodon, Jink, Chama. Right side of table, front to back: Mran, ???, Accipiter, Nimbl, Unci, Donotsue. ' href="../assets/EF2/tigress.com/EF_2_10.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_10.jpg </a> </li>
+            <li class="imagesList"> <a id=" Tabalon, unsucesfully parying Oswold's blow. " href="../assets/EF2/tigress.com/EF_2_11.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_11.jpg </a> </li>
+            <li class="imagesList"> <a id=' ??? and Unci. ' href="../assets/EF2/tigress.com/EF_2_13.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_13.jpg </a> </li>
+            <li class="imagesList"> <a id=" Unci and FeliciaK (lovingly hugging Unci's tail in the middle of Linkoping) " href="../assets/EF2/tigress.com/EF_2_14.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_14.jpg </a> </li>
+            <li class="imagesList"> <a id=' Bearhug examines the damage, done by some careless unknown people who threw a brick into the video room during the night. (Note the silhouette on the floor...) ' href="../assets/EF2/tigress.com/EF_2_15.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_15.jpg </a> </li>
+            <li class="imagesList"> <a id=' Heribert and his crew, preparing THE LEGENDARY ONION SOUP(TM)! Left side of the table, front to back: ???, Miavir, Smilodon. Right side of the table, front to back: Raschkar, Accipiter, Nimbl, Donotsue. ' href="../assets/EF2/tigress.com/EF_2_16.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_16.jpg </a> </li>
+            <li class="imagesList"> <a id=' Dreamfox, Lonewolf, Accipiter (behind LW), Chama, FeliciaK and MOW in the video room. ' href="../assets/EF2/tigress.com/EF_2_17.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_17.jpg </a> </li>
+            <li class="imagesList"> <a id=' The european equivalent of the Tygger Pounce: The Bearhug! ' href="../assets/EF2/tigress.com/EF_2_19.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_19.jpg </a> </li>
+            <li class="imagesList"> <a id=" Karri Aronen's interpretation of Beer.. uh, Bearhug's MUCK character. (Drawing on a blackboard) " href="../assets/EF2/tigress.com/EF_2_2.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_2.jpg </a> </li>
+            <li class="imagesList"> <a id=' Dust Drawing by Accipiter. ' href="../assets/EF2/tigress.com/EF_2_20.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_20.jpg </a> </li>
+            <li class="imagesList"> <a id=' Experimental conversion of last picture to lineart. ' href="../assets/EF2/tigress.com/EF_2_20L.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_20L.jpg </a> </li>
+            <li class="imagesList"> <a id=" Everybody queuing up for Raschkar's marvellous pancakes: MOW, Dreamfox, ???, Miavir, Raschkar. " href="../assets/EF2/tigress.com/EF_2_21.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_21.jpg </a> </li>
+            <li class="imagesList"> <a id=' Chama, unaware of the sign that someone stuck to his back... ' href="../assets/EF2/tigress.com/EF_2_22.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_22.jpg </a> </li>
+            <li class="imagesList"> <a id=' The makeshift internet connection finally works! FeliciaK (front) DivineVixen (back) at the big terminal, Tabalon sitting at the small terminal. The standing crowd (left to right): Hurga, Jumpy, ??? (covered by Jumpy), Charon, Andre Heinonen, ??? (facing away from the camera.) ' href="../assets/EF2/tigress.com/EF_2_24.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_24.jpg </a> </li>
+            <li class="imagesList"> <a id=' Nimbl working on a sketch, while having his brains blown out by Hans Zimmer at full volume... ' href="../assets/EF2/tigress.com/EF_2_25.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_25.jpg </a> </li>
+            <li class="imagesList"> <a id=' "connection refused" ' href="../assets/EF2/tigress.com/EF_2_26.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_26.jpg </a> </li>
+            <li class="imagesList"> <a id=' Preparing the potatoes for dinner: Dreamfox, Jink, Accipiter and Raschkar. ' href="../assets/EF2/tigress.com/EF_2_27.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_27.jpg </a> </li>
+            <li class="imagesList"> <a id=' Another chalk drawing, courtesy of Tabalon. ' href="../assets/EF2/tigress.com/EF_2_28.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_28.jpg </a> </li>
+            <li class="imagesList"> <a id=' Charon, MOW, ???? and Jink watching videos. ' href="../assets/EF2/tigress.com/EF_2_3.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_3.jpg </a> </li>
+            <li class="imagesList"> <a id=' Bearhug, practicing for the annual FurryMUCK marathon. ' href="../assets/EF2/tigress.com/EF_2_30.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_30.jpg </a> </li>
+            <li class="imagesList"> <a id=' ??? and ??? cleaning up after lunch... ' href="../assets/EF2/tigress.com/EF_2_31.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_31.jpg </a> </li>
+            <li class="imagesList"> <a id=' Kobus drawing on his clipboard, Donotsue desintegrating a piece of cake, and ??? drawing in a sketchbook. ' href="../assets/EF2/tigress.com/EF_2_32.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_32.jpg </a> </li>
+            <li class="imagesList"> <a id=' Hurga, defending himself against an alien facehugger disguised as a photo camera. ' href="../assets/EF2/tigress.com/EF_2_33.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_33.jpg </a> </li>
+            <li class="imagesList"> <a id=' Departure! Hardly able to breathe due to the cotally overfilled care are: Miavir, Hurga (invisible on the back seat), Radjah, and Raschkar (the driver). ' href="../assets/EF2/tigress.com/EF_2_35.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_35.jpg </a> </li>
+            <li class="imagesList"> <a id=' Dust Drawing by Donotsue. ' href="../assets/EF2/tigress.com/EF_2_36.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_36.jpg </a> </li>
+            <li class="imagesList"> <a id=' Dust Drawing by Tabalon. ' href="../assets/EF2/tigress.com/EF_2_37.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_37.jpg </a> </li>
+            <li class="imagesList"> <a id=' Dust Drawing by Andre Heinonen. ' href="../assets/EF2/tigress.com/EF_2_38.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_38.jpg </a> </li>
+            <li class="imagesList"> <a id=" Miavir drawing into some lucky fur's sketchbook. " href="../assets/EF2/tigress.com/EF_2_4.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_4.jpg </a> </li>
+            <li class="imagesList"> <a id=' A closeup of Accipiter´s chalk drawing. ' href="../assets/EF2/tigress.com/EF_2_5_LA.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_5_LA.jpg </a> </li>
+            <li class="imagesList"> <a id=" Bearhug and ??? in the kitchen. " href="../assets/EF2/tigress.com/EF_2_7.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_7.jpg </a> </li>
+            <li class="imagesList"> <a id=' Tabalon and Oswold practicing martial arts in the gym. ' href="../assets/EF2/tigress.com/EF_2_8.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_8.jpg </a> </li>
+            <li class="imagesList"> <a id=" Jink, Smilodon (sitting), Chama, Bearhug and Jaffa (on Bearhug's back) in the kitchen. " href="../assets/EF2/tigress.com/EF_2_9.jpg" class="imageLink" rel="noopener noreferrer"> EF_2_9.jpg </a> </li>          
+            <li class="imagesList"> <a id='' href="../assets/EF2/furcon.de/EF2 outside.png" class="imageLink" rel="noopener noreferrer"> EF2 outside.png </a> </li>            
         </div>
 
         <hr>
         <h3>Images taken from:</h3>
         <ul>
-            <li><a href="https://web.archive.org/web/*/www.furcon.de*" target="_blank">furcon.de</a> and <a href="https://web.archive.org/web/*/media.furcon.de*" target="_blank">media.furcon.de </a></li>
-           <li><a href="../assets/EF2/tigress.com/Cheetah's EF2 Pictures (25. 5. 2026 17：12：38).html">tigress.com/cheetah/ef2.html </a></li>
+            <li><a href="https://web.archive.org/web/*/www.furcon.de*" target="_blank" rel="noopener noreferrer">furcon.de</a> and <a href="https://web.archive.org/web/*/media.furcon.de*" target="_blank" rel="noopener noreferrer">media.furcon.de </a></li>
+           <li><a href="../assets/EF2/tigress.com/Cheetah's EF2 Pictures (25. 5. 2026 17：12：38).html" rel="noopener noreferrer">tigress.com/cheetah/ef2.html </a></li>
         </ul>
     </div>    
     
+    
     <script>
-        CreateThumbnailGrid();
+        BuildPage();
     </script>
 </body>
 </html>

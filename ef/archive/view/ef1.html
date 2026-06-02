@@ -7,12 +7,18 @@
     
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/layouts//listSmall.css">
+    <link rel="stylesheet" href="../styles/overlays.css">   
 
-    <script src="/ef/archive/scripts/pageBuilder.js"></script>
+    <script src="../scripts/pageBuilder.js"></script>
+    <script src="../scripts/ImageViewer.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js" 
+            integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <noscript>
-        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html">Return to Homepage</a></button></center></strong>
+        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html" rel="noopener noreferrer">Return to Homepage</a></button></center></strong>
     </noscript>
     
     <div class="boxShadow04" id="masterDiv">
@@ -20,35 +26,36 @@
         <hr>
 
         <div id="imageLinksListDiv">
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/efjam.gif" class="imageLink"> efjam.gif </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/efbrush.gif" class="imageLink"> efbrush.gif </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp1.jpg" class="imageLink"> ef1_Ron W Klemp1.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp10.jpg" class="imageLink"> ef1_Ron W Klemp10.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp11.jpg" class="imageLink"> ef1_Ron W Klemp11.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp13.jpg" class="imageLink"> ef1_Ron W Klemp13.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp14.jpg" class="imageLink"> ef1_Ron W Klemp14.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp2.jpg" class="imageLink"> ef1_Ron W Klemp2.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp3.jpg" class="imageLink"> ef1_Ron W Klemp3.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp4.jpg" class="imageLink"> ef1_Ron W Klemp4.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp5.jpg" class="imageLink"> ef1_Ron W Klemp5.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp6.jpg" class="imageLink"> ef1_Ron W Klemp6.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp7.jpg" class="imageLink"> ef1_Ron W Klemp7.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp8.jpg" class="imageLink"> ef1_Ron W Klemp8.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/ef1_Ron W Klemp9.jpg" class="imageLink"> ef1_Ron W Klemp9.jpg </a> </li>            
-            <li class="imagesList"> <a href="../assets/EF1/tigress.com/Heribert Vogt - ef1.png" class="imageLink"> Heribert Vogt - ef1.png </a> </li>            
+            <li class="imagesList"> <a id="" href="../assets/EF1/tigress.com/efjam.gif"             class="imageLink" rel="noopener noreferrer"> efjam.gif </a> </li>
+            <li class="imagesList"> <a id="" href="../assets/EF1/tigress.com/efbrush.gif"           class="imageLink" rel="noopener noreferrer"> efbrush.gif </a> </li>
+            <li class="imagesList"> <a id=" Getting their furry paws wet are: Unci (Tobias Benjami Köhler),Rashkar (Heribert Vogt), Radjah (Sven Tegethoff), Jaffa (Anthony Brewer), Kasharim (A E de Bruijn), Miavir (Deon Ramsey), Andreas Trageser, Andre Heinonen, Yorg (Axel P. Roschinski) " href="../assets/EF1/tigress.com/ef1_Ron W Klemp1.jpg"  class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp1.jpg </a> </li>
+            <li class="imagesList"> <a id=" Kasharim (A E de Bruijn), Rashkar (Heribert Vogt), BlackLion (behind Heri), Unci (T.B. Köhler), Miavir (Deon Ramsey). " href="../assets/EF1/tigress.com/ef1_Ron W Klemp10.jpg" class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp10.jpg </a> </li>
+            <li class="imagesList"> <a id=" Hurga (Hanno Foest), Kasharim (A E de Bruijn), BlackLion (Mikel Norwitz), Unci (T.B. Köhler), Miavir (Deon Ramsey), Tes-Tui-H'ar (Gerrit Heitsch) " href="../assets/EF1/tigress.com/ef1_Ron W Klemp11.jpg" class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp11.jpg </a> </li>
+            <li class="imagesList"> <a id=" This is Andi Trageser showing off with his Red Shetland T-Shirt from CF4 :) " href="../assets/EF1/tigress.com/ef1_Ron W Klemp13.jpg" class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp13.jpg </a> </li>
+            <li class="imagesList"> <a id=" Hurga is wading into sunset, imitating Frank Zappa... " href="../assets/EF1/tigress.com/ef1_Ron W Klemp14.jpg" class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp14.jpg </a> </li>
+            <li class="imagesList"> <a id=" Blacklion (Mikel Norwitz), Jaffa (Anthony Brewer), Kasharim (A E de Bruijn), Rashkar (Heribert Vogt), Miavir (Deon Ramsey), Hurga (Hanno Foest) " href="../assets/EF1/tigress.com/ef1_Ron W Klemp2.jpg"  class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp2.jpg </a> </li>
+            <li class="imagesList"> <a id=" This is where EF#1 took place: A cosy little farmhouse in northern Germany. (Courtesy of Tes' family.) " href="../assets/EF1/tigress.com/ef1_Ron W Klemp3.jpg"  class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp3.jpg </a> </li>
+            <li class="imagesList"> <a id=" The house and the barn, from the backside, with some extremely furry cows in the front :-) " href="../assets/EF1/tigress.com/ef1_Ron W Klemp4.jpg"  class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp4.jpg </a> </li>
+            <li class="imagesList"> <a id=" This is Blacklion, putting the finnishing touches to his part on the EuroFurence jam-poster. " href="../assets/EF1/tigress.com/ef1_Ron W Klemp5.jpg"  class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp5.jpg </a> </li>
+            <li class="imagesList"> <a id=" Miavir (Deon Ramsey), Aspirin (Adam Moss), Silvermane (Ian J Stradling), and Prask (S Charlesworth) " href="../assets/EF1/tigress.com/ef1_Ron W Klemp6.jpg"  class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp6.jpg </a> </li>
+            <li class="imagesList"> <a id=" Kasharim (A E de Bruijn), Rashkar (Heribert Vogt), Miavir (Deon Ramsey), Hurga (Hanno Foest), An unknown person who turns his back to the camera, a second mysterious person that's hidden behind him, and Unci (Tobias Benjamin Köhler) " href="../assets/EF1/tigress.com/ef1_Ron W Klemp7.jpg"  class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp7.jpg </a> </li>
+            <li class="imagesList"> <a id=" Six eurofurries climbing the dam and scaring away the sheep.... Radjah (Sven Tegethoff), Kasharim (A E de Bruijn), Unci (Tobias Benjamin Köhler), Hurga (Hanno Foest), Miavir (Deon Ramsey) and Jaffa (really?) (Anthony Brewer) " href="../assets/EF1/tigress.com/ef1_Ron W Klemp8.jpg"  class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp8.jpg </a> </li>
+            <li class="imagesList"> <a id="Andi Trageser, Jaffa and Kasharim are wondering if their feet will fall off from illegaly dumped nuclear waste in the north sea."  href="../assets/EF1/tigress.com/ef1_Ron W Klemp9.jpg"  class="imageLink" rel="noopener noreferrer"> ef1_Ron W Klemp9.jpg </a> </li>            
+            <li class="imagesList"> <a id="Back row: Unci (Tobias Benjamin Köhler) / Prask (S Charlesworth) / Silvermane (Ian J Stradling) / Andreas Trageser / Kobus (Sonny Windstrup) / Radjah (Sven Tegethoff) / Andre Heinonen / Ronald Klemp / Tes-Tui-H'ar (Gerrit Heitsch) / Hurga (Hanno Foest). Front row: Jaffa (Anthony Brewer) / Miavir (Deon Ramsey) / BlackLion (Mikel Norwitz) / Kasharim (A E de Bruijn) " href="../assets/EF1/tigress.com/Heribert Vogt - ef1.png" class="imageLink" rel="noopener noreferrer"> Heribert Vogt - ef1.png </a> </li>            
         </div>
 
         <hr>
         <h3>Images taken from:</h3>
         <ul>
-            <li><a href="https://web.archive.org/web/*/www.furcon.de*" target="_blank">furcon.de</a> and <a href="https://web.archive.org/web/*/media.furcon.de*" target="_blank">media.furcon.de </a></li>
-           <li><a href="../assets/EF1/tigress.com/EF1 Photos by Raschkar (25. 5. 2026 16：59：04).html">tigress.com/cheetah/ef1_heri</a></li>
-           <li><a href="../assets/EF1/tigress.com/EF1 Photos by RWK (25. 5. 2026 16：58：32).html">tigress.com/cheetah/ef1_rwk</a></li>
+            <li><a href="https://web.archive.org/web/*/www.furcon.de*" target="_blank" rel="noopener noreferrer">furcon.de</a> and <a href="https://web.archive.org/web/*/media.furcon.de*" target="_blank" rel="noopener noreferrer">media.furcon.de </a></li>
+           <li><a href="../assets/EF1/tigress.com/EF1 Photos by Raschkar (25. 5. 2026 16：59：04).html" rel="noopener noreferrer">tigress.com/cheetah/ef1_heri</a></li>
+           <li><a href="../assets/EF1/tigress.com/EF1 Photos by RWK (25. 5. 2026 16：58：32).html" rel="noopener noreferrer">tigress.com/cheetah/ef1_rwk</a></li>
         </ul>
     </div>
     
+    
     <script>
-        CreateThumbnailGrid();
+        BuildPage();
     </script>
 </body>
 </html>

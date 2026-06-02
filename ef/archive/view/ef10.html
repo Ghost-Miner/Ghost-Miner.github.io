@@ -7,12 +7,18 @@
     
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/layouts//listSmall.css">
+    <link rel="stylesheet" href="../styles/overlays.css">   
 
-    <script src="/ef/archive/scripts/pageBuilder.js"></script>
+    <script src="../scripts/pageBuilder.js"></script>
+    <script src="../scripts/ImageViewer.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js" 
+            integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <noscript>
-        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html">Return to Homepage</a></button></center></strong>
+        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html" rel="noopener noreferrer">Return to Homepage</a></button></center></strong>
     </noscript>
     
     <div class="boxShadow04" id="masterDiv">
@@ -20,93 +26,93 @@
         <hr>
 
         <div id="imageLinksListDiv">
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Bigwig 08-29-04 13.07.26.jpg" class="imageLink"> ef10 Bigwig 08-29-04 13.07.26.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 efx sign.jpg" class="imageLink"> ef10 efx sign.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Giza DSC00410.jpg" class="imageLink"> ef10 Giza DSC00410.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Heyblibber  p8260085 .jpg" class="imageLink"> ef10 Heyblibber  p8260085 .jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Kazagh EFX Cli-194.jpg.jpg" class="imageLink"> ef10 Kazagh EFX Cli%E8-194.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven   DSCF0658 .jpg" class="imageLink"> ef10 Lweek and Olven   DSCF0658 .jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven   DSCF0679 .jpg" class="imageLink"> ef10 Lweek and Olven   DSCF0679 .jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven   DSCF0724 .jpg" class="imageLink"> ef10 Lweek and Olven   DSCF0724 .jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven   DSCF0730 .jpg" class="imageLink"> ef10 Lweek and Olven   DSCF0730 .jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0629.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0629.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0630.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0630.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0631.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0631.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0632.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0632.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0633.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0633.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0634.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0634.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0635.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0635.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0636.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0636.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0638.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0638.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0640.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0640.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0644.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0644.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0645.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0645.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0646.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0646.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0647.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0647.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0648.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0648.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0649.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0649.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0652.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0652.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0654.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0654.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0655.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0655.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0656.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0656.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0657.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0657.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0658.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0658.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0659.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0659.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0660.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0660.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0661.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0661.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0665.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0665.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0667.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0667.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0669.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0669.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0674.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0674.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0675.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0675.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0676.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0676.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0678.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0678.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0679.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0679.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0680.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0680.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0681.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0681.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0682.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0682.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0687.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0687.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0688.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0688.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0696.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0696.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0698.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0698.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0701.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0701.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0702.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0702.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0703.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0703.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0705.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0705.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0707.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0707.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0708.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0708.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0709.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0709.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0712.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0712.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0714.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0714.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0719.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0719.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0720.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0720.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0721.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0721.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0722.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0722.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0723.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0723.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0725.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0725.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0726.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0726.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0727.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0727.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0728.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0728.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0730.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0730.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0731.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0731.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0733.jpg" class="imageLink"> ef10 Lweek and Olven DSCF0733.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Santo IMAG0440.jpg" class="imageLink"> ef10 Santo IMAG0440.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Tekumseh Bild 002.jpg" class="imageLink"> ef10 Tekumseh Bild 002.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/cute.sized.jpg" class="imageLink"> cute.sized.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/eek.jpg" class="imageLink"> eek.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/falstaff01.jpg" class="imageLink"> falstaff01.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/falstaff02.jpg" class="imageLink"> falstaff02.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/feuer02.sized.jpg" class="imageLink"> feuer02.sized.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/fursuiter01.sized.jpg" class="imageLink"> fursuiter01.sized.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/kage08.sized.jpg" class="imageLink"> kage08.sized.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/likoere01.jpg" class="imageLink"> likoere01.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/likoere02.jpg" class="imageLink"> likoere02.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/scanner01.jpg" class="imageLink"> scanner01.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/scanner02.jpg" class="imageLink"> scanner02.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/stage15.sized.jpg" class="imageLink"> stage15.sized.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/stage18.jpg" class="imageLink"> stage18.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/tani01.jpg" class="imageLink"> tani01.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/tani02.jpg" class="imageLink"> tani02.jpg </a> </li>            
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Bigwig 08-29-04 13.07.26.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Bigwig 08-29-04 13.07.26.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 efx sign.jpg" class="imageLink" rel="noopener noreferrer"> ef10 efx sign.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Giza DSC00410.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Giza DSC00410.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Heyblibber  p8260085 .jpg" class="imageLink" rel="noopener noreferrer"> ef10 Heyblibber  p8260085 .jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Kazagh EFX Cli-194.jpg.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Kazagh EFX Cli%E8-194.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven   DSCF0658 .jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven   DSCF0658 .jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven   DSCF0679 .jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven   DSCF0679 .jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven   DSCF0724 .jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven   DSCF0724 .jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven   DSCF0730 .jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven   DSCF0730 .jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0629.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0629.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0630.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0630.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0631.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0631.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0632.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0632.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0633.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0633.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0634.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0634.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0635.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0635.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0636.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0636.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0638.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0638.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0640.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0640.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0644.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0644.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0645.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0645.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0646.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0646.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0647.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0647.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0648.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0648.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0649.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0649.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0652.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0652.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0654.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0654.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0655.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0655.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0656.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0656.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0657.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0657.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0658.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0658.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0659.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0659.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0660.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0660.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0661.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0661.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0665.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0665.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0667.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0667.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0669.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0669.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0674.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0674.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0675.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0675.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0676.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0676.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0678.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0678.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0679.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0679.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0680.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0680.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0681.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0681.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0682.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0682.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0687.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0687.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0688.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0688.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0696.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0696.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0698.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0698.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0701.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0701.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0702.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0702.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0703.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0703.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0705.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0705.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0707.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0707.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0708.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0708.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0709.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0709.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0712.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0712.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0714.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0714.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0719.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0719.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0720.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0720.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0721.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0721.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0722.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0722.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0723.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0723.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0725.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0725.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0726.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0726.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0727.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0727.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0728.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0728.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0730.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0730.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0731.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0731.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Lweek and Olven DSCF0733.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Lweek and Olven DSCF0733.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Santo IMAG0440.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Santo IMAG0440.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/furcon.de/ef10 Tekumseh Bild 002.jpg" class="imageLink" rel="noopener noreferrer"> ef10 Tekumseh Bild 002.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/cute.sized.jpg" class="imageLink" rel="noopener noreferrer"> cute.sized.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/eek.jpg" class="imageLink" rel="noopener noreferrer"> eek.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/falstaff01.jpg" class="imageLink" rel="noopener noreferrer"> falstaff01.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/falstaff02.jpg" class="imageLink" rel="noopener noreferrer"> falstaff02.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/feuer02.sized.jpg" class="imageLink" rel="noopener noreferrer"> feuer02.sized.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/fursuiter01.sized.jpg" class="imageLink" rel="noopener noreferrer"> fursuiter01.sized.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/kage08.sized.jpg" class="imageLink" rel="noopener noreferrer"> kage08.sized.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/likoere01.jpg" class="imageLink" rel="noopener noreferrer"> likoere01.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/likoere02.jpg" class="imageLink" rel="noopener noreferrer"> likoere02.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/scanner01.jpg" class="imageLink" rel="noopener noreferrer"> scanner01.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/scanner02.jpg" class="imageLink" rel="noopener noreferrer"> scanner02.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/stage15.sized.jpg" class="imageLink" rel="noopener noreferrer"> stage15.sized.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/stage18.jpg" class="imageLink" rel="noopener noreferrer"> stage18.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/tani01.jpg" class="imageLink" rel="noopener noreferrer"> tani01.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF10/oxyan.firepaw.com/tani02.jpg" class="imageLink" rel="noopener noreferrer"> tani02.jpg </a> </li>            
         </div>
 
         <hr>
@@ -115,23 +121,24 @@
             <div class="" id="seeMoreLinksDiv">
                 <h3>Browse more:</h3>
                 <ul>
-                    <li><a href="https://fursuit.timduru.org/view/FurryCon/EuroFurence/EF10">Timduru"s fursuit archive - pictures</a></li>
-                    <li><a href="https://fursuit.timduru.org/view/FursuitVideo/FurryCon/Eurofurence/EF10">Timduru"s fursuit archive - videos</a></li>
+                    <li><a href="https://fursuit.timduru.org/view/FurryCon/EuroFurence/EF10" rel="noopener noreferrer">Timduru"s fursuit archive - pictures</a></li>
+                    <li><a href="https://fursuit.timduru.org/view/FursuitVideo/FurryCon/Eurofurence/EF10" rel="noopener noreferrer">Timduru"s fursuit archive - videos</a></li>
                 </ul>
             </div>
 
             <div class="" id="imageSourcesDiv">
                 <h3>Images taken from:</h3>
                 <ul>
-                    <li><a href="https://web.archive.org/web/*/www.furcon.de*" target="_blank">furcon.de</a> and <a href="https://web.archive.org/web/*/media.furcon.de*" target="_blank">media.furcon.de </a></li>
-                    <li><a href="../assets/EF10/oxyan.firepaw.com/Wayback Machine - URLs of http：_oxyan.firepaw.com_gallery_ (25. 5. 2026 22：57：16).html">oxyan.firepaw.com/gallery/   </a></li>
+                    <li><a href="https://web.archive.org/web/*/www.furcon.de*" target="_blank" rel="noopener noreferrer">furcon.de</a> and <a href="https://web.archive.org/web/*/media.furcon.de*" target="_blank" rel="noopener noreferrer">media.furcon.de </a></li>
+                    <li><a href="../assets/EF10/oxyan.firepaw.com/Wayback Machine - URLs of http：_oxyan.firepaw.com_gallery_ (25. 5. 2026 22：57：16).html" rel="noopener noreferrer">oxyan.firepaw.com/gallery/   </a></li>
                 </ul>
             </div>
         </div>
     </div>
     
+    
     <script>
-        CreateThumbnailGrid();
+        BuildPage();
     </script>    
 </body>
 </html>

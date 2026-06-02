@@ -7,12 +7,18 @@
     
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/layouts//listSmall.css">
+    <link rel="stylesheet" href="../styles/overlays.css">   
 
-    <script src="/ef/archive/scripts/pageBuilder.js"></script>
+    <script src="../scripts/pageBuilder.js"></script>
+    <script src="../scripts/ImageViewer.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js" 
+            integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <noscript>
-        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html">Return to Homepage</a></button></center></strong>
+        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html" rel="noopener noreferrer">Return to Homepage</a></button></center></strong>
     </noscript>
     
     <div class="boxShadow04" id="masterDiv">
@@ -20,15 +26,15 @@
         <hr>
 
         <div id="imageLinksListDiv">
-            <li class="imagesList"> <a href="../assets/EF3/tigress.com/drgef3.jpg" class="imageLink"> drg_ef3.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF3/tigress.com/ef3.jpg" class="imageLink"> ef3.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000240.jpg" class="imageLink"> _P000240.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000241.jpg" class="imageLink"> _P000241.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000242.jpg" class="imageLink"> _P000242.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000243.jpg" class="imageLink"> _P000243.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000245.jpg" class="imageLink"> _P000245.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000246.jpg" class="imageLink"> _P000246.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000247.jpg" class="imageLink"> _P000247.jpg </a> </li>            
+            <li class="imagesList"> <a href="../assets/EF3/tigress.com/drgef3.jpg" class="imageLink" rel="noopener noreferrer"> drg_ef3.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF3/tigress.com/ef3.jpg" class="imageLink" rel="noopener noreferrer"> ef3.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000240.jpg" class="imageLink" rel="noopener noreferrer"> _P000240.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000241.jpg" class="imageLink" rel="noopener noreferrer"> _P000241.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000242.jpg" class="imageLink" rel="noopener noreferrer"> _P000242.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000243.jpg" class="imageLink" rel="noopener noreferrer"> _P000243.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000245.jpg" class="imageLink" rel="noopener noreferrer"> _P000245.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000246.jpg" class="imageLink" rel="noopener noreferrer"> _P000246.jpg </a> </li>
+            <li class="imagesList"> <a href="../assets/EF3/tigress.com/P000247.jpg" class="imageLink" rel="noopener noreferrer"> _P000247.jpg </a> </li>            
         </div>
 
         <hr>
@@ -37,9 +43,9 @@
             <div class="" id="seeMoreLinksDiv">
                 <h3>Browse more:</h3>
                 <ul>
-                    <li><a href="../assets/EF3/eurofurence.org/Index of _EF3_bagheera_unsorted (25. 5. 2026 18：15：11).html">EF3 pictures by bagheera</a></li>
-                    <li><a href="../assets/EF3/eurofurence.org/Index of _EF3_DocO (25. 5. 2026 17：57：34).html">EF3 pictures by DocO</a></li>
-                    <li><a href="https://fursuit.timduru.org/view/FurryCon/EuroFurence/EF3">Timduru"s fursuit archive</a></li>
+                    <li><a href="../assets/EF3/eurofurence.org/Index of _EF3_bagheera_unsorted (25. 5. 2026 18：15：11).html" rel="noopener noreferrer">EF3 pictures by bagheera</a></li>
+                    <li><a href="../assets/EF3/eurofurence.org/Index of _EF3_DocO (25. 5. 2026 17：57：34).html" rel="noopener noreferrer">EF3 pictures by DocO</a></li>
+                    <li><a href="https://fursuit.timduru.org/view/FurryCon/EuroFurence/EF3" rel="noopener noreferrer">Timduru"s fursuit archive</a></li>
                 </ul>
             </div>
 
@@ -52,8 +58,9 @@
         </div>
     </div>
     
+    
     <script>
-        CreateThumbnailGrid();
+        BuildPage();
     </script>    
 </body>
 </html>

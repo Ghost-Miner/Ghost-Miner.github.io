@@ -1,11 +1,22 @@
-function OpenImageView(_imageUrl, _imageName)
+function OpenImageView(_imageItemDataItem)
 {
-    console.log("OPENING " + _imageName + " : " + _imageUrl);
-    $("#windowImageElem")[0].src = _imageUrl;
-    $("#imageNameSpan")[0].textContent = _imageName;
-    $("#imageDescriptionSpan")[0].textContent = "";
+    DisableNavigationButtons();
+
+    // console.log("OPENING ");
+    // console.table(_imageItemDataItem);
+    $("#windowImageElem")[0].src = _imageItemDataItem[IMAGE_URL_COL];
+    $("#imageNameSpan")[0].textContent = _imageItemDataItem[IMAGE_NAME_COL];
+    $("#imageDescriptionSpan")[0].textContent = _imageItemDataItem[IMAGE_DESC_COL];
+
+    // if ($("#imageDescriptionSpan")[0].textContent,length < 1)
+    // {
+    //     $("#imageDescriptionSpan")[0].style.display = "none";
+    //     $("#imageDetailsNewLine")[0].style.display = "none";
+    // }
 
     $("#imageViewWindowSection")[0].style.display = "block";
+    
+    SetNavButtonTarget(_imageItemDataItem); 
 }
 
 function CloseImageView()
@@ -17,3 +28,41 @@ function CloseImageView()
     $("#imageViewWindowSection")[0].style.display = "none";
 }
 
+function SetNavButtonTarget(_imageItemDataItem)
+{   
+    // console.log("TARGET:");
+    // console.table(_imageItemDataItem);
+
+    // clear all event listeners 
+    $("#windowNavigationImgButtonLeft").off("click");
+    $("#windowNavigationImgButtonRight").off("click");
+
+    // assign new event listeners
+    $("#windowNavigationImgButtonLeft").on("click", () => OpenImageView(imageItemArray[_imageItemDataItem[IMAGE_INDEX_COL] - 1])    );
+    $("#windowNavigationImgButtonRight").on("click", () => OpenImageView(imageItemArray[_imageItemDataItem[IMAGE_INDEX_COL] + 1]) );
+
+    EnableNavigationButtons(); // Reset state of both buttons
+
+    if (_imageItemDataItem[IMAGE_INDEX_COL] == imageItemArray.length - 1)
+    {
+        $("#windowNavigationImgButtonRight")[0].disabled = true; 
+    }
+
+    if (_imageItemDataItem[IMAGE_INDEX_COL] == 0)
+    {
+        $("#windowNavigationImgButtonLeft")[0].disabled  = true;           
+    }
+
+    $("#downloadImageLink")[0].href = _imageItemDataItem[IMAGE_URL_COL];
+}
+
+function DisableNavigationButtons ()
+{
+    $("#windowNavigationImgButtonRight")[0].disabled = true;
+    $("#windowNavigationImgButtonLeft")[0].disabled  = true;   
+}
+function EnableNavigationButtons()
+{
+    $("#windowNavigationImgButtonRight")[0].disabled = false;
+    $("#windowNavigationImgButtonLeft")[0].disabled  = false;  
+}

@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/layouts//listSmall.css">
     <link rel="stylesheet" href="../styles/overlays.css">   
+    <link rel="stylesheet" href="../styles/overlays.css">   
 
     <script src="../scripts/pageBuilder.js"></script>
     <script src="../scripts/ImageViewer.js"></script>
     <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js" 
+            integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <noscript>
-        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html">Return to Homepage</a></button></center></strong>
+        <strong><center>Javascript is disabled. Thumbnail view is not available. <button><a href="../index.html" rel="noopener noreferrer">Return to Homepage</a></button></center></strong>
     </noscript>
     
     <div class="boxShadow04" id="masterDiv">
@@ -23,114 +27,114 @@
         <hr>
 
         <div id="imageLinksListDiv">
-            <li class="imagesList"> <a href="../assets/EF6/eisfuchs - eurofurence6.gif" class="imageLink"> eisfuchs - eurofurence6.gif </a> </li>    
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/01.jpg" class="imageLink"> 01.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/02.jpg" class="imageLink"> 02.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/03.jpg" class="imageLink"> 03.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/04.jpg" class="imageLink"> 04.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/05.jpg" class="imageLink"> 05.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/06.jpg" class="imageLink"> 06.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/07.jpg" class="imageLink"> 07.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/08.jpg" class="imageLink"> 08.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/09.jpg" class="imageLink"> 09.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/10.jpg" class="imageLink"> 10.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/14.jpg" class="imageLink"> 14.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/15.jpg" class="imageLink"> 15.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/16.jpg" class="imageLink"> 16.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/17.jpg" class="imageLink"> 17.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/18.jpg" class="imageLink"> 18.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/20.jpg" class="imageLink"> 20.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/21.jpg" class="imageLink"> 21.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/22.jpg" class="imageLink"> 22.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/23.jpg" class="imageLink"> 23.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/24.jpg" class="imageLink"> 24.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/25.jpg" class="imageLink"> 25.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/26.jpg" class="imageLink"> 26.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/27.jpg" class="imageLink"> 27.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/28.jpg" class="imageLink"> 28.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/29.jpg" class="imageLink"> 29.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/30.jpg" class="imageLink"> 30.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/31.jpg" class="imageLink"> 31.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/32.jpg" class="imageLink"> 32.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/34.jpg" class="imageLink"> 34.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/delphine-online.de/35.jpg" class="imageLink"> 35.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/01.jpg" class="imageLink"> 01.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/02.jpg" class="imageLink"> 02.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/03.jpg" class="imageLink"> 03.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/04.jpg" class="imageLink"> 04.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/05.jpg" class="imageLink"> 05.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/06.jpg" class="imageLink"> 06.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/07.jpg" class="imageLink"> 07.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/08.jpg" class="imageLink"> 08.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/09.jpg" class="imageLink"> 09.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/10.jpg" class="imageLink"> 10.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/11.jpg" class="imageLink"> 11.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/12.jpg" class="imageLink"> 12.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/13.jpg" class="imageLink"> 13.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/14.jpg" class="imageLink"> 14.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/15.jpg" class="imageLink"> 15.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/16.jpg" class="imageLink"> 16.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/17.jpg" class="imageLink"> 17.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/18.jpg" class="imageLink"> 18.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/19.jpg" class="imageLink"> 19.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/20.jpg" class="imageLink"> 20.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/21.jpg" class="imageLink"> 21.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/22.jpg" class="imageLink"> 22.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/23.jpg" class="imageLink"> 23.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/24.jpg" class="imageLink"> 24.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/25.jpg" class="imageLink"> 25.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/26.jpg" class="imageLink"> 26.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/27.jpg" class="imageLink"> 27.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/28.jpg" class="imageLink"> 28.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/29.jpg" class="imageLink"> 29.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/30.jpg" class="imageLink"> 30.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/31.jpg" class="imageLink"> 31.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/32.jpg" class="imageLink"> 32.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/33.jpg" class="imageLink"> 33.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/34.jpg" class="imageLink"> 34.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/35.jpg" class="imageLink"> 35.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/36.jpg" class="imageLink"> 36.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/37.jpg" class="imageLink"> 37.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/38.jpg" class="imageLink"> 38.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/39.jpg" class="imageLink"> 39.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/40.jpg" class="imageLink"> 40.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/41.jpg" class="imageLink"> 41.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/42.jpg" class="imageLink"> 42.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/43.jpg" class="imageLink"> 43.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/44.jpg" class="imageLink"> 44.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/45.jpg" class="imageLink"> 45.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/46.jpg" class="imageLink"> 46.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/47.jpg" class="imageLink"> 47.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/48.jpg" class="imageLink"> 48.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/49.jpg" class="imageLink"> 49.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/50.jpg" class="imageLink"> 50.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/51.jpg" class="imageLink"> 51.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/52.jpg" class="imageLink"> 52.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/53.jpg" class="imageLink"> 53.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/54.jpg" class="imageLink"> 54.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/55.jpg" class="imageLink"> 55.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/56.jpg" class="imageLink"> 56.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/57.jpg" class="imageLink"> 57.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/58.jpg" class="imageLink"> 58.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/59.jpg" class="imageLink"> 59.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/60.jpg" class="imageLink"> 60.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/61.jpg" class="imageLink"> 61.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/62.jpg" class="imageLink"> 62.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/63.jpg" class="imageLink"> 63.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/64.jpg" class="imageLink"> 64.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/65.jpg" class="imageLink"> 65.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/66.jpg" class="imageLink"> 66.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/67.jpg" class="imageLink"> 67.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/68.jpg" class="imageLink"> 68.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/69.jpg" class="imageLink"> 69.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/70.jpg" class="imageLink"> 70.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/71.jpg" class="imageLink"> 71.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/Akeela_01.jpg" class="imageLink"> Akeela_01.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/Akeela_02.jpg" class="imageLink"> Akeela_02.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/Akeela_03.jpg" class="imageLink"> Akeela_03.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/BlackCat_01.jpg" class="imageLink"> BlackCat_01.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/BlackCat_02.jpg" class="imageLink"> BlackCat_02.jpg </a> </li>
-            <li class="imagesList"> <a href="../assets/EF6/tigress.com/Cairyn.jpg" class="imageLink"> Cairyn.jpg </a> </li>                    
+            <li class="imagesList"> <a id='' href="../assets/EF6/eisfuchs - eurofurence6.gif" class="imageLink" rel="noopener noreferrer"> eisfuchs - eurofurence6.gif </a> </li>    
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/01.jpg" class="imageLink" rel="noopener noreferrer"> 01.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/02.jpg" class="imageLink" rel="noopener noreferrer"> 02.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/03.jpg" class="imageLink" rel="noopener noreferrer"> 03.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/04.jpg" class="imageLink" rel="noopener noreferrer"> 04.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/05.jpg" class="imageLink" rel="noopener noreferrer"> 05.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/06.jpg" class="imageLink" rel="noopener noreferrer"> 06.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/07.jpg" class="imageLink" rel="noopener noreferrer"> 07.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/08.jpg" class="imageLink" rel="noopener noreferrer"> 08.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/09.jpg" class="imageLink" rel="noopener noreferrer"> 09.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/10.jpg" class="imageLink" rel="noopener noreferrer"> 10.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/14.jpg" class="imageLink" rel="noopener noreferrer"> 14.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/15.jpg" class="imageLink" rel="noopener noreferrer"> 15.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/16.jpg" class="imageLink" rel="noopener noreferrer"> 16.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/17.jpg" class="imageLink" rel="noopener noreferrer"> 17.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/18.jpg" class="imageLink" rel="noopener noreferrer"> 18.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/20.jpg" class="imageLink" rel="noopener noreferrer"> 20.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/21.jpg" class="imageLink" rel="noopener noreferrer"> 21.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/22.jpg" class="imageLink" rel="noopener noreferrer"> 22.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/23.jpg" class="imageLink" rel="noopener noreferrer"> 23.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/24.jpg" class="imageLink" rel="noopener noreferrer"> 24.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/25.jpg" class="imageLink" rel="noopener noreferrer"> 25.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/26.jpg" class="imageLink" rel="noopener noreferrer"> 26.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/27.jpg" class="imageLink" rel="noopener noreferrer"> 27.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/28.jpg" class="imageLink" rel="noopener noreferrer"> 28.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/29.jpg" class="imageLink" rel="noopener noreferrer"> 29.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/30.jpg" class="imageLink" rel="noopener noreferrer"> 30.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/31.jpg" class="imageLink" rel="noopener noreferrer"> 31.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/32.jpg" class="imageLink" rel="noopener noreferrer"> 32.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/34.jpg" class="imageLink" rel="noopener noreferrer"> 34.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/delphine-online.de/35.jpg" class="imageLink" rel="noopener noreferrer"> 35.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/01.jpg" class="imageLink" rel="noopener noreferrer"> 01.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/02.jpg" class="imageLink" rel="noopener noreferrer"> 02.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/03.jpg" class="imageLink" rel="noopener noreferrer"> 03.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/04.jpg" class="imageLink" rel="noopener noreferrer"> 04.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/05.jpg" class="imageLink" rel="noopener noreferrer"> 05.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/06.jpg" class="imageLink" rel="noopener noreferrer"> 06.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/07.jpg" class="imageLink" rel="noopener noreferrer"> 07.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/08.jpg" class="imageLink" rel="noopener noreferrer"> 08.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/09.jpg" class="imageLink" rel="noopener noreferrer"> 09.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/10.jpg" class="imageLink" rel="noopener noreferrer"> 10.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/11.jpg" class="imageLink" rel="noopener noreferrer"> 11.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/12.jpg" class="imageLink" rel="noopener noreferrer"> 12.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/13.jpg" class="imageLink" rel="noopener noreferrer"> 13.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/14.jpg" class="imageLink" rel="noopener noreferrer"> 14.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/15.jpg" class="imageLink" rel="noopener noreferrer"> 15.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/16.jpg" class="imageLink" rel="noopener noreferrer"> 16.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/17.jpg" class="imageLink" rel="noopener noreferrer"> 17.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/18.jpg" class="imageLink" rel="noopener noreferrer"> 18.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/19.jpg" class="imageLink" rel="noopener noreferrer"> 19.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/20.jpg" class="imageLink" rel="noopener noreferrer"> 20.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/21.jpg" class="imageLink" rel="noopener noreferrer"> 21.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/22.jpg" class="imageLink" rel="noopener noreferrer"> 22.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/23.jpg" class="imageLink" rel="noopener noreferrer"> 23.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/24.jpg" class="imageLink" rel="noopener noreferrer"> 24.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/25.jpg" class="imageLink" rel="noopener noreferrer"> 25.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/26.jpg" class="imageLink" rel="noopener noreferrer"> 26.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/27.jpg" class="imageLink" rel="noopener noreferrer"> 27.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/28.jpg" class="imageLink" rel="noopener noreferrer"> 28.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/29.jpg" class="imageLink" rel="noopener noreferrer"> 29.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/30.jpg" class="imageLink" rel="noopener noreferrer"> 30.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/31.jpg" class="imageLink" rel="noopener noreferrer"> 31.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/32.jpg" class="imageLink" rel="noopener noreferrer"> 32.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/33.jpg" class="imageLink" rel="noopener noreferrer"> 33.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/34.jpg" class="imageLink" rel="noopener noreferrer"> 34.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/35.jpg" class="imageLink" rel="noopener noreferrer"> 35.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/36.jpg" class="imageLink" rel="noopener noreferrer"> 36.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/37.jpg" class="imageLink" rel="noopener noreferrer"> 37.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/38.jpg" class="imageLink" rel="noopener noreferrer"> 38.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/39.jpg" class="imageLink" rel="noopener noreferrer"> 39.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/40.jpg" class="imageLink" rel="noopener noreferrer"> 40.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/41.jpg" class="imageLink" rel="noopener noreferrer"> 41.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/42.jpg" class="imageLink" rel="noopener noreferrer"> 42.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/43.jpg" class="imageLink" rel="noopener noreferrer"> 43.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/44.jpg" class="imageLink" rel="noopener noreferrer"> 44.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/45.jpg" class="imageLink" rel="noopener noreferrer"> 45.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/46.jpg" class="imageLink" rel="noopener noreferrer"> 46.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/47.jpg" class="imageLink" rel="noopener noreferrer"> 47.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/48.jpg" class="imageLink" rel="noopener noreferrer"> 48.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/49.jpg" class="imageLink" rel="noopener noreferrer"> 49.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/50.jpg" class="imageLink" rel="noopener noreferrer"> 50.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/51.jpg" class="imageLink" rel="noopener noreferrer"> 51.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/52.jpg" class="imageLink" rel="noopener noreferrer"> 52.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/53.jpg" class="imageLink" rel="noopener noreferrer"> 53.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/54.jpg" class="imageLink" rel="noopener noreferrer"> 54.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/55.jpg" class="imageLink" rel="noopener noreferrer"> 55.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/56.jpg" class="imageLink" rel="noopener noreferrer"> 56.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/57.jpg" class="imageLink" rel="noopener noreferrer"> 57.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/58.jpg" class="imageLink" rel="noopener noreferrer"> 58.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/59.jpg" class="imageLink" rel="noopener noreferrer"> 59.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/60.jpg" class="imageLink" rel="noopener noreferrer"> 60.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/61.jpg" class="imageLink" rel="noopener noreferrer"> 61.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/62.jpg" class="imageLink" rel="noopener noreferrer"> 62.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/63.jpg" class="imageLink" rel="noopener noreferrer"> 63.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/64.jpg" class="imageLink" rel="noopener noreferrer"> 64.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/65.jpg" class="imageLink" rel="noopener noreferrer"> 65.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/66.jpg" class="imageLink" rel="noopener noreferrer"> 66.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/67.jpg" class="imageLink" rel="noopener noreferrer"> 67.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/68.jpg" class="imageLink" rel="noopener noreferrer"> 68.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/69.jpg" class="imageLink" rel="noopener noreferrer"> 69.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/70.jpg" class="imageLink" rel="noopener noreferrer"> 70.jpg </a> </li>
+            <li class="imagesList"> <a id='' href="../assets/EF6/tigress.com/71.jpg" class="imageLink" rel="noopener noreferrer"> 71.jpg </a> </li>
+            <li class="imagesList"> <a id='Good morning, Göttingen...' href="../assets/EF6/tigress.com/Akeela_01.jpg" class="imageLink" rel="noopener noreferrer"> Akeela_01.jpg </a> </li>
+            <li class="imagesList"> <a id='Dammit, this hair is a MESS...!' href="../assets/EF6/tigress.com/Akeela_02.jpg" class="imageLink" rel="noopener noreferrer"> Akeela_02.jpg </a> </li>
+            <li class="imagesList"> <a id='Is there anything better after a hard day, then a nice and comfy bed (well, more or less...) and a good old friend to rest your head upon?' href="../assets/EF6/tigress.com/Akeela_03.jpg" class="imageLink" rel="noopener noreferrer"> Akeela_03.jpg </a> </li>
+            <li class="imagesList"> <a id='...especially when she *gulp* smiles at you like THAT!' href="../assets/EF6/tigress.com/BlackCat_01.jpg" class="imageLink" rel="noopener noreferrer"> BlackCat_01.jpg </a> </li>
+            <li class="imagesList"> <a id='Never trust a black cat in a black, fancy dress...' href="../assets/EF6/tigress.com/BlackCat_02.jpg" class="imageLink" rel="noopener noreferrer"> BlackCat_02.jpg </a> </li>
+            <li class="imagesList"> <a id='Leaving a con is alway hard...But ESPECIALLY hard when all the other idiots park their cars like crazy!      ' href="../assets/EF6/tigress.com/Cairyn.jpg" class="imageLink" rel="noopener noreferrer"> Cairyn.jpg </a> </li>                    
         </div> <!-- imageLinksListDiv -->
 
         <hr>
@@ -139,19 +143,19 @@
             <div class="" id="seeMoreLinksDiv">
                 <h3>Browse more:</h3>
                 <ul>
-                    <li><a href="../assets/EF6/Index of _EF6_conpics_mow (25. 5. 2026 21：50：06).html">EF6 pictures by mow</a></li>
-                    <li><a href="https://archive.eurofurence.org/EF6/conpics/beholder/BeholdEF6-01  .html">EF6 Pictures by Beholder </a></li>
-                    <li><a href="https://fursuit.timduru.org/view/FurryCon/EuroFurence/EF6">Timduru"s fursuit archive - pictures</a></li>
-                    <li><a href="https://fursuit.timduru.org/view/FursuitVideo/FurryCon/Eurofurence/EF6">Timduru"s fursuit archive - videos</a></li>
+                    <li><a href="../assets/EF6/Index of _EF6_conpics_mow (25. 5. 2026 21：50：06).html" rel="noopener noreferrer">EF6 pictures by mow</a></li>
+                    <li><a href="https://archive.eurofurence.org/EF6/conpics/beholder/BeholdEF6-01  .html" rel="noopener noreferrer">EF6 Pictures by Beholder </a></li>
+                    <li><a href="https://fursuit.timduru.org/view/FurryCon/EuroFurence/EF6" rel="noopener noreferrer">Timduru"s fursuit archive - pictures</a></li>
+                    <li><a href="https://fursuit.timduru.org/view/FursuitVideo/FurryCon/Eurofurence/EF6" rel="noopener noreferrer">Timduru"s fursuit archive - videos</a></li>
                 </ul>
             </div>
 
             <div class="" id="imageSourcesDiv">
                 <h3>Images taken from:</h3>
                 <ul>
-                    <li><a href="../assets/EF6/delphine-online.de/Eurofurence 6 (25. 5. 2026 20：35：07).html">delphine-online.de/Furry/EF6.htm </a></li>
-                    <li><a href="../assets/EF6/tigress.com/AmurUssuri's Place (25. 5. 2026 21：47：59).html">tigress.com/amur/stuff/ef6/ </a></li>
-                    <li><a href="../assets/EF6/tigress.com/Photos_01 (25. 5. 2026 20：41：51).html">tigress.com/thalian/photos_01.html </a></li>
+                    <li><a href="../assets/EF6/delphine-online.de/Eurofurence 6 (25. 5. 2026 20：35：07).html" rel="noopener noreferrer">delphine-online.de/Furry/EF6.htm </a></li>
+                    <li><a href="../assets/EF6/tigress.com/AmurUssuri's Place (25. 5. 2026 21：47：59).html" rel="noopener noreferrer">tigress.com/amur/stuff/ef6/ </a></li>
+                    <li><a href="../assets/EF6/tigress.com/Photos_01 (25. 5. 2026 20：41：51).html" rel="noopener noreferrer">tigress.com/thalian/photos_01.html </a></li>
                 </ul>
             </div>
         </div> <!-- browseMoreAndSourcesDiv -->
@@ -159,47 +163,65 @@
     </div> <!-- masterDiv -->
 
     <!-- 
-       IMAGE VIEWER
-   -->
-   <section id="imageViewWindowSection" class="">
+        IMAGE VIEWER
+    -->
+   <section id="imageViewWindowSection" class="" style="display: none;">
        <div class="" id="windowOverlayBlur">
             <div class="" id="windowContent">
+                <!-- LEFT NAVBAR -->
                 <div class="windowColumn" id="windowLeftColumn">
                     <div class="windowNavDivTop" id=""> 
+                        <!-- empty -->
                     </div>
-
+                    <!-- Previou image button -->
                     <div class="windowNavDivBottom" id="windowNavLeft">
-                        <img src="../assets/icons/arrow2.png" alt="" class="windowImgIcon" id="windowNavArrowLeft">
+                        <button class="windowNavigationImgButton" id="windowNavigationImgButtonLeft">
+                            <img src="../assets/icons/arrow2.png" alt="previous image button icon" class="windowImgIcon windowNavigationImgButtonIcon" id="windowNavArrowLeft">
+                        </button>
                     </div>
-                </div>
+                </div> <!-- windowLeftColumn -->
+
+                <!-- IMAGE SECTION -->
                 <div class="windowColumn" id="windowMiddleColumn">
                     <div class="" id="imageDiv">
-                        <img src="../assets/EF20/furcon.de/ef20 Fuchur P1050884.jpg" alt="" class="" id="windowImageElem">
+                        <img src="" class="" id="windowImageElem">
                     </div>
                     <div id="detailsDiv" class="">
                         <span id="imageNameSpan">Lorem ipsum</span>
-                        <br>
+                        <br id="imageDetailsNewLine">
                         <span id="imageDescriptionSpan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus culpa porro architecto nobis explicabo ducimus. Modi laborum aut expedita impedit animi. Dolores aliquam quo beatae aperiam nam, fugiat obcaecati magnam?  </span>
                     </div>
-                </div>
+                </div> <!-- windowMiddleColumn -->
+
+                <!-- RIGHT NAVBAR -->
                 <div class="windowColumn" id="windowRightColumn">
+                    <!-- Close button -->
                     <div id="windowCloseButtonDiv" class="windowNavDivTop" onclick="CloseImageView()">  
-                        <img src="../assets/icons/close.png " alt="" class="windowImgIcon" id="windowCloseImg">
+                        <button class="windowNavigationImgButton" id="windowCloseButton">
+                            <img src="../assets/icons/close.png " alt="close image button icon" class="windowImgIcon" id="windowCloseImg">
+                        </button>
                     </div>
-                    
+                    <!-- Next image button -->
                     <div class="windowNavDivBottom" id="windowNavRight">
-                        <img src="../assets/icons/arrow2.png" alt="" class="windowImgIcon" id="windowNavArrowRight">
+                        <button class="windowNavigationImgButton" id="windowNavigationImgButtonRight">
+                            <img src="../assets/icons/arrow2.png" alt="next image button icon" class="windowImgIcon windowNavigationImgButtonIcon" id="windowNavArrowRight">
+                        </button>
                     </div>
-                    <div id="windowDownloadButtonDiv" class="windowNavDivTop" onclick="CloseImageView()">  
-                        <img src="../assets/icons/download.png " alt="" class="windowImgIcon" id="windowDownloadImg">
+                    <!-- Full image button -->
+                    <div id="windowDownloadButtonDiv" class="windowNavDivTop">
+                        <button class="windowNavigationImgButton" id="windowDownloadImageButton">  
+                            <a href="#" class="" id="downloadImageLink" target="_blank" rel="noopener noreferrer">
+                                <img src="../assets/icons/download.png " alt="download image button icon" class="windowImgIcon" id="windowDownloadImg">
+                            </a>
+                        </button>
                     </div>  
-                </div>
-           </div>
-       </div>
-   </section> <!-- overlayWindow -->
-    
+                </div> <!-- windowRightColumn -->
+           </div> <!-- windowContent -->
+       </div> <!-- windowOverlayBlur -->
+    </section> <!-- imageViewWindowSection -->
+   
     <script>
-        CreateThumbnailGrid();
+        BuildPage();
     </script>    
 </body>
 </html>
