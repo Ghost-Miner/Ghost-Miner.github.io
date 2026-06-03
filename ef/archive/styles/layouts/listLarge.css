@@ -1,43 +1,114 @@
-#listLargeMainDiv {
-	max-width: 1000px;
+.listLargeMainDiv 
+{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 5px;
+	row-gap: 5px;
+	justify-content: center;
+	align-items: center;
+	max-width: fit-content;
+	margin: 0 auto
+}
+
+.listLargeItemDiv 
+{
+	background-color: transparent;	
+	height: 175px;
+	width: 400px;
 	margin: auto;
-	padding-bottom: 25px;
-	display: grid;
-	row-gap: 20px
+}
+.listLargeItemDiv:hover
+{
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.75); 
+	transform: scale(115%);	
+	z-index: 10;
+	
+	cursor: pointer;
+	font-weight: 600;
 }
 
-.listLargeItemDiv {
+.listLargeDivContent 
+{
+	margin: 0;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 	width: 100%;
-	display: grid;
-	grid-template-columns: 25% 75%;
-	column-gap: 15px;
-	background-color: lightgray;
+	height: 100%;
+}
+.listLargeDivContent:hover, .listLargeItemDiv:hover
+{
 	border-radius: 10px;
-	padding: 15px;
-	box-shadow: 3px 3px 8px gray
 }
 
-.listLargeImageDiv {
+.listLargeIconImage 
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.listLargeIconTitle
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    text-shadow: 0 0 5px black;	
+    z-index: 1;
+	/* display: none;	 */
+}
+
+.listLargeItemDiv:hover .listLargeIconTitle
+{
+    display: block;
+}
+.listLargeIconTitleDiv
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.listLargeIconTitleDiv:hover
+{	
+	background: rgba(0,0,0,0.5);
+}
+
+/* .listLargeImageDiv
+{
 	align-items: center;
 	display: flex
 }
 
-.listLargeTextDiv {
+.listLargeTextDiv 
+{
 	margin-right: 10px
 }
 
-.listLargeTextTitle {
+.listLargeTextTitle 
+{
 	font-weight: 600;
 	font-size: 1.3rem
 }
 
-.listLargeImage {
+.listLargeImage 
+{
 	width: 100%;
 	border-radius: 10px
 }
 
 .mapLitstTextTitleLink,
 .mapLitstTextTitleLink:link,
-.mapLitstTextTitleLink:visited {
+.mapLitstTextTitleLink:visited 
+{
 	columns: white
-}
+} */
