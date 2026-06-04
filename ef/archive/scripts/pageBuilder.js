@@ -40,12 +40,12 @@ function CreateThumbnailGrid ()
         tempArray[IMAGE_NAME_COL] = imageNames[i]
         tempArray[IMAGE_DESC_COL] = imageDesc[i];
 
-        console.table([imageLinksList[i].id, imageDesc[i], imageLinksList[i].innerHTML]);    
+        // console.table([imageLinksList[i].id, imageDesc[i], imageLinksList[i].innerHTML]);    
 
         imageItemArray[i] = tempArray;
     }
     
-    console.table(imageItemArray);
+    // console.table(imageItemArray);
 
     // console.table(imageLinks);
     // console.table(imageNames);
@@ -119,9 +119,7 @@ function CreateThumbnailGrid ()
 
 function InsertImageViewer ()
 {
-    console.log("aaaaaaaaaa");
     let viewerDiv = '<div hx-get="../imageViewer.html" hx-swap="outerHTML" hx-trigger="load" id="imageviewerPlaceholder"></div>';
     $("#masterDiv")[0].insertAdjacentHTML("afterend", viewerDiv);
-    console.log(viewerDiv);
-    // console.log($("#imageViewWindowSection")[0].outerHTML)
+    console.log("Inserted omage viewer");
 }

@@ -1,22 +1,16 @@
+let openImageData = null;
+
 function OpenImageView(_imageItemDataItem)
 {
     DisableNavigationButtons();
 
-    // console.log("OPENING ");
-    // console.table(_imageItemDataItem);
     $("#windowImageElem")[0].src = _imageItemDataItem[IMAGE_URL_COL];
     $("#imageNameSpan")[0].textContent = _imageItemDataItem[IMAGE_NAME_COL];
     $("#imageDescriptionSpan")[0].textContent = _imageItemDataItem[IMAGE_DESC_COL];
-
-    // if ($("#imageDescriptionSpan")[0].textContent,length < 1)
-    // {
-    //     $("#imageDescriptionSpan")[0].style.display = "none";
-    //     $("#imageDetailsNewLine")[0].style.display = "none";
-    // }
-
     $("#imageViewWindowSection")[0].style.display = "block";
     
-    SetNavButtonTarget(_imageItemDataItem); 
+    SetNavButtonTarget(_imageItemDataItem);
+    openImageData = _imageItemDataItem;
 }
 
 function CloseImageView()
@@ -26,6 +20,8 @@ function CloseImageView()
     $("#imageDescriptionSpan")[0].textContent = "";
 
     $("#imageViewWindowSection")[0].style.display = "none";
+
+    openImageData = null;
 }
 
 function SetNavButtonTarget(_imageItemDataItem)
