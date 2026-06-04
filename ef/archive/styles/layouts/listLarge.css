@@ -54,21 +54,26 @@
 
 .listLargeIconTitle
 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	/* position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
 
-    color: white;
+	color: white;
     text-shadow: 0 0 5px black;	
     z-index: 1;
 	/* display: none;	 */
-}
 
+	font-weight: 600;
+	font-size: 1.64rem;
+	letter-spacing: 5px;
+	margin-bottom: 10px;
+}
 .listLargeItemDiv:hover .listLargeIconTitle
 {
     display: block;
 }
+
 .listLargeIconTitleDiv
 {
 	width: 100%;
@@ -77,38 +82,32 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	text-align: center;
+
+	background: linear-gradient(to top, black, transparent, transparent);
 }
 .listLargeIconTitleDiv:hover
 {	
 	background: rgba(0,0,0,0.5);
+	justify-content: center;
+
+	.listLargeIconSubtitle
+	{
+		display: block;
+		font-weight: 500;
+	}
+	.listLargeIconTitle
+	{
+		margin: 0px;
+	}
 }
 
-/* .listLargeImageDiv
+.listLargeIconSubtitle
 {
-	align-items: center;
-	display: flex
+	display: none;
 }
-
-.listLargeTextDiv 
-{
-	margin-right: 10px
-}
-
-.listLargeTextTitle 
-{
-	font-weight: 600;
-	font-size: 1.3rem
-}
-
-.listLargeImage 
-{
-	width: 100%;
-	border-radius: 10px
-}
-
-.mapLitstTextTitleLink,
-.mapLitstTextTitleLink:link,
-.mapLitstTextTitleLink:visited 
-{
-	columns: white
-} */
