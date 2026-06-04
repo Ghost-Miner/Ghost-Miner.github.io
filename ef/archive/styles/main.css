@@ -60,7 +60,8 @@ a:hover
     margin: auto;
 
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
 
     backdrop-filter: blur(16px);
 }
