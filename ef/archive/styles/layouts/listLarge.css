@@ -39,6 +39,7 @@
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
+	border-radius: 5px;
 }
 .listLargeDivContent:hover, .listLargeItemDiv:hover
 {
@@ -93,7 +94,7 @@
 }
 .listLargeIconTitleDiv:hover
 {	
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.75);
 	justify-content: center;
 
 	.listLargeIconSubtitle
