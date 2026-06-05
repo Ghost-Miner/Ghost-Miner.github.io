@@ -1,7 +1,7 @@
 .listSmallMainDiv
 {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	column-gap: 5px;
 	row-gap: 5px;
 	justify-content: center;
@@ -12,9 +12,10 @@
 
 .listSmallItemDiv 
 {
+	border: 1px dotted black;
 	background-color: transparent;	
-	height: 200px;
-	width: 200px;
+	height: 250px;
+	width: 250px;
 	margin: auto;
 }
 .listSmallItemDiv:hover
