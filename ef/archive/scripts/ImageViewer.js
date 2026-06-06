@@ -2,6 +2,8 @@ let openImageData = null;
 
 function OpenImageView(_imageItemDataItem)
 {
+    $("#windowImageElem")[0].src = "";
+    
     DisableNavigationButtons();
 
     $("#windowImageElem")[0].src = _imageItemDataItem[IMAGE_URL_COL];
