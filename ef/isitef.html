@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it EF?</title>
+</head>
+<body>
+    <style>
+        body
+        {
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 20px;
+            background-color: #005953;
+            color: white;
+        }
+        h2
+        {
+            font-size: 2.5rem;
+            line-height: 1rem;
+        }
+        h3
+        {
+            font-weight: 500;
+        }
+    </style>
+
+    <h1>Is it EF30?</h1>
+    <h2 id="answer">...</h2>
+    <hr>
+    <h3 id="todayDate">...</h3>
+    <h3 id="efDates">...</h3>
+
+    <script>
+        function SetAnswer ()
+        {
+            isEfDay = IsEFDate(new Date());
+
+            if (isEfDay)
+            {
+                document.querySelector("#answer").textContent = "YES";
+            }
+            else
+            {
+                document.querySelector("#answer").textContent = "NO";
+            }
+
+            document.querySelector("#todayDate").textContent = "Date today: " + new Date().toDateString();
+            document.querySelector("#efDates").textContent = "EF30: " + new Date(2026, 8, 19).toDateString() + " to " + new Date(2026, 8, 23).toDateString();
+        }
+
+        function IsEFDate (date)
+        {
+            fullDate = date
+            day   = fullDate.getUTCDate();
+            month = fullDate.getUTCMonth();
+            year  = fullDate.getUTCFullYear();
+
+            efDates = [ 
+                new Date(2026, 8, 19), 
+                new Date(2026, 8, 20), 
+                new Date(2026, 8, 21), 
+                new Date(2026, 8, 22), 
+                new Date(2026, 8, 23), 
+            ];
+
+            for (let i = 0; i < efDates.length; i++)
+            {
+                efDay = efDates[i].getUTCDate();
+                efMonth = efDates[i].getUTCMonth();
+                efYear = efDates[i].getUTCFullYear();
+                if (day == efDay && month == efMonth && year == efYear)
+                {
+                    return true
+                }
+            }
+            return false;
+        }
+
+        SetAnswer();
+    </script>
+</body>
+</html>
