@@ -11,6 +11,9 @@ function OpenImageView(_imageItemDataItem)
     
     SetNavButtonTarget(_imageItemDataItem);
     openImageData = _imageItemDataItem;
+
+    console.log("OPENING IMAGE");   
+    console.table(openImageData);
 }
 
 function CloseImageView()
