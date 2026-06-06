@@ -10,6 +10,7 @@ function OpenImageView(_imageItemDataItem)
     $("#imageViewWindowSection")[0].style.display = "block";
     
     SetNavButtonTarget(_imageItemDataItem);
+    SetImageIndexUrl(_imageItemDataItem[IMAGE_INDEX_COL]);
     openImageData = _imageItemDataItem;
 
     console.log("OPENING IMAGE");   
@@ -23,6 +24,8 @@ function CloseImageView()
     $("#imageDescriptionSpan")[0].textContent = "";
 
     $("#imageViewWindowSection")[0].style.display = "none";
+
+    // ClearImageIndexUrl(openImageData[IMAGE_INDEX_COL])   
 
     openImageData = null;
 }

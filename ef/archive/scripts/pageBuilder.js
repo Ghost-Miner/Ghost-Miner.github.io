@@ -46,7 +46,6 @@ function CreateThumbnailGrid ()
     }
     
     // console.table(imageItemArray);
-
     // console.table(imageLinks);
     // console.table(imageNames);
 
@@ -56,17 +55,13 @@ function CreateThumbnailGrid ()
         // Create main div
         let imageItemDiv = document.createElement("div");
         imageItemDiv.classList.add("listSmallItemDiv");
+        imageItemDiv.id = "pic=" + i;
 
         imageItemDiv.addEventListener("click", () => OpenImageView(imageItemArray[i]));
         
         // Create div for content
         let contentDiv = document.createElement("div");
         contentDiv.classList.add("listSmallDivContent");
-
-        // Create the link
-        // let anchorElem = document.createElement("a");
-        // anchorElem.classList.add("imageItemLinkContainer");
-        // anchorElem.href = imageLinks[i];
 
         // Create caption container
         let captionDivElem = document.createElement("div");

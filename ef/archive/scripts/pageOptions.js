@@ -13,24 +13,26 @@ function GetImageIndexFromUrl ()
 {
     try 
     {
-        if (GetUrlSearch().includes("pic="))
+        if (GetUrlHash().includes("pic="))
         {
-            let urlHash = GetUrlSearch();   
+            let urlHash = GetUrlHash();   
             let imgNum = urlHash.split("=")[1];
 
             return imgNum;
         }
     }
-    catch { }
+    catch (ex) {  }
     return null;
 }
 function SetImageIndexUrl (_imageIndex)
 {
+    console.log("set " + _imageIndex );
     location.hash = "pic=" + _imageIndex;
 }
-function ClearImageIndexUrl()
+function ClearImageIndexUrl(_imageIndex)
 {
-    location.hash = "";
+    console.log("clear " + _imageIndex);
+    location.hash = "pic" + _imageIndex;
 }
 
 function TryOpenImageViewerFromUrl ()
