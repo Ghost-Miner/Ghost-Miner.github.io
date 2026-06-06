@@ -53,7 +53,7 @@ function AddKeyboardEvents ()
 {
     $(document).off("keyup");
     $(document).on("keyup", KeyPressed);
-    console.log("added events");
+    // console.log("added events");
 }
 function KeyPressed (e)
 {
